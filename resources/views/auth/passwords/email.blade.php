@@ -1,47 +1,110 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card" style="margin-top: 50px">
-              <div class="card-header text-center"> Restaurar la contrassenya </div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+  <!-- Alerts - OPEN -->
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+  <!-- Success - OPEN -->
+  @if( session('status') )
+    <div class="alert alert-success" role="alert">
+      <div class="container text-center">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          {{ session('status') }}
+      </div>
+    </div>
+  <!-- Success - CLOSE -->
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right"> Email </label>
+  <!-- Error - OPEN -->
+  @elseif( session()->get('error') )
+    <div class="alert alert-error alert-dismissible fade show" role="alert">
+      <div class="container text-center">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          {{ session()->get('error') }}
+      </div>
+    </div>
+  @endif
+  <!-- Error - CLOSE -->
 
+  <!-- Alerts - CLOSE -->
+
+  <!-- Content -->
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+
+              <!-- Card - OPEN -->
+              <div class="card">
+
+                  <!-- Card header - OPEN -->
+                  <div class="card-header">
+                    {{ __('notifications.reset_pas') }}
+                  </div>
+                  <!-- Card header - CLOSE -->
+
+                  <!-- Card body - OPEN -->
+                  <div class="card-body">
+
+                      <!-- Form login - OPEN -->
+                      <form method="POST" action="{{ route('password.email') }}">
+                          @csrf
+
+                          <!-- Email - OPEN -->
+                          <div class="form-group row">
+
+                            <!-- Email label - OPEN -->
+                            <label for="email" class="col-md-4 col-form-label text-md-right">
+                              {{ __('login.email') }}
+                            </label>
+                            <!-- Email label - CLOSE -->
+
+                            <!-- Email input - OPEN -->
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
-                                @if ($errors->has('email'))
+                                <!-- Input - OPEN -->
+                                <input id="email" type="email" name="email" value="{{ old('email') }}"
+                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autofocus>
+                                <!-- Input - CLOSE -->
+
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('email') )
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong> {{ $errors->first('email') }} </strong>
                                     </span>
                                 @endif
-                            </div>
-                        </div>
+                                <!-- Show errors input - CLOSE -->
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Enviar link
-                                </button>
                             </div>
-                        </div>
-                    </form>
+                            <!-- Email input - CLOSE -->
+
+                          </div>
+                          <!-- Email - CLOSE -->
+
+                          <!-- Send link button - OPEN -->
+                          <div class="form-group row mb-0">
+                              <div class="col-md-8 offset-md-4">
+
+                                  <!-- Button - OPEN -->
+                                  <button type="submit" class="btn btn-primary">
+                                      {{ __('notifications.send_link') }}
+                                  </button>
+                                  <!-- Button - CLOSE -->
+
+                              </div>
+                          </div>
+                          <!-- Send link button - CLOSE -->
+
+                        </form>
+                        <!-- Form register - CLOSE -->
+
+                    </div>
+                    <!-- Card body - CLOSE -->
+
                 </div>
+                <!-- Card - CLOSE -->
+
             </div>
         </div>
     </div>
-</div>
-@endsection
+    <!-- Content - CLOSE -->
+
+  @endsection
