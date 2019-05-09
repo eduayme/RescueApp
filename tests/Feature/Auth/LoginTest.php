@@ -5,6 +5,9 @@ namespace Tests\Feature\Auth;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Hash;
 
 class LoginTest extends TestCase
 {
@@ -45,15 +48,37 @@ class LoginTest extends TestCase
      */
     public function test_user_can_login_with_valid_credentials()
     {
-        $user = factory(User::class)->make();
+        $user = factory(User::class)->create([
+            'password' => Hash::make( $password = '1234' ),
+        ]);
 
         $response = $this->post('/login', [
-            'email'    => $user->email,
-            'password' => $user->password,
+            'email' => $user->email,
+            'password' => $password,
         ]);
 
         $response->assertRedirect('/');
-        $response->assertStatus(302);
+        $this->assertAuthenticatedAs($user);
+    }
+
+    /**
+     * A valid user can not login with invalid credentials.
+     *
+     * @return void
+     */
+    public function test_user_can_not_login_with_invalid_credentials()
+    {
+        $user = factory(User::class)->create([
+            'password' => Hash::make($password = 'i-love-laravel'),
+        ]);
+
+        $response = $this->post('/login', [
+            'email' => $user->email,
+            'password' => 'invalid-password',
+        ]);
+
+        $response->assertRedirect('/');
+        $this->assertGuest();
     }
 
     /**
@@ -61,7 +86,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function test_logout_authenticated_user()
+    public function test_user_can_logout()
     {
         $user = factory(User::class)->create();
 
