@@ -3,16 +3,15 @@
 namespace Tests\Feature\Auth;
 
 use App\User;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
     use RefreshDatabase;
 
     /**
-     * Any user can view the login form before authenticated
+     * Any user can view the login form before authenticated.
      *
      * @return void
      */
@@ -25,7 +24,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * A valid user can not view the login form when authenticated
+     * A valid user can not view the login form when authenticated.
      *
      * @return void
      */
@@ -40,7 +39,7 @@ class LoginTest extends TestCase
     }
 
     /**
-     * A valid user can login with valid credentials
+     * A valid user can login with valid credentials.
      *
      * @return void
      */
@@ -49,8 +48,8 @@ class LoginTest extends TestCase
         $user = factory(User::class)->make();
 
         $response = $this->post('/login', [
-            'email' => $user->email,
-            'password' => $user->password
+            'email'    => $user->email,
+            'password' => $user->password,
         ]);
 
         $response->assertRedirect('/');
@@ -70,5 +69,4 @@ class LoginTest extends TestCase
 
         $this->assertGuest();
     }
-
 }

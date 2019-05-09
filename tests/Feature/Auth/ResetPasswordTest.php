@@ -2,14 +2,9 @@
 
 namespace Tests\Feature\Auth;
 
-use App\User;
-use Tests\TestCase;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Auth\Notifications\ResetPassword;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Password;
+use Tests\TestCase;
 
 class ResetPasswordTest extends TestCase
 {
@@ -38,5 +33,4 @@ class ResetPasswordTest extends TestCase
 
         $response->assertStatus(200);
     }
-
 }

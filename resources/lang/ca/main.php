@@ -1,21 +1,14 @@
 <?php
+
 return [
-    'welcome'          => 'Bienvenido a ChessT',
-    'intro'            => 'El mejor lugar para encontrar torneos de ajedrez',
-    'find tournaments' => 'Encontrar torneos',
-    'add tournament'   => 'Añadir torneo',
-    'edit tournament'  => 'Editar torneo',
-    'home'             => 'Inicio',
-    'tournaments' => 'Torneos',
-    'explore' => 'Explorar',
-    'discover' => 'Descubrir',
-    'logout' => 'Cerrar sesión',
-    'language' => 'Idioma',
-    'english' => 'Inglés',
-    'spanish' => 'Español',
-    'version' => 'Versión',
-    'free && open source' => 'Gratis && Código Abierto',
-    'open source' => 'Código Abierto',
-    'privacy policy' => 'Políticas de Privacidad',
-    'terms of service' => 'Términos de Servicio'
+    'login'            => 'Iniciar sessió',
+    'logout'           => 'Tancar sessió',
+    'language'         => 'Idioma',
+    'catalan'          => 'Català',
+    'spanish'          => 'Castellà',
+    'version'          => 'Versió',
+    'free'             => 'Gratis && Codi Obert',
+    'open source'      => 'Open Source',
+    'privacy policy'   => 'Polítiques de privacitat',
+    'terms of service' => 'Termes de Servei',
 ];
