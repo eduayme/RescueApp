@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'password.confirmed' => __('messages.password_confirmed'),
         ]);
 
-        $input = request()->except('password', 'confirm_password');
+        $input = request()->except('password','confirm_password');
         $user = new User($input);
         $user->password = bcrypt(request()->password);
         $user->save();
@@ -85,7 +85,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        session()->flash('success', __('main.welcome').' '.$data['name']);
+        session()->flash('success', __('main.welcome') .' '. $data['name']);
 
         return User::create([
             'name'     => $data['name'],
