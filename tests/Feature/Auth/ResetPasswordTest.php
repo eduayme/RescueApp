@@ -2,17 +2,21 @@
 
 namespace Tests\Feature\Auth;
 
+<<<<<<< HEAD
 use App\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
+=======
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+>>>>>>> parent of 96157ce... Tests login and resetPaswword working
 use Illuminate\Support\Facades\Password;
 use Tests\TestCase;
 
 class ResetPasswordTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * Displays the reset password request form.
@@ -37,6 +41,7 @@ class ResetPasswordTest extends TestCase
 
         $response->assertStatus(200);
     }
+<<<<<<< HEAD
 
     /**
      * Return a valid token for the user.
@@ -241,4 +246,6 @@ class ResetPasswordTest extends TestCase
         $this->assertTrue(Hash::check('old-password', $user->fresh()->password));
         $this->assertGuest();
     }
+=======
+>>>>>>> parent of 96157ce... Tests login and resetPaswword working
 }

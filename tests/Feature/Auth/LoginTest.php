@@ -4,8 +4,11 @@ namespace Tests\Feature\Auth;
 
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Hash;
+=======
+>>>>>>> parent of 96157ce... Tests login and resetPaswword working
 use Tests\TestCase;
 
 class LoginTest extends TestCase
@@ -47,6 +50,7 @@ class LoginTest extends TestCase
      */
     public function test_user_can_login_with_valid_credentials()
     {
+<<<<<<< HEAD
         $user = factory(User::class)->create([
             'password' => Hash::make($password = '1234'),
         ]);
@@ -74,10 +78,17 @@ class LoginTest extends TestCase
         $response = $this->post('/login', [
             'email'    => $user->email,
             'password' => 'invalid-password',
+=======
+        $user = factory(User::class)->make();
+
+        $response = $this->post('/login', [
+            'email'    => $user->email,
+            'password' => $user->password,
+>>>>>>> parent of 96157ce... Tests login and resetPaswword working
         ]);
 
         $response->assertRedirect('/');
-        $this->assertGuest();
+        $response->assertStatus(302);
     }
 
     /**
@@ -85,7 +96,7 @@ class LoginTest extends TestCase
      *
      * @return void
      */
-    public function test_user_can_logout()
+    public function test_logout_authenticated_user()
     {
         $user = factory(User::class)->create();
 
