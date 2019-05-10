@@ -23,7 +23,7 @@
     @endif
 
     <!-- Content -->
-    <div class="container text-center margin-top">
+    <div class="text-center">
       <p> Nom: {{ Auth::user()->name }} </p>
       <p> Email: {{ Auth::user()->email }} </p>
       <p> DNI: {{ Auth::user()->dni }} </p>
