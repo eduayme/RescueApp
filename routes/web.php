@@ -18,5 +18,8 @@ Route::group(['middleware' => 'auth'], function () {
         return view('index');
     });
 });
+<<<<<<< HEAD
 
 Route::post('/', 'HomeController@index')->name('index');
+=======
+>>>>>>> parent of 96157ce... Tests login and resetPaswword working
