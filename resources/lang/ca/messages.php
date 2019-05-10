@@ -7,7 +7,7 @@ return [
     'email_required'     => "L'email és un camp obligatori.",
     'email_email'        => "L'email ha de tenir format de correu electrònic",
     'email_max'          => "L'email no pot tenir més de 50 caràcters.",
-    'email_unique'       => "Aquest email ja està registrat.",
+    'email_unique'       => 'Aquest email ja està registrat.',
     'dni_min'            => 'El DNI ha de tenir com a mínim 2 caràcters.',
     'dni_max'            => 'El DNI no pot tenir més de 50 caràcters.',
     'dni_unique'         => 'Aquest DNI ja està registrat.',
