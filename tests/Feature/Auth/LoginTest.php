@@ -4,10 +4,8 @@ namespace Tests\Feature\Auth;
 
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
+use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
@@ -49,11 +47,11 @@ class LoginTest extends TestCase
     public function test_user_can_login_with_valid_credentials()
     {
         $user = factory(User::class)->create([
-            'password' => Hash::make( $password = '1234' ),
+            'password' => Hash::make($password = '1234'),
         ]);
 
         $response = $this->post('/login', [
-            'email' => $user->email,
+            'email'    => $user->email,
             'password' => $password,
         ]);
 
@@ -73,7 +71,7 @@ class LoginTest extends TestCase
         ]);
 
         $response = $this->post('/login', [
-            'email' => $user->email,
+            'email'    => $user->email,
             'password' => 'invalid-password',
         ]);
 
