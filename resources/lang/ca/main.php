@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'welcome'          => 'Benvingut',
     'login'            => 'Iniciar sessió',
     'logout'           => 'Tancar sessió',
     'language'         => 'Idioma',
