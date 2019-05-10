@@ -21,4 +21,4 @@ Route::group(['middleware' => 'auth'], function ()
 
 });
 
-Route::post('/', 'HomeController@index')->name('index');
+Route::post('/','HomeController@index')->name("index");
