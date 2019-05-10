@@ -3,19 +3,15 @@
 namespace Tests\Feature\Auth;
 
 use App\User;
-<<<<<<< HEAD
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-=======
-use Illuminate\Foundation\Testing\DatabaseTransactions;
->>>>>>> parent of 96157ce... Tests login and resetPaswword working
 use Tests\TestCase;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class RegisterTest extends TestCase
 {
-    use DatabaseTransactions;
+    use RefreshDatabase;
 
     /**
      * Any user can view the register form before authenticated.
@@ -26,7 +22,6 @@ class RegisterTest extends TestCase
     {
         $response = $this->get('/register');
 
-<<<<<<< HEAD
         $response->assertSuccessful();
         $response->assertViewIs('auth.register');
     }
@@ -38,19 +33,19 @@ class RegisterTest extends TestCase
      */
     public function test_register_a_valid_user()
     {
-        $user = factory(User::class)->make();
+      $user = factory(User::class)->make();
 
-        $response = $this->post('register', [
-          'name'                  => $user->name,
-          'email'                 => $user->email,
-          'dni'                   => '41588985H',
-          'perfil'                => 'bomber',
-          'password'              => 'secret',
-          'password_confirmation' => 'secret',
+      $response = $this->post('register', [
+          'name' => $user->name,
+          'email' => $user->email,
+          'dni' => '41588985H',
+          'perfil' => 'bomber',
+          'password' => 'secret',
+          'password_confirmation' => 'secret'
       ]);
 
-        $response->assertStatus(302);
-        //$this->assertAuthenticated();
+      $response->assertStatus(302);
+      //$this->assertAuthenticated();
     }
 
     /**
@@ -63,9 +58,9 @@ class RegisterTest extends TestCase
         $user = factory(User::class)->make();
 
         $response = $this->post('/register', [
-            'email'                 => $user->email,
-            'password'              => 'secret',
-            'password_confirmation' => 'incorrect',
+            'email' => $user->email,
+            'password' => 'secret',
+            'password_confirmation' => 'incorrect'
         ]);
 
         $response->assertSessionHasErrors();
@@ -73,8 +68,5 @@ class RegisterTest extends TestCase
         $response->assertRedirect('/');
         $this->assertCount(0, $users = User::all());
         $this->assertGuest();
-=======
-        $response->assertStatus(200);
->>>>>>> parent of 96157ce... Tests login and resetPaswword working
     }
 }

@@ -13,10 +13,12 @@
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function ()
+{
     Route::get('/', function () {
         return view('index');
     });
+
 });
 
-Route::post('/', 'HomeController@index')->name('index');
+Route::post('/','HomeController@index')->name("index");
