@@ -13,17 +13,14 @@
 
 Auth::routes();
 
-Route::group( ['middleware' => 'auth'], function() {
-
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'RecerquesController@index')->name('index');
 
     Route::get('/recerques', 'RecerquesController@index')->name('recerques');
-
 });
 
-Route::get('lang/{lang}', function($lang) {
-
+Route::get('lang/{lang}', function ($lang) {
     \Session::put('lang', $lang);
-    return \Redirect::back();
 
+    return \Redirect::back();
 })->middleware('web')->name('change_lang');
