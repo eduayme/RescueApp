@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'failed' => "Error en intentar iniciar sessió",
+    'failed' => 'Error en intentar iniciar sessió',
 ];

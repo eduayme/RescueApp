@@ -3,11 +3,9 @@
 namespace Tests\Feature\Auth;
 
 use App\User;
-use Tests\TestCase;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
@@ -33,19 +31,19 @@ class RegisterTest extends TestCase
      */
     public function test_register_a_valid_user()
     {
-      $user = factory(User::class)->make();
+        $user = factory(User::class)->make();
 
-      $response = $this->post('register', [
-          'name' => $user->name,
-          'email' => $user->email,
-          'dni' => '41588985H',
-          'perfil' => 'bomber',
-          'password' => 'secret',
-          'password_confirmation' => 'secret'
+        $response = $this->post('register', [
+          'name'                  => $user->name,
+          'email'                 => $user->email,
+          'dni'                   => '41588985H',
+          'perfil'                => 'bomber',
+          'password'              => 'secret',
+          'password_confirmation' => 'secret',
       ]);
 
-      $response->assertStatus(302);
-      //$this->assertAuthenticated();
+        $response->assertStatus(302);
+        //$this->assertAuthenticated();
     }
 
     /**
@@ -58,9 +56,9 @@ class RegisterTest extends TestCase
         $user = factory(User::class)->make();
 
         $response = $this->post('/register', [
-            'email' => $user->email,
-            'password' => 'secret',
-            'password_confirmation' => 'incorrect'
+            'email'                 => $user->email,
+            'password'              => 'secret',
+            'password_confirmation' => 'incorrect',
         ]);
 
         $response->assertSessionHasErrors();

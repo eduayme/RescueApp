@@ -3,12 +3,12 @@
 namespace Tests\Feature\Auth;
 
 use App\User;
-use Tests\TestCase;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Tests\TestCase;
 
 class ResetPasswordTest extends TestCase
 {
@@ -109,7 +109,7 @@ class ResetPasswordTest extends TestCase
 
         $response = $this->get(
                       $this->password_reset_get_route(
-                        $token = $this->get_valid_token($user) ) );
+                        $token = $this->get_valid_token($user)));
 
         $response->assertSuccessful();
         $response->assertViewIs('auth.passwords.reset');
@@ -127,7 +127,7 @@ class ResetPasswordTest extends TestCase
 
         $response = $this->actingAs($user)->get(
                       $this->password_reset_get_route(
-                        $token = $this->get_valid_token($user) ) );
+                        $token = $this->get_valid_token($user)));
 
         $response->assertRedirect($this->guest_middleware_route());
     }
@@ -227,9 +227,9 @@ class ResetPasswordTest extends TestCase
         ]);
 
         $response = $this->from($this->password_reset_get_route($token = $this->get_valid_token($user)))->post($this->password_reset_post_route(), [
-            'token' => $token,
-            'email' => '',
-            'password' => 'new-awesome-password',
+            'token'                 => $token,
+            'email'                 => '',
+            'password'              => 'new-awesome-password',
             'password_confirmation' => 'new-awesome-password',
         ]);
 
@@ -241,5 +241,4 @@ class ResetPasswordTest extends TestCase
         $this->assertTrue(Hash::check('old-password', $user->fresh()->password));
         $this->assertGuest();
     }
-
 }
