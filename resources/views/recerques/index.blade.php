@@ -95,7 +95,6 @@
         @endif
         <!-- If NO searches - CLOSE -->
 
-
       </div>
       <!-- Searches tab content - CLOSE -->
 
