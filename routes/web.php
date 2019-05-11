@@ -11,12 +11,13 @@
 |
 */
 
+Route::get('lang/{lang}', function($lang) {
+    \Session::put('lang', $lang);
+    return \Redirect::back();
+})->middleware('web')->name('change_lang');
+
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', function () {
-        return view('index');
-    });
-});
+Route::get('/recerques', 'RecerquesController@index')->name('index');
 
-Route::post('/', 'HomeController@index')->name('index');
+Route::get('/', 'RecerquesController@index')->name('home');

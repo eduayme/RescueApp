@@ -1,7 +1,12 @@
 <?php
 
 return [
+    'home'             => 'Inici',
     'welcome'          => 'Benvingut',
+    'search'           => 'Recerca',
+    'practice'         => 'Pràctica',
+    'searches'         => 'Recerques',
+    'practices'        => 'Pràctiques',
     'login'            => 'Iniciar sessió',
     'logout'           => 'Tancar sessió',
     'language'         => 'Idioma',

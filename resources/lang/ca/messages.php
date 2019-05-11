@@ -16,5 +16,7 @@ return [
     'updated'            => " s'ha actualitzat correctament.",
     'added'              => " s'ha afegit correctament.",
     'deleted'            => " s'ha eliminat correctament.",
-    'not_allowed'        => 'No tienes permisos para editar esto.',
+    'not_allowed'        => 'No tens permisos per editar.',
+    'no_searches'        => 'No hi ha registrada cap recerca.',
+    'no_practices'       => 'No hi ha registrada cap pràctica.',
 ];

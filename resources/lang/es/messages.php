@@ -17,4 +17,6 @@ return [
     'added'              => ' se ha añadido correctamente.',
     'deleted'            => ' se ha eliminado correctamente.',
     'not_allowed'        => 'No tienes permisos para editar esto.',
+    'no_searches'        => 'No hay registrada ninguna búsqueda.',
+    'no_practices'       => 'No hay registrada ninguna práctica.',
 ];
