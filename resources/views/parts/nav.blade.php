@@ -135,3 +135,12 @@
     </div>
 </nav>
 <!-- Navbar - CLOSE -->
+
+<!-- JS -->
+<script>
+
+  $(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
+</script>

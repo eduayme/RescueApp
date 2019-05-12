@@ -2,9 +2,6 @@
 
 @section('title', __('main.searches'))
 
-<script src="{{ asset('js/pooper.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
 @section('content')
 
   <!-- Alerts - OPEN -->
@@ -131,15 +128,5 @@
 
   </div>
   <!-- Content - CLOSE -->
-
-
-  <!-- JS -->
-  <script>
-
-    $(document).ready(function() {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-
-  </script>
 
 @endsection

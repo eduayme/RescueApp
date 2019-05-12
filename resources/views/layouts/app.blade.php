@@ -18,6 +18,8 @@
       <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
       <!-- Sorting date for DataTables -->
       <script src="{{ asset('js/sortingDate.js') }}"></script>
+      <!-- Bootstrap tooltip -->
+      <script src="{{ asset('js/pooper.min.js') }}"></script>
       <!-- Bootstrap 4.1 -->
       <script src="{{ asset('js/app.js') }}" type="text/js"></script>
       <!-- Dismiss messages in Bootstrap 4.1 -->
@@ -25,8 +27,6 @@
       <!-- Bootstrap daterangepicker -->
       <script src="{{ asset('js/moment.min.js') }}"></script>
       <script src="{{ asset('js/daterangepicker.min.js') }}"></script>
-      <!-- Bootstrap tooltips -->
-      <script src="{{ asset('js/pooper.min.js') }}"></script>
 
       <!-- Fonts -->
       <link rel="dns-prefetch" href="//fonts.gstatic.com">
