@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Recerca;
-use Carbon\Carbon;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -39,7 +38,8 @@ class RecerquesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,8 +67,6 @@ class RecerquesController extends Controller
         $recerca->save();
 
         return redirect()->route('index')
-        ->with( 'success', $recerca->num_actuacio . __('messages.added') );
+        ->with('success', $recerca->num_actuacio.__('messages.added'));
     }
-
-
 }
