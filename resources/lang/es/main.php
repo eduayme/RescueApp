@@ -9,6 +9,7 @@ return [
     'practices'        => 'Prácticas',
     'login'            => 'Iniciar sessión',
     'logout'           => 'Cerrar sessión',
+    'register'         => 'Registrarse',
     'language'         => 'Idioma',
     'catalan'          => 'Catalán',
     'spanish'          => 'Español',

@@ -25,6 +25,8 @@
       <!-- Bootstrap daterangepicker -->
       <script src="{{ asset('js/moment.min.js') }}"></script>
       <script src="{{ asset('js/daterangepicker.min.js') }}"></script>
+      <!-- Bootstrap tooltips -->
+      <script src="{{ asset('js/pooper.min.js') }}"></script>
 
       <!-- Fonts -->
       <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -36,8 +38,10 @@
       <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
       <!-- Bootstrap daterangepicker -->
       <link href="{{ asset('css/daterangepicker.css') }}" rel="stylesheet" type="text/css" />
+      <!-- Octicons -->
+      <link href="{{ asset('css/octicons.min.css') }}" rel="stylesheet" type="text/css" />
       <!-- Favicon -->
-      <!--<link rel="shortcut icon" href="{{{ asset('img/logoChessT_64x64.png') }}}"> -->
+      <link rel="shortcut icon" href="{{{ asset('img/logo.jpg') }}}" />
   </head>
 
   <body>

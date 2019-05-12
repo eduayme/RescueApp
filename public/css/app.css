@@ -3448,7 +3448,7 @@ input[type=submit].btn-block {
 .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 1;
-    align-items: center
+    align-items: center;
 }
 .navbar-toggler {
     padding: .25rem .75rem;
@@ -3502,20 +3502,20 @@ input[type=submit].btn-block {
     }
     .navbar-expand-sm .navbar-collapse {
         display: flex!important;
-        flex-basis: auto
+        flex-basis: auto;
     }
     .navbar-expand-sm .navbar-toggler {
         display: none
     }
 }
-@media (max-width:767.98px) {
+@media (max-width:1000px) {
     .navbar-expand-md>.container,
     .navbar-expand-md>.container-fluid {
         padding-right: 0;
         padding-left: 0
     }
 }
-@media (min-width:768px) {
+@media (min-width:1000px) {
     .navbar-expand-md {
         flex-flow: row nowrap;
         justify-content: flex-start
@@ -3536,7 +3536,7 @@ input[type=submit].btn-block {
     }
     .navbar-expand-md .navbar-collapse {
         display: flex!important;
-        flex-basis: auto
+        flex-basis: auto;
     }
     .navbar-expand-md .navbar-toggler {
         display: none

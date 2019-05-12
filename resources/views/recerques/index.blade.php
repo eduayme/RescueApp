@@ -2,6 +2,9 @@
 
 @section('title', __('main.searches'))
 
+<script src="{{ asset('js/pooper.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
 @section('content')
 
   <!-- Alerts - OPEN -->
@@ -15,16 +18,6 @@
       </div>
     </div>
   <!-- Success - CLOSE -->
-
-  <!-- Info - OPEN -->
-  @elseif( session()->get('primary') )
-    <div class="alert alert-primary" role="alert">
-      <div class="container text-center" style="margin-bottom: 0">
-        <a href="#" class="close" data-dismiss="primary" aria-label="close">&times;</a>
-          {{ session()->get('primary') }}
-      </div>
-    </div>
-  <!-- Info - CLOSE -->
 
   <!-- Error - OPEN -->
   @elseif( session()->get('error') )
@@ -77,7 +70,6 @@
 
         <!-- If NO searches - OPEN -->
         @if( count($recerques) == 0 )
-
               <div class="card text-center">
                 <div class="card-body">
 
@@ -85,15 +77,20 @@
                     {{ __('messages.no_searches') }}
                   </h1>
 
-                  <a href="{{ route('index') }}" class="btn btn-primary" role="button">
+                  <a href="{{ route('recerques.create') }}" class="btn btn-primary" role="button">
                     {{ __('actions.add') . ' ' . __('main.search') }}
                   </a>
 
                 </div>
               </div>
-
-        @endif
         <!-- If NO searches - CLOSE -->
+
+        <!-- If exists searches - OPEN -->
+        @else
+            <h1> Recerques </h1>
+            {{ count($recerques) }}
+        @endif
+        <!-- If exists searches - CLOSE -->
 
       </div>
       <!-- Searches tab content - CLOSE -->
@@ -104,7 +101,6 @@
 
         <!-- If NO practices - OPEN -->
         @if( count($practiques) == 0 )
-
               <div class="card text-center">
                 <div class="card-body">
 
@@ -112,15 +108,20 @@
                     {{ __('messages.no_practices') }}
                   </h1>
 
-                  <a href="{{ route('index') }}" class="btn btn-primary" role="button">
+                  <a href="{{ route('recerques.create') }}" class="btn btn-primary" role="button">
                     {{ __('actions.add') . ' ' . __('main.practice') }}
                   </a>
 
                 </div>
               </div>
-
-        @endif
         <!-- If NO practices - CLOSE -->
+
+        <!-- If exists practices - OPEN -->
+        @else
+            <h1> Practiques </h1>
+            {{ count($practiques) }}
+        @endif
+        <!-- If exists practices - CLOSE -->
 
       </div>
       <!-- Practices tab content - CLOSE -->
@@ -130,5 +131,15 @@
 
   </div>
   <!-- Content - CLOSE -->
+
+
+  <!-- JS -->
+  <script>
+
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+  </script>
 
 @endsection

@@ -16,6 +16,8 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'RecerquesController@index')->name('index');
 
+    Route::resource('recerques', 'RecerquesController');
+
     Route::get('/recerques', 'RecerquesController@index')->name('recerques');
 });
 
