@@ -13,13 +13,9 @@ class Recerca extends Model
         'es_practica',
         'num_actuacio',
         'estat',
-        'data_inici',
-        'data_finalitzacio',
         'data_creacio',
         'data_ultima_modificacio',
-        'data_tancament',
         'id_usuari_creacio',
         'id_usuari_ultima_modificacio',
-        'id_usuari_tancament',
     ];
 }
