@@ -4079,7 +4079,7 @@ input[type=submit].btn-block {
 }
 .badge-success {
     color: #fff;
-    background-color: #38c172
+    background-color: #006510
 }
 .badge-success[href]:focus,
 .badge-success[href]:hover {
@@ -4109,7 +4109,7 @@ input[type=submit].btn-block {
 }
 .badge-danger {
     color: #fff;
-    background-color: #e3342f
+    background-color: #980800
 }
 .badge-danger[href]:focus,
 .badge-danger[href]:hover {

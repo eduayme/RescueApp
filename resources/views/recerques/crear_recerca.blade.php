@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('layouts.app')
+
+@section('title', __('main.searches'))
+
+@section('content')
 
 <head>
   <meta charset="utf-8" />
@@ -756,3 +759,5 @@
 
 </body>
 </html>
+
+@endcontent
