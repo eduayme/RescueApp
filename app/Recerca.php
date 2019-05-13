@@ -58,6 +58,6 @@ class Recerca extends Model
         //persona contacte
         'nom_persona_contacte',
         'telefon_persona_contacte',
-        'afinitat_persona_contacte'
+        'afinitat_persona_contacte',
     ];
 }

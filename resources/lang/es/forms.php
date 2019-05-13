@@ -19,7 +19,7 @@ return [
     'phone'                     => 'Teléfono',
     'address'                   => 'Dirección',
     'incident'                  => 'Incidente',
-    'upa'                       => "Último Punto de Avistamiento",
+    'upa'                       => 'Último Punto de Avistamiento',
     'village_upa'               => 'Municipio UPA',
     'date_upa'                  => 'Hora y fecha de la UPA',
     'incident_zone'             => 'Zona del incidente',

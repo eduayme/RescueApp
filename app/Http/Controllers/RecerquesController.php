@@ -109,14 +109,14 @@ class RecerquesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $recerca = Recerca::find($id);
 
-        return view( 'recerques.view', compact('recerca') );
+        return view('recerques.view', compact('recerca'));
     }
-
 }
