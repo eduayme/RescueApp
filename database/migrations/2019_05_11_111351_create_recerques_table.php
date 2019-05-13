@@ -53,6 +53,15 @@ class CreateRecerquesTable extends Migration
             $table->integer('desapareguts')->nullable();
             $table->string('estat_desapareguts')->nullable();
 
+            //equipament i experiència
+            $table->tinyInteger('coneix_zona')->default(0);
+            $table->tinyInteger('experiencia_activitat')->default(0);
+            $table->tinyInteger('porta_menjar')->default(0);
+            $table->tinyInteger('porta_aigua')->default(0);
+            $table->tinyInteger('llum_o_senyalitzacio')->default(0);
+            $table->tinyInteger('roba_abric')->default(0);
+            $table->tinyInteger('porta_impermeable')->default(0);
+
             //persona contacte
             $table->string('nom_persona_contacte');
             $table->string('telefon_persona_contacte');

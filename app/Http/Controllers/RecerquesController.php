@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Recerca;
-use Carbon\Carbon;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -39,7 +38,8 @@ class RecerquesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -84,6 +84,16 @@ class RecerquesController extends Controller
             'desapareguts'                 => $request->get('desapareguts'),
             'estat_desapareguts'           => $request->get('estat_desapareguts'),
 
+            //equipament i experiència
+            'coneix_zona'                  => $request->get('coneix_zona'),
+            'experiencia_activitat'        => $request->get('experiencia_activitat'),
+            'porta_aigua'                  => $request->get('porta_aigua'),
+            'porta_menjar'                 => $request->get('porta_menjar'),
+            'medicament_necessari'         => $request->get('medicament_necessari'),
+            'porta_llum'                   => $request->get('llum_o_senyalitzacio'),
+            'roba_abric'                   => $request->get('roba_abric'),
+            'porta_impermeable'            => $request->get('porta_impermeable'),
+
             //persona contacte
             'nom_persona_contacte'         => $request->get('nom_persona_contacte'),
             'telefon_persona_contacte'     => $request->get('telefon_persona_contacte'),
@@ -93,7 +103,7 @@ class RecerquesController extends Controller
         $recerca->save();
 
         return redirect()->route('index')
-        ->with( 'success', $recerca->num_actuacio . __('messages.added') );
+        ->with('success', $recerca->num_actuacio.__('messages.added'));
     }
 
     /**

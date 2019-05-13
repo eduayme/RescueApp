@@ -45,6 +45,16 @@ class Recerca extends Model
         'desapareguts',
         'estat_desapareguts',
 
+        //equipament i experiència
+        'coneix_zona',
+        'experiencia_activitat',
+        'porta_aigua',
+        'porta_menjar',
+        'medicament_necessari',
+        'porta_llum',
+        'roba_abric',
+        'porta_impermeable',
+
         //persona contacte
         'nom_persona_contacte',
         'telefon_persona_contacte',

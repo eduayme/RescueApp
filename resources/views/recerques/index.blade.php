@@ -136,8 +136,7 @@
                         </td>
 
                         <td>
-                          <!-- {{ date('H:i | d-M-Y', strtotime($recerca->data_tancament)) }} -->
-                          Data tancament
+                          {{ date('H:i | d-M-Y', strtotime($recerca->data_tancament)) }}
                         </td>
 
                         <td>
@@ -146,7 +145,6 @@
                         </td>
 
                         <td>
-                          <!--
                           @if( $recerca->regio == '01' )
                             <p> Centre </p>
                           @elseif( $recerca->regio == '02' )
@@ -164,8 +162,6 @@
                           @else
                             <p> Error! </p>
                           @endif
-                          -->
-                          Regió
                         </td>
 
                     </tr>
