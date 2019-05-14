@@ -7,11 +7,11 @@
   <!-- Alerts - OPEN -->
 
   <!-- Success - OPEN -->
-  @if( session('status') )
+  @if( session('success') )
     <div class="alert alert-success" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session('status') }}
+          {{ session('success') }}
       </div>
     </div>
   <!-- Success - CLOSE -->

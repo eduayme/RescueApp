@@ -7,11 +7,11 @@
   <!-- Alerts - OPEN -->
 
   <!-- Success - OPEN -->
-  @if( session('status') )
+  @if( session('success') )
     <div class="alert alert-success" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session('status') }}
+          {{ session('success') }}
       </div>
     </div>
   <!-- Success - CLOSE -->
@@ -78,14 +78,24 @@
           <!-- Search ID - OPEN  -->
           <div class="form-group col-md-3">
             <label for="num_actuacio"> {{ __('forms.num_actuacio') }} </label>
-            <input type="text" class="form-control" name="num_actuacio"/>
+            <input type="text" class="form-control {{ $errors->has('num_actuacio') ? ' is-invalid' : '' }}" name="num_actuacio" required/>
+
+            <!-- Show errors input - OPEN -->
+            @if( $errors->has('num_actuacio') )
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('num_actuacio') }}</strong>
+              </span>
+            @endif
+            <!-- Show errors input - CLOSE -->
+
           </div>
+
           <!-- Search ID - CLOSE  -->
 
           <!-- Search region - OPEN  -->
           <div class="form-group col-md-3">
-            <label for="region"> {{ __('forms.region') }} </label>
-            <select id="region" class="form-control" name="region">
+            <label for="regio"> {{ __('forms.region') }} </label>
+            <select id="regio" class="form-control" name="regio" required>
                 <option value=""> {{ __('forms.chose_option') }} </option>
                 <option value="01"> 01 - Centre </option>
                 <option value="02"> 02 - Girona </option>

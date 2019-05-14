@@ -45,7 +45,12 @@ class RecerquesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'num_actuacio'                 => 'required|string|min:3|max:50',
+            'num_actuacio' => 'required|string|min:3|max:50|unique:recerques',
+        ], [
+            'num_actuacio.required' => __('messages.required'),
+            'num_actuacio.min'      => __('messages.min'),
+            'num_actuacio.max'      => __('messages.max'),
+            'num_actuacio.unique'   => __('messages.unique'),
         ]);
 
         $recerca = new Recerca([
@@ -102,7 +107,7 @@ class RecerquesController extends Controller
 
         $recerca->save();
 
-        return redirect()->route('index')
+        return redirect( '/' )
         ->with('success', $recerca->num_actuacio.__('messages.added'));
     }
 

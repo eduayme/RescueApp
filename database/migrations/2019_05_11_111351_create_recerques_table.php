@@ -54,18 +54,19 @@ class CreateRecerquesTable extends Migration
             $table->string('estat_desapareguts')->nullable();
 
             //equipament i experiència
-            $table->tinyInteger('coneix_zona')->default(0);
-            $table->tinyInteger('experiencia_activitat')->default(0);
-            $table->tinyInteger('porta_menjar')->default(0);
-            $table->tinyInteger('porta_aigua')->default(0);
-            $table->tinyInteger('llum_o_senyalitzacio')->default(0);
-            $table->tinyInteger('roba_abric')->default(0);
-            $table->tinyInteger('porta_impermeable')->default(0);
+            $table->tinyInteger('coneix_zona')->default(0)->nullable();
+            $table->tinyInteger('experiencia_activitat')->default(0)->nullable();
+            $table->tinyInteger('porta_aigua')->default(0)->nullable();
+            $table->tinyInteger('porta_menjar')->default(0)->nullable();
+            $table->tinyInteger('medicament_necessari')->default(0)->nullable();
+            $table->tinyInteger('porta_llum')->default(0)->nullable();
+            $table->tinyInteger('roba_abric')->default(0)->nullable();
+            $table->tinyInteger('porta_impermeable')->default(0)->nullable();
 
             //persona contacte
-            $table->string('nom_persona_contacte');
-            $table->string('telefon_persona_contacte');
-            $table->string('afinitat_persona_contacte');
+            $table->string('nom_persona_contacte')->nullable();
+            $table->string('telefon_persona_contacte')->nullable();
+            $table->string('afinitat_persona_contacte')->nullable();
 
             $table->timestamps();
         });

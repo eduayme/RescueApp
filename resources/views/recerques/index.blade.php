@@ -7,11 +7,11 @@
   <!-- Alerts - OPEN -->
 
   <!-- Success - OPEN -->
-  @if( session('status') )
+  @if( session('success') )
     <div class="alert alert-success" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session('status') }}
+          {{ session('success') }}
       </div>
     </div>
   <!-- Success - CLOSE -->
@@ -132,33 +132,54 @@
                         </td>
 
                         <td>
-                          {{ date('H:i | d-M-Y', strtotime($recerca->data_creacio)) }}
+                          @if( $recerca->data_creacio == NULL )
+                            --
+                          @else
+                            {{ date('H:i | d-M-Y', strtotime($recerca->data_creacio)) }}
+                          @endif
                         </td>
 
                         <td>
-                          {{ date('H:i | d-M-Y', strtotime($recerca->data_tancament)) }}
+                          @if( $recerca->data_tancament == NULL )
+                            --
+                          @else
+                            {{ date('H:i | d-M-Y', strtotime($recerca->data_tancament)) }}
+                          @endif
                         </td>
 
                         <td>
-                          <!-- {{ $recerca->municipi_upa }} -->
-                          Municipi
+                          {{ $recerca->municipi_upa }}
                         </td>
 
                         <td>
                           @if( $recerca->regio == '01' )
-                            <p> Centre </p>
+                            <p data-toggle="tooltip" data-placement="top" title="Centre">
+                              01
+                            </p>
                           @elseif( $recerca->regio == '02' )
-                            <p> Girona </p>
+                            <p data-toggle="tooltip" data-placement="top" title="Girona">
+                              02
+                            </p>
                           @elseif( $recerca->regio == '03' )
-                            <p> Lleida </p>
+                            <p data-toggle="tooltip" data-placement="top" title="Lleida">
+                              03
+                            </p>
                           @elseif( $recerca->regio == '04' )
-                            <p> Metropolitana Nord </p>
+                            <p data-toggle="tooltip" data-placement="top" title="Metropolitana Nord">
+                              04
+                            </p>
                           @elseif( $recerca->regio == '05' )
-                            <p> Metropolitana Sud </p>
+                            <p data-toggle="tooltip" data-placement="top" title="Metropolitana Sud">
+                              05
+                            </p>
                           @elseif( $recerca->regio == '06' )
-                            <p> Tarragona </p>
+                            <p data-toggle="tooltip" data-placement="top" title="Tarragona">
+                              06
+                            </p>
                           @elseif( $recerca->regio == '07' )
-                            <p> Terres Ebre </p>
+                            <p data-toggle="tooltip" data-placement="top" title="Terres Ebre">
+                              07
+                            </p>
                           @else
                             <p> Error! </p>
                           @endif
