@@ -107,7 +107,7 @@ class RecerquesController extends Controller
 
         $recerca->save();
 
-        return redirect( '/' )
+        return redirect('/')
         ->with('success', $recerca->num_actuacio.__('messages.added'));
     }
 

@@ -4,7 +4,7 @@ return [
     'required'     => 'Aquest camp és obligatori.',
     'min'          => 'Aquest camp ha de tenir com a mínim 2 caràcters.',
     'max'          => 'Aquest camp no pot tenir més de 50 caràcters.',
-    'email'        => "Aquest camp ha de tenir format de correu electrònic",
+    'email'        => 'Aquest camp ha de tenir format de correu electrònic',
     'confirmed'    => 'Aquest camp no coincideix amb la confirmació.',
     'unique'       => 'Aquest camp ha de ser únic a la taula de dades.',
     'updated'      => " s'ha actualitzat correctament.",
