@@ -124,7 +124,7 @@
                           @elseif( $recerca->estat == 'Tancada' )
                               <h5>
                                 <span class="badge badge-success">
-                                  {{ $recerca->estat }}
+                                  {{ "Tancada" }}
                                 </span>
                               </h5>
 
@@ -153,31 +153,31 @@
 
                         <td>
                           @if( $recerca->regio == '01' )
-                            <p data-toggle="tooltip" data-placement="top" title="Centre">
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Centre">
                               01
                             </p>
                           @elseif( $recerca->regio == '02' )
-                            <p data-toggle="tooltip" data-placement="top" title="Girona">
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Girona">
                               02
                             </p>
                           @elseif( $recerca->regio == '03' )
-                            <p data-toggle="tooltip" data-placement="top" title="Lleida">
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Lleida">
                               03
                             </p>
                           @elseif( $recerca->regio == '04' )
-                            <p data-toggle="tooltip" data-placement="top" title="Metropolitana Nord">
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Nord">
                               04
                             </p>
                           @elseif( $recerca->regio == '05' )
-                            <p data-toggle="tooltip" data-placement="top" title="Metropolitana Sud">
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Sud">
                               05
                             </p>
                           @elseif( $recerca->regio == '06' )
-                            <p data-toggle="tooltip" data-placement="top" title="Tarragona">
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Tarragona">
                               06
                             </p>
                           @elseif( $recerca->regio == '07' )
-                            <p data-toggle="tooltip" data-placement="top" title="Terres Ebre">
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Terres Ebre">
                               07
                             </p>
                           @else
@@ -225,13 +225,17 @@
 
           <!-- Practices table - OPEN -->
           <table class="table dt-responsive nowrap table-hover text-center"
-          id="practiques" style="width: 100%">
+          id="practices" style="width: 100%">
 
             <!-- Table header - OPEN -->
             <thead>
                 <tr>
-                    <th scope="col"> {{ __('forms.type_service') }} </th>
                     <th scope="col"> {{ __('forms.num_actuacio') }} </th>
+                    <th scope="col"> {{ __('forms.estat') }} </th>
+                    <th scope="col"> {{ __('forms.begin') }} </th>
+                    <th scope="col"> {{ __('forms.end') }} </th>
+                    <th scope="col"> {{ __('forms.village') }} </th>
+                    <th scope="col"> {{ __('forms.region') }} </th>
                 </tr>
             </thead>
             <!-- Table header - CLOSE -->
@@ -242,13 +246,75 @@
                     <tr>
 
                         <td>
-                            <a href="{{ url('recerques/'.$recerca->id) }}">
-                               {{ $practica->es_practica }}
+                            <a href="{{ url('recerques/'.$practica->id) }}">
+                               {{ $practica->num_actuacio }}
                             </a>
                         </td>
 
                         <td>
-                          {{ $practica->num_actuacio }}
+                            <h5>
+                            @if( $practica->estat == 'Oberta' )
+                                <span class="badge badge-danger">
+                            @elseif( $practica->estat == 'Tancada' )
+                                <span class="badge badge-success">
+                            @endif
+                                    {{ $practica->estat }}
+                                </span>
+                            </h5>
+                        </td>
+
+                        <td>
+                          @if( $practica->data_creacio == NULL )
+                            --
+                          @else
+                            {{ date('H:i | d-M-Y', strtotime($practica->data_creacio)) }}
+                          @endif
+                        </td>
+
+                        <td>
+                          @if( $practica->data_tancament == NULL )
+                            --
+                          @else
+                            {{ date('H:i | d-M-Y', strtotime($practica->data_tancament)) }}
+                          @endif
+                        </td>
+
+                        <td>
+                          {{ $practica->municipi_upa }}
+                        </td>
+
+                        <td>
+                          @if( $practica->regio == '01' )
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Centre">
+                              01
+                            </p>
+                          @elseif( $practica->regio == '02' )
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Girona">
+                              02
+                            </p>
+                          @elseif( $practica->regio == '03' )
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Lleida">
+                              03
+                            </p>
+                          @elseif( $practica->regio == '04' )
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Nord">
+                              04
+                            </p>
+                          @elseif( $practica->regio == '05' )
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Sud">
+                              05
+                            </p>
+                          @elseif( $practica->regio == '06' )
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Tarragona">
+                              06
+                            </p>
+                          @elseif( $practica->regio == '07' )
+                            <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Terres Ebre">
+                              07
+                            </p>
+                          @else
+                            <p> Error! </p>
+                          @endif
                         </td>
 
                     </tr>
@@ -257,7 +323,7 @@
             <!-- Table content - CLOSE -->
 
           </table>
-          <!-- Searches table - CLOSE -->
+          <!-- Practices table - CLOSE -->
 
         @endif
         <!-- If exists practices - CLOSE -->
@@ -281,7 +347,12 @@
 
   $(document).ready(function() {
 
+    // settings tables
     $.extend( $.fn.dataTable.defaults, {
+      "order": [ [ 1, "asc" ], [ 2, "desc" ] ],
+      "scrollX": true,
+      "pagingType": "full_numbers",
+      "responsive": true,
       "language": {
         "decimal":        "",
         "emptyTable":     "{{ __('tables.emptyTable') }}",
@@ -308,8 +379,16 @@
       }
     });
 
+    // initialize tables
     $('#searches').DataTable();
-    $('#practiques').DataTable();
+    $('#practices').DataTable();
+
+    // resize tables after tab
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $($.fn.dataTable.tables(true)).DataTable()
+           .columns.adjust()
+           .responsive.recalc();
+    });
 
   });
 

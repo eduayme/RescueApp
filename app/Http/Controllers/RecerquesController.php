@@ -124,4 +124,19 @@ class RecerquesController extends Controller
 
         return view('recerques.view', compact('recerca'));
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $recerca = Recerca::find($id);
+        $recerca->delete();
+
+        return redirect( '/' )
+        ->with('success', $recerca->num_actuacio.__('messages.deleted'));
+    }
 }

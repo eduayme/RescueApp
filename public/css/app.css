@@ -489,7 +489,7 @@ pre code {
     overflow-y: scroll
 }
 .margin-top {
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 .margin-left {
   margin-left: 30px;

@@ -19,17 +19,34 @@
                 {{ __('forms.service')}} : <b> {{ $recerca->num_actuacio }} </b>
               </span>
 
+              @if( $recerca->municipi_upa )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.village')}} : <b> municipi </b>
+                {{ __('forms.village')}} : <b> {{ $recerca->municipi_upa }} </b>
               </span>
+              @endif
 
               <span class="align-middle margin-left margin-right">
                 {{ __('forms.begin_day')}} : <b> {{ date('d-M-Y', strtotime($recerca->data_creacio)) }} </b>
               </span>
 
+              @if( $recerca->data_tancament == NULL )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.day')}} : <b> 3 </b>
+                {{ __('forms.day') }} :
+                <b>
+                  <?php
+                    $carbon1 = new \Carbon\Carbon( $recerca->data_creacio );
+                    $carbon2 = new \Carbon\Carbon( now() );
+                    $daysDiff=$carbon1->diffInDays($carbon2);
+
+                    print($daysDiff);
+                  ?>
+                </b>
               </span>
+              @else
+              <span class="align-middle margin-left margin-right">
+                {{ __('forms.end_day')}} : <b> {{ date('d-M-Y', strtotime($recerca->data_tancament)) }} </b>
+              </span>
+              @endif
 
             </ul>
             <!-- Left Side Of Navbar - CLOSE -->
