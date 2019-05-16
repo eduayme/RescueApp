@@ -138,37 +138,38 @@ class RecerquesController extends Controller
         $recerca = Recerca::find($id);
         $recerca->delete();
 
-        return redirect( '/' )
-        ->with('success', $recerca->num_actuacio . __('messages.deleted'));
+        return redirect('/')
+        ->with('success', $recerca->num_actuacio.__('messages.deleted'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $recerca     = Recerca::find($id);
+        $recerca = Recerca::find($id);
 
         $currentUser = \Auth::user()->id;
-        $user        = $recerca->id_usuari_creacio;
+        $user = $recerca->id_usuari_creacio;
 
-        if( $user == $currentUser ) {
-            return view( 'tournaments.recerca', compact('recerca') );
-        }
-        else {
-          return redirect( '/' )
-          ->with('error', __('message.not_allowed') . $recerca->num_actuacio);
+        if ($user == $currentUser) {
+            return view('tournaments.recerca', compact('recerca'));
+        } else {
+            return redirect('/')
+          ->with('error', __('message.not_allowed').$recerca->num_actuacio);
         }
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -182,24 +183,24 @@ class RecerquesController extends Controller
             'city'     => 'required',
             'address'  => 'required',
             'website'  => 'required|url',
-            'user_id'  => 'required'
+            'user_id'  => 'required',
         ]);
 
         $tournament = Tournament::find($id);
-        $tournament->name      = $request->get('name');
-        $tournament->category  = $request->get('category');
-        $tournament->begin     = $request->get('begin');
-        $tournament->end       = $request->get('end');
-        $tournament->country   = $request->get('country');
-        $tournament->city      = $request->get('city');
-        $tournament->address   = $request->get('address');
-        $tournament->latitude  = $request->get('latitude');
+        $tournament->name = $request->get('name');
+        $tournament->category = $request->get('category');
+        $tournament->begin = $request->get('begin');
+        $tournament->end = $request->get('end');
+        $tournament->country = $request->get('country');
+        $tournament->city = $request->get('city');
+        $tournament->address = $request->get('address');
+        $tournament->latitude = $request->get('latitude');
         $tournament->longitude = $request->get('longitude');
-        $tournament->website   = $request->get('website');
-        $tournament->user_id   = $request->get('user_id');
+        $tournament->website = $request->get('website');
+        $tournament->user_id = $request->get('user_id');
         $tournament->save();
 
-        return redirect( '/mytournaments' )
-        ->with( 'success', $tournament->name . __('message.updated') );
+        return redirect('/mytournaments')
+        ->with('success', $tournament->name.__('message.updated'));
     }
 }
