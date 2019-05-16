@@ -30,26 +30,6 @@
               <!-- Add search button - CLOSE -->
               @endauth
 
-              <!-- Languages - OPEN -->
-              <li class="nav-item dropdown margin-left margin-right">
-
-                <div class="dropdown">
-
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <span class="octicon octicon-globe"></span>
-                        {{ __('main.language') }}
-                    </a>
-
-                    <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('change_lang', ['lang' => 'ca']) }}"> {{ __('main.catalan') }} </a>
-                        <a class="dropdown-item" href="{{ route('change_lang', ['lang' => 'es']) }}"> {{ __('main.spanish') }} </a>
-                    </div>
-
-                </div>
-
-              </li>
-              <!-- Languages - CLOSE -->
-
             </ul>
             <!-- Left Side Of Navbar - CLOSE -->
 

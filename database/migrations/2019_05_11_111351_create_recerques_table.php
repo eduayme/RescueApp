@@ -20,9 +20,10 @@ class CreateRecerquesTable extends Migration
             $table->increments('id');
             $table->tinyInteger('es_practica')->default(0);
             $table->string('num_actuacio')->unique();
-            $table->string('regio');
+            $table->string('regio')->nullable();
             $table->string('estat');
 
+            $table->dateTime('data_inici')->nullable();
             $table->dateTime('data_creacio');
             $table->dateTime('data_ultima_modificacio');
             $table->dateTime('data_tancament')->nullable();

@@ -59,6 +59,7 @@ class RecerquesController extends Controller
             'regio'                        => $request->get('regio'),
             'estat'                        => $request->get('estat'),
 
+            'data_inici'                   => $request->get('data_inici'),
             'data_creacio'                 => $request->get('data_creacio'),
             'data_ultima_modificacio'      => $request->get('data_ultima_modificacio'),
             'data_tancament'               => $request->get('data_tancament'),
@@ -107,7 +108,7 @@ class RecerquesController extends Controller
 
         $recerca->save();
 
-        return redirect('/')
+        return redirect('recerques/'.$id)
         ->with('success', $recerca->num_actuacio.__('messages.added'));
     }
 
@@ -137,6 +138,67 @@ class RecerquesController extends Controller
         $recerca->delete();
 
         return redirect( '/' )
-        ->with('success', $recerca->num_actuacio.__('messages.deleted'));
+        ->with('success', $recerca->num_actuacio . __('messages.deleted'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $recerca     = Recerca::find($id);
+
+        $currentUser = \Auth::user()->id;
+        $user        = $recerca->id_usuari_creacio;
+
+        if( $user == $currentUser ) {
+            return view( 'tournaments.recerca', compact('recerca') );
+        }
+        else {
+          return redirect( '/' )
+          ->with('error', __('message.not_allowed') . $recerca->num_actuacio);
+        }
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name'     => 'required',
+            'category' => 'required',
+            'begin'    => 'required|date',
+            'end'      => 'required|date',
+            'country'  => 'required',
+            'city'     => 'required',
+            'address'  => 'required',
+            'website'  => 'required|url',
+            'user_id'  => 'required'
+        ]);
+
+        $tournament = Tournament::find($id);
+        $tournament->name      = $request->get('name');
+        $tournament->category  = $request->get('category');
+        $tournament->begin     = $request->get('begin');
+        $tournament->end       = $request->get('end');
+        $tournament->country   = $request->get('country');
+        $tournament->city      = $request->get('city');
+        $tournament->address   = $request->get('address');
+        $tournament->latitude  = $request->get('latitude');
+        $tournament->longitude = $request->get('longitude');
+        $tournament->website   = $request->get('website');
+        $tournament->user_id   = $request->get('user_id');
+        $tournament->save();
+
+        return redirect( '/mytournaments' )
+        ->with( 'success', $tournament->name . __('message.updated') );
     }
 }

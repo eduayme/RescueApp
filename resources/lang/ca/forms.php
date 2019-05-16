@@ -4,7 +4,7 @@ return [
     'type_service'              => 'Tipus de servei',
     'num_actuacio'              => "Número d'actuació",
     'estat'                     => 'Estat',
-    'begin'                     => 'Inici',
+    'begin_date'                => "Data d'inici",
     'end'                       => 'Finalització',
     'service'                   => 'Servei',
     'village'                   => 'Municipi',

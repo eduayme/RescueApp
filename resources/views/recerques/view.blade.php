@@ -50,22 +50,69 @@
       <!-- Align right - OPEN -->
       <div class="col text-right">
 
-        <!-- Edit search - OPEN -->
+        <!-- Edit search button - OPEN -->
         <a href="{{ URL::to('recerques/' . $recerca->id . '/edit') }}"
         class="btn btn-outline-secondary margin-right" role="button"
         data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}">
           <span class="octicon octicon-pencil"></span>
         </a>
-        <!-- Edit search - CLOSE -->
+        <!-- Edit search button - CLOSE -->
 
-        <!-- Delete search - OPEN -->
-        <form action="{{ route('recerques.destroy', $recerca->id) }}" method="post" style="display: inline;">
-        @csrf
-        @method('DELETE')
-          <button class="btn btn-outline-danger margin-left" type="submit"
+        <!-- Delete search button- OPEN -->
+        <span data-toggle="modal" href="#myModal">
+          <button class="btn btn-outline-danger margin-left" href="#myModal"
           data-toggle="tooltip" data-placement="top" title="{{ __('actions.delete') }}">
             <span class="octicon octicon-trashcan"></span>
           </button>
+        </span>
+        <!-- Delete search button- CLOSE -->
+
+        <!-- Delete search modal - OPEN -->
+        <form action="{{ route('recerques.destroy', $recerca->id) }}" method="post" style="display: inline;">
+        @csrf
+        @method('DELETE')
+
+          <!-- Modal - OPEN -->
+          <div id="myModal" class="modal fade">
+          	<div class="modal-dialog modal-confirm">
+
+              <!-- Modal content - OPEN -->
+          		<div class="modal-content">
+
+                <!-- Modal header - OPEN -->
+          			<div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                  </button>
+          			</div>
+                <!-- Modal header - CLOSE -->
+
+                <!-- Modal body - OPEN -->
+          			<div class="modal-body text-center">
+          				<h4>
+                    {{ __('messages.are_you_sure') }}
+                  </h4>
+          			</div>
+                <!-- Modal body - CLOSE -->
+
+                <!-- Modal footer - OPEN -->
+          			<div class="modal-footer">
+          				<a class="btn btn-light" data-dismiss="modal">
+                    {{ __('actions.cancel') }}
+                  </a>
+          				<button type="submit" class="btn btn-danger">
+                    {{ __('actions.delete') }}
+                  </button>
+          			</div>
+                <!-- Modal footer - CLOSE -->
+
+          		</div>
+              <!-- Modal content - CLOSE -->
+
+          	</div>
+          </div>
+          <!-- Modal - CLOSE -->
+
         </form>
         <!-- Delete search - CLOSE -->
 

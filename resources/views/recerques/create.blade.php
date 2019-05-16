@@ -72,11 +72,18 @@
           <!-- Practice type activity - CLOSE -->
 
           <!-- Empty space - OPEN -->
-          <div class="form-group col-md-2"> </div>
+          <div class="form-group col-md-1"> </div>
           <!-- Empty space - CLOSE -->
 
-          <!-- Search ID - OPEN  -->
+          <!-- Begin datetime - OPEN -->
           <div class="form-group col-md-3">
+            <label for="data_inici"> {{ __('forms.begin_date') }} </label>
+            <input type="text" class="form-control" name="data_inici" value=""/>
+          </div>
+          <!-- Begin datetime - CLOSE -->
+
+          <!-- Search ID - OPEN  -->
+          <div class="form-group col-md-2">
             <label for="num_actuacio"> {{ __('forms.num_actuacio') }} </label>
             <input type="text" class="form-control {{ $errors->has('num_actuacio') ? ' is-invalid' : '' }}" name="num_actuacio" required/>
 
@@ -93,9 +100,9 @@
           <!-- Search ID - CLOSE  -->
 
           <!-- Search region - OPEN  -->
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-2">
             <label for="regio"> {{ __('forms.region') }} </label>
-            <select id="regio" class="form-control" name="regio" required>
+            <select id="regio" class="form-control" name="regio">
                 <option value=""> {{ __('forms.chose_option') }} </option>
                 <option value="01"> 01 - Centre </option>
                 <option value="02"> 02 - Girona </option>
@@ -448,14 +455,14 @@
     var today = new Date();
 
     // begin date input
-    $('input[name="date_upa"]').daterangepicker({
+    $('input[name="date_upa"],input[name="data_inici"]').daterangepicker({
       singleDatePicker: true,
       timePicker: true,
       timePicker24Hour: true,
       startDate: moment().startOf('hour'),
       autoUpdateInput: true,
       autoApply: true,
-      drops: 'up',
+      drops: 'down',
       currentDate: today,
       locale: {
         format: 'HH:mm | YYYY-MM-DD',
@@ -488,6 +495,7 @@
       }
     });
     $('input[name="date_upa"').val( '' );
+    $('input[name="data_inici"').val( '' );
 
   });
 

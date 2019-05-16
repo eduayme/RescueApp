@@ -38,7 +38,7 @@
                     $carbon2 = new \Carbon\Carbon( now() );
                     $daysDiff=$carbon1->diffInDays($carbon2);
 
-                    print($daysDiff);
+                    print($daysDiff+1);
                   ?>
                 </b>
               </span>

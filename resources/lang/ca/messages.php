@@ -13,4 +13,5 @@ return [
     'not_allowed'  => 'No tens permisos per editar.',
     'no_searches'  => 'No hi ha registrada cap recerca.',
     'no_practices' => 'No hi ha registrada cap pràctica.',
+    'are_you_sure' => 'Està segur? Aquesta acció no es podrà desfer.'
 ];

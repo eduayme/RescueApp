@@ -15,6 +15,7 @@ class Recerca extends Model
         'regio',
         'estat',
 
+        'data_inici',
         'data_creacio',
         'data_ultima_modificacio',
         'data_tancament',
