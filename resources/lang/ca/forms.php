@@ -5,7 +5,7 @@ return [
     'num_actuacio'                  => "Número d'actuació",
     'estat'                         => 'Estat',
     'begin_date'                    => "Data d'inici",
-    'begin'                         => "Inici",
+    'begin'                         => 'Inici',
     'end'                           => 'Finalització',
     'service'                       => 'Servei',
     'village'                       => 'Municipi',
@@ -51,5 +51,5 @@ return [
     'contact_person'                => 'Persona de contacte',
     'affinity'                      => 'Afinitat',
     'creator'                       => 'Creació',
-    'last_modification'             => "Última modificació",
+    'last_modification'             => 'Última modificació',
 ];

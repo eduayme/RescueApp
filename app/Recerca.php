@@ -61,11 +61,11 @@ class Recerca extends Model
 
     public function user_creator()
     {
-      return $this->belongsTo('App\User','id_usuari_creacio','id');
+        return $this->belongsTo('App\User', 'id_usuari_creacio', 'id');
     }
 
     public function user_last_modification()
     {
-      return $this->belongsTo('App\User','id_usuari_ultima_modificacio','id');
+        return $this->belongsTo('App\User', 'id_usuari_ultima_modificacio', 'id');
     }
 }
