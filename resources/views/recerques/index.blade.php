@@ -114,21 +114,15 @@
                         </td>
 
                         <td>
+                          <h5>
                           @if( $recerca->estat == 'Oberta' )
-                              <h5>
-                                <span class="badge badge-danger">
-                                  {{ $recerca->estat }}
-                                </span>
-                              </h5>
-
+                              <span class="badge badge-danger">
                           @elseif( $recerca->estat == 'Tancada' )
-                              <h5>
-                                <span class="badge badge-success">
-                                  {{ "Tancada" }}
-                                </span>
-                              </h5>
-
+                              <span class="badge badge-success">
                           @endif
+                                  {{ $recerca->estat }}
+                              </span>
+                          </h5>
                         </td>
 
                         <td>
@@ -148,7 +142,11 @@
                         </td>
 
                         <td>
-                          {{ $recerca->municipi_upa }}
+                          @if( $recerca->municipi_upa == NULL )
+                            --
+                          @else
+                            {{ $recerca->municipi_upa }}
+                          @endif
                         </td>
 
                         <td>
@@ -181,7 +179,9 @@
                               07
                             </p>
                           @else
-                            <p> Error! </p>
+                            <p style="display:inline">
+                              --
+                            </p>
                           @endif
                         </td>
 
@@ -280,7 +280,11 @@
                         </td>
 
                         <td>
-                          {{ $practica->municipi_upa }}
+                          @if( $practica->municipi_upa == NULL )
+                            --
+                          @else
+                            {{ $practica->municipi_upa }}
+                          @endif
                         </td>
 
                         <td>
@@ -313,7 +317,9 @@
                               07
                             </p>
                           @else
-                            <p> Error! </p>
+                            <p style="display:inline">
+                              --
+                            </p>
                           @endif
                         </td>
 

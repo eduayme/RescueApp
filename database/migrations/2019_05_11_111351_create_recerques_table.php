@@ -46,12 +46,9 @@ class CreateRecerquesTable extends Migration
             $table->string('zona_incident')->nullable();
             $table->string('possible_ruta')->nullable();
             $table->string('descripcio_incident')->nullable();
-            $table->string('tall_mapa')->nullable(); // 999-9
-            $table->string('soc_quadrant')->nullable(); // 99AA
-            $table->integer('seccio_mapa')->nullable(); // 99
 
             //desapareguts
-            $table->integer('desapareguts')->nullable();
+            $table->integer('numero_desapareguts')->nullable();
             $table->string('estat_desapareguts')->nullable();
 
             //equipament i experiència
@@ -62,7 +59,7 @@ class CreateRecerquesTable extends Migration
             $table->tinyInteger('medicament_necessari')->default(0)->nullable();
             $table->tinyInteger('porta_llum')->default(0)->nullable();
             $table->tinyInteger('roba_abric')->default(0)->nullable();
-            $table->tinyInteger('porta_impermeable')->default(0)->nullable();
+            $table->tinyInteger('roba_impermeable')->default(0)->nullable();
 
             //persona contacte
             $table->string('nom_persona_contacte')->nullable();

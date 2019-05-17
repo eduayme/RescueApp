@@ -82,12 +82,9 @@ class RecerquesController extends Controller
             'zona_incident'                => $request->get('zona_incident'),
             'possible_ruta'                => $request->get('possible_ruta'),
             'descripcio_incident'          => $request->get('descripcio_incident'),
-            'tall_mapa'                    => $request->get('tall_mapa'),
-            'soc_quadrant'                 => $request->get('soc_quadrant'),
-            'seccio_mapa'                  => $request->get('seccio_mapa'),
 
             //desapareguts
-            'desapareguts'                 => $request->get('desapareguts'),
+            'numero_desapareguts'          => $request->get('numero_desapareguts'),
             'estat_desapareguts'           => $request->get('estat_desapareguts'),
 
             //equipament i experiència
@@ -98,7 +95,7 @@ class RecerquesController extends Controller
             'medicament_necessari'         => $request->get('medicament_necessari'),
             'porta_llum'                   => $request->get('llum_o_senyalitzacio'),
             'roba_abric'                   => $request->get('roba_abric'),
-            'porta_impermeable'            => $request->get('porta_impermeable'),
+            'roba_impermeable'             => $request->get('roba_impermeable'),
 
             //persona contacte
             'nom_persona_contacte'         => $request->get('nom_persona_contacte'),
@@ -108,7 +105,7 @@ class RecerquesController extends Controller
 
         $recerca->save();
 
-        return redirect('recerques/'.$id)
+        return redirect('recerques/'.$recerca->id)
         ->with('success', $recerca->num_actuacio.__('messages.added'));
     }
 

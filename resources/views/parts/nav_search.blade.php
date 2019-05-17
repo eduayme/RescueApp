@@ -29,12 +29,12 @@
                 {{ __('forms.begin_day')}} : <b> {{ date('d-M-Y', strtotime($recerca->data_creacio)) }} </b>
               </span>
 
-              @if( $recerca->data_tancament == NULL )
+              @if( $recerca->data_tancament == NULL && $recerca->data_inici != NULL )
               <span class="align-middle margin-left margin-right">
                 {{ __('forms.day') }} :
                 <b>
                   <?php
-                    $carbon1 = new \Carbon\Carbon( $recerca->data_creacio );
+                    $carbon1 = new \Carbon\Carbon( $recerca->data_inici );
                     $carbon2 = new \Carbon\Carbon( now() );
                     $daysDiff=$carbon1->diffInDays($carbon2);
 
@@ -42,7 +42,7 @@
                   ?>
                 </b>
               </span>
-              @else
+              @elseif( $recerca->data_tancament != NULL )
               <span class="align-middle margin-left margin-right">
                 {{ __('forms.end_day')}} : <b> {{ date('d-M-Y', strtotime($recerca->data_tancament)) }} </b>
               </span>

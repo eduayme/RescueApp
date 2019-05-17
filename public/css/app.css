@@ -491,6 +491,15 @@ pre code {
 .margin-top {
   margin-top: 30px !important;
 }
+.margin-top-sm {
+  margin-top: 15px !important;
+}
+.margin-top-sm-min {
+  margin-top: -15px !important;
+}
+.margin-top-sm-sm {
+  margin-top: 5px !important;
+}
 .margin-left {
   margin-left: 30px;
 }
@@ -7837,4 +7846,49 @@ a.text-dark:hover {
 .funkyradio-primary input[type="checkbox"]:checked ~ label:before {
   color: #fff;
   background-color: #337ab7;
+}
+
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.margin_right_left {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.margin_top_bottom {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.box {
+  transition: box-shadow .3s;
+  box-shadow: 0 0 11px rgba(33,33,33,.25);
+}
+.box:hover {
+  box-shadow: 0 0 20px rgba(33,33,33,.5);
+}
+
+.pad {
+  padding: 20px;
+}
+
+.pad-sm {
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.block {
+  display: block;
+}
+
+.margin-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }

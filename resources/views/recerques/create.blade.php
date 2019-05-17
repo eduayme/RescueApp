@@ -85,7 +85,7 @@
           <!-- Search ID - OPEN  -->
           <div class="form-group col-md-2">
             <label for="num_actuacio"> {{ __('forms.num_actuacio') }} </label>
-            <input type="text" class="form-control {{ $errors->has('num_actuacio') ? ' is-invalid' : '' }}" name="num_actuacio" required/>
+            <input type="text" class="form-control {{ $errors->has('num_actuacio') ? ' is-invalid' : '' }}" name="num_actuacio"/>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('num_actuacio') )
@@ -203,13 +203,13 @@
 
         <!-- Incident village UPA - OPEN  -->
         <div class="form-group col-md-6">
-          <label for="date_upa">
+          <label for="data_upa">
             {{ __('forms.date_upa') }}
             <span class="octicon octicon-info" data-toggle="tooltip"
             data-placement="top" title="{{ __('forms.upa') }}">
             </span>
           </label>
-          <input type="text" class="form-control" name="date_upa" value="" />
+          <input type="text" class="form-control" name="data_upa" value="" />
         </div>
         <!-- Incident village UPA - CLOSE  -->
 
@@ -248,8 +248,8 @@
 
         <!-- Lost people count - OPEN  -->
         <div class="form-group col-md-4">
-          <label for="desapareguts"> {{ __('forms.n_lost_people') }} </label>
-          <input type="number" class="form-control" name="desapareguts"/>
+          <label for="numero_desapareguts"> {{ __('forms.n_lost_people') }} </label>
+          <input type="number" class="form-control" name="numero_desapareguts"/>
         </div>
         <!-- Lost people count - CLOSE  -->
 
@@ -398,12 +398,12 @@
         </div>
         <!-- Contact person phone - CLOSE  -->
 
-        <!-- Contact person relation - OPEN  -->
+        <!-- Contact person affinity - OPEN  -->
         <div class="form-group col-md-4">
-          <label for="afinitat_persona_contacte"> {{ __('forms.relation') }} </label>
+          <label for="afinitat_persona_contacte"> {{ __('forms.affinity') }} </label>
           <input type="text" class="form-control" name="afinitat_persona_contacte"/>
         </div>
-        <!-- Contact person relation - CLOSE  -->
+        <!-- Contact person affinity - CLOSE  -->
 
       </div>
       <!-- Contact person - CLOSE -->
@@ -455,17 +455,18 @@
     var today = new Date();
 
     // begin date input
-    $('input[name="date_upa"],input[name="data_inici"]').daterangepicker({
+    $('input[name="data_upa"],input[name="data_inici"]').daterangepicker({
       singleDatePicker: true,
       timePicker: true,
       timePicker24Hour: true,
+      timePickerIncrement: 5,
       startDate: moment().startOf('hour'),
       autoUpdateInput: true,
       autoApply: true,
       drops: 'down',
       currentDate: today,
       locale: {
-        format: 'HH:mm | YYYY-MM-DD',
+        format: 'YYYY-MM-DD HH:mm:ss',
         firstDay: 1,
         applyLabel: "Acceptar",
         cancelLabel: "Cancelar",
@@ -494,7 +495,7 @@
         ],
       }
     });
-    $('input[name="date_upa"').val( '' );
+    $('input[name="data_upa"').val( '' );
     $('input[name="data_inici"').val( '' );
 
   });

@@ -38,12 +38,9 @@ class Recerca extends Model
         'zona_incident',
         'possible_ruta',
         'descripcio_incident',
-        'tall_mapa',
-        'soc_quadrant',
-        'seccio_mapa',
 
         //desapareguts
-        'desapareguts',
+        'numero_desapareguts',
         'estat_desapareguts',
 
         //equipament i experiència
@@ -54,11 +51,21 @@ class Recerca extends Model
         'medicament_necessari',
         'porta_llum',
         'roba_abric',
-        'porta_impermeable',
+        'roba_impermeable',
 
         //persona contacte
         'nom_persona_contacte',
         'telefon_persona_contacte',
         'afinitat_persona_contacte',
     ];
+
+    public function user_creator()
+    {
+      return $this->belongsTo('App\User','id_usuari_creacio','id');
+    }
+
+    public function user_last_modification()
+    {
+      return $this->belongsTo('App\User','id_usuari_ultima_modificacio','id');
+    }
 }
