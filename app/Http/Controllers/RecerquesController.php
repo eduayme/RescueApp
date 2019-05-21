@@ -183,53 +183,53 @@ class RecerquesController extends Controller
         $recerca = Recerca::find($id);
 
         //dades recerca
-        $recerca->es_practica                  = $request->get('es_practica');
-        $recerca->num_actuacio                 = $request->get('num_actuacio');
-        $recerca->regio                        = $request->get('regio');
-        $recerca->estat                        = $request->get('estat');
+        $recerca->es_practica = $request->get('es_practica');
+        $recerca->num_actuacio = $request->get('num_actuacio');
+        $recerca->regio = $request->get('regio');
+        $recerca->estat = $request->get('estat');
 
-        $recerca->data_inici                   = $request->get('data_inici');
-        $recerca->data_creacio                 = $request->get('data_creacio');
-        $recerca->data_ultima_modificacio      = $request->get('data_ultima_modificacio');
-        $recerca->data_tancament               = $request->get('data_tancament');
+        $recerca->data_inici = $request->get('data_inici');
+        $recerca->data_creacio = $request->get('data_creacio');
+        $recerca->data_ultima_modificacio = $request->get('data_ultima_modificacio');
+        $recerca->data_tancament = $request->get('data_tancament');
 
-        $recerca->id_usuari_creacio            = $request->get('id_usuari_creacio');
+        $recerca->id_usuari_creacio = $request->get('id_usuari_creacio');
         $recerca->id_usuari_ultima_modificacio = $request->get('id_usuari_ultima_modificacio');
-        $recerca->id_usuari_tancament          = $request->get('id_usuari_tancament');
+        $recerca->id_usuari_tancament = $request->get('id_usuari_tancament');
 
         //alertant
-        $recerca->es_desaparegut               = $request->get('es_desaparegut');
-        $recerca->es_contacte                  = $request->get('es_contacte');
-        $recerca->nom_alertant                 = $request->get('nom_alertant');
-        $recerca->edat_alertant                = $request->get('edat_alertant');
-        $recerca->telefon_alertant             = $request->get('telefon_alertant');
-        $recerca->adreca_alertant              = $request->get('adreca_alertant');
+        $recerca->es_desaparegut = $request->get('es_desaparegut');
+        $recerca->es_contacte = $request->get('es_contacte');
+        $recerca->nom_alertant = $request->get('nom_alertant');
+        $recerca->edat_alertant = $request->get('edat_alertant');
+        $recerca->telefon_alertant = $request->get('telefon_alertant');
+        $recerca->adreca_alertant = $request->get('adreca_alertant');
 
         //incident
-        $recerca->municipi_upa                 = $request->get('municipi_upa');
-        $recerca->data_upa                     = $request->get('data_upa');
-        $recerca->zona_incident                = $request->get('zona_incident');
-        $recerca->possible_ruta                = $request->get('possible_ruta');
-        $recerca->descripcio_incident          = $request->get('descripcio_incident');
+        $recerca->municipi_upa = $request->get('municipi_upa');
+        $recerca->data_upa = $request->get('data_upa');
+        $recerca->zona_incident = $request->get('zona_incident');
+        $recerca->possible_ruta = $request->get('possible_ruta');
+        $recerca->descripcio_incident = $request->get('descripcio_incident');
 
         //desapareguts
-        $recerca->numero_desapareguts          = $request->get('numero_desapareguts');
-        $recerca->estat_desapareguts           = $request->get('estat_desapareguts');
+        $recerca->numero_desapareguts = $request->get('numero_desapareguts');
+        $recerca->estat_desapareguts = $request->get('estat_desapareguts');
 
         //equipament i experiència
-        $recerca->coneix_zona                  = $request->get('coneix_zona');
-        $recerca->experiencia_activitat        = $request->get('experiencia_activitat');
-        $recerca->porta_aigua                  = $request->get('porta_aigua');
-        $recerca->porta_menjar                 = $request->get('porta_menjar');
-        $recerca->medicament_necessari         = $request->get('medicament_necessari');
-        $recerca->porta_llum                   = $request->get('llum_o_senyalitzacio');
-        $recerca->roba_abric                   = $request->get('roba_abric');
-        $recerca->roba_impermeable             = $request->get('roba_impermeable');
+        $recerca->coneix_zona = $request->get('coneix_zona');
+        $recerca->experiencia_activitat = $request->get('experiencia_activitat');
+        $recerca->porta_aigua = $request->get('porta_aigua');
+        $recerca->porta_menjar = $request->get('porta_menjar');
+        $recerca->medicament_necessari = $request->get('medicament_necessari');
+        $recerca->porta_llum = $request->get('llum_o_senyalitzacio');
+        $recerca->roba_abric = $request->get('roba_abric');
+        $recerca->roba_impermeable = $request->get('roba_impermeable');
 
         //persona contacte
-        $recerca->nom_persona_contacte         = $request->get('nom_persona_contacte');
-        $recerca->telefon_persona_contacte     = $request->get('telefon_persona_contacte');
-        $recerca->afinitat_persona_contacte    = $request->get('afinitat_persona_contacte');
+        $recerca->nom_persona_contacte = $request->get('nom_persona_contacte');
+        $recerca->telefon_persona_contacte = $request->get('telefon_persona_contacte');
+        $recerca->afinitat_persona_contacte = $request->get('afinitat_persona_contacte');
 
         $recerca->save();
 
