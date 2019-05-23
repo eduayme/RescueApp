@@ -172,7 +172,7 @@ class RecerquesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'num_actuacio' => 'required|string|min:3|max:50|unique:recerques,num_actuacio,' .$id,
+            'num_actuacio' => 'required|string|min:3|max:50|unique:recerques,num_actuacio,'.$id,
         ], [
             'num_actuacio.required' => __('messages.required'),
             'num_actuacio.min'      => __('messages.min'),
