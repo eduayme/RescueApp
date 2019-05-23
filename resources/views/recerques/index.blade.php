@@ -36,7 +36,7 @@
   <!-- Language for dates - CLOSE -->
 
   <!-- Content - OPEN -->
-  <div class="container margin-top">
+  <div class="container margin-top-bg">
 
     <!-- Tabs nav - OPEN -->
     <nav class="project-tab">
@@ -68,7 +68,7 @@
     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 
       <!-- Searches tab content - OPEN -->
-      <div class="tab-pane fade show active margin-top" id="nav-searches"
+      <div class="tab-pane fade show active margin-top-sm" id="nav-searches"
       role="tabpanel" aria-labelledby="nav-searches-tab">
 
         <!-- If NO searches - OPEN -->
@@ -212,7 +212,7 @@
       <!-- Searches tab content - CLOSE -->
 
       <!-- Practices tab content - OPEN -->
-      <div class="tab-pane fade margin-top" id="nav-practices"
+      <div class="tab-pane fade margin-top-sm" id="nav-practices"
       role="tabpanel" aria-labelledby="nav-practices-tab">
 
         <!-- If NO practices - OPEN -->

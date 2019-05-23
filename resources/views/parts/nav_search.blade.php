@@ -1,5 +1,5 @@
 <!-- Navbar - OPEN -->
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar fixed-top navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
 
         <!-- Collapsable button - OPEN -->

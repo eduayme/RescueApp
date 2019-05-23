@@ -30,7 +30,7 @@
   <!-- Alerts - CLOSE -->
 
   <!-- Content - OPEN -->
-  <div class="container margin-top">
+  <div class="container margin-top-bg">
 
     <!-- Form - OPEN -->
     {{ Form::model($recerca, array('route' => array('recerques.update', $recerca->id), 'method' => 'PUT')) }}

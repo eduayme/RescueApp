@@ -18,4 +18,6 @@ return [
     'open source'      => 'Open Source',
     'privacy policy'   => 'Polítiques de privacitat',
     'terms of service' => 'Termes de Servei',
+    'data'             => 'Dades',
+    'closing'          => 'Tancament',
 ];

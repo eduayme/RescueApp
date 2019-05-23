@@ -30,7 +30,7 @@
   <!-- Alerts - CLOSE -->
 
   <!-- Content - OPEN -->
-  <div class="container margin-top">
+  <div class="container margin-top-bg">
 
     <!-- Form - OPEN -->
     <form method="post" action="{{ route('recerques.store') }}">

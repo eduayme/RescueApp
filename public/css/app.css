@@ -500,6 +500,9 @@ pre code {
 .margin-top-sm-sm {
   margin-top: 5px !important;
 }
+.margin-top-bg {
+  margin-top: 80px !important;
+}
 .margin-left {
   margin-left: 30px;
 }
@@ -5244,19 +5247,19 @@ button.bg-dark:hover {
     background-color: transparent!important
 }
 .border {
-    border: 1px solid #dee2e6!important
+    border: 1px solid #dddddd!important
 }
 .border-top {
-    border-top: 1px solid #dee2e6!important
+    border-top: 1px solid #dddddd!important
 }
 .border-right {
-    border-right: 1px solid #dee2e6!important
+    border-right: 1px solid #dddddd!important
 }
 .border-bottom {
-    border-bottom: 1px solid #dee2e6!important
+    border-bottom: 1px solid #dddddd!important
 }
 .border-left {
-    border-left: 1px solid #dee2e6!important
+    border-left: 1px solid #dddddd!important
 }
 .border-0 {
     border: 0!important
@@ -5277,7 +5280,7 @@ button.bg-dark:hover {
     border-color: #BF0712!important
 }
 .border-secondary {
-    border-color: #6c757d!important
+    border-color: #dddddd!important
 }
 .border-success {
     border-color: #38c172!important
@@ -7870,7 +7873,7 @@ a.text-dark:hover {
   box-shadow: 0 0 11px rgba(33,33,33,.25);
 }
 .box:hover {
-  box-shadow: 0 0 20px rgba(33,33,33,.5);
+  box-shadow: 0 0 15px rgba(33,33,33,.5);
 }
 
 .pad {
