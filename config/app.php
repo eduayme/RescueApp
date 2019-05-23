@@ -107,7 +107,7 @@ return [
     |
     */
 
-    'faker_locale' => 'es_ES',
+    'faker_locale' => 'ca_ES',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,7 +175,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Collective\Html\HtmlServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
     ],
 
     /*
@@ -226,7 +227,9 @@ return [
         'URL'          => Illuminate\Support\Facades\URL::class,
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
-
+        'Form'         => Collective\Html\FormFacade::class,
+        'Html'         => Collective\Html\HtmlFacade::class,
+        'Date'         => Jenssegers\Date\Date::class,
     ],
 
 ];

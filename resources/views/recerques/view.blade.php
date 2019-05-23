@@ -7,11 +7,11 @@
   <!-- Alerts - OPEN -->
 
   <!-- Success - OPEN -->
-  @if( session('status') )
+  @if( session()->get('success') )
     <div class="alert alert-success" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session('status') }}
+          {{ session()->get('success') }}
       </div>
     </div>
   <!-- Success - CLOSE -->
@@ -28,6 +28,12 @@
   <!-- Error - CLOSE -->
 
   <!-- Alerts - CLOSE -->
+
+  <!-- Language for dates - OPEN -->
+  @php
+    \Date::setLocale('ca');
+  @endphp
+  <!-- Language for dates - CLOSE -->
 
   <!-- Content - OPEN -->
   <div class="container margin-top">
@@ -177,8 +183,12 @@
             <b> {{ $recerca->user_creator->name }} </b>
           </h5>
           <h6 style="display: inline">
-            <b>({{ $recerca->user_creator->dni }}),
-            {{ date('H:i | d-M-Y', strtotime($recerca->data_creacio)) }} </b>
+            <b> ({{ $recerca->user_creator->dni }}),
+              @php
+                $date = new Date($recerca->data_creacio);
+                echo $date->format('H:i | d F Y');
+              @endphp
+            </b>
           </h6>
         </div>
         <!-- Creator search - CLOSE -->
@@ -189,10 +199,13 @@
         </p>
         <h5 class="margin-top-sm-min">
           <b>
-            @if( $recerca->data_creacio == NULL )
+            @if( $recerca->data_inici == NULL )
               --
             @else
-              {{ date('H:i | d-M-Y', strtotime($recerca->data_inici)) }}
+              @php
+                $date = new Date($recerca->data_inici);
+                echo $date->format('H:i | d F Y');
+              @endphp
             @endif
           </b>
         </h5>
@@ -213,8 +226,12 @@
             <b> {{ $recerca->user_last_modification->name }} </b>
           </h5>
           <h6 style="display: inline">
-            <b>({{ $recerca->user_last_modification->dni }}),
-            {{ date('H:i | d-M-Y', strtotime($recerca->data_ultima_modificacio)) }} </b>
+            <b> ({{ $recerca->user_last_modification->dni }}),
+              @php
+                $date = new Date($recerca->data_ultima_modificacio);
+                echo $date->format('H:i | d F Y');
+              @endphp
+            </b>
           </h6>
         </div>
         <!-- Last modificator search - OPEN -->
@@ -228,7 +245,10 @@
             @if( $recerca->data_tancament == NULL )
               --
             @else
-              {{ date('H:i | d-M-Y', strtotime($recerca->data_tancament)) }}
+              @php
+                $date = new Date($recerca->data_tancament);
+                echo $date->format('H:i | d F Y');
+              @endphp
             @endif
           </b>
         </h5>
@@ -304,7 +324,10 @@
 
                       <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.date_upa') }}">
                         <span class="octicon octicon-clock"></span>
-                        {{ date('H:i | d-M-Y', strtotime($recerca->data_upa)) }}
+                        @php
+                          $date = new Date($recerca->data_upa);
+                          echo $date->format('H:i | d F Y');
+                        @endphp
                       </p>
 
                     @endif

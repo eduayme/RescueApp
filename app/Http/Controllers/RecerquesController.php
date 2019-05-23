@@ -93,7 +93,7 @@ class RecerquesController extends Controller
             'porta_aigua'                  => $request->get('porta_aigua'),
             'porta_menjar'                 => $request->get('porta_menjar'),
             'medicament_necessari'         => $request->get('medicament_necessari'),
-            'porta_llum'                   => $request->get('llum_o_senyalitzacio'),
+            'porta_llum'                   => $request->get('porta_llum'),
             'roba_abric'                   => $request->get('roba_abric'),
             'roba_impermeable'             => $request->get('roba_impermeable'),
 
@@ -172,7 +172,7 @@ class RecerquesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'num_actuacio' => 'required|string|min:3|max:50|unique:recerques',
+            'num_actuacio' => 'required|string|min:3|max:50|unique:recerques,num_actuacio,' .$id,
         ], [
             'num_actuacio.required' => __('messages.required'),
             'num_actuacio.min'      => __('messages.min'),
@@ -222,7 +222,7 @@ class RecerquesController extends Controller
         $recerca->porta_aigua = $request->get('porta_aigua');
         $recerca->porta_menjar = $request->get('porta_menjar');
         $recerca->medicament_necessari = $request->get('medicament_necessari');
-        $recerca->porta_llum = $request->get('llum_o_senyalitzacio');
+        $recerca->porta_llum = $request->get('porta_llum');
         $recerca->roba_abric = $request->get('roba_abric');
         $recerca->roba_impermeable = $request->get('roba_impermeable');
 

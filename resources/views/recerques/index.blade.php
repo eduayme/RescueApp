@@ -7,11 +7,11 @@
   <!-- Alerts - OPEN -->
 
   <!-- Success - OPEN -->
-  @if( session('success') )
+  @if( session()->get('success') )
     <div class="alert alert-success" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session('success') }}
+          {{ session()->get('success') }}
       </div>
     </div>
   <!-- Success - CLOSE -->
@@ -28,6 +28,12 @@
   <!-- Error - CLOSE -->
 
   <!-- Alerts - CLOSE -->
+
+  <!-- Language for dates - OPEN -->
+  @php
+    \Date::setLocale('ca');
+  @endphp
+  <!-- Language for dates - CLOSE -->
 
   <!-- Content - OPEN -->
   <div class="container margin-top">
@@ -126,10 +132,13 @@
                         </td>
 
                         <td>
-                          @if( $recerca->data_creacio == NULL )
+                          @if( $recerca->data_inici == NULL )
                             --
                           @else
-                            {{ date('H:i | d-M-Y', strtotime($recerca->data_creacio)) }}
+                            @php
+                              $date = new Date($recerca->data_inici);
+                              echo $date->format('H:i | d F Y');
+                            @endphp
                           @endif
                         </td>
 
@@ -137,7 +146,10 @@
                           @if( $recerca->data_tancament == NULL )
                             --
                           @else
-                            {{ date('H:i | d-M-Y', strtotime($recerca->data_tancament)) }}
+                            @php
+                              $date = new Date($recerca->data_tancament);
+                              echo $date->format('H:i | d F Y');
+                            @endphp
                           @endif
                         </td>
 
@@ -264,10 +276,13 @@
                         </td>
 
                         <td>
-                          @if( $practica->data_creacio == NULL )
+                          @if( $practica->data_inici == NULL )
                             --
                           @else
-                            {{ date('H:i | d-M-Y', strtotime($practica->data_creacio)) }}
+                            @php
+                              $date = new Date($practica->data_inici);
+                              echo $date->format('H:i | d F Y');
+                            @endphp
                           @endif
                         </td>
 
@@ -275,7 +290,10 @@
                           @if( $practica->data_tancament == NULL )
                             --
                           @else
-                            {{ date('H:i | d-M-Y', strtotime($practica->data_tancament)) }}
+                            @php
+                              $date = new Date($practica->data_tancament);
+                              echo $date->format('H:i | d F Y');
+                            @endphp
                           @endif
                         </td>
 

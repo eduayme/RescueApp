@@ -14,4 +14,5 @@ return [
     'no_searches'  => 'No hi ha registrada cap recerca.',
     'no_practices' => 'No hi ha registrada cap pràctica.',
     'are_you_sure' => 'Està segur? Aquesta acció no es podrà desfer.',
+    'num_unique'   => "El número d'actuació ha de ser únic a la taula de dades.",
 ];

@@ -33,8 +33,8 @@ class CreateRecerquesTable extends Migration
             $table->integer('id_usuari_tancament')->unsigned()->nullable();
 
             //alertant
-            $table->string('es_desaparegut')->nullable();
-            $table->string('es_contacte')->nullable();
+            $table->tinyInteger('es_desaparegut')->nullable();
+            $table->tinyInteger('es_contacte')->nullable();
             $table->string('nom_alertant')->nullable();
             $table->string('edat_alertant')->nullable();
             $table->string('telefon_alertant')->nullable();
@@ -52,14 +52,14 @@ class CreateRecerquesTable extends Migration
             $table->string('estat_desapareguts')->nullable();
 
             //equipament i experiència
-            $table->tinyInteger('coneix_zona')->default(0)->nullable();
-            $table->tinyInteger('experiencia_activitat')->default(0)->nullable();
-            $table->tinyInteger('porta_aigua')->default(0)->nullable();
-            $table->tinyInteger('porta_menjar')->default(0)->nullable();
-            $table->tinyInteger('medicament_necessari')->default(0)->nullable();
-            $table->tinyInteger('porta_llum')->default(0)->nullable();
-            $table->tinyInteger('roba_abric')->default(0)->nullable();
-            $table->tinyInteger('roba_impermeable')->default(0)->nullable();
+            $table->tinyInteger('coneix_zona')->nullable();
+            $table->tinyInteger('experiencia_activitat')->nullable();
+            $table->tinyInteger('porta_aigua')->nullable();
+            $table->tinyInteger('porta_menjar')->nullable();
+            $table->tinyInteger('medicament_necessari')->nullable();
+            $table->tinyInteger('porta_llum')->nullable();
+            $table->tinyInteger('roba_abric')->nullable();
+            $table->tinyInteger('roba_impermeable')->nullable();
 
             //persona contacte
             $table->string('nom_persona_contacte')->nullable();

@@ -7,11 +7,11 @@
   <!-- Alerts - OPEN -->
 
   <!-- Success - OPEN -->
-  @if( session('success') )
+  @if( session()->get('success') )
     <div class="alert alert-success" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session('success') }}
+          {{ session()->get('success') }}
       </div>
     </div>
   <!-- Success - CLOSE -->
@@ -89,9 +89,9 @@
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('num_actuacio') )
-              <span class="invalid-feedback" role="alert">
+              <div class="invalid-feedback" role="alert">
                 <strong>{{ $errors->first('num_actuacio') }}</strong>
-              </span>
+              </div>
             @endif
             <!-- Show errors input - CLOSE -->
 
@@ -497,6 +497,10 @@
     });
     $('input[name="data_upa"').val( '' );
     $('input[name="data_inici"').val( '' );
+
+    $('input[name="data_upa"],input[name="data_inici"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+    });
 
   });
 

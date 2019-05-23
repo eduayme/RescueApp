@@ -20,9 +20,3 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/recerques', 'RecerquesController@index')->name('recerques');
 });
-
-Route::get('lang/{lang}', function ($lang) {
-    \Session::put('lang', $lang);
-
-    return \Redirect::back();
-})->middleware('web')->name('change_lang');

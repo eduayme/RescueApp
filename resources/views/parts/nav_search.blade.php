@@ -25,9 +25,17 @@
               </span>
               @endif
 
+              @if( $recerca->data_inici != NULL )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.begin_day')}} : <b> {{ date('d-M-Y', strtotime($recerca->data_creacio)) }} </b>
+                {{ __('forms.begin_day')}} :
+                <b>
+                  @php
+                    $date = new Date($recerca->data_inici);
+                    echo $date->format('d F Y');
+                  @endphp
+                </b>
               </span>
+              @endif
 
               @if( $recerca->data_tancament == NULL && $recerca->data_inici != NULL )
               <span class="align-middle margin-left margin-right">
@@ -44,7 +52,13 @@
               </span>
               @elseif( $recerca->data_tancament != NULL )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.end_day')}} : <b> {{ date('d-M-Y', strtotime($recerca->data_tancament)) }} </b>
+                {{ __('forms.end_day')}} :
+                <b>
+                  @php
+                    $date = new Date($recerca->data_tancament);
+                    echo $date->format('d F Y');
+                  @endphp
+                </b>
               </span>
               @endif
 
