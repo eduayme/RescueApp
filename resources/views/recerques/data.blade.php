@@ -5,7 +5,8 @@
   <div class="col justify-content-start">
 
     <!-- Add lost person - OPEN -->
-    <button class="btn btn-outline-primary" type="button" name="add">
+    <button class="btn btn-outline-primary" type="button" name="add"
+    <?php if ($recerca->tipus == 'Tancada'){ ?> disabled <?php   } ?> >
       {{ __('actions.add_lost_person') }}
     </button>
     <!-- Add lost person - CLOSE -->
@@ -19,7 +20,8 @@
     <!-- Edit search button - OPEN -->
     <a href="{{ URL::to('recerques/' . $recerca->id . '/edit') }}"
     class="btn btn-outline-secondary margin-right" role="button"
-    data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}">
+    data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}"
+    <?php if ($recerca->tipus == 'Tancada'){ ?> disabled <?php   } ?> >
       <span class="octicon octicon-pencil"></span>
     </a>
     <!-- Edit search button - CLOSE -->

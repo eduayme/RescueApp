@@ -29,8 +29,17 @@ class RecerquesController extends Controller
     public function create()
     {
         if (Auth::check()) {
-            return view('recerques.create');
-        } else {
+            $currentUser = \Auth::user()->perfil;
+
+            if ($currentUser != 'convidat') {
+              return view('recerques.create');
+            }
+            else {
+              return redirect('/')
+              ->with('error', __('messages.not_allowed'));
+            }
+        }
+        else {
             return redirect()->action('HomeController@login');
         }
     }
@@ -133,10 +142,18 @@ class RecerquesController extends Controller
     public function destroy($id)
     {
         $recerca = Recerca::find($id);
-        $recerca->delete();
 
-        return redirect('/')
-        ->with('success', $recerca->num_actuacio.__('messages.deleted'));
+        $currentUser = \Auth::user()->perfil;
+
+        if ($currentUser != 'convidat') {
+          $recerca->delete();
+          return redirect('/')
+          ->with('success', $recerca->num_actuacio.__('messages.deleted'));
+        }
+        else {
+          return redirect('recerques/'.$recerca->id)
+          ->with('error', __('messages.not_allowed'));
+        }
     }
 
     /**
@@ -150,14 +167,13 @@ class RecerquesController extends Controller
     {
         $recerca = Recerca::find($id);
 
-        $currentUser = \Auth::user()->id;
-        $user = $recerca->id_usuari_creacio;
+        $currentUser = \Auth::user()->perfil;
 
-        if ($user == $currentUser) {
+        if ($currentUser != 'convidat') {
             return view('recerques.edit', compact('recerca'));
         } else {
-            return redirect('/')
-          ->with('error', __('messages.not_allowed').$recerca->num_actuacio);
+            return redirect('recerques/'.$recerca->id)
+          ->with('error', __('messages.not_allowed'));
         }
     }
 
@@ -236,4 +252,17 @@ class RecerquesController extends Controller
         return redirect('recerques/'.$recerca->id)
         ->with('success', $recerca->num_actuacio.__('messages.updated'));
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+     public function close(Request $request, $id)
+     {
+
+     }
 }

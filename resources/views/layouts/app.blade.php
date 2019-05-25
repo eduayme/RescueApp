@@ -9,25 +9,6 @@
 
       <title> @yield ('title', 'AR') | {{ config('app.name', 'Aplicatiu de Recerques') }} </title>
 
-      <!-- Scripts -->
-      <!-- JQuery 3.3.1 -->
-      <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
-      <!-- JQuery for DataTables -->
-      <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-      <!-- DataTables for Bootstrap 4.1 -->
-      <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
-      <!-- Sorting date for DataTables -->
-      <script src="{{ asset('js/sortingDate.js') }}"></script>
-      <!-- Bootstrap tooltip -->
-      <script src="{{ asset('js/pooper.min.js') }}"></script>
-      <!-- Bootstrap 4.1 -->
-      <script src="{{ asset('js/app.js') }}" type="text/js"></script>
-      <!-- Dismiss messages in Bootstrap 4.1 -->
-      <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-      <!-- Bootstrap daterangepicker -->
-      <script src="{{ asset('js/moment.min.js') }}"></script>
-      <script src="{{ asset('js/daterangepicker.min.js') }}"></script>
-
       <!-- Fonts -->
       <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
@@ -42,6 +23,7 @@
       <link href="{{ asset('css/octicons.min.css') }}" rel="stylesheet" type="text/css" />
       <!-- Favicon -->
       <link rel="shortcut icon" href="{{{ asset('img/logo.jpg') }}}" />
+
   </head>
 
   <body>
@@ -57,5 +39,24 @@
           @include('parts.footer')
       </section>
   </body>
+
+  <!-- Scripts -->
+  <!-- JQuery 3.3.1 -->
+  <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+  <!-- JQuery for DataTables -->
+  <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+  <!-- DataTables for Bootstrap 4.1 -->
+  <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
+  <!-- Sorting date for DataTables -->
+  <script src="{{ asset('js/sortingDate.js') }}"></script>
+  <!-- Bootstrap tooltip -->
+  <script src="{{ asset('js/pooper.min.js') }}"></script>
+  <!-- Bootstrap 4.1 -->
+  <script src="{{ asset('js/app.js') }}" type="text/js"></script>
+  <!-- Dismiss messages in Bootstrap 4.1 -->
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <!-- Bootstrap daterangepicker -->
+  <script src="{{ asset('js/moment.min.js') }}"></script>
+  <script src="{{ asset('js/daterangepicker.min.js') }}"></script>
 
 </html>

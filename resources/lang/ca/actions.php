@@ -6,5 +6,9 @@ return [
     'delete'          => 'Eliminar',
     'cancel'          => 'Cancelar',
     'save'            => 'Guardar',
+    'close_search'    => 'Tancar recerca',
+    'close_practice'  => 'Tancar pràctica',
     'add_lost_person' => 'Afegir persona desapareguda',
+    'reopen_search'   => 'Reobrir recerca',
+    'reopen_practice' => 'Reobrir pràctica',
 ];

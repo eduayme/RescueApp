@@ -1,5 +1,5 @@
 <!-- Navbar - OPEN -->
-<nav class="navbar fixed-top navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
 
         <!-- Collapsable button - OPEN -->
@@ -147,6 +147,9 @@
     </div>
 </nav>
 <!-- Navbar - CLOSE -->
+
+<!-- JQuery 3.3.1 -->
+<script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
 
 <!-- JS -->
 <script>

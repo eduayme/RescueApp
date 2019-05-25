@@ -4231,15 +4231,15 @@ input[type=submit].btn-block {
 .alert-info .alert-link {
     color: #284257
 }
-.alert-warning {
+.alert-danger {
     color: #857b26;
     background-color: #fffbdb;
     border-color: #fffacc
 }
-.alert-warning hr {
+.alert-danger hr {
     border-top-color: #fff8b3
 }
-.alert-warning .alert-link {
+.alert-danger .alert-link {
     color: #5d561b
 }
 .alert-danger {
@@ -7751,6 +7751,7 @@ a.text-dark:hover {
 }
 .project-tab .nav-link:hover {
     border: none;
+    border-bottom: 1px solid #0062cc;
 }
 .project-tab thead{
     background: #f3f3f3;

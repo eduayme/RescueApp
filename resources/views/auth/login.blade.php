@@ -8,7 +8,7 @@
 
   <!-- Success - OPEN -->
   @if( session('success') )
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           {{ session('success') }}
@@ -18,7 +18,7 @@
 
   <!-- Error - OPEN -->
   @elseif( session()->get('error') )
-    <div class="alert alert-error alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <div class="container text-center">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           {{ session()->get('error') }}
@@ -30,7 +30,7 @@
   <!-- Alerts - CLOSE -->
 
   <!-- Content - OPEN -->
-  <div class="container">
+  <div class="container margin-top">
       <div class="row justify-content-center">
           <div class="col-md-8">
 
