@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class AfegirTancamentRecerca extends Migration
 {
@@ -13,7 +12,7 @@ class AfegirTancamentRecerca extends Migration
      */
     public function up()
     {
-        Schema::table('recerques', function($table) {
+        Schema::table('recerques', function ($table) {
             $table->string('grup_treball_utilitzat')->nullable();
             $table->string('derivacio_cossos_lliurades')->nullable();
             $table->string('derivacio_cossos_codi_receptor')->nullable();
@@ -47,7 +46,7 @@ class AfegirTancamentRecerca extends Migration
      */
     public function down()
     {
-        Schema::table('recerques', function($table) {
+        Schema::table('recerques', function ($table) {
             $table->dropColumn('grup_treball_utilitzat');
             $table->dropColumn('derivacio_cossos_lliurades');
             $table->dropColumn('derivacio_cossos_codi_receptor');

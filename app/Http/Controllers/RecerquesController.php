@@ -32,14 +32,12 @@ class RecerquesController extends Controller
             $currentUser = \Auth::user()->perfil;
 
             if ($currentUser != 'convidat') {
-              return view('recerques.create');
-            }
-            else {
-              return redirect('/')
+                return view('recerques.create');
+            } else {
+                return redirect('/')
               ->with('error', __('messages.not_allowed'));
             }
-        }
-        else {
+        } else {
             return redirect()->action('HomeController@login');
         }
     }
@@ -146,12 +144,12 @@ class RecerquesController extends Controller
         $currentUser = \Auth::user()->perfil;
 
         if ($currentUser != 'convidat') {
-          $recerca->delete();
-          return redirect('/')
+            $recerca->delete();
+
+            return redirect('/')
           ->with('success', $recerca->num_actuacio.__('messages.deleted'));
-        }
-        else {
-          return redirect('recerques/'.$recerca->id)
+        } else {
+            return redirect('recerques/'.$recerca->id)
           ->with('error', __('messages.not_allowed'));
         }
     }
@@ -261,8 +259,7 @@ class RecerquesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function close(Request $request, $id)
-     {
-
-     }
+    public function close(Request $request, $id)
+    {
+    }
 }

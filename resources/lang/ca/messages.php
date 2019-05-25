@@ -15,6 +15,6 @@ return [
     'no_practices'    => 'No hi ha registrada cap pràctica.',
     'are_you_sure'    => 'Està segur? Aquesta acció no es podrà desfer.',
     'num_unique'      => "El número d'actuació ha de ser únic a la taula de dades.",
-    'closed_search'   => "Aquesta recerca està actualment tancada.",
-    'closed_practice' => "Aquesta pràctica està actualment tancada.",
+    'closed_search'   => 'Aquesta recerca està actualment tancada.',
+    'closed_practice' => 'Aquesta pràctica està actualment tancada.',
 ];
