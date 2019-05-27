@@ -57,6 +57,31 @@ class Recerca extends Model
         'nom_persona_contacte',
         'telefon_persona_contacte',
         'afinitat_persona_contacte',
+
+        //tancament
+        'grup_treball_utilitzat',
+        'derivacio_cossos_lliurades',
+        'derivacio_cossos_codi_receptor',
+        'comandament_inicial',
+        'comandament_relleus',
+        'comandament_final',
+        'tipologia',
+        'recursos',
+        'data_localitzacio',
+        'toponim_localitzacio',
+        'indret_localitzacio',
+        'terme_municipal_localitzacio',
+        'tall_coe_localitzacio',
+        'soc_localitzacio',
+        'seccio_localitzacio',
+        'utm_x_localitzacio',
+        'utm_y_localitzacio',
+        'distancia_upa_localitzacio',
+        'qui_fa_localitzacio',
+        'estat_troben',
+        'motiu_finalitzacio',
+        'ip_comandament_finalitza',
+        'durada',
     ];
 
     public function user_creator()

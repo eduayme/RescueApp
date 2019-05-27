@@ -80,7 +80,7 @@
       <div class="tab-pane fade margin-top-sm" id="nav-closing"
       role="tabpanel" aria-labelledby="nav-closing-tab">
 
-        @include('recerques.closing')
+        @include('recerques.tancament.view')
 
       </div>
       <!-- Closing tab content - CLOSE -->

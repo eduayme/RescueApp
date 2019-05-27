@@ -78,7 +78,7 @@
           <!-- Begin datetime - OPEN -->
           <div class="form-group col-md-3">
             {{ Form::label('data_inici', __('forms.begin_date')) }}
-            {{ Form::text('data_inici', null, array('class' => 'form-control')) }}
+            {{ Form::text('data_inici', '', array('class' => 'form-control')) }}
           </div>
           <!-- Begin datetime - CLOSE -->
 
@@ -536,7 +536,6 @@
       timePicker: true,
       timePicker24Hour: true,
       timePickerIncrement: 5,
-      autoUpdateInput: true,
       autoApply: true,
       drops: 'down',
       currentDate: today,
@@ -571,7 +570,7 @@
       }
     });
 
-    $('input[name="data_upa"],input[name="data_inici"]').on('cancel.daterangepicker', function(ev, picker) {
+    $('input[name="data_inici"],input[name="data_upa"]').on('cancel.daterangepicker', function(ev, picker) {
       $(this).val('');
     });
 
