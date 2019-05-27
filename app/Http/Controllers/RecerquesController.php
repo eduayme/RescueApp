@@ -286,7 +286,6 @@ class RecerquesController extends Controller
      */
     public function close(Request $request, $id)
     {
-
     }
 
     /**
@@ -299,6 +298,5 @@ class RecerquesController extends Controller
      */
     public function reopen(Request $request, $id)
     {
-
     }
 }
