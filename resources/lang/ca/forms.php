@@ -11,6 +11,7 @@ return [
     'village'                       => 'Municipi',
     'region'                        => 'Regió',
     'begin_day'                     => 'Data inici',
+    'end_day'                       => 'Data finalització',
     'day'                           => 'Dia',
     'chose_option'                  => 'Triar opció',
     'alertant'                      => 'Alertant',

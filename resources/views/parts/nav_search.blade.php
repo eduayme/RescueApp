@@ -16,18 +16,18 @@
             <ul class="navbar-nav mr-auto">
 
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.service')}} : <b> {{ $recerca->num_actuacio }} </b>
+                {{ __('forms.service')}}: <b> {{ $recerca->num_actuacio }} </b>
               </span>
 
               @if( $recerca->municipi_upa )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.village')}} : <b> {{ $recerca->municipi_upa }} </b>
+                {{ __('forms.village')}}: <b> {{ $recerca->municipi_upa }} </b>
               </span>
               @endif
 
               @if( $recerca->data_inici != NULL )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.begin_day')}} :
+                {{ __('forms.begin_day')}}:
                 <b>
                   @php
                     $date = new Date($recerca->data_inici);
@@ -52,7 +52,7 @@
               </span>
               @elseif( $recerca->data_tancament != NULL )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.end_day')}} :
+                {{ __('forms.end_day')}}:
                 <b>
                   @php
                     $date = new Date($recerca->data_tancament);

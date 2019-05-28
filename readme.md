@@ -16,7 +16,7 @@ Aplicatiu de Recerques is a web application designed to help emergency bodies in
 
 3) [Install laravel 5.8](https://laravel.com/docs/5.8/installation)
 
-4) Create the database "aplicatiu_bombers" in mysql
+4) Create the database `aplicatiu_bombers` in mysql
 ```
 mysql> CREATE DATABASE aplicatiu_bombers;
 ```
@@ -26,12 +26,12 @@ mysql> CREATE DATABASE aplicatiu_bombers;
 > git clone git@github.com:eduayme/Aplicatiu-de-Recerques.git
 ```
 
-6) Create new file ".env" with the same content as ".env.example"
+6) Create new file `.env` inside the project folder with the same content as `.env.example`
 ```
 > cp .env .env.example
 ```
 
-7) Change mysql and mail credentials in ".env"
+7) Change mysql and mail credentials in `.env`
 ```
 DB_USERNAME = mysql_username
 DB_PASSWORD = mysql_password
@@ -40,14 +40,19 @@ MAIL_USERNAME = email_username
 MAIL_PASSWORD = email_password
 ```
 
-8) Open terminal inside project folder and run "php artisan migrate"
+8) Open terminal inside project folder and migrate the database
 ```
 > php artisan migrate
 ```
 
-9) Open a browser and go to the url "127.0.0.1:8000" or "localhost:8000"
+9) In the same terminal inside project folder run the application
+```
+> php artisan serve
+```
 
-10) Web application is running! :)
+10) Open a browser and go to the url `127.0.0.1:8000` or `localhost:8000`
+
+11) Web application is running! :)
 
 
 ## License
