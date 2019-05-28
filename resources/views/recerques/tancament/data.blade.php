@@ -5,161 +5,367 @@
 <!-- Language for dates - CLOSE -->
 
 <!-- Content - OPEN -->
-<div class="form-row margin-top">
+<div class="form-row margin-top text-center">
 
   <!-- Group - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('grup_treball_utilitzat', __('forms.group')) }}
-    <p> {{ $recerca->grup_treball_utilitzat }} </p>
+    <p>
+      {{ __('forms.group') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->grup_treball_utilitzat )
+          {{ $recerca->grup_treball_utilitzat }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Group - CLOSE  -->
 
   <!-- Derivation name - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('derivacio_cossos_lliurades', __('forms.derivation_name')) }}
-    <p> {{ $recerca->derivacio_cossos_lliurades }} </p>
+    <p>
+      {{ __('forms.derivation_name') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->derivacio_cossos_lliurades )
+          {{ $recerca->derivacio_cossos_lliurades }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Derivation name - CLOSE  -->
 
   <!-- Derivation ID receptor - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('derivacio_cossos_codi_receptor', __('forms.derivation_id_receptor')) }}
-    <p> {{ $recerca->derivacio_cossos_codi_receptor }} </p>
+    <p>
+      {{ __('forms.derivation_id_receptor') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->derivacio_cossos_codi_receptor )
+          {{ $recerca->derivacio_cossos_codi_receptor }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Derivation ID receptor - CLOSE  -->
 
   <!-- First commander - OPEN  -->
   <div class="form-group col-md-3">
-    {{ Form::label('comandament_inicial', __('forms.first_commander')) }}
-    <p> {{ $recerca->comandament_inicial }} </p>
+    <p>
+      {{ __('forms.first_commander') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->comandament_inicial )
+          {{ $recerca->comandament_inicial }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- First commander - CLOSE  -->
 
   <!-- Intermediate commander - OPEN  -->
   <div class="form-group col-md-6">
-    {{ Form::label('comandament_relleus', __('forms.intermediate_commander')) }}
-    <p> {{ $recerca->comandament_relleus }} </p>
+    <p>
+      {{ __('forms.intermediate_commander') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->comandament_relleus )
+          {{ $recerca->comandament_relleus }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Intermediate commander - CLOSE  -->
 
   <!-- Last commander - OPEN  -->
   <div class="form-group col-md-3">
-    {{ Form::label('comandament_final', __('forms.last_commander')) }}
-    <p> {{ $recerca->comandament_final }} </p>
+    <p>
+      {{ __('forms.last_commander') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->comandament_final )
+          {{ $recerca->comandament_final }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Last commander - CLOSE  -->
 
   <!-- Tipology - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('tipologia', __('forms.tipology')) }}
-    <p> {{ $recerca->tipologia }} </p>
+    <p>
+      {{ __('forms.tipology') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->tipologia )
+          {{ $recerca->tipologia }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Tipology - CLOSE  -->
 
   <!-- Resources - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('recursos', __('forms.resources')) }}
-    <p> {{ $recerca->recursos }} </p>
+    <p>
+      {{ __('forms.resources') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->recursos )
+          {{ $recerca->recursos }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Resources - CLOSE  -->
 
   <!-- Localization datetime - OPEN -->
   <div class="form-group col-md-4">
-    {{ Form::label('data_localitzacio', __('forms.localization_date')) }}
     <p>
-      @php
-      $date = new Date($recerca->data_localitzacio);
-      echo $date->format('H:i | d F Y');
-      @endphp
+      {{ __('forms.localization_date') }}
     </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->data_localitzacio )
+          @php
+          $date = new Date($recerca->data_localitzacio);
+          echo $date->format('H:i | d F Y');
+          @endphp
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization datetime - CLOSE -->
 
   <!-- Localization toponim - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('toponim_localitzacio', __('forms.localization_toponim')) }}
-    <p> {{ $recerca->toponim_localitzacio }} </p>
+    <p>
+      {{ __('forms.localization_toponim') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->toponim_localitzacio )
+          {{ $recerca->toponim_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization toponim - CLOSE  -->
 
   <!-- Localization indret - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('indret_localitzacio', __('forms.localization_indret')) }}
-    <p> {{ $recerca->indret_localitzacio }} </p>
+    <p>
+      {{ __('forms.localization_indret') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->indret_localitzacio )
+          {{ $recerca->indret_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization indret - CLOSE  -->
 
   <!-- Localization municipal term - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('terme_municipal_localitzacio', __('forms.localization_municipal_term')) }}
-    <p> {{ $recerca->terme_municipal_localitzacio }} </p>
+    <p>
+      {{ __('forms.localization_municipal_term') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->terme_municipal_localitzacio )
+          {{ $recerca->terme_municipal_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization municipal term - CLOSE  -->
 
   <!-- Localization COE - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('tall_coe_localitzacio', __('forms.coe')) }}
-    <p> {{ $recerca->tall_coe_localitzacio }} </p>
+    <p>
+      {{ __('forms.coe') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->tall_coe_localitzacio )
+          {{ $recerca->tall_coe_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization COE - CLOSE  -->
 
   <!-- Localization SOC - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('soc_localitzacio', __('forms.soc')) }}
-    <p> {{ $recerca->soc_localitzacio }} </p>
+    <p>
+      {{ __('forms.soc') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->soc_localitzacio )
+          {{ $recerca->soc_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization SOC - CLOSE  -->
 
   <!-- Localization section - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('seccio_localitzacio', __('forms.section')) }}
-    <p> {{ $recerca->seccio_localitzacio }} </p>
+    <p>
+      {{ __('forms.section') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->seccio_localitzacio )
+          {{ $recerca->seccio_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization section - CLOSE  -->
 
   <!-- Localization UTM X - OPEN  -->
   <div class="form-group col-md-2">
-    {{ Form::label('utm_x_localitzacio', __('forms.utm_x')) }}
-    <p> {{ $recerca->utm_x_localitzacio }} </p>
+    <p>
+      {{ __('forms.utm_x') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->utm_x_localitzacio )
+          {{ $recerca->utm_x_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization UTM X - CLOSE  -->
 
   <!-- Localization UTM Y - OPEN  -->
   <div class="form-group col-md-2">
-    {{ Form::label('utm_y_localitzacio', __('forms.utm_y')) }}
-    <p> {{ $recerca->utm_y_localitzacio }} </p>
+    <p>
+      {{ __('forms.utm_y') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->utm_y_localitzacio )
+          {{ $recerca->utm_y_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization UTM Y - CLOSE  -->
 
   <!-- Localization distance from UPA - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('distancia_upa_localitzacio', __('forms.distance_upa')) }}
-    <p> {{ $recerca->distancia_upa_localitzacio }} </p>
+    <p>
+      {{ __('forms.distance_upa') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->distancia_upa_localitzacio )
+          {{ $recerca->distancia_upa_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization distance from UPA - CLOSE  -->
 
   <!-- Localization who does it - OPEN  -->
   <div class="form-group col-md-4">
-    {{ Form::label('qui_fa_localitzacio', __('forms.who_localizate')) }}
-    <p> {{ $recerca->qui_fa_localitzacio }} </p>
+    <p>
+      {{ __('forms.who_localizate') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->qui_fa_localitzacio )
+          {{ $recerca->qui_fa_localitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Localization who does it - CLOSE  -->
 
   <!-- State lost people - OPEN  -->
   <div class="form-group col-md-6">
-    {{ Form::label('estat_troben', __('forms.lost_people_state')) }}
-    <p> {{ $recerca->estat_troben }} </p>
+    <p>
+      {{ __('forms.lost_people_state') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->estat_troben )
+          {{ $recerca->estat_troben }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- State lost people - CLOSE  -->
 
   <!-- Motive closing - OPEN  -->
   <div class="form-group col-md-6">
-    {{ Form::label('motiu_finalitzacio', __('forms.motive_closing')) }}
-    <p> {{ $recerca->motiu_finalitzacio }} </p>
+    <p>
+      {{ __('forms.motive_closing') }}
+    </p>
+    <h5 class="margin-top-sm-min">
+      <b>
+        @if( $recerca->motiu_finalitzacio )
+          {{ $recerca->motiu_finalitzacio }}
+        @else
+          --
+        @endif
+      </b>
+    </h5>
   </div>
   <!-- Motive closing - CLOSE  -->
-
-  
 
 </div>
 <!-- Content - CLOSE -->

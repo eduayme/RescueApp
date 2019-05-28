@@ -34,8 +34,6 @@ class AfegirTancamentRecerca extends Migration
             $table->string('qui_fa_localitzacio')->nullable();
             $table->string('estat_troben')->nullable();
             $table->string('motiu_finalitzacio')->nullable();
-            $table->string('ip_comandament_finalitza')->nullable();
-            $table->time('durada')->nullable();
         });
     }
 

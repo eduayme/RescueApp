@@ -19,8 +19,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('recerques', 'RecerquesController');
 
     Route::get('/recerques', ['uses' => 'RecerquesController@index', 'as' => 'recerques']);
-
-    Route::get('/recerques/{id}', ['uses' => 'RecerquesController@close', 'as' => 'recerques.close']);
-
-    Route::get('/recerques/{id}', ['uses' => 'RecerquesController@reopen', 'as' => 'recerques.reopen']);
 });

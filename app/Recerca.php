@@ -80,8 +80,6 @@ class Recerca extends Model
         'qui_fa_localitzacio',
         'estat_troben',
         'motiu_finalitzacio',
-        'ip_comandament_finalitza',
-        'durada',
     ];
 
     public function user_creator()
@@ -92,5 +90,10 @@ class Recerca extends Model
     public function user_last_modification()
     {
         return $this->belongsTo('App\User', 'id_usuari_ultima_modificacio', 'id');
+    }
+
+    public function user_closed()
+    {
+        return $this->belongsTo('App\User', 'id_usuari_tancament', 'id');
     }
 }

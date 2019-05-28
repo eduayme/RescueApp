@@ -185,6 +185,8 @@ class RecerquesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $recerca = Recerca::find($id);
+
         $request->validate([
             'num_actuacio' => 'required|string|min:3|max:50|unique:recerques,num_actuacio,'.$id,
         ], [
@@ -193,8 +195,6 @@ class RecerquesController extends Controller
             'num_actuacio.max'      => __('messages.max'),
             'num_actuacio.unique'   => __('messages.unique'),
         ]);
-
-        $recerca = Recerca::find($id);
 
         //dades recerca
         $recerca->es_practica = $request->has('es_practica') ? $request->get('es_practica') : $recerca->es_practica;
@@ -267,36 +267,72 @@ class RecerquesController extends Controller
         $recerca->qui_fa_localitzacio = $request->has('qui_fa_localitzacio') ? $request->get('qui_fa_localitzacio') : $recerca->qui_fa_localitzacio;
         $recerca->estat_troben = $request->has('estat_troben') ? $request->get('estat_troben') : $recerca->estat_troben;
         $recerca->motiu_finalitzacio = $request->has('motiu_finalitzacio') ? $request->get('motiu_finalitzacio') : $recerca->motiu_finalitzacio;
-        $recerca->ip_comandament_finalitza = $request->has('ip_comandament_finalitza') ? $request->get('ip_comandament_finalitza') : $recerca->ip_comandament_finalitza;
-        $recerca->durada = $request->has('durada') ? $request->get('durada') : $recerca->durada;
+
+        // If search open and we want to close it
+        if( $request->has('closebutton') ) {
+
+            $request->validate([
+                'grup_treball_utilitzat'         => 'required',
+                'derivacio_cossos_lliurades'     => 'required',
+                'derivacio_cossos_codi_receptor' => 'required',
+                'comandament_inicial'            => 'required',
+                'comandament_relleus'            => 'required',
+                'comandament_final'              => 'required',
+                'tipologia'                      => 'required',
+                'recursos'                       => 'required',
+                'data_localitzacio'              => 'required',
+                'toponim_localitzacio'           => 'required',
+                'indret_localitzacio'            => 'required',
+                'terme_municipal_localitzacio'   => 'required',
+                'tall_coe_localitzacio'          => 'required',
+                'soc_localitzacio'               => 'required',
+                'seccio_localitzacio'            => 'required',
+                'utm_x_localitzacio'             => 'required',
+                'utm_y_localitzacio'             => 'required',
+                'distancia_upa_localitzacio'     => 'required',
+                'qui_fa_localitzacio'            => 'required',
+                'estat_troben'                   => 'required',
+                'motiu_finalitzacio'             => 'required',
+            ], [
+                'grup_treball_utilitzat.required'         => __('messages.required'),
+                'derivacio_cossos_lliurades.required'     => __('messages.required'),
+                'derivacio_cossos_lliurades.required'     => __('messages.required'),
+                'derivacio_cossos_codi_receptor.required' => __('messages.required'),
+                'comandament_inicial.required'            => __('messages.required'),
+                'comandament_relleus.required'            => __('messages.required'),
+                'comandament_final.required'              => __('messages.required'),
+                'tipologia.required'                      => __('messages.required'),
+                'recursos.required'                       => __('messages.required'),
+                'data_localitzacio.required'              => __('messages.required'),
+                'toponim_localitzacio.required'           => __('messages.required'),
+                'indret_localitzacio.required'            => __('messages.required'),
+                'terme_municipal_localitzacio.required'   => __('messages.required'),
+                'tall_coe_localitzacio.required'          => __('messages.required'),
+                'soc_localitzacio.required'               => __('messages.required'),
+                'seccio_localitzacio.required'            => __('messages.required'),
+                'utm_x_localitzacio.required'             => __('messages.required'),
+                'utm_y_localitzacio.required'             => __('messages.required'),
+                'distancia_upa_localitzacio.required'     => __('messages.required'),
+                'qui_fa_localitzacio.required'            => __('messages.required'),
+                'estat_troben.required'                   => __('messages.required'),
+                'motiu_finalitzacio.required'             => __('messages.required'),
+            ]);
+
+            $recerca->id_usuari_tancament = \Auth::user()->id;
+            $recerca->data_tancament = date('Y-m-d H:i:s');
+            $recerca->estat = 'Tancada';
+        }
+
+        // If search close and we want to open it
+        elseif( $request->has('openbutton') ) {
+            $recerca->id_usuari_tancament = '';
+            $recerca->data_tancament = '';
+            $recerca->estat = 'Oberta';
+        }
 
         $recerca->save();
 
         return redirect('recerques/'.$recerca->id)
         ->with('success', $recerca->num_actuacio.__('messages.updated'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function close(Request $request, $id)
-    {
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function reopen(Request $request, $id)
-    {
     }
 }
