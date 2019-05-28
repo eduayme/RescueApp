@@ -323,9 +323,9 @@ class RecerquesController extends Controller
         }
 
         // If search close and we want to open it
-        elseif( $request->has('openbutton') ) {
-            $recerca->id_usuari_tancament = NULL;
-            $recerca->data_tancament = NULL;
+        elseif ($request->has('openbutton')) {
+            $recerca->id_usuari_tancament = null;
+            $recerca->data_tancament = null;
             $recerca->estat = 'Oberta';
         }
 
