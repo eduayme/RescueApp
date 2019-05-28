@@ -269,8 +269,7 @@ class RecerquesController extends Controller
         $recerca->motiu_finalitzacio = $request->has('motiu_finalitzacio') ? $request->get('motiu_finalitzacio') : $recerca->motiu_finalitzacio;
 
         // If search open and we want to close it
-        if( $request->has('closebutton') ) {
-
+        if ($request->has('closebutton')) {
             $request->validate([
                 'grup_treball_utilitzat'         => 'required',
                 'derivacio_cossos_lliurades'     => 'required',
@@ -324,7 +323,7 @@ class RecerquesController extends Controller
         }
 
         // If search close and we want to open it
-        elseif( $request->has('openbutton') ) {
+        elseif ($request->has('openbutton')) {
             $recerca->id_usuari_tancament = '';
             $recerca->data_tancament = '';
             $recerca->estat = 'Oberta';
