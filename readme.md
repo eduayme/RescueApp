@@ -40,19 +40,24 @@ MAIL_USERNAME = email_username
 MAIL_PASSWORD = email_password
 ```
 
-8) Open terminal inside project folder and migrate the database
+8) Open terminal inside the project folder and run
+```
+> composer update --no-scripts
+```
+
+9) In the same terminal migrate the database
 ```
 > php artisan migrate
 ```
 
-9) In the same terminal inside project folder run the application
+10) Finally run the application
 ```
 > php artisan serve
 ```
 
-10) Open a browser and go to the url `127.0.0.1:8000` or `localhost:8000`
+11) Open a browser and go to the url `127.0.0.1:8000` or `localhost:8000`
 
-11) Web application is running! :)
+12) Web application is running! :)
 
 
 ## License
