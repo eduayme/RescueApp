@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Recerca;
 use Auth;
-use Validator;
 use Illuminate\Http\Request;
+use Validator;
 
 class RecerquesController extends Controller
 {
@@ -271,7 +271,7 @@ class RecerquesController extends Controller
 
         // If search open and we want to close it
         if ($request->has('closebutton')) {
-             $validator = Validator::make($request->all(),[
+            $validator = Validator::make($request->all(), [
                 'grup_treball_utilitzat'         => 'required',
                 'derivacio_cossos_lliurades'     => 'required',
                 'derivacio_cossos_codi_receptor' => 'required',
@@ -318,7 +318,7 @@ class RecerquesController extends Controller
                 'motiu_finalitzacio.required'             => __('messages.required'),
             ]);
             if ($validator->fails()) {
-              return redirect('recerques/'.$recerca->id.'#nav-closing')
+                return redirect('recerques/'.$recerca->id.'#nav-closing')
                      ->withErrors($validator)->withInput();
             }
 

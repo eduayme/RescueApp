@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Desaparegut;
 use App\Recerca;
 use Auth;
-
 use Illuminate\Http\Request;
 
 class DesaparegutsController extends Controller
@@ -79,7 +78,7 @@ class DesaparegutsController extends Controller
         $desaparegut->save();
 
         return redirect('recerques/'.$desaparegut->id_recerca)
-        ->with('success', $desaparegut->nom . __('messages.added'));
+        ->with('success', $desaparegut->nom.__('messages.added'));
     }
 
     /**
