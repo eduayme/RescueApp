@@ -13,10 +13,9 @@
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function ()
-{
+Route::group(['middleware' => 'auth'], function () {
     Route::resource('recerques', 'RecerquesController');
-    
+
     Route::get('/', ['uses' => 'RecerquesController@index', 'as' => 'index']);
 
     Route::get('/recerques', ['uses' => 'RecerquesController@index', 'as' => 'recerques']);
