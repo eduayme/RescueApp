@@ -92,3 +92,25 @@
   <!-- Content - CLOSE -->
 
 @endsection
+
+<!-- JQuery 3.3.1 -->
+<script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+
+<!-- JS -->
+<script>
+
+    $(document).ready(function() {
+      // tabs
+      var hash = window.location.hash;
+      hash && $('nav a[href="' + hash + '"]').tab('show');
+
+      $('.nav-tabs a').click(function (e) {
+        $(this).tab('show');
+        var scrollmem = $('body').scrollTop();
+        window.location.hash = this.hash;
+        $('html,body').scrollTop(scrollmem);
+      });
+
+    });
+
+</script>
