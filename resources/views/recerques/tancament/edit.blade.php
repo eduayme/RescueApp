@@ -400,7 +400,7 @@
       timePicker: true,
       timePicker24Hour: true,
       timePickerIncrement: 5,
-      autoUpdateInput: true,
+      autoUpdateInput: false,
       drops: 'down',
       currentDate: today,
       locale: {

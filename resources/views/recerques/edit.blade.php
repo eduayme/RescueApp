@@ -78,7 +78,15 @@
           <!-- Begin datetime - OPEN -->
           <div class="form-group col-md-3">
             {{ Form::label('data_inici', __('forms.begin_date')) }}
-            {{ Form::text('data_inici', '', array('class' => 'form-control')) }}
+            <input type="text" name="data_inici" value="{{ $recerca->data_inici }}"
+            class="form-control {{ $errors->has('data_inici') ? ' is-invalid' : '' }}" />
+            <!-- Show errors input - OPEN -->
+            @if( $errors->has('data_inici') )
+              <div class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('data_inici') }}</strong>
+              </div>
+            @endif
+            <!-- Show errors input - CLOSE -->
           </div>
           <!-- Begin datetime - CLOSE -->
 
@@ -239,7 +247,15 @@
             data-placement="top" title="{{ __('forms.upa') }}">
             </span>
           </label>
-          {{ Form::text('data_upa', null, array('class' => 'form-control')) }}
+          <input type="text" name="data_upa" value="{{ $recerca->data_upa }}"
+          class="form-control {{ $errors->has('data_upa') ? ' is-invalid' : '' }}" />
+          <!-- Show errors input - OPEN -->
+          @if( $errors->has('data_upa') )
+            <div class="invalid-feedback" role="alert">
+              <strong>{{ $errors->first('data_upa') }}</strong>
+            </div>
+          @endif
+          <!-- Show errors input - CLOSE -->
         </div>
         <!-- Incident date UPA - CLOSE  -->
 
@@ -536,6 +552,7 @@
       timePicker: true,
       timePicker24Hour: true,
       timePickerIncrement: 5,
+      autoUpdateInput: false,
       autoApply: true,
       drops: 'down',
       currentDate: today,
