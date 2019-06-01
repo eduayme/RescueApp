@@ -96,4 +96,9 @@ class Recerca extends Model
     {
         return $this->belongsTo('App\User', 'id_usuari_tancament', 'id');
     }
+
+    public function lost_people()
+    {
+        return $this->belongsTo('App\Desaparegut', 'id_recerca', 'id');
+    }
 }

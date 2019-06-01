@@ -7,6 +7,7 @@ return [
     'practice'         => 'Pràctica',
     'searches'         => 'Recerques',
     'practices'        => 'Pràctiques',
+    'lost_person'      => 'Desaparegut',
     'login'            => 'Iniciar sessió',
     'logout'           => 'Tancar sessió',
     'register'         => 'Registrar-se',

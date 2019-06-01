@@ -5,12 +5,15 @@
   <div class="col justify-content-start">
 
     <!-- Add lost person - OPEN -->
-    <a href="{{ URL::to('recerques/' . $recerca->id . '/edit') }}"
-    role="button" class="btn btn-outline-primary margin-right
-    <?php if ($recerca->estat == 'Tancada'){ ?> disabled <?php   } ?>"
-    >
-      {{ __('actions.add_lost_person') }}
-    </a>
+    <form action="/desapareguts/create" method="put" style="display: inline">
+    @csrf
+        <input type="hidden" class="form-control" name="id_recerca" value={{ $recerca->id }}>
+        <button type="submit" class="btn btn-outline-primary margin-right
+        <?php if ($recerca->estat == 'Tancada'){ ?> disabled <?php   } ?>"
+        >
+          {{ __('actions.add_lost_person') }}
+        </button>
+    </form>
     <!-- Add lost person - CLOSE -->
 
   </div>

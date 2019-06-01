@@ -19,4 +19,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', ['uses' => 'RecerquesController@index', 'as' => 'index']);
 
     Route::get('/recerques', ['uses' => 'RecerquesController@index', 'as' => 'recerques']);
+
+    Route::resource('desapareguts', 'DesaparegutsController');
 });

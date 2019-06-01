@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6732f701-fccb-49ed-9915-97ae4401a1be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/lang/ca/actions.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ca/actions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ca/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ca/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/recerques/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/recerques/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/recerques/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/recerques/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RecerquesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecerquesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ca/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ca/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,14 +12,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor" />
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/recerques/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3840">
-              <caret line="114" lean-forward="true" selection-end-line="419" />
+            <state relative-caret-position="1677">
+              <caret line="129" column="37" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -192,6 +191,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -241,36 +241,37 @@
       <option name="presentableId" value="Default" />
       <updated>1558730288575</updated>
       <workItem from="1558730291161" duration="633000" />
+      <workItem from="1559406519342" duration="122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="633000" />
+    <option name="totallyTimeSpent" value="755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19098713" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19384836" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,8 +297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/recerques/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3840">
-          <caret line="114" lean-forward="true" selection-end-line="419" />
+        <state relative-caret-position="1677">
+          <caret line="129" column="37" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
         </state>
       </provider>
     </entry>

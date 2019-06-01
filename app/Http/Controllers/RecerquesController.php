@@ -318,7 +318,6 @@ class RecerquesController extends Controller
                 'motiu_finalitzacio.required'             => __('messages.required'),
             ]);
             if ($validator->fails()) {
-              $errors = $validator->errors();
               return redirect('recerques/'.$recerca->id.'#nav-closing')
                      ->withErrors($validator)->withInput();
             }

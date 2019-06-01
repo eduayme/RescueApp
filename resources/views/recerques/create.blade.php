@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('main.searches'))
+@section('title', __('actions.add') . ' ' . __('main.search'))
 
 @section('content')
 
