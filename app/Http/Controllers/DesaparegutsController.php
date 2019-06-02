@@ -93,7 +93,7 @@ class DesaparegutsController extends Controller
         $desaparegut = Desaparegut::find($id);
         $recerca = Recerca::find($desaparegut->id_recerca);
 
-        return view('recerques.desaparegut.view', compact('desaparegut','recerca'));
+        return view('recerques.desaparegut.view', compact('desaparegut', 'recerca'));
     }
 
     /**
@@ -161,29 +161,29 @@ class DesaparegutsController extends Controller
         ]);
 
         //dades recerca
-        $desaparegut->id                       = $request->get('id');
-        $desaparegut->id_recerca               = $request->get('id_recerca');
-        $desaparegut->trobat                   = $request->get('trobat');
-        $desaparegut->nom                      = $request->get('nom');
-        $desaparegut->nom_respon               = $request->get('nom_respon');
-        $desaparegut->edat                     = $request->get('edat');
-        $desaparegut->telefon                  = $request->get('telefon');
-        $desaparegut->whatsapp_o_gps           = $request->get('whatsapp_o_gps');
-        $desaparegut->perfil                   = $request->get('perfil');
-        $desaparegut->descripcio_fisica        = $request->get('descripcio_fisica');
-        $desaparegut->roba                     = $request->get('roba');
-        $desaparegut->altres                   = $request->get('altres');
+        $desaparegut->id = $request->get('id');
+        $desaparegut->id_recerca = $request->get('id_recerca');
+        $desaparegut->trobat = $request->get('trobat');
+        $desaparegut->nom = $request->get('nom');
+        $desaparegut->nom_respon = $request->get('nom_respon');
+        $desaparegut->edat = $request->get('edat');
+        $desaparegut->telefon = $request->get('telefon');
+        $desaparegut->whatsapp_o_gps = $request->get('whatsapp_o_gps');
+        $desaparegut->perfil = $request->get('perfil');
+        $desaparegut->descripcio_fisica = $request->get('descripcio_fisica');
+        $desaparegut->roba = $request->get('roba');
+        $desaparegut->altres = $request->get('altres');
 
         // estat persona
-        $desaparegut->forma_fisica             = $request->get('forma_fisica');
-        $desaparegut->malalties_o_lesions      = $request->get('malalties_o_lesions');
-        $desaparegut->medicacio                = $request->get('medicacio');
+        $desaparegut->forma_fisica = $request->get('forma_fisica');
+        $desaparegut->malalties_o_lesions = $request->get('malalties_o_lesions');
+        $desaparegut->medicacio = $request->get('medicacio');
         $desaparegut->limitacio_o_discapacitat = $request->get('limitacio_o_discapacitat');
 
         // vehicle
-        $desaparegut->marca_model_vehicle      = $request->get('marca_model_vehicle');
-        $desaparegut->color_vehicle            = $request->get('color_vehicle');
-        $desaparegut->matricula_vehicle        = $request->get('matricula_vehicle');
+        $desaparegut->marca_model_vehicle = $request->get('marca_model_vehicle');
+        $desaparegut->color_vehicle = $request->get('color_vehicle');
+        $desaparegut->matricula_vehicle = $request->get('matricula_vehicle');
 
         $desaparegut->save();
 
