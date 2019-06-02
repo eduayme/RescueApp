@@ -494,6 +494,12 @@ pre code {
 .margin-top-sm {
   margin-top: 15px !important;
 }
+.margin-bottom {
+  margin-bottom: 30px !important;
+}
+.margin-bottom-sm {
+  margin-bottom: 15px !important;
+}
 .margin-top-sm-min {
   margin-top: -15px !important;
 }
@@ -508,6 +514,9 @@ pre code {
 }
 .margin-right {
   margin-right: 30px;
+}
+.margin-right-sm {
+  margin-right: 15px;
 }
 .container {
     width: 100%;

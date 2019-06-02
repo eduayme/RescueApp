@@ -434,6 +434,10 @@
       }
     });
 
+    $('input[name="data_localitzacio"]').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('YYYY-MM-DD HH:mm:ss'));
+    });
+
     $('input[name="data_localitzacio"]').on('cancel.daterangepicker', function(ev, picker) {
       $(this).val('');
     });

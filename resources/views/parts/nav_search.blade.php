@@ -15,8 +15,11 @@
             <!-- Left Side Of Navbar - OPEN -->
             <ul class="navbar-nav mr-auto">
 
-              <span class="align-middle margin-left margin-right">
-                {{ __('forms.service')}}: <b> {{ $recerca->num_actuacio }} </b>
+              <span class="align-middle margin-right">
+                {{ __('forms.service')}}:
+                <b>
+                    <a href="{{ URL::to('recerques/' . $recerca->id) }}"> {{ $recerca->num_actuacio }} </a>
+                </b>
               </span>
 
               @if( $recerca->municipi_upa )

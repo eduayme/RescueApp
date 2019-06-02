@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_secondary')
 
 @section('title', __('main.searches'))
 
@@ -57,359 +57,289 @@
         </div>
         <!-- Align left - CLOSE -->
 
-        <!-- Align right - OPEN -->
-        <div class="col text-right">
+    </div>
+    <!-- Top buttons - CLOSE -->
 
-            <!-- Edit search button - OPEN -->
-            <a href="{{ URL::to('recerques/' . $recerca->id . '/edit') }}"
-                role="button" class="btn btn-outline-secondary margin-right
-                <?php if ($recerca->estat == 'Tancada'){ ?> disabled <?php   } ?>"
-                data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}"
-                >
-                <span class="octicon octicon-pencil"></span>
-            </a>
-            <!-- Edit search button - CLOSE -->
+    <!-- Form - OPEN -->
+    <form class="margin-top" method="post" action="{{ route('desapareguts.store') }}">
 
-            <!-- Delete search button- OPEN -->
-            <span data-toggle="modal" href="#myModal">
-                <button class="btn btn-outline-danger margin-left" href="#myModal"
-                data-toggle="tooltip" data-placement="top" title="{{ __('actions.delete') }}">
-                <span class="octicon octicon-trashcan"></span>
-            </button>
-        </span>
-        <!-- Delete search button- CLOSE -->
+        <!-- Stype service title - OPEN -->
+        <h3>
+            {{ __('main.lost_person') }}
+        </h3>
+        <!-- Stype service title - CLOSE -->
 
-        <!-- Delete search modal - OPEN -->
-        <form action="{{ route('recerques.destroy', $recerca->id) }}" method="post" style="display: inline">
+        <!-- Type activity, code and region - OPEN -->
+        <div class="form-row">
             @csrf
-            @method('DELETE')
 
-            <!-- Modal - OPEN -->
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog modal-confirm">
+            <!-- Name - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="nom"> {{ __('register.name') }} </label>
+                <input type="text" class="form-control {{ $errors->has('nom') ? ' is-invalid' : '' }}" name="nom"/>
 
-                    <!-- Modal content - OPEN -->
-                    <div class="modal-content">
-
-                        <!-- Modal header - OPEN -->
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                        </div>
-                        <!-- Modal header - CLOSE -->
-
-                        <!-- Modal body - OPEN -->
-                        <div class="modal-body text-center">
-                            <h4>
-                                {{ __('messages.are_you_sure') }}
-                            </h4>
-                        </div>
-                        <!-- Modal body - CLOSE -->
-
-                        <!-- Modal footer - OPEN -->
-                        <div class="modal-footer">
-                            <a class="btn btn-light" data-dismiss="modal">
-                                {{ __('actions.cancel') }}
-                            </a>
-                            <button type="submit" class="btn btn-danger">
-                                {{ __('actions.delete') }}
-                            </button>
-                        </div>
-                        <!-- Modal footer - CLOSE -->
-
-                    </div>
-                    <!-- Modal content - CLOSE -->
-
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('nom') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('nom') }}</strong>
                 </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            <!-- Modal - CLOSE -->
+            <!-- Name - CLOSE  -->
 
-        </form>
-        <!-- Delete search - CLOSE -->
+            <!-- Name respond - OPEN  -->
+            <div class="form-group col-md-3">
+                <label for="nom_respon"> {{ __('forms.name_respond') }} </label>
+                <input type="text" class="form-control {{ $errors->has('nom_respon') ? ' is-invalid' : '' }}" name="nom_respon"/>
 
-    </div>
-    <!-- Align right - CLOSE -->
-
-</div>
-<!-- Top buttons - CLOSE -->
-
-<!-- Form - OPEN -->
-<form class="margin-top" method="post" action="{{ route('desapareguts.store') }}">
-
-    <!-- Stype service title - OPEN -->
-    <h3>
-        {{ __('main.lost_person') }}
-    </h3>
-    <!-- Stype service title - CLOSE -->
-
-    <!-- Type activity, code and region - OPEN -->
-    <div class="form-row">
-        @csrf
-
-        <!-- Name - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="nom"> {{ __('register.name') }} </label>
-            <input type="text" class="form-control {{ $errors->has('nom') ? ' is-invalid' : '' }}" name="nom"/>
-
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('nom') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('nom') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('nom_respon') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('nom_respon') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Name - CLOSE  -->
+            <!-- Name respond - CLOSE  -->
 
-        <!-- Name respond - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="nom_respon"> {{ __('forms.name_respond') }} </label>
-            <input type="text" class="form-control {{ $errors->has('nom_respon') ? ' is-invalid' : '' }}" name="nom_respon"/>
+            <!-- Age - OPEN  -->
+            <div class="form-group col-md-3">
+                <label for="edat"> {{ __('forms.age') }} </label>
+                <input type="number" class="form-control {{ $errors->has('edat') ? ' is-invalid' : '' }}" name="edat"/>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('nom_respon') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('nom_respon') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('edat') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('edat') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Name respond - CLOSE  -->
+            <!-- Age - CLOSE  -->
 
-        <!-- Age - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="edat"> {{ __('forms.age') }} </label>
-            <input type="number" class="form-control {{ $errors->has('edat') ? ' is-invalid' : '' }}" name="edat"/>
+            <!-- Phone - OPEN  -->
+            <div class="form-group col-md-3">
+                <label for="telefon"> {{ __('forms.phone') }} </label>
+                <input type="text" class="form-control {{ $errors->has('telefon') ? ' is-invalid' : '' }}" name="telefon"/>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('edat') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('edat') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('telefon') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('telefon') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Age - CLOSE  -->
+            <!-- Phone - CLOSE  -->
 
-        <!-- Phone - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="telefon"> {{ __('forms.phone') }} </label>
-            <input type="text" class="form-control {{ $errors->has('telefon') ? ' is-invalid' : '' }}" name="telefon"/>
-
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('telefon') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('telefon') }}</strong>
+            <!-- Has whatsapp or gps - OPEN  -->
+            <div class="form-group col-md-3">
+              <label for="whatsapp_o_gps"> {{ __('forms.whatsapp_or_gps') }} </label>
+              <select id="whatsapp_o_gps" class="form-control" name="whatsapp_o_gps">
+                  <option value=""> {{ __('forms.chose_option') }} </option>
+                  <option value="0"> No </option>
+                  <option value="1"> Si </option>
+              </select>
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Phone - CLOSE  -->
+            <!-- Has whatsapp or gps - CLOSE  -->
 
-        <!-- Has whatsapp or gps - OPEN  -->
-        <div class="form-group col-md-3">
-          <label for="whatsapp_o_gps"> {{ __('forms.whatsapp_or_gps') }} </label>
-          <select id="whatsapp_o_gps" class="form-control" name="whatsapp_o_gps">
-              <option value=""> {{ __('forms.chose_option') }} </option>
-              <option value="0"> No </option>
-              <option value="1"> Si </option>
-          </select>
-        </div>
-        <!-- Has whatsapp or gps - CLOSE  -->
-
-        <!-- Profile - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="perfil"> {{ __('register.profile') }} </label>
-            <select id="perfil" class="form-control" name="perfil">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="Trastorn del desenvolupament"> Trastorn del desenvolupament </option>
-                <option value="Alzheimer o altres demencies"> Alzheimer o altres demencies </option>
-                <option value="Malaltia mental o psicològica"> Malaltia mental o psicològica </option>
-                <option value="Conductes autolítiques"> Conductes autolítiques </option>
-                <option value="Excursionista o senderista"> Excursionista o senderista </option>
-                <option value="Recol·lector en general"> Recol·lector en general </option>
-                <option value="Boletaire"> Boletaire </option>
-                <option value="Cap de les anteriors"> Cap de les anteriors </option>
-            </select>
-        </div>
-        <!-- Search region - CLOSE  -->
-
-        <!-- Aspect description - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="descripcio_fisica"> {{ __('forms.aspect_description') }} </label>
-            <textarea type="text" class="form-control" name="descripcio_fisica" rows="2"></textarea>
-
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('descripcio_fisica') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('descripcio_fisica') }}</strong>
+            <!-- Profile - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="perfil"> {{ __('register.profile') }} </label>
+                <select id="perfil" class="form-control" name="perfil">
+                    <option value=""> {{ __('forms.chose_option') }} </option>
+                    <option value="Trastorn del desenvolupament"> Trastorn del desenvolupament </option>
+                    <option value="Alzheimer o altres demencies"> Alzheimer o altres demencies </option>
+                    <option value="Malaltia mental o psicològica"> Malaltia mental o psicològica </option>
+                    <option value="Conductes autolítiques"> Conductes autolítiques </option>
+                    <option value="Excursionista o senderista"> Excursionista o senderista </option>
+                    <option value="Recol·lector en general"> Recol·lector en general </option>
+                    <option value="Boletaire"> Boletaire </option>
+                    <option value="Cap de les anteriors"> Cap de les anteriors </option>
+                </select>
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!--  Aspect description - CLOSE  -->
+            <!-- Search region - CLOSE  -->
 
-        <!-- Clothes - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="roba"> {{ __('forms.clothes') }} </label>
-            <textarea type="text" class="form-control" name="roba" rows="2"></textarea>
+            <!-- Aspect description - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="descripcio_fisica"> {{ __('forms.aspect_description') }} </label>
+                <textarea type="text" class="form-control" name="descripcio_fisica" rows="2"></textarea>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('roba') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('roba') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('descripcio_fisica') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('descripcio_fisica') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Clothes - CLOSE  -->
+            <!--  Aspect description - CLOSE  -->
 
-        <!-- Phisic form - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="forma_fisica"> {{ __('forms.phisic_form') }} </label>
-            <textarea type="text" class="form-control" name="forma_fisica" rows="2"></textarea>
+            <!-- Clothes - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="roba"> {{ __('forms.clothes') }} </label>
+                <textarea type="text" class="form-control" name="roba" rows="2"></textarea>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('forma_fisica') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('forma_fisica') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('roba') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('roba') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Phisic form - CLOSE  -->
+            <!-- Clothes - CLOSE  -->
 
-        <!-- Diseases or injuries - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="malalties_o_lesions"> {{ __('forms.diseases_or_injuries') }} </label>
-            <textarea type="text" class="form-control" name="malalties_o_lesions" rows="2"></textarea>
+            <!-- Phisic form - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="forma_fisica"> {{ __('forms.phisic_form') }} </label>
+                <textarea type="text" class="form-control" name="forma_fisica" rows="2"></textarea>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('malalties_o_lesions') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('malalties_o_lesions') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('forma_fisica') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('forma_fisica') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Diseases or injuries - CLOSE  -->
+            <!-- Phisic form - CLOSE  -->
 
-        <!-- Medication - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="medicacio"> {{ __('forms.medication') }} </label>
-            <textarea type="text" class="form-control" name="medicacio" rows="2"></textarea>
+            <!-- Diseases or injuries - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="malalties_o_lesions"> {{ __('forms.diseases_or_injuries') }} </label>
+                <textarea type="text" class="form-control" name="malalties_o_lesions" rows="2"></textarea>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('medicacio') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('medicacio') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('malalties_o_lesions') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('malalties_o_lesions') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Medication - CLOSE  -->
+            <!-- Diseases or injuries - CLOSE  -->
 
-        <!-- Limitations or discapacities - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="limitacio_o_discapacitat"> {{ __('forms.limitations_or_discapacities') }} </label>
-            <textarea type="text" class="form-control" name="limitacio_o_discapacitat" rows="2"></textarea>
+            <!-- Medication - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="medicacio"> {{ __('forms.medication') }} </label>
+                <textarea type="text" class="form-control" name="medicacio" rows="2"></textarea>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('limitacio_o_discapacitat') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('limitacio_o_discapacitat') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('medicacio') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('medicacio') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Limitations or discapacities - CLOSE  -->
+            <!-- Medication - CLOSE  -->
 
-        <!-- Others - OPEN  -->
-        <div class="form-group col-md-12">
-            <label for="altres"> {{ __('forms.other') }} </label>
-            <textarea type="text" class="form-control" name="altres" rows="2"></textarea>
+            <!-- Limitations or discapacities - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="limitacio_o_discapacitat"> {{ __('forms.limitations_or_discapacities') }} </label>
+                <textarea type="text" class="form-control" name="limitacio_o_discapacitat" rows="2"></textarea>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('altres') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('altres') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('limitacio_o_discapacitat') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('limitacio_o_discapacitat') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Others - CLOSE  -->
+            <!-- Limitations or discapacities - CLOSE  -->
 
-        <!-- Vehicle title - OPEN -->
-        <div class="form-group col-md-12">
-            <h5 class="margin-top-sm">
-                {{ __('forms.vehicle') }}
-            </h5>
-        </div>
-        <!-- Vehicle title - CLOSE -->
+            <!-- Others - OPEN  -->
+            <div class="form-group col-md-12">
+                <label for="altres"> {{ __('forms.other') }} </label>
+                <textarea type="text" class="form-control" name="altres" rows="2"></textarea>
 
-        <!-- Vehicle model and brand - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="marca_model_vehicle"> {{ __('forms.model_and_brand') }} </label>
-            <input type="text" class="form-control {{ $errors->has('marca_model_vehicle') ? ' is-invalid' : '' }}" name="marca_model_vehicle"/>
-
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('marca_model_vehicle') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('marca_model_vehicle') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('altres') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('altres') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Vehicle model and brand - CLOSE  -->
+            <!-- Others - CLOSE  -->
 
-        <!-- Vehicle color - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="color_vehicle"> {{ __('forms.color') }} </label>
-            <input type="text" class="form-control {{ $errors->has('color_vehicle') ? ' is-invalid' : '' }}" name="color_vehicle"/>
-
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('color_vehicle') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('color_vehicle') }}</strong>
+            <!-- Vehicle title - OPEN -->
+            <div class="form-group col-md-12">
+                <h5 class="margin-top-sm">
+                    {{ __('forms.vehicle') }}
+                </h5>
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
-        </div>
-        <!-- Vehicle color - CLOSE  -->
+            <!-- Vehicle title - CLOSE -->
 
-        <!-- Vehicle license plate - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="matricula_vehicle"> {{ __('forms.license_plate') }} </label>
-            <input type="text" class="form-control {{ $errors->has('matricula_vehicle') ? ' is-invalid' : '' }}" name="matricula_vehicle"/>
+            <!-- Vehicle model and brand - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="marca_model_vehicle"> {{ __('forms.model_and_brand') }} </label>
+                <input type="text" class="form-control {{ $errors->has('marca_model_vehicle') ? ' is-invalid' : '' }}" name="marca_model_vehicle"/>
 
-            <!-- Show errors input - OPEN -->
-            @if( $errors->has('matricula_vehicle') )
-            <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('matricula_vehicle') }}</strong>
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('marca_model_vehicle') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('marca_model_vehicle') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
-            @endif
-            <!-- Show errors input - CLOSE -->
+            <!-- Vehicle model and brand - CLOSE  -->
+
+            <!-- Vehicle color - OPEN  -->
+            <div class="form-group col-md-3">
+                <label for="color_vehicle"> {{ __('forms.color') }} </label>
+                <input type="text" class="form-control {{ $errors->has('color_vehicle') ? ' is-invalid' : '' }}" name="color_vehicle"/>
+
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('color_vehicle') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('color_vehicle') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
+            </div>
+            <!-- Vehicle color - CLOSE  -->
+
+            <!-- Vehicle license plate - OPEN  -->
+            <div class="form-group col-md-3">
+                <label for="matricula_vehicle"> {{ __('forms.license_plate') }} </label>
+                <input type="text" class="form-control {{ $errors->has('matricula_vehicle') ? ' is-invalid' : '' }}" name="matricula_vehicle"/>
+
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('matricula_vehicle') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('matricula_vehicle') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
+            </div>
+            <!-- Vehicle license plate - CLOSE  -->
+
         </div>
-        <!-- Vehicle license plate - CLOSE  -->
+        <!-- Type activity, code and region - OPEN -->
 
-    </div>
-    <!-- Type activity, code and region - OPEN -->
+        <!-- Finded HIDDEN - OPEN -->
+        <input type="hidden" class="form-control" name="trobat" value="0">
+        <!-- Finded HIDDEN - CLOSE -->
 
-    <!-- State HIDDEN - OPEN -->
-    <input type="hidden" class="form-control" name="id_recerca" value="{{ $recerca->id }}">
-    <!-- State HIDDEN - CLOSE -->
+        <!-- State HIDDEN - OPEN -->
+        <input type="hidden" class="form-control" name="id_recerca" value="{{ $recerca->id }}">
+        <!-- State HIDDEN - CLOSE -->
 
-    <!-- Submit button - OPEN -->
-    <div class="text-center margin-top">
-        <button type="submit" class="btn btn-primary">
-            {{ __('actions.add') . ' ' . __('main.lost_person') }}
-        </button>
-    </div>
-    <!-- Submit button - OPEN -->
+        <!-- Submit button - OPEN -->
+        <div class="text-center margin-top">
+            <button type="submit" class="btn btn-primary">
+                {{ __('actions.add') . ' ' . __('main.lost_person') }}
+            </button>
+        </div>
+        <!-- Submit button - OPEN -->
 
-</form>
-<!-- Form - CLOSE -->
+    </form>
+    <!-- Form - CLOSE -->
 
 </div>
 <!-- Content - CLOSE -->

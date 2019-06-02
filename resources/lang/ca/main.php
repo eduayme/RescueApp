@@ -21,4 +21,6 @@ return [
     'terms of service' => 'Termes de Servei',
     'data'             => 'Dades',
     'closing'          => 'Tancament',
+    'lost'             => 'Perdut',
+    'found'            => 'Trobat',
 ];

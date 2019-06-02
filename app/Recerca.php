@@ -99,6 +99,6 @@ class Recerca extends Model
 
     public function lost_people()
     {
-        return $this->belongsTo('App\Desaparegut', 'id_recerca', 'id');
+        return $this->hasMany('App\Desaparegut', 'id_recerca', 'id');
     }
 }

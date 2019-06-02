@@ -11,6 +11,7 @@ class Desaparegut extends Model
     protected $fillable = [
         'id',
         'id_recerca',
+        'trobat',
         'nom',
         'nom_respon',
         'edat',

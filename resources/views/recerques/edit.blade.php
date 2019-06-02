@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_secondary')
 
 @section('title', __('actions.edit') . ' ' . $recerca->num_actuacio)
 
@@ -299,6 +299,14 @@
         </div>
         <!-- Lost people count - CLOSE  -->
 
+        <!-- Add lost person - OPEN -->
+        <div class="form-group col-md-4 margin-top">
+            <button type="submit" class="btn btn-outline-primary margin-right" form="desaparegut">
+              {{ __('actions.add_lost_person') }}
+            </button>
+        </div>
+        <!-- Add lost person - CLOSE -->
+
       </div>
       <!-- Lost people - CLOSE -->
 
@@ -534,6 +542,13 @@
   </div>
   <!-- Content - CLOSE -->
 
+    <!-- Form lost people - OPEn -->
+    <form id="desaparegut" action="/desapareguts/create" method="put">
+        @csrf
+            <input type="hidden" class="form-control" name="id_recerca" value={{ $recerca->id }}>
+    </form>
+    <!-- Form lost people - CLOSE -->
+
 @endsection
 
 <!-- JQuery 3.3.1 -->
@@ -585,6 +600,10 @@
             "{{ __('daterangepicker.december') }}",
         ],
       }
+    });
+
+    $('input[name="data_inici"],input[name="data_upa"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('YYYY-MM-DD HH:mm:ss'));
     });
 
     $('input[name="data_inici"],input[name="data_upa"]').on('cancel.daterangepicker', function(ev, picker) {

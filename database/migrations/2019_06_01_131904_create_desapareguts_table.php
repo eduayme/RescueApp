@@ -16,6 +16,7 @@ class CreateDesaparegutsTable extends Migration
         Schema::create('desapareguts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_recerca')->unsigned();
+            $table->tinyInteger('trobat')->nullable();
             $table->string('nom')->nullable();
             $table->string('nom_respon')->nullable();
             $table->integer('edat')->nullable();
