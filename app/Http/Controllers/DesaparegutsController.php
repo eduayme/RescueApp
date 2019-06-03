@@ -112,7 +112,7 @@ class DesaparegutsController extends Controller
             $desaparegut->delete();
 
             return redirect('recerques/'.$desaparegut->id_recerca)
-            ->with('success', $desaparegut->nom . __('messages.deleted'));
+            ->with('success', $desaparegut->nom.__('messages.deleted'));
         } else {
             return redirect('desapareguts/'.$desaparegut->id)
             ->with('error', __('messages.not_allowed'));
