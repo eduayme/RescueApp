@@ -70,9 +70,9 @@ class CreateRecerquesTable extends Migration
         });
 
         Schema::table('recerques', function (Blueprint $table) {
-            $table->foreign('id_usuari_creacio')->references('id')->on('users');
-            $table->foreign('id_usuari_ultima_modificacio')->references('id')->on('users');
-            $table->foreign('id_usuari_tancament')->references('id')->on('users');
+            $table->foreign('id_usuari_creacio')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_usuari_ultima_modificacio')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_usuari_tancament')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

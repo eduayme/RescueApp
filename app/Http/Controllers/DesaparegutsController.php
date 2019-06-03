@@ -111,8 +111,8 @@ class DesaparegutsController extends Controller
         if ($currentUser != 'convidat') {
             $desaparegut->delete();
 
-            return redirect('desapareguts/'.$desaparegut->id)
-            ->with('success', __('messages.deleted'));
+            return redirect('recerques/'.$desaparegut->id_recerca)
+            ->with('success', $desaparegut->nom . __('messages.deleted'));
         } else {
             return redirect('desapareguts/'.$desaparegut->id)
             ->with('error', __('messages.not_allowed'));
@@ -129,7 +129,6 @@ class DesaparegutsController extends Controller
     public function edit($id)
     {
         $desaparegut = Desaparegut::find($id);
-
         $currentUser = \Auth::user()->perfil;
 
         if ($currentUser != 'convidat') {

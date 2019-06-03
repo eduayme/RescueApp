@@ -78,7 +78,7 @@
                 <!-- Delete search button- CLOSE -->
 
                 <!-- Delete search modal - OPEN -->
-                <form action="{{ route('desapareguts.destroy', $desaparegut->id) }}" method="post" style="display: inline">
+                <form action="{{ route('desapareguts.destroy', $desaparegut->id) }}" method="post">
                     @csrf
                     @method('DELETE')
 

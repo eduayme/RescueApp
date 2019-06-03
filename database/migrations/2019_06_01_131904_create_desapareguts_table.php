@@ -42,7 +42,7 @@ class CreateDesaparegutsTable extends Migration
         });
 
         Schema::table('desapareguts', function (Blueprint $table) {
-            $table->foreign('id_recerca')->references('id')->on('recerques');
+            $table->foreign('id_recerca')->references('id')->on('recerques')->onDelete('cascade');
         });
     }
 

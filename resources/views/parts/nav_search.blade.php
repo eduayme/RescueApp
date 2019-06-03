@@ -42,7 +42,7 @@
 
               @if( $recerca->data_tancament == NULL && $recerca->data_inici != NULL )
               <span class="align-middle margin-left margin-right">
-                {{ __('forms.day') }} :
+                {{ __('forms.day') }}:
                 <b>
                   <?php
                     $carbon1 = new \Carbon\Carbon( $recerca->data_inici );
