@@ -64,7 +64,7 @@
             <!-- Practice option - OPEN -->
             <div class="funkyradio-primary">
               {{ Form::radio('es_practica', 1, false, array('class' => 'form-control','id'=>'is_practice')) }}
-              {{ Form::label('is_practice', __('main.search')) }}
+              {{ Form::label('is_practice', __('main.practice')) }}
             </div>
             <!-- Practice option - CLOSE -->
 
