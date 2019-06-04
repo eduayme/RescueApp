@@ -360,20 +360,20 @@
   <!-- Id user last modification HIDDEN - CLOSE -->
 
   <!-- Buttons - OPEN -->
-  <div class="text-center margin-top">
+  <div class="text-center margin-top-sm">
 
     <!-- Save data - OPEN -->
     {{ Form::submit( __('actions.save'),
-    array('class' => 'btn btn-dark margin-right', 'name' => 'savebutton') ) }}
+    array('class' => 'btn btn-dark margin-right margin-left margin-top-sm', 'name' => 'savebutton') ) }}
     <!-- Save close - OPEN -->
 
     <!-- Submit data - OPEN -->
     @if( $recerca->es_practica == 0 )
       {{ Form::submit( __('actions.close_search'),
-      array('class' => 'btn btn-primary margin-left', 'name' => 'closebutton') ) }}
+      array('class' => 'btn btn-primary margin-right margin-left margin-top-sm', 'name' => 'closebutton') ) }}
     @else
       {{ Form::submit( __('actions.close_practice'),
-      array('class' => 'btn btn-primary margin-left', 'name' => 'closebutton') ) }}
+      array('class' => 'btn btn-primary margin-right margin-left margin-top-sm', 'name' => 'closebutton') ) }}
     @endif
     <!-- Submit data - OPEN -->
 
