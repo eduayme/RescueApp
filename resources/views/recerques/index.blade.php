@@ -14,9 +14,9 @@
                 {{ session()->get('success') }}
             </div>
         </div>
-        <!-- Success - CLOSE -->
+    <!-- Success - CLOSE -->
 
-        <!-- Error - OPEN -->
+    <!-- Error - OPEN -->
     @elseif( session()->get('error') )
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <div class="container text-center">
@@ -86,25 +86,25 @@
 
                         </div>
                     </div>
-                    <!-- If NO searches - CLOSE -->
+                <!-- If NO searches - CLOSE -->
 
-                    <!-- If exists searches - OPEN -->
-            @else
+                <!-- If exists searches - OPEN -->
+                @else
 
-                <!-- Searches table - OPEN -->
+                    <!-- Searches table - OPEN -->
                     <table class="table dt-responsive nowrap table-hover text-center"
-                           id="searches" style="width: 100%">
+                    id="searches" style="width: 100%">
 
                         <!-- Table header - OPEN -->
                         <thead>
-                        <tr>
-                            <th scope="col"> {{ __('forms.num_actuacio') }} </th>
-                            <th scope="col"> {{ __('forms.estat') }} </th>
-                            <th scope="col"> {{ __('forms.begin') }} </th>
-                            <th scope="col"> {{ __('forms.end') }} </th>
-                            <th scope="col"> {{ __('forms.village') }} </th>
-                            <th scope="col"> {{ __('forms.region') }} </th>
-                        </tr>
+                            <tr>
+                                <th scope="col"> {{ __('forms.num_actuacio') }} </th>
+                                <th scope="col"> {{ __('forms.estat') }} </th>
+                                <th scope="col"> {{ __('forms.begin') }} </th>
+                                <th scope="col"> {{ __('forms.end') }} </th>
+                                <th scope="col"> {{ __('forms.village') }} </th>
+                                <th scope="col"> {{ __('forms.region') }} </th>
+                            </tr>
                         </thead>
                         <!-- Table header - CLOSE -->
 
@@ -123,11 +123,11 @@
                                     <h5>
                                         @if( $recerca->estat == 'Oberta' )
                                             <span class="badge badge-danger">
-                          @elseif( $recerca->estat == 'Tancada' )
-                                                    <span class="badge badge-success">
-                          @endif
-                                                        {{ $recerca->estat }}
-                              </span>
+                                        @elseif( $recerca->estat == 'Tancada' )
+                                            <span class="badge badge-success">
+                                        @endif
+                                            {{ $recerca->estat }}
+                                        </span>
                                     </h5>
                                 </td>
 
@@ -230,12 +230,12 @@
 
                         </div>
                     </div>
-                    <!-- If NO practices - CLOSE -->
+                <!-- If NO practices - CLOSE -->
 
-                    <!-- If exists practices - OPEN -->
-            @else
+                <!-- If exists practices - OPEN -->
+                @else
 
-                <!-- Practices table - OPEN -->
+                    <!-- Practices table - OPEN -->
                     <table class="table dt-responsive nowrap table-hover text-center"
                            id="practices" style="width: 100%">
 
@@ -267,11 +267,11 @@
                                     <h5>
                                         @if( $practica->estat == 'Oberta' )
                                             <span class="badge badge-danger">
-                            @elseif( $practica->estat == 'Tancada' )
-                                                    <span class="badge badge-success">
-                            @endif
-                                                        {{ $practica->estat }}
-                                </span>
+                                        @elseif( $practica->estat == 'Tancada' )
+                                            <span class="badge badge-success">
+                                        @endif
+                                            {{ $practica->estat }}
+                                        </span>
                                     </h5>
                                 </td>
 
