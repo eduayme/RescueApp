@@ -148,10 +148,11 @@ class RecerquesController extends Controller
             $recerca->delete();
 
             return redirect('/')
-          ->with('success', $recerca->num_actuacio.__('messages.deleted'));
-        } else {
+            ->with('success', $recerca->num_actuacio.__('messages.deleted'));
+        }
+        else {
             return redirect('recerques/'.$recerca->id)
-          ->with('error', __('messages.not_allowed'));
+            ->with('error', __('messages.not_allowed'));
         }
     }
 
@@ -170,9 +171,10 @@ class RecerquesController extends Controller
 
         if ($currentUser != 'convidat') {
             return view('recerques.edit', compact('recerca'));
-        } else {
+        }
+        else {
             return redirect('recerques/'.$recerca->id)
-          ->with('error', __('messages.not_allowed'));
+            ->with('error', __('messages.not_allowed'));
         }
     }
 

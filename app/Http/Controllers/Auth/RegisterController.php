@@ -63,10 +63,10 @@ class RegisterController extends Controller
             'email.email'        => __('messages.email'),
             'email.max'          => __('messages.max'),
             'email.unique'       => __('messages.unique'),
-            'dni.min'            => __('messages.min'),
+            'dni.min'            => __('messages.min8'),
             'dni.max'            => __('messages.max'),
             'dni.unique'         => __('messages.unique'),
-            'password.min'       => __('messages.min'),
+            'password.min'       => __('messages.min8'),
             'password.confirmed' => __('messages.confirmed'),
         ]);
 

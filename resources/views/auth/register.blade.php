@@ -101,7 +101,7 @@
                                 <!-- Input - CLOSE -->
 
                                 <!-- Show errors input - OPEN -->
-                                @if( $errors->has('name') )
+                                @if( $errors->has('email') )
                                   <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('email') }}</strong>
                                   </span>
@@ -118,7 +118,7 @@
                         <div class="form-group row">
 
                           <!-- ID label - OPEN -->
-                          <label for="DNI" class="col-md-4 col-form-label text-md-right">
+                          <label for="dni" class="col-md-4 col-form-label text-md-right">
                             {{ __('register.id') }}
                           </label>
                           <!-- ID label - CLOSE -->
@@ -127,7 +127,9 @@
                           <div class="col-md-6">
 
                             <!-- Input - OPEN -->
-                            <input id="dni" type="text" class="form-control" name="dni" required>
+                            <input id="dni" type="text" name="dni" value="{{ old('dni') }}"
+                            class="form-control{{ $errors->has('dni') ? ' is-invalid' : '' }}"
+                            required autofocus>
                             <!-- Input - CLOSE -->
 
                             <!-- Show errors input - OPEN -->
