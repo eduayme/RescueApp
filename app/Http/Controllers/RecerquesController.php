@@ -149,8 +149,7 @@ class RecerquesController extends Controller
 
             return redirect('/')
             ->with('success', $recerca->num_actuacio.__('messages.deleted'));
-        }
-        else {
+        } else {
             return redirect('recerques/'.$recerca->id)
             ->with('error', __('messages.not_allowed'));
         }
@@ -171,8 +170,7 @@ class RecerquesController extends Controller
 
         if ($currentUser != 'convidat') {
             return view('recerques.edit', compact('recerca'));
-        }
-        else {
+        } else {
             return redirect('recerques/'.$recerca->id)
             ->with('error', __('messages.not_allowed'));
         }
