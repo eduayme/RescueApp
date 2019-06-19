@@ -319,6 +319,7 @@ class RecerquesController extends Controller
             ]);
             if ($validator->fails()) {
                 $recerca->save();
+
                 return redirect('recerques/'.$recerca->id.'#nav-closing')
                     ->withErrors($validator)->withInput();
             }
