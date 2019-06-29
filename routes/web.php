@@ -23,8 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('desapareguts', 'DesaparegutsController');
 
     Route::get('/privacy', function () {
-    return view('parts.privacy');
-
+        return view('parts.privacy');
     });
     Route::get('/service', function () {
         return view('parts.service');
