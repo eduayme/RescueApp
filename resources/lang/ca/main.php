@@ -18,7 +18,7 @@ return [
     'free'             => 'Gratis && Codi Obert',
     'open_source'      => 'Open Source',
     'privacy_policy'   => 'Polítiques de privacitat',
-    'terms_of_service' => 'Termes de Servei',
+    'terms_of_service' => 'Termes de servei',
     'data'             => 'Dades',
     'closing'          => 'Tancament',
     'lost'             => 'Perdut',

@@ -27,7 +27,7 @@
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="#">
+                <a href="{{ URL::to('privacy') }}">
                     {{ __('main.privacy_policy') }}
                 </a>
             </li>
@@ -35,7 +35,7 @@
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="#">
+                <a href="{{ URL::to('service') }}">
                     {{ __('main.terms_of_service') }}
                 </a>
             </li>
