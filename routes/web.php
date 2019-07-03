@@ -21,4 +21,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/recerques', ['uses' => 'RecerquesController@index', 'as' => 'recerques']);
 
     Route::resource('desapareguts', 'DesaparegutsController');
+
+    Route::get('/privacy', function () {
+        return view('parts.privacy');
+    });
+    Route::get('/service', function () {
+        return view('parts.service');
+    });
 });

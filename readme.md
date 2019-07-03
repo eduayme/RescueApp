@@ -6,7 +6,7 @@
 
 
 ## About Aplicatiu de Recerques
-Aplicatiu de Recerques is a web application designed to help emergency bodies in registering and documenting tasks to rescue lost people.
+Aplicatiu de Recerques is a web application designed to help emergency services in registering and documenting tasks to rescue lost people.
 
 
 ## Installation
