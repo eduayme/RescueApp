@@ -43,10 +43,24 @@
 
       <!-- Type activity, code and region - OPEN -->
       <div class="form-row">
-          @csrf
+            @csrf
+
+            @if( $recerca->es_practica == 0 )
+                <style>
+                    #es_prac {
+                        visibility: hidden;
+                    }
+                </style>
+            @else
+                <style>
+                    #es_rece {
+                        visibility: hidden;
+                    }
+                </style>
+            @endif
 
           <!-- Search type activity - OPEN -->
-          <div class="form-group funkyradio col-md-2">
+          <div class="form-group funkyradio col-md-2" id="es_rece">
 
             <!-- Search option - OPEN -->
             <div class="funkyradio-primary">
@@ -59,7 +73,7 @@
           <!-- Search type activity - CLOSE -->
 
           <!-- Practice type activity - OPEN -->
-          <div class="form-group funkyradio col-md-2">
+          <div class="form-group funkyradio col-md-2" id="es_prac">
 
             <!-- Practice option - OPEN -->
             <div class="funkyradio-primary">
