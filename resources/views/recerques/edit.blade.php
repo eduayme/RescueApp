@@ -299,14 +299,6 @@
         </div>
         <!-- Lost people count - CLOSE  -->
 
-        <!-- Add lost person - OPEN -->
-        <div class="form-group col-md-4 margin-top">
-            <button type="submit" class="btn btn-outline-primary margin-right" form="desaparegut">
-              {{ __('actions.add_lost_person') }}
-            </button>
-        </div>
-        <!-- Add lost person - CLOSE -->
-
       </div>
       <!-- Lost people - CLOSE -->
 

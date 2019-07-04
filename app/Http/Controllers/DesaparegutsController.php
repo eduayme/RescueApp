@@ -51,7 +51,7 @@ class DesaparegutsController extends Controller
         ]);
 
         $desaparegut = new Desaparegut([
-            'id'                       => $request->get('id'),
+            //'id'                       => $request->get('id'),
             'id_recerca'               => $request->get('id_recerca'),
             'nom'                      => $request->get('nom'),
             'nom_respon'               => $request->get('nom_respon'),
