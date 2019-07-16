@@ -30,7 +30,7 @@ mysql> CREATE DATABASE aplicatiu_bombers;
 
 7) Create new file `.env` inside the project folder with the same content as `.env.example`
 ```
-> cp .env .env.example
+> cp .env.example .env
 ```
 
 8) Change mysql and mail credentials in `.env`
