@@ -70,12 +70,31 @@
                         <!-- User button - OPEN -->
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                            <!-- User avatar - OPEN -->
+                            <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="avatar">
+                            <!-- User avatar - CLOSE -->
+
+                            <!-- User name - OPEN -->
                             {{ Auth::user()->name }} <span class="caret"></span>
+                            <!-- User name - CLOSE -->
+
                         </a>
                         <!-- User button - CLOSE -->
 
                         <!-- User dropdown - OPEN -->
                         <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+
+                            <!-- Profile button - OPEN -->
+                            <a class="dropdown-item" href="{{ route('profile') }}">
+                                <span class="octicon octicon-person"></span>
+                                {{ __('main.profile') }}
+                            </a>
+                            <!-- Profile button - CLOSE -->
+
+                            <!-- Divider - OPEN -->
+                            <div class="dropdown-divider"></div>
+                            <!-- Divider - CLOSE -->
 
                             <!-- Close session button - OPEN -->
                             <a class="dropdown-item" href="{{ route('logout') }}"

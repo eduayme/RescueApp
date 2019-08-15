@@ -20,6 +20,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/recerques', ['uses' => 'RecerquesController@index', 'as' => 'recerques']);
 
+    Route::get('/profile', 'UserController@profile')->name('profile');
+    Route::post('/profile', 'UserController@update_avatar');
+
     Route::resource('desapareguts', 'DesaparegutsController');
 
     Route::get('/privacy', function () {

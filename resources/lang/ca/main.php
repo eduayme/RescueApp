@@ -23,4 +23,6 @@ return [
     'closing'          => 'Tancament',
     'lost'             => 'Perdut',
     'found'            => 'Trobat',
+    'profile'          => 'Perfil',
+    'photo'            => 'Foto',
 ];

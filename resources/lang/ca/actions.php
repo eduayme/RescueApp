@@ -12,4 +12,5 @@ return [
     'reopen_search'   => 'Reobrir recerca',
     'reopen_practice' => 'Reobrir pràctica',
     'go_back'         => 'Tornar enrere',
+    'load'            => 'Carregar',
 ];
