@@ -7921,3 +7921,34 @@ a.text-dark:hover {
   border-radius: 50%;
   margin-right: 50px;
 }
+
+.img-container{
+  position:relative;
+  display:inline-block;
+}
+.img-container .overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width: 150px;
+  height: 150px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 50px;
+  background: rgb(0,0,0,0.7);
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+}
+.img-container:hover .overlay{
+  opacity: 1;
+}
+.overlay span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  text-align: center;
+}

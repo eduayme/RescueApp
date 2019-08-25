@@ -40,7 +40,12 @@
         </div>
         <div class="row justify-content-md-center image-upload">
             <label for="avatar">
-                <img src="/uploads/avatars/{{ $user->avatar }}" class="profile" id="avatar_img" style="cursor: pointer">
+                <div class="img-container">
+                <img src="/uploads/avatars/{{ $user->avatar }}" class="profile" id="avatar_img">
+                <div class="overlay">
+                    <span class="octicon octicon-cloud-upload" style="font-size: 2rem"> </span>
+                </div>
+                </div>
             </label>
             <input id="avatar" onchange="readURL(this);" name="avatar" type="file" class="form-control" style="display: none"/>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
