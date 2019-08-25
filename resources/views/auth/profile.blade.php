@@ -35,9 +35,25 @@
     <!-- Form - OPEN -->
     {{ Form::model($user, array('action' => 'UserController@update_user', 'files'=> true)) }}
 
+        <!-- User name and ID - OPEN -->
         <div class="row justify-content-md-center">
-            <h2> {{ $user->name }} <small> ({{ $user->dni }}) </small> </h2>
+
+            <h2>
+                <!-- User name - OPEN -->
+                {{ $user->name }}
+                <!-- User name - CLOSE -->
+
+                <!-- ID - OPEN -->
+                <small>
+                    ({{ $user->dni }})
+                </small>
+                <!-- ID - CLOSE -->
+            </h2>
+
         </div>
+        <!-- User name and ID - CLOSE -->
+
+        <!-- User avatar - OPEN -->
         <div class="row justify-content-md-center image-upload">
             <label for="avatar">
                 <div class="img-container">

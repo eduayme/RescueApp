@@ -9,7 +9,7 @@
             @csrf
             <input type="hidden" class="form-control" name="id_recerca" value={{ $recerca->id }}>
             <button type="submit" class="btn btn-outline-primary margin-right
-            <?php if ($recerca->estat == 'Tancada'){ ?> disabled <?php   } ?>"
+            <?php if ($recerca->estat == 'Tancada'){ ?> disabled" onclick="this.disabled=true <?php   } ?>"
             >
                 {{ __('actions.add_lost_person') }}
             </button>

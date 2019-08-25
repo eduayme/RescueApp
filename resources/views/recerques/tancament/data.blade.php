@@ -7,6 +7,57 @@
 <!-- Content - OPEN -->
 <div class="form-row margin-top text-center">
 
+    <!-- First commander - OPEN  -->
+    <div class="form-group col-md-3">
+      <p>
+        {{ __('forms.first_commander') }}
+      </p>
+      <h5 class="margin-top-sm-min">
+        <b>
+          @if( $recerca->comandament_inicial )
+            {{ $recerca->comandament_inicial }}
+          @else
+            --
+          @endif
+        </b>
+      </h5>
+    </div>
+    <!-- First commander - CLOSE  -->
+
+    <!-- Intermediate commander - OPEN  -->
+    <div class="form-group col-md-6">
+      <p>
+        {{ __('forms.intermediate_commander') }}
+      </p>
+      <h5 class="margin-top-sm-min">
+        <b>
+          @if( $recerca->comandament_relleus )
+            {{ $recerca->comandament_relleus }}
+          @else
+            --
+          @endif
+        </b>
+      </h5>
+    </div>
+    <!-- Intermediate commander - CLOSE  -->
+
+    <!-- Last commander - OPEN  -->
+    <div class="form-group col-md-3">
+      <p>
+        {{ __('forms.last_commander') }}
+      </p>
+      <h5 class="margin-top-sm-min">
+        <b>
+          @if( $recerca->comandament_final )
+            {{ $recerca->comandament_final }}
+          @else
+            --
+          @endif
+        </b>
+      </h5>
+    </div>
+    <!-- Last commander - CLOSE  -->
+
   <!-- Group - OPEN  -->
   <div class="form-group col-md-4">
     <p>
@@ -57,57 +108,6 @@
     </h5>
   </div>
   <!-- Derivation ID receptor - CLOSE  -->
-
-  <!-- First commander - OPEN  -->
-  <div class="form-group col-md-3">
-    <p>
-      {{ __('forms.first_commander') }}
-    </p>
-    <h5 class="margin-top-sm-min">
-      <b>
-        @if( $recerca->comandament_inicial )
-          {{ $recerca->comandament_inicial }}
-        @else
-          --
-        @endif
-      </b>
-    </h5>
-  </div>
-  <!-- First commander - CLOSE  -->
-
-  <!-- Intermediate commander - OPEN  -->
-  <div class="form-group col-md-6">
-    <p>
-      {{ __('forms.intermediate_commander') }}
-    </p>
-    <h5 class="margin-top-sm-min">
-      <b>
-        @if( $recerca->comandament_relleus )
-          {{ $recerca->comandament_relleus }}
-        @else
-          --
-        @endif
-      </b>
-    </h5>
-  </div>
-  <!-- Intermediate commander - CLOSE  -->
-
-  <!-- Last commander - OPEN  -->
-  <div class="form-group col-md-3">
-    <p>
-      {{ __('forms.last_commander') }}
-    </p>
-    <h5 class="margin-top-sm-min">
-      <b>
-        @if( $recerca->comandament_final )
-          {{ $recerca->comandament_final }}
-        @else
-          --
-        @endif
-      </b>
-    </h5>
-  </div>
-  <!-- Last commander - CLOSE  -->
 
   <!-- Tipology - OPEN  -->
   <div class="form-group col-md-4">
