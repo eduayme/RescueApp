@@ -45,7 +45,7 @@
             <div class="col justify-content-start">
 
                 <!-- Go back - OPEN -->
-                <a href="{{ URL::previous() }}"
+                <a href="{{ URL::to('recerques/' . $recerca->id) }}"
                     role="button" class="btn btn-outline-secondary margin-right"
                     data-toggle="tooltip" data-placement="top" title="{{ __('actions.go_back') }}"
                     >
