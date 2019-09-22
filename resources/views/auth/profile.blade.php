@@ -66,6 +66,7 @@
             <input id="avatar" onchange="readURL(this);" name="avatar" type="file" class="form-control" style="display: none"/>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </div>
+        <!-- User avatar - CLOSE -->
 
         <div class="form-group row margin-top">
 
@@ -125,6 +126,7 @@
 
 @endsection
 
+<!-- JS scripts -->
 <script>
 
 function readURL(input) {

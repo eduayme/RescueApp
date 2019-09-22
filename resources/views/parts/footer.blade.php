@@ -18,7 +18,7 @@
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="https://github.com/eduayme/Aplicatiu-de-Recerques">
+                <a href="https://github.com/eduayme/Aplicatiu-de-Recerques" target="_blank">
                     <span class="octicon octicon-mark-github"></span>
                     {{ __('main.open_source') }}
                 </a>

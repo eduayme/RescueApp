@@ -149,105 +149,127 @@
         <!-- Lost person info - OPEN -->
         <div class="form-row">
 
-            <!-- Name - OPEN  -->
             <div class="form-group col-md-6">
-                <p>
-                    {{ __('register.name') }}
-                </p>
-                <h5 class="margin-top-sm-min">
-                    <b> {{ $desaparegut->nom }} </b>
-                </h5>
-            </div>
-            <!-- Name - CLOSE  -->
 
-            <!-- Name respond - OPEN  -->
-            <div class="form-group col-md-3">
-                <p>
-                  {{ __('forms.name_respond') }}
-                </p>
-                <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->nom_respon )
-                      {{ $desaparegut->nom_respon }}
-                    @else
-                      --
-                    @endif
-                  </b>
-                </h5>
-            </div>
-            <!-- Name respond - CLOSE  -->
+                <!-- User photo - OPEN -->
+                <div class="row justify-content-md-center image-upload justify-content-center">
+                    <img src="/uploads/lost_people_photos/{{ $desaparegut->photo }}" class="photo mx-auto d-block rounded">
+                </div>
+                <!-- User photo - CLOSE -->
 
-            <!-- Age - OPEN  -->
-            <div class="form-group col-md-3">
-                <p>
-                  {{ __('forms.age') }}
-                </p>
-                <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->edat )
-                      {{ $desaparegut->edat }}
-                    @else
-                      --
-                    @endif
-                  </b>
-                </h5>
             </div>
-            <!-- Age - CLOSE  -->
 
-            <!-- Phone - OPEN  -->
-            <div class="form-group col-md-3">
-                <p>
-                  {{ __('forms.phone') }}
-                </p>
-                <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->telefon )
-                      {{ $desaparegut->telefon }}
-                    @else
-                      --
-                    @endif
-                  </b>
-                </h5>
-            </div>
-            <!-- Phone - CLOSE  -->
-
-            <!-- Has whatsapp or gps - OPEN  -->
-            <div class="form-group col-md-3">
-              <p>
-                {{ __('forms.whatsapp_or_gps') }}
-              </p>
-              <h5 class="margin-top-sm-min">
-                <b>
-                  @if( $desaparegut->whatsapp_o_gps !== NULL )
-                    @if( $desaparegut->whatsapp_o_gps == 1 )
-                        Si
-                    @else
-                        No
-                    @endif
-                  @else
-                    --
-                  @endif
-                </b>
-              </h5>
-            </div>
-            <!-- Has whatsapp or gps - CLOSE  -->
-
-            <!-- Profile - OPEN  -->
             <div class="form-group col-md-6">
-                <p>
-                  {{ __('register.profile') }}
-                </p>
-                <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->profile )
-                      {{ $desaparegut->profile }}
-                    @else
-                      --
-                    @endif
-                  </b>
-                </h5>
-            </div>
-            <!-- Search region - CLOSE  -->
+
+                <div class="form-row margin-top">
+
+                    <!-- Name - OPEN  -->
+                    <div class="form-group col-md-12">
+                        <p>
+                            {{ __('register.name') }}
+                        </p>
+                        <h5 class="margin-top-sm-min">
+                            <b> {{ $desaparegut->nom }} </b>
+                        </h5>
+                    </div>
+                    <!-- Name - CLOSE  -->
+
+                    <!-- Name respond - OPEN  -->
+                    <div class="form-group col-md-6">
+                        <p>
+                          {{ __('forms.name_respond') }}
+                        </p>
+                        <h5 class="margin-top-sm-min">
+                          <b>
+                            @if( $desaparegut->nom_respon )
+                              {{ $desaparegut->nom_respon }}
+                            @else
+                              --
+                            @endif
+                          </b>
+                        </h5>
+                    </div>
+                    <!-- Name respond - CLOSE  -->
+
+                    <!-- Age - OPEN  -->
+                    <div class="form-group col-md-6">
+                        <p>
+                          {{ __('forms.age') }}
+                        </p>
+                        <h5 class="margin-top-sm-min">
+                          <b>
+                            @if( $desaparegut->edat )
+                              {{ $desaparegut->edat }}
+                            @else
+                              --
+                            @endif
+                          </b>
+                        </h5>
+                    </div>
+                    <!-- Age - CLOSE  -->
+
+                    <!-- Phone - OPEN  -->
+                    <div class="form-group col-md-6">
+                        <p>
+                          {{ __('forms.phone') }}
+                        </p>
+                        <h5 class="margin-top-sm-min">
+                          <b>
+                            @if( $desaparegut->telefon )
+                              {{ $desaparegut->telefon }}
+                            @else
+                              --
+                            @endif
+                          </b>
+                        </h5>
+                    </div>
+                    <!-- Phone - CLOSE  -->
+
+                    <!-- Has whatsapp or gps - OPEN  -->
+                    <div class="form-group col-md-6">
+                      <p>
+                        {{ __('forms.whatsapp_or_gps') }}
+                      </p>
+                      <h5 class="margin-top-sm-min">
+                        <b>
+                          @if( $desaparegut->whatsapp_o_gps !== NULL )
+                            @if( $desaparegut->whatsapp_o_gps == 1 )
+                                Si
+                            @else
+                                No
+                            @endif
+                          @else
+                            --
+                          @endif
+                        </b>
+                      </h5>
+                    </div>
+                    <!-- Has whatsapp or gps - CLOSE  -->
+
+                    <!-- Profile - OPEN  -->
+                    <div class="form-group col-md-12">
+                        <p>
+                          {{ __('register.profile') }}
+                        </p>
+                        <h5 class="margin-top-sm-min">
+                          <b>
+                            @if( $desaparegut->profile )
+                              {{ $desaparegut->profile }}
+                            @else
+                              --
+                            @endif
+                          </b>
+                        </h5>
+                    </div>
+                    <!-- Profile - CLOSE  -->
+
+                </div>
+
+                </div>
+
+                </div>
+
+                <div class="form-row">
 
             <!-- Aspect description - OPEN  -->
             <div class="form-group col-md-6">

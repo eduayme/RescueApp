@@ -14,33 +14,6 @@ class UserController extends Controller
         return view('auth.profile', ['user' => Auth::user()]);
     }
 
-    public function update_avatar(Request $request)
-    {
-        // Get user
-        $user = Auth::user();
-
-        if ($request->hasFile('avatar')) {
-            $avatar = $request->file('avatar');
-            $filename = time().'.'.$avatar->getClientOriginalExtension();
-
-            // Delete current image before uploading new image
-            if ($user->avatar !== 'default_avatar.jpg') {
-                $file = public_path('uploads/avatars/'.$user->avatar);
-
-                if (File::exists($file)) {
-                    unlink($file);
-                }
-            }
-
-            Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/'.$filename));
-
-            $user->avatar = $filename;
-            $user->save();
-        }
-
-        return view('auth.profile', ['user' => Auth::user()]);
-    }
-
     public function update_user(Request $request)
     {
         // Get user
@@ -51,8 +24,8 @@ class UserController extends Controller
             $filename = time().'.'.$avatar->getClientOriginalExtension();
 
             // Delete current image before uploading new image
-            if ($user->avatar !== 'default_avatar.jpg') {
-                $file = public_path('uploads/avatars/'.$user->avatar);
+            if ($user->avatar !== 'default.jpg') {
+                $file = public_path('/uploads/avatars/'.$user->avatar);
 
                 if (File::exists($file)) {
                     unlink($file);
@@ -62,7 +35,6 @@ class UserController extends Controller
             Image::make($avatar)->resize(300, 300)->save(public_path('/uploads/avatars/'.$filename));
 
             $user->avatar = $filename;
-            $user->save();
         }
 
         $request->validate([

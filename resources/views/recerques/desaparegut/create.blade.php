@@ -62,6 +62,7 @@
 
     <!-- Form - OPEN -->
     <form class="margin-top" method="post" action="{{ route('desapareguts.store') }}">
+    @csrf
 
         <!-- Stype service title - OPEN -->
         <h3>
@@ -69,97 +70,132 @@
         </h3>
         <!-- Stype service title - CLOSE -->
 
-        <!-- Type activity, code and region - OPEN -->
         <div class="form-row">
-            @csrf
 
-            <!-- Name - OPEN  -->
             <div class="form-group col-md-6">
-                <label for="nom"> {{ __('register.name') }} </label>
-                <input type="text" class="form-control {{ $errors->has('nom') ? ' is-invalid' : '' }}" name="nom"/>
 
-                <!-- Show errors input - OPEN -->
-                @if( $errors->has('nom') )
-                <div class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('nom') }}</strong>
+                <!-- User photo - OPEN -->
+                <div class="row justify-content-md-center image-upload justify-content-center">
+                    <label for="photo">
+                        <div class="img-container">
+                        <img src="/uploads/lost_people_photos/default.jpg" class="photo mx-auto d-block rounded" id="photo_person">
+                        <div class="overlay rounded" style="width: 250px; height: 300px; border-radius: 0; margin-top: 15px">
+                            <span class="octicon octicon-cloud-upload" style="font-size: 2rem"> </span>
+                        </div>
+                        </div>
+                    </label>
+                    <input id="photo" onchange="readURL(this);" name="photo" type="file"
+                    class="form-control" style="display: none"/>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
-                @endif
-                <!-- Show errors input - CLOSE -->
+                <!-- User photo - CLOSE -->
+
             </div>
-            <!-- Name - CLOSE  -->
 
-            <!-- Name respond - OPEN  -->
-            <div class="form-group col-md-3">
-                <label for="nom_respon"> {{ __('forms.name_respond') }} </label>
-                <input type="text" class="form-control {{ $errors->has('nom_respon') ? ' is-invalid' : '' }}" name="nom_respon"/>
-
-                <!-- Show errors input - OPEN -->
-                @if( $errors->has('nom_respon') )
-                <div class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('nom_respon') }}</strong>
-                </div>
-                @endif
-                <!-- Show errors input - CLOSE -->
-            </div>
-            <!-- Name respond - CLOSE  -->
-
-            <!-- Age - OPEN  -->
-            <div class="form-group col-md-3">
-                <label for="edat"> {{ __('forms.age') }} </label>
-                <input type="number" class="form-control {{ $errors->has('edat') ? ' is-invalid' : '' }}" name="edat"/>
-
-                <!-- Show errors input - OPEN -->
-                @if( $errors->has('edat') )
-                <div class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('edat') }}</strong>
-                </div>
-                @endif
-                <!-- Show errors input - CLOSE -->
-            </div>
-            <!-- Age - CLOSE  -->
-
-            <!-- Phone - OPEN  -->
-            <div class="form-group col-md-3">
-                <label for="telefon"> {{ __('forms.phone') }} </label>
-                <input type="text" class="form-control {{ $errors->has('telefon') ? ' is-invalid' : '' }}" name="telefon"/>
-
-                <!-- Show errors input - OPEN -->
-                @if( $errors->has('telefon') )
-                <div class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('telefon') }}</strong>
-                </div>
-                @endif
-                <!-- Show errors input - CLOSE -->
-            </div>
-            <!-- Phone - CLOSE  -->
-
-            <!-- Has whatsapp or gps - OPEN  -->
-            <div class="form-group col-md-3">
-              <label for="whatsapp_o_gps"> {{ __('forms.whatsapp_or_gps') }} </label>
-              <select id="whatsapp_o_gps" class="form-control" name="whatsapp_o_gps">
-                  <option value=""> {{ __('forms.chose_option') }} </option>
-                  <option value="0"> No </option>
-                  <option value="1"> Si </option>
-              </select>
-            </div>
-            <!-- Has whatsapp or gps - CLOSE  -->
-
-            <!-- Profile - OPEN  -->
             <div class="form-group col-md-6">
-                <label for="perfil"> {{ __('register.profile') }} </label>
-                <select id="perfil" class="form-control" name="perfil">
-                    <option value=""> {{ __('forms.chose_option') }} </option>
-                    <option value="Trastorn del desenvolupament"> Trastorn del desenvolupament </option>
-                    <option value="Alzheimer o altres demencies"> Alzheimer o altres demencies </option>
-                    <option value="Malaltia mental o psicològica"> Malaltia mental o psicològica </option>
-                    <option value="Conductes autolítiques"> Conductes autolítiques </option>
-                    <option value="Excursionista o senderista"> Excursionista o senderista </option>
-                    <option value="Recol·lector en general"> Recol·lector en general </option>
-                    <option value="Boletaire"> Boletaire </option>
-                    <option value="Cap de les anteriors"> Cap de les anteriors </option>
-                </select>
+
+                <!-- Type activity, code and region - OPEN -->
+                <div class="form-row">
+
+                    <!-- Name - OPEN  -->
+                    <div class="form-group col-md-12">
+                        <label for="nom"> {{ __('register.name') }} </label>
+                        <input type="text" class="form-control {{ $errors->has('nom') ? ' is-invalid' : '' }}" name="nom"/>
+
+                        <!-- Show errors input - OPEN -->
+                        @if( $errors->has('nom') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('nom') }}</strong>
+                        </div>
+                        @endif
+                        <!-- Show errors input - CLOSE -->
+                    </div>
+                    <!-- Name - CLOSE  -->
+
+                </div>
+
+                <div class="form-row">
+
+                    <!-- Name respond - OPEN  -->
+                    <div class="form-group col-md-6">
+                        <label for="nom_respon"> {{ __('forms.name_respond') }} </label>
+                        <input type="text" class="form-control {{ $errors->has('nom_respon') ? ' is-invalid' : '' }}" name="nom_respon"/>
+
+                        <!-- Show errors input - OPEN -->
+                        @if( $errors->has('nom_respon') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('nom_respon') }}</strong>
+                        </div>
+                        @endif
+                        <!-- Show errors input - CLOSE -->
+                    </div>
+                    <!-- Name respond - CLOSE  -->
+
+                    <!-- Age - OPEN  -->
+                    <div class="form-group col-md-6">
+                        <label for="edat"> {{ __('forms.age') }} </label>
+                        <input type="number" class="form-control {{ $errors->has('edat') ? ' is-invalid' : '' }}" name="edat"/>
+
+                        <!-- Show errors input - OPEN -->
+                        @if( $errors->has('edat') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('edat') }}</strong>
+                        </div>
+                        @endif
+                        <!-- Show errors input - CLOSE -->
+                    </div>
+                    <!-- Age - CLOSE  -->
+
+                    <!-- Phone - OPEN  -->
+                    <div class="form-group col-md-6">
+                        <label for="telefon"> {{ __('forms.phone') }} </label>
+                        <input type="text" class="form-control {{ $errors->has('telefon') ? ' is-invalid' : '' }}" name="telefon"/>
+
+                        <!-- Show errors input - OPEN -->
+                        @if( $errors->has('telefon') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('telefon') }}</strong>
+                        </div>
+                        @endif
+                        <!-- Show errors input - CLOSE -->
+                    </div>
+                    <!-- Phone - CLOSE  -->
+
+                    <!-- Has whatsapp or gps - OPEN  -->
+                    <div class="form-group col-md-6">
+                      <label for="whatsapp_o_gps"> {{ __('forms.whatsapp_or_gps') }} </label>
+                      <select id="whatsapp_o_gps" class="form-control" name="whatsapp_o_gps">
+                          <option value=""> {{ __('forms.chose_option') }} </option>
+                          <option value="0"> No </option>
+                          <option value="1"> Si </option>
+                      </select>
+                    </div>
+                    <!-- Has whatsapp or gps - CLOSE  -->
+
+                    <!-- Profile - OPEN  -->
+                    <div class="form-group col-md-12">
+                        <label for="perfil"> {{ __('register.profile') }} </label>
+                        <select id="perfil" class="form-control" name="perfil">
+                            <option value=""> {{ __('forms.chose_option') }} </option>
+                            <option value="Trastorn del desenvolupament"> Trastorn del desenvolupament </option>
+                            <option value="Alzheimer o altres demencies"> Alzheimer o altres demencies </option>
+                            <option value="Malaltia mental o psicològica"> Malaltia mental o psicològica </option>
+                            <option value="Conductes autolítiques"> Conductes autolítiques </option>
+                            <option value="Excursionista o senderista"> Excursionista o senderista </option>
+                            <option value="Recol·lector en general"> Recol·lector en general </option>
+                            <option value="Boletaire"> Boletaire </option>
+                            <option value="Cap de les anteriors"> Cap de les anteriors </option>
+                        </select>
+                    </div>
+                    <!-- Profile - CLOSE  -->
+
+                </div>
+
             </div>
-            <!-- Search region - CLOSE  -->
+
+        </div>
+
+        <div class="form-row">
 
             <!-- Aspect description - OPEN  -->
             <div class="form-group col-md-6">
@@ -348,3 +384,23 @@
 
 <!-- JQuery 3.3.1 -->
 <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+
+<!-- JS scripts -->
+<script>
+
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#photo_person')
+                    .attr('src', e.target.result)
+                    .width(250)
+                    .height(300);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>

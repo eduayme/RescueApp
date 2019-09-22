@@ -9,8 +9,7 @@
             @csrf
             <input type="hidden" class="form-control" name="id_recerca" value={{ $recerca->id }}>
             <button type="submit" class="btn btn-outline-primary margin-right
-            <?php if ($recerca->estat == 'Tancada'){ ?> disabled" onclick="this.disabled=true <?php   } ?>"
-            >
+            <?php if ($recerca->estat == 'Tancada'){ ?> disabled" onclick="this.disabled=true <?php   } ?>" >
                 {{ __('actions.add_lost_person') }}
             </button>
         </form>
@@ -99,9 +98,9 @@
 <!-- Type service title - OPEN -->
 <h3 class="margin-top">
     @if( $recerca->es_practica == 0 )
-    {{ __('main.search') }}
+        {{ __('main.search') }}
     @else
-    {{ __('main.practice') }}
+        {{ __('main.practice') }}
     @endif
 </h3>
 <!-- Type service title - CLOSE -->
@@ -354,14 +353,23 @@
 
             <div class="row">
 
-                @foreach( $recerca->lost_people as $desaparegut )
+                @foreach( $recerca->lost_people->sortBy('trobat') as $desaparegut )
 
-                <div class="col-md-12 margin-top-sm margin-bottom-sm">
+                <div class="col-md-6 margin-top-sm margin-bottom-sm">
+
                     <a class="margin-right-sm" href="{{ URL::to('desapareguts/' . $desaparegut->id) }}">
+
+                        <!-- User photo - OPEN -->
+                        <div class="row justify-content-md-center image-upload justify-content-center">
+                            <img src="/uploads/lost_people_photos/{{ $desaparegut->photo }}" class="photo-sm d-block rounded">
+                        </div>
+                        <!-- User photo - CLOSE -->
+
                         <h5 style="display: inline">
                             <b> {{ $desaparegut->nom }} </b>
                         </h5>
                     </a>
+
                     @if( $desaparegut->trobat == 0 )
                         <h5 style="display: inline"><span class="badge badge-danger">
                             {{ __('main.lost') }}
@@ -369,6 +377,7 @@
                         <h5 style="display: inline"><span class="badge badge-success">
                             {{ __('main.found') }}
                     @endif
+
                     </span></h5>
                 </div>
 

@@ -6,6 +6,8 @@ use App\Desaparegut;
 use App\Recerca;
 use Auth;
 use Illuminate\Http\Request;
+use File;
+use Image;
 
 class DesaparegutsController extends Controller
 {
@@ -73,7 +75,19 @@ class DesaparegutsController extends Controller
             'marca_model_vehicle'      => $request->get('marca_model_vehicle'),
             'color_vehicle'            => $request->get('color_vehicle'),
             'matricula_vehicle'        => $request->get('matricula_vehicle'),
+
+            // photo
+            'photo'                    => $request->get('photo'),
         ]);
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $filename = time().'.'.$photo->getClientOriginalExtension();
+
+            Image::make($desaparegut)->resize(250, 300)->save(public_path('uploads/lost_people_photos/'.$filename));
+
+            $desaparegut->photo = $filename;
+        }
 
         $desaparegut->save();
 
@@ -135,7 +149,7 @@ class DesaparegutsController extends Controller
             return view('recerques.desaparegut.edit', compact('desaparegut'));
         } else {
             return redirect('desapareguts/'.$desaparegut->id)
-          ->with('error', __('messages.not_allowed'));
+            ->with('error', __('messages.not_allowed'));
         }
     }
 
@@ -158,6 +172,24 @@ class DesaparegutsController extends Controller
             'nom.min'      => __('messages.min'),
             'nom.max'      => __('messages.max'),
         ]);
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $filename = time().'.'.$photo->getClientOriginalExtension();
+
+            // Delete current image before uploading new image
+            if ($desaparegut->photo !== 'default.jpg') {
+                $file = public_path('/uploads/lost_people_photos/'.$desaparegut->photo);
+
+                if (File::exists($file)) {
+                    unlink($file);
+                }
+            }
+
+            Image::make($photo)->resize(300, 300)->save(public_path('/uploads/lost_people_photos/'.$filename));
+
+            $desaparegut->photo = $filename;
+        }
 
         //dades recerca
         $desaparegut->id = $request->get('id');

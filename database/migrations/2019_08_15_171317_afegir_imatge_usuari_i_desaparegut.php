@@ -13,11 +13,11 @@ class AfegirImatgeUsuariIDesaparegut extends Migration
     public function up()
     {
         Schema::table('users', function ($table) {
-            $table->string('avatar')->default('default_avatar.jpg');
+            $table->string('avatar')->default('default.jpg');
         });
 
         Schema::table('desapareguts', function ($table) {
-            $table->string('photo')->default('default_photo.jpg');
+            $table->string('photo')->default('default.jpg');
         });
     }
 

@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/profile', 'UserController@update_user');
 
     Route::resource('desapareguts', 'DesaparegutsController');
+    Route::post('/desapareguts/{id}', 'DesaparegutsController@update');
 
     Route::get('/privacy', function () {
         return view('parts.privacy');
