@@ -79,7 +79,7 @@
                     <label for="photo">
                         <div class="img-container">
                         <img src="/uploads/lost_people_photos/default.jpg" class="photo mx-auto d-block rounded" id="photo_person">
-                        <div class="overlay rounded" style="width: 250px; height: 300px; border-radius: 0; margin-top: 15px">
+                        <div class="overlay rounded" style="width: 300px; height: 300px; border-radius: 0; margin-top: 15px">
                             <span class="octicon octicon-cloud-upload" style="font-size: 2rem"> </span>
                         </div>
                         </div>
@@ -395,7 +395,7 @@ function readURL(input) {
             reader.onload = function (e) {
                 $('#photo_person')
                     .attr('src', e.target.result)
-                    .width(250)
+                    .width(300)
                     .height(300);
             };
 
