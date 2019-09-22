@@ -362,7 +362,7 @@ function readURL(input) {
         reader.onload = function (e) {
             $('#photo_person')
                 .attr('src', e.target.result)
-                .width(250)
+                .width(300)
                 .height(300);
         };
 
