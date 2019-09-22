@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Desaparegut;
 use App\Recerca;
 use Auth;
-use Illuminate\Http\Request;
 use File;
+use Illuminate\Http\Request;
 use Image;
 
 class DesaparegutsController extends Controller
