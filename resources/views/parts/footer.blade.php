@@ -6,13 +6,13 @@
         <ul class="list-inline">
 
             <li class="list-inline-item">
-              © <?php echo date("Y"); ?> {{ config('app.name', 'Aplicatiu de Recerques') }}
+                © <?php echo date("Y"); ?> {{ config('app.name', 'Aplicatiu de Recerques') }}
             </li>
 
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-              v1.0
+                v1.0
             </li>
 
             <li class="list-inline-item"> | </li>
