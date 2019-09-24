@@ -1,5 +1,6 @@
 <!-- Navbar - OPEN -->
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+
     <div class="container">
 
         <!-- Navbar logo - OPEN -->
@@ -21,14 +22,14 @@
             <!-- Left Side Of Navbar - OPEN -->
             <ul class="navbar-nav mr-auto margin-left margin-right">
 
-              @auth
-              <!-- Add search button - OPEN -->
-              <a href="{{ route('recerques.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button">
-                <span class="octicon octicon-plus"></span>
-                {{ __('actions.add') . ' ' . __('main.search') }}
-              </a>
-              <!-- Add search button - CLOSE -->
-              @endauth
+                @auth
+                <!-- Add search button - OPEN -->
+                <a href="{{ route('recerques.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button">
+                    <span class="octicon octicon-plus"></span>
+                    {{ __('actions.add') . ' ' . __('main.search') }}
+                </a>
+                <!-- Add search button - CLOSE -->
+                @endauth
 
             </ul>
             <!-- Left Side Of Navbar - CLOSE -->
@@ -39,88 +40,89 @@
                 <!-- Not authentication - OPEN -->
                 @guest
 
-                    <!-- Login button - OPEN -->
+                <!-- Login button - OPEN -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">
+                        <span class="octicon octicon-sign-in"></span>
+                        {{ __('main.login') }}
+                    </a>
+                </li>
+                <!-- Login button - CLOSE -->
+
+                <!-- Register button - OPEN -->
+                @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">
-                          <span class="octicon octicon-sign-in"></span>
-                          {{ __('main.login') }}
+                        <a class="nav-link" href="{{ route('register') }}">
+                            <span class="octicon octicon-person"></span>
+                            {{ __('main.register') }}
                         </a>
                     </li>
-                    <!-- Login button - CLOSE -->
-
-                    <!-- Register button - OPEN -->
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">
-                              <span class="octicon octicon-person"></span>
-                              {{ __('main.register') }}
-                            </a>
-                        </li>
-                    @endif
-                    <!-- Register button - CLOSE -->
+                @endif
+                <!-- Register button - CLOSE -->
 
                 <!-- Not authentication - CLOSE -->
 
                 @else
                 <!-- Authentication - OPEN -->
 
-                    <!-- User section - OPEN -->
-                    <li class="nav-item dropdown">
+                <!-- User section - OPEN -->
+                <li class="nav-item dropdown">
 
-                        <!-- User button - OPEN -->
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <!-- User button - OPEN -->
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 
-                            <!-- User avatar - OPEN -->
-                            <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="avatar">
-                            <!-- User avatar - CLOSE -->
+                        <!-- User avatar - OPEN -->
+                        <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="avatar">
+                        <!-- User avatar - CLOSE -->
 
-                            <!-- User name - OPEN -->
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                            <!-- User name - CLOSE -->
+                        <!-- User name - OPEN -->
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                        <!-- User name - CLOSE -->
 
+                    </a>
+                    <!-- User button - CLOSE -->
+
+                    <!-- User dropdown - OPEN -->
+                    <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+
+                        <!-- Profile button - OPEN -->
+                        <a class="dropdown-item" href="{{ route('profile') }}">
+                            <span class="octicon octicon-person"></span>
+                            {{ __('main.profile') }}
                         </a>
-                        <!-- User button - CLOSE -->
+                        <!-- Profile button - CLOSE -->
 
-                        <!-- User dropdown - OPEN -->
-                        <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+                        <!-- Divider - OPEN -->
+                        <div class="dropdown-divider"></div>
+                        <!-- Divider - CLOSE -->
 
-                            <!-- Profile button - OPEN -->
-                            <a class="dropdown-item" href="{{ route('profile') }}">
-                                <span class="octicon octicon-person"></span>
-                                {{ __('main.profile') }}
-                            </a>
-                            <!-- Profile button - CLOSE -->
+                        <!-- Close session button - OPEN -->
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <span class="octicon octicon-sign-out"></span>
+                            {{ __('main.logout') }}
+                        </a>
 
-                            <!-- Divider - OPEN -->
-                            <div class="dropdown-divider"></div>
-                            <!-- Divider - CLOSE -->
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <!-- Close session button - CLOSE -->
 
-                            <!-- Close session button - OPEN -->
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <span class="octicon octicon-sign-out"></span>
-                                {{ __('main.logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                            <!-- Close session button - CLOSE -->
+                    </div>
+                    <!-- User dropdown - CLOSE -->
 
-                        </div>
-                        <!-- User dropdown - CLOSE -->
+                </li>
+                <!-- User section - OPEN -->
 
-                    </li>
-                    <!-- User section - OPEN -->
-
-                    <!-- Home section - OPEN -->
-                    <li class="nav-item">
-                      <a href="{{ route('index') }}" class="btn btn-outline-secondary btn-lg margin-left" role="button"
-                      data-toggle="tooltip" data-placement="bottom" title="{{ __('main.home') }}">
+                <!-- Home section - OPEN -->
+                <li class="nav-item">
+                    <a href="{{ route('index') }}" class="btn btn-outline-secondary btn-lg margin-left" role="button"
+                    data-toggle="tooltip" data-placement="bottom" title="{{ __('main.home') }}">
                         <span class="octicon octicon-home"></span>
-                      </a>
-                    </li>
-                    <!-- Home section - OPEN -->
+                    </a>
+                </li>
+                <!-- Home section - OPEN -->
 
                 @endguest
                 <!-- Authentication - CLOSE -->
@@ -132,6 +134,7 @@
         <!-- Collapsable content - CLOSE -->
 
     </div>
+
 </nav>
 <!-- Navbar - CLOSE -->
 
@@ -141,8 +144,8 @@
 <!-- JS -->
 <script>
 
-  $(document).ready(function() {
+$(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
-  });
+});
 
 </script>
