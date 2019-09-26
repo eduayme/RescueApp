@@ -125,9 +125,9 @@
 
                         <!-- Show errors input - OPEN -->
                         @if( $errors->has('edat') )
-                        <div class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('edat') }}</strong>
-                        </div>
+                            <div class="invalid-feedback" role="alert">
+                                <strong> {{ $errors->first('edat') }} </strong>
+                            </div>
                         @endif
                         <!-- Show errors input - CLOSE -->
                     </div>
@@ -141,9 +141,9 @@
 
                         <!-- Show errors input - OPEN -->
                         @if( $errors->has('telefon') )
-                        <div class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('telefon') }}</strong>
-                        </div>
+                            <div class="invalid-feedback" role="alert">
+                                <strong> {{ $errors->first('telefon') }} </strong>
+                            </div>
                         @endif
                         <!-- Show errors input - CLOSE -->
                     </div>
@@ -285,9 +285,9 @@
 
                 <!-- Show errors input - OPEN -->
                 @if( $errors->has('marca_model_vehicle') )
-                <div class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('marca_model_vehicle') }}</strong>
-                </div>
+                    <div class="invalid-feedback" role="alert">
+                        <strong> {{ $errors->first('marca_model_vehicle') }} </strong>
+                    </div>
                 @endif
                 <!-- Show errors input - CLOSE -->
             </div>
@@ -301,9 +301,9 @@
 
                 <!-- Show errors input - OPEN -->
                 @if( $errors->has('color_vehicle') )
-                <div class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('color_vehicle') }}</strong>
-                </div>
+                    <div class="invalid-feedback" role="alert">
+                        <strong> {{ $errors->first('color_vehicle') }} </strong>
+                    </div>
                 @endif
                 <!-- Show errors input - CLOSE -->
             </div>
@@ -317,9 +317,9 @@
 
                 <!-- Show errors input - OPEN -->
                 @if( $errors->has('matricula_vehicle') )
-                <div class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('matricula_vehicle') }}</strong>
-                </div>
+                    <div class="invalid-feedback" role="alert">
+                        <strong> {{ $errors->first('matricula_vehicle') }} </strong>
+                    </div>
                 @endif
                 <!-- Show errors input - CLOSE -->
             </div>

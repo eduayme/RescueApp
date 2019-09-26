@@ -62,8 +62,7 @@
                 <!-- Edit search button - OPEN -->
                 <a href="{{ URL::to(Request::path().'/edit') }}"
                     role="button" class="btn btn-outline-secondary margin-right"
-                    data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}"
-                    >
+                    data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}">
                     <span class="octicon octicon-pencil"></span>
                 </a>
                 <!-- Edit search button - CLOSE -->
@@ -418,16 +417,16 @@
             <!-- Vehicle color - OPEN  -->
             <div class="form-group col-md-3">
                 <p>
-                  {{ __('forms.color') }}
+                    {{ __('forms.color') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->color_vehicle )
-                      {{ $desaparegut->color_vehicle }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $desaparegut->color_vehicle )
+                            {{ $desaparegut->color_vehicle }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Vehicle color - CLOSE  -->
@@ -435,16 +434,16 @@
             <!-- Vehicle license plate - OPEN  -->
             <div class="form-group col-md-3">
                 <p>
-                  {{ __('forms.license_plate') }}
+                    {{ __('forms.license_plate') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->matricula_vehicle )
-                      {{ $desaparegut->matricula_vehicle }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $desaparegut->matricula_vehicle )
+                            {{ $desaparegut->matricula_vehicle }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Vehicle license plate - CLOSE  -->
