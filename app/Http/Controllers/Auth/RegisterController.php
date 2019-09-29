@@ -50,11 +50,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name'     => ['required', 'string', 'min:2', 'max:50'],
-            'email'    => ['required', 'string', 'email', 'max:50', 'unique:users'],
-            'dni'      => ['required', 'string', 'min:8', 'max:10', 'unique:users'],
+            'name'      => ['required', 'string', 'min:2', 'max:50'],
+            'email'     => ['required', 'string', 'email', 'max:50', 'unique:users'],
+            'dni'       => ['required', 'string', 'min:8', 'max:10', 'unique:users'],
             'profile'   => ['required', 'string'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password'  => ['required', 'string', 'min:8', 'confirmed'],
         ], [
             'name.required'      => __('messages.required'),
             'name.min'           => __('messages.min'),
@@ -88,11 +88,11 @@ class RegisterController extends Controller
         session()->flash('success', __('main.welcome').' '.$data['name']);
 
         return User::create([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'dni'      => $data['dni'],
+            'name'      => $data['name'],
+            'email'     => $data['email'],
+            'dni'       => $data['dni'],
             'profile'   => $data['profile'],
-            'password' => Hash::make($data['password']),
+            'password'  => Hash::make($data['password']),
         ]);
     }
 }

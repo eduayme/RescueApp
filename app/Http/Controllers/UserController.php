@@ -43,8 +43,8 @@ class UserController extends Controller
             'profile' => 'required',
         ]);
 
-        $user->name    = $request->name;
-        $user->email   = $request->email;
+        $user->name = $request->name;
+        $user->email = $request->email;
         $user->profile = $request->profile;
 
         $user->save();

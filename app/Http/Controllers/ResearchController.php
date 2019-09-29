@@ -29,20 +29,16 @@ class ResearchController extends Controller
      */
     public function create()
     {
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $currentUser = \Auth::user()->profile;
 
             if ($currentUser != 'guest') {
                 return view('researches.create');
-            }
-            else
-            {
+            } else {
                 return redirect('/')
                 ->with('error', __('messages.not_allowed'));
             }
-        }
-        else {
+        } else {
             return redirect()->action('HomeController@login');
         }
     }
@@ -67,58 +63,58 @@ class ResearchController extends Controller
 
         $research = new Research([
             'is_a_practice'                  => $request->get('is_a_practice'),
-            'id_research'                 => $request->get('id_research'),
-            'region'                        => $request->get('region'),
-            'status'                        => $request->get('status'),
+            'id_research'                    => $request->get('id_research'),
+            'region'                         => $request->get('region'),
+            'status'                         => $request->get('status'),
 
-            'date_start'                   => $request->get('date_start'),
-            'date_creation'                 => $request->get('date_creation'),
-            'date_last_modification'      => $request->get('date_last_modification'),
+            'date_start'                      => $request->get('date_start'),
+            'date_creation'                   => $request->get('date_creation'),
+            'date_last_modification'          => $request->get('date_last_modification'),
             'date_finalization'               => $request->get('date_finalization'),
 
-            'id_user_creation'            => $request->get('id_user_creation'),
-            'id_user_last_modification' => $request->get('id_user_last_modification'),
+            'id_user_creation'              => $request->get('id_user_creation'),
+            'id_user_last_modification'     => $request->get('id_user_last_modification'),
             'id_user_finalization'          => $request->get('id_user_finalization'),
 
             // person alerts
-            'is_lost_person'               => $request->get('is_lost_person'),
-            'is_contact_person'                  => $request->get('is_contact_person'),
-            'name_person_alerts'                 => $request->get('name_person_alerts'),
-            'age_person_alerts'                => $request->get('age_person_alerts'),
+            'is_lost_person'                         => $request->get('is_lost_person'),
+            'is_contact_person'                      => $request->get('is_contact_person'),
+            'name_person_alerts'                     => $request->get('name_person_alerts'),
+            'age_person_alerts'                      => $request->get('age_person_alerts'),
             'phone_number_person_alerts'             => $request->get('phone_number_person_alerts'),
-            'address_person_alerts'              => $request->get('address_person_alerts'),
+            'address_person_alerts'                  => $request->get('address_person_alerts'),
 
             // incident
-            'municipality_last_place_seen'       => $request->get('municipality_last_place_seen'),
+            'municipality_last_place_seen'             => $request->get('municipality_last_place_seen'),
             'date_last_place_seen'                     => $request->get('date_last_place_seen'),
-            'zone_incident'                => $request->get('zone_incident'),
-            'potential_route'                => $request->get('potential_route'),
-            'description_incident'          => $request->get('description_incident'),
+            'zone_incident'                            => $request->get('zone_incident'),
+            'potential_route'                          => $request->get('potential_route'),
+            'description_incident'                     => $request->get('description_incident'),
 
             // lost people
-            'number_lost_people'          => $request->get('number_lost_people'),
+            'number_lost_people'             => $request->get('number_lost_people'),
             'physical_condition_lost_people' => $request->get('physical_condition_lost_people'),
 
             // equipment and experience
             'knowledge_of_the_zone'                  => $request->get('knowledge_of_the_zone'),
-            'experience_with_activity'        => $request->get('experience_with_activity'),
-            'bring_water'                  => $request->get('bring_water'),
-            'bring_food'                 => $request->get('bring_food'),
-            'bring_medication'         => $request->get('bring_medication'),
-            'bring_flashlight'                   => $request->get('bring_flashlight'),
-            'bring_cold_clothes'                   => $request->get('bring_cold_clothes'),
-            'bring_waterproof_clothes'             => $request->get('bring_waterproof_clothes'),
+            'experience_with_activity'               => $request->get('experience_with_activity'),
+            'bring_water'                            => $request->get('bring_water'),
+            'bring_food'                             => $request->get('bring_food'),
+            'bring_medication'                       => $request->get('bring_medication'),
+            'bring_flashlight'                       => $request->get('bring_flashlight'),
+            'bring_cold_clothes'                     => $request->get('bring_cold_clothes'),
+            'bring_waterproof_clothes'               => $request->get('bring_waterproof_clothes'),
 
             // contact person
-            'name_contact_person'         => $request->get('name_contact_person'),
+            'name_contact_person'             => $request->get('name_contact_person'),
             'phone_number_contact_person'     => $request->get('phone_number_contact_person'),
-            'affinity_contact_person'    => $request->get('affinity_contact_person'),
+            'affinity_contact_person'         => $request->get('affinity_contact_person'),
         ]);
 
         $research->save();
 
-        return redirect('researches/' . $research->id)
-        ->with('success', $research->id_research . __('messages.added'));
+        return redirect('researches/'.$research->id)
+        ->with('success', $research->id_research.__('messages.added'));
     }
 
     /**
@@ -152,9 +148,9 @@ class ResearchController extends Controller
             $research->delete();
 
             return redirect('/')
-            ->with('success', $research->id_research . __('messages.deleted'));
+            ->with('success', $research->id_research.__('messages.deleted'));
         } else {
-            return redirect('researches/' . $research->id)
+            return redirect('researches/'.$research->id)
             ->with('error', __('messages.not_allowed'));
         }
     }
@@ -175,7 +171,7 @@ class ResearchController extends Controller
         if ($currentUser != 'guest') {
             return view('researches.edit', compact('research'));
         } else {
-            return redirect('researches/' . $research->id)
+            return redirect('researches/'.$research->id)
             ->with('error', __('messages.not_allowed'));
         }
     }
@@ -193,7 +189,7 @@ class ResearchController extends Controller
         $research = Research::find($id);
 
         $request->validate([
-            'id_research' => 'required|string|min:3|max:50|unique:researches,id_research,' . $id,
+            'id_research' => 'required|string|min:3|max:50|unique:researches,id_research,'.$id,
         ], [
             'id_research.required' => __('messages.required'),
             'id_research.min'      => __('messages.min'),
@@ -276,58 +272,56 @@ class ResearchController extends Controller
         $research->utm_y_localization = $request->has('utm_y_localization') ? $request->get('utm_y_localization') : $research->utm_y_localization;
 
         // If search open and we want to close it
-        if ($request->has('closebutton'))
-        {
+        if ($request->has('closebutton')) {
             $validator = Validator::make($request->all(), [
-                'work_groups_used' => 'required',
-                'derivation_emergency_service' => 'required',
-                'emergency_service_receiver_id' => 'required',
-                'first_command' => 'required',
-                'intermediate_commands' => 'required',
-                'last_command' => 'required',
-                'tipology' => 'required',
-                'resources' => 'required',
-                'date_localization' => 'required',
-                'place_name_localization' => 'required',
-                'location_localization' => 'required',
-                'municipality_term_localization' => 'required',
+                'work_groups_used'                          => 'required',
+                'derivation_emergency_service'              => 'required',
+                'emergency_service_receiver_id'             => 'required',
+                'first_command'                             => 'required',
+                'intermediate_commands'                     => 'required',
+                'last_command'                              => 'required',
+                'tipology'                                  => 'required',
+                'resources'                                 => 'required',
+                'date_localization'                         => 'required',
+                'place_name_localization'                   => 'required',
+                'location_localization'                     => 'required',
+                'municipality_term_localization'            => 'required',
                 'distance_from_last_place_seen_to_location' => 'required',
-                'who_does_the_localization' => 'required',
-                'physical_condition_people_when_find' => 'required',
-                'reason_finalization' => 'required',
-                'coe_cut_localization' => 'required',
-                'soc_localization' => 'required',
-                'section_localization' => 'required',
-                'utm_x_localization' => 'required',
-                'utm_y_localization' => 'required',
+                'who_does_the_localization'                 => 'required',
+                'physical_condition_people_when_find'       => 'required',
+                'reason_finalization'                       => 'required',
+                'coe_cut_localization'                      => 'required',
+                'soc_localization'                          => 'required',
+                'section_localization'                      => 'required',
+                'utm_x_localization'                        => 'required',
+                'utm_y_localization'                        => 'required',
             ], [
-                'work_groups_used.required'         => __('messages.required'),
-                'derivation_emergency_service.required'     => __('messages.required'),
-                'emergency_service_receiver_id.required'     => __('messages.required'),
-                'first_command.required'            => __('messages.required'),
-                'intermediate_commands.required'            => __('messages.required'),
-                'last_command.required'              => __('messages.required'),
-                'tipology.required'                      => __('messages.required'),
-                'resources.required'                       => __('messages.required'),
-                'date_localization.required'              => __('messages.required'),
-                'place_name_localization.required'           => __('messages.required'),
-                'location_localization.required'            => __('messages.required'),
-                'municipality_term_localization.required'   => __('messages.required'),
-                'distance_from_last_place_seen_to_location.required'  => __('messages.required'),
-                'who_does_the_localization.required'               => __('messages.required'),
+                'work_groups_used.required'                               => __('messages.required'),
+                'derivation_emergency_service.required'                   => __('messages.required'),
+                'emergency_service_receiver_id.required'                  => __('messages.required'),
+                'first_command.required'                                  => __('messages.required'),
+                'intermediate_commands.required'                          => __('messages.required'),
+                'last_command.required'                                   => __('messages.required'),
+                'tipology.required'                                       => __('messages.required'),
+                'resources.required'                                      => __('messages.required'),
+                'date_localization.required'                              => __('messages.required'),
+                'place_name_localization.required'                        => __('messages.required'),
+                'location_localization.required'                          => __('messages.required'),
+                'municipality_term_localization.required'                 => __('messages.required'),
+                'distance_from_last_place_seen_to_location.required'      => __('messages.required'),
+                'who_does_the_localization.required'                      => __('messages.required'),
                 'physical_condition_people_when_find.required'            => __('messages.required'),
-                'reason_finalization.required'             => __('messages.required'),
-                'coe_cut_localization.required'             => __('messages.required'),
-                'soc_localization.required'     => __('messages.required'),
-                'section_localization.required'            => __('messages.required'),
-                'utm_x_localization.required'                   => __('messages.required'),
-                'utm_y_localization.required'             => __('messages.required'),
+                'reason_finalization.required'                            => __('messages.required'),
+                'coe_cut_localization.required'                           => __('messages.required'),
+                'soc_localization.required'                               => __('messages.required'),
+                'section_localization.required'                           => __('messages.required'),
+                'utm_x_localization.required'                             => __('messages.required'),
+                'utm_y_localization.required'                             => __('messages.required'),
             ]);
-            if ($validator->fails())
-            {
+            if ($validator->fails()) {
                 $research->save();
 
-                return redirect('researches/' . $research->id . '#nav-closing')
+                return redirect('researches/'.$research->id.'#nav-closing')
                 ->withErrors($validator)->withInput();
             }
 
@@ -345,7 +339,7 @@ class ResearchController extends Controller
 
         $research->save();
 
-        return redirect('researches/' . $research->id)
-        ->with('success', $research->id_research . __('messages.updated'));
+        return redirect('researches/'.$research->id)
+        ->with('success', $research->id_research.__('messages.updated'));
     }
 }

@@ -15,5 +15,5 @@ return [
     'load'            => 'Carregar',
     'closing'         => 'Tancament',
     'no'              => 'No',
-    'yes'             => 'Si',     
+    'yes'             => 'Si',
 ];

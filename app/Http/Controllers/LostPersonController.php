@@ -20,23 +20,17 @@ class LostPersonController extends Controller
      */
     public function create(Request $request)
     {
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $current_user_profile = \Auth::user()->profile;
             $research = Research::find($request->id_research);
 
-            if ($current_user_profile != 'guest')
-            {
+            if ($current_user_profile != 'guest') {
                 return view('researches.lost_people.create', compact('research'));
-            }
-            else
-            {
+            } else {
                 return back()
                 ->with('error', __('messages.not_allowed'));
             }
-        }
-        else
-        {
+        } else {
             return redirect()->action('HomeController@login');
         }
     }
@@ -59,36 +53,35 @@ class LostPersonController extends Controller
         ]);
 
         $lost_person = new LostPerson([
-            'id_research'               => $request->get('id_research'),
-            'name'                      => $request->get('name'),
-            'name_respond'               => $request->get('name_respond'),
-            'age'                     => $request->get('age'),
+            'id_research'                   => $request->get('id_research'),
+            'name'                          => $request->get('name'),
+            'name_respond'                  => $request->get('name_respond'),
+            'age'                           => $request->get('age'),
             'phone_number'                  => $request->get('phone_number'),
-            'whatsapp_or_gps'           => $request->get('whatsapp_or_gps'),
-            'profile'                   => $request->get('profile'),
-            'physical_appearance'        => $request->get('physical_appearance'),
-            'clothes'                     => $request->get('clothes'),
-            'other'                   => $request->get('other'),
+            'whatsapp_or_gps'               => $request->get('whatsapp_or_gps'),
+            'profile'                       => $request->get('profile'),
+            'physical_appearance'           => $request->get('physical_appearance'),
+            'clothes'                       => $request->get('clothes'),
+            'other'                         => $request->get('other'),
 
             // person status
             'physical_condition'             => $request->get('physical_condition'),
-            'diseases_or_injuries'      => $request->get('diseases_or_injuries'),
-            'medication'                => $request->get('medication'),
-            'discapacities_or_limitations' => $request->get('discapacities_or_limitations'),
+            'diseases_or_injuries'           => $request->get('diseases_or_injuries'),
+            'medication'                     => $request->get('medication'),
+            'discapacities_or_limitations'   => $request->get('discapacities_or_limitations'),
 
             // vehicle
-            'model_vehicle'      => $request->get('model_vehicle'),
+            'model_vehicle'            => $request->get('model_vehicle'),
             'color_vehicle'            => $request->get('color_vehicle'),
-            'car_plate_number'        => $request->get('car_plate_number'),
+            'car_plate_number'         => $request->get('car_plate_number'),
 
             // photo
             'photo'                    => $request->get('photo'),
         ]);
 
-        if ($request->hasFile('photo'))
-        {
+        if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
-            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $filename = time().'.'.$photo->getClientOriginalExtension();
 
             Image::make($lost_person)->resize(250, 300)->save(public_path('uploads/lost_people_photos/'.$filename));
 
@@ -97,8 +90,8 @@ class LostPersonController extends Controller
 
         $lost_person->save();
 
-        return redirect('researches/' . $lost_person->id_research)
-        ->with('success', $lost_person->name . __('messages.added'));
+        return redirect('researches/'.$lost_person->id_research)
+        ->with('success', $lost_person->name.__('messages.added'));
     }
 
     /**
@@ -128,16 +121,13 @@ class LostPersonController extends Controller
         $lost_person = LostPerson::find($id);
         $current_user_profile = \Auth::user()->profile;
 
-        if ($current_user_profile != 'guest')
-        {
+        if ($current_user_profile != 'guest') {
             $lost_person->delete();
 
-            return redirect('researches/' . $lost_person->id_research)
-            ->with('success', $lost_person->name . __('messages.deleted'));
-        }
-        else
-        {
-            return redirect('lost-people/' . $lost_person->id)
+            return redirect('researches/'.$lost_person->id_research)
+            ->with('success', $lost_person->name.__('messages.deleted'));
+        } else {
+            return redirect('lost-people/'.$lost_person->id)
             ->with('error', __('messages.not_allowed'));
         }
     }
@@ -157,7 +147,7 @@ class LostPersonController extends Controller
         if ($current_user_profile != 'guest') {
             return view('researches.lost_people.edit', compact('lost_person'));
         } else {
-            return redirect('lost-people/' . $lost_person->id)
+            return redirect('lost-people/'.$lost_person->id)
             ->with('error', __('messages.not_allowed'));
         }
     }
@@ -184,18 +174,18 @@ class LostPersonController extends Controller
 
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
-            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $filename = time().'.'.$photo->getClientOriginalExtension();
 
             // delete current image before uploading new image
             if ($lost_person->photo !== 'default.jpg') {
-                $file = public_path('/uploads/lost_people_photos/' . $lost_person->photo);
+                $file = public_path('/uploads/lost_people_photos/'.$lost_person->photo);
 
                 if (File::exists($file)) {
                     unlink($file);
                 }
             }
 
-            Image::make($photo)->resize(300, 300)->save(public_path('/uploads/lost_people_photos/' . $filename));
+            Image::make($photo)->resize(300, 300)->save(public_path('/uploads/lost_people_photos/'.$filename));
 
             $lost_person->photo = $filename;
         }
@@ -227,7 +217,7 @@ class LostPersonController extends Controller
 
         $lost_person->save();
 
-        return redirect('lost-people/' . $lost_person->id)
-        ->with('success', $lost_person->name . __('messages.updated'));
+        return redirect('lost-people/'.$lost_person->id)
+        ->with('success', $lost_person->name.__('messages.updated'));
     }
 }
