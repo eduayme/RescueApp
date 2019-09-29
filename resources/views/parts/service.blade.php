@@ -7,17 +7,17 @@
     <!-- Alerts - OPEN -->
 
         <!-- Success - OPEN -->
-        @if( session()->get('success') )
+        @if (session()->get('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <div class="container text-center">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     {{ session()->get('success') }}
                 </div>
             </div>
-            <!-- Success - CLOSE -->
+        <!-- Success - CLOSE -->
 
-            <!-- Error - OPEN -->
-        @elseif( session()->get('error') )
+        <!-- Error - OPEN -->
+        @elseif (session()->get('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <div class="container text-center">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -52,7 +52,7 @@
             Modificacions i actualitzacions
         </h3>
         <p>
-            A causa de la pròpia naturalesa d'aquest portal web, es reserva la potestat de realitzar modificacions
+            A causa de la pròpia naturalesa d'aquest portal web, es reserva la potstatus de realitzar modificacions
             i actualitzacions sobre la informació continguda, així com la configuració, disseny i disponibilitat
             del propi portal en qualsevol moment i sense necessitat de previ avís.
         </p>

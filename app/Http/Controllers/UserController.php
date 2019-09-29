@@ -16,14 +16,14 @@ class UserController extends Controller
 
     public function update_user(Request $request)
     {
-        // Get user
+        // get user
         $user = Auth::user();
 
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             $filename = time().'.'.$avatar->getClientOriginalExtension();
 
-            // Delete current image before uploading new image
+            // delete current image before uploading new image
             if ($user->avatar !== 'default.jpg') {
                 $file = public_path('/uploads/avatars/'.$user->avatar);
 
@@ -38,14 +38,14 @@ class UserController extends Controller
         }
 
         $request->validate([
-            'name'   => 'required',
-            'email'  => 'required|email',
-            'perfil' => 'required',
+            'name'    => 'required',
+            'email'   => 'required|email',
+            'profile' => 'required',
         ]);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->perfil = $request->perfil;
+        $user->name    = $request->name;
+        $user->email   = $request->email;
+        $user->profile = $request->profile;
 
         $user->save();
 

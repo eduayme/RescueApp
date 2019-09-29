@@ -6,26 +6,26 @@
 
     <!-- Alerts - OPEN -->
 
-    <!-- Success - OPEN -->
-    @if( session()->get('success') )
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <div class="container text-center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session()->get('success') }}
+        <!-- Success - OPEN -->
+        @if (session()->get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="container text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ session()->get('success') }}
+                </div>
             </div>
-        </div>
-    <!-- Success - CLOSE -->
+        <!-- Success - CLOSE -->
 
-    <!-- Error - OPEN -->
-    @elseif( session()->get('error') )
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <div class="container text-center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session()->get('error') }}
+        <!-- Error - OPEN -->
+        @elseif (session()->get('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="container text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ session()->get('error') }}
+                </div>
             </div>
-        </div>
-    @endif
-    <!-- Error - CLOSE -->
+        @endif
+        <!-- Error - CLOSE -->
 
     <!-- Alerts - CLOSE -->
 
@@ -46,14 +46,14 @@
 
                 <!-- Searches tab - OPEN -->
                 <a class="nav-item nav-link active" id="nav-searches-tab" data-toggle="tab"
-                   href="#nav-searches" role="tab" aria-controls="nav-searches" aria-selected="true">
+                href="#nav-searches" role="tab" aria-controls="nav-searches" aria-selected="true">
                     {{ __('main.searches') }}
                 </a>
                 <!-- Searches tab - CLOSE -->
 
                 <!-- Practices tab - OPEN -->
                 <a class="nav-item nav-link" id="nav-practices-tab" data-toggle="tab"
-                   href="#nav-practices" role="tab" aria-controls="nav-practices" aria-selected="false">
+                href="#nav-practices" role="tab" aria-controls="nav-practices" aria-selected="false">
                     {{ __('main.practices') }}
                 </a>
                 <!-- Practices tab - CLOSE -->
@@ -72,7 +72,7 @@
                  role="tabpanel" aria-labelledby="nav-searches-tab">
 
                 <!-- If NO searches - OPEN -->
-                @if( count($recerques) == 0 )
+                @if (count($researches) == 0)
                     <div class="card text-center">
                         <div class="card-body">
 
@@ -80,7 +80,7 @@
                                 {{ __('messages.no_searches') }}
                             </h1>
 
-                            <a href="{{ route('recerques.create') }}" class="btn btn-primary" role="button">
+                            <a href="{{ route('researches.create') }}" class="btn btn-primary" role="button">
                                 {{ __('actions.add') . ' ' . __('main.search') }}
                             </a>
 
@@ -98,8 +98,8 @@
                         <!-- Table header - OPEN -->
                         <thead>
                             <tr>
-                                <th scope="col"> {{ __('forms.num_actuacio') }} </th>
-                                <th scope="col"> {{ __('forms.estat') }} </th>
+                                <th scope="col"> {{ __('forms.id_research') }} </th>
+                                <th scope="col"> {{ __('forms.status') }} </th>
                                 <th scope="col"> {{ __('forms.begin') }} </th>
                                 <th scope="col"> {{ __('forms.end') }} </th>
                                 <th scope="col"> {{ __('forms.village') }} </th>
@@ -110,84 +110,86 @@
 
                         <!-- Table content - OPEN -->
                         <tbody>
-                        @foreach( $recerques as $recerca )
+                        @foreach ($researches as $research)
                             <tr>
 
                                 <td>
-                                    <a href="{{ url('recerques/'.$recerca->id) }}">
-                                        {{ $recerca->num_actuacio }}
+                                    <a href="{{ url('researches/' . $research->id) }}">
+                                        {{ $research->id_research }}
                                     </a>
                                 </td>
 
                                 <td>
                                     <h5>
-                                        @if( $recerca->estat == 'Oberta' )
+                                        @if ($research->status == 0)
                                             <span class="badge badge-danger">
-                                        @elseif( $recerca->estat == 'Tancada' )
+                                                {{ __('main.status_open') }}
+                                            </span>
+                                        @elseif ($research->status == 1)
                                             <span class="badge badge-success">
+                                                {{ __('main.status_close') }}
+                                            </span>
                                         @endif
-                                            {{ $recerca->estat }}
-                                        </span>
                                     </h5>
                                 </td>
 
                                 <td>
-                                    @if( $recerca->data_inici == NULL )
+                                    @if ($research->date_start == NULL)
                                         --
                                     @else
                                         @php
-                                            $date = new Date($recerca->data_inici);
+                                            $date = new Date($research->date_start);
                                             echo $date->format('H:i | d F Y');
                                         @endphp
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if( $recerca->data_tancament == NULL )
+                                    @if ($research->date_finalization == NULL)
                                         --
                                     @else
                                         @php
-                                            $date = new Date($recerca->data_tancament);
+                                            $date = new Date($research->date_finalization);
                                             echo $date->format('H:i | d F Y');
                                         @endphp
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if( $recerca->municipi_upa == NULL )
+                                    @if ($research->municipality_last_place_seen == NULL)
                                         --
                                     @else
-                                        {{ $recerca->municipi_upa }}
+                                        {{ $research->municipality_last_place_seen }}
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if( $recerca->regio == '01' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Centre">
+                                    @if ($research->region == '01')
+                                        <p data-toggle="tooltip" data-placement="top" title="Centre" style="display:inline">
                                             01
                                         </p>
-                                    @elseif( $recerca->regio == '02' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Girona">
+                                    @elseif ($research->region == '02')
+                                        <p data-toggle="tooltip" data-placement="top" title="Girona" style="display:inline">
                                             02
                                         </p>
-                                    @elseif( $recerca->regio == '03' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Lleida">
+                                    @elseif ($research->region == '03')
+                                        <p data-toggle="tooltip" data-placement="top" title="Lleida" style="display:inline">
                                             03
                                         </p>
-                                    @elseif( $recerca->regio == '04' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Nord">
+                                    @elseif ($research->region == '04')
+                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Nord" style="display:inline">
                                             04
                                         </p>
-                                    @elseif( $recerca->regio == '05' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Sud">
+                                    @elseif ($research->region == '05')
+                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Sud" style="display:inline">
                                             05
                                         </p>
-                                    @elseif( $recerca->regio == '06' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Tarragona">
+                                    @elseif ($research->region == '06')
+                                        <p data-toggle="tooltip" data-placement="top" title="Tarragona" style="display:inline">
                                             06
                                         </p>
-                                    @elseif( $recerca->regio == '07' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Terres Ebre">
+                                    @elseif ($research->regio == '07')
+                                        <p data-toggle="tooltip" data-placement="top" title="Terres Ebre"style="display:inline">
                                             07
                                         </p>
                                     @else
@@ -216,7 +218,7 @@
                  role="tabpanel" aria-labelledby="nav-practices-tab">
 
                 <!-- If NO practices - OPEN -->
-                @if( count($practiques) == 0 )
+                @if (count($practices) == 0)
                     <div class="card text-center">
                         <div class="card-body">
 
@@ -224,7 +226,7 @@
                                 {{ __('messages.no_practices') }}
                             </h1>
 
-                            <a href="{{ route('recerques.create') }}" class="btn btn-primary" role="button">
+                            <a href="{{ route('researches.create') }}" class="btn btn-primary" role="button">
                                 {{ __('actions.add') . ' ' . __('main.practice') }}
                             </a>
 
@@ -236,102 +238,103 @@
                 @else
 
                     <!-- Practices table - OPEN -->
-                    <table class="table dt-responsive nowrap table-hover text-center"
-                           id="practices" style="width: 100%">
+                    <table class="table dt-responsive nowrap table-hover text-center" id="practices" style="width: 100%">
 
                         <!-- Table header - OPEN -->
                         <thead>
-                        <tr>
-                            <th scope="col"> {{ __('forms.num_actuacio') }} </th>
-                            <th scope="col"> {{ __('forms.estat') }} </th>
-                            <th scope="col"> {{ __('forms.begin') }} </th>
-                            <th scope="col"> {{ __('forms.end') }} </th>
-                            <th scope="col"> {{ __('forms.village') }} </th>
-                            <th scope="col"> {{ __('forms.region') }} </th>
-                        </tr>
+                            <tr>
+                                <th scope="col"> {{ __('forms.id_research') }} </th>
+                                <th scope="col"> {{ __('forms.status') }} </th>
+                                <th scope="col"> {{ __('forms.begin') }} </th>
+                                <th scope="col"> {{ __('forms.end') }} </th>
+                                <th scope="col"> {{ __('forms.village') }} </th>
+                                <th scope="col"> {{ __('forms.region') }} </th>
+                            </tr>
                         </thead>
                         <!-- Table header - CLOSE -->
 
                         <!-- Table content - OPEN -->
                         <tbody>
-                        @foreach( $practiques as $practica )
+                        @foreach ($practices as $practice)
                             <tr>
 
                                 <td>
-                                    <a href="{{ url('recerques/'.$practica->id) }}">
-                                        {{ $practica->num_actuacio }}
+                                    <a href="{{ url('researches/' . $practice->id) }}">
+                                        {{ $practice->id_research }}
                                     </a>
                                 </td>
 
                                 <td>
                                     <h5>
-                                        @if( $practica->estat == 'Oberta' )
+                                        @if ($practice->status == 0)
                                             <span class="badge badge-danger">
-                                        @elseif( $practica->estat == 'Tancada' )
+                                                {{ __('main.status_open') }}
+                                            </span>
+                                        @elseif ($practice->status == 1)
                                             <span class="badge badge-success">
+                                                {{ __('main.status_close') }}
+                                            </span>
                                         @endif
-                                            {{ $practica->estat }}
-                                        </span>
                                     </h5>
                                 </td>
 
                                 <td>
-                                    @if( $practica->data_inici == NULL )
+                                    @if ($practice->date_start == NULL)
                                         --
                                     @else
                                         @php
-                                            $date = new Date($practica->data_inici);
+                                            $date = new Date($practice->date_start);
                                             echo $date->format('H:i | d F Y');
                                         @endphp
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if( $practica->data_tancament == NULL )
+                                    @if ($practice->date_finalization == NULL)
                                         --
                                     @else
                                         @php
-                                            $date = new Date($practica->data_tancament);
+                                            $date = new Date($practice->date_finalization);
                                             echo $date->format('H:i | d F Y');
                                         @endphp
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if( $practica->municipi_upa == NULL )
+                                    @if ($practice->municipality_last_place_seen == NULL)
                                         --
                                     @else
-                                        {{ $practica->municipi_upa }}
+                                        {{ $practice->municipality_last_place_seen }}
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if( $practica->regio == '01' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Centre">
+                                    @if ($practice->region == '01')
+                                        <p data-toggle="tooltip" data-placement="top" title="Centre" style="display:inline">
                                             01
                                         </p>
-                                    @elseif( $practica->regio == '02' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Girona">
+                                    @elseif ($practice->region == '02')
+                                        <p data-toggle="tooltip" data-placement="top" title="Girona" style="display:inline">
                                             02
                                         </p>
-                                    @elseif( $practica->regio == '03' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Lleida">
+                                    @elseif ($practice->region == '03')
+                                        <p data-toggle="tooltip" data-placement="top" title="Lleida" style="display:inline">
                                             03
                                         </p>
-                                    @elseif( $practica->regio == '04' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Nord">
+                                    @elseif ($practice->region == '04')
+                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Nord" style="display:inline">
                                             04
                                         </p>
-                                    @elseif( $practica->regio == '05' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Metropolitana Sud">
+                                    @elseif ($practice->region == '05')
+                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Sud" style="display:inline">
                                             05
                                         </p>
-                                    @elseif( $practica->regio == '06' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Tarragona">
+                                    @elseif ($practice->region == '06')
+                                        <p data-toggle="tooltip" data-placement="top" title="Tarragona" style="display:inline">
                                             06
                                         </p>
-                                    @elseif( $practica->regio == '07' )
-                                        <p style="display:inline" data-toggle="tooltip" data-placement="top" title="Terres Ebre">
+                                    @elseif ($practice->regio == '07')
+                                        <p data-toggle="tooltip" data-placement="top" title="Terres Ebre"style="display:inline">
                                             07
                                         </p>
                                     @else

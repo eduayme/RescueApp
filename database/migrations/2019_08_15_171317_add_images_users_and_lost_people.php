@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class AfegirImatgeUsuariIDesaparegut extends Migration
+class AddImagesUsersAndLostPeople extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,7 @@ class AfegirImatgeUsuariIDesaparegut extends Migration
             $table->string('avatar')->default('default.jpg');
         });
 
-        Schema::table('desapareguts', function ($table) {
+        Schema::table('lost_people', function ($table) {
             $table->string('photo')->default('default.jpg');
         });
     }
@@ -32,7 +32,7 @@ class AfegirImatgeUsuariIDesaparegut extends Migration
             $table->dropColumn('avatar');
         });
 
-        Schema::table('desapareguts', function ($table) {
+        Schema::table('lost_people', function ($table) {
             $table->dropColumn('photo');
         });
     }

@@ -14,17 +14,17 @@
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('recerques', 'RecerquesController');
+    Route::resource('researches', 'ResearchController');
 
-    Route::get('/', ['uses' => 'RecerquesController@index', 'as' => 'index']);
+    Route::get('/', ['uses' => 'ResearchController@index', 'as' => 'index']);
 
-    Route::get('/recerques', ['uses' => 'RecerquesController@index', 'as' => 'recerques']);
+    Route::get('/researches', ['uses' => 'ResearchController@index', 'as' => 'researches']);
 
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::post('/profile', 'UserController@update_user');
 
-    Route::resource('desapareguts', 'DesaparegutsController');
-    Route::post('/desapareguts/{id}', 'DesaparegutsController@update');
+    Route::resource('lost-people', 'LostPersonController');
+    Route::post('/lost-people/{id}', 'LostPersonController@update');
 
     Route::get('/privacy', function () {
         return view('parts.privacy');

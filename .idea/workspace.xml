@@ -26,7 +26,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/recerques/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/researches/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1677">
               <caret line="129" column="37" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
@@ -42,7 +42,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/recerques/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/researches/index.blade.php" />
       </list>
     </option>
   </component>
@@ -295,7 +295,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/recerques/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/researches/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1677">
           <caret line="129" column="37" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />

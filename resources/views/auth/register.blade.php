@@ -8,22 +8,22 @@
 
         <!-- Success - OPEN -->
         @if( session('success') )
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <div class="container text-center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session('success') }}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="container text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ session('success') }}
+                </div>
             </div>
-        </div>
         <!-- Success - CLOSE -->
 
         <!-- Error - OPEN -->
         @elseif( session()->get('error') )
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <div class="container text-center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session()->get('error') }}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="container text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ session()->get('error') }}
+                </div>
             </div>
-        </div>
         @endif
         <!-- Error - CLOSE -->
 
@@ -134,9 +134,9 @@
 
                                     <!-- Show errors input - OPEN -->
                                     @if( $errors->has('dni') )
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('dni') }}</strong>
-                                    </span>
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('dni') }}</strong>
+                                        </span>
                                     @endif
                                     <!-- Show errors input - CLOSE -->
 
@@ -150,7 +150,7 @@
                             <div class="form-group row">
 
                                 <!-- Profile label - OPEN -->
-                                <label for="perfil" class="col-md-4 col-form-label text-md-right">
+                                <label for="profile" class="col-md-4 col-form-label text-md-right">
                                     {{ __('register.profile') }}
                                 </label>
                                 <!-- Profile label - CLOSE -->
@@ -159,20 +159,20 @@
                                 <div class="col-md-6">
 
                                     <!-- Dropdown selector - OPEN -->
-                                    <select id="perfil" class="form-control" name="perfil" required>
+                                    <select id="profile" class="form-control" name="profile" required>
                                         <option value=""> {{ __('register.chose_profile') }} </option>
-                                        <option value="bomber"> {{ __('register.firefighter') }} </option>
-                                        <option value="operador"> {{ __('register.control_room_operator') }} </option>
-                                        <option value="comandament"> {{ __('register.commander') }} </option>
-                                        <option value="convidat"> {{ __('register.guest') }} </option>
+                                        <option value="firefighter"> {{ __('register.firefighter') }} </option>
+                                        <option value="operator"> {{ __('register.control_room_operator') }} </option>
+                                        <option value="commander"> {{ __('register.commander') }} </option>
+                                        <option value="guest"> {{ __('register.guest') }} </option>
                                     </select>
                                     <!-- Dropdown selector - CLOSE -->
 
                                     <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('perfil') )
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('perfil') }}</strong>
-                                    </span>
+                                    @if( $errors->has('profile') )
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('profile') }}</strong>
+                                        </span>
                                     @endif
                                     <!-- Show errors input - CLOSE -->
 

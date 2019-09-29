@@ -4,6 +4,6 @@
 
 @section('content')
 
-@include('recerques.index')
+    @include('researches.index')
 
 @endsection

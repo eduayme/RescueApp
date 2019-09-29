@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('dni')->unique()->nullable();
-            $table->enum('perfil', ['bomber', 'operador', 'comandament', 'convidat', 'admin'])->default('convidat');
+            $table->enum('profile', ['admin', 'firefighter', 'operator', 'commander', 'guest'])->default('guest');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -23,6 +23,8 @@ return [
     'closing'          => 'Tancament',
     'lost'             => 'Perdut',
     'found'            => 'Trobat',
+    'status_open'      => 'Oberta',
+    'status_closed'    => 'Tancada',
     'profile'          => 'Perfil',
     'photo'            => 'Foto',
 ];

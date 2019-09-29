@@ -13,4 +13,7 @@ return [
     'reopen_practice' => 'Reobrir pràctica',
     'go_back'         => 'Tornar enrere',
     'load'            => 'Carregar',
+    'closing'         => 'Tancament',
+    'no'              => 'No',
+    'yes'             => 'Si',     
 ];

@@ -87,22 +87,22 @@
             <!-- Profile - OPEN  -->
             <div class="form-group col-md-4">
 
-                <label for="perfil"> {{ __('register.profile') }} </label>
+                <label for="profile"> {{ __('register.profile') }} </label>
 
-                <select id="perfil" class="form-control" name="perfil" required>
-                    <option value="" {{ ($user->perfil === '') ? 'selected' : '' }}>
+                <select id="profile" class="form-control" name="profile" required>
+                    <option value="" {{ ($user->profile === '') ? 'selected' : '' }}>
                         {{ __('register.chose_profile') }}
                     </option>
-                    <option value="bomber" {{ ($user->perfil === 'bomber') ? 'selected' : '' }}>
+                    <option value="firefighter" {{ ($user->profile === 'firefighter') ? 'selected' : '' }}>
                         {{ __('register.firefighter') }}
                     </option>
-                    <option value="operador" {{ ($user->perfil === 'operador') ? 'selected' : '' }}>
+                    <option value="operator" {{ ($user->profile === 'operator') ? 'selected' : '' }}>
                         {{ __('register.control_room_operator') }}
                     </option>
-                    <option value="comandament" {{ ($user->perfil === 'comandament') ? 'selected' : '' }}>
+                    <option value="commander" {{ ($user->profile === 'commander') ? 'selected' : '' }}>
                         {{ __('register.commander') }}
                     </option>
-                    <option value="convidat" {{ ($user->perfil === 'convidat') ? 'selected' : '' }}>
+                    <option value="guest" {{ ($user->profile === 'guest') ? 'selected' : '' }}>
                         {{ __('register.guest') }}
                     </option>
                 </select>

@@ -1,31 +1,31 @@
 @extends('layouts.app_secondary')
 
-@section('title', $desaparegut->nom)
+@section('title', $lost_person->name)
 
 @section('content')
 
     <!-- Alerts - OPEN -->
 
-    <!-- Success - OPEN -->
-    @if( session()->get('success') )
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <div class="container text-center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session()->get('success') }}
+        <!-- Success - OPEN -->
+        @if( session()->get('success') )
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="container text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ session()->get('success') }}
+                </div>
             </div>
-        </div>
-        <!-- Success - CLOSE -->
+            <!-- Success - CLOSE -->
 
-        <!-- Error - OPEN -->
-    @elseif( session()->get('error') )
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <div class="container text-center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                {{ session()->get('error') }}
+            <!-- Error - OPEN -->
+        @elseif( session()->get('error') )
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <div class="container text-center">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ session()->get('error') }}
+                </div>
             </div>
-        </div>
-    @endif
-    <!-- Error - CLOSE -->
+        @endif
+        <!-- Error - CLOSE -->
 
     <!-- Alerts - CLOSE -->
 
@@ -45,10 +45,9 @@
             <div class="col justify-content-start">
 
                 <!-- Go back - OPEN -->
-                <a href="{{ URL::to('recerques/' . $recerca->id) }}"
-                    role="button" class="btn btn-outline-secondary margin-right"
-                    data-toggle="tooltip" data-placement="top" title="{{ __('actions.go_back') }}"
-                    >
+                <a href="{{ URL::to('researches/' . $research->id) }}"
+                role="button" class="btn btn-outline-secondary margin-right"
+                data-toggle="tooltip" data-placement="top" title="{{ __('actions.go_back') }}">
                     <span class="octicon octicon-arrow-left"></span>
                 </a>
                 <!-- Go back - CLOSE -->
@@ -77,7 +76,7 @@
                 <!-- Delete search button- CLOSE -->
 
                 <!-- Delete search modal - OPEN -->
-                <form action="{{ route('desapareguts.destroy', $desaparegut->id) }}" method="post">
+                <form action="{{ route('lost-people.destroy', $lost_person->id) }}" method="post">
                     @csrf
                     @method('DELETE')
 
@@ -133,11 +132,11 @@
 
         <!-- Name title - OPEN -->
         <h1 class="margin-top">
-            {{ $desaparegut->nom }}
-            @if( $desaparegut->trobat == 0 )
+            {{ $lost_person->name }}
+            @if( $lost_person->found == 0 )
                 <span style="font-size: 20px" class="badge badge-danger">
                     {{ __('main.lost') }}
-            @elseif( $desaparegut->trobat == 1 )
+            @elseif( $lost_person->found == 1 )
                 <span style="font-size: 20px" class="badge badge-success">
                     {{ __('main.found') }}
             @endif
@@ -152,7 +151,7 @@
 
                 <!-- User photo - OPEN -->
                 <div class="row justify-content-md-center image-upload justify-content-center">
-                    <img src="/uploads/lost_people_photos/{{ $desaparegut->photo }}" class="photo mx-auto d-block rounded">
+                    <img src="/uploads/lost_people_photos/{{ $lost_person->photo }}" class="photo mx-auto d-block rounded">
                 </div>
                 <!-- User photo - CLOSE -->
 
@@ -168,7 +167,7 @@
                             {{ __('register.name') }}
                         </p>
                         <h5 class="margin-top-sm-min">
-                            <b> {{ $desaparegut->nom }} </b>
+                            <b> {{ $lost_person->name }} </b>
                         </h5>
                     </div>
                     <!-- Name - CLOSE  -->
@@ -180,10 +179,10 @@
                         </p>
                         <h5 class="margin-top-sm-min">
                           <b>
-                            @if( $desaparegut->nom_respon )
-                              {{ $desaparegut->nom_respon }}
+                            @if( $lost_person->name_respond )
+                                {{ $lost_person->name_respond }}
                             @else
-                              --
+                                --
                             @endif
                           </b>
                         </h5>
@@ -193,16 +192,16 @@
                     <!-- Age - OPEN  -->
                     <div class="form-group col-md-6">
                         <p>
-                          {{ __('forms.age') }}
+                            {{ __('forms.age') }}
                         </p>
                         <h5 class="margin-top-sm-min">
-                          <b>
-                            @if( $desaparegut->edat )
-                              {{ $desaparegut->edat }}
-                            @else
-                              --
-                            @endif
-                          </b>
+                            <b>
+                                @if( $lost_person->age )
+                                    {{ $lost_person->age }}
+                                @else
+                                    --
+                                @endif
+                            </b>
                         </h5>
                     </div>
                     <!-- Age - CLOSE  -->
@@ -210,65 +209,65 @@
                     <!-- Phone - OPEN  -->
                     <div class="form-group col-md-6">
                         <p>
-                          {{ __('forms.phone') }}
+                            {{ __('forms.phone') }}
                         </p>
                         <h5 class="margin-top-sm-min">
-                          <b>
-                            @if( $desaparegut->telefon )
-                              {{ $desaparegut->telefon }}
-                            @else
-                              --
-                            @endif
-                          </b>
+                            <b>
+                                @if( $lost_person->phone_number )
+                                    {{ $lost_person->phone_number }}
+                                @else
+                                    --
+                                @endif
+                            </b>
                         </h5>
                     </div>
                     <!-- Phone - CLOSE  -->
 
                     <!-- Has whatsapp or gps - OPEN  -->
                     <div class="form-group col-md-6">
-                      <p>
-                        {{ __('forms.whatsapp_or_gps') }}
-                      </p>
-                      <h5 class="margin-top-sm-min">
-                        <b>
-                          @if( $desaparegut->whatsapp_o_gps !== NULL )
-                            @if( $desaparegut->whatsapp_o_gps == 1 )
-                                Si
-                            @else
-                                No
-                            @endif
-                          @else
-                            --
-                          @endif
-                        </b>
-                      </h5>
+                        <p>
+                            {{ __('forms.whatsapp_or_gps') }}
+                        </p>
+                        <h5 class="margin-top-sm-min">
+                            <b>
+                                @if( $lost_person->whatsapp_or_gps !== NULL )
+                                    @if( $lost_person->whatsapp_or_gps == 1 )
+                                        {{ __('actions.yes') }}
+                                    @else
+                                        {{ __('actions.no') }}
+                                    @endif
+                                @else
+                                    --
+                                @endif
+                            </b>
+                        </h5>
                     </div>
                     <!-- Has whatsapp or gps - CLOSE  -->
 
                     <!-- Profile - OPEN  -->
                     <div class="form-group col-md-12">
                         <p>
-                          {{ __('register.profile') }}
+                            {{ __('register.profile') }}
                         </p>
                         <h5 class="margin-top-sm-min">
-                          <b>
-                            @if( $desaparegut->profile )
-                              {{ $desaparegut->profile }}
-                            @else
-                              --
-                            @endif
-                          </b>
+                            <b>
+                                @if( $lost_person->profile )
+                                    {{ $lost_person->profile }}
+                                @else
+                                    --
+                                @endif
+                            </b>
                         </h5>
                     </div>
                     <!-- Profile - CLOSE  -->
 
                 </div>
 
-                </div>
+            </div>
 
-                </div>
+        </div>
 
-                <div class="form-row">
+        <div class="form-row">
 
             <!-- Aspect description - OPEN  -->
             <div class="form-group col-md-6">
@@ -276,13 +275,13 @@
                   {{ __('forms.aspect_description') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->descripcio_fisica )
-                      {{ $desaparegut->descripcio_fisica }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->physical_appearance )
+                            {{ $lost_person->physical_appearance }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!--  Aspect description - CLOSE  -->
@@ -290,16 +289,16 @@
             <!-- Clothes - OPEN  -->
             <div class="form-group col-md-6">
                 <p>
-                  {{ __('forms.clothes') }}
+                    {{ __('forms.clothes') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->roba )
-                      {{ $desaparegut->roba }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->clothes )
+                            {{ $lost_person->clothes }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Clothes - CLOSE  -->
@@ -307,16 +306,16 @@
             <!-- Phisic form - OPEN  -->
             <div class="form-group col-md-6">
                 <p>
-                  {{ __('forms.phisic_form') }}
+                    {{ __('forms.phisic_form') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->forma_fisica )
-                      {{ $desaparegut->forma_fisica }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->physical_condition )
+                            {{ $lost_person->physical_condition }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Phisic form - CLOSE  -->
@@ -324,16 +323,16 @@
             <!-- Diseases or injuries - OPEN  -->
             <div class="form-group col-md-6">
                 <p>
-                  {{ __('forms.diseases_or_injuries') }}
+                    {{ __('forms.diseases_or_injuries') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->malalties_o_lesions )
-                      {{ $desaparegut->malalties_o_lesions }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->diseases_or_injuries )
+                            {{ $lost_person->diseases_or_injuries }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Diseases or injuries - CLOSE  -->
@@ -341,16 +340,16 @@
             <!-- Medication - OPEN  -->
             <div class="form-group col-md-6">
                 <p>
-                  {{ __('forms.medication') }}
+                    {{ __('forms.medication') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->medicacio )
-                      {{ $desaparegut->medicacio }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->medication )
+                            {{ $lost_person->medication }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Medication - CLOSE  -->
@@ -358,16 +357,16 @@
             <!-- Limitations or discapacities - OPEN  -->
             <div class="form-group col-md-6">
                 <p>
-                  {{ __('forms.limitations_or_discapacities') }}
+                    {{ __('forms.limitations_or_discapacities') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->limitacio_o_discapacitat )
-                      {{ $desaparegut->limitacio_o_discapacitat }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->discapacities_or_limitations )
+                            {{ $lost_person->discapacities_or_limitations }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Limitations or discapacities - CLOSE  -->
@@ -375,16 +374,16 @@
             <!-- Others - OPEN  -->
             <div class="form-group col-md-12">
                 <p>
-                  {{ __('forms.other') }}
+                    {{ __('forms.other') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->altres )
-                      {{ $desaparegut->altres }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->other )
+                            {{ $lost_person->other }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Others - CLOSE  -->
@@ -400,16 +399,16 @@
             <!-- Vehicle model and brand - OPEN  -->
             <div class="form-group col-md-6">
                 <p>
-                  {{ __('forms.model_and_brand') }}
+                    {{ __('forms.model_and_brand') }}
                 </p>
                 <h5 class="margin-top-sm-min">
-                  <b>
-                    @if( $desaparegut->marca_model_vehicle )
-                      {{ $desaparegut->marca_model_vehicle }}
-                    @else
-                      --
-                    @endif
-                  </b>
+                    <b>
+                        @if( $lost_person->model_vehicle )
+                            {{ $lost_person->model_vehicle }}
+                        @else
+                            --
+                        @endif
+                    </b>
                 </h5>
             </div>
             <!-- Vehicle model and brand - CLOSE  -->
@@ -421,8 +420,8 @@
                 </p>
                 <h5 class="margin-top-sm-min">
                     <b>
-                        @if( $desaparegut->color_vehicle )
-                            {{ $desaparegut->color_vehicle }}
+                        @if( $lost_person->color_vehicle )
+                            {{ $lost_person->color_vehicle }}
                         @else
                             --
                         @endif
@@ -438,8 +437,8 @@
                 </p>
                 <h5 class="margin-top-sm-min">
                     <b>
-                        @if( $desaparegut->matricula_vehicle )
-                            {{ $desaparegut->matricula_vehicle }}
+                        @if( $lost_person->car_plate_number )
+                            {{ $lost_person->car_plate_number }}
                         @else
                             --
                         @endif

@@ -1,5 +1,6 @@
 <!-- Navbar - OPEN -->
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+
     <div class="container">
 
         <!-- Collapsable button - OPEN -->
@@ -15,55 +16,61 @@
             <!-- Left Side Of Navbar - OPEN -->
             <ul class="navbar-nav mr-auto">
 
-              <span class="align-middle margin-right">
-                {{ __('forms.service')}}:
-                <b>
-                    <a href="{{ URL::to('recerques/' . $recerca->id) }}"> {{ $recerca->num_actuacio }} </a>
-                </b>
-              </span>
+                <span class="align-middle margin-right">
+                    {{ __('forms.service')}}:
+                    <b>
+                        <a href="{{ URL::to('researches/' . $research->id) }}">
+                            {{ $research->id_research }}
+                        </a>
+                    </b>
+                </span>
 
-              @if( $recerca->municipi_upa )
-              <span class="align-middle margin-left margin-right">
-                {{ __('forms.village')}}: <b> {{ $recerca->municipi_upa }} </b>
-              </span>
-              @endif
+                @if ($research->municipality_last_place_seen)
+                    <span class="align-middle margin-left margin-right">
+                        {{ __('forms.village')}}:
+                        <b>
+                            {{ $research->municipality_last_place_seen }}
+                        </b>
+                    </span>
+                @endif
 
-              @if( $recerca->data_inici != NULL )
-              <span class="align-middle margin-left margin-right">
-                {{ __('forms.begin_day')}}:
-                <b>
-                  @php
-                    $date = new Date($recerca->data_inici);
-                    echo $date->format('d F Y');
-                  @endphp
-                </b>
-              </span>
-              @endif
+                @if ($research->date_start != NULL)
+                    <span class="align-middle margin-left margin-right">
+                        {{ __('forms.begin_day')}}:
+                        <b>
+                            @php
+                                $date = new Date($research->date_start);
+                                echo $date->format('d F Y');
+                            @endphp
+                        </b>
+                    </span>
+                @endif
 
-              @if( $recerca->data_tancament == NULL && $recerca->data_inici != NULL )
-              <span class="align-middle margin-left margin-right">
-                {{ __('forms.day') }}:
-                <b>
-                  <?php
-                    $carbon1 = new \Carbon\Carbon( $recerca->data_inici );
-                    $carbon2 = new \Carbon\Carbon( now() );
-                    $daysDiff=$carbon1->diffInDays($carbon2);
+                @if ($research->date_finalization == NULL && $research->date_start != NULL)
+                    <span class="align-middle margin-left margin-right">
+                        {{ __('forms.day') }}:
+                        <b>
+                            <?php
+                                $carbon1  = new \Carbon\Carbon( $research->date_start );
+                                $carbon2  = new \Carbon\Carbon( now() );
+                                $daysDiff = $carbon1->diffInDays($carbon2);
 
-                    print($daysDiff+1);
-                  ?>
-                </b>
-              </span>
-              @elseif( $recerca->data_tancament != NULL )
-              <span class="align-middle margin-left margin-right">
-                {{ __('forms.end_day')}}:
-                <b>
-                  @php
-                    $date = new Date($recerca->data_tancament);
-                    echo $date->format('d F Y');
-                  @endphp
-                </b>
-              </span>
-              @endif
+                                print($daysDiff+1);
+                            ?>
+                        </b>
+                    </span>
+
+                @elseif ($research->date_finalization != NULL)
+                    <span class="align-middle margin-left margin-right">
+                        {{ __('forms.end_day')}}:
+                        <b>
+                            @php
+                                $date = new Date($research->date_finalization);
+                                echo $date->format('d F Y');
+                            @endphp
+                        </b>
+                    </span>
+                @endif
 
             </ul>
             <!-- Left Side Of Navbar - CLOSE -->
@@ -77,8 +84,8 @@
                     <!-- Login button - OPEN -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
-                          <span class="octicon octicon-sign-in"></span>
-                          {{ __('main.login') }}
+                            <span class="octicon octicon-sign-in"></span>
+                            {{ __('main.login') }}
                         </a>
                     </li>
                     <!-- Login button - CLOSE -->
@@ -87,8 +94,8 @@
                     @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">
-                              <span class="octicon octicon-person"></span>
-                              {{ __('main.register') }}
+                                <span class="octicon octicon-person"></span>
+                                {{ __('main.register') }}
                             </a>
                         </li>
                     @endif
@@ -150,10 +157,10 @@
 
                     <!-- Home section - OPEN -->
                     <li class="nav-item">
-                      <a href="{{ route('index') }}" class="btn btn-outline-secondary btn-lg margin-left" role="button"
-                      data-toggle="tooltip" data-placement="bottom" title="{{ __('main.home') }}">
-                        <span class="octicon octicon-home"></span>
-                      </a>
+                        <a href="{{ route('index') }}" class="btn btn-outline-secondary btn-lg margin-left" role="button"
+                        data-toggle="tooltip" data-placement="bottom" title="{{ __('main.home') }}">
+                            <span class="octicon octicon-home"></span>
+                        </a>
                     </li>
                     <!-- Home section - OPEN -->
 
@@ -167,6 +174,7 @@
         <!-- Collapsable content - CLOSE -->
 
     </div>
+
 </nav>
 <!-- Navbar - CLOSE -->
 
@@ -176,8 +184,8 @@
 <!-- JS -->
 <script>
 
-  $(document).ready(function() {
+$(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
-  });
+});
 
 </script>

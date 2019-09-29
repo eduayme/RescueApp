@@ -22,14 +22,16 @@
             <!-- Left Side Of Navbar - OPEN -->
             <ul class="navbar-nav mr-auto margin-left margin-right">
 
+                <!-- Authentication - OPEN -->
                 @auth
-                <!-- Add search button - OPEN -->
-                <a href="{{ route('recerques.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button">
-                    <span class="octicon octicon-plus"></span>
-                    {{ __('actions.add') . ' ' . __('main.search') }}
-                </a>
-                <!-- Add search button - CLOSE -->
+                    <!-- Add search button - OPEN -->
+                    <a href="{{ route('researches.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button">
+                        <span class="octicon octicon-plus"></span>
+                        {{ __('actions.add') . ' ' . __('main.search') }}
+                    </a>
+                    <!-- Add search button - CLOSE -->
                 @endauth
+                <!-- Authentication - CLOSE -->
 
             </ul>
             <!-- Left Side Of Navbar - CLOSE -->
