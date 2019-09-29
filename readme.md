@@ -6,8 +6,8 @@
 </p>
 
 
-## About Aplicatiu de Recerques
-Aplicatiu de Recerques is a web application designed to help emergency services in registering and documenting tasks to rescue lost people.
+## About Rescue app
+Rescue app is a web application designed to help emergency services in registering and documenting tasks to rescue lost people. It started as a pioneer project for the Catalonia firefighters developed as a final year project in my Bachelor's Degree in Computer Engineering.
 
 
 ## Installation
