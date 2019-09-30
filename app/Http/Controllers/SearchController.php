@@ -63,7 +63,7 @@ class SearchController extends Controller
 
         $search = new Search([
             'is_a_practice'                  => $request->get('is_a_practice'),
-            'id_search'                    => $request->get('id_search'),
+            'id_search'                      => $request->get('id_search'),
             'region'                         => $request->get('region'),
             'status'                         => $request->get('status'),
 
