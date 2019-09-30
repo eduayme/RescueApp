@@ -7,9 +7,9 @@
         <!-- Add lost person - OPEN -->
         <form action="{{ route('lost-people.create') }}" method="put" style="display: inline">
             @csrf
-            <input type="hidden" class="form-control" name="id_research" value={{ $research->id }}>
+            <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
             <button type="submit" class="btn btn-outline-primary margin-right
-            <?php if ($research->status == 1){ ?> disabled" onclick="this.disabled=true <?php   } ?>" >
+            <?php if ($search->status == 1){ ?> disabled" onclick="this.disabled=true <?php   } ?>" >
                 {{ __('actions.add_lost_person') }}
             </button>
         </form>
@@ -22,9 +22,9 @@
     <div class="col text-right">
 
         <!-- Edit search button - OPEN -->
-        <a href="{{ URL::to('researches/' . $research->id . '/edit') }}"
+        <a href="{{ URL::to('searches/' . $search->id . '/edit') }}"
             role="button" class="btn btn-outline-secondary margin-right
-            <?php if ($research->status == 1){ ?> disabled <?php   } ?>"
+            <?php if ($search->status == 1){ ?> disabled <?php   } ?>"
             data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}">
             <span class="octicon octicon-pencil"></span>
         </a>
@@ -40,7 +40,7 @@
     <!-- Delete search button- CLOSE -->
 
     <!-- Delete search modal - OPEN -->
-    <form action="{{ route('researches.destroy', $research->id) }}" method="post" style="display: inline">
+    <form action="{{ route('searches.destroy', $search->id) }}" method="post" style="display: inline">
         @csrf
         @method('DELETE')
 
@@ -96,7 +96,7 @@
 
 <!-- Type service title - OPEN -->
 <h3 class="margin-top">
-    @if( $research->is_a_practice == 0 )
+    @if( $search->is_a_practice == 0 )
         {{ __('main.search') }}
     @else
         {{ __('main.practice') }}
@@ -112,10 +112,10 @@
 
         <!-- ID search - OPEN -->
         <p>
-            {{ __('forms.id_research') }}:
+            {{ __('forms.id_search') }}:
         </p>
         <h5 class="margin-top-sm-min">
-            <b> {{ $research->id_research }} </b>
+            <b> {{ $search->id_search }} </b>
         </h5>
         <!-- ID search - CLOSE -->
 
@@ -124,11 +124,11 @@
             {{ __('forms.status') }}:
         </p>
         <h4 class="margin-top-sm-min">
-            @if ($research->status == 0)
+            @if ($search->status == 0)
                 <span class="badge badge-danger">
                     {{ __('main.status_open') }}
                 </span>
-            @elseif ($research->status == 1)
+            @elseif ($search->status == 1)
                 <span class="badge badge-success">
                     {{ __('main.status_close') }}
                 </span>
@@ -149,13 +149,13 @@
         <div class="margin-top-sm-min">
             <h5 style="display: inline">
                 <b>
-                    {{ $research->user_creation->name }}
+                    {{ $search->user_creation->name }}
                 </b>
             </h5>
             <h6 style="display: inline">
-                <b> ({{ $research->user_creation->dni }}),
+                <b> ({{ $search->user_creation->dni }}),
                     @php
-                        $date = new Date($research->date_start);
+                        $date = new Date($search->date_start);
                         echo $date->format('H:i | d F Y');
                     @endphp
                 </b>
@@ -169,11 +169,11 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->date_start == NULL )
+                @if( $search->date_start == NULL )
                     --
                 @else
                     @php
-                        $date = new Date($research->date_start);
+                        $date = new Date($search->date_start);
                         echo $date->format('H:i | d F Y');
                     @endphp
                 @endif
@@ -194,14 +194,14 @@
         <div class="margin-top-sm-min">
             <h5 style="display: inline">
                 <b>
-                    {{ $research->user_last_modification->name }}
+                    {{ $search->user_last_modification->name }}
                 </b>
             </h5>
             <h6 style="display: inline">
                 <b>
-                    ({{ $research->user_last_modification->dni }}),
+                    ({{ $search->user_last_modification->dni }}),
                     @php
-                        $date = new Date($research->date_last_modification);
+                        $date = new Date($search->date_last_modification);
                         echo $date->format('H:i | d F Y');
                     @endphp
                 </b>
@@ -215,11 +215,11 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->date_finalization == NULL )
+                @if( $search->date_finalization == NULL )
                     --
                 @else
                     @php
-                        $date = new Date($research->date_finalization);
+                        $date = new Date($search->date_finalization);
                         echo $date->format('H:i | d F Y');
                     @endphp
                 @endif
@@ -251,8 +251,8 @@
                 <div class="col-md-12 margin-top-sm-sm">
 
                     <!-- Incident - OPEN -->
-                    @if( $research->description_incident )
-                        <p> {{ $research->description_incident }} </p>
+                    @if( $search->description_incident )
+                        <p> {{ $search->description_incident }} </p>
                     @endif
                     <!-- Incident - CLOSE -->
 
@@ -261,10 +261,10 @@
                 <div class="col-md-4 margin-top-sm-sm">
 
                     <!-- Village UPA - OPEN -->
-                    @if( $research->municipality_last_place_seen )
+                    @if( $search->municipality_last_place_seen )
                         <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.village_last_place_seen') }}">
                             <span class="octicon octicon-location"></span>
-                            {{ $research->municipality_last_place_seen }}
+                            {{ $search->municipality_last_place_seen }}
                         </p>
                     @endif
                     <!-- Village UPA - CLOSE -->
@@ -274,10 +274,10 @@
                 <div class="col-md-8 margin-top-sm-sm">
 
                     <!-- Incident zone - OPEN -->
-                    @if( $research->zone_incident )
+                    @if( $search->zone_incident )
                         <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.incident_zone') }}">
                             <span class="octicon octicon-stop"></span>
-                            {{ $research->zone_incident }}
+                            {{ $search->zone_incident }}
                         </p>
                     @endif
                     <!-- Incident zone - CLOSE -->
@@ -287,11 +287,11 @@
                 <div class="col-md-4 margin-top-sm-sm">
 
                     <!-- Date UPA - OPEN -->
-                    @if( $research->date_last_place_seen )
+                    @if( $search->date_last_place_seen )
                         <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.date_last_place_seen') }}">
                             <span class="octicon octicon-clock"></span>
                             @php
-                                $date = new Date($research->date_last_place_seen);
+                                $date = new Date($search->date_last_place_seen);
                                 echo $date->format('H:i | d F Y');
                             @endphp
                         </p>
@@ -303,10 +303,10 @@
                 <div class="col-md-8 margin-top-sm-sm">
 
                     <!-- Possible route - OPEN -->
-                    @if( $research->potential_route )
+                    @if( $search->potential_route )
                         <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.possible_route') }}">
                             <span class="octicon octicon-info"></span>
-                            {{ $research->potential_route }}
+                            {{ $search->potential_route }}
                         </p>
                     @endif
                     <!-- Possible route - CLOSE -->
@@ -331,8 +331,8 @@
             <h3>
                 <b>
                     {{ __('forms.lost_people') }}
-                    @if( $research->number_lost_people )
-                        ({{ $research->number_lost_people }})
+                    @if( $search->number_lost_people )
+                        ({{ $search->number_lost_people }})
                     @endif
                 </b>
             </h3>
@@ -344,7 +344,7 @@
 
             <div class="row">
 
-                @foreach( $research->lost_people->sortBy('found') as $lost_person )
+                @foreach( $search->lost_people->sortBy('found') as $lost_person )
 
                     <div class="col-md-6 margin-top-sm margin-bottom-sm">
 
@@ -384,7 +384,7 @@
 <!-- Lost people container - CLOSE -->
 
 <!-- State container - OPEN -->
-@if( $research->physical_condition_lost_people )
+@if( $search->physical_condition_lost_people )
 <div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
     <div class="row">
 
@@ -396,7 +396,7 @@
 
         <!-- Description content - OPEN -->
         <div class="col-md-9 abs-center pad margin-auto">
-            {{ $research->physical_condition_lost_people }}
+            {{ $search->physical_condition_lost_people }}
         </div>
         <!-- Description content - CLOSE -->
 
@@ -406,10 +406,10 @@
 <!-- State container - CLOSE -->
 
 <!-- Equipment and experience container - OPEN -->
-@if( $research->knowledge_of_the_zone !== NULL || $research->experience_with_activity !== NULL ||
-$research->bring_water !== NULL || $research->bring_food !== NULL ||
-$research->bring_medication !== NULL || $research->bring_flashlight !== NULL ||
-$research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL )
+@if( $search->knowledge_of_the_zone !== NULL || $search->experience_with_activity !== NULL ||
+$search->bring_water !== NULL || $search->bring_food !== NULL ||
+$search->bring_medication !== NULL || $search->bring_flashlight !== NULL ||
+$search->bring_cold_clothes !== NULL || $search->porta_impermeable !== NULL )
     <div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
         <div class="row">
 
@@ -425,9 +425,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                 <div class="row">
 
                     <!-- Knows the zone - OPEN -->
-                    @if( $research->knowledge_of_the_zone !== NULL )
+                    @if( $search->knowledge_of_the_zone !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->knowledge_of_the_zone == 1 )
+                            @if( $search->knowledge_of_the_zone == 1 )
                                 <p> {{ __('forms.knows_the_zone') }} </p>
                             @else
                                 <p> {{ __('forms.not_knows_the_zone') }} </p>
@@ -437,9 +437,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                     <!-- Knows the zone - CLOSE -->
 
                     <!-- Experience with the activity - OPEN -->
-                    @if( $research->experience_with_activity !== NULL )
+                    @if( $search->experience_with_activity !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->experience_with_activity == 1 )
+                            @if( $search->experience_with_activity == 1 )
                                 <p> {{ __('forms.experience_with_activity') }} </p>
                             @else
                                 <p> {{ __('forms.not_experience_with_activity') }} </p>
@@ -449,9 +449,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                     <!-- Experience with the activity - CLOSE -->
 
                     <!-- Brings water - OPEN -->
-                    @if( $research->bring_water !== NULL )
+                    @if( $search->bring_water !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->bring_water == 1 )
+                            @if( $search->bring_water == 1 )
                                 <p> {{ __('forms.bring_water') }} </p>
                             @else
                                 <p> {{ __('forms.not_bring_water') }} </p>
@@ -461,9 +461,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                     <!-- Brings water - CLOSE -->
 
                     <!-- Brings food - OPEN -->
-                    @if( $research->bring_food !== NULL )
+                    @if( $search->bring_food !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->bring_food == 1 )
+                            @if( $search->bring_food == 1 )
                                 <p> {{ __('forms.bring_food') }} </p>
                             @else
                                 <p> {{ __('forms.not_bring_food') }} </p>
@@ -473,9 +473,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                     <!-- Brings food - CLOSE -->
 
                     <!-- Brings medication - OPEN -->
-                    @if( $research->bring_medication !== NULL )
+                    @if( $search->bring_medication !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->bring_medication == 1 )
+                            @if( $search->bring_medication == 1 )
                                 <p> {{ __('forms.bring_medication') }} </p>
                             @else
                                 <p> {{ __('forms.not_bring_medication') }} </p>
@@ -485,9 +485,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                     <!-- Brings medication - CLOSE -->
 
                     <!-- Brings light - OPEN -->
-                    @if( $research->bring_flashlight !== NULL )
+                    @if( $search->bring_flashlight !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->bring_flashlight == 1 )
+                            @if( $search->bring_flashlight == 1 )
                                 <p> {{ __('forms.bring_light') }} </p>
                             @else
                                 <p> {{ __('forms.not_bring_light') }} </p>
@@ -497,9 +497,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                     <!-- Brings light - CLOSE -->
 
                     <!-- Brings cold clothes - OPEN -->
-                    @if( $research->bring_cold_clothes !== NULL )
+                    @if( $search->bring_cold_clothes !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->bring_cold_clothes == 1 )
+                            @if( $search->bring_cold_clothes == 1 )
                                 <p> {{ __('forms.bring_cold_clothes') }} </p>
                             @else
                                 <p> {{ __('forms.not_bring_cold_clothes') }} </p>
@@ -509,9 +509,9 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                     <!-- Brings cold clothes - CLOSE -->
 
                     <!-- Brings waterproof clothes - OPEN -->
-                    @if( $research->bring_waterproof_clothes !== NULL )
+                    @if( $search->bring_waterproof_clothes !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->bring_waterproof_clothes == 1 )
+                            @if( $search->bring_waterproof_clothes == 1 )
                                 <p> {{ __('forms.bring_waterproof_clothes') }} </p>
                             @else
                                 <p> {{ __('forms.not_bring_waterproof_clothes') }} </p>
@@ -531,7 +531,7 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
 <!-- Equipment and experience container - CLOSE -->
 
 <!-- Contact person container - OPEN -->
-@if( $research->name_persona_contacte || $research->phone_number_contact_person || $research->affinity_contact_person )
+@if( $search->name_persona_contacte || $search->phone_number_contact_person || $search->affinity_contact_person )
     <div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
         <div class="row">
 
@@ -547,32 +547,32 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
                 <div class="row">
 
                     <!-- Name - OPEN -->
-                    @if( $research->name_persona_contacte )
+                    @if( $search->name_persona_contacte )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.name') }}">
-                                {{ $research->name_persona_contacte }}
+                                {{ $search->name_persona_contacte }}
                             </p>
                         </div>
                     @endif
                     <!-- Name - CLOSE -->
 
                     <!-- Phone number - OPEN -->
-                    @if( $research->phone_number_contact_person )
+                    @if( $search->phone_number_contact_person )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.phone') }}">
                                 <span class="octicon octicon-device-mobile"></span>
-                                {{ $research->phone_number_contact_person }}
+                                {{ $search->phone_number_contact_person }}
                             </p>
                         </div>
                     @endif
                     <!-- Phone number - CLOSE -->
 
                     <!-- Affinity - OPEN -->
-                    @if( $research->affinity_contact_person )
+                    @if( $search->affinity_contact_person )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.affinity') }}">
                                 <span class="octicon octicon-organization"></span>
-                                {{ $research->affinity_contact_person }}
+                                {{ $search->affinity_contact_person }}
                             </p>
                         </div>
                     @endif
@@ -589,8 +589,8 @@ $research->bring_cold_clothes !== NULL || $research->porta_impermeable !== NULL 
 <!-- Contact person container - CLOSE -->
 
 <!-- Alertant person container - OPEN -->
-@if( $research->is_lost_person || $research->is_contact_person || $research->name_alertant ||
-$research->age_person_alerts || $research->phone_number_alertant || $research->address_person_alerts )
+@if( $search->is_lost_person || $search->is_contact_person || $search->name_alertant ||
+$search->age_person_alerts || $search->phone_number_alertant || $search->address_person_alerts )
     <div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
         <div class="row">
 
@@ -606,19 +606,19 @@ $research->age_person_alerts || $research->phone_number_alertant || $research->a
                 <div class="row">
 
                     <!-- Name - OPEN -->
-                    @if( $research->name_alertant )
+                    @if( $search->name_alertant )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.name') }}">
-                                {{ $research->name_alertant }}
+                                {{ $search->name_alertant }}
                             </p>
                         </div>
                     @endif
                     <!-- Name - CLOSE -->
 
                     <!-- Is the lost person - OPEN -->
-                    @if( $research->is_lost_person !== NULL )
+                    @if( $search->is_lost_person !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->is_lost_person == 1 )
+                            @if( $search->is_lost_person == 1 )
                                 <p> {{ __('forms.is_the_lost_person') }} </p>
                             @else
                                 <p> {{ __('forms.not_is_the_lost_person') }} </p>
@@ -628,9 +628,9 @@ $research->age_person_alerts || $research->phone_number_alertant || $research->a
                     <!-- Is the lost person - CLOSE -->
 
                     <!-- Is the contact person - OPEN -->
-                    @if( $research->is_contact_person !== NULL )
+                    @if( $search->is_contact_person !== NULL )
                         <div class="col-md-3 margin-top-sm-sm">
-                            @if( $research->is_contact_person == 1 )
+                            @if( $search->is_contact_person == 1 )
                                 <p> {{ __('forms.is_the_contact_person') }} </p>
                             @else
                                 <p> {{ __('forms.not_is_the_contact_person') }} </p>
@@ -640,31 +640,31 @@ $research->age_person_alerts || $research->phone_number_alertant || $research->a
                     <!-- Is the contact person - CLOSE -->
 
                     <!-- Age - OPEN -->
-                    @if( $research->age_person_alerts )
+                    @if( $search->age_person_alerts )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.age') }}">
-                                {{ $research->age_person_alerts }}
+                                {{ $search->age_person_alerts }}
                             </p>
                         </div>
                     @endif
                     <!-- Age - CLOSE -->
 
                     <!-- Phone number - OPEN -->
-                    @if( $research->phone_number_alertant )
+                    @if( $search->phone_number_alertant )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.phone') }}">
                                 <span class="octicon octicon-device-mobile"></span>
-                                {{ $research->phone_number_alertant }}
+                                {{ $search->phone_number_alertant }}
                             </p>
                         </div>
                     @endif
                     <!-- Phone number - CLOSE -->
 
                     <!-- Address - OPEN -->
-                    @if( $research->address )
+                    @if( $search->address )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.address') }}">
-                                {{ $research->address }}
+                                {{ $search->address }}
                             </p>
                         </div>
                     @endif

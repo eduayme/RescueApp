@@ -37,7 +37,7 @@ class RegisterTest extends TestCase
           'name'                   => $user->name,
           'email'                  => $user->email,
           'dni'                    => '41588985H',
-          'profile'                => 'bomber',
+          'profile'                => 'firefighter',
           'password'               => 'secret',
           'password_confirmation'  => 'secret',
       ]);

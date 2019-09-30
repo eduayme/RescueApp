@@ -33,7 +33,7 @@
     <div class="container margin-top">
 
         <!-- Form - OPEN -->
-        <form method="post" action="{{ route('researches.store') }}">
+        <form method="post" action="{{ route('searches.store') }}">
 
             <!-- Stype service title - OPEN -->
             <h3 style="margin-bottom: -20px">
@@ -85,14 +85,14 @@
                 <!-- Search ID - OPEN  -->
                 <div class="form-group col-md-2">
 
-                    <label for="id_research"> {{ __('forms.id_research') }} </label>
+                    <label for="id_search"> {{ __('forms.id_search') }} </label>
 
-                    <input type="text" class="form-control {{ $errors->has('id_research') ? ' is-invalid' : '' }}" name="id_research"/>
+                    <input type="text" class="form-control {{ $errors->has('id_search') ? ' is-invalid' : '' }}" name="id_search"/>
 
                     <!-- Show errors input - OPEN -->
-                    @if( $errors->has('id_research') )
+                    @if( $errors->has('id_search') )
                     <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('id_research') }}</strong>
+                        <strong>{{ $errors->first('id_search') }}</strong>
                     </div>
                     @endif
                     <!-- Show errors input - CLOSE -->

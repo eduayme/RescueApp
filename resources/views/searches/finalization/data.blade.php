@@ -14,8 +14,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->first_command )
-                    {{ $research->first_command }}
+                @if( $search->first_command )
+                    {{ $search->first_command }}
                 @else
                     --
                 @endif
@@ -31,8 +31,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->intermediate_commands )
-                    {{ $research->intermediate_commands }}
+                @if( $search->intermediate_commands )
+                    {{ $search->intermediate_commands }}
                 @else
                     --
                 @endif
@@ -48,8 +48,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->last_command )
-                    {{ $research->last_command }}
+                @if( $search->last_command )
+                    {{ $search->last_command }}
                 @else
                     --
                 @endif
@@ -65,8 +65,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->work_groups_used )
-                    {{ $research->work_groups_used }}
+                @if( $search->work_groups_used )
+                    {{ $search->work_groups_used }}
                 @else
                     --
                 @endif
@@ -82,8 +82,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->derivation_emergency_service )
-                    {{ $research->derivation_emergency_service }}
+                @if( $search->derivation_emergency_service )
+                    {{ $search->derivation_emergency_service }}
                 @else
                     --
                 @endif
@@ -99,8 +99,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->emergency_service_receiver_id )
-                    {{ $research->emergency_service_receiver_id }}
+                @if( $search->emergency_service_receiver_id )
+                    {{ $search->emergency_service_receiver_id }}
                 @else
                     --
                 @endif
@@ -116,8 +116,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->tipology )
-                    {{ $research->tipology }}
+                @if( $search->tipology )
+                    {{ $search->tipology }}
                 @else
                     --
                 @endif
@@ -133,8 +133,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->resources )
-                    {{ $research->resources }}
+                @if( $search->resources )
+                    {{ $search->resources }}
                 @else
                     --
                 @endif
@@ -150,9 +150,9 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->date_localization )
+                @if( $search->date_localization )
                     @php
-                        $date = new Date($research->date_localization);
+                        $date = new Date($search->date_localization);
                         echo $date->format('H:i | d F Y');
                     @endphp
                 @else
@@ -170,8 +170,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->place_name_localization )
-                    {{ $research->place_name_localization }}
+                @if( $search->place_name_localization )
+                    {{ $search->place_name_localization }}
                 @else
                     --
                 @endif
@@ -187,8 +187,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->location )
-                    {{ $research->location }}
+                @if( $search->location )
+                    {{ $search->location }}
                 @else
                     --
                 @endif
@@ -204,8 +204,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->localization_municipal_term )
-                    {{ $research->localization_municipal_term }}
+                @if( $search->localization_municipal_term )
+                    {{ $search->localization_municipal_term }}
                 @else
                     --
                 @endif
@@ -221,8 +221,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->coe_cut_localization )
-                    {{ $research->coe_cut_localization }}
+                @if( $search->coe_cut_localization )
+                    {{ $search->coe_cut_localization }}
                 @else
                     --
                 @endif
@@ -238,8 +238,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->soc_localization )
-                    {{ $research->soc_localization }}
+                @if( $search->soc_localization )
+                    {{ $search->soc_localization }}
                 @else
                     --
                 @endif
@@ -255,8 +255,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->section_localization )
-                    {{ $research->section_localization }}
+                @if( $search->section_localization )
+                    {{ $search->section_localization }}
                 @else
                     --
                 @endif
@@ -272,8 +272,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->utm_x_localization )
-                    {{ $research->utm_x_localization }}
+                @if( $search->utm_x_localization )
+                    {{ $search->utm_x_localization }}
                 @else
                     --
                 @endif
@@ -289,8 +289,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->utm_y_localization )
-                    {{ $research->utm_y_localization }}
+                @if( $search->utm_y_localization )
+                    {{ $search->utm_y_localization }}
                 @else
                     --
                 @endif
@@ -306,8 +306,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->distance_from_last_place_seen_to_location )
-                    {{ $research->distance_from_last_place_seen_to_location }}
+                @if( $search->distance_from_last_place_seen_to_location )
+                    {{ $search->distance_from_last_place_seen_to_location }}
                 @else
                     --
                 @endif
@@ -323,8 +323,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->who_does_the_localization )
-                    {{ $research->who_does_the_localization }}
+                @if( $search->who_does_the_localization )
+                    {{ $search->who_does_the_localization }}
                 @else
                     --
                 @endif
@@ -340,8 +340,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->physical_condition_people_when_find )
-                    {{ $research->physical_condition_people_when_find }}
+                @if( $search->physical_condition_people_when_find )
+                    {{ $search->physical_condition_people_when_find }}
                 @else
                     --
                 @endif
@@ -357,8 +357,8 @@
         </p>
         <h5 class="margin-top-sm-min">
             <b>
-                @if( $research->reason_finalization )
-                    {{ $research->reason_finalization }}
+                @if( $search->reason_finalization )
+                    {{ $search->reason_finalization }}
                 @else
                     --
                 @endif

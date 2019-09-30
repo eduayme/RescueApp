@@ -14,11 +14,11 @@
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('researches', 'ResearchController');
+    Route::resource('searches', 'SearchController');
 
-    Route::get('/', ['uses' => 'ResearchController@index', 'as' => 'index']);
+    Route::get('/', ['uses' => 'SearchController@index', 'as' => 'index']);
 
-    Route::get('/researches', ['uses' => 'ResearchController@index', 'as' => 'researches']);
+    Route::get('/searches', ['uses' => 'SearchController@index', 'as' => 'searches']);
 
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::post('/profile', 'UserController@update_user');

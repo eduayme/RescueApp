@@ -1,5 +1,5 @@
 <!-- Form - OPEN -->
-{{ Form::model($research, array('route' => array('researches.update', $research->id), 'method' => 'PUT')) }}
+{{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
 
     <!-- Form content - OPEN -->
     <div class="form-row margin-top">
@@ -9,7 +9,7 @@
 
             {{ Form::label('work_groups_used', __('forms.group')) }}
 
-            <input type="text" name="work_groups_used" value="{{ $research->work_groups_used }}"
+            <input type="text" name="work_groups_used" value="{{ $search->work_groups_used }}"
             class="form-control {{ $errors->has('work_groups_used') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -28,7 +28,7 @@
 
             {{ Form::label('derivation_emergency_service', __('forms.derivation_name')) }}
 
-            <input type="text" name="derivation_emergency_service" value="{{ $research->derivation_emergency_service }}"
+            <input type="text" name="derivation_emergency_service" value="{{ $search->derivation_emergency_service }}"
             class="form-control {{ $errors->has('derivation_emergency_service') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -47,7 +47,7 @@
 
             {{ Form::label('emergency_service_receiver_id', __('forms.derivation_id_receptor')) }}
 
-            <input type="text" name="emergency_service_receiver_id" value="{{ $research->emergency_service_receiver_id }}"
+            <input type="text" name="emergency_service_receiver_id" value="{{ $search->emergency_service_receiver_id }}"
             class="form-control {{ $errors->has('emergency_service_receiver_id') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -68,7 +68,7 @@
 
             <textarea rows="2" name="first_command" class="form-control
             {{ $errors->has('first_command') ? ' is-invalid' : '' }}"
-            > {{ $research->first_command }} </textarea>
+            > {{ $search->first_command }} </textarea>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('first_command') )
@@ -88,7 +88,7 @@
 
             <textarea rows="2" name="intermediate_commands" class="form-control
             {{ $errors->has('intermediate_commands') ? ' is-invalid' : '' }}"
-            > {{ $research->intermediate_commands }} </textarea>
+            > {{ $search->intermediate_commands }} </textarea>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('intermediate_commands') )
@@ -108,7 +108,7 @@
 
             <textarea rows="2" name="last_command" class="form-control
             {{ $errors->has('last_command') ? ' is-invalid' : '' }}"
-            > {{ $research->last_command }} </textarea>
+            > {{ $search->last_command }} </textarea>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('last_command') )
@@ -126,7 +126,7 @@
 
             {{ Form::label('tipology', __('forms.tipology')) }}
 
-            <input type="text" name="tipology" value="{{ $research->tipology }}"
+            <input type="text" name="tipology" value="{{ $search->tipology }}"
             class="form-control {{ $errors->has('tipology') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -145,7 +145,7 @@
 
             {{ Form::label('resources', __('forms.resources')) }}
 
-            <input type="text" name="resources" value="{{ $research->resources }}"
+            <input type="text" name="resources" value="{{ $search->resources }}"
             class="form-control {{ $errors->has('resources') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -164,7 +164,7 @@
 
             {{ Form::label('date_localization', __('forms.localization_date')) }}
 
-            <input type="text" name="date_localization" value="{{ $research->date_localization }}"
+            <input type="text" name="date_localization" value="{{ $search->date_localization }}"
             class="form-control {{ $errors->has('date_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -183,7 +183,7 @@
 
             {{ Form::label('place_name_localization', __('forms.localization_toponim')) }}
 
-            <input type="text" name="place_name_localization" value="{{ $research->place_name_localization }}"
+            <input type="text" name="place_name_localization" value="{{ $search->place_name_localization }}"
             class="form-control {{ $errors->has('place_name_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -202,7 +202,7 @@
 
             {{ Form::label('location_localization', __('forms.localization_location')) }}
 
-            <input type="text" name="location_localization" value="{{ $research->location_localization }}"
+            <input type="text" name="location_localization" value="{{ $search->location_localization }}"
             class="form-control {{ $errors->has('location_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -221,7 +221,7 @@
 
             {{ Form::label('municipality_term_localization', __('forms.localization_municipal_term')) }}
 
-            <input type="text" name="municipality_term_localization" value="{{ $research->municipality_term_localization }}"
+            <input type="text" name="municipality_term_localization" value="{{ $search->municipality_term_localization }}"
             class="form-control {{ $errors->has('municipality_term_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -240,7 +240,7 @@
 
             {{ Form::label('coe_cut_localization', __('forms.coe')) }}
 
-            <input type="text" name="coe_cut_localization" value="{{ $research->coe_cut_localization }}"
+            <input type="text" name="coe_cut_localization" value="{{ $search->coe_cut_localization }}"
             class="form-control {{ $errors->has('coe_cut_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -259,7 +259,7 @@
 
             {{ Form::label('soc_localization', __('forms.soc')) }}
 
-            <input type="text" name="soc_localization" value="{{ $research->soc_localization }}"
+            <input type="text" name="soc_localization" value="{{ $search->soc_localization }}"
             class="form-control {{ $errors->has('soc_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -278,7 +278,7 @@
 
             {{ Form::label('section_localization', __('forms.section')) }}
 
-            <input type="text" name="section_localization" value="{{ $research->section_localization }}"
+            <input type="text" name="section_localization" value="{{ $search->section_localization }}"
             class="form-control {{ $errors->has('section_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -297,7 +297,7 @@
 
             {{ Form::label('utm_x_localization', __('forms.utm_x')) }}
 
-            <input type="number" name="utm_x_localization" value="{{ $research->utm_x_localization }}"
+            <input type="number" name="utm_x_localization" value="{{ $search->utm_x_localization }}"
             class="form-control {{ $errors->has('utm_x_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -316,7 +316,7 @@
 
             {{ Form::label('utm_y_localization', __('forms.utm_y')) }}
 
-            <input type="number" name="utm_y_localization" value="{{ $research->utm_y_localization }}"
+            <input type="number" name="utm_y_localization" value="{{ $search->utm_y_localization }}"
             class="form-control {{ $errors->has('utm_y_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -335,7 +335,7 @@
 
             {{ Form::label('distance_from_last_place_seen_to_location', __('forms.distance_last_place_seen')) }}
 
-            <input type="number" name="distance_from_last_place_seen_to_location" value="{{ $research->distance_from_last_place_seen_to_location }}"
+            <input type="number" name="distance_from_last_place_seen_to_location" value="{{ $search->distance_from_last_place_seen_to_location }}"
             class="form-control {{ $errors->has('distance_from_last_place_seen_to_location') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -353,7 +353,7 @@
 
             {{ Form::label('who_does_the_localization', __('forms.who_localizate')) }}
 
-            <input type="text" name="who_does_the_localization" value="{{ $research->who_does_the_localization }}"
+            <input type="text" name="who_does_the_localization" value="{{ $search->who_does_the_localization }}"
             class="form-control {{ $errors->has('who_does_the_localization') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
@@ -374,7 +374,7 @@
 
             <textarea rows="2" name="physical_condition_people_when_find" class="form-control
             {{ $errors->has('physical_condition_people_when_find') ? ' is-invalid' : '' }}"
-            > {{ $research->physical_condition_people_when_find }} </textarea>
+            > {{ $search->physical_condition_people_when_find }} </textarea>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('physical_condition_people_when_find') )
@@ -394,7 +394,7 @@
 
             <textarea rows="2" name="reason_finalization" class="form-control
             {{ $errors->has('reason_finalization') ? ' is-invalid' : '' }}"
-            > {{ $research->reason_finalization }} </textarea>
+            > {{ $search->reason_finalization }} </textarea>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('reason_finalization') )
@@ -411,27 +411,27 @@
     <!-- Form content - CLOSE -->
 
     <!-- ID HIDDEN - OPEN -->
-    {{ Form::hidden('id_research', $research->id_research, array('class' => 'form-control')) }}
+    {{ Form::hidden('id_search', $search->id_search, array('class' => 'form-control')) }}
     <!-- ID HIDDEN - CLOSE -->
 
     <!-- Is a practice HIDDEN - OPEN -->
-    {{ Form::hidden('is_a_practice', $research->is_a_practice, array('class' => 'form-control')) }}
+    {{ Form::hidden('is_a_practice', $search->is_a_practice, array('class' => 'form-control')) }}
     <!-- Is a practice - CLOSE -->
 
     <!-- State HIDDEN - OPEN -->
-    {{ Form::hidden('status', $research->status, array('class' => 'form-control')) }}
+    {{ Form::hidden('status', $search->status, array('class' => 'form-control')) }}
     <!-- State HIDDEN - CLOSE -->
 
     <!-- Region HIDDEN - OPEN -->
-    {{ Form::hidden('regio', $research->regio, array('class' => 'form-control')) }}
+    {{ Form::hidden('regio', $search->regio, array('class' => 'form-control')) }}
     <!-- Region HIDDEN - CLOSE -->
 
     <!-- Creation date HIDDEN - OPEN -->
-    {{ Form::hidden('date_start', $research->date_start, array('class' => 'form-control')) }}
+    {{ Form::hidden('date_start', $search->date_start, array('class' => 'form-control')) }}
     <!-- Creation date - CLOSE -->
 
     <!-- Creation user - OPEN -->
-    {{ Form::hidden('id_user_creation', $research->id_user_creation, array('class' => 'form-control')) }}
+    {{ Form::hidden('id_user_creation', $search->id_user_creation, array('class' => 'form-control')) }}
     <!-- Creation user - CLOSE -->
 
     <!-- Date modifies HIDDEN - OPEN -->
@@ -451,7 +451,7 @@
         <!-- Save close - OPEN -->
 
         <!-- Submit data - OPEN -->
-        @if( $research->is_a_practice == 0 )
+        @if( $search->is_a_practice == 0 )
         {{ Form::submit( __('actions.close_search'),
         array('class' => 'btn btn-primary margin-right margin-left margin-top-sm', 'name' => 'closebutton') ) }}
         @else

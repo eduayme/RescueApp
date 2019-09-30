@@ -10,7 +10,7 @@ class LostPerson extends Model
 
     protected $fillable = [
         'id',
-        'id_research',
+        'id_search',
         'found',
         'name',
         'name_respond',

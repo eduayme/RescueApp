@@ -2,7 +2,7 @@
 
 return [
     'type_service'                              => 'Tipus de servei',
-    'id_research'                               => "Número d'actuació",
+    'id_search'                               => "Número d'actuació",
     'status'                                    => 'Estat',
     'begin_date'                                => "Data d'inici",
     'begin'                                     => 'Inici',

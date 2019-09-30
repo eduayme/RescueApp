@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\LostPerson;
-use App\Research;
+use App\Search;
 use Auth;
 use File;
 use Illuminate\Http\Request;
@@ -22,10 +22,10 @@ class LostPersonController extends Controller
     {
         if (Auth::check()) {
             $current_user_profile = \Auth::user()->profile;
-            $research = Research::find($request->id_research);
+            $search = Search::find($request->id_search);
 
             if ($current_user_profile != 'guest') {
-                return view('researches.lost_people.create', compact('research'));
+                return view('searches.lost_people.create', compact('search'));
             } else {
                 return back()
                 ->with('error', __('messages.not_allowed'));
@@ -53,7 +53,7 @@ class LostPersonController extends Controller
         ]);
 
         $lost_person = new LostPerson([
-            'id_research'                   => $request->get('id_research'),
+            'id_search'                     => $request->get('id_search'),
             'name'                          => $request->get('name'),
             'name_respond'                  => $request->get('name_respond'),
             'age'                           => $request->get('age'),
@@ -74,23 +74,20 @@ class LostPersonController extends Controller
             'model_vehicle'            => $request->get('model_vehicle'),
             'color_vehicle'            => $request->get('color_vehicle'),
             'car_plate_number'         => $request->get('car_plate_number'),
-
-            // photo
-            'photo'                    => $request->get('photo'),
         ]);
 
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
             $filename = time().'.'.$photo->getClientOriginalExtension();
 
-            Image::make($lost_person)->resize(250, 300)->save(public_path('uploads/lost_people_photos/'.$filename));
+            Image::make($photo)->resize(300, 300)->save(public_path('/uploads/lost_people_photos/'.$filename));
 
             $lost_person->photo = $filename;
         }
 
         $lost_person->save();
 
-        return redirect('researches/'.$lost_person->id_research)
+        return redirect('searches/'.$lost_person->id_search)
         ->with('success', $lost_person->name.__('messages.added'));
     }
 
@@ -104,9 +101,9 @@ class LostPersonController extends Controller
     public function show($id)
     {
         $lost_person = LostPerson::find($id);
-        $research = Research::find($lost_person->id_research);
+        $search = Search::find($lost_person->id_search);
 
-        return view('researches.lost_people.view', compact('lost_person', 'research'));
+        return view('searches.lost_people.view', compact('lost_person', 'search'));
     }
 
     /**
@@ -124,7 +121,7 @@ class LostPersonController extends Controller
         if ($current_user_profile != 'guest') {
             $lost_person->delete();
 
-            return redirect('researches/'.$lost_person->id_research)
+            return redirect('searches/'.$lost_person->id_search)
             ->with('success', $lost_person->name.__('messages.deleted'));
         } else {
             return redirect('lost-people/'.$lost_person->id)
@@ -145,7 +142,7 @@ class LostPersonController extends Controller
         $current_user_profile = \Auth::user()->profile;
 
         if ($current_user_profile != 'guest') {
-            return view('researches.lost_people.edit', compact('lost_person'));
+            return view('searches.lost_people.edit', compact('lost_person'));
         } else {
             return redirect('lost-people/'.$lost_person->id)
             ->with('error', __('messages.not_allowed'));
@@ -192,7 +189,7 @@ class LostPersonController extends Controller
 
         // information of the lost person
         $lost_person->id = $request->get('id');
-        $lost_person->id_research = $request->get('id_research');
+        $lost_person->id_search = $request->get('id_search');
         $lost_person->found = $request->get('found');
         $lost_person->name = $request->get('name');
         $lost_person->name_respond = $request->get('name_respond');

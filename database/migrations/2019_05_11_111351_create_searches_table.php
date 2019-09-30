@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResearchesTable extends Migration
+class CreateSearchesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateResearchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('researches', function (Blueprint $table) {
+        Schema::create('searches', function (Blueprint $table) {
             // Engine DB
             $table->engine = 'InnoDB';
 
             $table->increments('id');
             $table->tinyInteger('is_a_practice')->default(0);
-            $table->string('id_research')->unique();
+            $table->string('id_search')->unique();
             $table->string('region')->nullable();
             $table->integer('status')->default(0); // closed by default
 
@@ -69,7 +69,7 @@ class CreateResearchesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('researches', function (Blueprint $table) {
+        Schema::table('searches', function (Blueprint $table) {
             $table->foreign('id_user_creation')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_user_last_modification')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_user_finalization')->references('id')->on('users')->onDelete('cascade');
@@ -83,6 +83,6 @@ class CreateResearchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('researches');
+        Schema::dropIfExists('searches');
     }
 }

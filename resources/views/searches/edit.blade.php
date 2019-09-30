@@ -1,6 +1,6 @@
 @extends('layouts.app_secondary')
 
-@section('title', __('actions.edit') . ' ' . $research->id_research)
+@section('title', __('actions.edit') . ' ' . $search->id_search)
 
 @section('content')
 
@@ -33,7 +33,7 @@
   <div class="container margin-top">
 
     <!-- Form - OPEN -->
-    {{ Form::model($research, array('route' => array('researches.update', $research->id), 'method' => 'PUT')) }}
+    {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
 
       <!-- Stype service title - OPEN -->
       <h3 style="margin-bottom: -20px">
@@ -45,7 +45,7 @@
       <div class="form-row">
             @csrf
 
-            @if( $research->is_a_practice == 0 )
+            @if( $search->is_a_practice == 0 )
                 <style>
                     #es_prac {
                         visibility: hidden;
@@ -92,7 +92,7 @@
           <!-- Begin datetime - OPEN -->
           <div class="form-group col-md-3">
             {{ Form::label('date_start', __('forms.begin_date')) }}
-            <input type="text" name="date_start" value="{{ $research->date_start }}"
+            <input type="text" name="date_start" value="{{ $search->date_start }}"
             class="form-control {{ $errors->has('date_start') ? ' is-invalid' : '' }}" />
             <!-- Show errors input - OPEN -->
             @if( $errors->has('date_start') )
@@ -107,14 +107,14 @@
           <!-- Search ID - OPEN  -->
           <div class="form-group col-md-2">
 
-            <label for="id_research"> {{ __('forms.id_research') }} </label>
-            <input type="text" name="id_research" value="{{ $research->id_research }}"
-            class="form-control {{ $errors->has('id_research') ? ' is-invalid' : '' }}" />
+            <label for="id_search"> {{ __('forms.id_search') }} </label>
+            <input type="text" name="id_search" value="{{ $search->id_search }}"
+            class="form-control {{ $errors->has('id_search') ? ' is-invalid' : '' }}" />
 
             <!-- Show errors input - OPEN -->
-            @if( $errors->has('id_research') )
+            @if( $errors->has('id_search') )
               <div class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('id_research') }}</strong>
+                <strong>{{ $errors->first('id_search') }}</strong>
               </div>
             @endif
             <!-- Show errors input - CLOSE -->
@@ -127,28 +127,28 @@
           <div class="form-group col-md-2">
             <label for="region"> {{ __('forms.region') }} </label>
             <select id="region" class="form-control" name="region">
-                <option value="" {{ ($research->region === '') ? 'selected' : '' }}>
+                <option value="" {{ ($search->region === '') ? 'selected' : '' }}>
                   {{ __('forms.chose_option') }}
                 </option>
-                <option value="01" {{ ($research->region === '01') ? 'selected' : '' }}>
+                <option value="01" {{ ($search->region === '01') ? 'selected' : '' }}>
                   01 - Centre
                 </option>
-                <option value="02" {{ ($research->regin === '02') ? 'selected' : '' }}>
+                <option value="02" {{ ($search->regin === '02') ? 'selected' : '' }}>
                   02 - Girona
                 </option>
-                <option value="03" {{ ($research->region === '03') ? 'selected' : '' }}>
+                <option value="03" {{ ($search->region === '03') ? 'selected' : '' }}>
                   03 - Lleida
                 </option>
-                <option value="04" {{ ($research->region === '04') ? 'selected' : '' }}>
+                <option value="04" {{ ($search->region === '04') ? 'selected' : '' }}>
                    04 - Metropolitana Nord
                  </option>
-                <option value="05" {{ ($research->region === '05') ? 'selected' : '' }}>
+                <option value="05" {{ ($search->region === '05') ? 'selected' : '' }}>
                   05 - Metropolitana Sud
                 </option>
-                <option value="06" {{ ($research->region === '06') ? 'selected' : '' }}>
+                <option value="06" {{ ($search->region === '06') ? 'selected' : '' }}>
                   06 - Tarragona
                 </option>
-                <option value="07" {{ ($research->region === '07') ? 'selected' : '' }}>
+                <option value="07" {{ ($search->region === '07') ? 'selected' : '' }}>
                   07 - Terres Ebre
                 </option>
             </select>
@@ -171,13 +171,13 @@
         <div class="form-group col-md-3">
           <label for="is_lost_person"> {{ __('forms.is_the_lost_person') }} </label>
           <select id="is_lost_person" class="form-control" name="is_lost_person">
-              <option value="" {{ ($research->is_lost_person === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->is_lost_person === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->is_lost_person === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->is_lost_person === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->is_lost_person === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->is_lost_person === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -188,13 +188,13 @@
         <div class="form-group col-md-3">
           <label for="is_contact_person"> {{ __('forms.is_the_contact_person') }} </label>
           <select id="is_contact_person" class="form-control" name="is_contact_person">
-              <option value="" {{ ($research->is_contact_person === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->is_contact_person === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->is_contact_person === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->is_contact_person === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->is_contact_person === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->is_contact_person === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -261,7 +261,7 @@
             data-placement="top" title="{{ __('forms.upa') }}">
             </span>
           </label>
-          <input type="text" name="date_last_place_seen" value="{{ $research->date_last_place_seen }}"
+          <input type="text" name="date_last_place_seen" value="{{ $search->date_last_place_seen }}"
           class="form-control {{ $errors->has('date_last_place_seen') ? ' is-invalid' : '' }}" />
           <!-- Show errors input - OPEN -->
           @if( $errors->has('date_last_place_seen') )
@@ -348,13 +348,13 @@
         <div class="form-group col-md-3">
           <label for="knowledge_of_the_zone"> {{ __('forms.knows_the_zone') }}? </label>
           <select id="knowledge_of_the_zone" class="form-control" name="knowledge_of_the_zone">
-              <option value="" {{ ($research->knowledge_of_the_zone === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->knowledge_of_the_zone === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->knowledge_of_the_zone === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->knowledge_of_the_zone === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->knowledge_of_the_zone === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->knowledge_of_the_zone === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -365,13 +365,13 @@
         <div class="form-group col-md-3">
           <label for="experience_with_activity"> {{ __('forms.experience_with_activity') }}? </label>
           <select id="experience_with_activity" class="form-control" name="experience_with_activity">
-              <option value="" {{ ($research->experience_with_activity === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->experience_with_activity === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->experience_with_activity === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->experience_with_activity === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->experience_with_activity === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->experience_with_activity === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -382,13 +382,13 @@
         <div class="form-group col-md-3">
           <label for="bring_water"> {{ __('forms.bring_water') }}? </label>
           <select id="bring_water" class="form-control" name="bring_water">
-              <option value="" {{ ($research->bring_water === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->bring_water === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->bring_water === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->bring_water === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->bring_water === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->bring_water === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -399,13 +399,13 @@
         <div class="form-group col-md-3">
           <label for="bring_food"> {{ __('forms.bring_food') }}? </label>
           <select id="bring_food" class="form-control" name="bring_food">
-              <option value="" {{ ($research->bring_food === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->bring_food === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->bring_food === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->bring_food === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->bring_food === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->bring_food === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -416,13 +416,13 @@
         <div class="form-group col-md-3">
           <label for="bring_medication"> {{ __('forms.bring_medication') }}? </label>
           <select id="bring_medication" class="form-control" name="bring_medication">
-              <option value="" {{ ($research->bring_medication === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->bring_medication === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->bring_medication === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->bring_medication === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->bring_medication === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->bring_medication === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -433,13 +433,13 @@
         <div class="form-group col-md-3">
           <label for="bring_flashlight"> {{ __('forms.bring_light') }}? </label>
           <select id="bring_flashlight" class="form-control" name="bring_flashlight">
-              <option value="" {{ ($research->bring_flashlight === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->bring_flashlight === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->bring_flashlight === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->bring_flashlight === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->bring_flashlight === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->bring_flashlight === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -450,13 +450,13 @@
         <div class="form-group col-md-3">
           <label for="bring_cold_clothes"> {{ __('forms.bring_cold_clothes') }}? </label>
           <select id="bring_cold_clothes" class="form-control" name="bring_cold_clothes">
-              <option value="" {{ ($research->bring_cold_clothes === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->bring_cold_clothes === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->bring_cold_clothes === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->bring_cold_clothes === 0) ? 'selected' : '' }}>
                 No
               </option>
-              <option value="1" {{ ($research->bring_cold_clothes === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->bring_cold_clothes === 1) ? 'selected' : '' }}>
                 Si
               </option>
           </select>
@@ -467,13 +467,13 @@
         <div class="form-group col-md-3">
           <label for="bring_waterproof_clothes"> {{ __('forms.bring_waterproof_clothes') }}? </label>
           <select id="bring_waterproof_clothes" class="form-control" name="bring_waterproof_clothes">
-              <option value="" {{ ($research->bring_waterproof_clothes === '') ? 'selected' : '' }}>
+              <option value="" {{ ($search->bring_waterproof_clothes === '') ? 'selected' : '' }}>
                 {{ __('forms.chose_option') }}
               </option>
-              <option value="0" {{ ($research->bring_waterproof_clothes === 0) ? 'selected' : '' }}>
+              <option value="0" {{ ($search->bring_waterproof_clothes === 0) ? 'selected' : '' }}>
                 {{ __('actions.no') }}
               </option>
-              <option value="1" {{ ($research->bring_waterproof_clothes === 1) ? 'selected' : '' }}>
+              <option value="1" {{ ($search->bring_waterproof_clothes === 1) ? 'selected' : '' }}>
                 {{ __('actions.yes') }}
               </option>
           </select>
@@ -517,15 +517,15 @@
       <!-- Contact person - CLOSE -->
 
       <!-- State HIDDEN - OPEN -->
-      {{ Form::hidden('status', $research->status, array('class' => 'form-control')) }}
+      {{ Form::hidden('status', $search->status, array('class' => 'form-control')) }}
       <!-- State HIDDEN - CLOSE -->
 
       <!-- Date creates HIDDEN - OPEN -->
-      {{ Form::hidden('date_start', $research->date_start, array('class' => 'form-control')) }}
+      {{ Form::hidden('date_start', $search->date_start, array('class' => 'form-control')) }}
       <!-- Date creates HIDDEN - CLOSE -->
 
       <!-- Id user creates HIDDEN - OPEN -->
-      {{ Form::hidden('id_user_creation', $research->id_user_creation, array('class' => 'form-control')) }}
+      {{ Form::hidden('id_user_creation', $search->id_user_creation, array('class' => 'form-control')) }}
       <!-- Id user creates HIDDEN - CLOSE -->
 
       <!-- Date modifies HIDDEN - OPEN -->
@@ -551,7 +551,7 @@
     <!-- Form lost people - OPEn -->
     <form id="desaparegut" action="/desapareguts/create" method="put">
         @csrf
-            <input type="hidden" class="form-control" name="id_research" value={{ $research->id }}>
+            <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
     </form>
     <!-- Form lost people - CLOSE -->
 

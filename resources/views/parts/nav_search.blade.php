@@ -19,39 +19,39 @@
                 <span class="align-middle margin-right">
                     {{ __('forms.service')}}:
                     <b>
-                        <a href="{{ URL::to('researches/' . $research->id) }}">
-                            {{ $research->id_research }}
+                        <a href="{{ URL::to('searches/' . $search->id) }}">
+                            {{ $search->id_search }}
                         </a>
                     </b>
                 </span>
 
-                @if ($research->municipality_last_place_seen)
+                @if ($search->municipality_last_place_seen)
                     <span class="align-middle margin-left margin-right">
                         {{ __('forms.village')}}:
                         <b>
-                            {{ $research->municipality_last_place_seen }}
+                            {{ $search->municipality_last_place_seen }}
                         </b>
                     </span>
                 @endif
 
-                @if ($research->date_start != NULL)
+                @if ($search->date_start != NULL)
                     <span class="align-middle margin-left margin-right">
                         {{ __('forms.begin_day')}}:
                         <b>
                             @php
-                                $date = new Date($research->date_start);
+                                $date = new Date($search->date_start);
                                 echo $date->format('d F Y');
                             @endphp
                         </b>
                     </span>
                 @endif
 
-                @if ($research->date_finalization == NULL && $research->date_start != NULL)
+                @if ($search->date_finalization == NULL && $search->date_start != NULL)
                     <span class="align-middle margin-left margin-right">
                         {{ __('forms.day') }}:
                         <b>
                             <?php
-                                $carbon1  = new \Carbon\Carbon( $research->date_start );
+                                $carbon1  = new \Carbon\Carbon( $search->date_start );
                                 $carbon2  = new \Carbon\Carbon( now() );
                                 $daysDiff = $carbon1->diffInDays($carbon2);
 
@@ -60,12 +60,12 @@
                         </b>
                     </span>
 
-                @elseif ($research->date_finalization != NULL)
+                @elseif ($search->date_finalization != NULL)
                     <span class="align-middle margin-left margin-right">
                         {{ __('forms.end_day')}}:
                         <b>
                             @php
-                                $date = new Date($research->date_finalization);
+                                $date = new Date($search->date_finalization);
                                 echo $date->format('d F Y');
                             @endphp
                         </b>

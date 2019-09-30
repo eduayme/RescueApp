@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class AddFinalizationResearch extends Migration
+class AddFinalizationSearch extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class AddFinalizationResearch extends Migration
      */
     public function up()
     {
-        Schema::table('researches', function ($table) {
+        Schema::table('searches', function ($table) {
             $table->string('work_groups_used')->nullable();
             $table->string('derivation_emergency_service')->nullable();
             $table->string('emergency_service_receiver_id')->nullable();
@@ -46,7 +46,7 @@ class AddFinalizationResearch extends Migration
      */
     public function down()
     {
-        Schema::table('researches', function ($table) {
+        Schema::table('searches', function ($table) {
             $table->dropColumn('work_groups_used');
             $table->dropColumn('derivation_emergency_service');
             $table->dropColumn('emergency_service_receiver_id');

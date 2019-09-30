@@ -25,7 +25,7 @@
                 <!-- Authentication - OPEN -->
                 @auth
                     <!-- Add search button - OPEN -->
-                    <a href="{{ route('researches.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button">
+                    <a href="{{ route('searches.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button">
                         <span class="octicon octicon-plus"></span>
                         {{ __('actions.add') . ' ' . __('main.search') }}
                     </a>

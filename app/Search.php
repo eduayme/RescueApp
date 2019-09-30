@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Research extends Model
+class Search extends Model
 {
-    public $table = 'researches';
+    public $table = 'searches';
 
     protected $fillable = [
         'id',
         'is_a_practice',
-        'id_research',
+        'id_search',
         'region',
         'status',
 
@@ -58,7 +58,7 @@ class Research extends Model
         'phone_number_contact_person',
         'affinity_contact_person',
 
-        // information to close the research
+        // information to close the search
         'work_groups_used',
         'derivation_emergency_service',
         'emergency_service_receiver_id',
@@ -101,6 +101,6 @@ class Research extends Model
 
     public function lost_people()
     {
-        return $this->hasMany('App\LostPerson', 'id_research', 'id');
+        return $this->hasMany('App\LostPerson', 'id_search', 'id');
     }
 }

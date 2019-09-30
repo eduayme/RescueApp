@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app_secondary')
 
-@section('title', __('actions.edit') . ' ' . $lost_person->name)
+@section('title', __('main.searches'))
 
 @section('content')
 
@@ -8,51 +8,64 @@
 
         <!-- Success - OPEN -->
         @if( session()->get('success') )
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <div class="container text-center">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="container text-center">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                  {{ session()->get('success') }}
-              </div>
+                {{ session()->get('success') }}
             </div>
+        </div>
         <!-- Success - CLOSE -->
 
         <!-- Error - OPEN -->
         @elseif( session()->get('error') )
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <div class="container text-center">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div class="container text-center">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                  {{ session()->get('error') }}
-              </div>
+                {{ session()->get('error') }}
             </div>
+        </div>
         @endif
         <!-- Error - CLOSE -->
 
     <!-- Alerts - CLOSE -->
 
+    <!-- Language for dates - OPEN -->
+    @php
+        \Date::setLocale('ca');
+    @endphp
+    <!-- Language for dates - CLOSE -->
+
     <!-- Content - OPEN -->
     <div class="container margin-top">
 
+        <!-- Top buttons - OPEN -->
+        <div class="row">
+
+            <!-- Align left - OPEN -->
+            <div class="col justify-content-start">
+
+                <!-- Go back - OPEN -->
+                <a href="{{ URL::previous() }}" role="button" class="btn btn-outline-secondary margin-right
+                <?php if ($search->status == 1){ ?> disabled <?php   } ?>"
+                data-toggle="tooltip" data-placement="top" title="{{ __('actions.go_back') }}">
+                    <span class="octicon octicon-arrow-left"></span>
+                </a>
+                <!-- Go back - CLOSE -->
+
+            </div>
+            <!-- Align left - CLOSE -->
+
+        </div>
+        <!-- Top buttons - CLOSE -->
+
         <!-- Form - OPEN -->
-        {{ Form::model($lost_person, array('action' => array('LostPersonController@update', $lost_person, 'files'=> true), 'files'=> true)) }}
+        <form class="margin-top" method="post" action="{{ route('lost-people.store') }}" enctype="multipart/form-data">
+            @csrf
 
             <!-- Stype service title - OPEN -->
-            <div class="form-row">
-                <div class="form-group col-md-auto">
-                    <h3>
-                        {{ $lost_person->name }}
-                    </h3>
-                </div>
-                <div class="form-group col-md-auto">
-                    <select id="found" class="form-control" name="found">
-                        <option value="0" {{ ($lost_person->found === 0) ? 'selected' : '' }}>
-                            {{ __('main.lost_person') }}
-                        </option>
-                        <option value="1" {{ ($lost_person->found === 1) ? 'selected' : '' }}>
-                            {{ __('main.found') }}
-                        </option>
-                    </select>
-                </div>
-            </div>
+            <h3>
+                {{ __('main.lost_person') }}
+            </h3>
             <!-- Stype service title - CLOSE -->
 
             <div class="form-row">
@@ -64,10 +77,10 @@
 
                         <label for="photo">
                             <div class="img-container">
-                            <img src="/uploads/lost_people_photos/{{ $lost_person->photo }}" class="photo mx-auto d-block rounded" id="photo_person">
-                            <div class="overlay rounded photo" style="width: 300px; height: 300px; border-radius: 0; margin-top: 15px">
-                                <span class="octicon octicon-cloud-upload" style="font-size: 2rem"> </span>
-                            </div>
+                                <img src="/uploads/lost_people_photos/default.jpg" class="photo mx-auto d-block rounded" id="photo_person">
+                                <div class="overlay rounded photo" style="width: 300px; height: 300px; border-radius: 0; margin-top: 15px">
+                                    <span class="octicon octicon-cloud-upload" style="font-size: 2rem"> </span>
+                                </div>
                             </div>
                         </label>
 
@@ -77,11 +90,11 @@
 
                     </div>
                     <!-- User photo - CLOSE -->
-
                 </div>
 
                 <div class="form-group col-md-6">
 
+                    <!-- Type activity, code and region - OPEN -->
                     <div class="form-row">
 
                         <!-- Name - OPEN  -->
@@ -89,8 +102,7 @@
 
                             <label for="name"> {{ __('register.name') }} </label>
 
-                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"
-                            name="name" value="{{ $lost_person->name }}"/>
+                            <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"/>
 
                             <!-- Show errors input - OPEN -->
                             @if( $errors->has('name') )
@@ -112,8 +124,7 @@
 
                             <label for="name_respond"> {{ __('forms.name_respond') }} </label>
 
-                            <input type="text" class="form-control {{ $errors->has('name_respond') ? ' is-invalid' : '' }}"
-                            name="name_respond" value="{{ $lost_person->name_respond }}"/>
+                            <input type="text" class="form-control {{ $errors->has('name_respond') ? ' is-invalid' : '' }}" name="name_respond"/>
 
                             <!-- Show errors input - OPEN -->
                             @if( $errors->has('name_respond') )
@@ -122,6 +133,7 @@
                                 </div>
                             @endif
                             <!-- Show errors input - CLOSE -->
+
                         </div>
                         <!-- Name respond - CLOSE  -->
 
@@ -130,13 +142,12 @@
 
                             <label for="age"> {{ __('forms.age') }} </label>
 
-                            <input type="number" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}"
-                            name="age" value="{{ $lost_person->age }}" />
+                            <input type="number" class="form-control {{ $errors->has('age') ? ' is-invalid' : '' }}" name="age"/>
 
                             <!-- Show errors input - OPEN -->
                             @if( $errors->has('age') )
                                 <div class="invalid-feedback" role="alert">
-                                    <strong> {{ $errors->first('age') }} </strong>
+                                    <strong>{{ $errors->first('age') }}</strong>
                                 </div>
                             @endif
                             <!-- Show errors input - CLOSE -->
@@ -149,13 +160,12 @@
 
                             <label for="phone_number"> {{ __('forms.phone') }} </label>
 
-                            <input type="text" class="form-control {{ $errors->has('phone_number') ? ' is-invalid' : '' }}"
-                            name="phone_number" value="{{ $lost_person->phone_number }}" />
+                            <input type="text" class="form-control {{ $errors->has('phone_number') ? ' is-invalid' : '' }}" name="phone_number"/>
 
                             <!-- Show errors input - OPEN -->
                             @if( $errors->has('phone_number') )
                                 <div class="invalid-feedback" role="alert">
-                                    <strong> {{ $errors->first('phone_number') }} </strong>
+                                    <strong>{{ $errors->first('phone_number') }}</strong>
                                 </div>
                             @endif
                             <!-- Show errors input - CLOSE -->
@@ -169,16 +179,11 @@
                             <label for="whatsapp_or_gps"> {{ __('forms.whatsapp_or_gps') }} </label>
 
                             <select id="whatsapp_or_gps" class="form-control" name="whatsapp_or_gps">
-                                <option value="" {{ ($lost_person->whatsapp_or_gps === '') ? 'selected' : '' }}>
-                                    {{ __('forms.chose_option') }}
-                                </option>
-                                <option value="0" {{ ($lost_person->whatsapp_or_gps === 0) ? 'selected' : '' }}>
-                                    {{ __('actions.no') }}
-                                </option>
-                                <option value="1" {{ ($lost_person->whatsapp_or_gps === 1) ? 'selected' : '' }}>
-                                    {{ __('actions.yes') }}
-                                </option>
+                                <option value=""> {{ __('forms.chose_option') }} </option>
+                                <option value="0"> {{ __('actions.no') }} </option>
+                                <option value="1"> {{ __('actions.yes') }} </option>
                             </select>
+
                         </div>
                         <!-- Has whatsapp or gps - CLOSE  -->
 
@@ -188,41 +193,15 @@
                             <label for="profile"> {{ __('register.profile') }} </label>
 
                             <select id="profile" class="form-control" name="profile">
-                                <option value="" {{ ($lost_person->profile === '') ? 'selected' : '' }}>
-                                    {{ __('forms.chose_option') }}
-                                </option>
-                                <option value="Trastorn del desenvolupament"
-                                {{ ($lost_person->profile === 'Trastorn del desenvolupament') ? 'selected' : '' }}>
-                                    Trastorn del desenvolupament
-                                </option>
-                                <option value="Alzheimer o altres demencies"
-                                {{ ($lost_person->profile === 'Alzheimer o altres demencies') ? 'selected' : '' }}>
-                                    Alzheimer o altres demencies
-                                </option>
-                                <option value="Malaltia mental o psicològica"
-                                {{ ($lost_person->profile === 'Malaltia mental o psicològica') ? 'selected' : '' }}>
-                                    Malaltia mental o psicològica
-                                </option>
-                                <option value="Conductes autolítiques"
-                                {{ ($lost_person->profile === 'Conductes autolítiques') ? 'selected' : '' }}>
-                                    Conductes autolítiques
-                                </option>
-                                <option value="Excursionista o senderista"
-                                {{ ($lost_person->profile === 'Excursionista o senderista') ? 'selected' : '' }}>
-                                    Excursionista o senderista
-                                </option>
-                                <option value="Recol·lector en general"
-                                {{ ($lost_person->profile === 'Recol·lector en general') ? 'selected' : '' }}>
-                                    Recol·lector en general
-                                </option>
-                                <option value="Boletaire"
-                                {{ ($lost_person->profile === 'Boletaire') ? 'selected' : '' }}>
-                                    Boletaire
-                                </option>
-                                <option value="Cap de les anteriors"
-                                {{ ($lost_person->profile === 'Cap de les anteriors') ? 'selected' : '' }}>
-                                    Cap de les anteriors
-                                </option>
+                                <option value=""> {{ __('forms.chose_option') }} </option>
+                                <option value="Trastorn del desenvolupament"> Trastorn del desenvolupament </option>
+                                <option value="Alzheimer o altres demencies"> Alzheimer o altres demencies </option>
+                                <option value="Malaltia mental o psicològica"> Malaltia mental o psicològica </option>
+                                <option value="Conductes autolítiques"> Conductes autolítiques </option>
+                                <option value="Excursionista o senderista"> Excursionista o senderista </option>
+                                <option value="Recol·lector en general"> Recol·lector en general </option>
+                                <option value="Boletaire"> Boletaire </option>
+                                <option value="Cap de les anteriors"> Cap de les anteriors </option>
                             </select>
 
                         </div>
@@ -238,58 +217,135 @@
 
                 <!-- Aspect description - OPEN  -->
                 <div class="form-group col-md-6">
+
                     <label for="physical_appearance"> {{ __('forms.aspect_description') }} </label>
-                    {{ Form::textarea('physical_appearance', null, array('class' => 'form-control', 'rows' => 2)) }}
+
+                    <textarea type="text" class="form-control" name="physical_appearance" rows="2"></textarea>
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('physical_appearance') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong> {{ $errors->first('physical_appearance') }} </strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+
                 </div>
                 <!--  Aspect description - CLOSE  -->
 
                 <!-- Clothes - OPEN  -->
                 <div class="form-group col-md-6">
-                    <label for="clothes"> {{ __('forms.clothes') }} </label>
-                    {{ Form::textarea('clothes', null, array('class' => 'form-control', 'rows' => 2)) }}
+
+                    <label for="roba"> {{ __('forms.clothes') }} </label>
+
+                    <textarea type="text" class="form-control" name="roba" rows="2"></textarea>
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('clothes') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong> {{ $errors->first('clothes') }} </strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+
                 </div>
                 <!-- Clothes - CLOSE  -->
 
                 <!-- Phisic form - OPEN  -->
                 <div class="form-group col-md-6">
+
                     <label for="physical_condition"> {{ __('forms.phisic_form') }} </label>
-                    {{ Form::textarea('physical_condition', null, array('class' => 'form-control', 'rows' => 2)) }}
+
+                    <textarea type="text" class="form-control" name="physical_condition" rows="2"></textarea>
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('physical_condition') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong> {{ $errors->first('physical_condition') }} </strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+
                 </div>
                 <!-- Phisic form - CLOSE  -->
 
                 <!-- Diseases or injuries - OPEN  -->
                 <div class="form-group col-md-6">
+
                     <label for="diseases_or_injuries"> {{ __('forms.diseases_or_injuries') }} </label>
-                    {{ Form::textarea('diseases_or_injuries', null, array('class' => 'form-control', 'rows' => 2)) }}
+
+                    <textarea type="text" class="form-control" name="diseases_or_injuries" rows="2"></textarea>
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('diseases_or_injuries') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong> {{ $errors->first('diseases_or_injuries') }} </strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+
                 </div>
                 <!-- Diseases or injuries - CLOSE  -->
 
                 <!-- Medication - OPEN  -->
                 <div class="form-group col-md-6">
+
                     <label for="medication"> {{ __('forms.medication') }} </label>
-                    {{ Form::textarea('medication', null, array('class' => 'form-control', 'rows' => 2)) }}
+
+                    <textarea type="text" class="form-control" name="medication" rows="2"></textarea>
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('medication') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong> {{ $errors->first('medication') }} </strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+
                 </div>
                 <!-- Medication - CLOSE  -->
 
                 <!-- Limitations or discapacities - OPEN  -->
                 <div class="form-group col-md-6">
+
                     <label for="discapacities_or_limitations"> {{ __('forms.limitations_or_discapacities') }} </label>
-                    {{ Form::textarea('discapacities_or_limitations', null, array('class' => 'form-control', 'rows' => 2)) }}
+
+                    <textarea type="text" class="form-control" name="discapacities_or_limitations" rows="2"></textarea>
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('discapacities_or_limitations') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong> {{ $errors->first('discapacities_or_limitations') }} </strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+
                 </div>
                 <!-- Limitations or discapacities - CLOSE  -->
 
                 <!-- Others - OPEN  -->
                 <div class="form-group col-md-12">
-                    <label for="other"> {{ __('forms.other') }} </label>
-                    {{ Form::textarea('other', null, array('class' => 'form-control', 'rows' => 2)) }}
+
+                    <label for="altres"> {{ __('forms.other') }} </label>
+
+                    <textarea type="text" class="form-control" name="altres" rows="2"></textarea>
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('other') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong> {{ $errors->first('other') }} </strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+
                 </div>
                 <!-- Others - CLOSE  -->
 
                 <!-- Vehicle title - OPEN -->
                 <div class="form-group col-md-12">
-                    <h4 class="margin-top-sm" style="margin-bottom: 0">
+                    <h5 class="margin-top-sm">
                         {{ __('forms.vehicle') }}
-                    </h4>
+                    </h5>
                 </div>
                 <!-- Vehicle title - CLOSE -->
 
@@ -298,8 +354,7 @@
 
                     <label for="model_vehicle"> {{ __('forms.model_and_brand') }} </label>
 
-                    <input type="text" class="form-control {{ $errors->has('model_vehicle') ? ' is-invalid' : '' }}"
-                    name="model_vehicle" value="{{ $lost_person->model_vehicle }}" />
+                    <input type="text" class="form-control {{ $errors->has('model_vehicle') ? ' is-invalid' : '' }}" name="model_vehicle"/>
 
                     <!-- Show errors input - OPEN -->
                     @if( $errors->has('model_vehicle') )
@@ -317,8 +372,7 @@
 
                     <label for="color_vehicle"> {{ __('forms.color') }} </label>
 
-                    <input type="text" class="form-control {{ $errors->has('color_vehicle') ? ' is-invalid' : '' }}"
-                    name="color_vehicle" value="{{ $lost_person->color_vehicle }}" />
+                    <input type="text" class="form-control {{ $errors->has('color_vehicle') ? ' is-invalid' : '' }}" name="color_vehicle"/>
 
                     <!-- Show errors input - OPEN -->
                     @if( $errors->has('color_vehicle') )
@@ -336,8 +390,7 @@
 
                     <label for="car_plate_number"> {{ __('forms.license_plate') }} </label>
 
-                    <input type="text" class="form-control {{ $errors->has('car_plate_number') ? ' is-invalid' : '' }}"
-                    name="car_plate_number" value="{{ $lost_person->car_plate_number }}" />
+                    <input type="text" class="form-control {{ $errors->has('car_plate_number') ? ' is-invalid' : '' }}" name="car_plate_number"/>
 
                     <!-- Show errors input - OPEN -->
                     @if( $errors->has('car_plate_number') )
@@ -353,29 +406,32 @@
             </div>
             <!-- Type activity, code and region - OPEN -->
 
-            <!-- ID HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="id" value="{{ $lost_person->id }}">
-            <!-- ID HIDDEN - CLOSE -->
+            <!-- Finded HIDDEN - OPEN -->
+            <input type="hidden" class="form-control" name="found" value="0">
+            <!-- Finded HIDDEN - CLOSE -->
 
             <!-- State HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="id_research" value="{{ $lost_person->id_research }}">
+            <input type="hidden" class="form-control" name="id_search" value="{{ $search->id }}">
             <!-- State HIDDEN - CLOSE -->
 
             <!-- Submit button - OPEN -->
             <div class="text-center margin-top">
                 <button type="submit" class="btn btn-primary">
-                    {{ __('actions.save') . ' ' . __('main.lost_person') }}
+                    {{ __('actions.add') . ' ' . __('main.lost_person') }}
                 </button>
             </div>
             <!-- Submit button - OPEN -->
 
-        {{ Form::close() }}
+        </form>
         <!-- Form - CLOSE -->
 
     </div>
     <!-- Content - CLOSE -->
 
 @endsection
+
+<!-- JQuery 3.3.1 -->
+<script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
 
 <!-- JS scripts -->
 <script>

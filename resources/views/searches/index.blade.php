@@ -72,7 +72,7 @@
                  role="tabpanel" aria-labelledby="nav-searches-tab">
 
                 <!-- If NO searches - OPEN -->
-                @if (count($researches) == 0)
+                @if (count($searches) == 0)
                     <div class="card text-center">
                         <div class="card-body">
 
@@ -80,7 +80,7 @@
                                 {{ __('messages.no_searches') }}
                             </h1>
 
-                            <a href="{{ route('researches.create') }}" class="btn btn-primary" role="button">
+                            <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button">
                                 {{ __('actions.add') . ' ' . __('main.search') }}
                             </a>
 
@@ -98,7 +98,7 @@
                         <!-- Table header - OPEN -->
                         <thead>
                             <tr>
-                                <th scope="col"> {{ __('forms.id_research') }} </th>
+                                <th scope="col"> {{ __('forms.id_search') }} </th>
                                 <th scope="col"> {{ __('forms.status') }} </th>
                                 <th scope="col"> {{ __('forms.begin') }} </th>
                                 <th scope="col"> {{ __('forms.end') }} </th>
@@ -110,22 +110,22 @@
 
                         <!-- Table content - OPEN -->
                         <tbody>
-                        @foreach ($researches as $research)
+                        @foreach ($searches as $search)
                             <tr>
 
                                 <td>
-                                    <a href="{{ url('researches/' . $research->id) }}">
-                                        {{ $research->id_research }}
+                                    <a href="{{ url('searches/' . $search->id) }}">
+                                        {{ $search->id_search }}
                                     </a>
                                 </td>
 
                                 <td>
                                     <h5>
-                                        @if ($research->status == 0)
+                                        @if ($search->status == 0)
                                             <span class="badge badge-danger">
                                                 {{ __('main.status_open') }}
                                             </span>
-                                        @elseif ($research->status == 1)
+                                        @elseif ($search->status == 1)
                                             <span class="badge badge-success">
                                                 {{ __('main.status_close') }}
                                             </span>
@@ -134,61 +134,61 @@
                                 </td>
 
                                 <td>
-                                    @if ($research->date_start == NULL)
+                                    @if ($search->date_start == NULL)
                                         --
                                     @else
                                         @php
-                                            $date = new Date($research->date_start);
+                                            $date = new Date($search->date_start);
                                             echo $date->format('H:i | d F Y');
                                         @endphp
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if ($research->date_finalization == NULL)
+                                    @if ($search->date_finalization == NULL)
                                         --
                                     @else
                                         @php
-                                            $date = new Date($research->date_finalization);
+                                            $date = new Date($search->date_finalization);
                                             echo $date->format('H:i | d F Y');
                                         @endphp
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if ($research->municipality_last_place_seen == NULL)
+                                    @if ($search->municipality_last_place_seen == NULL)
                                         --
                                     @else
-                                        {{ $research->municipality_last_place_seen }}
+                                        {{ $search->municipality_last_place_seen }}
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if ($research->region == '01')
+                                    @if ($search->region == '01')
                                         <p data-toggle="tooltip" data-placement="top" title="Centre" style="display:inline">
                                             01
                                         </p>
-                                    @elseif ($research->region == '02')
+                                    @elseif ($search->region == '02')
                                         <p data-toggle="tooltip" data-placement="top" title="Girona" style="display:inline">
                                             02
                                         </p>
-                                    @elseif ($research->region == '03')
+                                    @elseif ($search->region == '03')
                                         <p data-toggle="tooltip" data-placement="top" title="Lleida" style="display:inline">
                                             03
                                         </p>
-                                    @elseif ($research->region == '04')
+                                    @elseif ($search->region == '04')
                                         <p data-toggle="tooltip" data-placement="top" title="Metropolitana Nord" style="display:inline">
                                             04
                                         </p>
-                                    @elseif ($research->region == '05')
+                                    @elseif ($search->region == '05')
                                         <p data-toggle="tooltip" data-placement="top" title="Metropolitana Sud" style="display:inline">
                                             05
                                         </p>
-                                    @elseif ($research->region == '06')
+                                    @elseif ($search->region == '06')
                                         <p data-toggle="tooltip" data-placement="top" title="Tarragona" style="display:inline">
                                             06
                                         </p>
-                                    @elseif ($research->regio == '07')
+                                    @elseif ($search->regio == '07')
                                         <p data-toggle="tooltip" data-placement="top" title="Terres Ebre"style="display:inline">
                                             07
                                         </p>
@@ -226,7 +226,7 @@
                                 {{ __('messages.no_practices') }}
                             </h1>
 
-                            <a href="{{ route('researches.create') }}" class="btn btn-primary" role="button">
+                            <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button">
                                 {{ __('actions.add') . ' ' . __('main.practice') }}
                             </a>
 
@@ -243,7 +243,7 @@
                         <!-- Table header - OPEN -->
                         <thead>
                             <tr>
-                                <th scope="col"> {{ __('forms.id_research') }} </th>
+                                <th scope="col"> {{ __('forms.id_search') }} </th>
                                 <th scope="col"> {{ __('forms.status') }} </th>
                                 <th scope="col"> {{ __('forms.begin') }} </th>
                                 <th scope="col"> {{ __('forms.end') }} </th>
@@ -259,8 +259,8 @@
                             <tr>
 
                                 <td>
-                                    <a href="{{ url('researches/' . $practice->id) }}">
-                                        {{ $practice->id_research }}
+                                    <a href="{{ url('searches/' . $practice->id) }}">
+                                        {{ $practice->id_search }}
                                     </a>
                                 </td>
 

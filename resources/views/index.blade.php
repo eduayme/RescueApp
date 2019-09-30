@@ -4,6 +4,6 @@
 
 @section('content')
 
-    @include('researches.index')
+    @include('searches.index')
 
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.app_secondary')
 
-@section('title', $research->id_research)
+@section('title', $search->id_search)
 
 @section('content')
 
@@ -71,7 +71,7 @@
       <div class="tab-pane fade show active margin-top-sm" id="nav-data"
       role="tabpanel" aria-labelledby="nav-data-tab">
 
-        @include('researches.data')
+        @include('searches.data')
 
       </div>
       <!-- Data tab content - CLOSE -->
@@ -80,7 +80,7 @@
       <div class="tab-pane fade margin-top-sm" id="nav-closing"
       role="tabpanel" aria-labelledby="nav-closing-tab">
 
-        @include('researches.finalization.view')
+        @include('searches.finalization.view')
 
       </div>
       <!-- Closing tab content - CLOSE -->
