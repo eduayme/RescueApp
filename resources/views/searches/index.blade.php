@@ -165,31 +165,31 @@
 
                                 <td>
                                     @if ($search->region == '01')
-                                        <p data-toggle="tooltip" data-placement="top" title="Centre" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Centre" style="display:inline">
                                             01
                                         </p>
                                     @elseif ($search->region == '02')
-                                        <p data-toggle="tooltip" data-placement="top" title="Girona" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Girona" style="display:inline">
                                             02
                                         </p>
                                     @elseif ($search->region == '03')
-                                        <p data-toggle="tooltip" data-placement="top" title="Lleida" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Lleida" style="display:inline">
                                             03
                                         </p>
                                     @elseif ($search->region == '04')
-                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Nord" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Nord" style="display:inline">
                                             04
                                         </p>
                                     @elseif ($search->region == '05')
-                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Sud" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Sud" style="display:inline">
                                             05
                                         </p>
                                     @elseif ($search->region == '06')
-                                        <p data-toggle="tooltip" data-placement="top" title="Tarragona" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Tarragona" style="display:inline">
                                             06
                                         </p>
                                     @elseif ($search->regio == '07')
-                                        <p data-toggle="tooltip" data-placement="top" title="Terres Ebre"style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Terres Ebre"style="display:inline">
                                             07
                                         </p>
                                     @else
@@ -310,31 +310,31 @@
 
                                 <td>
                                     @if ($practice->region == '01')
-                                        <p data-toggle="tooltip" data-placement="top" title="Centre" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Centre" style="display:inline">
                                             01
                                         </p>
                                     @elseif ($practice->region == '02')
-                                        <p data-toggle="tooltip" data-placement="top" title="Girona" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Girona" style="display:inline">
                                             02
                                         </p>
                                     @elseif ($practice->region == '03')
-                                        <p data-toggle="tooltip" data-placement="top" title="Lleida" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Lleida" style="display:inline">
                                             03
                                         </p>
                                     @elseif ($practice->region == '04')
-                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Nord" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Nord" style="display:inline">
                                             04
                                         </p>
                                     @elseif ($practice->region == '05')
-                                        <p data-toggle="tooltip" data-placement="top" title="Metropolitana Sud" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Sud" style="display:inline">
                                             05
                                         </p>
                                     @elseif ($practice->region == '06')
-                                        <p data-toggle="tooltip" data-placement="top" title="Tarragona" style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Tarragona" style="display:inline">
                                             06
                                         </p>
                                     @elseif ($practice->regio == '07')
-                                        <p data-toggle="tooltip" data-placement="top" title="Terres Ebre"style="display:inline">
+                                        <p data-toggle="tooltip" data-placement="left" title="Terres Ebre"style="display:inline">
                                             07
                                         </p>
                                     @else
