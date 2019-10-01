@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'login'    => 'Iniciar sessión',
+    'login'    => 'Iniciar sesión',
     'email'    => 'Email',
     'password' => 'Contraseña',
-    'remember' => "Recuerdame",
+    'remember' => "Recuérdame",
     'forgot'   => 'He olvidado mi contraseña',
 ];
