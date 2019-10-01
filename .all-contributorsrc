@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "eduayme",
+      "name": "Eduard Aymerich",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26260104?v=4",
+      "profile": "https://linkedin.com/in/eduayme",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Rescue-app",
+  "projectOwner": "eduayme",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
