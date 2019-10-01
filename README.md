@@ -76,6 +76,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://linkedin.com/in/eduayme"><img src="https://avatars3.githubusercontent.com/u/26260104?v=4" width="100px;" alt="Eduard Aymerich"/><br /><sub><b>Eduard Aymerich</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=eduayme" title="Code">💻</a></td>
+    <td align="center"><a href="https://joelibaceta.github.io"><img src="https://avatars1.githubusercontent.com/u/864790?v=4" width="100px;" alt="Joel Ibaceta"/><br /><sub><b>Joel Ibaceta</b></sub></a><br /><a href="#translation-joelibaceta" title="Translation">🌍</a></td>
   </tr>
 </table>
 
