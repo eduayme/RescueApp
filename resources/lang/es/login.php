@@ -4,6 +4,6 @@ return [
     'login'    => 'Iniciar sesión',
     'email'    => 'Email',
     'password' => 'Contraseña',
-    'remember' => "Recuérdame",
+    'remember' => 'Recuérdame',
     'forgot'   => 'He olvidado mi contraseña',
 ];
