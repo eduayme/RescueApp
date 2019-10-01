@@ -4,7 +4,7 @@ return [
     'type_service'                              => 'Tipo de servicio',
     'id_search'                                 => 'Identificador de la búsqueda',
     'status'                                    => 'Estado',
-    'begin_date'                                => "Fecha de inicio",
+    'begin_date'                                => 'Fecha de inicio',
     'begin'                                     => 'Inicio',
     'end'                                       => 'Fin',
     'service'                                   => 'Servicio',
