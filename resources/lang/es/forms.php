@@ -2,7 +2,7 @@
 
 return [
     'type_service'                              => 'Tipo de servicio',
-    'id_search'                                 => 'Identificador de la búsqueda',
+    'id_search'                                 => 'ID de la búsqueda',
     'status'                                    => 'Estado',
     'begin_date'                                => 'Fecha de inicio',
     'begin'                                     => 'Inicio',
@@ -10,8 +10,8 @@ return [
     'service'                                   => 'Servicio',
     'village'                                   => 'Municipio',
     'region'                                    => 'Región',
-    'begin_day'                                 => 'Día de Inicio',
-    'end_day'                                   => 'Día de Fin',
+    'begin_day'                                 => 'Día de inicio',
+    'end_day'                                   => 'Día de finalización',
     'day'                                       => 'Día',
     'chose_option'                              => 'Elegir opción',
     'alertant'                                  => 'Alertando',
@@ -64,7 +64,7 @@ return [
     'localization_date'                         => 'Fecha y hora de localización',
     'localization_toponim'                      => 'Topónimo de la localización',
     'localization_location'                     => 'Lugar de la localización',
-    'localization_municipal_term'               => 'Término municipal de Localización',
+    'localization_municipal_term'               => 'Término municipal de la localización',
     'coe'                                       => 'COE',
     'soc'                                       => 'SOC',
     'section'                                   => 'Sección',
