@@ -11,7 +11,12 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/26260104?v=4",
       "profile": "https://linkedin.com/in/eduayme",
       "contributions": [
-        "code"
+        "code",
+        "ideas",
+        "maintenance",
+        "projectManagement",
+        "review",
+        "test"
       ]
     },
     {
@@ -37,6 +42,16 @@
       "name": "Azh Setiawan",
       "avatar_url": "https://avatars0.githubusercontent.com/u/3045602?v=4",
       "profile": "https://dribbble.com/azhsetiawan",
+      "contributions": [
+        "translation",
+        "code"
+      ]
+    },
+    {
+      "login": "kaywinnet",
+      "name": "Andrea",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26384252?v=4",
+      "profile": "https://github.com/kaywinnet",
       "contributions": [
         "translation"
       ]
