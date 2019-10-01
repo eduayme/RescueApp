@@ -3,7 +3,7 @@
 return [
     'home'             => 'Inicio',
     'welcome'          => 'Bienvenido',
-    'search'           => 'Buscar',
+    'search'           => 'Búsqueda',
     'practice'         => 'Práctica',
     'searches'         => 'Búsquedas',
     'practices'        => 'Prácticas',
@@ -14,6 +14,7 @@ return [
     'language'         => 'Idioma',
     'catalan'          => 'Catalán',
     'spanish'          => 'Español',
+    'english'          => 'Inglés',
     'version'          => 'Versión',
     'free'             => 'Gratis',
     'open_source'      => 'Open Source',
