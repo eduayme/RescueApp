@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square">
+<img src="https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square">
 <a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?branch=master" alt="StyleCI"></a>
 <a href="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques"><img src="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques.svg?branch=master" alt="Build Status"></a>
 <a href="https://shields.io/"><img src="https://img.shields.io/badge/version-v1.0-blue"></a>
