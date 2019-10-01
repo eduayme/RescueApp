@@ -67,6 +67,21 @@
                 @else
                 <!-- Authentication - OPEN -->
 
+                <!-- Language - OPEN -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ strtoupper(App::getLocale()) }}
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/locale-ca">Catalan</a>
+                        <a class="dropdown-item" href="/locale-es">Spanish</a>
+                        <a class="dropdown-item" href="/locale-en">English</a>
+                    </div>
+                </li>
+                <!-- Language - CLOSE -->
+
                 <!-- User section - OPEN -->
                 <li class="nav-item dropdown">
 

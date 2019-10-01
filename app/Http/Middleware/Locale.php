@@ -8,6 +8,8 @@ use Session;
 
 class Locale
 {
+    protected $supported_languages = ['ca','es','en'];
+
     /**
      * Handle an incoming request.
      *
@@ -18,16 +20,11 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        if (Session::has('lang')) {
-            $lang = Session::get('lang');
-        } else {
-            $lang = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
-            if ($lang != 'es' && $lang != 'ca') {
-                $lang = 'ca';
-            }
+        if(!Session::has('locale')) {
+            session(['locale' => $request->getPreferredLanguage($this->supported_languages)]);
         }
 
-        App::setLocale($lang);
+        App::setLocale(session('locale'));
 
         return $next($request);
     }
