@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square">
+<img src="https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square">
 <a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?branch=master" alt="StyleCI"></a>
 <a href="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques"><img src="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques.svg?branch=master" alt="Build Status"></a>
 <a href="https://shields.io/"><img src="https://img.shields.io/badge/version-v1.0-blue"></a>
@@ -76,6 +76,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://linkedin.com/in/eduayme"><img src="https://avatars3.githubusercontent.com/u/26260104?v=4" width="100px;" alt="Eduard Aymerich"/><br /><sub><b>Eduard Aymerich</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=eduayme" title="Code">💻</a> <a href="#ideas-eduayme" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-eduayme" title="Maintenance">🚧</a> <a href="#projectManagement-eduayme" title="Project Management">📆</a> <a href="#review-eduayme" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=eduayme" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://joelibaceta.github.io"><img src="https://avatars1.githubusercontent.com/u/864790?v=4" width="100px;" alt="Joel Ibaceta"/><br /><sub><b>Joel Ibaceta</b></sub></a><br /><a href="#translation-joelibaceta" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/rferromoreno"><img src="https://avatars2.githubusercontent.com/u/5116187?v=4" width="100px;" alt="Ricardo Ferro Moreno"/><br /><sub><b>Ricardo Ferro Moreno</b></sub></a><br /><a href="#translation-rferromoreno" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://dribbble.com/azhsetiawan"><img src="https://avatars0.githubusercontent.com/u/3045602?v=4" width="100px;" alt="Azh Setiawan"/><br /><sub><b>Azh Setiawan</b></sub></a><br /><a href="#translation-azhsetiawan" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/kaywinnet"><img src="https://avatars3.githubusercontent.com/u/26384252?v=4" width="100px;" alt="Andrea"/><br /><sub><b>Andrea</b></sub></a><br /><a href="#translation-kaywinnet" title="Translation">🌍</a></td>
   </tr>
 </table>
 
