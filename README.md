@@ -75,7 +75,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://linkedin.com/in/eduayme"><img src="https://avatars3.githubusercontent.com/u/26260104?v=4" width="100px;" alt="Eduard Aymerich"/><br /><sub><b>Eduard Aymerich</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=eduayme" title="Code">💻</a></td>
+    <td align="center"><a href="https://linkedin.com/in/eduayme"><img src="https://avatars3.githubusercontent.com/u/26260104?v=4" width="100px;" alt="Eduard Aymerich"/><br /><sub><b>Eduard Aymerich</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=eduayme" title="Code">💻</a> <a href="#ideas-eduayme" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-eduayme" title="Maintenance">🚧</a> <a href="#projectManagement-eduayme" title="Project Management">📆</a> <a href="#review-eduayme" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=eduayme" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
