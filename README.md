@@ -79,6 +79,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://joelibaceta.github.io"><img src="https://avatars1.githubusercontent.com/u/864790?v=4" width="100px;" alt="Joel Ibaceta"/><br /><sub><b>Joel Ibaceta</b></sub></a><br /><a href="#translation-joelibaceta" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/rferromoreno"><img src="https://avatars2.githubusercontent.com/u/5116187?v=4" width="100px;" alt="Ricardo Ferro Moreno"/><br /><sub><b>Ricardo Ferro Moreno</b></sub></a><br /><a href="#translation-rferromoreno" title="Translation">🌍</a></td>
     <td align="center"><a href="https://dribbble.com/azhsetiawan"><img src="https://avatars0.githubusercontent.com/u/3045602?v=4" width="100px;" alt="Azh Setiawan"/><br /><sub><b>Azh Setiawan</b></sub></a><br /><a href="#translation-azhsetiawan" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/kaywinnet"><img src="https://avatars3.githubusercontent.com/u/26384252?v=4" width="100px;" alt="Andrea"/><br /><sub><b>Andrea</b></sub></a><br /><a href="#translation-kaywinnet" title="Translation">🌍</a></td>
   </tr>
 </table>
 
