@@ -1,6 +1,6 @@
 <!-- Language for dates - OPEN -->
 @php
-\Date::setLocale('ca');
+\Date::setLocale(Session::get('locale'));
 @endphp
 <!-- Language for dates - CLOSE -->
 
