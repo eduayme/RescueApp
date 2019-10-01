@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'failed' => 'Error trying to login',
+    'failed' => 'Error when attempting to log in',
 ];

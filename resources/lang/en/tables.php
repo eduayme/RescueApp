@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'emptyTable'     => 'No data available in table',
+    'emptyTable'     => 'There are no available data in the table',
     'info'           => 'Showing _START_ to _END_ of _TOTAL_ entries',
     'infoEmpty'      => 'No entries to show',
     'infoFiltered'   => 'Filtering of _MAX_ total entries',
@@ -9,11 +9,11 @@ return [
     'loadingRecords' => 'Loading...',
     'processing'     => 'Processing...',
     'search'         => 'Search:',
-    'zeroRecords'    => 'No entry matches',
+    'zeroRecords'    => 'No records match',
     'first'          => 'First',
     'last'           => 'Last',
     'next'           => 'Next',
     'previous'       => 'Previous',
-    'sortAscending'  => ': sort columns in ascending order',
-    'sortDescending' => ': sort columns in descending order',
+    'sortAscending'  => ': sort columns ascending',
+    'sortDescending' => ': sort columns descending',
 ];
