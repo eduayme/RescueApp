@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'sunday'    => 'Sun.',
-    'monday'    => 'Mon.',
-    'tuesday'   => 'Tue.',
-    'wednesday' => 'Wed.',
-    'thursday'  => 'Thu.',
-    'friday'    => 'Fri.',
-    'saturday'  => 'Sat.',
+    'sunday'    => 'Su.',
+    'monday'    => 'Mo.',
+    'tuesday'   => 'Tu.',
+    'wednesday' => 'We.',
+    'thursday'  => 'Th.',
+    'friday'    => 'Fr.',
+    'saturday'  => 'Sa.',
     'january'   => 'January',
     'february'  => 'February',
     'march'     => 'March',

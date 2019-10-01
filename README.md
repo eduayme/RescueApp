@@ -1,4 +1,5 @@
 <p align="center">
+<img src="https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square">
 <a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?branch=master" alt="StyleCI"></a>
 <a href="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques"><img src="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques.svg?branch=master" alt="Build Status"></a>
 <a href="https://shields.io/"><img src="https://img.shields.io/badge/version-v1.0-blue"></a>
@@ -65,3 +66,21 @@ MAIL_PASSWORD = email_password
 
 ## License
 The web application is an open-source software licensed under the [GPL v3 license](https://opensource.org/licenses/GPL-3.0).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://linkedin.com/in/eduayme"><img src="https://avatars3.githubusercontent.com/u/26260104?v=4" width="100px;" alt="Eduard Aymerich"/><br /><sub><b>Eduard Aymerich</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=eduayme" title="Code">💻</a></td>
+    <td align="center"><a href="https://joelibaceta.github.io"><img src="https://avatars1.githubusercontent.com/u/864790?v=4" width="100px;" alt="Joel Ibaceta"/><br /><sub><b>Joel Ibaceta</b></sub></a><br /><a href="#translation-joelibaceta" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/rferromoreno"><img src="https://avatars2.githubusercontent.com/u/5116187?v=4" width="100px;" alt="Ricardo Ferro Moreno"/><br /><sub><b>Ricardo Ferro Moreno</b></sub></a><br /><a href="#translation-rferromoreno" title="Translation">🌍</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

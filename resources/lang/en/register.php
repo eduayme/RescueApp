@@ -3,7 +3,7 @@
 return [
     'register'              => 'Register',
     'name'                  => 'Name',
-    'id'                    => 'DNI',
+    'id'                    => 'ID card',
     'age'                   => 'Age',
     'profile'               => 'Profile',
     'chose_profile'         => 'Choose profile',

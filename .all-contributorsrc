@@ -1,0 +1,41 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "eduayme",
+      "name": "Eduard Aymerich",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26260104?v=4",
+      "profile": "https://linkedin.com/in/eduayme",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "joelibaceta",
+      "name": "Joel Ibaceta",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/864790?v=4",
+      "profile": "https://joelibaceta.github.io",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "rferromoreno",
+      "name": "Ricardo Ferro Moreno",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5116187?v=4",
+      "profile": "https://github.com/rferromoreno",
+      "contributions": [
+        "translation"
+      ]
+    }
+  ],
+  "contributorsPerLine": 5,
+  "projectName": "Rescue-app",
+  "projectOwner": "eduayme",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
