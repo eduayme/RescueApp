@@ -21,7 +21,7 @@ return [
     'privacy_policy'                => 'Privacy Policy',
     'terms_of_service'              => 'Terms and Conditions',
     'data'                          => 'Data',
-    'closing'                       => 'Closing',
+    'finish'                        => 'Finish',
     'lost'                          => 'Lost',
     'found'                         => 'Found',
     'status_open'                   => 'Open',

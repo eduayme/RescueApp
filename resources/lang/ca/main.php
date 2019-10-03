@@ -21,7 +21,7 @@ return [
     'privacy_policy'                => 'Polítiques de privacitat',
     'terms_of_service'              => 'Termes de servei',
     'data'                          => 'Dades',
-    'closing'                       => 'Tancament',
+    'finish'                        => 'Tancar',
     'lost'                          => 'Perdut',
     'found'                         => 'Trobat',
     'status_open'                   => 'Oberta',

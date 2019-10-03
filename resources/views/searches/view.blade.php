@@ -54,7 +54,7 @@
         <!-- Closing tab - OPEN -->
         <a class="nav-item nav-link" id="nav-closing-tab" data-toggle="tab"
         href="#nav-closing" role="tab" aria-controls="nav-closing" aria-selected="false">
-          {{ __('main.closing') }}
+          {{ __('main.finish') }}
         </a>
         <!-- Closing tab - CLOSE -->
 
