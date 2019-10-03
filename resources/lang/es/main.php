@@ -20,7 +20,7 @@ return [
     'open_source'      => 'Open Source',
     'privacy_policy'   => 'Política de privacidad',
     'terms_of_service' => 'Terminos y Condiciones',
-    'data'             => 'Fecha',
+    'data'             => 'Datos',
     'closing'          => 'Cerrando',
     'lost'             => 'Perdido',
     'found'            => 'Encontrado',
