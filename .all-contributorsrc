@@ -55,6 +55,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "larryebaum",
+      "name": "Larry Eichenbaum",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6776768?v=4",
+      "profile": "https://github.com/larryebaum",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,
