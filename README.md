@@ -24,6 +24,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://dribbble.com/azhsetiawan"><img src="https://avatars0.githubusercontent.com/u/3045602?v=4" width="100px;" alt="Azh Setiawan"/><br /><sub><b>Azh Setiawan</b></sub></a><br /><a href="#translation-azhsetiawan" title="Translation">🌍</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=azhsetiawan" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/kaywinnet"><img src="https://avatars3.githubusercontent.com/u/26384252?v=4" width="100px;" alt="Andrea"/><br /><sub><b>Andrea</b></sub></a><br /><a href="#translation-kaywinnet" title="Translation">🌍</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/larryebaum"><img src="https://avatars1.githubusercontent.com/u/6776768?v=4" width="100px;" alt="Larry Eichenbaum"/><br /><sub><b>Larry Eichenbaum</b></sub></a><br /><a href="#translation-larryebaum" title="Translation">🌍</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
