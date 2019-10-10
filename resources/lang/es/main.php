@@ -58,4 +58,3 @@ return [
     que ha generado, la legislación española puede ser aplicable, a la cual ambas partes serán expresamente sometidas,
     en competencia por la resolución de todas las disputas derivadas o relacionadas para uso de las cortes y tribunales de Girona.',
 ];
-
