@@ -36,7 +36,7 @@
         {{ Form::model($user, array('action' => 'UserController@update_user', 'files'=> true)) }}
 
         <!-- User name and ID - OPEN -->
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-center">
 
             <h2>
                 <!-- User name - OPEN -->
@@ -44,9 +44,11 @@
                 <!-- User name - CLOSE -->
 
                 <!-- ID - OPEN -->
-                <small>
-                    ({{ $user->dni }})
-                </small>
+                @if ($user->dni)
+                    <small>
+                        ({{ $user->dni }})
+                    </small>
+                @endif
                 <!-- ID - CLOSE -->
             </h2>
 
@@ -54,7 +56,7 @@
         <!-- User name and ID - CLOSE -->
 
         <!-- User avatar - OPEN -->
-        <div class="row justify-content-md-center image-upload">
+        <div class="row justify-content-center image-upload">
             <label for="avatar">
                 <div class="img-container">
                     <img src="/uploads/avatars/{{ $user->avatar }}" class="profile" id="avatar_img">
@@ -89,23 +91,31 @@
 
                 <label for="profile"> {{ __('register.profile') }} </label>
 
-                <select id="profile" class="form-control" name="profile" required>
-                    <option value="" {{ ($user->profile === '') ? 'selected' : '' }}>
-                        {{ __('register.chose_profile') }}
-                    </option>
-                    <option value="firefighter" {{ ($user->profile === 'firefighter') ? 'selected' : '' }}>
-                        {{ __('register.firefighter') }}
-                    </option>
-                    <option value="operator" {{ ($user->profile === 'operator') ? 'selected' : '' }}>
-                        {{ __('register.control_room_operator') }}
-                    </option>
-                    <option value="commander" {{ ($user->profile === 'commander') ? 'selected' : '' }}>
-                        {{ __('register.commander') }}
-                    </option>
-                    <option value="guest" {{ ($user->profile === 'guest') ? 'selected' : '' }}>
-                        {{ __('register.guest') }}
-                    </option>
-                </select>
+                @if ( $user->profile == 'admin' )
+                    <select id="profile" class="form-control" name="profile" required>
+                        <option value="admin" {{ ($user->profile === '') ? 'selected' : '' }}>
+                            {{ __('register.admin') }}
+                        </option>
+                    </select>
+                @else
+                    <select id="profile" class="form-control" name="profile" required>
+                        <option value="" {{ ($user->profile === '') ? 'selected' : '' }}>
+                            {{ __('register.chose_profile') }}
+                        </option>
+                        <option value="firefighter" {{ ($user->profile === 'firefighter') ? 'selected' : '' }}>
+                            {{ __('register.firefighter') }}
+                        </option>
+                        <option value="operator" {{ ($user->profile === 'operator') ? 'selected' : '' }}>
+                            {{ __('register.control_room_operator') }}
+                        </option>
+                        <option value="commander" {{ ($user->profile === 'commander') ? 'selected' : '' }}>
+                            {{ __('register.commander') }}
+                        </option>
+                        <option value="guest" {{ ($user->profile === 'guest') ? 'selected' : '' }}>
+                            {{ __('register.guest') }}
+                        </option>
+                    </select>
+                @endif
 
             </div>
             <!-- Profile - CLOSE  -->

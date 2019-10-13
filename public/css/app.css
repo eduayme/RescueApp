@@ -1553,6 +1553,7 @@ pre code {
     width: 100%;
     height: calc(2.19rem + 2px);
     padding: .375rem .75rem;
+    margin-bottom: 0.5rem;
     font-size: .9rem;
     line-height: 1.6;
     color: #495057;
@@ -7919,7 +7920,7 @@ a.text-dark:hover {
   height: 150px;
   float: left;
   border-radius: 50%;
-  margin-right: 50px;
+  margin: 0 50px;
 }
 
 .photo {
@@ -7948,7 +7949,7 @@ a.text-dark:hover {
   height: 150px;
   float: left;
   border-radius: 50%;
-  margin-right: 50px;
+  margin: 0 50px;
   background: rgb(0,0,0,0.7);
   opacity: 0;
   transition: opacity 100ms ease-in-out;
