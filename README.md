@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?branch=master" alt="StyleCI"></a>
-<a href="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques"><img src="https://travis-ci.org/eduayme/Aplicatiu-de-Recerques.svg?branch=master" alt="Build Status"></a>
+<a href="https://travis-ci.org/eduayme/Rescue-app"><img src="https://travis-ci.org/eduayme/Rescue-app.svg?branch=master" alt="Build Status"></a>
 <a href="https://shields.io/"><img src="https://img.shields.io/badge/version-v1.0-blue"></a>
 <a href="https://github.com/eduayme/Aplicatiu-de-Recerques/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License"></a>
 </p>
