@@ -36,7 +36,7 @@
     <!-- Language for dates - CLOSE -->
 
     <!-- Content - OPEN -->
-    <div class="container margin-top">
+    <div class="container margin-top padding-bottom">
 
         <!-- Top buttons - OPEN -->
         <div class="row">

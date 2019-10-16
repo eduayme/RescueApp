@@ -30,7 +30,7 @@
     <!-- Alerts - CLOSE -->
 
     <!-- Content - OPEN -->
-    <div class="container margin-top">
+    <div class="container margin-top padding-bottom">
 
         <!-- Form - OPEN -->
         {{ Form::model($user, array('action' => 'UserController@update_user', 'files'=> true)) }}

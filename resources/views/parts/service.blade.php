@@ -30,7 +30,7 @@
     <!-- Alerts - CLOSE -->
 
     <!-- Content - OPEN -->
-    <div class="container margin-top">
+    <div class="container margin-top padding-bottom">
 
         <h1>
             {{ __('main.terms_of_service') }}

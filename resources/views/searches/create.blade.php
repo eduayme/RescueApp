@@ -30,7 +30,7 @@
     <!-- Alerts - CLOSE -->
 
     <!-- Content - OPEN -->
-    <div class="container margin-top">
+    <div class="container margin-top padding-bottom">
 
         <!-- Form - OPEN -->
         <form method="post" action="{{ route('searches.store') }}">

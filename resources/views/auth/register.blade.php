@@ -30,7 +30,7 @@
     <!-- Alerts - CLOSE -->
 
     <!-- Content - OPEN -->
-    <div class="container margin-top">
+    <div class="container margin-top padding-bottom">
         <div class="row justify-content-center">
             <div class="col-md-8">
 

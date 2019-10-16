@@ -30,7 +30,7 @@
   <!-- Alerts - CLOSE -->
 
   <!-- Content - OPEN -->
-  <div class="container margin-top">
+  <div class="container margin-top padding-bottom">
 
     <!-- Form - OPEN -->
     {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}

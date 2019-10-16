@@ -36,7 +36,7 @@
     <!-- Language for dates - CLOSE -->
 
     <!-- Content - OPEN -->
-    <div class="container margin-top">
+    <div class="container margin-top padding-bottom">
 
         <!-- Top buttons - OPEN -->
         <div class="row">
@@ -78,7 +78,7 @@
                         <label for="photo">
                             <div class="img-container">
                                 <img src="/uploads/lost_people_photos/default.jpg" class="photo mx-auto d-block rounded" id="photo_person">
-                                <div class="overlay rounded photo" style="width: 300px; height: 300px; border-radius: 0; margin-top: 15px">
+                                <div class="overlay photo mx-auto d-block rounded" style="width: 300px; height: 300px; margin-top: 15px">
                                     <span class="octicon octicon-cloud-upload" style="font-size: 2rem"> </span>
                                 </div>
                             </div>
