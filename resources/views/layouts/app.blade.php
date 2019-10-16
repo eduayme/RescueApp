@@ -4,6 +4,9 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="{{{ asset('img/logo.jpg') }}}" />
+
       <!-- CSRF Token -->
       <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -14,15 +17,15 @@
 
       <!-- Styles -->
       <!-- Bootstrap 4.1 -->
-      <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
       <!-- DataTables for Bootstrap 4.1 -->
       <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
       <!-- Bootstrap daterangepicker -->
       <link href="{{ asset('css/daterangepicker.css') }}" rel="stylesheet" type="text/css" />
       <!-- Octicons -->
       <link href="{{ asset('css/octicons.min.css') }}" rel="stylesheet" type="text/css" />
-      <!-- Favicon -->
-      <link rel="shortcut icon" href="{{{ asset('img/logo.jpg') }}}" />
+      <!-- Style -->
+      <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
 
   </head>
 
@@ -35,9 +38,7 @@
           @yield('content')
       </section>
 
-      <section>
-          @include('parts.footer')
-      </section>
+      @include('parts.footer')
   </body>
 
   <!-- Scripts -->
