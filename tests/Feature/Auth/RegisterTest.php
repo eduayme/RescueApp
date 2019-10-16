@@ -43,6 +43,7 @@ class RegisterTest extends TestCase
       ]);
 
         $response->assertStatus(302);
+        //$this->assertAuthenticated();
     }
 
     /**
@@ -63,6 +64,6 @@ class RegisterTest extends TestCase
         $response->assertSessionHasErrors();
         $response->assertStatus(302);
         $response->assertRedirect('/');
-        $this->assertCount(0, $users = User::all());
+        $this->assertGuest();
     }
 }
