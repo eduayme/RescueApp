@@ -82,6 +82,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "alfathony",
+      "name": "Alfathony",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/14884603?v=4",
+      "profile": "http://alfathony.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
