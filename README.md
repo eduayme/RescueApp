@@ -28,6 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/larryebaum"><img src="https://avatars1.githubusercontent.com/u/6776768?v=4" width="100px;" alt="Larry Eichenbaum"/><br /><sub><b>Larry Eichenbaum</b></sub></a><br /><a href="#translation-larryebaum" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/dcbCIn"><img src="https://avatars0.githubusercontent.com/u/48742131?v=4" width="100px;" alt="Daniel Brandão"/><br /><sub><b>Daniel Brandão</b></sub></a><br /><a href="#translation-dcbCIn" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/MRamirezO"><img src="https://avatars1.githubusercontent.com/u/4284570?v=4" width="100px;" alt="Jesus Ramirez"/><br /><sub><b>Jesus Ramirez</b></sub></a><br /><a href="#translation-MRamirezO" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://alfathony.com"><img src="https://avatars1.githubusercontent.com/u/14884603?v=4" width="100px;" alt="Alfathony"/><br /><sub><b>Alfathony</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=alfathony" title="Code">💻</a></td>
   </tr>
 </table>
 
