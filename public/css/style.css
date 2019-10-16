@@ -1,0 +1,17 @@
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #efefef;
+    text-align: center;
+}
