@@ -4,7 +4,7 @@ return [
     'emptyTable'     => 'No hi ha dades disponibles a la taula',
     'info'           => 'Mostrant _START_ a _END_ de les _TOTAL_ entrades',
     'infoEmpty'      => 'No hi ha entrades per mostrar',
-    'infoFiltered'   => 'Filtrat de les _MAX_ entrades totals',
+    'infoFiltered'   => '(filtrat de les _MAX_ entrades totals)',
     'lengthMenu'     => 'Mostrar _MENU_ entrades',
     'loadingRecords' => 'Carregant...',
     'processing'     => 'Processant...',

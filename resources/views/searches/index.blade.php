@@ -127,7 +127,7 @@
                                             </span>
                                         @elseif ($search->status == 1)
                                             <span class="badge badge-success">
-                                                {{ __('main.status_close') }}
+                                                {{ __('main.status_closed') }}
                                             </span>
                                         @endif
                                     </h5>
@@ -165,32 +165,32 @@
 
                                 <td>
                                     @if ($search->region == '01')
-                                        <p data-toggle="tooltip" data-placement="left" title="Centre" style="display:inline">
-                                            01
+                                        <p style="display:inline">
+                                            01 - Centre
                                         </p>
                                     @elseif ($search->region == '02')
-                                        <p data-toggle="tooltip" data-placement="left" title="Girona" style="display:inline">
-                                            02
+                                        <p style="display:inline">
+                                            02 - Girona
                                         </p>
                                     @elseif ($search->region == '03')
-                                        <p data-toggle="tooltip" data-placement="left" title="Lleida" style="display:inline">
-                                            03
+                                        <p style="display:inline">
+                                            03 - Lleida
                                         </p>
                                     @elseif ($search->region == '04')
-                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Nord" style="display:inline">
-                                            04
+                                        <p style="display:inline">
+                                            04 - Metropolitana Nord
                                         </p>
                                     @elseif ($search->region == '05')
-                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Sud" style="display:inline">
-                                            05
+                                        <p style="display:inline">
+                                            05 - Metropolitana Sud
                                         </p>
                                     @elseif ($search->region == '06')
-                                        <p data-toggle="tooltip" data-placement="left" title="Tarragona" style="display:inline">
-                                            06
+                                        <p style="display:inline">
+                                            06 - Tarragona
                                         </p>
-                                    @elseif ($search->regio == '07')
-                                        <p data-toggle="tooltip" data-placement="left" title="Terres Ebre"style="display:inline">
-                                            07
+                                    @elseif ($search->region == '07')
+                                        <p style="display:inline">
+                                            07 - Terres Ebre
                                         </p>
                                     @else
                                         <p style="display:inline">
@@ -206,6 +206,22 @@
 
                     </table>
                     <!-- Searches table - CLOSE -->
+
+                    <!-- Filters - OPEN -->
+                    <div class="row text-center margin-top">
+
+                        <!-- Status filter - OPEN -->
+                        <div class="col-sm">
+                            <select class="form-control" id="status-filter">
+                                <option value=""> {{ __('forms.status') }} </option>
+                                <option value="{{ __('main.status_open') }}"> {{ __('main.status_open') }} </option>
+                                <option value="{{ __('main.status_closed') }}"> {{ __('main.status_closed') }} </option>
+                            </select>
+                        </div>
+                        <!-- Status filter - CLOSE -->
+
+                    </div>
+                    <!-- Filters - CLOSE -->
 
             @endif
             <!-- If exists searches - CLOSE -->
@@ -272,7 +288,7 @@
                                             </span>
                                         @elseif ($practice->status == 1)
                                             <span class="badge badge-success">
-                                                {{ __('main.status_close') }}
+                                                {{ __('main.status_closed') }}
                                             </span>
                                         @endif
                                     </h5>
@@ -310,32 +326,32 @@
 
                                 <td>
                                     @if ($practice->region == '01')
-                                        <p data-toggle="tooltip" data-placement="left" title="Centre" style="display:inline">
-                                            01
+                                        <p style="display:inline">
+                                            01 - Centre
                                         </p>
                                     @elseif ($practice->region == '02')
-                                        <p data-toggle="tooltip" data-placement="left" title="Girona" style="display:inline">
-                                            02
+                                        <p style="display:inline">
+                                            02 - Girona
                                         </p>
                                     @elseif ($practice->region == '03')
-                                        <p data-toggle="tooltip" data-placement="left" title="Lleida" style="display:inline">
-                                            03
+                                        <p style="display:inline">
+                                            03 - Lleida
                                         </p>
                                     @elseif ($practice->region == '04')
-                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Nord" style="display:inline">
-                                            04
+                                        <p style="display:inline">
+                                            04 - Metropolitana Nord
                                         </p>
                                     @elseif ($practice->region == '05')
-                                        <p data-toggle="tooltip" data-placement="left" title="Metropolitana Sud" style="display:inline">
-                                            05
+                                        <p style="display:inline">
+                                            05 - Metropolitana Sud
                                         </p>
                                     @elseif ($practice->region == '06')
-                                        <p data-toggle="tooltip" data-placement="left" title="Tarragona" style="display:inline">
-                                            06
+                                        <p style="display:inline">
+                                            06 - Tarragona
                                         </p>
-                                    @elseif ($practice->regio == '07')
-                                        <p data-toggle="tooltip" data-placement="left" title="Terres Ebre"style="display:inline">
-                                            07
+                                    @elseif ($practice->region == '07')
+                                        <p style="display:inline">
+                                            07 - Terres Ebre
                                         </p>
                                     @else
                                         <p style="display:inline">
@@ -407,8 +423,8 @@
         });
 
         // initialize tables
-        $('#searches').DataTable();
-        $('#practices').DataTable();
+        var searches_table     = $('#searches').DataTable();
+        var searches_practices = $('#practices').DataTable();
 
         // resize tables after tab
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -420,13 +436,17 @@
         // tabs
         var hash = window.location.hash;
         hash && $('nav a[href="' + hash + '"]').tab('show');
-
         $('.nav-tabs a').click(function (e) {
           $(this).tab('show');
           var scrollmem = $('body').scrollTop();
           window.location.hash = this.hash;
           $('html,body').scrollTop(scrollmem);
         });
+
+        // status filter
+        $('#status-filter').on('change', function () {
+            searches_table.columns(1).search( this.value ).draw();
+        } );
 
     });
 
