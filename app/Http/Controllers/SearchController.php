@@ -67,48 +67,48 @@ class SearchController extends Controller
             'region'                         => $request->get('region'),
             'status'                         => $request->get('status'),
 
-            'date_start'                      => $request->get('date_start'),
-            'date_creation'                   => $request->get('date_creation'),
-            'date_last_modification'          => $request->get('date_last_modification'),
-            'date_finalization'               => $request->get('date_finalization'),
+            'date_start'                     => $request->get('date_start'),
+            'date_creation'                  => $request->get('date_creation'),
+            'date_last_modification'         => $request->get('date_last_modification'),
+            'date_finalization'              => $request->get('date_finalization'),
 
-            'id_user_creation'              => $request->get('id_user_creation'),
-            'id_user_last_modification'     => $request->get('id_user_last_modification'),
-            'id_user_finalization'          => $request->get('id_user_finalization'),
+            'id_user_creation'               => $request->get('id_user_creation'),
+            'id_user_last_modification'      => $request->get('id_user_last_modification'),
+            'id_user_finalization'           => $request->get('id_user_finalization'),
 
             // person alerts
-            'is_lost_person'                         => $request->get('is_lost_person'),
-            'is_contact_person'                      => $request->get('is_contact_person'),
-            'name_person_alerts'                     => $request->get('name_person_alerts'),
-            'age_person_alerts'                      => $request->get('age_person_alerts'),
-            'phone_number_person_alerts'             => $request->get('phone_number_person_alerts'),
-            'address_person_alerts'                  => $request->get('address_person_alerts'),
+            'is_lost_person'                 => $request->get('is_lost_person'),
+            'is_contact_person'              => $request->get('is_contact_person'),
+            'name_person_alerts'             => $request->get('name_person_alerts'),
+            'age_person_alerts'              => $request->get('age_person_alerts'),
+            'phone_number_person_alerts'     => $request->get('phone_number_person_alerts'),
+            'address_person_alerts'          => $request->get('address_person_alerts'),
 
             // incident
-            'municipality_last_place_seen'             => $request->get('municipality_last_place_seen'),
-            'date_last_place_seen'                     => $request->get('date_last_place_seen'),
-            'zone_incident'                            => $request->get('zone_incident'),
-            'potential_route'                          => $request->get('potential_route'),
-            'description_incident'                     => $request->get('description_incident'),
+            'municipality_last_place_seen'   => $request->get('municipality_last_place_seen'),
+            'date_last_place_seen'           => $request->get('date_last_place_seen'),
+            'zone_incident'                  => $request->get('zone_incident'),
+            'potential_route'                => $request->get('potential_route'),
+            'description_incident'           => $request->get('description_incident'),
 
             // lost people
             'number_lost_people'             => $request->get('number_lost_people'),
             'physical_condition_lost_people' => $request->get('physical_condition_lost_people'),
 
             // equipment and experience
-            'knowledge_of_the_zone'                  => $request->get('knowledge_of_the_zone'),
-            'experience_with_activity'               => $request->get('experience_with_activity'),
-            'bring_water'                            => $request->get('bring_water'),
-            'bring_food'                             => $request->get('bring_food'),
-            'bring_medication'                       => $request->get('bring_medication'),
-            'bring_flashlight'                       => $request->get('bring_flashlight'),
-            'bring_cold_clothes'                     => $request->get('bring_cold_clothes'),
-            'bring_waterproof_clothes'               => $request->get('bring_waterproof_clothes'),
+            'knowledge_of_the_zone'          => $request->get('knowledge_of_the_zone'),
+            'experience_with_activity'       => $request->get('experience_with_activity'),
+            'bring_water'                    => $request->get('bring_water'),
+            'bring_food'                     => $request->get('bring_food'),
+            'bring_medication'               => $request->get('bring_medication'),
+            'bring_flashlight'               => $request->get('bring_flashlight'),
+            'bring_cold_clothes'             => $request->get('bring_cold_clothes'),
+            'bring_waterproof_clothes'       => $request->get('bring_waterproof_clothes'),
 
             // contact person
-            'name_contact_person'             => $request->get('name_contact_person'),
-            'phone_number_contact_person'     => $request->get('phone_number_contact_person'),
-            'affinity_contact_person'         => $request->get('affinity_contact_person'),
+            'name_contact_person'            => $request->get('name_contact_person'),
+            'phone_number_contact_person'    => $request->get('phone_number_contact_person'),
+            'affinity_contact_person'        => $request->get('affinity_contact_person'),
         ]);
 
         $search->save();

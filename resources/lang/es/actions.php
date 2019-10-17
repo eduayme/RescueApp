@@ -16,4 +16,5 @@ return [
     'closing'         => 'Cerrando',
     'no'              => 'No',
     'yes'             => 'Sí',
+    'filter_dates'    => 'Filtrar fechas',
 ];

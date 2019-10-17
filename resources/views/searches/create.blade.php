@@ -173,8 +173,8 @@
 
                 <!-- Alertant phone - OPEN  -->
                 <div class="form-group col-md-4">
-                    <label for="phone_number_alertant"> {{ __('forms.phone') }} </label>
-                    <input type="text" class="form-control" name="phone_number_alertant"/>
+                    <label for="phone_number_person_alerts"> {{ __('forms.phone') }} </label>
+                    <input type="text" class="form-control" name="phone_number_person_alerts"/>
                 </div>
                 <!-- Alertant phone - CLOSE  -->
 
@@ -478,8 +478,8 @@ $(document).ready(function() {
         locale: {
             format: 'YYYY-MM-DD HH:mm:ss',
             firstDay: 1,
-            applyLabel: "Acceptar",
-            cancelLabel: "Cancelar",
+            applyLabel: "{{ __('actions.save') }}",
+            cancelLabel: "{{ __('actions.cancel') }}",
             daysOfWeek: [
                 "{{ __('daterangepicker.sunday') }}",
                 "{{ __('daterangepicker.monday') }}",

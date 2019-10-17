@@ -489,8 +489,8 @@ $(document).ready(function() {
         locale: {
             format: 'YYYY-MM-DD HH:mm:ss',
             firstDay: 1,
-            applyLabel: "Acceptar",
-            cancelLabel: "Cancelar",
+            applyLabel: "{{ __('actions.save') }}",
+            cancelLabel: "{{ __('actions.cancel') }}",
             daysOfWeek: [
                 "{{ __('daterangepicker.sunday') }}",
                 "{{ __('daterangepicker.monday') }}",

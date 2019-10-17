@@ -91,9 +91,11 @@
 
           <!-- Begin datetime - OPEN -->
           <div class="form-group col-md-3">
+
             {{ Form::label('date_start', __('forms.begin_date')) }}
             <input type="text" name="date_start" value="{{ $search->date_start }}"
             class="form-control {{ $errors->has('date_start') ? ' is-invalid' : '' }}" />
+
             <!-- Show errors input - OPEN -->
             @if( $errors->has('date_start') )
               <div class="invalid-feedback" role="alert">
@@ -101,6 +103,7 @@
               </div>
             @endif
             <!-- Show errors input - CLOSE -->
+
           </div>
           <!-- Begin datetime - CLOSE -->
 
@@ -217,8 +220,8 @@
 
         <!-- Alertant phone - OPEN  -->
         <div class="form-group col-md-4">
-          {{ Form::label('phone_number_alertant', __('forms.phone')) }}
-          {{ Form::text('phone_number_alertant', null, array('class' => 'form-control')) }}
+          {{ Form::label('phone_number_person_alerts', __('forms.phone')) }}
+          {{ Form::text('phone_number_person_alerts', null, array('class' => 'form-control')) }}
         </div>
         <!-- Alertant phone - CLOSE  -->
 
@@ -520,10 +523,6 @@
       {{ Form::hidden('status', $search->status, array('class' => 'form-control')) }}
       <!-- State HIDDEN - CLOSE -->
 
-      <!-- Date creates HIDDEN - OPEN -->
-      {{ Form::hidden('date_start', $search->date_start, array('class' => 'form-control')) }}
-      <!-- Date creates HIDDEN - CLOSE -->
-
       <!-- Id user creates HIDDEN - OPEN -->
       {{ Form::hidden('id_user_creation', $search->id_user_creation, array('class' => 'form-control')) }}
       <!-- Id user creates HIDDEN - CLOSE -->
@@ -580,8 +579,8 @@
       locale: {
         format: 'YYYY-MM-DD HH:mm:ss',
         firstDay: 1,
-        applyLabel: "Acceptar",
-        cancelLabel: "Cancelar",
+        applyLabel: "{{ __('actions.save') }}",
+        cancelLabel: "{{ __('actions.cancel') }}",
         daysOfWeek: [
             "{{ __('daterangepicker.sunday') }}",
             "{{ __('daterangepicker.monday') }}",

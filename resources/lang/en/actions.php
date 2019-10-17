@@ -16,4 +16,5 @@ return [
     'closing'         => 'Closing',
     'no'              => 'No',
     'yes'             => 'Yes',
+    'filter_dates'    => 'Filter dates',
 ];

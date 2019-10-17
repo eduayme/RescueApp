@@ -104,6 +104,8 @@
                                 <th scope="col"> {{ __('forms.end') }} </th>
                                 <th scope="col"> {{ __('forms.village') }} </th>
                                 <th scope="col"> {{ __('forms.region') }} </th>
+                                <th scope="col"> {{ __('forms.begin') }} </th>
+                                <th scope="col"> {{ __('forms.end') }} </th>
                             </tr>
                         </thead>
                         <!-- Table header - CLOSE -->
@@ -199,6 +201,24 @@
                                     @endif
                                 </td>
 
+                                <td>
+                                    @if ($search->date_start != NULL)
+                                        @php
+                                            $date = new Date($search->date_start);
+                                            echo $date;
+                                        @endphp
+                                    @endif
+                                </td>
+
+                                <td>
+                                    @if ($search->date_finalization != NULL)
+                                        @php
+                                            $date = new Date($search->date_finalization);
+                                            echo $date;
+                                        @endphp
+                                    @endif
+                                </td>
+
                             </tr>
                         @endforeach
                         </tbody>
@@ -219,6 +239,12 @@
                             </select>
                         </div>
                         <!-- Status filter - CLOSE -->
+
+                        <!-- Dates filter -->
+                        <div class="col-sm-5">
+                            <input class="form-control" type="text" name="dates-filter" value=""
+                            placeholder="{{ __('actions.filter_dates') }}"/>
+                        </div>
 
                     </div>
                     <!-- Filters - CLOSE -->
@@ -392,10 +418,21 @@
 
         // settings tables
         $.extend( $.fn.dataTable.defaults, {
-            "order": [ [ 1, "asc" ], [ 2, "desc" ] ],
             "scrollX": true,
+            "scrollY": true,
             "pagingType": "full_numbers",
             "responsive": true,
+            "order": [ [ 1, "asc" ], [ 2, "desc" ] ],
+            "columnDefs": [
+                {
+                    "targets": [ 6 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 7 ],
+                    "visible": false
+                }
+            ],
             "language": {
                 "decimal":        "",
                 "emptyTable":     "{{ __('tables.emptyTable') }}",
@@ -447,6 +484,100 @@
         $('#status-filter').on('change', function () {
             searches_table.columns(1).search( this.value ).draw();
         } );
+
+        // dates range filter
+        $('input[name="dates-filter"]').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerIncrement: 5,
+            startDate: moment().startOf('hour'),
+            autoUpdateInput: true,
+            autoApply: true,
+            showDropdowns: true,
+            opens: 'center',
+            drops: 'up',
+            alwaysShowCalendars: true,
+            ranges: {
+                "{{ __('daterangepicker.last_7_days') }}": [moment().subtract(6, 'days'), moment()],
+                "{{ __('daterangepicker.last_15_days') }}": [moment().subtract(14, 'days'), moment()],
+                "{{ __('daterangepicker.last_30_days') }}": [moment().subtract(29, 'days'), moment()],
+                "{{ __('daterangepicker.this_month') }}": [moment().startOf('month'), moment().endOf('month')],
+                "{{ __('daterangepicker.last_month') }}": [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                "{{ __('daterangepicker.this_year') }}": [moment().startOf('year'), moment().endOf('year')],
+                "{{ __('daterangepicker.last_year') }}": [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')],
+            },
+            locale: {
+                format: 'YYYY-MM-DD HH:mm:ss',
+                separator: ' | ',
+                customRangeLabel: "{{ __('daterangepicker.personalized') }}",
+                firstDay: 1,
+                applyLabel: "{{ __('actions.save') }}",
+                cancelLabel: "{{ __('actions.cancel') }}",
+                daysOfWeek: [
+                    "{{ __('daterangepicker.sunday') }}",
+                    "{{ __('daterangepicker.monday') }}",
+                    "{{ __('daterangepicker.tuesday') }}",
+                    "{{ __('daterangepicker.wednesday') }}",
+                    "{{ __('daterangepicker.thursday') }}",
+                    "{{ __('daterangepicker.friday') }}",
+                    "{{ __('daterangepicker.saturday') }}"
+                ],
+                monthNames: [
+                    "{{ __('daterangepicker.january') }}",
+                    "{{ __('daterangepicker.february') }}",
+                    "{{ __('daterangepicker.march') }}",
+                    "{{ __('daterangepicker.april') }}",
+                    "{{ __('daterangepicker.may') }}",
+                    "{{ __('daterangepicker.june') }}",
+                    "{{ __('daterangepicker.july') }}",
+                    "{{ __('daterangepicker.august') }}",
+                    "{{ __('daterangepicker.september') }}",
+                    "{{ __('daterangepicker.october') }}",
+                    "{{ __('daterangepicker.november') }}",
+                    "{{ __('daterangepicker.december') }}",
+                ],
+            }
+        });
+        // apply button dates range filter
+        $('input[name="dates-filter"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val( picker.startDate.format('YYYY-MM-DD HH:mm:ss') + ' | ' + picker.endDate.format('YYYY-MM-DD HH:mm:ss') );
+            searches_table.draw();
+        });
+
+        // cancel button dates range filter
+        $('input[name="dates-filter"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val( '' );
+            searches_table.draw();
+        });
+
+        $('input[name="dates-filter"]').val( '' );
+
+        $.fn.dataTable.ext.search.push(
+            function (settings, data, dataIndex) {
+                var min = $('input[name="dates-filter"]').data('daterangepicker').startDate._d;
+                var max = $('input[name="dates-filter"]').data('daterangepicker').endDate._d;
+
+                var startDate = 'invalid';
+                if( data[6] != '' ) {
+                    startDate = new Date(data[6]);
+                }
+
+                var endDate = 'invalid';
+                if( data[7] != '' ) {
+                    endDate = new Date(data[7]);
+                }
+
+                console.log(endDate);
+
+                if( min == null && max == null ) { console.log(1); return true; }
+                if( $('input[name="dates-filter"]').val() == '' ) { console.log(2); return true; }
+                if( min == null && endDate <= max ) { console.log(3); return true; }
+                if( max == null && startDate >= min ) { console.log(4); return true; }
+                if( endDate <= max && startDate >= min ) { console.log(5); return true; }
+                if( startDate >= min && startDate <= max && endDate == 'invalid' ) { console.log(6); return true; }
+                console.log(7); return false;
+            }
+        );
 
     });
 
