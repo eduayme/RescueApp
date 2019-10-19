@@ -203,7 +203,7 @@
                     <div class="row text-center margin-top">
 
                         <!-- Status filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-2">
                             <select class="form-control" id="status-searches-filter">
                                 <option value=""> {{ __('actions.filter_by_status') }} </option>
                                 <option value="{{ __('main.status_open') }}"> {{ __('main.status_open') }} </option>
@@ -213,14 +213,14 @@
                         <!-- Status filter - CLOSE -->
 
                         <!-- Dates range filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-4">
                             <input class="form-control" type="text" name="dates-searches-filter" value=""
                             placeholder="{{ __('actions.filter_by_dates') }}"/>
                         </div>
                         <!-- Dates range filter - CLOSE -->
 
                         <!-- Region filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-3">
                             <select class="form-control" id="region-searches-filter">
                                 <option value=""> {{ __('actions.filter_by_region') }} </option>
                                 @foreach( $regions_s as $region )
@@ -231,7 +231,7 @@
                         <!-- Region filter - CLOSE -->
 
                         <!-- Villages filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-3">
                             <select class="form-control" id="village-searches-filter">
                                 <option value=""> {{ __('actions.filter_by_village') }} </option>
                                 @foreach( $villages_s as $village )
@@ -384,7 +384,7 @@
                     <div class="row text-center margin-top">
 
                         <!-- Status filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-2">
                             <select class="form-control" id="status-practices-filter">
                                 <option value=""> {{ __('actions.filter_by_status') }} </option>
                                 <option value="{{ __('main.status_open') }}"> {{ __('main.status_open') }} </option>
@@ -394,14 +394,14 @@
                         <!-- Status filter - CLOSE -->
 
                         <!-- Dates range filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-4">
                             <input class="form-control" type="text" name="dates-practices-filter" value=""
                             placeholder="{{ __('actions.filter_by_dates') }}"/>
                         </div>
                         <!-- Dates range filter - CLOSE -->
 
                         <!-- Region filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-3">
                             <select class="form-control" id="region-practices-filter">
                                 <option value=""> {{ __('actions.filter_by_region') }} </option>
                                 @foreach( $regions_p as $region )
@@ -412,7 +412,7 @@
                         <!-- Region filter - CLOSE -->
 
                         <!-- Villages filter - OPEN -->
-                        <div class="col-sm">
+                        <div class="col-sm-3">
                             <select class="form-control" id="village-practices-filter">
                                 <option value=""> {{ __('actions.filter_by_village') }} </option>
                                 @foreach( $villages_p as $village )
