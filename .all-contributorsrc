@@ -91,6 +91,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "co00co",
+      "name": "co00co",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11724652?v=4",
+      "profile": "https://github.com/co00co",
+      "contributions": [
+        "ideas",
+        "doc",
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,

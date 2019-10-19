@@ -29,6 +29,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/dcbCIn"><img src="https://avatars0.githubusercontent.com/u/48742131?v=4" width="100px;" alt="Daniel Brandão"/><br /><sub><b>Daniel Brandão</b></sub></a><br /><a href="#translation-dcbCIn" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/MRamirezO"><img src="https://avatars1.githubusercontent.com/u/4284570?v=4" width="100px;" alt="Jesus Ramirez"/><br /><sub><b>Jesus Ramirez</b></sub></a><br /><a href="#translation-MRamirezO" title="Translation">🌍</a></td>
     <td align="center"><a href="http://alfathony.com"><img src="https://avatars1.githubusercontent.com/u/14884603?v=4" width="100px;" alt="Alfathony"/><br /><sub><b>Alfathony</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=alfathony" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/co00co"><img src="https://avatars3.githubusercontent.com/u/11724652?v=4" width="100px;" alt="co00co"/><br /><sub><b>co00co</b></sub></a><br /><a href="#ideas-co00co" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=co00co" title="Documentation">📖</a> <a href="https://github.com/eduayme/Rescue-app/issues?q=author%3Aco00co" title="Bug reports">🐛</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=co00co" title="Code">💻</a></td>
   </tr>
 </table>
 
