@@ -108,13 +108,13 @@
 
                     <select id="region" class="form-control" name="region">
                         <option value=""> {{ __('forms.chose_option') }} </option>
-                        <option value="01"> 01 - Centre </option>
-                        <option value="02"> 02 - Girona </option>
-                        <option value="03"> 03 - Lleida </option>
-                        <option value="04"> 04 - Metropolitana Nord </option>
-                        <option value="05"> 05 - Metropolitana Sud </option>
-                        <option value="06"> 06 - Tarragona </option>
-                        <option value="07"> 07 - Terres Ebre </option>
+                        <option value="01 - Centre"> 01 - Centre </option>
+                        <option value="02 - Girona"> 02 - Girona </option>
+                        <option value="03 - Lleida"> 03 - Lleida </option>
+                        <option value="04 - Metropolitana Nord"> 04 - Metropolitana Nord </option>
+                        <option value="05 - Metropolitana Sud"> 05 - Metropolitana Sud </option>
+                        <option value="06 - Tarragona"> 06 - Tarragona </option>
+                        <option value="07 - Terres Ebre"> 07 - Terres Ebre </option>
                     </select>
 
                 </div>

@@ -130,7 +130,7 @@
                 </span>
             @elseif ($search->status == 1)
                 <span class="badge badge-success">
-                    {{ __('main.status_close') }}
+                    {{ __('main.status_closed') }}
                 </span>
             @endif
         </h4>

@@ -102,8 +102,8 @@
                                 <th scope="col"> {{ __('forms.status') }} </th>
                                 <th scope="col"> {{ __('forms.begin') }} </th>
                                 <th scope="col"> {{ __('forms.end') }} </th>
-                                <th scope="col"> {{ __('forms.village') }} </th>
                                 <th scope="col"> {{ __('forms.region') }} </th>
+                                <th scope="col"> {{ __('forms.village') }} </th>
                                 <th scope="col"> {{ __('forms.begin') }} </th>
                                 <th scope="col"> {{ __('forms.end') }} </th>
                             </tr>
@@ -158,46 +158,18 @@
                                 </td>
 
                                 <td>
-                                    @if ($search->municipality_last_place_seen == NULL)
+                                    @if ($search->region == NULL)
                                         --
                                     @else
-                                        {{ $search->municipality_last_place_seen }}
+                                        {{ $search->region }}
                                     @endif
                                 </td>
 
                                 <td>
-                                    @if ($search->region == '01')
-                                        <p style="display:inline">
-                                            01 - Centre
-                                        </p>
-                                    @elseif ($search->region == '02')
-                                        <p style="display:inline">
-                                            02 - Girona
-                                        </p>
-                                    @elseif ($search->region == '03')
-                                        <p style="display:inline">
-                                            03 - Lleida
-                                        </p>
-                                    @elseif ($search->region == '04')
-                                        <p style="display:inline">
-                                            04 - Metropolitana Nord
-                                        </p>
-                                    @elseif ($search->region == '05')
-                                        <p style="display:inline">
-                                            05 - Metropolitana Sud
-                                        </p>
-                                    @elseif ($search->region == '06')
-                                        <p style="display:inline">
-                                            06 - Tarragona
-                                        </p>
-                                    @elseif ($search->region == '07')
-                                        <p style="display:inline">
-                                            07 - Terres Ebre
-                                        </p>
+                                    @if ($search->municipality_last_place_seen == NULL)
+                                        --
                                     @else
-                                        <p style="display:inline">
-                                            --
-                                        </p>
+                                        {{ $search->municipality_last_place_seen }}
                                     @endif
                                 </td>
 
@@ -232,32 +204,54 @@
 
                         <!-- Status filter - OPEN -->
                         <div class="col-sm">
-                            <select class="form-control" id="status-filter">
-                                <option value=""> {{ __('forms.status') }} </option>
+                            <select class="form-control" id="status-searches-filter">
+                                <option value=""> {{ __('actions.filter_by_status') }} </option>
                                 <option value="{{ __('main.status_open') }}"> {{ __('main.status_open') }} </option>
                                 <option value="{{ __('main.status_closed') }}"> {{ __('main.status_closed') }} </option>
                             </select>
                         </div>
                         <!-- Status filter - CLOSE -->
 
-                        <!-- Dates filter -->
-                        <div class="col-sm-5">
-                            <input class="form-control" type="text" name="dates-filter" value=""
-                            placeholder="{{ __('actions.filter_dates') }}"/>
+                        <!-- Dates range filter - OPEN -->
+                        <div class="col-sm">
+                            <input class="form-control" type="text" name="dates-searches-filter" value=""
+                            placeholder="{{ __('actions.filter_by_dates') }}"/>
                         </div>
+                        <!-- Dates range filter - CLOSE -->
+
+                        <!-- Region filter - OPEN -->
+                        <div class="col-sm">
+                            <select class="form-control" id="region-searches-filter">
+                                <option value=""> {{ __('actions.filter_by_region') }} </option>
+                                @foreach( $regions_s as $region )
+                                    <option value="{{ $region['region'] }}"> {{ $region['region'] }} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <!-- Region filter - CLOSE -->
+
+                        <!-- Villages filter - OPEN -->
+                        <div class="col-sm">
+                            <select class="form-control" id="village-searches-filter">
+                                <option value=""> {{ __('actions.filter_by_village') }} </option>
+                                @foreach( $villages_s as $village )
+                                    <option value="{{ $village['municipality_last_place_seen'] }}"> {{ $village['municipality_last_place_seen'] }} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <!-- Villages filter - CLOSE -->
 
                     </div>
                     <!-- Filters - CLOSE -->
 
-            @endif
-            <!-- If exists searches - CLOSE -->
+                @endif
+                <!-- If exists searches - CLOSE -->
 
             </div>
             <!-- Searches tab content - CLOSE -->
 
             <!-- Practices tab content - OPEN -->
-            <div class="tab-pane fade margin-top-sm" id="nav-practices"
-                 role="tabpanel" aria-labelledby="nav-practices-tab">
+            <div class="tab-pane fade margin-top-sm" id="nav-practices" role="tabpanel" aria-labelledby="nav-practices-tab">
 
                 <!-- If NO practices - OPEN -->
                 @if (count($practices) == 0)
@@ -289,8 +283,10 @@
                                 <th scope="col"> {{ __('forms.status') }} </th>
                                 <th scope="col"> {{ __('forms.begin') }} </th>
                                 <th scope="col"> {{ __('forms.end') }} </th>
-                                <th scope="col"> {{ __('forms.village') }} </th>
                                 <th scope="col"> {{ __('forms.region') }} </th>
+                                <th scope="col"> {{ __('forms.village') }} </th>
+                                <th scope="col"> {{ __('forms.begin') }} </th>
+                                <th scope="col"> {{ __('forms.end') }} </th>
                             </tr>
                         </thead>
                         <!-- Table header - CLOSE -->
@@ -343,6 +339,14 @@
                                 </td>
 
                                 <td>
+                                    @if ($practice->region == NULL)
+                                        --
+                                    @else
+                                        {{ $practice->region }}
+                                    @endif
+                                </td>
+
+                                <td>
                                     @if ($practice->municipality_last_place_seen == NULL)
                                         --
                                     @else
@@ -351,38 +355,20 @@
                                 </td>
 
                                 <td>
-                                    @if ($practice->region == '01')
-                                        <p style="display:inline">
-                                            01 - Centre
-                                        </p>
-                                    @elseif ($practice->region == '02')
-                                        <p style="display:inline">
-                                            02 - Girona
-                                        </p>
-                                    @elseif ($practice->region == '03')
-                                        <p style="display:inline">
-                                            03 - Lleida
-                                        </p>
-                                    @elseif ($practice->region == '04')
-                                        <p style="display:inline">
-                                            04 - Metropolitana Nord
-                                        </p>
-                                    @elseif ($practice->region == '05')
-                                        <p style="display:inline">
-                                            05 - Metropolitana Sud
-                                        </p>
-                                    @elseif ($practice->region == '06')
-                                        <p style="display:inline">
-                                            06 - Tarragona
-                                        </p>
-                                    @elseif ($practice->region == '07')
-                                        <p style="display:inline">
-                                            07 - Terres Ebre
-                                        </p>
-                                    @else
-                                        <p style="display:inline">
-                                            --
-                                        </p>
+                                    @if ($practice->date_start != NULL)
+                                        @php
+                                            $date = new Date($practice->date_start);
+                                            echo $date;
+                                        @endphp
+                                    @endif
+                                </td>
+
+                                <td>
+                                    @if ($practice->date_finalization != NULL)
+                                        @php
+                                            $date = new Date($practice->date_finalization);
+                                            echo $date;
+                                        @endphp
                                     @endif
                                 </td>
 
@@ -394,8 +380,53 @@
                     </table>
                     <!-- Practices table - CLOSE -->
 
-            @endif
-            <!-- If exists practices - CLOSE -->
+                    <!-- Filters - OPEN -->
+                    <div class="row text-center margin-top">
+
+                        <!-- Status filter - OPEN -->
+                        <div class="col-sm">
+                            <select class="form-control" id="status-practices-filter">
+                                <option value=""> {{ __('actions.filter_by_status') }} </option>
+                                <option value="{{ __('main.status_open') }}"> {{ __('main.status_open') }} </option>
+                                <option value="{{ __('main.status_closed') }}"> {{ __('main.status_closed') }} </option>
+                            </select>
+                        </div>
+                        <!-- Status filter - CLOSE -->
+
+                        <!-- Dates range filter - OPEN -->
+                        <div class="col-sm">
+                            <input class="form-control" type="text" name="dates-practices-filter" value=""
+                            placeholder="{{ __('actions.filter_by_dates') }}"/>
+                        </div>
+                        <!-- Dates range filter - CLOSE -->
+
+                        <!-- Region filter - OPEN -->
+                        <div class="col-sm">
+                            <select class="form-control" id="region-practices-filter">
+                                <option value=""> {{ __('actions.filter_by_region') }} </option>
+                                @foreach( $regions_p as $region )
+                                    <option value="{{ $region['region'] }}"> {{ $region['region'] }} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <!-- Region filter - CLOSE -->
+
+                        <!-- Villages filter - OPEN -->
+                        <div class="col-sm">
+                            <select class="form-control" id="village-practices-filter">
+                                <option value=""> {{ __('actions.filter_by_village') }} </option>
+                                @foreach( $villages_p as $village )
+                                    <option value="{{ $village['municipality_last_place_seen'] }}"> {{ $village['municipality_last_place_seen'] }} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <!-- Villages filter - CLOSE -->
+
+                    </div>
+                    <!-- Filters - CLOSE -->
+
+                @endif
+                <!-- If exists practices - CLOSE -->
 
             </div>
             <!-- Practices tab content - CLOSE -->
@@ -460,8 +491,8 @@
         });
 
         // initialize tables
-        var searches_table     = $('#searches').DataTable();
-        var searches_practices = $('#practices').DataTable();
+        var searches_table  = $('#searches').DataTable();
+        var practices_table = $('#practices').DataTable();
 
         // resize tables after tab
         $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -480,13 +511,15 @@
           $('html,body').scrollTop(scrollmem);
         });
 
+        //----------------------------------------------------------------
+        // Searches filters - OPEN
         // status filter
-        $('#status-filter').on('change', function () {
+        $('#status-searches-filter').on('change', function () {
             searches_table.columns(1).search( this.value ).draw();
         } );
 
         // dates range filter
-        $('input[name="dates-filter"]').daterangepicker({
+        $('input[name="dates-searches-filter"]').daterangepicker({
             timePicker: true,
             timePicker24Hour: true,
             timePickerIncrement: 5,
@@ -539,23 +572,23 @@
             }
         });
         // apply button dates range filter
-        $('input[name="dates-filter"]').on('apply.daterangepicker', function(ev, picker) {
+        $('input[name="dates-searches-filter"]').on('apply.daterangepicker', function(ev, picker) {
             $(this).val( picker.startDate.format('YYYY-MM-DD HH:mm:ss') + ' | ' + picker.endDate.format('YYYY-MM-DD HH:mm:ss') );
             searches_table.draw();
         });
 
         // cancel button dates range filter
-        $('input[name="dates-filter"]').on('cancel.daterangepicker', function(ev, picker) {
+        $('input[name="dates-searches-filter"]').on('cancel.daterangepicker', function(ev, picker) {
             $(this).val( '' );
             searches_table.draw();
         });
 
-        $('input[name="dates-filter"]').val( '' );
+        $('input[name="dates-searches-filter"]').val( '' );
 
         $.fn.dataTable.ext.search.push(
             function (settings, data, dataIndex) {
-                var min = $('input[name="dates-filter"]').data('daterangepicker').startDate._d;
-                var max = $('input[name="dates-filter"]').data('daterangepicker').endDate._d;
+                var min = $('input[name="dates-searches-filter"]').data('daterangepicker').startDate._d;
+                var max = $('input[name="dates-searches-filter"]').data('daterangepicker').endDate._d;
 
                 var startDate = 'invalid';
                 if( data[6] != '' ) {
@@ -567,10 +600,8 @@
                     endDate = new Date(data[7]);
                 }
 
-                console.log(endDate);
-
                 if( min == null && max == null ) { console.log(1); return true; }
-                if( $('input[name="dates-filter"]').val() == '' ) { console.log(2); return true; }
+                if( $('input[name="dates-searches-filter"]').val() == '' ) { console.log(2); return true; }
                 if( min == null && endDate <= max ) { console.log(3); return true; }
                 if( max == null && startDate >= min ) { console.log(4); return true; }
                 if( endDate <= max && startDate >= min ) { console.log(5); return true; }
@@ -578,6 +609,191 @@
                 console.log(7); return false;
             }
         );
+
+        // regions filter
+        $('#region-searches-filter').on('change', function () {
+            searches_table.columns(4).search( this.value ).draw();
+
+            $("#village-searches-filter").empty();
+            $("#village-searches-filter").append('<option value=""> {{ __("actions.filter_by_village") }} </option>');
+
+            var region = $(this).val();
+            if (region) {
+                $.ajax({
+                   type: "GET",
+                   url: "{{url('get-villages-searches-list')}}?region=" + region,
+                   success:function(res) {
+                    if(res) {
+                        $.each(res,function(key, value) {
+                            $("#village-searches-filter").append('<option value="'+ value.municipality_last_place_seen +'">'+ value.municipality_last_place_seen +'</option>');
+                        });
+                    }
+                    else {
+                        @foreach( $villages_s as $village )
+                            $("#village-searches-filter").append('<option value="{{ $village["municipality_last_place_seen"] }}"> {{ $village["municipality_last_place_seen"] }} </option>');
+                        @endforeach
+                    }
+                   }
+                });
+            }
+            else {
+                @foreach( $villages_s as $village )
+                    $("#village-searches-filter").append('<option value="{{ $village["municipality_last_place_seen"] }}"> {{ $village["municipality_last_place_seen"] }} </option>');
+                @endforeach
+            }
+
+            searches_table.columns(5).search( '' ).draw();
+        });
+
+        // municipality last place seen filter
+        $('#village-searches-filter').on('change', function () {
+            searches_table.columns(5).search( this.value ).draw();
+        });
+
+        // Searches filters - CLOSE
+        //----------------------------------------------------------------
+
+        //----------------------------------------------------------------
+        // Practices filters - OPEN
+        // status filter
+        $('#status-practices-filter').on('change', function () {
+            practices_table.columns(1).search( this.value ).draw();
+        } );
+
+        // dates range filter
+        $('input[name="dates-practices-filter"]').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerIncrement: 5,
+            startDate: moment().startOf('hour'),
+            autoUpdateInput: true,
+            autoApply: true,
+            showDropdowns: true,
+            opens: 'center',
+            drops: 'up',
+            alwaysShowCalendars: true,
+            ranges: {
+                "{{ __('daterangepicker.last_7_days') }}": [moment().subtract(6, 'days'), moment()],
+                "{{ __('daterangepicker.last_15_days') }}": [moment().subtract(14, 'days'), moment()],
+                "{{ __('daterangepicker.last_30_days') }}": [moment().subtract(29, 'days'), moment()],
+                "{{ __('daterangepicker.this_month') }}": [moment().startOf('month'), moment().endOf('month')],
+                "{{ __('daterangepicker.last_month') }}": [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                "{{ __('daterangepicker.this_year') }}": [moment().startOf('year'), moment().endOf('year')],
+                "{{ __('daterangepicker.last_year') }}": [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')],
+            },
+            locale: {
+                format: 'YYYY-MM-DD HH:mm:ss',
+                separator: ' | ',
+                customRangeLabel: "{{ __('daterangepicker.personalized') }}",
+                firstDay: 1,
+                applyLabel: "{{ __('actions.save') }}",
+                cancelLabel: "{{ __('actions.cancel') }}",
+                daysOfWeek: [
+                    "{{ __('daterangepicker.sunday') }}",
+                    "{{ __('daterangepicker.monday') }}",
+                    "{{ __('daterangepicker.tuesday') }}",
+                    "{{ __('daterangepicker.wednesday') }}",
+                    "{{ __('daterangepicker.thursday') }}",
+                    "{{ __('daterangepicker.friday') }}",
+                    "{{ __('daterangepicker.saturday') }}"
+                ],
+                monthNames: [
+                    "{{ __('daterangepicker.january') }}",
+                    "{{ __('daterangepicker.february') }}",
+                    "{{ __('daterangepicker.march') }}",
+                    "{{ __('daterangepicker.april') }}",
+                    "{{ __('daterangepicker.may') }}",
+                    "{{ __('daterangepicker.june') }}",
+                    "{{ __('daterangepicker.july') }}",
+                    "{{ __('daterangepicker.august') }}",
+                    "{{ __('daterangepicker.september') }}",
+                    "{{ __('daterangepicker.october') }}",
+                    "{{ __('daterangepicker.november') }}",
+                    "{{ __('daterangepicker.december') }}",
+                ],
+            }
+        });
+        // apply button dates range filter
+        $('input[name="dates-practices-filter"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val( picker.startDate.format('YYYY-MM-DD HH:mm:ss') + ' | ' + picker.endDate.format('YYYY-MM-DD HH:mm:ss') );
+            practices_table.draw();
+        });
+
+        // cancel button dates range filter
+        $('input[name="dates-practices-filter"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val( '' );
+            practices_table.draw();
+        });
+
+        $('input[name="dates-practices-filter"]').val( '' );
+
+        $.fn.dataTable.ext.search.push(
+            function (settings, data, dataIndex) {
+                var min = $('input[name="dates-practices-filter"]').data('daterangepicker').startDate._d;
+                var max = $('input[name="dates-practices-filter"]').data('daterangepicker').endDate._d;
+
+                var startDate = 'invalid';
+                if( data[6] != '' ) {
+                    startDate = new Date(data[6]);
+                }
+
+                var endDate = 'invalid';
+                if( data[7] != '' ) {
+                    endDate = new Date(data[7]);
+                }
+
+                if( min == null && max == null ) { console.log(1); return true; }
+                if( $('input[name="dates-practices-filter"]').val() == '' ) { console.log(2); return true; }
+                if( min == null && endDate <= max ) { console.log(3); return true; }
+                if( max == null && startDate >= min ) { console.log(4); return true; }
+                if( endDate <= max && startDate >= min ) { console.log(5); return true; }
+                if( startDate >= min && startDate <= max && endDate == 'invalid' ) { console.log(6); return true; }
+                console.log(7); return false;
+            }
+        );
+
+        // regions filter
+        $('#region-practices-filter').on('change', function () {
+            practices_table.columns(4).search( this.value ).draw();
+
+            $("#village-practices-filter").empty();
+            $("#village-practices-filter").append('<option value=""> {{ __("actions.filter_by_village") }} </option>');
+
+            var region = $(this).val();
+            if (region) {
+                $.ajax({
+                   type: "GET",
+                   url: "{{url('get-villages-practices-list')}}?region=" + region,
+                   success:function(res) {
+                    if(res) {
+                        $.each(res,function(key, value) {
+                            $("#village-practices-filter").append('<option value="'+ value.municipality_last_place_seen +'">'+ value.municipality_last_place_seen +'</option>');
+                        });
+                    }
+                    else {
+                        @foreach( $villages_p as $village )
+                            $("#village-practices-filter").append('<option value="{{ $village["municipality_last_place_seen"] }}"> {{ $village["municipality_last_place_seen"] }} </option>');
+                        @endforeach
+                    }
+                   }
+                });
+            }
+            else {
+                @foreach( $villages_p as $village )
+                    $("#village-practices-filter").append('<option value="{{ $village["municipality_last_place_seen"] }}"> {{ $village["municipality_last_place_seen"] }} </option>');
+                @endforeach
+            }
+
+            practices_table.columns(5).search( '' ).draw();
+        });
+
+        // municipality last place seen filter
+        $('#village-practices-filter').on('change', function () {
+            practices_table.columns(5).search( this.value ).draw();
+        });
+
+        // Searches filters - CLOSE
+        //----------------------------------------------------------------
 
     });
 

@@ -16,10 +16,16 @@ class SearchController extends Controller
      */
     public function index()
     {
-        $searches = Search::all()->where('is_a_practice', '=', 0);
+        $searches  = Search::all()->where('is_a_practice', '=', 0);
         $practices = Search::all()->where('is_a_practice', '=', 1);
 
-        return view('searches.index', compact('searches', 'practices'));
+        $regions_s = Search::select('region')->whereNotNull('region')->where('is_a_practice', '=', 0)->groupBy('region')->get();
+        $regions_p = Search::select('region')->whereNotNull('region')->where('is_a_practice', '=', 1)->groupBy('region')->get();
+
+        $villages_s = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('is_a_practice', '=', 0)->groupBy('municipality_last_place_seen')->get();
+        $villages_p = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('is_a_practice', '=', 1)->groupBy('municipality_last_place_seen')->get();
+
+        return view('searches.index', compact('searches', 'practices', 'regions_s', 'regions_p', 'villages_s', 'villages_p'));
     }
 
     /**
@@ -341,5 +347,27 @@ class SearchController extends Controller
 
         return redirect('searches/'.$search->id)
         ->with('success', $search->id_search.__('messages.updated'));
+    }
+
+    public function getVillagesSearchesList(Request $request)
+    {
+        if (empty($request)) {
+            $villages_s = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('is_a_practice', '=', 0)->groupBy('municipality_last_place_seen')->get();
+        } else {
+            $villages_s = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('region', $request->region)->where('is_a_practice', '=', 0)->groupBy('municipality_last_place_seen')->get();
+        }
+
+        return response()->json($villages_s);
+    }
+
+    public function getVillagesPracticesList(Request $request)
+    {
+        if (empty($request)) {
+            $villages_p = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('is_a_practice', '=', 1)->groupBy('municipality_last_place_seen')->get();
+        } else {
+            $villages_p = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('region', $request->region)->where('is_a_practice', '=', 1)->groupBy('municipality_last_place_seen')->get();
+        }
+
+        return response()->json($villages_p);
     }
 }

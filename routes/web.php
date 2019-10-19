@@ -26,6 +26,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('lost-people', 'LostPersonController');
     Route::post('/lost-people/{id}', 'LostPersonController@update');
 
+    Route::get('get-villages-searches-list', 'SearchController@getVillagesSearchesList');
+    Route::get('get-villages-practices-list', 'SearchController@getVillagesPracticesList');
+
     Route::get('/privacy', function () {
         return view('parts.privacy');
     });

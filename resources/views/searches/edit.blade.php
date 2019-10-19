@@ -133,25 +133,25 @@
                 <option value="" {{ ($search->region === '') ? 'selected' : '' }}>
                   {{ __('forms.chose_option') }}
                 </option>
-                <option value="01" {{ ($search->region === '01') ? 'selected' : '' }}>
+                <option value="01 - Centre" {{ ($search->region == '01 - Centre') ? 'selected' : '' }}>
                   01 - Centre
                 </option>
-                <option value="02" {{ ($search->regin === '02') ? 'selected' : '' }}>
+                <option value="02 - Girona" {{ ($search->regin == '02 - Girona') ? 'selected' : '' }}>
                   02 - Girona
                 </option>
-                <option value="03" {{ ($search->region === '03') ? 'selected' : '' }}>
+                <option value="03 - Lleida" {{ ($search->region == '03 - Lleida') ? 'selected' : '' }}>
                   03 - Lleida
                 </option>
-                <option value="04" {{ ($search->region === '04') ? 'selected' : '' }}>
+                <option value="04 - Metropolitana Nord" {{ ($search->region == '04 - Metropolitana Nord') ? 'selected' : '' }}>
                    04 - Metropolitana Nord
                  </option>
-                <option value="05" {{ ($search->region === '05') ? 'selected' : '' }}>
+                <option value="05 - Metropolitana Sud" {{ ($search->region == '05 - Metropolitana Sud') ? 'selected' : '' }}>
                   05 - Metropolitana Sud
                 </option>
-                <option value="06" {{ ($search->region === '06') ? 'selected' : '' }}>
+                <option value="06 - Tarragona" {{ ($search->region == '06 - Tarragona') ? 'selected' : '' }}>
                   06 - Tarragona
                 </option>
-                <option value="07" {{ ($search->region === '07') ? 'selected' : '' }}>
+                <option value="07 - Terres Ebre" {{ ($search->region == '07 - Terres Ebre') ? 'selected' : '' }}>
                   07 - Terres Ebre
                 </option>
             </select>
