@@ -16,7 +16,7 @@ class SearchController extends Controller
      */
     public function index()
     {
-        $searches  = Search::all()->where('is_a_practice', '=', 0);
+        $searches = Search::all()->where('is_a_practice', '=', 0);
         $practices = Search::all()->where('is_a_practice', '=', 1);
 
         $regions_s = Search::select('region')->whereNotNull('region')->where('is_a_practice', '=', 0)->groupBy('region')->get();
