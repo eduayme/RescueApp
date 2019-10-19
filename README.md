@@ -31,6 +31,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://alfathony.com"><img src="https://avatars1.githubusercontent.com/u/14884603?v=4" width="100px;" alt="Alfathony"/><br /><sub><b>Alfathony</b></sub></a><br /><a href="https://github.com/eduayme/Rescue-app/commits?author=alfathony" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/co00co"><img src="https://avatars3.githubusercontent.com/u/11724652?v=4" width="100px;" alt="co00co"/><br /><sub><b>co00co</b></sub></a><br /><a href="#ideas-co00co" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=co00co" title="Documentation">📖</a> <a href="https://github.com/eduayme/Rescue-app/issues?q=author%3Aco00co" title="Bug reports">🐛</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=co00co" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/EnricSalaPujolar"><img src="https://avatars3.githubusercontent.com/u/56341832?v=4" width="100px;" alt="EnricSalaPujolar"/><br /><sub><b>EnricSalaPujolar</b></sub></a><br /><a href="#ideas-EnricSalaPujolar" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/eduayme/Rescue-app/commits?author=EnricSalaPujolar" title="Documentation">📖</a> <a href="#design-EnricSalaPujolar" title="Design">🎨</a></td>
+  </tr>
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

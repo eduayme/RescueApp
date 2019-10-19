@@ -103,6 +103,17 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "EnricSalaPujolar",
+      "name": "EnricSalaPujolar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56341832?v=4",
+      "profile": "https://github.com/EnricSalaPujolar",
+      "contributions": [
+        "ideas",
+        "doc",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 5,
