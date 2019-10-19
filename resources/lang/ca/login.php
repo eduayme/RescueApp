@@ -3,7 +3,7 @@
 return [
     'login'    => 'Iniciar sessió',
     'email'    => 'Email',
-    'password' => 'Contrassenya',
+    'password' => 'Contrasenya',
     'remember' => "Recorda'm",
-    'forgot'   => 'He oblidat la meva contrassenya',
+    'forgot'   => 'He oblidat la meva contrasenya',
 ];
