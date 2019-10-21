@@ -23,9 +23,9 @@ return [
     'last_7_days'  => 'Últimos 7 días',
     'last_15_days' => 'Últimos 15 días',
     'last_30_days' => 'Últimos 30 días',
-    'this_month'   => 'Este mes',
-    'last_month'   => 'Último mes',
-    'this_year'    => 'Este año',
-    'last_year'    => 'Último año',
+    'this_month'   => 'Mes actual',
+    'last_month'   => 'Mes anterior',
+    'this_year'    => 'Año actual',
+    'last_year'    => 'Año anterior',
     'personalized' => 'Personalizado',
 ];

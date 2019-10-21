@@ -23,9 +23,9 @@ return [
     'last_7_days'  => 'Últims 7 dies',
     'last_15_days' => 'Últims 15 dies',
     'last_30_days' => 'Últims 30 dies',
-    'this_month'   => 'Aquest mes',
-    'last_month'   => 'Últim mes',
-    'this_year'    => 'Aquest any',
-    'last_year'    => 'Últim any',
+    'this_month'   => 'Mes actual',
+    'last_month'   => 'Mes anterior',
+    'this_year'    => 'Any actual',
+    'last_year'    => 'Any anterior',
     'personalized' => 'Personalitzat',
 ];

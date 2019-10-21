@@ -24,8 +24,8 @@ return [
     'last_15_days' => 'Last 15 days',
     'last_30_days' => 'Last 30 days',
     'this_month'   => 'This month',
-    'last_month'   => 'Last month',
+    'last_month'   => 'Previous month',
     'this_year'    => 'This year',
-    'last_year'    => 'Last year',
+    'last_year'    => 'Previous year',
     'personalized' => 'Custom',
 ];
