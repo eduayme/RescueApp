@@ -14,6 +14,10 @@ RescueApp is a web application designed to help emergency services in registerin
 You can find all the documentation [in the wiki](https://github.com/eduayme/RescueApp/wiki).
 
 
+## License
+The RescueApp is an open-source software licensed under the [GPL v3 license](https://opensource.org/licenses/GPL-3.0).
+
+
 ## Contributors
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -41,8 +45,3 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-
-## License
-The RescueApp is an open-source software licensed under the [GPL v3 license](https://opensource.org/licenses/GPL-3.0).
-
