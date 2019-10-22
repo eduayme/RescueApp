@@ -10,8 +10,11 @@
 RescueApp is a web application designed to help emergency services in registering and documenting tasks to rescue lost people. It started as a pioneer project for the Catalonia firefighters developed as a final year project in my Bachelor's Degree in Computer Engineering.
 
 
-## Contributors ✨
+## Documentation
+You can find all the documentation [in the wiki](https://github.com/eduayme/RescueApp/wiki).
 
+
+## Contributors
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -38,59 +41,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-
-## Installation
-1) [Install Composer 1.8](https://getcomposer.org/download)
-
-2) [Install MySQL 5.7](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
-
-3) [Install PHP 7.3.5](https://www.php.net/downloads.php)
-
-4) [Install Laravel 5.8](https://laravel.com/docs/5.8/installation)
-
-5) Create the database `aplicatiu_bombers` in mysql
-```
-mysql> CREATE DATABASE aplicatiu_bombers;
-```
-
-6) Clone this repository
-```
-> git clone git@github.com:eduayme/RescueApp.git
-```
-
-7) Create new file `.env` inside the project folder with the same content as `.env.example`
-```
-> cp .env.example .env
-```
-
-8) Change mysql and mail credentials in `.env`
-```
-DB_USERNAME = mysql_username
-DB_PASSWORD = mysql_password
-
-MAIL_USERNAME = email_username
-MAIL_PASSWORD = email_password
-```
-
-9) Open terminal inside the project folder and run
-```
-> composer update --no-scripts
-```
-
-10) In the same terminal migrate the database
-```
-> php artisan migrate
-```
-
-11) Finally run the application
-```
-> php artisan serve
-```
-
-12) Open a browser and go to the url `127.0.0.1:8000` or `localhost:8000`
-
-13) RescueApp is running! :)
 
 
 ## License
