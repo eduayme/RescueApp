@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3.5",
+        "binarytorch/larecipe": "^2.2",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.5",
         "jenssegers/date": "^3.5",
