@@ -1,2 +1,3 @@
 - ## Get Started
-    - [Overview](/{{route}}/{{version}}/overview)
+    - [Description](/{{route}}/{{version}}/description)
+    - [Installation](/{{route}}/{{version}}/installation)
