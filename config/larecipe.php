@@ -118,7 +118,7 @@ return [
         'fav'            => '',     // eg: fav.png
         'fa_v4_shims'    => true, // Add FontAwesome v4 shims prevent BC break
         'colors'         => [
-            'primary'    => '#787AF6',
+            'primary'    => '#bf0712',
             'secondary'  => '#2b9cf2'
         ],
     ],
@@ -166,7 +166,7 @@ return [
         'default'           => 'disqus',
         'services'          => [
             'disqus'        => [
-                'site_name' => '', // yoursite.disqus.com
+                'site_name' => 'RescueApp', // yoursite.disqus.com
             ]
         ]
     ],

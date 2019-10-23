@@ -5,7 +5,7 @@
 
         <!-- Navbar logo - OPEN -->
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Aplicatiu de Recerques') }}
+            {{ config('app.name') }}
         </a>
         <!-- Navbar logo - CLOSE -->
 

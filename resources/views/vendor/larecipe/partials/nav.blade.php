@@ -1,5 +1,5 @@
 <div class="fixed pin-t pin-x z-40">
-    <div class="bg-gradient-primary text-white h-1"></div>
+    <div class="bg-primary text-white h-1"></div>
 
     <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
         <div class="flex items-center flex-no-shrink">
@@ -51,7 +51,9 @@
                 {{-- account --}}
                 <larecipe-dropdown>
                     <larecipe-button type="white" class="ml-2">
-                        {{ auth()->user()->name ?? 'Account' }} <i class="fa fa-angle-down"></i>
+                        <i class="fas fa-user"></i>
+                        {{ auth()->user()->name ?? 'Account' }}
+                        <i class="fa fa-angle-down"></i>
                     </larecipe-button>
 
                     <template slot="list">

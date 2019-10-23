@@ -13,7 +13,7 @@
         <!-- CSRF Token - CLOSE -->
 
         <!-- Title - OPEN -->
-        <title> @yield ('title', 'AR') | {{ config('app.name', 'Aplicatiu de Recerques') }} </title>
+        <title> @yield ('title') | {{ config('app.name') }} </title>
         <!-- Title - CLOSE -->
 
         <!-- Fonts - OPEN -->

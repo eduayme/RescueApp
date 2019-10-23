@@ -6,21 +6,31 @@
         <ul class="list-inline mb-0">
 
             <li class="list-inline-item">
-                © <?php echo date("Y"); ?> {{ config('app.name', 'Aplicatiu de Recerques') }}
+                © <?php echo date("Y"); ?> {{ config('app.name') }}
             </li>
 
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                v1.0
+                <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.0" target="_blank">
+                    v1.0
+                </a>
             </li>
 
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="https://github.com/eduayme/Aplicatiu-de-Recerques" target="_blank">
+                <a href="https://github.com/eduayme/RescueApp" target="_blank">
                     <span class="octicon octicon-mark-github"></span>
                     {{ __('main.open_source') }}
+                </a>
+            </li>
+
+            <li class="list-inline-item"> | </li>
+
+            <li class="list-inline-item">
+                <a href="/docs">
+                    {{ __('main.documentation') }}
                 </a>
             </li>
 

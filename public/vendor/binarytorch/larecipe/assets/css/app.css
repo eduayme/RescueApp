@@ -2,6 +2,27 @@
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
+/**************************************/
+
+/**************** Root ****************/
+
+/**************************************/
+
+:root {
+  --black: #22292f;
+  --white: white;
+  --grey: #6c757d;
+  --primary: #bf0712;
+  --secondary: #2b9cf2;
+  --info: #03a9f4;
+  --warning: #fb6340;
+  --success: #21b978;
+  --danger: #f5365c;
+  --sidebar: #f4f5f7;
+  --documentation: rgb(254, 254, 254);
+  --navbar: white;
+}
+
 /* Document
    ========================================================================== */
 
@@ -1461,27 +1482,6 @@ div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
   -webkit-box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
           box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-}
-
-/**************************************/
-
-/**************** Root ****************/
-
-/**************************************/
-
-:root {
-  --black: #22292f;
-  --white: white;
-  --grey: #6c757d;
-  --primary: #bf0712;
-  --secondary: #2b9cf2;
-  --info: #03a9f4;
-  --warning: #fb6340;
-  --success: #21b978;
-  --danger: #f5365c;
-  --sidebar: #f4f5f7;
-  --documentation: rgb(254, 254, 254);
-  --navbar: white;
 }
 
 /**************************************/
