@@ -1,11 +1,12 @@
 # Description
 
-- [About](#about)
-- [Who is it for?](#for)
-- [Is it useful for any type of research?](#useful)
-- [Percentage](#percentage)
+- [About](/{{route}}/{{version}}/description#about)
+- [Who is it for?](/{{route}}/{{version}}/description#for)
+- [Is it useful for any type of research?](/{{route}}/{{version}}/description#useful)
+- [Percentage](/{{route}}/{{version}}/description#percentage)
 
 ---
+
 
 <a name="about"></a>
 ## About
