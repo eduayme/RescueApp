@@ -14,9 +14,9 @@ return [
     */
 
     'docs'        => [
-        'route'   => '/docs',
-        'path'    => '/resources/docs',
-        'landing' => 'description',
+        'route'      => '/docs',
+        'path'       => '/resources/docs',
+        'landing'    => 'description',
         'middleware' => ['web'],
     ],
 
@@ -35,8 +35,8 @@ return [
     'versions'      => [
         'default'   => '1.0',
         'published' => [
-            '1.0'
-        ]
+            '1.0',
+        ],
     ],
 
     /*
@@ -53,7 +53,7 @@ return [
 
     'settings'       => [
         'auth'       => false,
-        'ga_id'      => ''
+        'ga_id'      => '',
     ],
 
     /*
@@ -71,7 +71,7 @@ return [
 
     'cache'       => [
         'enabled' => false,
-        'period'  => 5
+        'period'  => 5,
     ],
 
     /*
@@ -92,13 +92,13 @@ return [
         'default'       => 'algolia',
         'engines'       => [
             'internal'  => [
-                'index' => ['h2', 'h3']
+                'index' => ['h2', 'h3'],
             ],
             'algolia'   => [
                 'key'   => '',
-                'index' => ''
-            ]
-        ]
+                'index' => '',
+            ],
+        ],
     ],
 
     /*
@@ -119,7 +119,7 @@ return [
         'fa_v4_shims'    => true, // Add FontAwesome v4 shims prevent BC break
         'colors'         => [
             'primary'    => '#bf0712',
-            'secondary'  => '#2b9cf2'
+            'secondary'  => '#2b9cf2',
         ],
     ],
 
@@ -145,7 +145,7 @@ return [
             'url'         => '',
             'image'       => '',
             'description' => '',
-        ]
+        ],
     ],
 
    /*
@@ -167,8 +167,8 @@ return [
         'services'          => [
             'disqus'        => [
                 'site_name' => 'RescueApp', // yoursite.disqus.com
-            ]
-        ]
+            ],
+        ],
     ],
 
     /*
@@ -185,5 +185,5 @@ return [
 
     'packages' => [
         'path' => 'larecipe-components',
-    ]
+    ],
 ];
