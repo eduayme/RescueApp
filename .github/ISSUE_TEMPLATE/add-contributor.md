@@ -1,7 +1,7 @@
 ---
 name: Add contributor
 about: Add a contributor for this project
-title: "[Add contributor] Username"
+title: "[ADD CONTRIBUTOR] Username"
 labels: Add contributor
 assignees: ''
 
