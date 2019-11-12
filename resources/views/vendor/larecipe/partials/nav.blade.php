@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <div class="fixed pin-t pin-x z-40">
     <div class="bg-primary text-white h-1"></div>
 
@@ -29,6 +31,7 @@
                 <i class="fab fa-github"></i>
             </larecipe-button>
 
+            <!--
             {{-- versions dropdown --}}
             <larecipe-dropdown>
                 <larecipe-button type="primary" class="flex">
@@ -46,14 +49,19 @@
                 </template>
             </larecipe-dropdown>
             {{-- /versions dropdown --}}
+            -->
 
             @auth
                 {{-- account --}}
                 <larecipe-dropdown>
                     <larecipe-button type="white" class="ml-2">
-                        <i class="fas fa-user"></i>
-                        {{ auth()->user()->name ?? 'Account' }}
-                        <i class="fa fa-angle-down"></i>
+                        <!-- User avatar - OPEN -->
+                        <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="avatar">
+                        <!-- User avatar - CLOSE -->
+
+                        <!-- User name - OPEN -->
+                        {{ auth()->user()->name ?? 'Account' }} <span class="caret"></span>
+                        <!-- User name - CLOSE -->
                     </larecipe-button>
 
                     <template slot="list">
@@ -68,7 +76,7 @@
             @endauth
 
             <!-- Home section - OPEN -->
-            <larecipe-button tag="a" href="{{ route('index') }}" type="grey" class="mx-2 px-4" style="margin-left: 50px">
+            <larecipe-button tag="a" href="{{ route('index') }}" type="grey" class="mx-2 px-4" style="margin-left: 50px !important">
                 <i class="fas fa-home"></i>
             </larecipe-button>
             <!-- Home section - OPEN -->
