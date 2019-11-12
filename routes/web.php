@@ -39,15 +39,18 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('locale-ca', function () {
     session(['locale' => 'ca']);
+
     return back();
 });
 
 Route::get('locale-es', function () {
     session(['locale' => 'es']);
+
     return back();
 });
 
 Route::get('locale-en', function () {
     session(['locale' => 'en']);
+
     return back();
 });
