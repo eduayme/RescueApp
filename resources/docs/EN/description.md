@@ -9,7 +9,7 @@
 
 
 <a name="about"></a>
-## About
+## [About](/{{route}}/{{version}}/description#about)
 RescueApp will allow you to organise, coordinate and document a search. It will incorporate tools for analysis and support for decision making, allowing several people with different rights to work in the same search simultaneously based on their profile. At the same time it will allow you to have multiple active searches and work in several of them simultaneously in different places on the territory.
 
 The application will incorporate GIS tools as much of the information to process is geospatial and when viewing many of the data it does about cartography.
@@ -24,17 +24,17 @@ The application will incorporate GIS tools as much of the information to process
 
 
 <a name="for"></a>
-## Who is it for?
+## [Who is it for?](/{{route}}/{{version}}/description#for)
 It is mainly aimed at emergency services or who is responsible for coordinating and organising a search for missing persons.
 
 
 <a name="useful"></a>
-## Is it useful for any type of research?
+## [Is it useful for any type of research?](/{{route}}/{{version}}/description#useful)
 For simple searches, data collection and search closure tools may only be used, but all this information will go to the database from where it can be used for analysis tools and be useful in subsequent services.
 
 For more complex searches, cartographic and task logging tools will be much more useful as they will be used to organize and coordinate a large number of players.
 
 
 <a name="percentage"></a>
-## What percentage of the project are we finished?
+## [What percentage of the project are we finished?](/{{route}}/{{version}}/description#percentage)
 Approximately, in the [v1.0](https://github.com/eduayme/RescueApp/releases/tag/v1.0) version, 25% of the project is already completed and currently in a testing phase.

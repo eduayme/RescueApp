@@ -1,40 +1,28 @@
-# Description
+# Descripció
 
-- [About](/{{route}}/{{version}}/description#about)
-- [Who is it for?](/{{route}}/{{version}}/description#for)
-- [Is it useful for any type of research?](/{{route}}/{{version}}/description#useful)
-- [Percentage](/{{route}}/{{version}}/description#percentage)
+- [Sobre el projecte](/{{route}}/{{version}}/description#about)
+- [Per a què serveix?](/{{route}}/{{version}}/description#for)
+- [Serveix per qualsevol tipus de recerca?](/{{route}}/{{version}}/description#useful)
+- [Percentatge](/{{route}}/{{version}}/description#percentage)
 
 ---
 
 
 <a name="about"></a>
-## About
-RescueApp will allow you to organise, coordinate and document a search. It will incorporate tools for analysis and support for decision making, allowing several people with different rights to work in the same search simultaneously based on their profile. At the same time it will allow you to have multiple active searches and work in several of them simultaneously in different places on the territory.
-
-The application will incorporate GIS tools as much of the information to process is geospatial and when viewing many of the data it does about cartography.
-
-- **Organise**: The application will allow you to have all tools in the same web platform so that the work methodology is greatly simplified. Being able to work simultaneously from different places allows the information to be shared at the moment among all the players. Being a web browser only requires a browser to access it and in this way allows it to be more accessible from any device with a data connection.
-
-- **Coordinate**: It will allow you to control all the resources destined for the service and keep track of them live from the cartographic tools. You will have the tools to plan tasks to execute, monitor and once you have finished registering them.
-
-- **Document**: All the information entry will be stored in the database. From here you can check any previous service. You can generate reports on paper of the data, the tasks carried out and the generated maps.
-
-- **Analysis tools**: From the person's description data a dynamic Vulnerability Table will be generated in a way that allows a more proportionate response to each specific situation. A second analysis tool will be the generation of Behavior Patterns from the profiles of the disappeared ones so that they are updated as you go by incorporating all the new services.
+## [Sobre el projecte](/{{route}}/{{version}}/description#about)
+...
 
 
 <a name="for"></a>
-## Who is it for?
-It is mainly aimed at emergency services or who is responsible for coordinating and organising a search for missing persons.
+## [Per a què serveix?](/{{route}}/{{version}}/description#for)
+...
 
 
 <a name="useful"></a>
-## Is it useful for any type of research?
-For simple searches, data collection and search closure tools may only be used, but all this information will go to the database from where it can be used for analysis tools and be useful in subsequent services.
-
-For more complex searches, cartographic and task logging tools will be much more useful as they will be used to organize and coordinate a large number of players.
+## [Serveix per qualsevol tipus de recerca?](/{{route}}/{{version}}/description#useful)
+...
 
 
 <a name="percentage"></a>
-## What percentage of the project are we finished?
-Approximately, in the [v1.0](https://github.com/eduayme/RescueApp/releases/tag/v1.0) version, 25% of the project is already completed and currently in a testing phase.
+## [Percentatge](/{{route}}/{{version}}/description#percentage)
+...

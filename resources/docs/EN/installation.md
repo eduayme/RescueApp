@@ -11,7 +11,7 @@
 
 
 <a name="install"></a>
-## Install dependencies
+## [Install dependencies](/{{route}}/{{version}}/installation#install)
 
 1) [Install Composer 1.8](https://getcomposer.org/download)
 
@@ -21,7 +21,7 @@
 
 
 <a name="setup-project"></a>
-## Setup the project
+## [Setup the project](/{{route}}/{{version}}/installation#setup-project)
 
 4) Clone this repository
 ```php
@@ -43,7 +43,7 @@
 
 
 <a name="setup-database"></a>
-## Setup the database
+## [Setup the database](/{{route}}/{{version}}/installation#setup-database)
 
 ### Option 1) MySQL
 
@@ -90,7 +90,7 @@ DB_PASSWORD   = postgresql_password
 
 
 <a name="setup-email"></a>
-## Setup EMAIL configuration
+## [Setup EMAIL configuration](/{{route}}/{{version}}/installation#setup-email)
 
 ### Option 1) Gmail via SMTP
 
@@ -113,7 +113,7 @@ MAIL_ENCRYPTION  = tls
 
 
 <a name="run-app"></a>
-## Run the app
+## [Run the app](/{{route}}/{{version}}/installation#run-app)
 
 14) Open a terminal inside the project folder and migrate the database
 ```php
@@ -133,7 +133,8 @@ MAIL_ENCRYPTION  = tls
 
 
 <a name="conf-server"></a>
-## Configuration for the server
+## [Configuration for the server](/{{route}}/{{version}}/installation#conf-server)
+
 Installation example on subdomain RescueApp.mysite.com
 
 ### Option 1) Apache2

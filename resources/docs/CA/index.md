@@ -1,3 +1,4 @@
 - ## Get Started
-    - [Description](/{{route}}/{{version}}/description)
-    - [Installation](/{{route}}/{{version}}/installation)
+    - [Descripció](/{{route}}/{{version}}/description)
+    - [Instal·lació](/{{route}}/{{version}}/installation)
+    - [Objectius](/{{route}}/{{version}}/objectives)
