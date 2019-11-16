@@ -1,5 +1,3 @@
-@extends('layouts.app')
-
 <div class="fixed pin-t pin-x z-40">
     <div class="bg-primary text-white h-1"></div>
 
@@ -31,7 +29,6 @@
                 <i class="fab fa-github"></i>
             </larecipe-button>
 
-            <!--
             {{-- versions dropdown --}}
             <larecipe-dropdown>
                 <larecipe-button type="primary" class="flex">
@@ -49,16 +46,11 @@
                 </template>
             </larecipe-dropdown>
             {{-- /versions dropdown --}}
-            -->
 
             @auth
                 {{-- account --}}
                 <larecipe-dropdown>
                     <larecipe-button type="white" class="ml-2">
-                        <!-- User avatar - OPEN -->
-                        <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="avatar">
-                        <!-- User avatar - CLOSE -->
-
                         <!-- User name - OPEN -->
                         {{ auth()->user()->name ?? 'Account' }} <span class="caret"></span>
                         <!-- User name - CLOSE -->
