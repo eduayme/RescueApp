@@ -35,6 +35,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/service', function () {
         return view('parts.service');
     });
+
+    Route::prefix('manage')->group(function () {
+        Route::get('/users', 'UserController@index')->name('users');
+    });
 });
 
 Route::get('locale-ca', function () {

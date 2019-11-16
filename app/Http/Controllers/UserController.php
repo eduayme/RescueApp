@@ -6,12 +6,24 @@ use Auth;
 use File;
 use Illuminate\Http\Request;
 use Image;
+use App\User;
 
 class UserController extends Controller
 {
     public function profile()
     {
         return view('auth.profile', ['user' => Auth::user()]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::orderBy('id', 'desc')->get();
+        return view('users_manage.index', compact('users'));
     }
 
     public function update_user(Request $request)
