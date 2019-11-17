@@ -150,6 +150,15 @@
                             </a>
                             <!-- Profile button - CLOSE -->
 
+                            @if (Auth::user()->profile == 'admin')
+                                <!-- Management bottom - OPEN -->
+                                <a class="dropdown-item" href="{{ route('users') }}">
+                                    <span class="octicon octicon-tools"></span>
+                                    {{ __('main.users') }}
+                                </a>
+                                <!-- Management bottom - CLOSE -->
+                            @endif
+
                             <!-- Divider - OPEN -->
                             <div class="dropdown-divider"></div>
                             <!-- Divider - CLOSE -->

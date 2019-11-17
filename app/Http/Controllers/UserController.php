@@ -22,8 +22,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('id', 'desc')->get();
-        return view('users_manage.index', compact('users'));
+        // get user
+        $user = Auth::user();
+
+        if( $user->profile == 'admin' ) {
+            $users = User::orderBy('id', 'desc')->get();
+            return view('users_manage.index', compact('users'));
+        }
+        else {
+            return back()
+            ->with('error', __('messages.not_allowed'));
+        }
     }
 
     public function update_user(Request $request)

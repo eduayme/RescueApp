@@ -29,6 +29,12 @@ return [
     'status_closed'                => 'Cerrado',
     'profile'                      => 'Perfil',
     'photo'                        => 'Foto',
+    'users'                        => 'Usuarios',
+    'user'                         => 'Usuario',
+    'created_at'                   => 'Creado',
+    'updated_at'                   => 'Actualizado',
+    'last_login_at'                => 'Última sesión',
+    'last_login_ip'                => 'Última IP',
     'privacy_policy_detail'        => 'La presente Política de Privacidad establece los términos en que esta aplicación usa y protege la información que es proporcionada por sus usuarios al momento de utilizar este sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal
     con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con
     los términos de este documento. Sin embargo esta Política de Privacidad puede cambiar con el tiempo o

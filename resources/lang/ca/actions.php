@@ -1,7 +1,9 @@
 <?php
 
 return [
+    'actions'           => 'Accions',
     'add'               => 'Afegir',
+    'view'              => 'Veure',
     'edit'              => 'Editar',
     'delete'            => 'Eliminar',
     'cancel'            => 'Cancelar',

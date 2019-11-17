@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Html\Request;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'dni', 'profile', 'password',
+        'name',
+        'email',
+        'dni',
+        'profile',
+        'password',
+        'created_at',
+        'updated_at',
+        'last_login_at',
+        'last_login_ip',
     ];
 
     /**
@@ -35,4 +44,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

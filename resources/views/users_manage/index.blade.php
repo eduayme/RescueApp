@@ -29,10 +29,30 @@
 
     <!-- Alerts - CLOSE -->
 
+    <!-- Language for dates - OPEN -->
+    @php
+        \Date::setLocale(Session::get('locale'));
+    @endphp
+    <!-- Language for dates - CLOSE -->
+
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
 
-        <h3 class="margin-bottom-sm text-center"> Users </h3>
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                <h3 class="margin-bottom-sm text-center">
+                    {{ __('main.users') }}
+                </h3>
+            </div>
+            <div class="col-sm text-right">
+                <button type="button" class="btn btn-sm btn-outline-primary">
+                    <span class="octicon octicon-plus"></span>
+                    {{ __('actions.add') . ' ' . __('main.user') }}
+                </button>
+            </div>
+        </div>
 
         <!-- Users table - OPEN -->
         <table class="table dt-responsive nowrap table-hover text-center"
@@ -41,11 +61,12 @@
             <!-- Table header - OPEN -->
             <thead>
                 <tr>
-                    <th scope="col"> {{ __('forms.id') }} </th>
-                    <th scope="col"> {{ __('forms.name') }} </th>
-                    <th scope="col"> {{ __('forms.email') }} </th>
-                    <th scope="col"> {{ __('forms.profile') }} </th>
-                    <th scope="col"> {{ __('forms.actions') }} </th>
+                    <th scope="col"> ID </th>
+                    <th scope="col"> {{ __('register.name') }} </th>
+                    <th scope="col"> {{ __('login.email') }} </th>
+                    <th scope="col"> {{ __('register.profile') }} </th>
+                    <th scope="col"> {{ __('main.last_login_at') }} </th>
+                    <th scope="col"> {{ __('actions.actions') }} </th>
                 </tr>
             </thead>
             <!-- Table header - CLOSE -->
@@ -67,9 +88,31 @@
                             {{ $user->profile }}
                         </td>
                         <td>
-                            <button type="button" class="btn btn-sm btn-outline-dark"> View </button>
-                            <button type="button" class="btn btn-sm btn-outline-dark"> Edit </button>
-                            <button type="button" class="btn btn-sm btn-outline-danger"> Delete </button>
+                            @php
+                                $date = new Date($user->last_login_at);
+                                echo $date->format('H:i | d F Y');
+                            @endphp
+                        </td>
+                        <td>
+                            <!-- View user button - OPEN -->
+                            <button type="button" class="btn btn-sm btn-outline-dark">
+                                <span class="octicon octicon-eye"></span>
+                                {{ __('actions.view') }}
+                            </button>
+                            <!-- View user button - CLOSE -->
+                            <!-- Edit user button - OPEN -->
+                            <button type="button" class="btn btn-sm btn-outline-dark">
+                                <span class="octicon octicon-pencil"></span>
+                                {{ __('actions.edit') }}
+                            </button>
+                            <!-- Edit user button - CLOSE -->
+                            <!-- Delete user button - OPEN -->
+                            <button type="button" class="btn btn-sm btn-outline-danger
+                            <?php if ($user->id == Auth::user()->id){ ?> disabled" onclick="this.disabled=true <?php } ?>">
+                                <span class="octicon octicon-trashcan"></span>
+                                {{ __('actions.delete') }}
+                            </button>
+                            <!-- Delete user button - CLOSE -->
                         </td>
                     </tr>
                 @endforeach

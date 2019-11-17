@@ -10,6 +10,7 @@
             <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
             <button type="submit" class="btn btn-outline-primary margin-right
             <?php if ($search->status == 1){ ?> disabled" onclick="this.disabled=true <?php   } ?>" >
+                <span class="octicon octicon-plus"></span>
                 {{ __('actions.add_lost_person') }}
             </button>
         </form>
