@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Auth;
 use File;
 use Illuminate\Http\Request;
 use Image;
-use App\User;
 
 class UserController extends Controller
 {
@@ -25,11 +25,11 @@ class UserController extends Controller
         // get user
         $user = Auth::user();
 
-        if( $user->profile == 'admin' ) {
+        if ($user->profile == 'admin') {
             $users = User::orderBy('id', 'desc')->get();
+
             return view('users_manage.index', compact('users'));
-        }
-        else {
+        } else {
             return back()
             ->with('error', __('messages.not_allowed'));
         }
