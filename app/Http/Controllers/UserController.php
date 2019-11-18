@@ -72,4 +72,29 @@ class UserController extends Controller
 
         return view('auth.profile', ['user' => Auth::user()]);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        $currentUser = \Auth::user()->profile;
+
+        if ($currentUser == 'admin') {
+            $user->delete();
+
+            return back()
+            ->with('success', $user->name.__('messages.deleted'));
+        }
+        else {
+            return back()
+            ->with('error', __('messages.not_allowed'));
+        }
+    }
 }

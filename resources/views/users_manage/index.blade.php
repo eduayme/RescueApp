@@ -107,12 +107,8 @@
                             </button>
                             <!-- Edit user button - CLOSE -->
                             <!-- Delete user button - OPEN -->
-                            <button type="button" class="btn btn-sm btn-outline-danger
-                            <?php if ($user->id == Auth::user()->id){ ?> disabled" onclick="this.disabled=true <?php } ?>">
-                                <span class="octicon octicon-trashcan"></span>
-                                {{ __('actions.delete') }}
-                            </button>
-                            <!-- Delete user button - CLOSE -->
+                            @include('users_manage.buttons.delete_user')
+                            <!-- Delete user modal - CLOSE -->
                         </td>
                     </tr>
                 @endforeach

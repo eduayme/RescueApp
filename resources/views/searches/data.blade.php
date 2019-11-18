@@ -35,62 +35,62 @@
         <span data-toggle="modal" href="#myModal">
             <button class="btn btn-outline-danger margin-left" href="#myModal"
             data-toggle="tooltip" data-placement="top" title="{{ __('actions.delete') }}">
-            <span class="octicon octicon-trashcan"></span>
-        </button>
-    </span>
-    <!-- Delete search button- CLOSE -->
+                <span class="octicon octicon-trashcan"></span>
+            </button>
+        </span>
+        <!-- Delete search button- CLOSE -->
 
-    <!-- Delete search modal - OPEN -->
-    <form action="{{ route('searches.destroy', $search->id) }}" method="post" style="display: inline">
-        @csrf
-        @method('DELETE')
+        <!-- Delete search modal - OPEN -->
+        <form action="{{ route('searches.destroy', $search->id) }}" method="post" style="display: inline">
+            @csrf
+            @method('DELETE')
 
-        <!-- Modal - OPEN -->
-        <div id="myModal" class="modal fade">
-            <div class="modal-dialog modal-confirm">
+            <!-- Modal - OPEN -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog modal-confirm">
 
-                <!-- Modal content - OPEN -->
-                <div class="modal-content">
+                    <!-- Modal content - OPEN -->
+                    <div class="modal-content">
 
-                    <!-- Modal header - OPEN -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
+                        <!-- Modal header - OPEN -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                        </div>
+                        <!-- Modal header - CLOSE -->
+
+                        <!-- Modal body - OPEN -->
+                        <div class="modal-body text-center">
+                            <h4>
+                                {{ __('messages.are_you_sure') }}
+                            </h4>
+                        </div>
+                        <!-- Modal body - CLOSE -->
+
+                        <!-- Modal footer - OPEN -->
+                        <div class="modal-footer">
+                            <a class="btn btn-light" data-dismiss="modal">
+                                {{ __('actions.cancel') }}
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                {{ __('actions.delete') }}
+                            </button>
+                        </div>
+                        <!-- Modal footer - CLOSE -->
+
                     </div>
-                    <!-- Modal header - CLOSE -->
-
-                    <!-- Modal body - OPEN -->
-                    <div class="modal-body text-center">
-                        <h4>
-                            {{ __('messages.are_you_sure') }}
-                        </h4>
-                    </div>
-                    <!-- Modal body - CLOSE -->
-
-                    <!-- Modal footer - OPEN -->
-                    <div class="modal-footer">
-                        <a class="btn btn-light" data-dismiss="modal">
-                            {{ __('actions.cancel') }}
-                        </a>
-                        <button type="submit" class="btn btn-danger">
-                            {{ __('actions.delete') }}
-                        </button>
-                    </div>
-                    <!-- Modal footer - CLOSE -->
+                    <!-- Modal content - CLOSE -->
 
                 </div>
-                <!-- Modal content - CLOSE -->
-
             </div>
-        </div>
-        <!-- Modal - CLOSE -->
+            <!-- Modal - CLOSE -->
 
-    </form>
-    <!-- Delete search - CLOSE -->
+        </form>
+        <!-- Delete search - CLOSE -->
 
-</div>
-<!-- Align right - CLOSE -->
+    </div>
+    <!-- Align right - CLOSE -->
 
 </div>
 <!-- Top buttons - CLOSE -->

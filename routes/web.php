@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::prefix('manage')->group(function () {
+        Route::resource('users', 'UserController');
         Route::get('/users', 'UserController@index')->name('users');
     });
 });
