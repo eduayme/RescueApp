@@ -1,7 +1,7 @@
 <!-- Delete user button - OPEN -->
-<span data-toggle="modal" <?php if ($user->id != Auth::user()->id){ ?> href="#myModal-{{ $user->id }}" <?php } ?>>
+<span data-toggle="modal" <?php if ($user->id != Auth::user()->id){ ?> href="#deleteModal-{{ $user->id }}" <?php } ?>>
     <button type="button" class="btn btn-sm btn-outline-danger
-    <?php if ($user->id == Auth::user()->id){ ?> disabled" onclick="this.disabled=true"  href="#myModal-{{ $user->id }} <?php } ?>">
+    <?php if ($user->id == Auth::user()->id){ ?> disabled" onclick="this.disabled=true <?php } ?>">
         <span class="octicon octicon-trashcan"></span>
         {{ __('actions.delete') }}
     </button>
@@ -13,7 +13,7 @@
     @method('DELETE')
 
     <!-- Modal - OPEN -->
-    <div id="myModal-{{ $user->id }}" class="modal fade">
+    <div id="deleteModal-{{ $user->id }}" class="modal fade">
         <div class="modal-dialog modal-confirm">
 
             <!-- Modal content - OPEN -->

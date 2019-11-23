@@ -4563,6 +4563,7 @@ button.close {
 }
 .modal-dialog {
     position: relative;
+    min-width: 700px;
     width: auto;
     margin: .5rem;
     pointer-events: none
@@ -4662,6 +4663,7 @@ button.close {
     height: 50px;
     overflow: scroll
 }
+
 @media (min-width:576px) {
     .modal-dialog {
         max-width: 500px;

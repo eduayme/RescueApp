@@ -90,21 +90,15 @@
                         <td>
                             @php
                                 $date = new Date($user->last_login_at);
-                                echo $date->format('H:i | d F Y');
+                                echo $date->format('H:i | d M. Y');
                             @endphp
                         </td>
                         <td>
                             <!-- View user button - OPEN -->
-                            <button type="button" class="btn btn-sm btn-outline-dark">
-                                <span class="octicon octicon-eye"></span>
-                                {{ __('actions.view') }}
-                            </button>
+                            @include('users_manage.buttons.view_user')
                             <!-- View user button - CLOSE -->
                             <!-- Edit user button - OPEN -->
-                            <button type="button" class="btn btn-sm btn-outline-dark">
-                                <span class="octicon octicon-pencil"></span>
-                                {{ __('actions.edit') }}
-                            </button>
+                            @include('users_manage.buttons.edit_user')
                             <!-- Edit user button - CLOSE -->
                             <!-- Delete user button - OPEN -->
                             @include('users_manage.buttons.delete_user')

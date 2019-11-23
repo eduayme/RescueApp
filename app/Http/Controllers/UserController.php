@@ -91,8 +91,7 @@ class UserController extends Controller
 
             return back()
             ->with('success', $user->name.__('messages.deleted'));
-        }
-        else {
+        } else {
             return back()
             ->with('error', __('messages.not_allowed'));
         }
