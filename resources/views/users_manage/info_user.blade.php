@@ -1,7 +1,7 @@
 <div class="container pad-sm">
     <div class="row">
         <div class="col-12">
-            <img src="/uploads/avatars/{{ $user->avatar }}" class="rounded mx-auto d-block"
+            <img src="/uploads/avatars/{{ $user->avatar }}" class="rounded-circle"
             height="200" width="200" id="avatar_img">
         </div>
         <div class="col-12">

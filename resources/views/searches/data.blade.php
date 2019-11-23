@@ -150,14 +150,14 @@
         <div class="margin-top-sm-min">
             <h5 style="display: inline">
                 <b>
-                    {{ $search->user_creation->name }}
+                    {{ $search->user_creation->name }},
                 </b>
             </h5>
             <h6 style="display: inline">
-                <b> ({{ $search->user_creation->dni }}),
+                <b>
                     @php
                         $date = new Date($search->date_start);
-                        echo $date->format('H:i | d F Y');
+                        echo $date->format('H:i | d M. Y');
                     @endphp
                 </b>
             </h6>
@@ -175,7 +175,7 @@
                 @else
                     @php
                         $date = new Date($search->date_start);
-                        echo $date->format('H:i | d F Y');
+                        echo $date->format('H:i | d M. Y');
                     @endphp
                 @endif
             </b>
@@ -195,15 +195,14 @@
         <div class="margin-top-sm-min">
             <h5 style="display: inline">
                 <b>
-                    {{ $search->user_last_modification->name }}
+                    {{ $search->user_last_modification->name }},
                 </b>
             </h5>
             <h6 style="display: inline">
                 <b>
-                    ({{ $search->user_last_modification->dni }}),
                     @php
                         $date = new Date($search->date_last_modification);
-                        echo $date->format('H:i | d F Y');
+                        echo $date->format('H:i | d M. Y');
                     @endphp
                 </b>
             </h6>
@@ -221,7 +220,7 @@
                 @else
                     @php
                         $date = new Date($search->date_finalization);
-                        echo $date->format('H:i | d F Y');
+                        echo $date->format('H:i | d M. Y');
                     @endphp
                 @endif
             </b>
@@ -293,7 +292,7 @@
                             <span class="octicon octicon-clock"></span>
                             @php
                                 $date = new Date($search->date_last_place_seen);
-                                echo $date->format('H:i | d F Y');
+                                echo $date->format('H:i | d M. Y');
                             @endphp
                         </p>
                     @endif

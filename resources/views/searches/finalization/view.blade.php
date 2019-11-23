@@ -49,7 +49,7 @@
                 <b> ({{ $search->user_finalization->dni }}),
                     @php
                         $date = new Date($search->date_finalization);
-                        echo $date->format('H:i | d F Y');
+                        echo $date->format('H:i | d M. Y');
                     @endphp
                 </b>
             </h5>

@@ -40,7 +40,7 @@
                         <b>
                             @php
                                 $date = new Date($search->date_start);
-                                echo $date->format('d F Y');
+                                echo $date->format('d M. Y');
                             @endphp
                         </b>
                     </span>
@@ -66,7 +66,7 @@
                         <b>
                             @php
                                 $date = new Date($search->date_finalization);
-                                echo $date->format('d F Y');
+                                echo $date->format('d M. Y');
                             @endphp
                         </b>
                     </span>

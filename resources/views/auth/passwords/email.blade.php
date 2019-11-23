@@ -2,96 +2,75 @@
 
 @section('content')
 
-  <!-- Alerts - OPEN -->
+    <!-- Alerts - OPEN -->
+    @include('parts.alerts')
+    <!-- Alerts - CLOSE -->
 
-  <!-- Success - OPEN -->
-  @if( session('success') )
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <div class="container text-center">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session('success') }}
-      </div>
-    </div>
-  <!-- Success - CLOSE -->
+    <!-- Content -->
+    <div class="container margin-top padding-bottom">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
-  <!-- Error - OPEN -->
-  @elseif( session()->get('error') )
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <div class="container text-center">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          {{ session()->get('error') }}
-      </div>
-    </div>
-  @endif
-  <!-- Error - CLOSE -->
+                <!-- Card - OPEN -->
+                <div class="card">
 
-  <!-- Alerts - CLOSE -->
+                    <!-- Card header - OPEN -->
+                    <div class="card-header">
+                        {{ __('notifications.reset_pas') }}
+                    </div>
+                    <!-- Card header - CLOSE -->
 
-  <!-- Content -->
-  <div class="container margin-top padding-bottom">
-      <div class="row justify-content-center">
-          <div class="col-md-8">
+                    <!-- Card body - OPEN -->
+                    <div class="card-body">
 
-              <!-- Card - OPEN -->
-              <div class="card">
+                        <!-- Form login - OPEN -->
+                        <form method="POST" action="{{ route('password.email') }}">
+                            @csrf
 
-                  <!-- Card header - OPEN -->
-                  <div class="card-header">
-                    {{ __('notifications.reset_pas') }}
-                  </div>
-                  <!-- Card header - CLOSE -->
+                            <!-- Email - OPEN -->
+                            <div class="form-group row">
 
-                  <!-- Card body - OPEN -->
-                  <div class="card-body">
+                                <!-- Email label - OPEN -->
+                                <label for="email" class="col-md-4 col-form-label text-md-right">
+                                  {{ __('login.email') }}
+                                </label>
+                                <!-- Email label - CLOSE -->
 
-                      <!-- Form login - OPEN -->
-                      <form method="POST" action="{{ route('password.email') }}">
-                          @csrf
+                                <!-- Email input - OPEN -->
+                                <div class="col-md-6">
 
-                          <!-- Email - OPEN -->
-                          <div class="form-group row">
+                                    <!-- Input - OPEN -->
+                                    <input id="email" type="email" name="email" value="{{ old('email') }}"
+                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autofocus>
+                                    <!-- Input - CLOSE -->
 
-                            <!-- Email label - OPEN -->
-                            <label for="email" class="col-md-4 col-form-label text-md-right">
-                              {{ __('login.email') }}
-                            </label>
-                            <!-- Email label - CLOSE -->
+                                    <!-- Show errors input - OPEN -->
+                                    @if( $errors->has('email') )
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong> {{ $errors->first('email') }} </strong>
+                                        </span>
+                                    @endif
+                                    <!-- Show errors input - CLOSE -->
 
-                            <!-- Email input - OPEN -->
-                            <div class="col-md-6">
-
-                                <!-- Input - OPEN -->
-                                <input id="email" type="email" name="email" value="{{ old('email') }}"
-                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autofocus>
-                                <!-- Input - CLOSE -->
-
-                                <!-- Show errors input - OPEN -->
-                                @if( $errors->has('email') )
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong> {{ $errors->first('email') }} </strong>
-                                    </span>
-                                @endif
-                                <!-- Show errors input - CLOSE -->
+                                </div>
+                                <!-- Email input - CLOSE -->
 
                             </div>
-                            <!-- Email input - CLOSE -->
+                            <!-- Email - CLOSE -->
 
-                          </div>
-                          <!-- Email - CLOSE -->
+                            <!-- Send link button - OPEN -->
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
 
-                          <!-- Send link button - OPEN -->
-                          <div class="form-group row mb-0">
-                              <div class="col-md-8 offset-md-4">
-
-                                  <!-- Button - OPEN -->
-                                  <button type="submit" class="btn btn-primary">
-                                      {{ __('notifications.send_link') }}
-                                  </button>
-                                  <!-- Button - CLOSE -->
+                                    <!-- Button - OPEN -->
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('notifications.send_link') }}
+                                    </button>
+                                    <!-- Button - CLOSE -->
 
                               </div>
-                          </div>
-                          <!-- Send link button - CLOSE -->
+                            </div>
+                            <!-- Send link button - CLOSE -->
 
                         </form>
                         <!-- Form register - CLOSE -->
