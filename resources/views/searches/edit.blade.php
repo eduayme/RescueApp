@@ -11,6 +11,10 @@
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
 
+        <!-- Go back button - OPEN -->
+        @include('buttons.go_back')
+        <!-- Go back button - CLOSE -->
+
         <!-- Form - OPEN -->
         {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
 

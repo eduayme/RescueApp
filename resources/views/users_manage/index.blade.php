@@ -73,13 +73,13 @@
                         </td>
                         <td>
                             <!-- View user button - OPEN -->
-                            @include('users_manage.buttons.view_user')
+                            @include('buttons.view_user')
                             <!-- View user button - CLOSE -->
                             <!-- Edit user button - OPEN -->
-                            @include('users_manage.buttons.edit_user')
+                            @include('buttons.edit_user')
                             <!-- Edit user button - CLOSE -->
                             <!-- Delete user button - OPEN -->
-                            @include('users_manage.buttons.delete_user')
+                            @include('buttons.delete_user')
                             <!-- Delete user modal - CLOSE -->
                         </td>
                     </tr>

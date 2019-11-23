@@ -4,17 +4,15 @@
     <!-- Align left - OPEN -->
     <div class="col justify-content-start">
 
-        <!-- Add lost person - OPEN -->
-        <form action="{{ route('lost-people.create') }}" method="put" style="display: inline">
-            @csrf
-            <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
-            <button type="submit" class="btn btn-outline-primary margin-right
-            <?php if ($search->status == 1){ ?> disabled" onclick="this.disabled=true <?php   } ?>" >
-                <span class="octicon octicon-plus"></span>
-                {{ __('actions.add_lost_person') }}
-            </button>
-        </form>
-        <!-- Add lost person - CLOSE -->
+        <!-- Type service title - OPEN -->
+        <h3 class="margin_top_bottom">
+            @if( $search->is_a_practice == 0 )
+                {{ __('main.search') }}
+            @else
+                {{ __('main.practice') }}
+            @endif
+        </h3>
+        <!-- Type service title - CLOSE -->
 
     </div>
     <!-- Align left - CLOSE -->
@@ -22,20 +20,32 @@
     <!-- Align right - OPEN -->
     <div class="col text-right">
 
+        <!-- Add lost person - OPEN -->
+        <form action="{{ route('lost-people.create') }}" method="put" style="display: inline">
+            @csrf
+            <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
+            <button type="submit" class="btn btn-outline-primary margin-left margin_top_bottom btn-sm
+            <?php if ($search->status == 1){ ?> disabled" onclick="this.disabled=true <?php   } ?>" >
+                <span class="octicon octicon-plus"></span>
+                {{ __('actions.add_lost_person') }}
+            </button>
+        </form>
+        <!-- Add lost person - CLOSE -->
+
         <!-- Edit search button - OPEN -->
         <a href="{{ URL::to('searches/' . $search->id . '/edit') }}"
-            role="button" class="btn btn-outline-secondary margin-right
-            <?php if ($search->status == 1){ ?> disabled <?php   } ?>"
-            data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}">
+        role="button" class="btn btn-outline-secondary margin-left margin_top_bottom btn-sm
+        <?php if ($search->status == 1){ ?> disabled <?php   } ?>">
             <span class="octicon octicon-pencil"></span>
+            {{ __('actions.edit') }}
         </a>
         <!-- Edit search button - CLOSE -->
 
         <!-- Delete search button- OPEN -->
-        <span data-toggle="modal" href="#myModal">
-            <button class="btn btn-outline-danger margin-left" href="#myModal"
-            data-toggle="tooltip" data-placement="top" title="{{ __('actions.delete') }}">
+        <span data-toggle="modal" href="#deleteModal">
+            <button class="btn btn-outline-danger margin-left margin_top_bottom btn-sm">
                 <span class="octicon octicon-trashcan"></span>
+                {{ __('actions.delete') }}
             </button>
         </span>
         <!-- Delete search button- CLOSE -->
@@ -46,7 +56,7 @@
             @method('DELETE')
 
             <!-- Modal - OPEN -->
-            <div id="myModal" class="modal fade">
+            <div id="deleteModal" class="modal fade">
                 <div class="modal-dialog modal-confirm">
 
                     <!-- Modal content - OPEN -->
@@ -94,16 +104,6 @@
 
 </div>
 <!-- Top buttons - CLOSE -->
-
-<!-- Type service title - OPEN -->
-<h3 class="margin-top">
-    @if( $search->is_a_practice == 0 )
-        {{ __('main.search') }}
-    @else
-        {{ __('main.practice') }}
-    @endif
-</h3>
-<!-- Type service title - CLOSE -->
 
 <!-- Info search - OPEN -->
 <div class="row margin-top-sm">

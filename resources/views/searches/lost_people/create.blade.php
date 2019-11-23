@@ -17,25 +17,9 @@
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
 
-        <!-- Top buttons - OPEN -->
-        <div class="row">
-
-            <!-- Align left - OPEN -->
-            <div class="col justify-content-start">
-
-                <!-- Go back - OPEN -->
-                <a href="{{ URL::previous() }}" role="button" class="btn btn-outline-secondary margin-right
-                <?php if ($search->status == 1){ ?> disabled <?php   } ?>"
-                data-toggle="tooltip" data-placement="top" title="{{ __('actions.go_back') }}">
-                    <span class="octicon octicon-arrow-left"></span>
-                </a>
-                <!-- Go back - CLOSE -->
-
-            </div>
-            <!-- Align left - CLOSE -->
-
-        </div>
-        <!-- Top buttons - CLOSE -->
+        <!-- Go back button - OPEN -->
+        @include('buttons.go_back')
+        <!-- Go back button - CLOSE -->
 
         <!-- Form - OPEN -->
         <form class="margin-top" method="post" action="{{ route('lost-people.store') }}" enctype="multipart/form-data">

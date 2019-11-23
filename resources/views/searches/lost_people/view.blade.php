@@ -18,16 +18,16 @@
     <div class="container margin-top padding-bottom">
 
         <!-- Top buttons - OPEN -->
-        <div class="row">
+        <div class="row margin_top_bottom">
 
             <!-- Align left - OPEN -->
             <div class="col justify-content-start">
 
                 <!-- Go back - OPEN -->
                 <a href="{{ URL::to('searches/' . $search->id) }}"
-                role="button" class="btn btn-outline-secondary margin-right"
-                data-toggle="tooltip" data-placement="top" title="{{ __('actions.go_back') }}">
+                role="button" class="btn btn-outline-secondary margin-right btn-sm">
                     <span class="octicon octicon-arrow-left"></span>
+                    {{ __('actions.go_back') }}
                 </a>
                 <!-- Go back - CLOSE -->
 
@@ -39,17 +39,17 @@
 
                 <!-- Edit search button - OPEN -->
                 <a href="{{ URL::to(Request::path().'/edit') }}"
-                    role="button" class="btn btn-outline-secondary margin-right"
-                    data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}">
+                    role="button" class="btn btn-outline-secondary margin-left btn-sm">
                     <span class="octicon octicon-pencil"></span>
+                    {{ __('actions.edit') }}
                 </a>
                 <!-- Edit search button - CLOSE -->
 
                 <!-- Delete search button- OPEN -->
-                <span data-toggle="modal" href="#myModal">
-                    <button class="btn btn-outline-danger margin-left" href="#myModal"
-                    data-toggle="tooltip" data-placement="top" title="{{ __('actions.delete') }}">
+                <span data-toggle="modal" href="#deleteModal">
+                    <button class="btn btn-outline-danger margin-left btn-sm" href="#deleteModal">
                         <span class="octicon octicon-trashcan"></span>
+                        {{ __('actions.delete') }}
                     </button>
                 </span>
                 <!-- Delete search button- CLOSE -->
@@ -60,7 +60,7 @@
                     @method('DELETE')
 
                     <!-- Modal - OPEN -->
-                    <div id="myModal" class="modal fade">
+                    <div id="deleteModal" class="modal fade">
                         <div class="modal-dialog modal-confirm">
 
                             <!-- Modal content - OPEN -->

@@ -11,6 +11,10 @@
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
 
+        <!-- Go back button - OPEN -->
+        @include('buttons.go_back')
+        <!-- Go back button - CLOSE -->
+
         <!-- Form - OPEN -->
         {{ Form::model($lost_person, array('action' => array('LostPersonController@update', $lost_person, 'files'=> true), 'files'=> true)) }}
 

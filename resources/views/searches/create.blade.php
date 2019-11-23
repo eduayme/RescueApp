@@ -11,6 +11,10 @@
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
 
+        <!-- Top buttons - OPEN -->
+        @include('buttons.go_back')
+        <!-- Top buttons - CLOSE -->
+
         <!-- Form - OPEN -->
         <form method="post" action="{{ route('searches.store') }}">
 
