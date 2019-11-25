@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use View;
 use Auth;
 use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Image;
 
 class UserController extends Controller
@@ -33,6 +35,51 @@ class UserController extends Controller
             return back()
             ->with('error', __('messages.not_allowed'));
         }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'      => ['required', 'string', 'min:2', 'max:50'],
+            'email'     => ['required', 'string', 'email', 'max:50', 'unique:users'],
+            'dni'       => ['required', 'string', 'min:8', 'max:10', 'unique:users'],
+            'profile'   => ['required', 'string'],
+            'password'  => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            'name.required'      => __('messages.required'),
+            'name.min'           => __('messages.min'),
+            'name.max'           => __('messages.max'),
+            'email.required'     => __('messages.required'),
+            'email.email'        => __('messages.email'),
+            'email.max'          => __('messages.max'),
+            'email.unique'       => __('messages.unique'),
+            'dni.min'            => __('messages.min8'),
+            'dni.max'            => __('messages.max10'),
+            'dni.unique'         => __('messages.unique'),
+            'password.min'       => __('messages.min8'),
+            'password.confirmed' => __('messages.confirmed'),
+        ]);
+
+        $user = User::create([
+            'name'      => $request->get('name'),
+            'email'     => $request->get('email'),
+            'dni'       => $request->get('dni'),
+            'profile'   => $request->get('profile'),
+            'password'  => Hash::make($request->get('password')),
+        ]);
+
+        $user->save();
+        $users = User::orderBy('id', 'desc')->get();
+
+        return back()
+        ->with('success', $user->name.__('messages.added'));
     }
 
     public function update_user(Request $request)
@@ -91,7 +138,8 @@ class UserController extends Controller
 
             return back()
             ->with('success', $user->name.__('messages.deleted'));
-        } else {
+        }
+        else {
             return back()
             ->with('error', __('messages.not_allowed'));
         }

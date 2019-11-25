@@ -5,6 +5,7 @@ return [
     'min'             => 'Este campo debe tener al menos 2 caracteres.',
     'min8'            => 'Este campo debe tener al menos 8 caracteres.',
     'max'             => 'Este campo no puede tener más de 50 caracteres.',
+    'max10'           => 'Este campo no puede tener más de 10 caracteres.',
     'email'           => 'Este campo debe tener formato de correo electrónico',
     'confirmed'       => 'Este campo no coincide con la confirmación.',
     'unique'          => 'Este campo debe ser único en la tabla de datos.',

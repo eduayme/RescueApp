@@ -5,6 +5,7 @@ return [
     'min'             => 'This field must contain at least 2 characters.',
     'min8'            => 'This field must contain at least 8 characters.',
     'max'             => 'This field must contain less than 50 characters.',
+    'max10'           => 'This field must contain less than 10 characters.',
     'email'           => 'This field must contain an email address',
     'confirmed'       => 'This field does not match the confirmation.',
     'unique'          => 'This field must be unique in the data table.',

@@ -42,7 +42,7 @@
                                 <div class="col-md-6">
 
                                     <!-- Input - OPEN -->
-                                    <input id="name" type="text" name="name"
+                                    <input id="name" type="text" name="name" value="{{ old('name') }}"
                                     class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                     required autofocus>
                                     <!-- Input - CLOSE -->
@@ -138,7 +138,7 @@
                                 <div class="col-md-6">
 
                                     <!-- Dropdown selector - OPEN -->
-                                    <select id="profile" class="form-control" name="profile" required>
+                                    <select id="profile" class="form-control" name="profile" value="{{ old('profile') }}" required>
                                         <option value=""> {{ __('register.chose_profile') }} </option>
                                         <option value="firefighter"> {{ __('register.firefighter') }} </option>
                                         <option value="operator"> {{ __('register.control_room_operator') }} </option>

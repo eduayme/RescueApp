@@ -25,10 +25,9 @@
                 </h3>
             </div>
             <div class="col-sm text-right">
-                <button type="button" class="btn btn-sm btn-outline-primary">
-                    <span class="octicon octicon-plus"></span>
-                    {{ __('actions.add') . ' ' . __('main.user') }}
-                </button>
+                <!-- Add user button - OPEN -->
+                @include('buttons.add_user')
+                <!-- Add user button - CLOSE -->
             </div>
         </div>
 
