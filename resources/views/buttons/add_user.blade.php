@@ -138,11 +138,21 @@
 
                             <!-- Dropdown selector - OPEN -->
                             <select id="profile" class="form-control" name="profile" value="{{ old('profile') }}" required>
-                                <option value=""> {{ __('register.chose_profile') }} </option>
-                                <option value="firefighter"> {{ __('register.firefighter') }} </option>
-                                <option value="operator"> {{ __('register.control_room_operator') }} </option>
-                                <option value="commander"> {{ __('register.commander') }} </option>
-                                <option value="guest"> {{ __('register.guest') }} </option>
+                                <option value="">
+                                    {{ __('register.chose_profile') }}
+                                </option>
+                                <option value="firefighter" @if (old('profile') == "firefighter") {{ 'selected' }} @endif>
+                                    {{ __('register.firefighter') }}
+                                </option>
+                                <option value="operator" @if (old('profile') == "operator") {{ 'selected' }} @endif>
+                                    {{ __('register.control_room_operator') }}
+                                </option>
+                                <option value="commander" @if (old('commander') == "firefighter") {{ 'selected' }} @endif>
+                                    {{ __('register.commander') }}
+                                </option>
+                                <option value="guest" @if (old('guest') == "firefighter") {{ 'selected' }} @endif>
+                                    {{ __('register.guest') }}
+                                </option>
                             </select>
                             <!-- Dropdown selector - CLOSE -->
 
@@ -173,7 +183,7 @@
                         <div class="col-md-6">
 
                             <!-- Input - OPEN -->
-                            <input id="password" type="password" name="password"
+                            <input id="password" type="password" name="password" value="{{ old('password') }}"
                             class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
                             <!-- Input - CLOSE -->
 
