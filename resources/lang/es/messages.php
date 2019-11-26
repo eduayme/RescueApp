@@ -14,6 +14,7 @@ return [
     'added'           => ' se ha añadido correctamente.',
     'deleted'         => ' se ha eliminado correctamente.',
     'not_allowed'     => 'No tienes permisos para hacer esta acción.',
+    'error_form'      => 'Error al entrar datos en el formulario.',
     'no_searches'     => 'No se ha registrado ninguna búsqueda.',
     'no_practices'    => 'No se ha registrado ninguna práctica.',
     'are_you_sure'    => '¿Está seguro? Esta acción no se podrá deshacer.',

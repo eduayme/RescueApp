@@ -37,7 +37,17 @@
                         {{ __('register.profile') }}:
                     </div>
                     <h5>
-                        {{ $user->profile }}
+                        @if( $user->profile == 'admin' )
+                            {{ __('register.admin') }}
+                        @elseif( $user->profile == 'firefighter' )
+                            {{ __('register.firefighter') }}
+                        @elseif( $user->profile == 'operator' )
+                            {{ __('register.operator') }}
+                        @elseif( $user->profile == 'commander' )
+                            {{ __('register.commander') }}
+                        @elseif( $user->profile == 'guest' )
+                            {{ __('register.guest') }}
+                        @endif
                     </h5>
                 </div>
             </div>

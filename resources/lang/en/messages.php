@@ -14,6 +14,7 @@ return [
     'added'           => ' added successfully.',
     'deleted'         => ' deleted successfully.',
     'not_allowed'     => 'You do not have permission to perform this action.',
+    'error_form'      => 'Error in the input of the form.',
     'no_searches'     => 'No searches have been registered.',
     'no_practices'    => 'No practices have been registered.',
     'are_you_sure'    => 'Are you sure? This action cannot be undone.',

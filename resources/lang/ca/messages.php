@@ -14,6 +14,7 @@ return [
     'added'           => " s'ha afegit correctament.",
     'deleted'         => " s'ha eliminat correctament.",
     'not_allowed'     => 'No tens permisos per fer aquesta acció.',
+    'error_form'      => 'Error al entrar dades en el formulari.',
     'no_searches'     => 'No hi ha registrada cap recerca.',
     'no_practices'    => 'No hi ha registrada cap pràctica.',
     'are_you_sure'    => 'Està segur? Aquesta acció no es podrà desfer.',

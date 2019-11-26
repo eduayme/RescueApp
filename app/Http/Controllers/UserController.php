@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use View;
 use Auth;
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Image;
+use Validator;
 
 class UserController extends Controller
 {
@@ -46,7 +46,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name'      => ['required', 'string', 'min:2', 'max:50'],
             'email'     => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'dni'       => ['required', 'string', 'min:8', 'max:10', 'unique:users'],
@@ -66,6 +66,12 @@ class UserController extends Controller
             'password.min'       => __('messages.min8'),
             'password.confirmed' => __('messages.confirmed'),
         ]);
+
+        if ($validator->fails())
+        {
+            return back()->withInput()->withErrors($validator)
+            ->with('error', __('messages.error_form'));
+        }
 
         $user = User::create([
             'name'      => $request->get('name'),
@@ -138,8 +144,7 @@ class UserController extends Controller
 
             return back()
             ->with('success', $user->name.__('messages.deleted'));
-        }
-        else {
+        } else {
             return back()
             ->with('error', __('messages.not_allowed'));
         }

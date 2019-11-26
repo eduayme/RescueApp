@@ -61,7 +61,7 @@
                 <!-- Begin datetime - OPEN -->
                 <div class="form-group col-md-3">
                     <label for="date_start"> {{ __('forms.begin_date') }} </label>
-                    <input type="text" class="form-control" name="date_start" value=""/>
+                    <input type="text" class="form-control" name="date_start" value="{{ old('date_start') }}"/>
                 </div>
                 <!-- Begin datetime - CLOSE -->
 
@@ -70,7 +70,8 @@
 
                     <label for="id_search"> {{ __('forms.id_search') }} </label>
 
-                    <input type="text" class="form-control {{ $errors->has('id_search') ? ' is-invalid' : '' }}" name="id_search"/>
+                    <input type="text" class="form-control {{ $errors->has('id_search') ? ' is-invalid' : '' }}"
+                    name="id_search" value="{{ old('id_search') }}"/>
 
                     <!-- Show errors input - OPEN -->
                     @if( $errors->has('id_search') )
@@ -90,14 +91,30 @@
                     <label for="region"> {{ __('forms.region') }} </label>
 
                     <select id="region" class="form-control" name="region">
-                        <option value=""> {{ __('forms.chose_option') }} </option>
-                        <option value="01 - Centre"> 01 - Centre </option>
-                        <option value="02 - Girona"> 02 - Girona </option>
-                        <option value="03 - Lleida"> 03 - Lleida </option>
-                        <option value="04 - Metropolitana Nord"> 04 - Metropolitana Nord </option>
-                        <option value="05 - Metropolitana Sud"> 05 - Metropolitana Sud </option>
-                        <option value="06 - Tarragona"> 06 - Tarragona </option>
-                        <option value="07 - Terres Ebre"> 07 - Terres Ebre </option>
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="01 - Centre" @if (old('region') == "01 - Centre") {{ 'selected' }} @endif>
+                            01 - Centre
+                        </option>
+                        <option value="02 - Girona" @if (old('region') == "02 - Girona") {{ 'selected' }} @endif>
+                            02 - Girona
+                        </option>
+                        <option value="03 - Lleida" @if (old('region') == "03 - Lleida") {{ 'selected' }} @endif>
+                            03 - Lleida
+                        </option>
+                        <option value="04 - Metropolitana Nord" @if (old('region') == "04 - Metropolitana Nord") {{ 'selected' }} @endif>
+                            04 - Metropolitana Nord
+                        </option>
+                        <option value="05 - Metropolitana Sud" @if (old('region') == "05 - Metropolitana Sud") {{ 'selected' }} @endif>
+                            05 - Metropolitana Sud
+                        </option>
+                        <option value="06 - Tarragona" @if (old('region') == "06 - Tarragona") {{ 'selected' }} @endif>
+                            06 - Tarragona
+                        </option>
+                        <option value="07 - Terres Ebre" @if (old('region') == "07 - Terres Ebre") {{ 'selected' }} @endif>
+                            07 - Terres Ebre
+                        </option>
                     </select>
 
                 </div>
@@ -121,9 +138,13 @@
                     <label for="is_lost_person"> {{ __('forms.is_the_lost_person') }} </label>
 
                     <select id="is_lost_person" class="form-control" name="is_lost_person">
-                        <option value=""> {{ __('forms.chose_option') }} </option>
-                        <option value="0"> {{ __('actions.no') }} </option>
-                        <option value="1"> {{ __('actions.yes') }} </option>
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('is_lost_person') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('is_lost_person') == "1") {{ 'selected' }} @endif> {{ __('actions.yes') }} </option>
                     </select>
 
                 </div>
@@ -134,8 +155,8 @@
                     <label for="is_contact_person"> {{ __('forms.is_the_contact_person') }} </label>
                     <select id="is_contact_person" class="form-control" name="is_contact_person">
                         <option value=""> {{ __('forms.chose_option') }} </option>
-                        <option value="0"> No </option>
-                        <option value="1"> Si </option>
+                        <option value="0" @if (old('is_contact_person') == "0") {{ 'selected' }} @endif> No </option>
+                        <option value="1" @if (old('is_contact_person') == "1") {{ 'selected' }} @endif> Si </option>
                     </select>
                 </div>
                 <!-- Is the contact person - CLOSE  -->
@@ -143,28 +164,28 @@
                 <!-- Alertant name - OPEN  -->
                 <div class="form-group col-md-6">
                     <label for="name_person_alerts"> {{ __('register.name') }} </label>
-                    <input type="text" class="form-control" name="name_person_alerts"/>
+                    <input type="text" class="form-control" name="name_person_alerts" value="{{ old('name_person_alerts') }}"/>
                 </div>
                 <!-- Alertant name - CLOSE  -->
 
                 <!-- Alertant age - OPEN  -->
                 <div class="form-group col-md-2">
                     <label for="age_person_alerts"> {{ __('forms.age') }} </label>
-                    <input type="number" class="form-control" name="age_person_alerts"/>
+                    <input type="number" class="form-control" name="age_person_alerts" value="{{ old('age_person_alerts') }}"/>
                 </div>
                 <!-- Alertant age - CLOSE  -->
 
                 <!-- Alertant phone - OPEN  -->
                 <div class="form-group col-md-4">
                     <label for="phone_number_person_alerts"> {{ __('forms.phone') }} </label>
-                    <input type="text" class="form-control" name="phone_number_person_alerts"/>
+                    <input type="text" class="form-control" name="phone_number_person_alerts" value="{{ old('phone_number_person_alerts') }}"/>
                 </div>
                 <!-- Alertant phone - CLOSE  -->
 
                 <!-- Alertant address - OPEN  -->
                 <div class="form-group col-md-6">
                     <label for="address_person_alerts"> {{ __('forms.address') }} </label>
-                    <input type="text" class="form-control" name="address_person_alerts"/>
+                    <input type="text" class="form-control" name="address_person_alerts" value="{{ old('address_person_alerts') }}"/>
                 </div>
                 <!-- Alertant address - CLOSE  -->
 
@@ -189,7 +210,7 @@
                         data-placement="top" title="{{ __('forms.upa') }}"></span>
                     </label>
 
-                    <input type="text" class="form-control" name="municipality_last_place_seen"/>
+                    <input type="text" class="form-control" name="municipality_last_place_seen" value="{{ old('municipality_last_place_seen') }}"/>
 
             </div>
             <!-- Incident village UPA - CLOSE  -->
@@ -200,8 +221,8 @@
                     {{ __('forms.date_last_place_seen') }}
                     <span class="octicon octicon-info" data-toggle="tooltip"
                     data-placement="top" title="{{ __('forms.upa') }}">
-                </span>
-            </label>
+                    </span>
+                </label>
             <input type="text" class="form-control" name="date_last_place_seen" value="" />
         </div>
         <!-- Incident village UPA - CLOSE  -->
@@ -209,21 +230,27 @@
         <!-- Incident zone - OPEN  -->
         <div class="form-group col-md-6">
             <label for="zone_incident"> {{ __('forms.incident_zone') }} </label>
-            <textarea type="text" class="form-control" name="zone_incident" rows="2"></textarea>
+            <textarea type="text" class="form-control" name="zone_incident" rows="2">
+                {{ old('zone_incident') }}
+            </textarea>
         </div>
         <!-- Incident zone - CLOSE  -->
 
         <!-- Incident route - OPEN  -->
         <div class="form-group col-md-6">
             <label for="potential_route"> {{ __('forms.possible_route') }} </label>
-            <textarea type="text" class="form-control" name="potential_route" rows="2"></textarea>
+            <textarea type="text" class="form-control" name="potential_route" rows="2">
+                {{ old('potential_route') }}
+            </textarea>
         </div>
         <!-- Incident route - CLOSE  -->
 
         <!-- Incident description - OPEN  -->
         <div class="form-group col-md-12">
             <label for="description_incident"> {{ __('forms.description') }} </label>
-            <textarea type="text" class="form-control" name="description_incident" rows="2"></textarea>
+            <textarea type="text" class="form-control" name="description_incident" rows="2">
+                {{ old('description_incident') }}
+            </textarea>
         </div>
         <!-- Incident description - CLOSE  -->
 
@@ -242,7 +269,7 @@
         <!-- Lost people count - OPEN  -->
         <div class="form-group col-md-4">
             <label for="number_lost_people"> {{ __('forms.n_lost_people') }} </label>
-            <input type="number" class="form-control" name="number_lost_people"/>
+            <input type="number" class="form-control" name="number_lost_people" value="{{ old('number_lost_people') }}"/>
         </div>
         <!-- Lost people count - CLOSE  -->
 
@@ -261,7 +288,9 @@
         <!-- Lost people count - OPEN  -->
         <div class="form-group col-md-12">
             <label for="physical_condition_lost_people"> {{ __('forms.description') }} </label>
-            <textarea type="number" class="form-control" name="physical_condition_lost_people" rows="2"></textarea>
+            <textarea type="number" class="form-control" name="physical_condition_lost_people" rows="2">
+                {{ old('physical_condition_lost_people') }}
+            </textarea>
         </div>
         <!-- Lost people count - CLOSE  -->
 
@@ -281,9 +310,15 @@
         <div class="form-group col-md-3">
             <label for="knowledge_of_the_zone"> {{ __('forms.knows_the_zone') }}? </label>
             <select id="knowledge_of_the_zone" class="form-control" name="knowledge_of_the_zone">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('is_contact_person') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('is_contact_person') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Is the lost person - CLOSE  -->
@@ -292,9 +327,15 @@
         <div class="form-group col-md-3">
             <label for="experience_with_activity"> {{ __('forms.experience_with_activity') }}? </label>
             <select id="experience_with_activity" class="form-control" name="experience_with_activity">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('experience_with_activity') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('experience_with_activity') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Experience with the activity - CLOSE  -->
@@ -303,9 +344,15 @@
         <div class="form-group col-md-3">
             <label for="bring_water"> {{ __('forms.bring_water') }}? </label>
             <select id="bring_water" class="form-control" name="bring_water">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('bring_water') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('bring_water') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Brings water - CLOSE  -->
@@ -314,9 +361,15 @@
         <div class="form-group col-md-3">
             <label for="bring_food"> {{ __('forms.bring_food') }}? </label>
             <select id="bring_food" class="form-control" name="bring_food">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('bring_food') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('bring_food') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Brings food - CLOSE  -->
@@ -325,9 +378,15 @@
         <div class="form-group col-md-3">
             <label for="bring_medication"> {{ __('forms.bring_medication') }}? </label>
             <select id="bring_medication" class="form-control" name="bring_medication">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('bring_medication') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('bring_medication') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Brings medication - CLOSE  -->
@@ -336,9 +395,15 @@
         <div class="form-group col-md-3">
             <label for="bring_flashlight"> {{ __('forms.bring_light') }}? </label>
             <select id="bring_flashlight" class="form-control" name="bring_flashlight">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('bring_flashlight') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('bring_flashlight') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Brings light - CLOSE  -->
@@ -347,9 +412,15 @@
         <div class="form-group col-md-3">
             <label for="bring_cold_clothes"> {{ __('forms.bring_cold_clothes') }}? </label>
             <select id="bring_cold_clothes" class="form-control" name="bring_cold_clothes">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('bring_cold_clothes') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('bring_cold_clothes') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Brings cold clothes - CLOSE  -->
@@ -358,9 +429,15 @@
         <div class="form-group col-md-3">
             <label for="bring_waterproof_clothes"> {{ __('forms.bring_waterproof_clothes') }}? </label>
             <select id="bring_waterproof_clothes" class="form-control" name="bring_waterproof_clothes">
-                <option value=""> {{ __('forms.chose_option') }} </option>
-                <option value="0"> {{ __('actions.no') }} </option>
-                <option value="1"> {{ __('actions.yes') }} </option>
+                <option value="">
+                    {{ __('forms.chose_option') }}
+                </option>
+                <option value="0" @if (old('bring_waterproof_clothes') == "0") {{ 'selected' }} @endif>
+                    {{ __('actions.no') }}
+                </option>
+                <option value="1" @if (old('bring_waterproof_clothes') == "1") {{ 'selected' }} @endif>
+                    {{ __('actions.yes') }}
+                </option>
             </select>
         </div>
         <!-- Brings waterproof clothes - CLOSE  -->
@@ -380,21 +457,21 @@
         <!-- Contact person name - OPEN  -->
         <div class="form-group col-md-6">
             <label for="name_contact_person"> {{ __('register.name') }} </label>
-            <input type="text" class="form-control" name="name_contact_person"/>
+            <input type="text" class="form-control" name="name_contact_person" value="{{ old('name_contact_person') }}"/>
         </div>
         <!-- Contact person name - CLOSE  -->
 
         <!-- Contact person phone - OPEN  -->
         <div class="form-group col-md-2">
             <label for="phone_number_contact_person"> {{ __('forms.phone') }} </label>
-            <input type="text" class="form-control" name="phone_number_contact_person"/>
+            <input type="text" class="form-control" name="phone_number_contact_person" value="{{ old('phone_number_contact_person') }}"/>
         </div>
         <!-- Contact person phone - CLOSE  -->
 
         <!-- Contact person affinity - OPEN  -->
         <div class="form-group col-md-4">
             <label for="affinity_contact_person"> {{ __('forms.affinity') }} </label>
-            <input type="text" class="form-control" name="affinity_contact_person"/>
+            <input type="text" class="form-control" name="affinity_contact_person" value="{{ old('affinity_contact_person') }}"/>
         </div>
         <!-- Contact person affinity - CLOSE  -->
 
