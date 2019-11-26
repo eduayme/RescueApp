@@ -67,8 +67,7 @@ class UserController extends Controller
             'password.confirmed' => __('messages.confirmed'),
         ]);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return back()->withInput()->withErrors($validator)
             ->with('error', __('messages.error_form'));
         }
