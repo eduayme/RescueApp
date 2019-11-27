@@ -231,7 +231,7 @@
                         <h5 class="margin-top-sm-min">
                             <b>
                                 @if( $lost_person->profile )
-                                    {{ $lost_person->profile }}
+                                    {{ __('profile_lost_person.'.$lost_person->profile) }}
                                 @else
                                     --
                                 @endif

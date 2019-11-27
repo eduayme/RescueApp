@@ -171,40 +171,40 @@
                             <label for="profile"> {{ __('register.profile') }} </label>
 
                             <select id="profile" class="form-control" name="profile">
-                                <option value="" {{ ($lost_person->profile === '') ? 'selected' : '' }}>
+                                <option value="">
                                     {{ __('forms.chose_option') }}
                                 </option>
-                                <option value="Trastorn del desenvolupament"
-                                {{ ($lost_person->profile === 'Trastorn del desenvolupament') ? 'selected' : '' }}>
-                                    Trastorn del desenvolupament
+                                <option value="development_disorder"
+                                {{ ($lost_person->profile == 'development_disorder') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.development_disorder') }}
                                 </option>
-                                <option value="Alzheimer o altres demencies"
-                                {{ ($lost_person->profile === 'Alzheimer o altres demencies') ? 'selected' : '' }}>
-                                    Alzheimer o altres demencies
+                                <option value="alzheimer_or_other_dementias"
+                                {{ ($lost_person->profile == 'alzheimer_or_other_dementias') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.alzheimer_or_other_dementias') }}
                                 </option>
-                                <option value="Malaltia mental o psicològica"
-                                {{ ($lost_person->profile === 'Malaltia mental o psicològica') ? 'selected' : '' }}>
-                                    Malaltia mental o psicològica
+                                <option value="mental_or_psychological_illness"
+                                {{ ($lost_person->profile == 'mental_or_psychological_illness') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.mental_or_psychological_illness') }}
                                 </option>
-                                <option value="Conductes autolítiques"
-                                {{ ($lost_person->profile === 'Conductes autolítiques') ? 'selected' : '' }}>
-                                    Conductes autolítiques
+                                <option value="autolithic_behaviors"
+                                {{ ($lost_person->profile == 'autolithic_behaviors') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.autolithic_behaviors') }}
                                 </option>
-                                <option value="Excursionista o senderista"
-                                {{ ($lost_person->profile === 'Excursionista o senderista') ? 'selected' : '' }}>
-                                    Excursionista o senderista
+                                <option value="hiker"
+                                {{ ($lost_person->profile == 'hiker') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.hiker') }}
                                 </option>
-                                <option value="Recol·lector en general"
-                                {{ ($lost_person->profile === 'Recol·lector en general') ? 'selected' : '' }}>
-                                    Recol·lector en general
+                                <option value="collector"
+                                {{ ($lost_person->profile == 'collector') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.collector') }}
                                 </option>
-                                <option value="Boletaire"
-                                {{ ($lost_person->profile === 'Boletaire') ? 'selected' : '' }}>
-                                    Boletaire
+                                <option value="mushroom_finder"
+                                {{ ($lost_person->profile == 'mushroom_finder') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.mushroom_finder') }}
                                 </option>
-                                <option value="Cap de les anteriors"
-                                {{ ($lost_person->profile === 'Cap de les anteriors') ? 'selected' : '' }}>
-                                    Cap de les anteriors
+                                <option value="none_of_the_above"
+                                {{ ($lost_person->profile == 'none_of_the_above') ? 'selected' : '' }}>
+                                    {{ __('profile_lost_person.none_of_the_above') }}
                                 </option>
                             </select>
 
