@@ -129,9 +129,9 @@ class UserController extends Controller
             ->with('error', __('messages.error_form'));
         }
 
-        $user->name    = $request->has('name') ? $request->get('name') : $user->name;
-        $user->email   = $request->has('email') ? $request->get('email') : $user->email;
-        $user->dni     = $request->has('dni') ? $request->get('dni') : $user->profile;
+        $user->name = $request->has('name') ? $request->get('name') : $user->name;
+        $user->email = $request->has('email') ? $request->get('email') : $user->email;
+        $user->dni = $request->has('dni') ? $request->get('dni') : $user->profile;
         $user->profile = $request->has('profile') ? $request->get('profile') : $user->profile;
 
         $user->save();
