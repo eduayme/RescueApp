@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        // insert admin user
+        // Add default admin user
         DB::table('users')->insert(
             [
                 'name'     => 'admin',
@@ -37,14 +37,14 @@ class CreateUsersTable extends Migration
             ]
         );
 
-        // insert guest user
+        // Add default guest user
         DB::table('users')->insert(
             [
                 'name'     => 'guest',
                 'email'    => 'guest@gmail.com',
                 'password' => Hash::make('guest'),
                 'profile'  => 'guest',
-            ],
+            ]
         );
     }
 
