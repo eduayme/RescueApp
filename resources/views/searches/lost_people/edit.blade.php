@@ -48,7 +48,7 @@
                         <label for="photo">
                             <div class="img-container">
                                 <img src="/uploads/lost_people_photos/{{ $lost_person->photo }}" class="photo mx-auto d-block rounded" id="photo_person">
-                                <div class="overlay photo mx-auto d-block rounded" style="width: 300px; height: 300px; margin-top: 15px">
+                                <div class="overlay photo mx-auto d-block rounded overlay-photo">
                                     <span class="octicon octicon-cloud-upload" style="font-size: 2rem"> </span>
                                 </div>
                             </div>

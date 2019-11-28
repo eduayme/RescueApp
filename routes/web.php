@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('users', 'UserController');
         Route::get('/users', 'UserController@index')->name('users');
         Route::post('/users', 'UserController@store')->name('add_user');
+        Route::post('/users/{id}', 'UserController@update')->name('update_user');
     });
 });
 

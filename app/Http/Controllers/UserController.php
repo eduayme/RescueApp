@@ -87,10 +87,10 @@ class UserController extends Controller
         ->with('success', $user->name.__('messages.added'));
     }
 
-    public function update_user(Request $request)
+    public function update(Request $request, $id)
     {
         // get user
-        $user = Auth::user();
+        $user = User::find($id);
 
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
@@ -110,19 +110,34 @@ class UserController extends Controller
             $user->avatar = $filename;
         }
 
-        $request->validate([
-            'name'    => 'required',
-            'email'   => 'required|email',
-            'profile' => 'required',
+        $validator = Validator::make($request->all(), [
+            'name'      => ['required', 'min:2', 'max:50'],
+            'email'     => ['required', 'email', 'max:50'],
+            'profile'   => ['required'],
+        ], [
+            'name.required'    => __('messages.required'),
+            'name.min'         => __('messages.min'),
+            'name.max'         => __('messages.max'),
+            'email.required'   => __('messages.required'),
+            'email.email'      => __('messages.email'),
+            'email.max'        => __('messages.max'),
+            'profile.required' => __('messages.required'),
         ]);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->profile = $request->profile;
+        if ($validator->fails()) {
+            return back()->withInput()->withErrors($validator)
+            ->with('error', __('messages.error_form'));
+        }
+
+        $user->name    = $request->has('name') ? $request->get('name') : $user->name;
+        $user->email   = $request->has('email') ? $request->get('email') : $user->email;
+        $user->dni     = $request->has('dni') ? $request->get('dni') : $user->profile;
+        $user->profile = $request->has('profile') ? $request->get('profile') : $user->profile;
 
         $user->save();
 
-        return view('auth.profile', ['user' => Auth::user()]);
+        return back()
+        ->with('success', $user->name.__('messages.updated'));
     }
 
     /**
