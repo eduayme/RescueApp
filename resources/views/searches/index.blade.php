@@ -59,7 +59,8 @@
                                 {{ __('messages.no_searches') }}
                             </h1>
 
-                            <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button">
+                            <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button"
+                            <?php if (Auth::user()->profile == 'guest') { ?> style="display: none" <?php } ?> >
                                 {{ __('actions.add') . ' ' . __('main.search') }}
                             </a>
 
@@ -140,7 +141,8 @@
                                 {{ __('messages.no_practices') }}
                             </h1>
 
-                            <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button">
+                            <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button"
+                            <?php if (Auth::user()->profile == 'guest') { ?> style="display: none" <?php } ?> >
                                 {{ __('actions.add') . ' ' . __('main.practice') }}
                             </a>
 

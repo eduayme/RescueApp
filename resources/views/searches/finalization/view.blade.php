@@ -67,7 +67,11 @@
 @else
 <!-- If search opened - OPEN -->
 
-@include('searches.finalization.edit')
+    @if( Auth::user()->profile == 'guest')
+        @include('searches.finalization.data')
+    @else
+        @include('searches.finalization.edit')
+    @endif
 
 <!-- If search opened - CLOSE -->
 @endif

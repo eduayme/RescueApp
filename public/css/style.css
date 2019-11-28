@@ -235,9 +235,9 @@ footer {
 }
 
 .overlay-photo {
-    width: 300px;
-    height: 300px;
-    margin-top: 15px;
+    width: 300px !important;
+    height: 300px !important;
+    margin-top: 15px !important;
 }
 
 .overlay span{

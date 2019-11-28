@@ -24,8 +24,8 @@
         <form action="{{ route('lost-people.create') }}" method="put" style="display: inline">
             @csrf
             <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
-            <button type="submit" class="btn btn-outline-primary margin-left margin_top_bottom btn-sm
-            <?php if ($search->status == 1){ ?> disabled" onclick="this.disabled=true <?php   } ?>" >
+            <button type="submit" class="btn btn-outline-primary margin-left margin_top_bottom btn-sm"
+            <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                 <span class="octicon octicon-plus"></span>
                 {{ __('actions.add_lost_person') }}
             </button>
@@ -34,15 +34,16 @@
 
         <!-- Edit search button - OPEN -->
         <a href="{{ URL::to('searches/' . $search->id . '/edit') }}"
-        role="button" class="btn btn-outline-secondary margin-left margin_top_bottom btn-sm
-        <?php if ($search->status == 1){ ?> disabled <?php   } ?>">
+        role="button" class="btn btn-outline-secondary margin-left margin_top_bottom btn-sm"
+        <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
             <span class="octicon octicon-pencil"></span>
             {{ __('actions.edit') }}
         </a>
         <!-- Edit search button - CLOSE -->
 
         <!-- Delete search button- OPEN -->
-        <span data-toggle="modal" href="#deleteModal">
+        <span data-toggle="modal" href="#deleteModal"
+        <?php if (Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
             <button class="btn btn-outline-danger margin-left margin_top_bottom btn-sm">
                 <span class="octicon octicon-trashcan"></span>
                 {{ __('actions.delete') }}

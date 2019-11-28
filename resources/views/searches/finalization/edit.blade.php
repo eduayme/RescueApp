@@ -373,8 +373,9 @@
             {{ Form::label('physical_condition_people_when_find', __('forms.lost_people_state')) }}
 
             <textarea rows="2" name="physical_condition_people_when_find" class="form-control
-            {{ $errors->has('physical_condition_people_when_find') ? ' is-invalid' : '' }}"
-            > {{ $search->physical_condition_people_when_find }} </textarea>
+            {{ $errors->has('physical_condition_people_when_find') ? ' is-invalid' : '' }}">
+                {{ $search->physical_condition_people_when_find }}
+            </textarea>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('physical_condition_people_when_find') )
@@ -393,8 +394,9 @@
             {{ Form::label('reason_finalization', __('forms.motive_closing')) }}
 
             <textarea rows="2" name="reason_finalization" class="form-control
-            {{ $errors->has('reason_finalization') ? ' is-invalid' : '' }}"
-            > {{ $search->reason_finalization }} </textarea>
+            {{ $errors->has('reason_finalization') ? ' is-invalid' : '' }}">
+                {{ $search->reason_finalization }}
+            </textarea>
 
             <!-- Show errors input - OPEN -->
             @if( $errors->has('reason_finalization') )

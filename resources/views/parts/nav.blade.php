@@ -25,7 +25,7 @@
                 <!-- Authentication - OPEN -->
                 @auth
                     <!-- Add search button - OPEN -->
-                    <a href="{{ route('searches.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button">
+                    <a href="{{ route('searches.create') }}" class="btn btn-outline-primary margin-left margin-right" role="button" <?php if (Auth::user()->profile == 'guest') { ?> style="visibility: hidden" <?php } ?> >
                         <span class="octicon octicon-plus"></span>
                         {{ __('actions.add') . ' ' . __('main.search') }}
                     </a>
@@ -104,13 +104,6 @@
                     <!-- User dropdown - OPEN -->
                     <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
 
-                        <!-- Profile button - OPEN -->
-                        <a class="dropdown-item" href="{{ route('profile') }}">
-                            <span class="octicon octicon-person"></span>
-                            {{ __('main.profile') }}
-                        </a>
-                        <!-- Profile button - CLOSE -->
-
                         @if (Auth::user()->profile == 'admin')
                             <!-- Management bottom - OPEN -->
                             <a class="dropdown-item" href="{{ route('users') }}">
@@ -120,9 +113,18 @@
                             <!-- Management bottom - CLOSE -->
                         @endif
 
+                        @if (Auth::user()->profile != 'guest')
+                        <!-- Profile button - OPEN -->
+                        <a class="dropdown-item" href="{{ route('profile') }}">
+                            <span class="octicon octicon-person"></span>
+                            {{ __('main.profile') }}
+                        </a>
+                        <!-- Profile button - CLOSE -->
+
                         <!-- Divider - OPEN -->
                         <div class="dropdown-divider"></div>
                         <!-- Divider - CLOSE -->
+                        @endif
 
                         <!-- Close session button - OPEN -->
                         <a class="dropdown-item" href="{{ route('logout') }}"

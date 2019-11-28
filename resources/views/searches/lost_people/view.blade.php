@@ -34,77 +34,79 @@
             </div>
             <!-- Align left - CLOSE -->
 
-            <!-- Align right - OPEN -->
-            <div class="col text-right">
+            @if( Auth::user()->profile != 'guest' )
+                <!-- Align right - OPEN -->
+                <div class="col text-right">
 
-                <!-- Edit search button - OPEN -->
-                <a href="{{ URL::to(Request::path().'/edit') }}"
-                    role="button" class="btn btn-outline-secondary margin-left btn-sm">
-                    <span class="octicon octicon-pencil"></span>
-                    {{ __('actions.edit') }}
-                </a>
-                <!-- Edit search button - CLOSE -->
+                    <!-- Edit search button - OPEN -->
+                    <a href="{{ URL::to(Request::path().'/edit') }}"
+                        role="button" class="btn btn-outline-secondary margin-left btn-sm">
+                        <span class="octicon octicon-pencil"></span>
+                        {{ __('actions.edit') }}
+                    </a>
+                    <!-- Edit search button - CLOSE -->
 
-                <!-- Delete search button- OPEN -->
-                <span data-toggle="modal" href="#deleteModal">
-                    <button class="btn btn-outline-danger margin-left btn-sm" href="#deleteModal">
-                        <span class="octicon octicon-trashcan"></span>
-                        {{ __('actions.delete') }}
-                    </button>
-                </span>
-                <!-- Delete search button- CLOSE -->
+                    <!-- Delete search button- OPEN -->
+                    <span data-toggle="modal" href="#deleteModal">
+                        <button class="btn btn-outline-danger margin-left btn-sm" href="#deleteModal">
+                            <span class="octicon octicon-trashcan"></span>
+                            {{ __('actions.delete') }}
+                        </button>
+                    </span>
+                    <!-- Delete search button- CLOSE -->
 
-                <!-- Delete search modal - OPEN -->
-                <form action="{{ route('lost-people.destroy', $lost_person->id) }}" method="post">
-                    @csrf
-                    @method('DELETE')
+                    <!-- Delete search modal - OPEN -->
+                    <form action="{{ route('lost-people.destroy', $lost_person->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
 
-                    <!-- Modal - OPEN -->
-                    <div id="deleteModal" class="modal fade">
-                        <div class="modal-dialog modal-confirm">
+                        <!-- Modal - OPEN -->
+                        <div id="deleteModal" class="modal fade">
+                            <div class="modal-dialog modal-confirm">
 
-                            <!-- Modal content - OPEN -->
-                            <div class="modal-content">
+                                <!-- Modal content - OPEN -->
+                                <div class="modal-content">
 
-                                <!-- Modal header - OPEN -->
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                        &times;
-                                    </button>
+                                    <!-- Modal header - OPEN -->
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                    </div>
+                                    <!-- Modal header - CLOSE -->
+
+                                    <!-- Modal body - OPEN -->
+                                    <div class="modal-body text-center">
+                                        <h4>
+                                            {{ __('messages.are_you_sure') }}
+                                        </h4>
+                                    </div>
+                                    <!-- Modal body - CLOSE -->
+
+                                    <!-- Modal footer - OPEN -->
+                                    <div class="modal-footer">
+                                        <a class="btn btn-light" data-dismiss="modal">
+                                            {{ __('actions.cancel') }}
+                                        </a>
+                                        <button type="submit" class="btn btn-danger">
+                                            {{ __('actions.delete') }}
+                                        </button>
+                                    </div>
+                                    <!-- Modal footer - CLOSE -->
+
                                 </div>
-                                <!-- Modal header - CLOSE -->
-
-                                <!-- Modal body - OPEN -->
-                                <div class="modal-body text-center">
-                                    <h4>
-                                        {{ __('messages.are_you_sure') }}
-                                    </h4>
-                                </div>
-                                <!-- Modal body - CLOSE -->
-
-                                <!-- Modal footer - OPEN -->
-                                <div class="modal-footer">
-                                    <a class="btn btn-light" data-dismiss="modal">
-                                        {{ __('actions.cancel') }}
-                                    </a>
-                                    <button type="submit" class="btn btn-danger">
-                                        {{ __('actions.delete') }}
-                                    </button>
-                                </div>
-                                <!-- Modal footer - CLOSE -->
+                                <!-- Modal content - CLOSE -->
 
                             </div>
-                            <!-- Modal content - CLOSE -->
-
                         </div>
-                    </div>
-                    <!-- Modal - CLOSE -->
+                        <!-- Modal - CLOSE -->
 
-                </form>
-                <!-- Delete search - CLOSE -->
+                    </form>
+                    <!-- Delete search - CLOSE -->
 
-            </div>
-            <!-- Align right - CLOSE -->
+                </div>
+                <!-- Align right - CLOSE -->
+            @endif
 
         </div>
         <!-- Top buttons - CLOSE -->
