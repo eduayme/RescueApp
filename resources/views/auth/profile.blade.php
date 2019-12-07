@@ -66,7 +66,7 @@
 
             </div>
 
-            @if (Auth::user()->profile == 'admin')
+            @if (Auth::user()->profile != 'guest')
             <!-- Submit button - OPEN -->
             <div class="text-center margin-top">
                 {{ Form::submit( __('actions.save'), array('class' => 'btn btn-primary') ) }}
