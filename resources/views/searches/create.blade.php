@@ -124,13 +124,13 @@
             <!-- Type activity, code and region - OPEN -->
 
             <!-- Alertant title - OPEN -->
-            <h3 class="margin-top">
+            <h3 class="margin-top-sm accordion-title" data-toggle="collapse" href="#collapseAlertant" role="button" aria-expanded="false" aria-controls="collapseAlertant">
                 {{ __('forms.alertant') }}
             </h3>
             <!-- Stype service title - CLOSE -->
 
             <!-- Alertant - OPEN -->
-            <div class="form-row">
+            <div class="form-row collapse" id="collapseAlertant">
 
                 <!-- Is the lost person - OPEN  -->
                 <div class="form-group col-md-3">
@@ -191,15 +191,16 @@
 
             </div>
             <!-- Alertant - CLOSE -->
+            <hr/>
 
             <!-- Incident title - OPEN -->
-            <h3 class="margin-top">
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseIncident" role="button" aria-expanded="false" aria-controls="collapseIncident">
                 {{ __('forms.incident') }}
             </h3>
             <!-- Incident title - CLOSE -->
 
             <!-- Incident - OPEN -->
-            <div class="form-row">
+            <div class="form-row collapse" id="collapseIncident">
 
                 <!-- Incident village UPA - OPEN  -->
                 <div class="form-group col-md-6">
@@ -212,302 +213,307 @@
 
                     <input type="text" class="form-control" name="municipality_last_place_seen" value="{{ old('municipality_last_place_seen') }}"/>
 
+                </div>
+                <!-- Incident village UPA - CLOSE  -->
+
+                <!-- Incident village UPA - OPEN  -->
+                <div class="form-group col-md-6">
+                    <label for="date_last_place_seen">
+                        {{ __('forms.date_last_place_seen') }}
+                        <span class="octicon octicon-info" data-toggle="tooltip"
+                        data-placement="top" title="{{ __('forms.upa') }}">
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" name="date_last_place_seen" value="" />
+                </div>
+                <!-- Incident village UPA - CLOSE  -->
+
+                <!-- Incident zone - OPEN  -->
+                <div class="form-group col-md-6">
+                    <label for="zone_incident"> {{ __('forms.incident_zone') }} </label>
+                    <textarea type="text" class="form-control" name="zone_incident" rows="2">
+                        {{ old('zone_incident') }}
+                    </textarea>
+                </div>
+                <!-- Incident zone - CLOSE  -->
+
+                <!-- Incident route - OPEN  -->
+                <div class="form-group col-md-6">
+                    <label for="potential_route"> {{ __('forms.possible_route') }} </label>
+                    <textarea type="text" class="form-control" name="potential_route" rows="2">
+                        {{ old('potential_route') }}
+                    </textarea>
+                </div>
+                <!-- Incident route - CLOSE  -->
+
+                <!-- Incident description - OPEN  -->
+                <div class="form-group col-md-12">
+                    <label for="description_incident"> {{ __('forms.description') }} </label>
+                    <textarea type="text" class="form-control" name="description_incident" rows="2">
+                        {{ old('description_incident') }}
+                    </textarea>
+                </div>
+                <!-- Incident description - CLOSE  -->
+
             </div>
-            <!-- Incident village UPA - CLOSE  -->
+            <!-- Incident - CLOSE -->
+            <hr/>
 
-            <!-- Incident village UPA - OPEN  -->
-            <div class="form-group col-md-6">
-                <label for="date_last_place_seen">
-                    {{ __('forms.date_last_place_seen') }}
-                    <span class="octicon octicon-info" data-toggle="tooltip"
-                    data-placement="top" title="{{ __('forms.upa') }}">
-                    </span>
-                </label>
-            <input type="text" class="form-control" name="date_last_place_seen" value="" />
-        </div>
-        <!-- Incident village UPA - CLOSE  -->
+            <!-- Lost people count title - OPEN -->
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseLostPeopleCount" role="button" aria-expanded="false" aria-controls="collapseLostPeopleCount">
+                {{ __('forms.lost_people') }}
+            </h3>
+            <!-- Lost people count title - CLOSE -->
 
-        <!-- Incident zone - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="zone_incident"> {{ __('forms.incident_zone') }} </label>
-            <textarea type="text" class="form-control" name="zone_incident" rows="2">
-                {{ old('zone_incident') }}
-            </textarea>
-        </div>
-        <!-- Incident zone - CLOSE  -->
+            <!-- Lost people count - OPEN -->
+            <div class="form-row collapse" id="collapseLostPeopleCount">
 
-        <!-- Incident route - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="potential_route"> {{ __('forms.possible_route') }} </label>
-            <textarea type="text" class="form-control" name="potential_route" rows="2">
-                {{ old('potential_route') }}
-            </textarea>
-        </div>
-        <!-- Incident route - CLOSE  -->
+                <!-- Count input - OPEN  -->
+                <div class="form-group col-md-4">
+                    <label for="number_lost_people"> {{ __('forms.n_lost_people') }} </label>
+                    <input type="number" class="form-control" name="number_lost_people" value="{{ old('number_lost_people') }}"/>
+                </div>
+                <!-- Count input - CLOSE  -->
 
-        <!-- Incident description - OPEN  -->
-        <div class="form-group col-md-12">
-            <label for="description_incident"> {{ __('forms.description') }} </label>
-            <textarea type="text" class="form-control" name="description_incident" rows="2">
-                {{ old('description_incident') }}
-            </textarea>
-        </div>
-        <!-- Incident description - CLOSE  -->
+            </div>
+            <!-- Lost people count - CLOSE -->
+            <hr/>
 
-    </div>
-    <!-- Incident - CLOSE -->
+            <!-- Lost people state title - OPEN -->
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseLostPeopleState" role="button" aria-expanded="false" aria-controls="collapseLostPeopleState">
+                {{ __('forms.status_people') }}
+            </h3>
+            <!-- Lost people state title - CLOSE -->
 
-    <!-- Lost people title - OPEN -->
-    <h3 class="margin-top">
-        {{ __('forms.lost_people') }}
-    </h3>
-    <!-- Lost people title - CLOSE -->
+            <!-- Lost people state - OPEN -->
+            <div class="form-row collapse" id="collapseLostPeopleState">
 
-    <!-- Lost people - OPEN -->
-    <div class="form-row">
+                <!-- State input - OPEN  -->
+                <div class="form-group col-md-12">
+                    <label for="physical_condition_lost_people"> {{ __('forms.description') }} </label>
+                    <textarea type="number" class="form-control" name="physical_condition_lost_people" rows="2">
+                        {{ old('physical_condition_lost_people') }}
+                    </textarea>
+                </div>
+                <!-- State input - CLOSE  -->
 
-        <!-- Lost people count - OPEN  -->
-        <div class="form-group col-md-4">
-            <label for="number_lost_people"> {{ __('forms.n_lost_people') }} </label>
-            <input type="number" class="form-control" name="number_lost_people" value="{{ old('number_lost_people') }}"/>
-        </div>
-        <!-- Lost people count - CLOSE  -->
+            </div>
+            <!-- Lost people state - CLOSE -->
+            <hr/>
 
-    </div>
-    <!-- Lost people - CLOSE -->
+            <!-- Equipment and experience title - OPEN -->
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseEquipment" role="button" aria-expanded="false" aria-controls="collapseEquipment">
+                {{ __('forms.equipment_and_experience') }}
+            </h3>
+            <!-- Equipment and experience title - CLOSE -->
 
-    <!-- Lost people title - OPEN -->
-    <h3 class="margin-top">
-        {{ __('forms.status_people') }}
-    </h3>
-    <!-- Lost people title - CLOSE -->
+            <!-- Equipment and experience - OPEN -->
+            <div class="form-row collapse" id="collapseEquipment">
 
-    <!-- Lost people - OPEN -->
-    <div class="form-row">
+                <!-- Knows the zone - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="knowledge_of_the_zone"> {{ __('forms.knows_the_zone') }}? </label>
+                    <select id="knowledge_of_the_zone" class="form-control" name="knowledge_of_the_zone">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('is_contact_person') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('is_contact_person') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Is the lost person - CLOSE  -->
 
-        <!-- Lost people count - OPEN  -->
-        <div class="form-group col-md-12">
-            <label for="physical_condition_lost_people"> {{ __('forms.description') }} </label>
-            <textarea type="number" class="form-control" name="physical_condition_lost_people" rows="2">
-                {{ old('physical_condition_lost_people') }}
-            </textarea>
-        </div>
-        <!-- Lost people count - CLOSE  -->
+                <!-- Experience with the activity - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="experience_with_activity"> {{ __('forms.experience_with_activity') }}? </label>
+                    <select id="experience_with_activity" class="form-control" name="experience_with_activity">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('experience_with_activity') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('experience_with_activity') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Experience with the activity - CLOSE  -->
 
-    </div>
-    <!-- Lost people - CLOSE -->
+                <!-- Brings water - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="bring_water"> {{ __('forms.bring_water') }}? </label>
+                    <select id="bring_water" class="form-control" name="bring_water">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('bring_water') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('bring_water') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Brings water - CLOSE  -->
 
-    <!-- Equipment and experience title - OPEN -->
-    <h3 class="margin-top">
-        {{ __('forms.equipment_and_experience') }}
-    </h3>
-    <!-- Equipment and experience title - CLOSE -->
+                <!-- Brings food - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="bring_food"> {{ __('forms.bring_food') }}? </label>
+                    <select id="bring_food" class="form-control" name="bring_food">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('bring_food') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('bring_food') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Brings food - CLOSE  -->
 
-    <!-- Equipment and experience - OPEN -->
-    <div class="form-row">
+                <!-- Brings medication - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="bring_medication"> {{ __('forms.bring_medication') }}? </label>
+                    <select id="bring_medication" class="form-control" name="bring_medication">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('bring_medication') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('bring_medication') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Brings medication - CLOSE  -->
 
-        <!-- Knows the zone - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="knowledge_of_the_zone"> {{ __('forms.knows_the_zone') }}? </label>
-            <select id="knowledge_of_the_zone" class="form-control" name="knowledge_of_the_zone">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('is_contact_person') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('is_contact_person') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Is the lost person - CLOSE  -->
+                <!-- Brings light - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="bring_flashlight"> {{ __('forms.bring_light') }}? </label>
+                    <select id="bring_flashlight" class="form-control" name="bring_flashlight">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('bring_flashlight') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('bring_flashlight') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Brings light - CLOSE  -->
 
-        <!-- Experience with the activity - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="experience_with_activity"> {{ __('forms.experience_with_activity') }}? </label>
-            <select id="experience_with_activity" class="form-control" name="experience_with_activity">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('experience_with_activity') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('experience_with_activity') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Experience with the activity - CLOSE  -->
+                <!-- Brings cold clothes - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="bring_cold_clothes"> {{ __('forms.bring_cold_clothes') }}? </label>
+                    <select id="bring_cold_clothes" class="form-control" name="bring_cold_clothes">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('bring_cold_clothes') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('bring_cold_clothes') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Brings cold clothes - CLOSE  -->
 
-        <!-- Brings water - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="bring_water"> {{ __('forms.bring_water') }}? </label>
-            <select id="bring_water" class="form-control" name="bring_water">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('bring_water') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('bring_water') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Brings water - CLOSE  -->
+                <!-- Brings waterproof clothes - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="bring_waterproof_clothes"> {{ __('forms.bring_waterproof_clothes') }}? </label>
+                    <select id="bring_waterproof_clothes" class="form-control" name="bring_waterproof_clothes">
+                        <option value="">
+                            {{ __('forms.chose_option') }}
+                        </option>
+                        <option value="0" @if (old('bring_waterproof_clothes') == "0") {{ 'selected' }} @endif>
+                            {{ __('actions.no') }}
+                        </option>
+                        <option value="1" @if (old('bring_waterproof_clothes') == "1") {{ 'selected' }} @endif>
+                            {{ __('actions.yes') }}
+                        </option>
+                    </select>
+                </div>
+                <!-- Brings waterproof clothes - CLOSE  -->
 
-        <!-- Brings food - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="bring_food"> {{ __('forms.bring_food') }}? </label>
-            <select id="bring_food" class="form-control" name="bring_food">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('bring_food') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('bring_food') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Brings food - CLOSE  -->
+            </div>
+            <!-- Equipment and experience - CLOSE -->
+            <hr/>
 
-        <!-- Brings medication - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="bring_medication"> {{ __('forms.bring_medication') }}? </label>
-            <select id="bring_medication" class="form-control" name="bring_medication">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('bring_medication') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('bring_medication') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Brings medication - CLOSE  -->
+            <!-- Contact person title - OPEN -->
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseContactPerson" role="button" aria-expanded="false" aria-controls="collapseContactPerson">
+                {{ __('forms.contact_person') }}
+            </h3>
+            <!-- Contact person title - CLOSE -->
 
-        <!-- Brings light - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="bring_flashlight"> {{ __('forms.bring_light') }}? </label>
-            <select id="bring_flashlight" class="form-control" name="bring_flashlight">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('bring_flashlight') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('bring_flashlight') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Brings light - CLOSE  -->
+            <!-- Contact person - OPEN -->
+            <div class="form-row collapse" id="collapseContactPerson">
 
-        <!-- Brings cold clothes - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="bring_cold_clothes"> {{ __('forms.bring_cold_clothes') }}? </label>
-            <select id="bring_cold_clothes" class="form-control" name="bring_cold_clothes">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('bring_cold_clothes') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('bring_cold_clothes') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Brings cold clothes - CLOSE  -->
+                <!-- Contact person name - OPEN  -->
+                <div class="form-group col-md-6">
+                    <label for="name_contact_person"> {{ __('register.name') }} </label>
+                    <input type="text" class="form-control" name="name_contact_person" value="{{ old('name_contact_person') }}"/>
+                </div>
+                <!-- Contact person name - CLOSE  -->
 
-        <!-- Brings waterproof clothes - OPEN  -->
-        <div class="form-group col-md-3">
-            <label for="bring_waterproof_clothes"> {{ __('forms.bring_waterproof_clothes') }}? </label>
-            <select id="bring_waterproof_clothes" class="form-control" name="bring_waterproof_clothes">
-                <option value="">
-                    {{ __('forms.chose_option') }}
-                </option>
-                <option value="0" @if (old('bring_waterproof_clothes') == "0") {{ 'selected' }} @endif>
-                    {{ __('actions.no') }}
-                </option>
-                <option value="1" @if (old('bring_waterproof_clothes') == "1") {{ 'selected' }} @endif>
-                    {{ __('actions.yes') }}
-                </option>
-            </select>
-        </div>
-        <!-- Brings waterproof clothes - CLOSE  -->
+                <!-- Contact person phone - OPEN  -->
+                <div class="form-group col-md-2">
+                    <label for="phone_number_contact_person"> {{ __('forms.phone') }} </label>
+                    <input type="text" class="form-control" name="phone_number_contact_person" value="{{ old('phone_number_contact_person') }}"/>
+                </div>
+                <!-- Contact person phone - CLOSE  -->
 
-    </div>
-    <!-- Equipment and experience - CLOSE -->
+                <!-- Contact person affinity - OPEN  -->
+                <div class="form-group col-md-4">
+                    <label for="affinity_contact_person"> {{ __('forms.affinity') }} </label>
+                    <input type="text" class="form-control" name="affinity_contact_person" value="{{ old('affinity_contact_person') }}"/>
+                </div>
+                <!-- Contact person affinity - CLOSE  -->
 
-    <!-- Contact person title - OPEN -->
-    <h3 class="margin-top">
-        {{ __('forms.contact_person') }}
-    </h3>
-    <!-- Contact person title - CLOSE -->
+            </div>
+            <!-- Contact person - CLOSE -->
+            <hr/>
 
-    <!-- Contact person - OPEN -->
-    <div class="form-row">
+            <!-- State HIDDEN - OPEN -->
+            <input type="hidden" class="form-control" name="status" value="0">
+            <!-- State HIDDEN - CLOSE -->
 
-        <!-- Contact person name - OPEN  -->
-        <div class="form-group col-md-6">
-            <label for="name_contact_person"> {{ __('register.name') }} </label>
-            <input type="text" class="form-control" name="name_contact_person" value="{{ old('name_contact_person') }}"/>
-        </div>
-        <!-- Contact person name - CLOSE  -->
+            <!-- Date creates HIDDEN - OPEN -->
+            <input type="hidden" class="form-control" name="date_creation" value="<?php echo date("Y-m-d H:i:s"); ?>">
+            <!-- Date creates HIDDEN - CLOSE -->
 
-        <!-- Contact person phone - OPEN  -->
-        <div class="form-group col-md-2">
-            <label for="phone_number_contact_person"> {{ __('forms.phone') }} </label>
-            <input type="text" class="form-control" name="phone_number_contact_person" value="{{ old('phone_number_contact_person') }}"/>
-        </div>
-        <!-- Contact person phone - CLOSE  -->
+            <!-- Date modifies HIDDEN - OPEN -->
+            <input type="hidden" class="form-control" name="date_last_modification" value="<?php echo date("Y-m-d H:i:s"); ?>">
+            <!-- Date modifies HIDDEN - CLOSE -->
 
-        <!-- Contact person affinity - OPEN  -->
-        <div class="form-group col-md-4">
-            <label for="affinity_contact_person"> {{ __('forms.affinity') }} </label>
-            <input type="text" class="form-control" name="affinity_contact_person" value="{{ old('affinity_contact_person') }}"/>
-        </div>
-        <!-- Contact person affinity - CLOSE  -->
+            <!-- Id user creates HIDDEN - OPEN -->
+            <input type="hidden" class="form-control" name="id_user_creation" value={{ Auth::user()->id }}>
+            <!-- Id user creates HIDDEN - CLOSE -->
 
-    </div>
-    <!-- Contact person - CLOSE -->
+            <!-- Id user last modification HIDDEN - OPEN -->
+            <input type="hidden" class="form-control" name="id_user_last_modification" value={{ Auth::user()->id }}>
+            <!-- Id user last modification HIDDEN - CLOSE -->
 
-    <!-- State HIDDEN - OPEN -->
-    <input type="hidden" class="form-control" name="status" value="0">
-    <!-- State HIDDEN - CLOSE -->
+            <!-- Submit button - OPEN -->
+            <div class="text-center margin-top">
+                <button type="submit" class="btn btn-primary">
+                    {{ __('actions.add') . ' ' . __('main.search') }}
+                </button>
+            </div>
+            <!-- Submit button - OPEN -->
 
-    <!-- Date creates HIDDEN - OPEN -->
-    <input type="hidden" class="form-control" name="date_creation" value="<?php echo date("Y-m-d H:i:s"); ?>">
-    <!-- Date creates HIDDEN - CLOSE -->
-
-    <!-- Date modifies HIDDEN - OPEN -->
-    <input type="hidden" class="form-control" name="date_last_modification" value="<?php echo date("Y-m-d H:i:s"); ?>">
-    <!-- Date modifies HIDDEN - CLOSE -->
-
-    <!-- Id user creates HIDDEN - OPEN -->
-    <input type="hidden" class="form-control" name="id_user_creation" value={{ Auth::user()->id }}>
-    <!-- Id user creates HIDDEN - CLOSE -->
-
-    <!-- Id user last modification HIDDEN - OPEN -->
-    <input type="hidden" class="form-control" name="id_user_last_modification" value={{ Auth::user()->id }}>
-    <!-- Id user last modification HIDDEN - CLOSE -->
-
-    <!-- Submit button - OPEN -->
-    <div class="text-center margin-top">
-        <button type="submit" class="btn btn-primary">
-            {{ __('actions.add') . ' ' . __('main.search') }}
-        </button>
-    </div>
-    <!-- Submit button - OPEN -->
-
-    </form>
-    <!-- Form - CLOSE -->
+        </form>
+        <!-- Form - CLOSE -->
 
     </div>
     <!-- Content - CLOSE -->

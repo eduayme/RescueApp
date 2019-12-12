@@ -248,3 +248,23 @@ footer {
   color: #fff;
   text-align: center;
 }
+
+.accordion-title {
+    cursor: pointer;
+}
+.accordion-title:before {
+    content: '\002B';
+    color: #343A40;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0.3em 0 1em 0;
+    padding: 0;
+}

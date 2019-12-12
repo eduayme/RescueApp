@@ -147,13 +147,13 @@
             <!-- Type activity, code and region - OPEN -->
 
             <!-- Alertant title - OPEN -->
-            <h3 class="margin-top">
+            <h3 class="margin-top-sm accordion-title" data-toggle="collapse" href="#collapseAlertant" role="button" aria-expanded="false" aria-controls="collapseAlertant">
                 {{ __('forms.alertant') }}
             </h3>
             <!-- Stype service title - CLOSE -->
 
             <!-- Alertant - OPEN -->
-            <div class="form-row">
+            <div class="form-row collapse" id="collapseAlertant">
 
                 <!-- Is the lost person - OPEN  -->
                 <div class="form-group col-md-3">
@@ -219,15 +219,16 @@
 
             </div>
             <!-- Alertant - CLOSE -->
+            <hr/>
 
             <!-- Incident title - OPEN -->
-            <h3 class="margin-top">
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseIncident" role="button" aria-expanded="false" aria-controls="collapseIncident">
                 {{ __('forms.incident') }}
             </h3>
             <!-- Incident title - CLOSE -->
 
             <!-- Incident - OPEN -->
-            <div class="form-row">
+            <div class="form-row collapse" id="collapseIncident">
 
                 <!-- Incident village UPA - OPEN  -->
                 <div class="form-group col-md-6">
@@ -289,34 +290,36 @@
 
             </div>
             <!-- Incident - CLOSE -->
+            <hr/>
 
-            <!-- Lost people title - OPEN -->
-            <h3 class="margin-top">
+            <!-- Lost people count title - OPEN -->
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseLostPeopleCount" role="button" aria-expanded="false" aria-controls="collapseLostPeopleCount">
                 {{ __('forms.lost_people') }}
             </h3>
-            <!-- Lost people title - CLOSE -->
+            <!-- Lost people count title - CLOSE -->
 
-            <!-- Lost people - OPEN -->
-            <div class="form-row">
+            <!-- Lost people count - OPEN -->
+            <div class="form-row collapse" id="collapseLostPeopleCount">
 
-                <!-- Lost people count - OPEN  -->
+                <!-- Count input - OPEN  -->
                 <div class="form-group col-md-4">
                     {{ Form::label('number_lost_people', __('forms.n_lost_people')) }}
                     {{ Form::number('number_lost_people', null, array('class' => 'form-control')) }}
                 </div>
-                <!-- Lost people count - CLOSE  -->
+                <!-- Count input - CLOSE  -->
 
             </div>
-            <!-- Lost people - CLOSE -->
+            <!-- Lost people count - CLOSE -->
+            <hr/>
 
-            <!-- Lost people title - OPEN -->
-            <h3 class="margin-top">
+            <!-- Lost people state title - OPEN -->
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseLostPeopleState" role="button" aria-expanded="false" aria-controls="collapseLostPeopleState">
                 {{ __('forms.status_people') }}
             </h3>
-            <!-- Lost people title - CLOSE -->
+            <!-- Lost people state title - CLOSE -->
 
-            <!-- Lost people - OPEN -->
-            <div class="form-row">
+            <!-- Lost people state - OPEN -->
+            <div class="form-row collapse" id="collapseLostPeopleState">
 
                 <!-- Lost people count - OPEN  -->
                 <div class="form-group col-md-12">
@@ -326,16 +329,17 @@
                 <!-- Lost people count - CLOSE  -->
 
             </div>
-            <!-- Lost people - CLOSE -->
+            <!-- Lost people state - CLOSE -->
+            <hr/>
 
             <!-- Equipment and experience title - OPEN -->
-            <h3 class="margin-top">
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseEquipment" role="button" aria-expanded="false" aria-controls="collapseEquipment">
                 {{ __('forms.equipment_and_experience') }}
             </h3>
             <!-- Equipment and experience title - CLOSE -->
 
             <!-- Equipment and experience - OPEN -->
-            <div class="form-row">
+            <div class="form-row collapse" id="collapseEquipment">
 
                 <!-- Knows the zone - OPEN  -->
                 <div class="form-group col-md-3">
@@ -496,15 +500,16 @@
 
             </div>
             <!-- Equipment and experience - CLOSE -->
+            <hr/>
 
             <!-- Contact person title - OPEN -->
-            <h3 class="margin-top">
+            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseContactPerson" role="button" aria-expanded="false" aria-controls="collapseContactPerson">
                 {{ __('forms.contact_person') }}
             </h3>
             <!-- Contact person title - CLOSE -->
 
             <!-- Contact person - OPEN -->
-            <div class="form-row">
+            <div class="form-row collapse" id="collapseContactPerson">
 
                 <!-- Contact person name - OPEN  -->
                 <div class="form-group col-md-6">
@@ -529,21 +534,22 @@
 
             </div>
             <!-- Contact person - CLOSE -->
+            <hr/>
 
             <!-- State HIDDEN - OPEN -->
-                {{ Form::hidden('status', $search->status, array('class' => 'form-control')) }}
+            {{ Form::hidden('status', $search->status, array('class' => 'form-control')) }}
             <!-- State HIDDEN - CLOSE -->
 
             <!-- Id user creates HIDDEN - OPEN -->
-                {{ Form::hidden('id_user_creation', $search->id_user_creation, array('class' => 'form-control')) }}
+            {{ Form::hidden('id_user_creation', $search->id_user_creation, array('class' => 'form-control')) }}
             <!-- Id user creates HIDDEN - CLOSE -->
 
             <!-- Date modifies HIDDEN - OPEN -->
-                <input type="hidden" class="form-control" name="date_last_modification" value="<?php echo date("Y-m-d H:i:s"); ?>">
+            <input type="hidden" class="form-control" name="date_last_modification" value="<?php echo date("Y-m-d H:i:s"); ?>">
             <!-- Date modifies HIDDEN - CLOSE -->
 
             <!-- Id user last modification HIDDEN - OPEN -->
-                <input type="hidden" class="form-control" name="id_user_last_modification" value={{ Auth::user()->id }}>
+            <input type="hidden" class="form-control" name="id_user_last_modification" value={{ Auth::user()->id }}>
             <!-- Id user last modification HIDDEN - CLOSE -->
 
             <!-- Submit button - OPEN -->
@@ -560,8 +566,8 @@
 
     <!-- Form lost people - OPEn -->
     <form id="desaparegut" action="/desapareguts/create" method="put">
-        @csrf
-            <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
+    @csrf
+        <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
     </form>
     <!-- Form lost people - CLOSE -->
 
