@@ -253,11 +253,14 @@ footer {
     cursor: pointer;
 }
 .accordion-title:before {
-    content: '\002B';
+    content: '\002D';
     color: #343A40;
     font-weight: bold;
     float: right;
     margin-left: 5px;
+}
+.accordion-title.collapsed:before {
+    content: '\002B';
 }
 
 hr {

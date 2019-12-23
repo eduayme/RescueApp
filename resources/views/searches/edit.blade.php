@@ -147,7 +147,7 @@
             <!-- Type activity, code and region - OPEN -->
 
             <!-- Alertant title - OPEN -->
-            <h3 class="margin-top-sm accordion-title" data-toggle="collapse" href="#collapseAlertant" role="button" aria-expanded="false" aria-controls="collapseAlertant">
+            <h3 class="margin-top-sm accordion-title collapsed" data-toggle="collapse" href="#collapseAlertant" role="button" aria-expanded="false" aria-controls="collapseAlertant">
                 {{ __('forms.alertant') }}
             </h3>
             <!-- Stype service title - CLOSE -->
@@ -222,7 +222,7 @@
             <hr/>
 
             <!-- Incident title - OPEN -->
-            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseIncident" role="button" aria-expanded="false" aria-controls="collapseIncident">
+            <h3 class="margin-top accordion-title collapsed" data-toggle="collapse" href="#collapseIncident" role="button" aria-expanded="false" aria-controls="collapseIncident">
                 {{ __('forms.incident') }}
             </h3>
             <!-- Incident title - CLOSE -->
@@ -293,7 +293,7 @@
             <hr/>
 
             <!-- Lost people count title - OPEN -->
-            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseLostPeopleCount" role="button" aria-expanded="false" aria-controls="collapseLostPeopleCount">
+            <h3 class="margin-top accordion-title collapsed" data-toggle="collapse" href="#collapseLostPeopleCount" role="button" aria-expanded="false" aria-controls="collapseLostPeopleCount">
                 {{ __('forms.lost_people') }}
             </h3>
             <!-- Lost people count title - CLOSE -->
@@ -313,7 +313,7 @@
             <hr/>
 
             <!-- Lost people state title - OPEN -->
-            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseLostPeopleState" role="button" aria-expanded="false" aria-controls="collapseLostPeopleState">
+            <h3 class="margin-top accordion-title collapsed" data-toggle="collapse" href="#collapseLostPeopleState" role="button" aria-expanded="false" aria-controls="collapseLostPeopleState">
                 {{ __('forms.status_people') }}
             </h3>
             <!-- Lost people state title - CLOSE -->
@@ -333,7 +333,7 @@
             <hr/>
 
             <!-- Equipment and experience title - OPEN -->
-            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseEquipment" role="button" aria-expanded="false" aria-controls="collapseEquipment">
+            <h3 class="margin-top accordion-title collapsed" data-toggle="collapse" href="#collapseEquipment" role="button" aria-expanded="false" aria-controls="collapseEquipment">
                 {{ __('forms.equipment_and_experience') }}
             </h3>
             <!-- Equipment and experience title - CLOSE -->
@@ -503,7 +503,7 @@
             <hr/>
 
             <!-- Contact person title - OPEN -->
-            <h3 class="margin-top accordion-title" data-toggle="collapse" href="#collapseContactPerson" role="button" aria-expanded="false" aria-controls="collapseContactPerson">
+            <h3 class="margin-top accordion-title collapsed" data-toggle="collapse" href="#collapseContactPerson" role="button" aria-expanded="false" aria-controls="collapseContactPerson">
                 {{ __('forms.contact_person') }}
             </h3>
             <!-- Contact person title - CLOSE -->
