@@ -366,8 +366,14 @@
 
         $.fn.dataTable.ext.search.push(
             function (settings, data, dataIndex) {
-                var min = $('input[name="dates-searches-filter"]').data('daterangepicker').startDate._d;
-                var max = $('input[name="dates-searches-filter"]').data('daterangepicker').endDate._d;
+                <?php if( count($searches) == 0 ) : ?>
+                    var min = null;
+                    var max = null;
+                    console.log("searches");
+                <?php else : ?>
+                    var min = $('input[name="dates-searches-filter"]').data('daterangepicker').startDate._d;
+                    var max = $('input[name="dates-searches-filter"]').data('daterangepicker').endDate._d;
+                <?php endif; ?>
 
                 var startDate = 'invalid';
                 if( data[6] != '' ) {
@@ -508,8 +514,13 @@
 
         $.fn.dataTable.ext.search.push(
             function (settings, data, dataIndex) {
-                var min = $('input[name="dates-practices-filter"]').data('daterangepicker').startDate._d;
-                var max = $('input[name="dates-practices-filter"]').data('daterangepicker').endDate._d;
+                <?php if( count($practices) == 0 ) : ?>
+                    var min = null;
+                    var max = null;
+                <?php else : ?>
+                    var min = $('input[name="dates-practices-filter"]').data('daterangepicker').startDate._d;
+                    var max = $('input[name="dates-practices-filter"]').data('daterangepicker').endDate._d;
+                <?php endif ; ?>
 
                 var startDate = 'invalid';
                 if( data[6] != '' ) {
