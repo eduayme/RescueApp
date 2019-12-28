@@ -29,7 +29,7 @@
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="/docs">
+                <a href="https://larecipe.binarytorch.com.my/docs/2.2/installation">
                     {{ __('main.documentation') }}
                 </a>
             </li>
