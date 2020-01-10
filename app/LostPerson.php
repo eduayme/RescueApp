@@ -33,4 +33,9 @@ class LostPerson extends Model
         'color_vehicle',
         'car_plate_number',
     ];
+
+    public function search()
+    {
+        return $this->belongsTo('App\Search', 'id_search', 'id_search');
+    }
 }

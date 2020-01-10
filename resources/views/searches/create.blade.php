@@ -266,17 +266,61 @@
             <!-- Lost people count title - CLOSE -->
 
             <!-- Lost people count - OPEN -->
-            <div class="form-row collapse" id="collapseLostPeopleCount">
+            <div class="collapse" id="collapseLostPeopleCount">
 
-                <!-- Count input - OPEN  -->
-                <div class="form-group col-md-4">
-                    <label for="number_lost_people"> {{ __('forms.n_lost_people') }} </label>
-                    <input type="number" class="form-control" name="number_lost_people" value="{{ old('number_lost_people') }}"/>
+                <div class="form-row">
+                    <!-- Count input - OPEN  -->
+                    <div class="form-group col-md-4">
+                        <label for="number_lost_people"> {{ __('forms.n_lost_people') }} </label>
+                        <input type="number" class="form-control" name="number_lost_people" value="{{ old('number_lost_people') }}"/>
+                    </div>
+                    <!-- Count input - CLOSE  -->
+                    <div class="form-group col-md-2 add-wrapper">
+                        <a href="javascript:void(0);" class="add-button btn btn-outline-dark margin-top">
+                            <span class="octicon octicon-plus"></span>
+                            {{ __('actions.add_lost_person') }}
+                        </a>
+                    </div>
                 </div>
-                <!-- Count input - CLOSE  -->
+
+
+                <!-- Add person - OPEN  -->
+                <div class="wrapper">
+
+                    <h4> {{ __('main.lost_person') }} <div class="id-lost-person"> 1 </div> </h4>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4">
+                            <label for="lost_person_name"> {{ __('register.name') }} </label>
+                            <input type="text" class="form-control" name="lost_person_name[]" value=""/>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="lost_person_name_respond"> {{ __('forms.name_respond') }} </label>
+                            <input type="text" class="form-control" name="lost_person_name_respond[]" value=""/>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label for="lost_person_age"> {{ __('forms.age') }} </label>
+                            <input type="number" class="form-control" name="lost_person_age[]" value=""/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="lost_person_phone_number"> {{ __('forms.phone') }} </label>
+                            <input type="text" class="form-control" name="lost_person_phone_number[]" value=""/>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <a href="javascript:void(0);" class="add-button btn btn-outline-dark btn-lg margin-top">
+                                <span class="octicon octicon-plus"></span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Add person - CLOSE  -->
 
             </div>
             <!-- Lost people count - CLOSE -->
+
             <hr/>
 
             <!-- Lost people state title - OPEN -->
@@ -578,6 +622,27 @@ $(document).ready(function() {
         $(this).val('');
     });
 
+    var maxField = 50; //Input fields increment limitation
+    var wrapper = $('.wrapper'); //Input field wrapper
+    var x = 1; //Initial field counter is 1
+
+    //Once add button is clicked
+    $(document).on('click', '.add-button', function(e) {
+        //Check maximum number of input fields
+        if(x < maxField) {
+            x++; //Increment field counter
+            var fieldHTML = '<div class="wrapper"><h4> {{ __("main.lost_person") }} <div class="id-lost-person">' + x + ' </div> </h4><div class="form-row"><div class="form-group col-md-4"><label for="lost_person_name"> {{ __("register.name") }} </label><input type="text" class="form-control" name="lost_person_name[]" value=""/></div><div class="form-group col-md-2"><label for="lost_person_name_respond"> {{ __("forms.name_respond") }} </label><input type="text" class="form-control" name="lost_person_name_respond[]" value=""/></div><div class="form-group col-md-1"><label for="lost_person_age"> {{ __("forms.age") }} </label><input type="number" class="form-control" name="lost_person_age[]" value=""/></div><div class="form-group col-md-3"><label for="lost_person_phone_number"> {{ __("forms.phone") }} </label><input type="text" class="form-control" name="lost_person_phone_number[]" value=""/></div><div class="form-group col-md-1"><a href="javascript:void(0);" class="add-button btn btn-outline-dark btn-lg margin-top"><span class="octicon octicon-plus"></span></a></div><div class="form-group col-md-1"><a href="javascript:void(0);" class="remove-button btn btn-outline-danger btn-lg margin-top"><span class="octicon octicon-trashcan"></span></a></div></div></div>';
+            $(wrapper).append(fieldHTML); //Add field html
+            document.getElementsByClassName('id-lost-person').innerHTML = x;
+        }
+    });
+
+    //Once remove button is clicked
+    $(wrapper).on('click', '.remove-button', function(e) {
+        e.preventDefault();
+        $(this).parent('div').parent('div').parent('div').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
 
 });
 

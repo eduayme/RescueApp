@@ -57,6 +57,7 @@ footer {
   border-radius: 3px;
   border: 1px solid #D1D3D4;
   font-weight: normal;
+  color: #ABABAB;
 }
 
 .funkyradio input[type="radio"]:empty,
@@ -270,4 +271,8 @@ hr {
     border-top: 1px solid #ccc;
     margin: 0.3em 0 1em 0;
     padding: 0;
+}
+
+.id-lost-person {
+    display: inline;
 }

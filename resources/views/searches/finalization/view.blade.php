@@ -42,11 +42,11 @@
             </h5>
 
             <h4 style="display: inline">
-                <b> {{ $search->user_finalization->name }} </b>
+                <b> {{ $search->user_finalization->name }}, </b>
             </h4>
 
             <h5 style="display: inline">
-                <b> ({{ $search->user_finalization->dni }}),
+                <b>
                     @php
                         $date = new Date($search->date_finalization);
                         echo $date->format('H:i | d M. Y');

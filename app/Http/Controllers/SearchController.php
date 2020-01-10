@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Search;
+use App\LostPerson;
 use Auth;
 use Illuminate\Http\Request;
 use Validator;
@@ -116,8 +117,21 @@ class SearchController extends Controller
             'phone_number_contact_person'    => $request->get('phone_number_contact_person'),
             'affinity_contact_person'        => $request->get('affinity_contact_person'),
         ]);
-
         $search->save();
+
+        // add lost people list
+        foreach($request->input('lost_person_name') as $key => $value) {
+            if( $value != '' ) {
+                $lost_person = new LostPerson([
+                    'id_search'    => $search->id,
+                    'name'         => $value,
+                    'name_respond' => $request->input('lost_person_name_respond')[$key],
+                    'age'          => $request->input('lost_person_age')[$key],
+                    'phone_number' => $request->input('lost_person_phone_number')[$key],
+                ]);
+                $lost_person->save();
+            }
+        }
 
         return redirect('searches/'.$search->id)
         ->with('success', $search->id_search.__('messages.added'));
@@ -152,6 +166,10 @@ class SearchController extends Controller
 
         if ($currentUser != 'guest') {
             $search->delete();
+
+            foreach ($search->lost_people() as $person) {
+                $person->delete();
+            }
 
             return redirect('/')
             ->with('success', $search->id_search.__('messages.deleted'));
