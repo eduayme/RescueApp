@@ -34,13 +34,13 @@ class RegisterTest extends TestCase
         $user = factory(User::class)->make();
 
         $response = $this->post('register', [
-          'name'                   => $user->name,
-          'email'                  => $user->email,
-          'dni'                    => '41588985H',
-          'profile'                => 'firefighter',
-          'password'               => 'secret',
-          'password_confirmation'  => 'secret',
-      ]);
+            'name'                   => $user->name,
+            'email'                  => $user->email,
+            'dni'                    => '41588985H',
+            'profile'                => 'firefighter',
+            'password'               => 'secret',
+            'password_confirmation'  => 'secret',
+        ]);
 
         $response->assertStatus(302);
         //$this->assertAuthenticated();

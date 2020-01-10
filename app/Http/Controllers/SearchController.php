@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Search;
 use App\LostPerson;
+use App\Search;
 use Auth;
 use Illuminate\Http\Request;
 use Validator;
@@ -120,8 +120,8 @@ class SearchController extends Controller
         $search->save();
 
         // add lost people list
-        foreach($request->input('lost_person_name') as $key => $value) {
-            if( $value != '' ) {
+        foreach ($request->input('lost_person_name') as $key => $value) {
+            if ($value != '') {
                 $lost_person = new LostPerson([
                     'id_search'    => $search->id,
                     'name'         => $value,

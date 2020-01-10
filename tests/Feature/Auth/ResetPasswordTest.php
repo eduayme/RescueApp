@@ -173,10 +173,10 @@ class ResetPasswordTest extends TestCase
         ]);
 
         $response = $this->from($this->password_reset_get_route($this->get_invalid_token()))->post($this->password_reset_post_route(), [
-          'token'                 => $this->get_invalid_token($user),
-          'email'                 => $user->email,
-          'password'              => 'new-awesome-password',
-          'password_confirmation' => 'new-awesome-password',
+            'token'                 => $this->get_invalid_token($user),
+            'email'                 => $user->email,
+            'password'              => 'new-awesome-password',
+            'password_confirmation' => 'new-awesome-password',
         ]);
 
         $response->assertRedirect($this->password_reset_get_route(
