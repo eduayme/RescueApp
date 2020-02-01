@@ -622,27 +622,126 @@ $(document).ready(function() {
         $(this).val('');
     });
 
-    var maxField = 50; //Input fields increment limitation
-    var wrapper = $('.wrapper'); //Input field wrapper
-    var x = 1; //Initial field counter is 1
+    // input fields increment limitation
+    var maxField = 50;
+    // input field wrapper
+    var wrapper = $('.wrapper');
+    // initial field counter is 1
+    var x = 1;
 
-    //Once add button is clicked
+    // when add button is clicked
     $(document).on('click', '.add-button', function(e) {
-        //Check maximum number of input fields
+        // check maximum number of input fields
         if(x < maxField) {
-            x++; //Increment field counter
+            // increment field counter
+            x++;
+            // add a new html lost person input
             var fieldHTML = '<div class="wrapper"><h4> {{ __("main.lost_person") }} <div class="id-lost-person">' + x + ' </div> </h4><div class="form-row"><div class="form-group col-md-4"><label for="lost_person_name"> {{ __("register.name") }} </label><input type="text" class="form-control" name="lost_person_name[]" value=""/></div><div class="form-group col-md-2"><label for="lost_person_name_respond"> {{ __("forms.name_respond") }} </label><input type="text" class="form-control" name="lost_person_name_respond[]" value=""/></div><div class="form-group col-md-1"><label for="lost_person_age"> {{ __("forms.age") }} </label><input type="number" class="form-control" name="lost_person_age[]" value=""/></div><div class="form-group col-md-3"><label for="lost_person_phone_number"> {{ __("forms.phone") }} </label><input type="text" class="form-control" name="lost_person_phone_number[]" value=""/></div><div class="form-group col-md-1"><a href="javascript:void(0);" class="add-button btn btn-outline-dark btn-lg margin-top"><span class="octicon octicon-plus"></span></a></div><div class="form-group col-md-1"><a href="javascript:void(0);" class="remove-button btn btn-outline-danger btn-lg margin-top"><span class="octicon octicon-trashcan"></span></a></div></div></div>';
-            $(wrapper).append(fieldHTML); //Add field html
+            // add the html in the wrapper div
+            $(wrapper).append(fieldHTML);
+            // assign the counter
             document.getElementsByClassName('id-lost-person').innerHTML = x;
         }
     });
 
-    //Once remove button is clicked
+    // once remove button is clicked
     $(wrapper).on('click', '.remove-button', function(e) {
         e.preventDefault();
-        $(this).parent('div').parent('div').parent('div').remove(); //Remove field html
-        x--; //Decrement field counter
+        // remove field html
+        $(this).parent('div').parent('div').parent('div').remove();
+        // decrement field counter
+        x--;
     });
+
+    // when select is_lost_person value changes
+    document.getElementById('is_lost_person').addEventListener('change', function() {
+        console.log('Selected value in alertant is the lost person: ', this.value);
+
+        // if the alertant is the lost person
+        if( this.value === '1' ) {
+            console.log('The alertant is the lost person');
+            alertant_is_lost_person();
+
+            // if changes name
+            $('input[name="name_person_alerts').change(function() {
+                alertant_is_lost_person();
+            });
+        }
+        else if( this.value === '0' ) {
+            alertant_name  = document.getElementsByName("name_person_alerts")[0].value;
+            lost_pers_name = document.getElementsByName("lost_person_name[]")[0].value;
+            alertant_age  = document.getElementsByName("age_person_alerts")[0].value;
+            lost_pers_age = document.getElementsByName("lost_person_age[]")[0].value;
+            alertant_phone_number  = document.getElementsByName("phone_number_person_alerts")[0].value;
+            lost_pers_phone_number = document.getElementsByName("lost_person_phone_number[]")[0].value;
+
+            if( alertant_name == lost_pers_name ) {
+                $('input[name="lost_person_name[]"]').first().val('');
+            }
+            if( alertant_age == lost_pers_age ) {
+                $('input[name="lost_person_age[]"]').first().val('');
+            }
+            if( alertant_phone_number == lost_pers_phone_number ) {
+                $('input[name="lost_person_phone_number[]"]').first().val('');
+            }
+        }
+
+    });
+
+    // change the lost person name if is the alertant
+    function alertant_is_lost_person() {
+        // name lost person
+        alertant_name = document.getElementsByName("name_person_alerts")[0].value;
+        $('input[name="lost_person_name[]"]').first().val(alertant_name);
+
+        // age lost person
+        alertant_age = document.getElementsByName("age_person_alerts")[0].value;
+        $('input[name="lost_person_age[]"]').first().val(alertant_age);
+
+        // phone number lost person
+        alertant_phone_number = document.getElementsByName("phone_number_person_alerts")[0].value;
+        $('input[name="lost_person_phone_number[]"]').first().val(alertant_phone_number);
+    }
+
+    // when select is_contact_person value changes
+    document.getElementById('is_contact_person').addEventListener('change', function() {
+        console.log('Selected value in alertant is the contact person: ', this.value);
+
+        // if the alertant is the contact person
+        if( this.value === '1' ) {
+            console.log('The alertant is the contact person');
+            alertant_is_contact_person();
+
+            // if changes name
+            $('input[name="name_person_alerts').change(function() {
+                alertant_is_contact_person();
+            });
+        }
+        else if( this.value === '0' ) {
+            alertant_name = document.getElementsByName("name_person_alerts")[0].value;
+            contact_name  = document.getElementsByName("name_contact_person")[0].value;
+            alertant_phone_number = document.getElementsByName("phone_number_person_alerts")[0].value;
+            contact_phone_number  = document.getElementsByName("phone_number_contact_person")[0].value;
+
+            if( alertant_name == contact_name ) {
+                $('input[name="name_contact_person"]').val('');
+            }
+            if( alertant_phone_number == contact_phone_number ) {
+                $('input[name="phone_number_contact_person"]').val('');
+            }
+        }
+    });
+
+    // change the lost person name if is the alertant
+    function alertant_is_contact_person() {
+        // name contact person
+        alertant_name = document.getElementsByName("name_person_alerts")[0].value;
+        $('input[name="name_contact_person"]').val(alertant_name);
+
+        // phone number contact person
+        alertant_phone_number = document.getElementsByName("phone_number_person_alerts")[0].value;
+        $('input[name="phone_number_contact_person"]').val(alertant_phone_number);
+    }
 
 });
 
