@@ -29,7 +29,7 @@
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="/docs">
+                <a href="/docs" id="docs">
                     {{ __('main.documentation') }}
                 </a>
             </li>
@@ -54,3 +54,8 @@
     </div>
 
 </footer>
+
+<script>
+   var lang = '{{ Lang::locale() }}';
+   document.getElementById("docs").setAttribute("href", "/docs/"+lang);
+</script>

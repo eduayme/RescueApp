@@ -1,4 +1,4 @@
-- ## Get Started
+- ## Documentación
     - [Descripción](/{{route}}/{{version}}/description)
     - [Instalación](/{{route}}/{{version}}/installation)
     - [Objectivos](/{{route}}/{{version}}/objectives)
