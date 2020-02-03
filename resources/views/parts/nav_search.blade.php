@@ -150,7 +150,7 @@
                             </a>
                             <!-- Profile button - CLOSE -->
 
-                            @if (Auth::user()->profile == 'admin')
+                            @if (Auth::user()->is_admin())
                                 <!-- Management bottom - OPEN -->
                                 <a class="dropdown-item" href="{{ route('users') }}">
                                     <span class="octicon octicon-tools"></span>

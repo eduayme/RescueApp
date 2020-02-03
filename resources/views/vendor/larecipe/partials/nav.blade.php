@@ -69,7 +69,7 @@
 
             <!-- Home section - OPEN -->
             <larecipe-button tag="a" href="{{ route('index') }}" type="grey" class="mx-2 px-4" style="margin-left: 50px !important">
-                <i class="fas fa-home"></i>
+                <i class="fas fa-home" style="color: #22292f"></i>
             </larecipe-button>
             <!-- Home section - OPEN -->
 

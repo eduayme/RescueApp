@@ -17,6 +17,14 @@ class UserController extends Controller
         return view('auth.profile', ['user' => Auth::user()]);
     }
 
+    public function show($id)
+    {
+        // get user
+        $user = User::find($id);
+
+        return view('auth.view_profile', ['current_user' => Auth::user(), 'profile_user' => $user]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +35,7 @@ class UserController extends Controller
         // get user
         $user = Auth::user();
 
-        if ($user->profile == 'admin') {
+        if ($user->is_admin()) {
             $users = User::orderBy('id', 'desc')->get();
 
             return view('users_manage.index', compact('users'));

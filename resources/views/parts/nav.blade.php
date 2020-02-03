@@ -104,7 +104,7 @@
                     <!-- User dropdown - OPEN -->
                     <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
 
-                        @if (Auth::user()->profile == 'admin')
+                        @if (Auth::user()->is_admin())
                             <!-- Management bottom - OPEN -->
                             <a class="dropdown-item" href="{{ route('users') }}">
                                 <span class="octicon octicon-tools"></span>

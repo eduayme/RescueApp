@@ -151,7 +151,7 @@
         <div class="margin-top-sm-min">
             <h5 style="display: inline">
                 <b>
-                    {{ $search->user_creation->name }},
+                    <a href="{{ route('view_profile', $search->user_creation->id) }}">{{ $search->user_creation->name }}</a>,
                 </b>
             </h5>
             <h6 style="display: inline">
@@ -196,7 +196,7 @@
         <div class="margin-top-sm-min">
             <h5 style="display: inline">
                 <b>
-                    {{ $search->user_last_modification->name }},
+                    <a href="{{ route('view_profile', $search->user_last_modification->id) }}">{{ $search->user_last_modification->name }}</a>,
                 </b>
             </h5>
             <h6 style="display: inline">

@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/users', 'UserController@store')->name('add_user');
         Route::post('/users/{id}', 'UserController@update')->name('update_user');
     });
+
+    Route::get('/users/{id}', 'UserController@show')->name('view_profile');
 });
 
 Route::get('locale-ca', function () {
