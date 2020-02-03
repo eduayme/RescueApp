@@ -57,5 +57,5 @@
 
 <script>
    var lang = '{{ Lang::locale() }}';
-   document.getElementById("docs").setAttribute("href", "/docs/"+lang);
+   document.getElementById("docs").setAttribute("href", "/docs/" + lang.toUpperCase());
 </script>
