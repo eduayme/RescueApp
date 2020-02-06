@@ -114,11 +114,21 @@
         "doc",
         "design"
       ]
+    },
+    {
+      "login": "Dhavalc2012",
+      "name": "Dhaval",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7031028?v=4",
+      "profile": "https://github.com/Dhavalc2012",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 5,
-  "projectName": "Rescue-app",
+  "projectName": "RescueApp",
   "projectOwner": "eduayme",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
