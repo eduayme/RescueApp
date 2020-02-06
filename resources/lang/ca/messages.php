@@ -4,6 +4,7 @@ return [
     'required'        => 'Aquest camp és obligatori.',
     'min'             => 'Aquest camp ha de tenir com a mínim 2 caràcters.',
     'min8'            => 'Aquest camp ha de tenir com a mínim 8 caràcters.',
+    'min8_max10'      => 'Aquest camp ha de tenir entre 8 i 10 caràcters.',
     'max'             => 'Aquest camp no pot tenir més de 50 caràcters.',
     'max10'           => 'Aquest camp no pot tenir més de 10 caràcters.',
     'email'           => 'Aquest camp ha de tenir format de correu electrònic',
