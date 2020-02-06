@@ -158,7 +158,7 @@
                 <b>
                     @php
                         $date = new Date($search->date_start);
-                        echo $date->format('H:i | d M. Y');
+                        echo $date->format('Y M. d | H:i');
                     @endphp
                 </b>
             </h6>
@@ -176,7 +176,7 @@
                 @else
                     @php
                         $date = new Date($search->date_start);
-                        echo $date->format('H:i | d M. Y');
+                        echo $date->format('Y M. d | H:i');
                     @endphp
                 @endif
             </b>
@@ -203,7 +203,7 @@
                 <b>
                     @php
                         $date = new Date($search->date_last_modification);
-                        echo $date->format('H:i | d M. Y');
+                        echo $date->format('Y M. d | H:i');
                     @endphp
                 </b>
             </h6>
@@ -221,7 +221,7 @@
                 @else
                     @php
                         $date = new Date($search->date_finalization);
-                        echo $date->format('H:i | d M. Y');
+                        echo $date->format('Y M. d | H:i');
                     @endphp
                 @endif
             </b>
@@ -293,7 +293,7 @@
                             <span class="octicon octicon-clock"></span>
                             @php
                                 $date = new Date($search->date_last_place_seen);
-                                echo $date->format('H:i | d M. Y');
+                                echo $date->format('Y M. d | H:i');
                             @endphp
                         </p>
                     @endif

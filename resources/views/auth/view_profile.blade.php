@@ -76,7 +76,7 @@
                             <h5>
                                 @php
                                     $date = new Date($profile_user->created_at);
-                                    echo $date->format('H:i | d M. Y');
+                                    echo $date->format('Y M. d | H:i');
                                 @endphp
                             </h5>
                         </div>
@@ -87,7 +87,7 @@
                             <h5>
                                 @php
                                     $date = new Date($profile_user->updated_at);
-                                    echo $date->format('H:i | d M. Y');
+                                    echo $date->format('Y M. d | H:i');
                                 @endphp
                             </h5>
                         </div>
@@ -102,7 +102,7 @@
                             <h5>
                                 @php
                                     $date = new Date($profile_user->last_login_at);
-                                    echo $date->format('H:i | d M. Y');
+                                    echo $date->format('Y M. d | H:i');
                                 @endphp
                             </h5>
                         </div>
