@@ -231,27 +231,21 @@
                 <!-- Incident zone - OPEN  -->
                 <div class="form-group col-md-6">
                     <label for="zone_incident"> {{ __('forms.incident_zone') }} </label>
-                    <textarea type="text" class="form-control" name="zone_incident" rows="2">
-                        {{ old('zone_incident') }}
-                    </textarea>
+                    <textarea type="text" class="form-control" name="zone_incident" rows="2">{{ old('zone_incident') }}</textarea>
                 </div>
                 <!-- Incident zone - CLOSE  -->
 
                 <!-- Incident route - OPEN  -->
                 <div class="form-group col-md-6">
                     <label for="potential_route"> {{ __('forms.possible_route') }} </label>
-                    <textarea type="text" class="form-control" name="potential_route" rows="2">
-                        {{ old('potential_route') }}
-                    </textarea>
+                    <textarea type="text" class="form-control" name="potential_route" rows="2">{{ old('potential_route') }}</textarea>
                 </div>
                 <!-- Incident route - CLOSE  -->
 
                 <!-- Incident description - OPEN  -->
                 <div class="form-group col-md-12">
                     <label for="description_incident"> {{ __('forms.description') }} </label>
-                    <textarea type="text" class="form-control" name="description_incident" rows="2">
-                        {{ old('description_incident') }}
-                    </textarea>
+                    <textarea type="text" class="form-control" name="description_incident" rows="2">{{ old('description_incident') }}</textarea>
                 </div>
                 <!-- Incident description - CLOSE  -->
 
@@ -335,9 +329,7 @@
                 <!-- State input - OPEN  -->
                 <div class="form-group col-md-12">
                     <label for="physical_condition_lost_people"> {{ __('forms.description') }} </label>
-                    <textarea type="number" class="form-control" name="physical_condition_lost_people" rows="2">
-                        {{ old('physical_condition_lost_people') }}
-                    </textarea>
+                    <textarea type="number" class="form-control" name="physical_condition_lost_people" rows="2">{{ old('physical_condition_lost_people') }}</textarea>
                 </div>
                 <!-- State input - CLOSE  -->
 

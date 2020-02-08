@@ -4,6 +4,7 @@ return [
     'required'        => 'Este campo es obligatorio.',
     'min'             => 'Este campo debe tener al menos 2 caracteres.',
     'min8'            => 'Este campo debe tener al menos 8 caracteres.',
+    'min8_max10'      => 'Este campo debe tener entre 8 y 10 caracteres.',
     'max'             => 'Este campo no puede tener más de 50 caracteres.',
     'max10'           => 'Este campo no puede tener más de 10 caracteres.',
     'email'           => 'Este campo debe tener formato de correo electrónico',

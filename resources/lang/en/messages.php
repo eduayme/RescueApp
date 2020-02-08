@@ -4,6 +4,7 @@ return [
     'required'        => 'This field is required.',
     'min'             => 'This field must contain at least 2 characters.',
     'min8'            => 'This field must contain at least 8 characters.',
+    'min8_max10'      => 'This field must contain between 8 and 10 characters.',
     'max'             => 'This field must contain less than 50 characters.',
     'max10'           => 'This field must contain less than 10 characters.',
     'email'           => 'This field must contain an email address',

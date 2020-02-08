@@ -67,7 +67,7 @@
                         <td>
                             @php
                                 $date = new Date($user->last_login_at);
-                                echo $date->format('H:i | d M. Y');
+                                echo $date->format('Y M. d | H:i');
                             @endphp
                         </td>
                         <td>

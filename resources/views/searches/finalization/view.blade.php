@@ -49,7 +49,7 @@
                 <b>
                     @php
                         $date = new Date($search->date_finalization);
-                        echo $date->format('H:i | d M. Y');
+                        echo $date->format('Y M. d | H:i');
                     @endphp
                 </b>
             </h5>
