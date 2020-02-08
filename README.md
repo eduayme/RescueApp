@@ -41,7 +41,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://alfathony.com"><img src="https://avatars1.githubusercontent.com/u/14884603?v=4" width="100px;" alt=""/><br /><sub><b>Alfathony</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=alfathony" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Dhavalc2012"><img src="https://avatars1.githubusercontent.com/u/7031028?v=4" width="100px;" alt=""/><br /><sub><b>Dhaval</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/issues?q=author%3ADhavalc2012" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/Dhavalc2012"><img src="https://avatars1.githubusercontent.com/u/7031028?v=4" width="100px;" alt=""/><br /><sub><b>Dhaval</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/issues?q=author%3ADhavalc2012" title="Bug reports">🐛</a> <a href="https://github.com/eduayme/RescueApp/commits?author=Dhavalc2012" title="Code">💻</a></td>
   </tr>
 </table>
 
