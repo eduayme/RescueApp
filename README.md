@@ -41,7 +41,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/EnricSalaPujolar"><img src="https://avatars3.githubusercontent.com/u/56341832?v=4" width="100px;" alt=""/><br /><sub><b>EnricSalaPujolar</b></sub></a><br /><a href="#ideas-EnricSalaPujolar" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/eduayme/RescueApp/commits?author=EnricSalaPujolar" title="Documentation">📖</a> <a href="#design-EnricSalaPujolar" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/Dhavalc2012"><img src="https://avatars1.githubusercontent.com/u/7031028?v=4" width="100px;" alt=""/><br /><sub><b>Dhaval</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/issues?q=author%3ADhavalc2012" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/Dhavalc2012"><img src="https://avatars1.githubusercontent.com/u/7031028?v=4" width="100px;" alt=""/><br /><sub><b>Dhaval</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/issues?q=author%3ADhavalc2012" title="Bug reports">🐛</a> <a href="https://github.com/eduayme/RescueApp/commits?author=Dhavalc2012" title="Code">💻</a></td>
   </tr>
 </table>
 
