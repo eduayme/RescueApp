@@ -663,7 +663,7 @@ $(document).ready(function() {
             alertant_is_lost_person();
 
             // if changes name
-            $('input[name="name_person_alerts').change(function() {
+            $('input[name="name_person_alerts"], input[name="age_person_alerts"], input[name="phone_number_person_alerts"]').change(function() {
                 alertant_is_lost_person();
             });
         }
@@ -693,14 +693,17 @@ $(document).ready(function() {
         // name lost person
         alertant_name = document.getElementsByName("name_person_alerts")[0].value;
         $('input[name="lost_person_name[]"]').first().val(alertant_name);
+        console.log("Alertant name: " + alertant_name);
 
         // age lost person
         alertant_age = document.getElementsByName("age_person_alerts")[0].value;
         $('input[name="lost_person_age[]"]').first().val(alertant_age);
+        console.log("Alertant age: " + alertant_age);
 
         // phone number lost person
         alertant_phone_number = document.getElementsByName("phone_number_person_alerts")[0].value;
         $('input[name="lost_person_phone_number[]"]').first().val(alertant_phone_number);
+        console.log("Alertant phone number: " + alertant_phone_number);
     }
 
     // when select is_contact_person value changes
@@ -713,7 +716,7 @@ $(document).ready(function() {
             alertant_is_contact_person();
 
             // if changes name
-            $('input[name="name_person_alerts').change(function() {
+            $('input[name="name_person_alerts"], input[name="phone_number_person_alerts"]').change(function() {
                 alertant_is_contact_person();
             });
         }

@@ -1,8 +1,8 @@
 <!-- Top buttons - OPEN -->
-<div class="row margin_top_bottom">
+<div class="margin_top_bottom">
 
     <!-- Align left - OPEN -->
-    <div class="col justify-content-start">
+    <div class="justify-content-start">
 
         <!-- Go back - OPEN -->
         <a href="{{ URL::previous() }}" role="button" class="btn btn-outline-secondary margin-right btn-sm">

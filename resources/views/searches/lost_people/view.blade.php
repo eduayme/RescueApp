@@ -25,7 +25,8 @@
 
                 <!-- Go back - OPEN -->
                 <a href="{{ URL::to('searches/' . $search->id) }}"
-                role="button" class="btn btn-outline-secondary margin-right btn-sm">
+                role="button" class="btn btn-outline-secondary margin-right btn-sm"
+                style="margin-left: -15px;">
                     <span class="octicon octicon-arrow-left"></span>
                     {{ __('actions.go_back') }}
                 </a>

@@ -21,11 +21,11 @@
             <!-- Stype service title - OPEN -->
             <div class="form-row">
                 <div class="form-group col-md-auto">
-                    <h3>
+                    <h3 class="margin-top">
                         {{ $lost_person->name }}
                     </h3>
                 </div>
-                <div class="form-group col-md-auto">
+                <div class="form-group col-md-auto margin-top">
                     <select id="found" class="form-control" name="found">
                         <option value="0" {{ ($lost_person->found === 0) ? 'selected' : '' }}>
                             {{ __('main.lost_person') }}

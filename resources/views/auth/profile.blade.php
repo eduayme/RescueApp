@@ -11,6 +11,10 @@
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
 
+        <!-- Top buttons - OPEN -->
+        @include('buttons.go_back')
+        <!-- Top buttons - CLOSE -->
+
         <!-- Form - OPEN -->
         {{ Form::model($user, array('route' => array('users.update', $user->id), 'files'=> true)) }}
 
