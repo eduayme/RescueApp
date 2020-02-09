@@ -3,6 +3,7 @@
 <a href="https://travis-ci.org/eduayme/RescueApp"><img src="https://travis-ci.org/eduayme/RescueApp.svg?branch=master" alt="Build Status"></a>
 <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.1"><img src="https://img.shields.io/badge/version-v1.1-blue"></a>
 <a href="https://github.com/eduayme/RescueApp/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License"></a>
+<a href="https://gitter.im/eduayme-RescueApp/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/eduayme-RescueApp/community.svg" alt="License"></a>
 </p>
 
 
@@ -41,7 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="http://alfathony.com"><img src="https://avatars1.githubusercontent.com/u/14884603?v=4" width="100px;" alt=""/><br /><sub><b>Alfathony</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=alfathony" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Dhavalc2012"><img src="https://avatars1.githubusercontent.com/u/7031028?v=4" width="100px;" alt=""/><br /><sub><b>Dhaval</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/issues?q=author%3ADhavalc2012" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/Dhavalc2012"><img src="https://avatars1.githubusercontent.com/u/7031028?v=4" width="100px;" alt=""/><br /><sub><b>Dhaval</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/issues?q=author%3ADhavalc2012" title="Bug reports">🐛</a> <a href="https://github.com/eduayme/RescueApp/commits?author=Dhavalc2012" title="Code">💻</a></td>
   </tr>
 </table>
 
