@@ -11,32 +11,36 @@
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
 
-        <h1>
+        <!-- Go back button - OPEN -->
+        @include('buttons.go_back')
+        <!-- Go back button - CLOSE -->
+
+        <h1 class="margin-top">
             {{ __('main.privacy_policy') }}
         </h1>
 
-        <p class="margin-top">
+        <p class="margin-top-sm text-justify">
             {{ __('main.privacy_policy_detail') }}
         </p>
 
         <h3 class="margin-top">
             {{ __('main.information_collected') }}
         </h3>
-        <p>
+        <p class="text-justify">
             {{ __('main.information_collected_detail') }}
         </p>
 
         <h3 class="margin-top">
             {{ __('main.information_purpose') }}
         </h3>
-        <p>
+        <p class="text-justify">
             {{ __('main.information_purpose_detail') }}
         </p>
 
         <h3 class="margin-top">
             {{ __('main.information_control') }}
         </h3>
-        <p>
+        <p class="text-justify">
             {{ __('main.information_control_detail') }}
         </p>
 
