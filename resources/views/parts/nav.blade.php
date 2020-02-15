@@ -166,7 +166,14 @@
 
 </nav>
 <!-- Navbar - CLOSE -->
-
+<!-- Breadcrumb -->
+@if(Route::current()->uri()!="/")
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{URL::to('/')}}">Dashboard</a></li>
+        <li class="breadcrumb-item">{{Route::current()->getName()}}</li>
+    </ol>
+@endif
+<!---->
 <!-- JQuery 3.3.1 -->
 <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
 
