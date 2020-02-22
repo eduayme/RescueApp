@@ -102,13 +102,17 @@
                     <!-- User button - CLOSE -->
 
                     <!-- User dropdown - OPEN -->
-                    <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdown">
 
                         @if (Auth::user()->is_admin())
                             <!-- Management bottom - OPEN -->
                             <a class="dropdown-item" href="{{ route('users') }}">
                                 <span class="octicon octicon-tools"></span>
                                 {{ __('main.users') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('activities') }}">
+                                <span class="octicon octicon-list-unordered"></span>
+                                {{ __('main.activity_log') }}
                             </a>
                             <!-- Management bottom - CLOSE -->
                         @endif
