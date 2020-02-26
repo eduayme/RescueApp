@@ -24,15 +24,15 @@
                     {{ __('main.activity_log') }}
                 </h3>
             </div>
+            <!-- Container for delete button - OPEN -->
             <div class="col-sm text-right">
-            <a href="{{ route('activities_delete_all') }}">     <button type="button" class="btn btn-danger"> <span style="padding-right:0.5em;" class="octicon octicon-trashcan"></span> Clear Log</button></a>
+                <a href="{{ route('activities_delete_all') }}">
+                    <button type="button" class="btn btn-danger">
+                        <span style="padding-right:0.5em;" class="octicon octicon-trashcan"></span> Clear Log
+                    </button>
+                </a>
             </div>
-            {{-- <div class="col-sm text-right">
-                <!-- Add user button - OPEN -->
-                @include('buttons.add_user')
-                <!-- Add user button - CLOSE -->
-            </div> --}}
-
+            <!-- Container for delete button - CLOSE -->
 
         <!-- Users table - OPEN -->
         <div class="table-responsive">
