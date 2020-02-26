@@ -25,23 +25,27 @@ class AcitivityLog
 
             $description = "";
 
-            if(request()->path() == "login" ){
+            if(request()->path() == "login"){
                 $description = "login";
             }
             else if(request()->path() == "register"){
                 $description = "registration";
-            } else if(request()->path() == "/") {
+            }
+            else if(request()->path() == "/") {
                 $description = "view_home";
-            }   else if(request()->path() == "/"){
+            }
+            else if(request()->path() == "/"){
                 $description = "view_home";
-            } else if (preg_match("/searches/", request()->path())){
+            }
+            else if (preg_match("/searches/", request()->path())){
                 $description = "view_searches";
-            } else if (preg_match("/lost-people/", request()->path())){
-                $description = "view_lost_people_detail";
-            } else if (preg_match("/users/", request()->path())){
+            }
+            else if (preg_match("/lost-people/", request()->path())){
                 $description = "view_lost_people_detail";
             }
-
+            else if (preg_match("/users/", request()->path())){
+                $description = "view_lost_people_detail";
+            }
             else {
                 $description = "view";
             }
