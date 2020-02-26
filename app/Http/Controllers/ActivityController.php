@@ -40,7 +40,6 @@ class ActivityController extends Controller
         /* Allow user to delete all activity logs of users if user is admin */
         if (Gate::allows('admin-only', auth()->user())) {
             Activity::query()->delete();
-            $activities = Activity::orderBy('id', 'desc')->paginate(10);
 
             return back()->with('error', __('main.activity_log') .  __('messages.deleted'));
         }
