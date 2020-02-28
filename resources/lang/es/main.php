@@ -25,6 +25,7 @@ return [
     'finish'                       => 'Terminar',
     'lost'                         => 'Perdido',
     'found'                        => 'Encontrado',
+    'activity_log'                 => 'Registro de actividades',
     'status_open'                  => 'Abierto',
     'status_closed'                => 'Cerrado',
     'profile'                      => 'Perfil',
