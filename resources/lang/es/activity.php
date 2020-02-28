@@ -9,13 +9,13 @@ return [
     'view_user_details'             => 'Ver detalles del usuario',
     'view'                          => 'Ver',
     'saved_new_info_about_search'   => 'Nueva información guardada sobre la búsqueda',
-    'time'                          => "Hora",
-    'description'                   => "Descripción",
-    'user'                          => "Usuaria",
-    'method'                        => "Método",
-    'route'                         => "Ruta",
-    'ip_address'                    => "Dirección IP",
-    'browser'                       => "Navegadora",
-    'os'                            => "OS"
+    'time'                          => 'Hora',
+    'description'                   => 'Descripción',
+    'user'                          => 'Usuaria',
+    'method'                        => 'Método',
+    'route'                         => 'Ruta',
+    'ip_address'                    => 'Dirección IP',
+    'browser'                       => 'Navegadora',
+    'os'                            => 'OS',
 
 ];

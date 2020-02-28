@@ -9,13 +9,13 @@ return [
     'view_user_details'             => "Veure detalls de l'usuari",
     'view'                          => 'Veure',
     'saved_new_info_about_search'   => "S'ha desat nova informació sobre la cerca",
-    'time'                          => "Temps",
-    'description'                   => "Descripció",
-    'user'                          => "Usuari",
-    'method'                        => "Mètode",
-    'route'                         => "Ruta",
-    'ip_address'                    => "Adreça IP",
-    'browser'                       => "Navegador",
-    'os'                            => "OS"
+    'time'                          => 'Temps',
+    'description'                   => 'Descripció',
+    'user'                          => 'Usuari',
+    'method'                        => 'Mètode',
+    'route'                         => 'Ruta',
+    'ip_address'                    => 'Adreça IP',
+    'browser'                       => 'Navegador',
+    'os'                            => 'OS',
 
 ];

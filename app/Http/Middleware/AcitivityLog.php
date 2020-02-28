@@ -10,64 +10,56 @@ class AcitivityLog
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-
         $response = $next($request);
 
-        if(auth()->user()) {
+        if (auth()->user()) {
 
-            #   Change description according to and from route.
+            //   Change description according to and from route.
 
-            $description = "";
+            $description = '';
 
-            if(request()->path() == "login"){
-                $description = "login";
-            }
-            else if(request()->path() == "register"){
-                $description = "registration";
-            }
-            else if(request()->path() == "/") {
-                $description = "view_home";
-            }
-            else if (preg_match("/searches/", request()->path())){
-                $description = "view_searches";
-            }
-            else if (preg_match("/lost-people/", request()->path())){
-                $description = "view_lost_people_details";
-            }
-            else if (preg_match("/users/", request()->path())){
-                $description = "view_user_details";
-            }
-            else {
-                $description = "view";
+            if (request()->path() == 'login') {
+                $description = 'login';
+            } elseif (request()->path() == 'register') {
+                $description = 'registration';
+            } elseif (request()->path() == '/') {
+                $description = 'view_home';
+            } elseif (preg_match('/searches/', request()->path())) {
+                $description = 'view_searches';
+            } elseif (preg_match('/lost-people/', request()->path())) {
+                $description = 'view_lost_people_details';
+            } elseif (preg_match('/users/', request()->path())) {
+                $description = 'view_user_details';
+            } else {
+                $description = 'view';
             }
 
-            #   From the method of GET or POST determine if the data has been posted.
+            //   From the method of GET or POST determine if the data has been posted.
 
-            if((request()->method() == "POST" || request()->method() == "PUT") &&(preg_match("/searches/", request()->path())) ){
-                $description = "saved_new_info_about_search";
+            if ((request()->method() == 'POST' || request()->method() == 'PUT') && (preg_match('/searches/', request()->path()))) {
+                $description = 'saved_new_info_about_search';
             }
 
             Activity::create([
-                'route' => request()->path(),
-                'description' => $description,
-                'os' => \BrowserDetect::getBrowser()->platform,
-                'method' => request()->method(),
-                'browser' => \BrowserDetect::getBrowser()->browser,
+                'route'           => request()->path(),
+                'description'     => $description,
+                'os'              => \BrowserDetect::getBrowser()->platform,
+                'method'          => request()->method(),
+                'browser'         => \BrowserDetect::getBrowser()->browser,
                 'browser_version' => \BrowserDetect::getBrowser()->version,
-                'ip_address' => request()->ip(),
-                'language' => \Lang::locale(),
-                'user_id' => auth()->id(),
+                'ip_address'      => request()->ip(),
+                'language'        => \Lang::locale(),
+                'user_id'         => auth()->id(),
             ]);
-
         }
 
         return $response;
-
     }
 }

@@ -9,13 +9,13 @@ return [
     'view_user_details'             => 'Viewing User Details',
     'view'                          => 'Viewing',
     'saved_new_info_about_search'   => 'Saved new information about search',
-    'time'                          => "Time",
-    'description'                   => "Description",
-    'user'                          => "User",
-    'method'                        => "Method",
-    'route'                         => "Route",
-    'ip_address'                    => "Ip Address",
-    'browser'                       => "Browser",
-    'os'                            => "OS"
+    'time'                          => 'Time',
+    'description'                   => 'Description',
+    'user'                          => 'User',
+    'method'                        => 'Method',
+    'route'                         => 'Route',
+    'ip_address'                    => 'Ip Address',
+    'browser'                       => 'Browser',
+    'os'                            => 'OS',
 
 ];

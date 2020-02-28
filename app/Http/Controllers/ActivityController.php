@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Activity;
-use Illuminate\Http\Request;
 use App\User;
-use File;
-use Image;
-use Validator;
 use Gate;
 
 class ActivityController extends Controller
@@ -25,8 +21,8 @@ class ActivityController extends Controller
 
             return view('activities.index', compact('activities'));
         }
-        return back()->with('error', __('messages.not_allowed'));
 
+        return back()->with('error', __('messages.not_allowed'));
     }
 
     /**
@@ -41,9 +37,9 @@ class ActivityController extends Controller
         if (Gate::allows('admin-only', auth()->user())) {
             Activity::query()->delete();
 
-            return back()->with('error', __('main.activity_log') .  __('messages.deleted'));
+            return back()->with('error', __('main.activity_log').__('messages.deleted'));
         }
-        return back()->with('error', __('messages.not_allowed'));
 
+        return back()->with('error', __('messages.not_allowed'));
     }
 }
