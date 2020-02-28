@@ -9,6 +9,7 @@ return [
     'view_user_details'             => 'Viewing User Details',
     'view'                          => 'Viewing',
     'saved_new_info_about_search'   => 'Saved new information about search',
+    'clear_logs'                    => 'Clear logs',
     'time'                          => 'Time',
     'description'                   => 'Description',
     'user'                          => 'User',

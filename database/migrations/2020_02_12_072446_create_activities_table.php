@@ -14,18 +14,20 @@ class CreateActivitiesTable extends Migration
     public function up()
     {
         Schema::create('activities', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->bigIncrements('id');
             $table->string('description')->nullable();
             $table->string('method')->nullable();
             $table->string('route')->nullable();
-            $table->string('browser')->nullable();
-            $table->string('browser_version')->nullable();
-            $table->string('language')->nullable();
-            $table->string('os')->nullable();
             $table->ipAddress('ip_address')->nullable();
-            $table->integer('user_id');
+            $table->integer('id_user')->unsigned();
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('activities', function (Blueprint $table) {
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

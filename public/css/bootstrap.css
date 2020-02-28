@@ -1580,7 +1580,6 @@ pre code {
     background-color: #fff;
     border-color: #a1cbef;
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(52, 144, 220, .25)
 }
 .form-control::-webkit-input-placeholder {
     color: #6c757d;
@@ -4113,14 +4112,14 @@ input[type=submit].btn-block {
     background-color: #2d995b
 }
 .badge-info {
-    color: #343A40;
-    background-color: #6cb2eb
+    color: #fff;
+    background-color: #005aa3
 }
 .badge-info[href]:focus,
 .badge-info[href]:hover {
-    color: #343A40;
+    color: #fff;
     text-decoration: none;
-    background-color: #3f9ae5
+    background-color: #005aa3
 }
 .badge-warning {
     color: #343A40;

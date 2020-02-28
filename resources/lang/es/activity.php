@@ -9,6 +9,7 @@ return [
     'view_user_details'             => 'Ver detalles del usuario',
     'view'                          => 'Ver',
     'saved_new_info_about_search'   => 'Nueva información guardada sobre la búsqueda',
+    'clear_logs'                    => 'Borrar logs',
     'time'                          => 'Hora',
     'description'                   => 'Descripción',
     'user'                          => 'Usuaria',

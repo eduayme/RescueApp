@@ -17,7 +17,7 @@ class ActivityController extends Controller
     {
         /* Allow user to access activity logs of users if user is admin */
         if (Gate::allows('admin-only', auth()->user())) {
-            $activities = Activity::orderBy('id', 'desc')->paginate(10);
+            $activities = Activity::orderBy('id', 'desc')->get();
 
             return view('activities.index', compact('activities'));
         }

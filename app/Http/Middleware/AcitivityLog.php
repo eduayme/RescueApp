@@ -22,27 +22,31 @@ class AcitivityLog
         if (auth()->user()) {
 
             //   Change description according to and from route.
-
             $description = '';
 
             if (request()->path() == 'login') {
                 $description = 'login';
-            } elseif (request()->path() == 'register') {
+            }
+            elseif (request()->path() == 'register') {
                 $description = 'registration';
-            } elseif (request()->path() == '/') {
+            }
+            elseif (request()->path() == '/') {
                 $description = 'view_home';
-            } elseif (preg_match('/searches/', request()->path())) {
+            }
+            elseif (preg_match('/searches/', request()->path())) {
                 $description = 'view_searches';
-            } elseif (preg_match('/lost-people/', request()->path())) {
+            }
+            elseif (preg_match('/lost-people/', request()->path())) {
                 $description = 'view_lost_people_details';
-            } elseif (preg_match('/users/', request()->path())) {
+            }
+            elseif (preg_match('/users/', request()->path())) {
                 $description = 'view_user_details';
-            } else {
+            }
+            else {
                 $description = 'view';
             }
 
-            //   From the method of GET or POST determine if the data has been posted.
-
+            // From the method of GET or POST determine if the data has been posted.
             if ((request()->method() == 'POST' || request()->method() == 'PUT') && (preg_match('/searches/', request()->path()))) {
                 $description = 'saved_new_info_about_search';
             }
@@ -50,13 +54,9 @@ class AcitivityLog
             Activity::create([
                 'route'           => request()->path(),
                 'description'     => $description,
-                'os'              => \BrowserDetect::getBrowser()->platform,
                 'method'          => request()->method(),
-                'browser'         => \BrowserDetect::getBrowser()->browser,
-                'browser_version' => \BrowserDetect::getBrowser()->version,
                 'ip_address'      => request()->ip(),
-                'language'        => \Lang::locale(),
-                'user_id'         => auth()->id(),
+                'id_user'         => auth()->id(),
             ]);
         }
 

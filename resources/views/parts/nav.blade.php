@@ -106,13 +106,13 @@
 
                         @if (Auth::user()->is_admin())
                             <!-- Management bottom - OPEN -->
-                            <a class="dropdown-item" href="{{ route('users') }}">
-                                <span class="octicon octicon-tools"></span>
-                                {{ __('main.users') }}
-                            </a>
                             <a class="dropdown-item" href="{{ route('activities') }}">
                                 <span class="octicon octicon-list-unordered"></span>
                                 {{ __('main.activity_log') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('users') }}">
+                                <span class="octicon octicon-tools"></span>
+                                {{ __('main.users') }}
                             </a>
                             <!-- Management bottom - CLOSE -->
                         @endif

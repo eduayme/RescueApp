@@ -179,9 +179,6 @@ return [
         Jenssegers\Date\DateServiceProvider::class,
 
         Intervention\Image\ImageServiceProvider::class,
-
-        /**For Browser Detection */
-        Propa\BrowscapPHP\BrowscapServiceProvider::class,
     ],
 
     /*
@@ -236,7 +233,6 @@ return [
         'Html'          => Collective\Html\HtmlFacade::class,
         'Date'          => Jenssegers\Date\Date::class,
         'Image'         => Intervention\Image\Facades\Image::class,
-        'BrowserDetect' => Propa\BrowscapPHP\Facades\Browscap::class,
 
     ],
 
