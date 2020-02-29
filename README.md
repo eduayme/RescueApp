@@ -1,4 +1,7 @@
 <p align="center">
+<img src="public/img/RescueApp-logo-vertical.png" alt="RescueApp">
+</p>
+<p align="center">
 <a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?branch=master" alt="StyleCI"></a>
 <a href="https://travis-ci.org/eduayme/RescueApp"><img src="https://travis-ci.org/eduayme/RescueApp.svg?branch=master" alt="Build Status"></a>
 <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.1"><img src="https://img.shields.io/badge/version-v1.1-blue"></a>
