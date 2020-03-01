@@ -5,7 +5,7 @@
 ---
 
 
-This project has the aim of responding to aneed or a gap that we have when documenting and organizing the search for missing persons, especially when a large number of people are participating in the search.Organizing and documenting a service involving many emergency teams is a very complex task and requires the mastery of a variety of computer tools, which in many cases do not allow the exchange of live information nor permit different people to work on the same file simultaneously. Furthermore, after each search is concluded, the data is stored in digital or paper archives, which significantly complicates later analysis.
+This project has the aim of responding to a need or a gap that we have when documenting and organizing the search for missing persons, especially when a large number of people are participating in the search. Organizing and documenting a service involving many emergency teams is a very complex task and requires the mastery of a variety of computer tools, which in many cases do not allow the exchange of live information nor permit different people to work on the same file simultaneously. Furthermore, after each search is concluded, the data is stored in digital or paper archives, which significantly complicates later analysis.
 The aim of this web app is to overcome these shortcomings.
 
 <a name="details"></a>
