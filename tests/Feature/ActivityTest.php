@@ -26,7 +26,7 @@ class ActivityTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** Guest cannot view activity logs
+    /** Guest cannot view activity logs.
      * @test
      */
     public function guest_cannot_visit_the_activity_logs_link_and_will_be_redirected()
