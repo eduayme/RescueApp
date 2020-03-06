@@ -431,7 +431,7 @@
                             {{ __('actions.no') }}
                         </option>
                         <option value="1" {{ ($search->bring_medication === 1) ? 'selected' : '' }}>
-                            {{ __('actions.no') }}
+                            {{ __('actions.yes') }}
                         </option>
                     </select>
 
