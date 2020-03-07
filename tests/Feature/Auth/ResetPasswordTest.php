@@ -109,8 +109,8 @@ class ResetPasswordTest extends TestCase
 
         $response = $this->get(
             $this->password_reset_get_route(
-                          $token = $this->get_valid_token($user)
-                      )
+                $token = $this->get_valid_token($user)
+            )
         );
 
         $response->assertSuccessful();
@@ -129,8 +129,8 @@ class ResetPasswordTest extends TestCase
 
         $response = $this->actingAs($user)->get(
             $this->password_reset_get_route(
-                          $token = $this->get_valid_token($user)
-                      )
+                $token = $this->get_valid_token($user)
+            )
         );
 
         $response->assertRedirect($this->guest_middleware_route());
