@@ -42,7 +42,9 @@
             </h5>
 
             <h4 style="display: inline">
-                <b> {{ $search->user_finalization->name }}, </b>
+                <b>
+                    <a href="{{ route('view_profile', $search->user_finalization->id) }}">{{ $search->user_finalization->name }}</a>,
+                </b>
             </h4>
 
             <h5 style="display: inline">

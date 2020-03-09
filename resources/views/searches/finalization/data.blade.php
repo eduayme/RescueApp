@@ -5,10 +5,10 @@
 <!-- Language for dates - CLOSE -->
 
 <!-- Content - OPEN -->
-<div class="form-row margin-top text-center">
+<div class="form-row margin-top text-left">
 
     <!-- First commander - OPEN  -->
-    <div class="form-group col-md-3">
+    <div class="form-group margin_top_bottom col-md-3">
         <p>
             {{ __('forms.first_command') }}
         </p>
@@ -25,7 +25,7 @@
     <!-- First commander - CLOSE  -->
 
     <!-- Intermediate commander - OPEN  -->
-    <div class="form-group col-md-6">
+    <div class="form-group margin_top_bottom col-md-6">
         <p>
             {{ __('forms.intermediate_commands') }}
         </p>
@@ -42,7 +42,7 @@
     <!-- Intermediate commander - CLOSE  -->
 
     <!-- Last commander - OPEN  -->
-    <div class="form-group col-md-3">
+    <div class="form-group margin_top_bottom col-md-3">
         <p>
             {{ __('forms.last_command') }}
         </p>
@@ -59,7 +59,7 @@
     <!-- Last commander - CLOSE  -->
 
     <!-- Group - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.group') }}
         </p>
@@ -76,7 +76,7 @@
     <!-- Group - CLOSE  -->
 
     <!-- Derivation name - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.derivation_name') }}
         </p>
@@ -93,7 +93,7 @@
     <!-- Derivation name - CLOSE  -->
 
     <!-- Derivation ID receptor - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.derivation_id_receptor') }}
         </p>
@@ -110,7 +110,7 @@
     <!-- Derivation ID receptor - CLOSE  -->
 
     <!-- Tipology - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.tipology') }}
         </p>
@@ -127,7 +127,7 @@
     <!-- Tipology - CLOSE  -->
 
     <!-- Resources - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.resources') }}
         </p>
@@ -144,7 +144,7 @@
     <!-- Resources - CLOSE  -->
 
     <!-- Localization datetime - OPEN -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.localization_date') }}
         </p>
@@ -164,7 +164,7 @@
     <!-- Localization datetime - CLOSE -->
 
     <!-- Localization place name - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.localization_toponim') }}
         </p>
@@ -181,7 +181,7 @@
     <!-- Localization place name - CLOSE  -->
 
     <!-- Localization indret - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.localization_location') }}
         </p>
@@ -198,7 +198,7 @@
     <!-- Localization indret - CLOSE  -->
 
     <!-- Localization municipal term - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.localization_municipal_term') }}
         </p>
@@ -215,7 +215,7 @@
     <!-- Localization municipal term - CLOSE  -->
 
     <!-- Localization COE - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.coe') }}
         </p>
@@ -232,7 +232,7 @@
     <!-- Localization COE - CLOSE  -->
 
     <!-- Localization SOC - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.soc') }}
         </p>
@@ -249,7 +249,7 @@
     <!-- Localization SOC - CLOSE  -->
 
     <!-- Localization section - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.section') }}
         </p>
@@ -266,7 +266,7 @@
     <!-- Localization section - CLOSE  -->
 
     <!-- Localization UTM X - OPEN  -->
-    <div class="form-group col-md-2">
+    <div class="form-group margin_top_bottom col-md-2">
         <p>
             {{ __('forms.utm_x') }}
         </p>
@@ -283,7 +283,7 @@
     <!-- Localization UTM X - CLOSE  -->
 
     <!-- Localization UTM Y - OPEN  -->
-    <div class="form-group col-md-2">
+    <div class="form-group margin_top_bottom col-md-2">
         <p>
             {{ __('forms.utm_y') }}
         </p>
@@ -300,7 +300,7 @@
     <!-- Localization UTM Y - CLOSE  -->
 
     <!-- Localization distance from UPA - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.distance_last_place_seen') }}
         </p>
@@ -317,7 +317,7 @@
     <!-- Localization distance from UPA - CLOSE  -->
 
     <!-- Localization who does it - OPEN  -->
-    <div class="form-group col-md-4">
+    <div class="form-group margin_top_bottom col-md-4">
         <p>
             {{ __('forms.who_localizate') }}
         </p>
@@ -334,7 +334,7 @@
     <!-- Localization who does it - CLOSE  -->
 
     <!-- State lost people - OPEN  -->
-    <div class="form-group col-md-6">
+    <div class="form-group margin_top_bottom col-md-6">
         <p>
             {{ __('forms.lost_people_state') }}
         </p>
@@ -351,7 +351,7 @@
     <!-- State lost people - CLOSE  -->
 
     <!-- Motive closing - OPEN  -->
-    <div class="form-group col-md-6">
+    <div class="form-group margin_top_bottom col-md-6">
         <p>
             {{ __('forms.motive_closing') }}
         </p>

@@ -275,3 +275,11 @@ hr {
 .id-lost-person {
     display: inline;
 }
+
+.no-margin {
+    margin: 0;
+}
+
+.no-pad {
+    padding: 0;
+}

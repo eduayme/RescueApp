@@ -41,6 +41,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/users', 'UserController@index')->name('users');
         Route::post('/users', 'UserController@store')->name('add_user');
         Route::post('/users/{id}', 'UserController@update')->name('update_user');
+        Route::get('/activities', 'ActivityController@index')->name('activities');
+        Route::get('/activities/delete/all', 'ActivityController@deleteAll')->name('activities_delete_all');
     });
 
     Route::get('/users/{id}', 'UserController@show')->name('view_profile');

@@ -124,6 +124,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "edcapetti",
+      "name": "Ed Capetillo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6628306?v=4",
+      "profile": "https://github.com/edcapetti",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,

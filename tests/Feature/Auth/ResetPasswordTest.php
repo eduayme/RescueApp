@@ -108,8 +108,10 @@ class ResetPasswordTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->get(
-                      $this->password_reset_get_route(
-                        $token = $this->get_valid_token($user)));
+            $this->password_reset_get_route(
+                $token = $this->get_valid_token($user)
+            )
+        );
 
         $response->assertSuccessful();
         $response->assertViewIs('auth.passwords.reset');
@@ -126,8 +128,10 @@ class ResetPasswordTest extends TestCase
         $user = factory(User::class)->create();
 
         $response = $this->actingAs($user)->get(
-                      $this->password_reset_get_route(
-                        $token = $this->get_valid_token($user)));
+            $this->password_reset_get_route(
+                $token = $this->get_valid_token($user)
+            )
+        );
 
         $response->assertRedirect($this->guest_middleware_route());
     }
@@ -180,7 +184,8 @@ class ResetPasswordTest extends TestCase
         ]);
 
         $response->assertRedirect($this->password_reset_get_route(
-                                    $this->get_invalid_token()));
+            $this->get_invalid_token()
+        ));
 
         $this->assertEquals($user->email, $user->fresh()->email);
         $this->assertTrue(Hash::check('old-password', $user->fresh()->password));

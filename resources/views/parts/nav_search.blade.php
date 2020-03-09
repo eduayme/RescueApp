@@ -141,17 +141,14 @@
                         <!-- User button - CLOSE -->
 
                         <!-- User dropdown - OPEN -->
-                        <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
-
-                            <!-- Profile button - OPEN -->
-                            <a class="dropdown-item" href="{{ route('profile') }}">
-                                <span class="octicon octicon-person"></span>
-                                {{ __('main.profile') }}
-                            </a>
-                            <!-- Profile button - CLOSE -->
+                        <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdown">
 
                             @if (Auth::user()->is_admin())
                                 <!-- Management bottom - OPEN -->
+                                <a class="dropdown-item" href="{{ route('activities') }}">
+                                    <span class="octicon octicon-list-unordered"></span>
+                                    {{ __('main.activity_log') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('users') }}">
                                     <span class="octicon octicon-tools"></span>
                                     {{ __('main.users') }}
@@ -159,9 +156,18 @@
                                 <!-- Management bottom - CLOSE -->
                             @endif
 
-                            <!-- Divider - OPEN -->
-                            <div class="dropdown-divider"></div>
-                            <!-- Divider - CLOSE -->
+                            @if (Auth::user()->profile != 'guest')
+                                <!-- Profile button - OPEN -->
+                                <a class="dropdown-item" href="{{ route('profile') }}">
+                                    <span class="octicon octicon-person"></span>
+                                    {{ __('main.profile') }}
+                                </a>
+                                <!-- Profile button - CLOSE -->
+
+                                <!-- Divider - OPEN -->
+                                <div class="dropdown-divider"></div>
+                                <!-- Divider - CLOSE -->
+                            @endif
 
                             <!-- Close session button - OPEN -->
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -169,6 +175,7 @@
                                 <span class="octicon octicon-sign-out"></span>
                                 {{ __('main.logout') }}
                             </a>
+
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
