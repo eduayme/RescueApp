@@ -35,7 +35,7 @@
 ```
 <br/>
 
-6) Abrir la terminal dentro del folder del proyecto y ejecutar
+6) Abrir la terminal dentro del folder del proyecto y ejecutar el siguiente comando
 ```php
 > composer update --no-scripts
 ```
@@ -143,7 +143,7 @@ Ejemplo de instalación en subdominio RescueApp.mysite.com
 
 19) Configurar los registros tipo "A" en el DNS para tu subdominio como lo requiere tu proveedor
 
-20) Configurar /etc/apache2/sites-enabled/RescueApp.conf Adaptando el código a tus necesidades: ServeName, DocumentRoot, ssl parameters(we used Letsencrypt), etc.. Ejemplo:
+20) Configurar /etc/apache2/sites-enabled/RescueApp.conf adaptando el código a tus necesidades: ServeName, DocumentRoot, ssl parameters(we used Letsencrypt), etc.. Ejemplo:
 ```php
 <VirtualHost *:80>
         ServerName RescueApp.mysite.com
