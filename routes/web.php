@@ -46,6 +46,13 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::get('/users/{id}', 'UserController@show')->name('view_profile');
+
+    //Permissions and roles    
+    Route::get('/roles/{user_id}/addrole', 'RoleController@showAssignRole')->name('show_user_role');
+    Route::post('/roles/addrole/{user_id}', 'RoleController@storeAssignRole')->name('store_user_role');
+    Route::post('/permissions/addpermission/{user_id}', 'PermissionController@storeAssignPermission')->name('store_user_permission');
+    Route::resource('/roles', 'RoleController');
+    Route::resource('/permissions', 'PermissionController');
 });
 
 Route::get('locale-ca', function () {

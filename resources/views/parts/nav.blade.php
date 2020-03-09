@@ -114,6 +114,14 @@
                                 <span class="octicon octicon-tools"></span>
                                 {{ __('main.users') }}
                             </a>
+                            <a class="dropdown-item" href="{{ route('roles.index') }}">
+                                <span class="octicon octicon-tools"></span>
+                                {{ __('permissions_roles.roles') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('permissions.index') }}">
+                                <span class="octicon octicon-tools"></span>
+                                {{ __('permissions_roles.permissions') }}
+                            </a>
                             <!-- Management bottom - CLOSE -->
                         @endif
 
