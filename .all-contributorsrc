@@ -133,6 +133,16 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "eniabiola",
+      "name": "Awosanya Enitan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/46572982?v=4",
+      "profile": "http://eniabiola.github.io",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,
