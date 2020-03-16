@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('main.users'))
+@section('title', __('permissions_roles.permissions'))
 
 @section('content')
 
@@ -21,12 +21,12 @@
             <div class="col-sm"></div>
             <div class="col-sm">
                 <h3 class="margin-bottom-sm text-center">
-                    {{ __('main.users') }}
+                    {{__('permissions_roles.permissions')." ".__('permissions_roles.list')}}
                 </h3>
             </div>
             <div class="col-sm text-right">
                 <!-- Add user button - OPEN -->
-                @include('buttons.add_user')
+                @include('buttons.add_permission')
                 <!-- Add user button - CLOSE -->
             </div>
         </div>
@@ -38,60 +38,31 @@
             <!-- Table header - OPEN -->
             <thead>
                 <tr>
-                    <th scope="col"> ID </th>
-                    <th scope="col"> {{ __('register.name') }} </th>
-                    <th scope="col"> {{ __('login.email') }} </th>
-                    <th scope="col"> {{ __('register.profile') }} </th>
-                    <th scope="col"> {{ __('main.last_login_at') }} </th>
+                    <th scope="col"> {{__('permissions_roles.display_name')}}</th>
+                    <th scope="col"> {{__('permissions_roles.slug')}} </th>
+                    <th scope="col"> {{__('forms.description')}} </th>
                     <th scope="col"> {{ __('actions.actions') }} </th>
                 </tr>
             </thead>
             <!-- Table header - CLOSE -->
 
             <!-- Table content - OPEN -->
-            <tbody>
-                @foreach ($users as $user)
-                    <tr>
-                        <td>
-                            {{ $user->id }}
-                        </td>
-                        <td>
-                            {{ $user->name }}
-                        </td>
-                        <td>
-                            {{ $user->email }}
-                        </td>
-                        <td>
-                            {{ __('register.' . $user->profile) }}
-                        </td>
-                        <td>
-                            @php
-                                $date = new Date($user->last_login_at);
-                                echo $date->format('Y M. d | H:i');
-                            @endphp
-                        </td>
-                        <td>
-                            <!-- View user button - OPEN -->
-                            @include('buttons.view_user')
-                            <!-- View user button - CLOSE -->
-                            <!-- Edit user button - OPEN -->
-                            @include('buttons.edit_user')
-                            <!-- Edit user button - CLOSE -->
-
-                            @role('admin')
-                            <a href="{{ route('show_user_role', $user->id) }}">
-                                <button type="button" class="btn btn-sm btn-outline-dark">
-                                    <span class="octicon octicon-pencil"></span>
-                                    {{ __('permissions_roles.permissions') }}
-                                </button>
-                            </a>
-                            @endrole
-                            <!-- Delete user button - OPEN -->
-                            @include('buttons.delete_user')
-                            <!-- Delete user modal - CLOSE -->
-                        </td>
-                    </tr>
-                @endforeach
+            <tbody>            
+              @foreach($permissions as $permission)
+              <tr>
+                <td>{{ $permission->display_name }}</td>
+                <td>{{ $permission->name }}</td>
+                <td>{{ $permission->description }}</td>
+                <td>
+                    <!-- Edit Permission button - OPEN -->
+                    @include('buttons.edit_permission')
+                    <!-- Edit Permission button - CLOSE -->
+                    <!-- Edit Permission button - OPEN -->
+                    @include('buttons.delete_permission')
+                    <!-- Edit Permission button - CLOSE -->
+                </td>
+              </tr>
+              @endforeach
             </tbody>
 
         </table>
