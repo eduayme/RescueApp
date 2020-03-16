@@ -5,7 +5,6 @@
  * a role & permission management solution for Laravel.
  *
  * @license MIT
- * @package Laratrust
  */
 
 return [
@@ -119,17 +118,17 @@ return [
     */
     'models' => [
         /**
-         * Role model
+         * Role model.
          */
         'role' => 'App\Role',
 
         /**
-         * Permission model
+         * Permission model.
          */
         'permission' => 'App\Permission',
 
         /**
-         * Team model
+         * Team model.
          */
         'team' => 'App\Team',
 
@@ -217,13 +216,13 @@ return [
     */
     'middleware' => [
         /**
-         * Define if the laratrust middleware are registered automatically in the service provider
+         * Define if the laratrust middleware are registered automatically in the service provider.
          */
         'register' => true,
 
         /**
          * Method to be called in the middleware return case.
-         * Available: abort|redirect
+         * Available: abort|redirect.
          */
         'handling' => 'abort',
 
@@ -233,11 +232,11 @@ return [
          */
         'handlers' => [
             /**
-             * Aborts the execution with a 403 code and allows you to provide the response text
+             * Aborts the execution with a 403 code and allows you to provide the response text.
              */
             'abort' => [
-                'code' => 403,
-                'message' => 'User does not have any of the necessary access rights.'
+                'code'    => 403,
+                'message' => 'User does not have any of the necessary access rights.',
             ],
             /**
              * Redirects the user to the given url.
@@ -246,13 +245,13 @@ return [
              * If the message content is empty it won't be added to the redirection.
              */
             'redirect' => [
-                'url' => '/home',
+                'url'     => '/home',
                 'message' => [
-                    'key' => 'error',
-                    'content' => ''
-                ]
-            ]
-        ]
+                    'key'     => 'error',
+                    'content' => '',
+                ],
+            ],
+        ],
     ],
 
     /*
