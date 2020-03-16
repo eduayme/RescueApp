@@ -21,7 +21,7 @@
             <div class="col-sm"></div>
             <div class="col-sm">
                 <h3 class="margin-bottom-sm text-center">
-                    {{ __('permissions_roles.roles') ." ". __('permissions_roles.list') }}
+                    {{ __('permissions_roles.roles') }}
                 </h3>
             </div>
             <div class="col-sm text-right">
@@ -39,7 +39,7 @@
             <thead>
                 <tr>
                     <th scope="col"> {{ __('permissions_roles.display_name') }}</th>
-                    <th scope="col"> {{ __('permissions_roles.slug') }} </th>
+                    <th scope="col"> {{ __('permissions_roles.name') }} </th>
                     <th scope="col"> {{ __('forms.description') }} </th>
                     <th scope="col"> {{ __('actions.actions') }} </th>
                 </tr>
@@ -47,7 +47,7 @@
             <!-- Table header - CLOSE -->
 
             <!-- Table content - OPEN -->
-            <tbody>            
+            <tbody>
               @foreach($roles as $role)
               <tr>
                 <td>{{ $role->display_name }}</td>

@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="text-left">
-                                            {{ __('permissions_roles.slug') }}
+                                            {{ __('permissions_roles.name') }}
                                         </div>
                                         {{ Form::text('name', null, array('class' => 'form-control')) }}
                                     </div>

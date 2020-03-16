@@ -37,7 +37,7 @@ class ActivityController extends Controller
         if (Gate::allows('admin-only', auth()->user())) {
             Activity::query()->delete();
 
-            return back()->with('error', __('main.activity_log').__('messages.deleted'));
+            return back()->with('error', __('main.logs').__('messages.deleted'));
         }
 
         return back()->with('error', __('messages.not_allowed'));

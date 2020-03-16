@@ -2,11 +2,11 @@
 
 return [
     'permissions'    => 'Permisos',
-    'roles'          => 'Papers',
+    'roles'          => 'Rols',
     'permission'     => 'Permís',
-    'role'           => 'Paper',
-    'list'           => 'llista',
+    'role'           => 'Rol',
+    'list'           => 'Llista',
     'display_name'   => 'Nom de visualització',
-    'slug'           => 'llimac',
+    'name'           => 'Nom',
     'assign'         => 'atribuir',
 ];

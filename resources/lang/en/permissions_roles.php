@@ -7,6 +7,6 @@ return [
     'role'           => 'Role',
     'list'           => 'List',
     'display_name'   => 'Display Name',
-    'slug'           => 'Slug',
+    'name'           => 'Name',
     'assign'         => 'Assign',
 ];

@@ -2,7 +2,7 @@
 <span data-toggle="modal" href="#editModal-{{-- {{ $user->id }} --}}">
     <button type="button" class="btn btn-sm btn-outline-dark">
         <span class="octicon octicon-pencil"></span>
-        {{ __('actions.edit') . " Roles" }}
+        {{ __('actions.edit') . " " . __('permissions_roles.roles') }}
     </button>
 </span>
 <!-- Edit user button - CLOSE -->
@@ -37,7 +37,6 @@
                                     </div>
                                     <div class="col-12" style="overflow-x: scroll;">
                                         @foreach($data['roles'] as $data['role'])
-
                                             <input type="checkbox" name="roles['{{ $data['role']->id }}']" id="{{ $data['role']->name }}" value="{{ $data['role']->id }}">&nbsp;&nbsp;
                                             <label for="{{ $data['role']->name }}">{{$data['role']->description}}&nbsp;&nbsp;{{$data['role']->display_name}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         @endforeach

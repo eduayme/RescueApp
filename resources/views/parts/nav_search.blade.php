@@ -147,7 +147,7 @@
                                 <!-- Management bottom - OPEN -->
                                 <a class="dropdown-item" href="{{ route('activities') }}">
                                     <span class="octicon octicon-list-unordered"></span>
-                                    {{ __('main.activity_log') }}
+                                    {{ __('main.logs') }}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('users') }}">
                                     <span class="octicon octicon-tools"></span>

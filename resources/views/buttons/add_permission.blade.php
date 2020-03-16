@@ -66,7 +66,7 @@
 
                         <!-- Email label - OPEN -->
                         <label for="name" class="col-md-4 col-form-label text-md-right">
-                            {{ __('permissions_roles.slug') }}
+                            {{ __('permissions_roles.name') }}
                         </label>
                         <!-- Slug label - CLOSE -->
 

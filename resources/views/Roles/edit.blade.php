@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('actions.edit') . __('permissions_roles.role'))
+@section('title', __('actions.edit') . " " . __('permissions_roles.role'))
 
 @section('content')
 
@@ -49,7 +49,7 @@
                         <!-- Age - OPEN  -->
                         <div class="form-group col-md-6">
 
-                            <label for="name"> {{ __('permissions_roles.slug') }} </label>
+                            <label for="name"> {{ __('permissions_roles.name') }} </label>
 
                             <input type="text" class="form-control" name="age" value="{{$role->name}}" readonly />
 
@@ -78,11 +78,13 @@
                         <!-- Profile - OPEN  -->
                         <div class="form-group col-md-12">
 
-                            <label for="profile"> {{__('permissions_roles.assign')." ".__('permissions_roles.permissions')}} </label>
-                                                    
+                            <label for="profile"> {{ __('permissions_roles.permissions') }} </label>
+
                               @foreach ($permissions as $permission)
                               <div class="form-group col-md-10">
-                                <label for="{{ $permission->name }}">{{$permission->description}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$permission->display_name}}</label>
+                                <label for="{{ $permission->name }}">
+                                    {{$permission->name}}&nbsp; ({{$permission->description}})
+                                </label>
                                 <input type="checkbox" name="permissions['{{ $permission->id }}']" id="{{ $permission->name }}" value="{{ $permission->id }}" {{in_array($permission->id, $rolePermission) ? 'checked' : ''}}>
                               </div>
                               @endforeach

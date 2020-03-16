@@ -25,7 +25,7 @@ return [
     'finish'                        => 'Tancar',
     'lost'                          => 'Perdut',
     'found'                         => 'Trobat',
-    'activity_log'                  => "Registre d'activitats",
+    'logs'                          => 'Logs',
     'status_open'                   => 'Oberta',
     'status_closed'                 => 'Tancada',
     'profile'                       => 'Perfil',

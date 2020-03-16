@@ -20,7 +20,7 @@
         <div class="row justify-content-end no-margin">
             <div class="col-4 text-center">
                 <h3 class="margin-bottom-sm">
-                    {{ __('main.activity_log') }}
+                    {{ __('main.logs') }}
                 </h3>
             </div>
             <div class="col-4 text-right no-pad">

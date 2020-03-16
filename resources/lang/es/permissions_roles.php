@@ -4,9 +4,9 @@ return [
     'permissions'    => 'Permiso',
     'roles'          => 'Roles',
     'permission'     => 'Permiso',
-    'role'           => 'el oficio',
+    'role'           => 'Rol',
     'list'           => 'Lista',
     'display_name'   => 'Nombre para mostrar',
-    'slug'           => 'la ficha',
+    'name'           => 'Nombre',
     'assign'         => 'Asignar',
 ];

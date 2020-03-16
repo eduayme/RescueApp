@@ -25,7 +25,7 @@ return [
     'finish'                        => 'Finish',
     'lost'                          => 'Lost',
     'found'                         => 'Found',
-    'activity_log'                  => 'Activity Log',
+    'logs'                          => 'Logs',
     'status_open'                   => 'Open',
     'status_closed'                 => 'Closed',
     'profile'                       => 'Profile',

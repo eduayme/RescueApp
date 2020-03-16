@@ -64,6 +64,6 @@ class ActivityTest extends TestCase
         $response = $this->actingAs($user)->get(route('index'));
         $response = $this->actingAs($user)->get(route('activities_delete_all'));
         $response->assertStatus(302);
-        $response->assertSessionHas('error', __('main.activity_log').__('messages.deleted'));
+        $response->assertSessionHas('error', __('main.logs').__('messages.deleted'));
     }
 }
