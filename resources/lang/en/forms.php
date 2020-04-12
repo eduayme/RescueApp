@@ -49,7 +49,7 @@ return [
     'not_bring_light'                           => 'Does not have light',
     'bring_waterproof_clothes'                  => 'Has waterproof clothing',
     'not_bring_waterproof_clothes'              => 'Does not have waterproof clothing',
-    'contact_person'                            => 'Conctact person',
+    'contact_person'                            => 'Contact person',
     'affinity'                                  => 'Affinity',
     'creator'                                   => 'Creator',
     'last_modification'                         => 'Last modified',
