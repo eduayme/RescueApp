@@ -143,6 +143,15 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "aceofspades19",
+      "name": "Jordan Evans",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/141931?v=4",
+      "profile": "http://herpderp.ca",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,
