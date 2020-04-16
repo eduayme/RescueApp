@@ -26,10 +26,8 @@ class ActionPlans extends Model
 
     public $table = 'action_plans';
 
-
     public function search()
     {
         return $this->belongsTo('App\Search', 'search_id');
     }
-
 }

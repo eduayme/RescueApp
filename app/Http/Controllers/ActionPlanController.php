@@ -22,7 +22,7 @@ class ActionPlanController extends Controller
 
         $action_plan = new ActionPlans([
             'version'   => $action_plans+1,
-            'search_id' => $id
+            'search_id' => $id,
         ]);
 
         $action_plan->save();
