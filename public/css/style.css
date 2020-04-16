@@ -327,13 +327,17 @@ input.embed {
 }
 
 .mapemebed {
-    margin-botom_20px;
+    margin-bottom:20px;
 }
 
 .invest p {
     text-align:left;
     margin-bottom: 5px;
     border-bottom: 1px solid black;
+}
+
+.invest p:last-of-type {
+    border-bottom: none;
 }
 
 #nav-ap .project-tab {
