@@ -9,17 +9,17 @@ class ActionPlans extends Model
 {
     protected $guarded = [];
     protected $fillable = [
-        "id",
-        "version",
-        "mapembed",
-        "description",
-        "task1",
-        "task2",
-        "task3",
-        "task4",
-        "task5",
-        "task6",
-        "search_id"
+        'id',
+        'version',
+        'mapembed',
+        'description',
+        'task1',
+        'task2',
+        'task3',
+        'task4',
+        'task5',
+        'task6',
+        'search_id'
     ];
 
     use SoftDeletes;
