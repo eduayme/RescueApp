@@ -283,3 +283,53 @@ hr {
 .no-pad {
     padding: 0;
 }
+
+
+input.invest {
+    float:left;
+    width:90%;
+}
+
+
+.form_invest button {
+    float:right;
+    border: solid 1px;
+}
+
+input.embed {
+    float:left;
+    width:80%;
+}
+
+.embedform button {
+    float:right;
+    border: solid 1px;
+}
+
+.description {
+    text-align:left;
+}
+
+.descform textarea {
+    float:left;
+    width:100%;
+    margin-left: 30px;
+}
+
+.descform .btn {
+    margin-top:20px;
+    background-color:darkred;
+    color:white;
+    margin-left:auto;
+    margin-right:auto;
+    width:150px;
+
+}
+
+.mapemebed {
+    margin-botom_20px;
+}
+
+.invest p {
+    text-align:left;
+}

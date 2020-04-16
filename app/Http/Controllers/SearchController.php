@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\LostPerson;
 use App\Search;
+use App\ActionPlans;
 use Auth;
 use Illuminate\Http\Request;
 use Validator;
@@ -147,8 +148,9 @@ class SearchController extends Controller
     public function show($id)
     {
         $search = Search::find($id);
+        $action_plans = ActionPlans::where("search_id", $id)->get();
 
-        return view('searches.view', compact('search'));
+        return view('searches.view', compact('search', 'action_plans'));
     }
 
     /**
@@ -388,4 +390,5 @@ class SearchController extends Controller
 
         return response()->json($villages_p);
     }
+
 }
