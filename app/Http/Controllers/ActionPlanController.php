@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\ActionPlans;
@@ -26,6 +25,7 @@ class ActionPlanController extends Controller
         ]);
 
         $action_plan->save();
+
         return redirect('searches/'.$id.'/#nav-ap')
             ->with('success', 'Action Plan '.__('messages.added'));
     }
@@ -41,15 +41,15 @@ class ActionPlanController extends Controller
         $version = $request->input('version');
         $action_plan = ActionPlans::where('search_id', '=', $id)->where('version', '=', $version)->first();
 
-        if($request->input('description')){
+        if($request->input('description')) {
             $action_plan->description = $request->input('description');
         }
 
-        if($request->input('mapembed')){
+        if($request->input('mapembed')) {
             $action_plan->mapembed = $request->input('mapembed');
         }
 
-        if($request->input('task1')){
+        if($request->input('task1')) {
             $action_plan->task1 = $request->input('task1');
         }
 
@@ -57,7 +57,7 @@ class ActionPlanController extends Controller
             $action_plan->task2 = $request->input('task2');
         }
 
-        if($request->input('task3')){
+        if($request->input('task3')) {
             $action_plan->task3 = $request->input('task3');
         }
 
@@ -65,11 +65,11 @@ class ActionPlanController extends Controller
             $action_plan->task4 = $request->input('task4');
         }
 
-        if($request->input('task5')){
+        if($request->input('task5')) {
             $action_plan->task5 = $request->input('task5');
         }
 
-        if($request->input('task6')){
+        if($request->input('task6')) {
             $action_plan->task6 = $request->input('task6');
         }
 

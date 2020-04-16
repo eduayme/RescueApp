@@ -41,4 +41,5 @@ class CreateActionPlans extends Migration
     {
         Schema::dropIfExists('action_plans');
     }
+
 }
