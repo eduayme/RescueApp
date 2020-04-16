@@ -19,7 +19,7 @@ class ActionPlans extends Model
         'task4',
         'task5',
         'task6',
-        'search_id'
+        'search_id',
     ];
 
     use SoftDeletes;
