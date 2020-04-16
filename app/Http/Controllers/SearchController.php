@@ -390,5 +390,4 @@ class SearchController extends Controller
 
         return response()->json($villages_p);
     }
-
 }

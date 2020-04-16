@@ -21,7 +21,7 @@ class ActionPlanController extends Controller
         $action_plans = ActionPlans::where('search_id', $id)->count();
 
         $action_plan = new ActionPlans([
-            'version'   => $action_plans+1,
+            'version'   => $action_plans + 1,
             'search_id' => $id,
         ]);
 
