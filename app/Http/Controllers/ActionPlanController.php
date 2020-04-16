@@ -98,6 +98,4 @@ class ActionPlanController extends Controller
                 ->with('error', __('messages.not_allowed'));
         }
     }
-
-
 }
