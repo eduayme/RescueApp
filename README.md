@@ -48,7 +48,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Dhavalc2012"><img src="https://avatars1.githubusercontent.com/u/7031028?v=4" width="100px;" alt=""/><br /><sub><b>Dhaval</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/issues?q=author%3ADhavalc2012" title="Bug reports">🐛</a> <a href="https://github.com/eduayme/RescueApp/commits?author=Dhavalc2012" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/edcapetti"><img src="https://avatars1.githubusercontent.com/u/6628306?v=4" width="100px;" alt=""/><br /><sub><b>Ed Capetillo</b></sub></a><br /><a href="#translation-edcapetti" title="Translation">🌍</a></td>
     <td align="center"><a href="http://eniabiola.github.io"><img src="https://avatars2.githubusercontent.com/u/46572982?v=4" width="100px;" alt=""/><br /><sub><b>Awosanya Enitan</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=eniabiola" title="Code">💻</a> <a href="#translation-eniabiola" title="Translation">🌍</a></td>
-    <td align="center"><a href="http://herpderp.ca"><img src="https://avatars2.githubusercontent.com/u/141931?v=4" width="100px;" alt=""/><br /><sub><b>Jordan Evans</b></sub></a><br /><a href="#translation-aceofspades19" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://herpderp.ca"><img src="https://avatars2.githubusercontent.com/u/141931?v=4" width="100px;" alt=""/><br /><sub><b>Jordan Evans</b></sub></a><br /><a href="#translation-aceofspades19" title="Translation">🌍</a> <a href="https://github.com/eduayme/RescueApp/commits?author=aceofspades19" title="Code">💻</a></td>
   </tr>
 </table>
 
