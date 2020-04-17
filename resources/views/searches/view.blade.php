@@ -30,6 +30,13 @@
                 </a>
                 <!-- Data tab - CLOSE -->
 
+                <!-- Data tab - OPEN -->
+                <a class="nav-item nav-link" id="nav-ap-tab" data-toggle="tab"
+                   href="#nav-ap" role="tab" aria-controls="nav-ap" aria-selected="true">
+                    {{ __('main.ap') }}
+                </a>
+                <!-- Data tab - CLOSE -->
+
                 <!-- Closing tab - OPEN -->
                 <a class="nav-item nav-link" id="nav-closing-tab" data-toggle="tab"
                 href="#nav-closing" role="tab" aria-controls="nav-closing" aria-selected="false">
@@ -50,6 +57,13 @@
             <div class="tab-pane fade show active margin-top-sm" id="nav-data"
             role="tabpanel" aria-labelledby="nav-data-tab">
                 @include('searches.data')
+            </div>
+            <!-- Data tab content - CLOSE -->
+
+            <!-- Data tab content - OPEN -->
+            <div class="tab-pane fade margin-top-sm" id="nav-ap"
+                 role="tabpanel" aria-labelledby="nav-ap-tab">
+                @include('searches.ap')
             </div>
             <!-- Data tab content - CLOSE -->
 

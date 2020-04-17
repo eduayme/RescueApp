@@ -11,6 +11,7 @@ return [
     'close_search'      => 'Close search',
     'close_practice'    => 'Close practice',
     'add_lost_person'   => 'Add lost person',
+    'add_version'       => 'Add version',
     'reopen_search'     => 'Reopen search',
     'reopen_practice'   => 'Ropen practice',
     'go_back'           => 'Go back',
