@@ -11,6 +11,7 @@ return [
     'close_search'      => 'Cerrar busqueda',
     'close_practice'    => 'Cerrar práctica',
     'add_lost_person'   => 'Agregar persona desaparecida',
+    'add_version'       => 'Añadir versión',
     'reopen_search'     => 'Reabrir búsqueda',
     'reopen_practice'   => 'Reabrir práctica',
     'go_back'           => 'Volver',

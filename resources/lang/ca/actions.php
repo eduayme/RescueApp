@@ -11,6 +11,7 @@ return [
     'close_search'      => 'Tancar recerca',
     'close_practice'    => 'Tancar pràctica',
     'add_lost_person'   => 'Afegir persona desapareguda',
+    'add_version'       => 'Afegir versió',
     'reopen_search'     => 'Reobrir recerca',
     'reopen_practice'   => 'Reobrir pràctica',
     'go_back'           => 'Tornar enrere',

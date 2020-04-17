@@ -51,7 +51,7 @@
             </form>
         </div>
         <div class="col justify-content-start">
-            <h3  class="margin_top_bottom">S{{ __('main.noaction') }}</h3>
+            <h3 class="margin_top_bottom"> {{ __('main.no_action') }}</h3>
         </div>
 
     @endif
@@ -144,7 +144,6 @@
             $(".descform").hide();
             $(".invest form").hide();
             $(".invest p").show();
-
         }
     });
 
