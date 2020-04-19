@@ -62,8 +62,8 @@
 
             <!-- Data tab content - OPEN -->
             <div class="tab-pane fade margin-top-sm" id="nav-ap"
-                 role="tabpanel" aria-labelledby="nav-ap-tab">
-                @include('searches.ap')
+            role="tabpanel" aria-labelledby="nav-ap-tab">
+                @include('searches.action_plan.ap')
             </div>
             <!-- Data tab content - CLOSE -->
 

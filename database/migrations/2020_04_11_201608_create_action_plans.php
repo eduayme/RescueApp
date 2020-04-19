@@ -12,11 +12,9 @@ class CreateActionPlans extends Migration
      */
     public function up()
     {
-        // Create table for storing roles
         Schema::create('action_plans', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('version');
-            $table->longtext('mapembed')->nullable();
             $table->longText('description')->nullable();
             $table->string('task1')->nullable();
             $table->string('task2')->nullable();
@@ -25,10 +23,12 @@ class CreateActionPlans extends Migration
             $table->string('task5')->nullable();
             $table->string('task6')->nullable();
             $table->integer('search_id')->unsigned();
-            $table->foreign('search_id')
-                ->references('id')->on('searches')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('action_plans', function (Blueprint $table) {
+            $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
         });
     }
 

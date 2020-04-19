@@ -11,7 +11,6 @@ class ActionPlans extends Model
     protected $fillable = [
         'id',
         'version',
-        'mapembed',
         'description',
         'task1',
         'task2',

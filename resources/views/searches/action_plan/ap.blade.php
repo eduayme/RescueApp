@@ -30,7 +30,7 @@
                 <!-- Data tab content - OPEN -->
                 <div class="tab-pane fade show  @if ($loop->first) active @endif margin-top-sm" id="nav-{{$ap->version}}"
                      role="tabpanel" aria-labelledby="nav-{{$ap->version}}-tab">
-                    @include('searches.ap_view')
+                    @include('searches.action_plan.ap_view')
                 </div>
                 @endforeach
         </div>
@@ -66,21 +66,18 @@
     $(document).ready(function() {
         $(".edit").click(function(){
             const version = $(this).data("ap");
-            const text = $(" .description" + version).text();
+            const text = $(".description" + version).text();
             $(".description" + version).hide();
             $("textarea.input" + version).text(text.trim());
             $(".form" + version).show();
             $(".form_invest_" + version).show();
             $(".form" + version).data("ap", version);
             $(".form_embed_" + version).show();
-            $(".form_embed_" + version).find(".embed").val($(".mapembed.version"+version).html().trim());
-            $(".mapembed").hide();
+            $(".task").hide();
             $(".invest.version_" + version + " p").each(function(index){
                 let rindex = index+1;
                $(".form_invest_" + version + " input.input" + rindex).val($(this).text());
             });
-            $(".invest p").hide();
-
         });
 
         $(".descform").submit(function(e) {
@@ -140,7 +137,6 @@
         {
             $(".description" + version).show();
             $(".form_embed_" + version).hide();
-            $(".mapembed").show();
             $(".descform").hide();
             $(".invest form").hide();
             $(".invest p").show();
