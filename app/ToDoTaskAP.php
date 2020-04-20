@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ActionPlans extends Model
+class ToDoTaskAP extends Model
 {
     protected $guarded = [];
     protected $fillable = [
@@ -23,5 +23,4 @@ class ActionPlans extends Model
     {
         return $this->belongsTo('App\ActionPlans', 'id_action_plan', 'id');
     }
-
 }
