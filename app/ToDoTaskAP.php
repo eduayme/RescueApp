@@ -10,22 +10,18 @@ class ActionPlans extends Model
     protected $guarded = [];
     protected $fillable = [
         'id',
-        'version',
+        'id_action_plan',
         'description',
-        'search_id',
+        'state',
     ];
 
     use SoftDeletes;
 
-    public $table = 'action_plans';
+    public $table = 'to_do_tasks_ap';
 
-    public function search()
+    public function action_plan()
     {
-        return $this->belongsTo('App\Search', 'search_id');
+        return $this->belongsTo('App\ActionPlans', 'id_action_plan', 'id');
     }
 
-    public function to_do_tasks()
-    {
-        return $this->hasMany('App\ToDoTaskAP', 'id_action_plan', 'id');
-    }
 }

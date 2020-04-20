@@ -82,33 +82,27 @@
 </div>
 <!-- Align right - CLOSE -->
 
-
+<!-- Action Plan content - OPEN -->
 <div class="container container-fluid border border-secondary rounded margin_top_bottom margin-top box text-center">
     <div class="row">
+
         <div class="col-md-12 margin-top-sm">
             <h3 class="text-left"> {{ __('main.description') }} </h3>
             <p class="description{{$ap->version}} description">
                 {{$ap->description}}
             </p>
-            <form class="descform form{{$ap->version}}" data-searchid="{{$ap->search_id}}" style="display: none;">
-                @csrf
-                <textarea class="input{{$ap->version}}"></textarea>
-
-                <input type="submit"  value="{{ __('actions.save') }}"  class="btn btn-default">
-            </form>
         </div>
+
         <div class="col-md-6 margin-top-sm">
             <div class="invest version_{{$ap->version}}">
                 <h3 class="text-left"> {{ __('main.investigation') }} </h3>
                 <div class="margin_top_bottom">
-                    @include("searches.action_plan.ap_form", ["task"=>$ap->task1, "taskid"=>1])
-                    @include("searches.action_plan.ap_form", ["task"=>$ap->task2, "taskid"=>2])
-                    @include("searches.action_plan.ap_form", ["task"=>$ap->task3, "taskid"=>3])
-                    @include("searches.action_plan.ap_form", ["task"=>$ap->task4, "taskid"=>4])
-                    @include("searches.action_plan.ap_form", ["task"=>$ap->task5, "taskid"=>5])
-                    @include("searches.action_plan.ap_form", ["task"=>$ap->task6, "taskid"=>6])
+
+                    <!-- Display tasks -->
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Action Plan content - CLOSE -->

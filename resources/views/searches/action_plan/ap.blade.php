@@ -29,10 +29,10 @@
             @foreach ($action_plans as $ap)
                 <!-- Data tab content - OPEN -->
                 <div class="tab-pane fade show  @if ($loop->first) active @endif margin-top-sm" id="nav-{{$ap->version}}"
-                     role="tabpanel" aria-labelledby="nav-{{$ap->version}}-tab">
+                role="tabpanel" aria-labelledby="nav-{{$ap->version}}-tab">
                     @include('searches.action_plan.ap_view')
                 </div>
-                @endforeach
+            @endforeach
         </div>
         <!-- Tabs content - OPEN -->
 
@@ -64,6 +64,7 @@
 <script>
 
     $(document).ready(function() {
+        /*
         $(".edit").click(function(){
             const version = $(this).data("ap");
             const text = $(".description" + version).text();
@@ -99,13 +100,6 @@
         });
 
         function save_all(version, that){
-            const text1 = $(".form_invest_" + version).find(".input1").val();
-            const text2 = $(".form_invest_" + version).find(".input2").val();
-            const text3 = $(".form_invest_" + version).find(".input3").val();
-            const text4 = $(".form_invest_" + version).find(".input4").val();
-            const text5 = $(".form_invest_" + version).find(".input5").val();
-            const text6 = $(".form_invest_" + version).find(".input6").val();
-            const mapembed = $(".form_embed_"+version).find("input.embed").val();
             const text =  $("textarea.input" + version).val();
             const taskid = $(that).data("taskid");
             $(".description" + version).text(text);
@@ -121,14 +115,6 @@
             $.post("{{route('actionplan.update')}}", {
                 "version": version,
                 "id": id,
-                "description":text,
-                "task1": text1,
-                "task2": text2,
-                "task3": text3,
-                "task4": text4,
-                "task5": text5,
-                "task6": text6,
-                "mapembed":mapembed,
                 "_token": token
             });
         }
@@ -141,6 +127,7 @@
             $(".invest form").hide();
             $(".invest p").show();
         }
+        */
     });
 
 </script>

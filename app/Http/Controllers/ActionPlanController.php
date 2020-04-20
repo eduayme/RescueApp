@@ -26,7 +26,7 @@ class ActionPlanController extends Controller
         $action_plan->save();
 
         return redirect('searches/'.$id.'/#nav-ap')
-            ->with('success', 'Action Plan '.__('messages.added'));
+            ->with('success', __('main.version').' '.$action_plan->version.__('messages.added'));
     }
 
     /**
@@ -44,34 +44,6 @@ class ActionPlanController extends Controller
             $action_plan->description = $request->input('description');
         }
 
-        if ($request->input('mapembed')) {
-            $action_plan->mapembed = $request->input('mapembed');
-        }
-
-        if ($request->input('task1')) {
-            $action_plan->task1 = $request->input('task1');
-        }
-
-        if ($request->input('task2')) {
-            $action_plan->task2 = $request->input('task2');
-        }
-
-        if ($request->input('task3')) {
-            $action_plan->task3 = $request->input('task3');
-        }
-
-        if ($request->input('task4')) {
-            $action_plan->task4 = $request->input('task4');
-        }
-
-        if ($request->input('task5')) {
-            $action_plan->task5 = $request->input('task5');
-        }
-
-        if ($request->input('task6')) {
-            $action_plan->task6 = $request->input('task6');
-        }
-
         $action_plan->save();
     }
 
@@ -85,14 +57,15 @@ class ActionPlanController extends Controller
     public function destroy($id)
     {
         $ap = ActionPlans::find($id);
+        $id_search = $ap->search_id;
 
         $currentUser = \Auth::user()->profile;
 
         if ($currentUser != 'guest') {
             $ap->delete();
 
-            return redirect('searches/'.$id.'/#nav-ap')
-                ->with('success', 'Action Plan'.__('messages.deleted'));
+            return redirect('searches/'.$id_search.'/#nav-ap')
+                ->with('success', __('main.version').' '.$ap->version.__('messages.deleted'));
         } else {
             return redirect('searches/'.$search->id)
                 ->with('error', __('messages.not_allowed'));
