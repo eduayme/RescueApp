@@ -45,7 +45,7 @@ class LostPersonController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:3|max:50',
+            'name' => 'required|string|min:2|max:50',
         ], [
             'name.required' => __('messages.required'),
             'name.min'      => __('messages.min'),
@@ -162,7 +162,7 @@ class LostPersonController extends Controller
         $lost_person = LostPerson::find($id);
 
         $request->validate([
-            'name' => 'required|string|min:3|max:50',
+            'name' => 'required|string|min:2|max:50',
         ], [
             'name.required' => __('messages.required'),
             'name.min'      => __('messages.min'),

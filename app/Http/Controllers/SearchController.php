@@ -61,7 +61,7 @@ class SearchController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_search' => 'required|string|min:3|max:50|unique:searches',
+            'id_search' => 'required|string|min:2|max:50|unique:searches',
         ], [
             'id_search.required' => __('messages.required'),
             'id_search.min'      => __('messages.min'),
@@ -215,7 +215,7 @@ class SearchController extends Controller
         $search = Search::find($id);
 
         $request->validate([
-            'id_search' => 'required|string|min:3|max:50|unique:searches,id_search,'.$id,
+            'id_search' => 'required|string|min:2|max:50|unique:searches,id_search,'.$id,
         ], [
             'id_search.required' => __('messages.required'),
             'id_search.min'      => __('messages.min'),
