@@ -8,11 +8,11 @@
 
     <!-- Content -->
     <div class="container margin-top padding-bottom">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row justify-content-center margin-bottom-lg">
+            <div class="col-md-6">
 
                 <!-- Card - OPEN -->
-                <div class="card">
+                <div class="card shadow">
 
                     <!-- Card header - OPEN -->
                     <div class="card-header">
@@ -28,47 +28,37 @@
                             @csrf
 
                             <!-- Email - OPEN -->
-                            <div class="form-group row">
+                            <div class="form-group">
 
                                 <!-- Email label - OPEN -->
-                                <label for="email" class="col-md-4 col-form-label text-md-right">
-                                  {{ __('login.email') }}
+                                <label for="email" class="col-form-label">
+                                    {{ __('login.email') }}
                                 </label>
                                 <!-- Email label - CLOSE -->
 
                                 <!-- Email input - OPEN -->
-                                <div class="col-md-6">
-
-                                    <!-- Input - OPEN -->
-                                    <input id="email" type="email" name="email" value="{{ old('email') }}"
-                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autofocus>
-                                    <!-- Input - CLOSE -->
-
-                                    <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('email') )
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong> {{ $errors->first('email') }} </strong>
-                                        </span>
-                                    @endif
-                                    <!-- Show errors input - CLOSE -->
-
-                                </div>
+                                <input id="email" type="email" name="email" value="{{ old('email') }}"
+                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autofocus>
                                 <!-- Email input - CLOSE -->
+
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('email') )
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong> {{ $errors->first('email') }} </strong>
+                                    </span>
+                                @endif
+                                <!-- Show errors input - CLOSE -->
 
                             </div>
                             <!-- Email - CLOSE -->
 
                             <!-- Send link button - OPEN -->
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-
-                                    <!-- Button - OPEN -->
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('notifications.send_link') }}
-                                    </button>
-                                    <!-- Button - CLOSE -->
-
-                              </div>
+                            <div class="form-group margin-top">
+                                <!-- Button - OPEN -->
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    {{ __('notifications.send_link') }}
+                                </button>
+                                <!-- Button - CLOSE -->
                             </div>
                             <!-- Send link button - CLOSE -->
 
