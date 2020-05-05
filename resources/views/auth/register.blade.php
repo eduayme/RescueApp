@@ -10,11 +10,11 @@
 
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row justify-content-center margin-bottom-lg">
+            <div class="col-md-6">
 
                 <!-- Card - OPEN -->
-                <div class="card">
+                <div class="card shadow margin-bottom-lg">
 
                     <!-- Card header - OPEN -->
                     <div class="card-header">
@@ -30,220 +30,180 @@
                             @csrf
 
                             <!-- Name - OPEN -->
-                            <div class="form-group row">
+                            <div class="form-group">
 
                                 <!-- Name label - OPEN -->
-                                <label for="name" class="col-md-4 col-form-label text-md-right">
+                                <label for="name" class="col-form-label">
                                     {{ __('register.name') }}
                                 </label>
                                 <!-- Name label - CLOSE -->
 
                                 <!-- Name input - OPEN -->
-                                <div class="col-md-6">
-
-                                    <!-- Input - OPEN -->
-                                    <input id="name" type="text" name="name" value="{{ old('name') }}"
-                                    class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                    required autofocus>
-                                    <!-- Input - CLOSE -->
-
-                                    <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('name') )
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                    @endif
-                                    <!-- Show errors input - CLOSE -->
-
-                                </div>
+                                <input id="name" type="text" name="name" value="{{ old('name') }}"
+                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                required autofocus>
                                 <!-- Name input - CLOSE -->
+
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('name') )
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                                @endif
+                                <!-- Show errors input - CLOSE -->
 
                             </div>
                             <!-- Name - CLOSE -->
 
                             <!-- Email - OPEN -->
-                            <div class="form-group row">
+                            <div class="form-group">
 
                                 <!-- Email label - OPEN -->
-                                <label for="email" class="col-md-4 col-form-label text-md-right">
+                                <label for="email" class="col-form-label">
                                     {{ __('login.email') }}
                                 </label>
                                 <!-- Email label - CLOSE -->
 
                                 <!-- Email input - OPEN -->
-                                <div class="col-md-6">
+                                <input id="email" type="email" name="email" value="{{ old('email') }}"
+                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                required autofocus>
+                                <!-- Email input - CLOSE -->
 
-                                    <!-- Input - OPEN -->
-                                    <input id="email" type="email" name="email" value="{{ old('email') }}"
-                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                    required autofocus>
-                                    <!-- Input - CLOSE -->
-
-                                    <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('email') )
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('email') )
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                    @endif
-                                    <!-- Show errors input - CLOSE -->
-
-                                </div>
-                                <!-- Email input - CLOSE -->
+                                @endif
+                                <!-- Show errors input - CLOSE -->
 
                             </div>
                             <!-- Email - CLOSE -->
 
                             <!-- ID - OPEN-->
-                            <div class="form-group row">
+                            <div class="form-group">
 
                                 <!-- ID label - OPEN -->
-                                <label for="dni" class="col-md-4 col-form-label text-md-right">
+                                <label for="dni" class="col-form-label">
                                     {{ __('register.id') }}
                                 </label>
                                 <!-- ID label - CLOSE -->
 
                                 <!-- ID input - OPEN -->
-                                <div class="col-md-6">
-
-                                    <!-- Input - OPEN -->
-                                    <input id="dni" type="text" name="dni" value="{{ old('dni') }}"
-                                    class="form-control{{ $errors->has('dni') ? ' is-invalid' : '' }}"
-                                    required autofocus>
-                                    <!-- Input - CLOSE -->
-
-                                    <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('dni') )
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('dni') }}</strong>
-                                        </span>
-                                    @endif
-                                    <!-- Show errors input - CLOSE -->
-
-                                </div>
+                                <input id="dni" type="text" name="dni" value="{{ old('dni') }}"
+                                class="form-control{{ $errors->has('dni') ? ' is-invalid' : '' }}"
+                                required autofocus>
                                 <!-- ID input - CLOSE -->
+
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('dni') )
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('dni') }}</strong>
+                                    </span>
+                                @endif
+                                <!-- Show errors input - CLOSE -->
 
                             </div>
                             <!-- ID - CLOSE -->
 
                             <!-- Profile - OPEN -->
-                            <div class="form-group row">
+                            <div class="form-group">
 
                                 <!-- Profile label - OPEN -->
-                                <label for="profile" class="col-md-4 col-form-label text-md-right">
+                                <label for="profile" class="col-form-label">
                                     {{ __('register.profile') }}
                                 </label>
                                 <!-- Profile label - CLOSE -->
 
                                 <!-- Profile Input - OPEN -->
-                                <div class="col-md-6">
-
-                                    <!-- Dropdown selector - OPEN -->
-                                    <select id="profile" class="form-control" name="profile" required>
-                                        <option value="">
-                                            {{ __('register.chose_profile') }}
-                                        </option>
-                                        <option value="firefighter" @if (old('profile') == "firefighter") {{ 'selected' }} @endif>
-                                            {{ __('register.firefighter') }}
-                                        </option>
-                                        <option value="operator" @if (old('profile') == "operator") {{ 'selected' }} @endif>
-                                            {{ __('register.control_room_operator') }}
-                                        </option>
-                                        <option value="commander" @if (old('commander') == "commander") {{ 'selected' }} @endif>
-                                            {{ __('register.commander') }}
-                                        </option>
-                                        <option value="guest" @if (old('guest') == "guest") {{ 'selected' }} @endif>
-                                            {{ __('register.guest') }}
-                                        </option>
-                                    </select>
-                                    <!-- Dropdown selector - CLOSE -->
-
-                                    <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('profile') )
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('profile') }}</strong>
-                                        </span>
-                                    @endif
-                                    <!-- Show errors input - CLOSE -->
-
-                                </div>
+                                <select id="profile" class="form-control" name="profile" required>
+                                    <option value="">
+                                        {{ __('register.chose_profile') }}
+                                    </option>
+                                    <option value="firefighter" @if (old('profile') == "firefighter") {{ 'selected' }} @endif>
+                                        {{ __('register.firefighter') }}
+                                    </option>
+                                    <option value="operator" @if (old('profile') == "operator") {{ 'selected' }} @endif>
+                                        {{ __('register.control_room_operator') }}
+                                    </option>
+                                    <option value="commander" @if (old('commander') == "commander") {{ 'selected' }} @endif>
+                                        {{ __('register.commander') }}
+                                    </option>
+                                    <option value="guest" @if (old('guest') == "guest") {{ 'selected' }} @endif>
+                                        {{ __('register.guest') }}
+                                    </option>
+                                </select>
                                 <!-- Profile Input - CLOSE -->
+
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('profile') )
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('profile') }}</strong>
+                                    </span>
+                                @endif
+                                <!-- Show errors input - CLOSE -->
 
                             </div>
                             <!-- Profile - CLOSE -->
 
                             <!-- Password - OPEN -->
-                            <div class="form-group row">
+                            <div class="form-group">
 
                                 <!-- Password label - OPEN -->
-                                <label for="password" class="col-md-4 col-form-label text-md-right">
+                                <label for="password" class="col-form-label">
                                     {{ __('login.password') }}
                                 </label>
                                 <!-- Password label - CLOSE -->
 
                                 <!-- Password input - OPEN -->
-                                <div class="col-md-6">
-
-                                    <!-- Input - OPEN -->
-                                    <input id="password" type="password" name="password" value="{{ old('password') }}"
-                                    class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
-                                    <!-- Input - CLOSE -->
-
-                                    <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('password') )
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                    <!-- Show errors input - CLOSE -->
-
-                                </div>
+                                <input id="password" type="password" name="password" value="{{ old('password') }}"
+                                class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
                                 <!-- Password - CLOSE -->
+
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('password') )
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                                <!-- Show errors input - CLOSE -->
 
                             </div>
                             <!-- Password Input - CLOSE -->
 
                             <!-- Confirm password - OPEN -->
-                            <div class="form-group row">
+                            <div class="form-group">
 
                                 <!-- Confirm password label - OPEN -->
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                <label for="password-confirm" class="col-form-label">
                                     {{ __('register.conf_pass') }}
                                 </label>
                                 <!-- Confirm password label - CLOSE -->
 
                                 <!-- Confirm password input - OPEN -->
-                                <div class="col-md-6">
-
-                                    <!-- Input - OPEN -->
-                                    <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required>
-                                    <!-- Input - CLOSE -->
-
-                                    <!-- Show errors input - OPEN -->
-                                    @if( $errors->has('password-confirm') )
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password-confirm') }}</strong>
-                                        </span>
-                                    @endif
-                                    <!-- Show errors input - CLOSE -->
-
-                                </div>
+                                <input id="password-confirm" type="password" class="form-control"
+                                name="password_confirmation" required>
                                 <!-- Confirm password input - CLOSE -->
+
+                                <!-- Show errors input - OPEN -->
+                                @if( $errors->has('password-confirm') )
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password-confirm') }}</strong>
+                                    </span>
+                                @endif
+                                <!-- Show errors input - CLOSE -->
 
                             </div>
                             <!-- Confirm password - CLOSE -->
 
                             <!-- Register button - OPEN -->
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-
-                                    <!-- Submit button - OPEN -->
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('register.register') }}
-                                    </button>
-                                    <!-- Submit button - CLOSE -->
-
-                                </div>
+                            <div class="form-group margin-top">
+                                <!-- Submit button - OPEN -->
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    {{ __('register.register') }}
+                                </button>
+                                <!-- Submit button - CLOSE -->
                             </div>
                             <!-- Register button - CLOSE -->
 

@@ -10,7 +10,7 @@
 
     <!-- Content - OPEN -->
     <div class="container margin-top padding-bottom">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center margin-bottom-lg">
             <div class="col-md-6">
 
                 <!-- Card - OPEN -->
@@ -33,7 +33,7 @@
                             <div class="form-group">
 
                                 <!-- Email label - OPEN -->
-                                <label for="email" class="col-form-label text-md-right">
+                                <label for="email" class="col-form-label">
                                     {{ __('login.email') }}
                                 </label>
                                 <!-- Email label - CLOSE -->
@@ -58,7 +58,7 @@
                             <div class="form-group">
 
                                 <!-- Password label - OPEN -->
-                                <label for="password" class="col-form-label text-md-right">
+                                <label for="password" class="col-form-label">
                                     {{ __('login.password') }}
                                 </label>
                                 <!-- Password label - CLOSE -->
@@ -108,7 +108,7 @@
 
                             <!-- Recover password - OPEN -->
                             @if( Route::has('password.request') )
-                                <div class="col text-center" style="margin-top: 20px">
+                                <div class="col text-center margin-top">
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('login.forgot') }}
                                     </a>
