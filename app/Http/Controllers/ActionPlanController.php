@@ -26,16 +26,16 @@ class ActionPlanController extends Controller
         $action_plan->save();
 
         /* List of default tasks to do */
-        $tasks = array(
+        $tasks = [
             'Task1',
             'Task2',
             'Task3',
-        );
+        ];
         foreach ($tasks as $task) {
             $to_do_task = new ToDoTaskAP([
                 'action_plan_id' => $action_plan->id,
-                'description' => $task,
-                'state' => 'to_do',
+                'description'    => $task,
+                'state'          => 'to_do',
             ]);
             $to_do_task->save();
         }
