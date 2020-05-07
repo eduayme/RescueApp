@@ -27,9 +27,12 @@ class ActionPlanController extends Controller
 
         /* List of default tasks to do */
         $tasks = [
-            'Task1',
-            'Task2',
-            'Task3',
+            'BD personal (ID, driver license,...)',
+            'BD hospitals',
+            'Phone last position',
+            'IMEI phone last position',
+            'Bank last transfers',
+            'Ask public transport',
         ];
         foreach ($tasks as $task) {
             $to_do_task = new ToDoTaskAP([
