@@ -26,6 +26,6 @@ class ActionPlans extends Model
 
     public function to_do_tasks()
     {
-        return $this->hasMany('App\ToDoTaskAP', 'id_action_plan', 'id');
+        return $this->hasMany('App\ToDoTaskAP', 'action_plan_id', 'id');
     }
 }

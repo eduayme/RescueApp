@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ActionPlans;
+use App\ToDoTaskAP;
 use Illuminate\Http\Request;
 
 class ActionPlanController extends Controller
@@ -22,11 +23,25 @@ class ActionPlanController extends Controller
             'version'   => $action_plans + 1,
             'search_id' => $id,
         ]);
-
         $action_plan->save();
 
+        /* List of default tasks to do */
+        $tasks = array(
+            'Task1',
+            'Task2',
+            'Task3',
+        );
+        foreach ($tasks as $task) {
+            $to_do_task = new ToDoTaskAP([
+                'action_plan_id' => $action_plan->id,
+                'description' => $task,
+                'state' => 'to_do',
+            ]);
+            $to_do_task->save();
+        }
+
         return redirect('searches/'.$id.'/#nav-ap')
-            ->with('success', __('main.version').' '.$action_plan->version.__('messages.added'));
+        ->with('success', __('main.version').' '.$action_plan->version.__('messages.added'));
     }
 
     /**

@@ -89,17 +89,19 @@
         <div class="col-md-12 margin-top-sm">
             <h3 class="text-left"> {{ __('main.description') }} </h3>
             <p class="description{{$ap->version}} description">
-                {{$ap->description}}
+                {{ $ap->description }}
             </p>
         </div>
 
         <div class="col-md-6 margin-top-sm">
             <div class="invest version_{{$ap->version}}">
                 <h3 class="text-left"> {{ __('main.investigation') }} </h3>
-                <div class="margin_top_bottom">
+                <div class="margin_top_bottom text-left">
 
-                    <!-- Display tasks -->
-                    
+                    @foreach( $ap->to_do_tasks as $task )
+                        <p> {{ $task->description }} </p>
+                    @endforeach
+
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ class ToDoTaskAP extends Model
     protected $guarded = [];
     protected $fillable = [
         'id',
-        'id_action_plan',
+        'action_plan_id',
         'description',
         'state',
     ];
@@ -21,6 +21,6 @@ class ToDoTaskAP extends Model
 
     public function action_plan()
     {
-        return $this->belongsTo('App\ActionPlans', 'id_action_plan', 'id');
+        return $this->belongsTo('App\ActionPlans', 'action_plan_id', 'id');
     }
 }
