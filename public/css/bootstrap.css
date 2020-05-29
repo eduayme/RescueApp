@@ -4062,14 +4062,15 @@ input[type=submit].btn-block {
 }
 .badge {
     display: inline-block;
-    padding: .25em .4em;
+    padding: .3em .9em;
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .25rem
+    border-width: 2px 4px;
+    border-radius: 30px;
 }
 .badge:empty {
     display: none
@@ -4104,8 +4105,8 @@ input[type=submit].btn-block {
     background-color: #545b62
 }
 .badge-success {
-    color: #fff;
-    background-color: #006510
+    color: #153311;
+    background-color: #D2F0CD;
 }
 .badge-success[href]:focus,
 .badge-success[href]:hover {
@@ -4124,8 +4125,8 @@ input[type=submit].btn-block {
     background-color: #005aa3
 }
 .badge-warning {
-    color: #343A40;
-    background-color: #ffed4a
+    color: #794C35;
+    background-color: #F9EDC7
 }
 .badge-warning[href]:focus,
 .badge-warning[href]:hover {
@@ -4134,8 +4135,8 @@ input[type=submit].btn-block {
     background-color: #ffe817
 }
 .badge-danger {
-    color: #fff;
-    background-color: #980800
+    color: #6F2323;
+    background-color: #FFE0E0;
 }
 .badge-danger[href]:focus,
 .badge-danger[href]:hover {

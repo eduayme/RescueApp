@@ -110,7 +110,7 @@
 <div class="row margin-top-sm">
 
     <!-- First column - OPEN -->
-    <div class="col-sm-2">
+    <div class="col-sm-4">
 
         <!-- ID search - OPEN -->
         <p>
@@ -142,7 +142,7 @@
     <!-- First column - OPEN -->
 
     <!-- Second column - OPEN -->
-    <div class="col-sm-5">
+    <div class="col-sm-4">
 
         <!-- Creator search - OPEN -->
         <p>
@@ -187,7 +187,7 @@
     <!-- Second column - OPEN -->
 
     <!-- Third column - OPEN -->
-    <div class="col-sm-5">
+    <div class="col-sm-4">
 
         <!-- Last modificator search - OPEN -->
         <p>

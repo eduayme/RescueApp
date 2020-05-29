@@ -16,7 +16,7 @@ return [
     'reopen_practice'   => 'Reabrir práctica',
     'go_back'           => 'Volver',
     'load'              => 'Cargar',
-    'closing'           => 'Cerrando',
+    'closing'           => 'Cierre',
     'no'                => 'No',
     'yes'               => 'Sí',
     'filter_by_status'  => 'Filtrar por estado',
