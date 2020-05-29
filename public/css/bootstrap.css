@@ -4075,6 +4075,14 @@ input[type=submit].btn-block {
 .badge:empty {
     display: none
 }
+h1>.badge, h2>.badge, h3>.badge {
+    vertical-align: middle;
+    margin-top: -5px;
+    font-size: 20px;
+}
+h4>.badge, h5>.badge {
+    vertical-align: middle;
+}
 .btn .badge {
     position: relative;
     top: -1px

@@ -8,6 +8,10 @@ body {
     padding-bottom: 50px;
 }
 
+h1, h2, h3, h4, h5 {
+    vertical-align: middle;
+}
+
 footer {
     position: absolute;
     right: 0;

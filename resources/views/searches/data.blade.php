@@ -357,17 +357,17 @@
                             </div>
                             <!-- User photo - CLOSE -->
 
-                            <h5 style="display: inline">
+                            <h5>
                                 <b> {{ $lost_person->name }} </b>
                             </h5>
                         </a>
 
                         @if( $lost_person->found == 0 )
-                            <h5 style="display: inline"><span class="badge badge-danger">
+                            <h5><span class="badge badge-danger">
                                 {{ __('main.lost') }}
                             </span></h5>
                         @elseif( $lost_person->found == 1 )
-                            <h5 style="display: inline"><span class="badge badge-success">
+                            <h5><span class="badge badge-success">
                                 {{ __('main.found') }}
                             </span></h5>
                         @endif

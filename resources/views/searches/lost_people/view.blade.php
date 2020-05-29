@@ -116,10 +116,10 @@
         <h1 class="margin-top">
             {{ $lost_person->name }}
             @if( $lost_person->found == 0 )
-                <span style="font-size: 20px" class="badge badge-danger">
+                <span class="badge badge-danger">
                     {{ __('main.lost') }}
             @elseif( $lost_person->found == 1 )
-                <span style="font-size: 20px" class="badge badge-success">
+                <span class="badge badge-success">
                     {{ __('main.found') }}
             @endif
             </span>
