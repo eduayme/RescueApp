@@ -55,9 +55,11 @@
                     <div class="card text-center">
                         <div class="card-body">
 
-                            <h1 class="card-title">
-                                {{ __('messages.no_searches') }}
-                            </h1>
+                            <img src="/img/add_search.png" width="300">
+
+                            <h4 class="card-title margin-bottom text-secondary">
+                                {{ __('messages.no_practices') }}
+                            </h4>
 
                             <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button"
                             <?php if (Auth::user()->profile == 'guest') { ?> style="display: none" <?php } ?> >
@@ -137,9 +139,11 @@
                     <div class="card text-center">
                         <div class="card-body">
 
-                            <h1 class="card-title">
+                            <img src="/img/add_search.png" width="300">
+
+                            <h4 class="card-title margin-bottom text-secondary">
                                 {{ __('messages.no_practices') }}
-                            </h1>
+                            </h4>
 
                             <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button"
                             <?php if (Auth::user()->profile == 'guest') { ?> style="display: none" <?php } ?> >

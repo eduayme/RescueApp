@@ -2,8 +2,20 @@
 <div class="row">
 
     <!-- Content - OPEN -->
-    <div class="container margin-top padding-bottom">
+    <div class="container margin-top padding-bottom text-right">
     @if (count($action_plans) > 0)
+
+        <!-- Add action plan - OPEN -->
+        <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-outline-primary margin-left align-right btn-sm"
+                    <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+                <span class="octicon octicon-plus"></span>
+                {{ __('actions.add_version') }}
+            </button>
+        </form>
+        <!-- Add action plan - CLOSE -->
+
         <!-- Tabs nav - OPEN -->
         <nav class="project-tab">
 
@@ -38,20 +50,21 @@
 
 
     @else
-        <div class="col text-right">
+        <div class="text-center">
+            <img src="/img/add_action_plan.png" width="300">
 
-            <!-- Add lost person - OPEN -->
-            <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post" style="display: inline">
+            <h4 class="card-title margin-bottom text-secondary">
+                {{ __('main.no_action') }}
+            </h4>
+
+            <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post">
                 @csrf
-                <button type="submit" class="btn btn-outline-primary margin-left margin_top_bottom btn-sm"
+                <button type="submit" class="btn btn-primary margin-left margin_top_bottom"
                         <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                     <span class="octicon octicon-plus"></span>
                     {{ __('actions.add_version') }}
                 </button>
             </form>
-        </div>
-        <div class="col justify-content-start">
-            <h3 class="margin_top_bottom"> {{ __('main.no_action') }}</h3>
         </div>
 
     @endif

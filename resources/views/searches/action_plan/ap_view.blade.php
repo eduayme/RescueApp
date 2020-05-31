@@ -2,17 +2,6 @@
 <!-- Align right - OPEN -->
 <div class="text-right">
 
-    <!-- Add action plan - OPEN -->
-    <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post" style="display: inline">
-        @csrf
-        <button type="submit" class="btn btn-outline-primary margin-left margin_top_bottom btn-sm"
-                <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
-            <span class="octicon octicon-plus"></span>
-            {{ __('actions.add_version') }}
-        </button>
-    </form>
-    <!-- Add action plan - CLOSE -->
-
     <!-- Edit search button - OPEN -->
     <a href="#" data-ap="{{$ap->version}}"
     role="button" class="edit btn btn-outline-secondary margin-left margin_top_bottom btn-sm"

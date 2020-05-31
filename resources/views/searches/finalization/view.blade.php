@@ -7,9 +7,11 @@
         <!-- If practice - OPEN -->
         @if( $search->is_a_practice )
 
-            <h1 class="card-title">
+            <img src="/img/closed_search.png" width="300">
+
+            <h4 class="card-title margin-bottom text-secondary">
                 {{ __('messages.closed_practice') }}
-            </h1>
+            </h4>
 
             {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
                 {{ Form::hidden('id_search', $search->id_search, array('class' => 'form-control')) }}
@@ -21,9 +23,11 @@
         <!-- If search - OPEN -->
         @else
 
-            <h1 class="card-title">
+            <img src="/img/closed_search.png" width="300">
+
+            <h4 class="card-title margin-bottom text-secondary">
                 {{ __('messages.closed_search') }}
-            </h1>
+            </h4>
 
             {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
                 {{ Form::hidden('id_search', $search->id_search, array('class' => 'form-control')) }}
