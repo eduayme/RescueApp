@@ -343,7 +343,7 @@
         <!-- Description content - OPEN -->
         <div class="col-md-9 abs-center pad margin-auto">
 
-            <div class="row">
+            <div class="row full-width">
 
                 @foreach( $search->lost_people->sortBy('found') as $lost_person )
 
@@ -353,7 +353,7 @@
 
                             <!-- User photo - OPEN -->
                             <div class="row justify-content-md-center image-upload justify-content-center">
-                                <img src="/uploads/lost_people_photos/{{ $lost_person->photo }}" class="photo-sm d-block rounded">
+                                <img src="/uploads/lost_people_photos/{{ $lost_person->photo }}" class="photo-sm d-block rounded" width="300" height="300">
                             </div>
                             <!-- User photo - CLOSE -->
 

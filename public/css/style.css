@@ -348,3 +348,7 @@ input.invest {
 .invest p:last-of-type {
     border-bottom: none;
 }
+
+.full-width {
+    width: 100%;
+}
