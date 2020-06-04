@@ -352,3 +352,7 @@ input.invest {
 .full-width {
     width: 100%;
 }
+
+.to_do_task:not(:last-child) {
+    border-bottom: 1px solid #dee2e6;
+}

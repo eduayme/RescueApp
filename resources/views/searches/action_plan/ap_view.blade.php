@@ -75,7 +75,7 @@
 <div class="container container-fluid border border-secondary rounded margin_top_bottom margin-top box text-center">
     <div class="row">
 
-        <div class="col-md-12 margin-top-sm">
+        <div class="col-md-6 margin-top-sm">
             <h3 class="text-left"> {{ __('main.description') }} </h3>
             <p class="description{{$ap->version}} description">
                 {{ $ap->description }}
@@ -88,7 +88,14 @@
                 <div class="margin_top_bottom text-left">
 
                     @foreach( $ap->to_do_tasks as $task )
-                        <p> {{ $task->description }} </p>
+                        <div class="row to_do_task">
+                            <div class="col-10">
+                                <p> {{ $task->description }} </p>
+                            </div>
+                            <div class="col-2">
+                                <p> {{ $task->state }} </p>
+                            </div>
+                        </div>
                     @endforeach
 
                 </div>
