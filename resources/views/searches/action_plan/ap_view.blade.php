@@ -22,7 +22,7 @@
     <!-- Delete search button- CLOSE -->
 
     <!-- Delete search modal - OPEN -->
-    <form action="{{ route('actionplan.destroy', $actionp->id) }}" method="post" style="display: inline">
+    <form action="{{ route('actionplan.destroy', $ap->id) }}" method="post" style="display: inline">
     @csrf
     @method('DELETE')
         <!-- Modal - OPEN -->

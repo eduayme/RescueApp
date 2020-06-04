@@ -77,70 +77,7 @@
 <script>
 
     $(document).ready(function() {
-        /*
-        $(".edit").click(function(){
-            const version = $(this).data("ap");
-            const text = $(".description" + version).text();
-            $(".description" + version).hide();
-            $("textarea.input" + version).text(text.trim());
-            $(".form" + version).show();
-            $(".form_invest_" + version).show();
-            $(".form" + version).data("ap", version);
-            $(".form_embed_" + version).show();
-            $(".task").hide();
-            $(".invest.version_" + version + " p").each(function(index){
-                let rindex = index+1;
-               $(".form_invest_" + version + " input.input" + rindex).val($(this).text());
-            });
-        });
-
-        $(".descform").submit(function(e) {
-            e.preventDefault();
-            const version = $(this).data("ap");
-            save_all(version, this);
-        });
-
-        $(".embedform").submit(function(e){
-            e.preventDefault();
-            const version = $(this).data("ap");
-            save_all(version, this);
-        });
-
-        $(".invest form").submit(function(e){
-            e.preventDefault();
-            const version = $(this).data("ap");
-            save_all(version, this);
-        });
-
-        function save_all(version, that){
-            const text =  $("textarea.input" + version).val();
-            const taskid = $(that).data("taskid");
-            $(".description" + version).text(text);
-            const id = $(that).data("searchid");
-            const token = $(that).children("input[name='_token']").val();
-            $(".invest form").hide();
-            const task = "task"+taskid;
-            $(".form_invest_" + version + " input.invest").each(function(index){
-                $(".invest.version_" + version +  " p:eq("+index +")").text($(this).val());
-            });
-            $(".mapembed").html(mapembed);
-            common_submit(version);
-            $.post("{{route('actionplan.update')}}", {
-                "version": version,
-                "id": id,
-                "_token": token
-            });
-        }
-
-        function common_submit(version)
-        {
-            $(".description" + version).show();
-            $(".form_embed_" + version).hide();
-            $(".descform").hide();
-            $(".invest form").hide();
-            $(".invest p").show();
-        }
-        */
+        
     });
 
 </script>
