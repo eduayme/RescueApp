@@ -17,10 +17,11 @@ class ActionPlanController extends Controller
      */
     public function create($id)
     {
-        $action_plans = ActionPlans::where('search_id', $id)->count();
+        $action_plans = ActionPlans::where('search_id', $id)->orderBy('version', 'desc')->first();
+        $v = ActionPlans::where('search_id', $id)->count() > 0 ? $action_plans->version : 0;
 
         $action_plan = new ActionPlans([
-            'version'   => $action_plans + 1,
+            'version'   => $v + 1,
             'search_id' => $id,
         ]);
         $action_plan->save();

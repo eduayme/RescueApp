@@ -2,11 +2,11 @@
 <div class="row">
 
     <!-- Content - OPEN -->
-    <div class="container margin-top padding-bottom text-right">
+    <div class="container padding-bottom text-right">
     @if (count($action_plans) > 0)
 
         <!-- Add action plan - OPEN -->
-        <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post">
+        <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post" class="margin-bottom">
             @csrf
             <button type="submit" class="btn btn-outline-primary margin-left align-right btn-sm"
                     <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
@@ -77,7 +77,7 @@
 <script>
 
     $(document).ready(function() {
-        
+
     });
 
 </script>
