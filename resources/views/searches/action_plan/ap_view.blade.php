@@ -93,7 +93,19 @@
                                 <p> {{ $task->description }} </p>
                             </div>
                             <div class="col-2">
-                                <p> {{ $task->state }} </p>
+                                @if( $task->state == "to_do" )
+                                    <span class="badge badge-danger margin-top-sm margin-left-30">
+                                        {{ __('activity.to_do') }}
+                                    </span>
+                                @elseif( $task->state == "in_progress" )
+                                    <span class="badge badge-warning margin-top-sm margin-left-30">
+                                        {{ __('activity.in_progress') }}
+                                    </span>
+                                @elseif( $task->state == "done" )
+                                    <span class="badge badge-success margin-top-sm margin-left-30">
+                                        {{ __('activity.done') }}
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     @endforeach

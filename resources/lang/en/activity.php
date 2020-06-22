@@ -18,5 +18,7 @@ return [
     'ip_address'                    => 'Ip Address',
     'browser'                       => 'Browser',
     'os'                            => 'OS',
-
+    'to_do'                         => 'To do',
+    'in_progress'                   => 'In progress',
+    'done'                          => 'Done',
 ];

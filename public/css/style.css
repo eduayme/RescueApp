@@ -356,3 +356,16 @@ input.invest {
 .to_do_task:not(:last-child) {
     border-bottom: 1px solid #dee2e6;
 }
+
+@media (min-width:430px) {
+    .margin-left-30 {
+        margin-left: -30px;
+    }
+}
+
+@media (max-width:429px) {
+    .margin-left-30 {
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+}

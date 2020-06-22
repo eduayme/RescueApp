@@ -18,5 +18,7 @@ return [
     'ip_address'                    => 'Adreça IP',
     'browser'                       => 'Navegador',
     'os'                            => 'OS',
-
+    'to_do'                         => 'Pendent',
+    'in_progress'                   => 'En procés',
+    'done'                          => 'Finalitzat',
 ];
