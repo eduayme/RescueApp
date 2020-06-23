@@ -107,10 +107,11 @@ class Search extends Model
         return $this->hasMany('App\LostPerson', 'id_search', 'id');
     }
 
-    public static function boot() {
+    public static function boot()
+    {
         parent::boot();
 
-        static::deleting(function($search) { // before delete() method call this
+        static::deleting(function ($search) { // before delete() method call this
             $search->lost_people()->delete();
         });
     }

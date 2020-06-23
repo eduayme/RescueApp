@@ -182,15 +182,12 @@ class SearchController extends Controller
 
         $currentUser = \Auth::user()->profile;
 
-        if ($currentUser != 'guest')
-        {
+        if ($currentUser != 'guest') {
             $search->delete();
 
             return redirect('/')
             ->with('success', $search->id_search.__('messages.deleted'));
-        }
-        else
-        {
+        } else {
             return redirect('searches/'.$search->id)
             ->with('error', __('messages.not_allowed'));
         }

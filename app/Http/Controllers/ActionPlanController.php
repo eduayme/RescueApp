@@ -80,15 +80,12 @@ class ActionPlanController extends Controller
 
         $currentUser = \Auth::user()->profile;
 
-        if ($currentUser != 'guest')
-        {
+        if ($currentUser != 'guest') {
             $ap->delete();
 
             return redirect('searches/'.$id_search.'/#nav-ap')
                 ->with('success', __('main.version').' '.$ap->version.__('messages.deleted'));
-        }
-        else
-        {
+        } else {
             return redirect('searches/'.$search->id)
                 ->with('error', __('messages.not_allowed'));
         }

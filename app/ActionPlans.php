@@ -26,10 +26,11 @@ class ActionPlans extends Model
         return $this->hasMany('App\ToDoTaskAP', 'action_plan_id', 'id');
     }
 
-    public static function boot() {
+    public static function boot()
+    {
         parent::boot();
 
-        static::deleting(function($action_plan) { // before delete() method call this
+        static::deleting(function ($action_plan) { // before delete() method call this
             $action_plan->to_do_tasks()->delete();
         });
     }
