@@ -19,7 +19,10 @@ class CreateTableToDoTasksAp extends Migration
             $table->longText('description')->nullable();
             $table->string('state')->nullable();
             $table->timestamps();
-            $table->softDeletes();
+        });
+
+        Schema::table('to_do_tasks_ap', function (Blueprint $table) {
+            $table->foreign('action_plan_id')->references('id')->on('action_plans')->onDelete('cascade');
         });
     }
 

@@ -18,7 +18,6 @@ class CreateActionPlans extends Migration
             $table->longText('description')->nullable();
             $table->integer('search_id')->unsigned();
             $table->timestamps();
-            $table->softDeletes();
         });
 
         Schema::table('action_plans', function (Blueprint $table) {

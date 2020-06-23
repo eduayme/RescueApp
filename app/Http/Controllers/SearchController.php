@@ -21,11 +21,27 @@ class SearchController extends Controller
         $searches = Search::all()->where('is_a_practice', '=', 0);
         $practices = Search::all()->where('is_a_practice', '=', 1);
 
-        $regions_s = Search::select('region')->whereNotNull('region')->where('is_a_practice', '=', 0)->groupBy('region')->get();
-        $regions_p = Search::select('region')->whereNotNull('region')->where('is_a_practice', '=', 1)->groupBy('region')->get();
+        $regions_s = Search::select('region')
+            ->whereNotNull('region')
+            ->where('is_a_practice', '=', 0)
+            ->groupBy('region')
+            ->get();
+        $regions_p = Search::select('region')
+            ->whereNotNull('region')
+            ->where('is_a_practice', '=', 1)
+            ->groupBy('region')
+            ->get();
 
-        $villages_s = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('is_a_practice', '=', 0)->groupBy('municipality_last_place_seen')->get();
-        $villages_p = Search::select('municipality_last_place_seen')->whereNotNull('municipality_last_place_seen')->where('is_a_practice', '=', 1)->groupBy('municipality_last_place_seen')->get();
+        $villages_s = Search::select('municipality_last_place_seen')
+            ->whereNotNull('municipality_last_place_seen')
+            ->where('is_a_practice', '=', 0)
+            ->groupBy('municipality_last_place_seen')
+            ->get();
+        $villages_p = Search::select('municipality_last_place_seen')
+            ->whereNotNull('municipality_last_place_seen')
+            ->where('is_a_practice', '=', 1)
+            ->groupBy('municipality_last_place_seen')
+            ->get();
 
         return view('searches.index', compact('searches', 'practices', 'regions_s', 'regions_p', 'villages_s', 'villages_p'));
     }
@@ -166,16 +182,15 @@ class SearchController extends Controller
 
         $currentUser = \Auth::user()->profile;
 
-        if ($currentUser != 'guest') {
+        if ($currentUser != 'guest')
+        {
             $search->delete();
-
-            foreach ($search->lost_people() as $person) {
-                $person->delete();
-            }
 
             return redirect('/')
             ->with('success', $search->id_search.__('messages.deleted'));
-        } else {
+        }
+        else
+        {
             return redirect('searches/'.$search->id)
             ->with('error', __('messages.not_allowed'));
         }

@@ -67,6 +67,7 @@ class CreateSearchesTable extends Migration
             $table->string('affinity_contact_person')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::table('searches', function (Blueprint $table) {

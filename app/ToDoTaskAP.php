@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ToDoTaskAP extends Model
 {
@@ -14,8 +13,6 @@ class ToDoTaskAP extends Model
         'description',
         'state',
     ];
-
-    use SoftDeletes;
 
     public $table = 'to_do_tasks_ap';
 

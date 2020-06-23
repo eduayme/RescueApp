@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ActionPlans extends Model
 {
@@ -15,8 +14,6 @@ class ActionPlans extends Model
         'search_id',
     ];
 
-    use SoftDeletes;
-
     public $table = 'action_plans';
 
     public function search()
@@ -27,5 +24,13 @@ class ActionPlans extends Model
     public function to_do_tasks()
     {
         return $this->hasMany('App\ToDoTaskAP', 'action_plan_id', 'id');
+    }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($action_plan) { // before delete() method call this
+            $action_plan->to_do_tasks()->delete();
+        });
     }
 }

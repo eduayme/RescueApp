@@ -23,7 +23,7 @@ class CreateActivitiesTable extends Migration
             $table->ipAddress('ip_address')->nullable();
             $table->integer('id_user')->unsigned();
             $table->timestamps();
-            $table->softDeletes();
+            $table->SoftDeletes();
         });
 
         Schema::table('activities', function (Blueprint $table) {

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Search extends Model
 {
+    use SoftDeletes;
+
     public $table = 'searches';
 
     protected $fillable = [
@@ -102,5 +105,13 @@ class Search extends Model
     public function lost_people()
     {
         return $this->hasMany('App\LostPerson', 'id_search', 'id');
+    }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($search) { // before delete() method call this
+            $search->lost_people()->delete();
+        });
     }
 }
