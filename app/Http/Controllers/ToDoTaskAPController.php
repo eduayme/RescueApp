@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\ToDoTaskAP;
 use App\ActionPlan;
-use Auth;
+use App\ToDoTaskAP;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class ToDoTaskAPController extends Controller
 {
     public function index()
     {
-
     }
 
     public function create()
     {
-
     }
 
     public function update(Request $request, $id)
