@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ActionPlans;
+use App\ActionPlan;
 use App\LostPerson;
 use App\Search;
 use Auth;
@@ -164,7 +164,7 @@ class SearchController extends Controller
     public function show($id)
     {
         $search = Search::find($id);
-        $action_plans = ActionPlans::where('search_id', $id)->get();
+        $action_plans = ActionPlan::where('search_id', $id)->get();
 
         return view('searches.view', compact('search', 'action_plans'));
     }

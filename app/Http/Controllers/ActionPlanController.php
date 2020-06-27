@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ActionPlans;
+use App\ActionPlan;
 use App\ToDoTaskAP;
 use Illuminate\Http\Request;
 
@@ -17,10 +17,10 @@ class ActionPlanController extends Controller
      */
     public function create($id)
     {
-        $action_plans = ActionPlans::where('search_id', $id)->orderBy('version', 'desc')->first();
-        $v = ActionPlans::where('search_id', $id)->count() > 0 ? $action_plans->version : 0;
+        $action_plans = ActionPlan::where('search_id', $id)->orderBy('version', 'desc')->first();
+        $v = ActionPlan::where('search_id', $id)->count() > 0 ? $action_plans->version : 0;
 
-        $action_plan = new ActionPlans([
+        $action_plan = new ActionPlan([
             'version'   => $v + 1,
             'search_id' => $id,
         ]);
@@ -49,21 +49,40 @@ class ActionPlanController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $ap = ActionPlan::find($id);
+        $current_user_profile = \Auth::user()->profile;
+
+        if ($current_user_profile != 'guest') {
+            return view('searches.action_plan.ap_edit', compact('ap'));
+        } else {
+            return back()
+            ->with('error', __('messages.not_allowed'));
+        }
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @param \Illuminate\Http\Request $request
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $id = $request->input('id');
-        $version = $request->input('version');
-        $action_plan = ActionPlans::where('search_id', '=', $id)->where('version', '=', $version)->first();
+        $ap = ActionPlan::find($id);
 
-        if ($request->input('description')) {
-            $action_plan->description = $request->input('description');
-        }
+        $ap->description = $request->has('description') ? $request->get('description') : $ap->description;
 
-        $action_plan->save();
+        $ap->save();
+
+        return redirect('searches/'.$ap->search_id.'/#nav-ap')
+            ->with('success', __('main.version').' '.$ap->version.__('messages.updated'));
     }
 
     /**
@@ -75,15 +94,14 @@ class ActionPlanController extends Controller
      */
     public function destroy($id)
     {
-        $ap = ActionPlans::find($id);
-        $id_search = $ap->search_id;
+        $ap = ActionPlan::find($id);
 
         $currentUser = \Auth::user()->profile;
 
         if ($currentUser != 'guest') {
             $ap->delete();
 
-            return redirect('searches/'.$id_search.'/#nav-ap')
+            return redirect('searches/'.$ap->search_id.'/#nav-ap')
                 ->with('success', __('main.version').' '.$ap->version.__('messages.deleted'));
         } else {
             return redirect('searches/'.$search->id)

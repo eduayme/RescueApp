@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ActionPlans extends Model
+class ActionPlan extends Model
 {
     protected $guarded = [];
     protected $fillable = [

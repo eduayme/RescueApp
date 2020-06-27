@@ -31,7 +31,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('actionplan', 'ActionPlanController', ['only' => ['index', 'create', 'store', 'destroy']]);
     Route::post('/actionplan/create/{id}', 'ActionPlanController@create');
-    Route::post('/actionplan/update', 'ActionPlanController@update')->name('actionplan.update');
+    Route::post('/actionplan/update/{id}', 'ActionPlanController@update')->name('actionplan.update');
+
+    Route::resource('todotaskap', 'ToDoTaskAPController');
+    Route::post('/todotaskap/{id}', 'ToDoTaskAPController@update')->name('todotask.update');
 
     Route::get('/privacy', function () {
         return view('parts.privacy');

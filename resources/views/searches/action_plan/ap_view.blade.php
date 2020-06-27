@@ -3,13 +3,90 @@
 <div class="text-right">
 
     <!-- Edit search button - OPEN -->
-    <a href="#" data-ap="{{$ap->version}}"
-    role="button" class="edit btn btn-outline-secondary margin-left margin_top_bottom btn-sm"
-    <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
-        <span class="octicon octicon-pencil"></span>
-        {{ __('actions.edit') }}
-    </a>
+    <span data-toggle="modal" href="#editModalV{{$ap->version}}">
+        <button class="edit btn btn-outline-secondary margin-left margin_top_bottom btn-sm"
+        <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+            <span class="octicon octicon-pencil"></span>
+            {{ __('actions.edit') }}
+        </button>
+    </span>
     <!-- Edit search button - CLOSE -->
+
+    <!-- Edit search modal - OPEN -->
+    <!-- Modal - OPEN -->
+    <div id="editModalV{{$ap->version}}" class="modal fade">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <!-- Modal content - OPEN -->
+            <div class="container modal-content">
+                <div class="modal-header" style="border: no">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 margin-top-sm">
+                        {{ Form::model($ap, array('route' => array('actionplan.update', $ap->id), 'method' => 'POST')) }}
+                            <h3 class="text-left"> {{ __('main.description') }} </h3>
+                            {{ Form::textarea('description', null, array('class' => 'form-control', 'rows' => 10)) }}
+                            <!-- Submit button - OPEN -->
+                            <div class="text-center margin_top_bottom">
+                                {{ Form::submit( __('actions.save'), array('class' => 'btn btn-primary') ) }}
+                            </div>
+                            <!-- Submit button - OPEN -->
+                        {{ Form::close() }}
+                    </div>
+
+                    <div class="col-md-12 margin-top-sm margin-bottom">
+                        <div class="invest version_{{$ap->version}} text-left">
+                            <h3> {{ __('main.investigation') }} </h3>
+
+                            @php
+                                $size = sizeof($ap->to_do_tasks);
+                                $count = 1;
+                            @endphp
+                            @foreach( $ap->to_do_tasks as $task )
+                                {{ Form::model($task, array('route' => array('todotask.update', $task->id), 'method' => 'POST')) }}
+                                    @php
+                                        if( $count < $size )
+                                        {
+                                            echo "<div class='row to_do_task'>";
+                                            $count++;
+                                        }
+                                        else
+                                            echo "<div class='row'>";
+                                    @endphp
+                                        <div class="col-md-6 margin-top-sm-sm margin-bottom-sm-sm">
+                                            <p> {{ $task->description }} </p>
+                                        </div>
+                                        <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm">
+                                            <select id="state" class="form-control" name="state">
+                                                <option value="to_do" {{ ($task->state == 'to_do') ? 'selected' : '' }}>
+                                                    {{ __('activity.to_do') }}
+                                                </option>
+                                                <option value="in_progress" {{ ($task->state == 'in_progress') ? 'selected' : '' }}>
+                                                    {{ __('activity.in_progress') }}
+                                                </option>
+                                                <option value="done" {{ ($task->state == 'done') ? 'selected' : '' }}>
+                                                    {{ __('activity.done') }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm text-right">
+                                            {{ Form::submit( __('actions.save'), array('class' => 'btn btn-primary') ) }}
+                                        </div>
+                                    </div>
+                                {{ Form::close() }}
+                            @endforeach
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal - CLOSE -->
 
     <!-- Delete search button- OPEN -->
     <span data-toggle="modal" href="#deleteModalV{{$ap->version}}"
@@ -88,7 +165,7 @@
                 <div class="margin_top_bottom text-left">
 
                     @foreach( $ap->to_do_tasks as $task )
-                        <div class="row to_do_task">
+                        <div class='row to_do_task'>
                             <div class="col-10">
                                 <p> {{ $task->description }} </p>
                             </div>

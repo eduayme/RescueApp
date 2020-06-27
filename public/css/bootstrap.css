@@ -503,6 +503,9 @@ pre code {
 .margin-bottom-sm {
     margin-bottom: 15px !important;
 }
+.margin-bottom-sm-sm {
+    margin-bottom: 5px !important;
+}
 .margin-top-sm-min {
     margin-top: -15px !important;
 }
@@ -4635,8 +4638,7 @@ button.close {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 1rem;
-    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 0.5rem 0 0;
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem
 }
@@ -4691,7 +4693,7 @@ button.close {
 }
 @media (min-width:992px) {
     .modal-lg {
-        max-width: 800px
+        max-width: 1140px;
     }
 }
 .tooltip {

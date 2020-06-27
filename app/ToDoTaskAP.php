@@ -18,6 +18,6 @@ class ToDoTaskAP extends Model
 
     public function action_plan()
     {
-        return $this->belongsTo('App\ActionPlans', 'action_plan_id', 'id');
+        return $this->belongsTo('App\ActionPlan', 'action_plan_id', 'id');
     }
 }
