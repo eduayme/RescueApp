@@ -23,6 +23,7 @@ return [
     'terms_of_service'             => 'Terminos y Condiciones',
     'data'                         => 'Datos',
     'ap'                           => 'Plan de Acción',
+    'incidents'                    => 'Incidentes',
     'version'                      => 'Versión',
     'description'                  => 'Descripción',
     'investigation'                => 'Investigación',

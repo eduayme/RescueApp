@@ -30,12 +30,19 @@
                 </a>
                 <!-- Data tab - CLOSE -->
 
-                <!-- Data tab - OPEN -->
+                <!-- Action Plan tab - OPEN -->
                 <a class="nav-item nav-link" id="nav-ap-tab" data-toggle="tab"
                    href="#nav-ap" role="tab" aria-controls="nav-ap" aria-selected="true">
                     {{ __('main.ap') }}
                 </a>
-                <!-- Data tab - CLOSE -->
+                <!-- Action Plan - CLOSE -->
+
+                <!-- Incidents - OPEN -->
+                <a class="nav-item nav-link" id="nav-incidents-tab" data-toggle="tab"
+                   href="#nav-incidents" role="tab" aria-controls="nav-incidents" aria-selected="true">
+                    {{ __('main.incidents') }}
+                </a>
+                <!-- Incidents - CLOSE -->
 
                 <!-- Closing tab - OPEN -->
                 <a class="nav-item nav-link" id="nav-closing-tab" data-toggle="tab"
@@ -60,12 +67,19 @@
             </div>
             <!-- Data tab content - CLOSE -->
 
-            <!-- Data tab content - OPEN -->
+            <!-- Action Plan content - OPEN -->
             <div class="tab-pane fade margin-top-sm" id="nav-ap"
             role="tabpanel" aria-labelledby="nav-ap-tab">
                 @include('searches.action_plan.ap')
             </div>
-            <!-- Data tab content - CLOSE -->
+            <!-- Action Plan content - CLOSE -->
+
+            <!-- Incidents content - OPEN -->
+            <div class="tab-pane fade margin-top-sm" id="nav-incidents"
+            role="tabpanel" aria-labelledby="nav-incidents-tab">
+                <p> incidents </p>
+            </div>
+            <!-- Incidents content - CLOSE -->
 
             <!-- Closing tab content - OPEN -->
             <div class="tab-pane fade margin-top-sm" id="nav-closing"
