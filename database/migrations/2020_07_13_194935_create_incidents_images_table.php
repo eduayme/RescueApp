@@ -15,8 +15,8 @@ class CreateIncidentsImagesTable extends Migration
     {
         Schema::create('incidents_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_incident')->unsigned();
-            $table->integer('id_user_updated')->unsigned();
+            $table->integer('incident_id')->unsigned();
+            $table->integer('user_updated_id')->unsigned();
             $table->string('photo')->unsigned();
             $table->timestamps();
         });
