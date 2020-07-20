@@ -15,18 +15,18 @@ class CreateIncidentsTable extends Migration
     {
         Schema::create('incidents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_search')->unsigned();
-            $table->integer('id_user_creation')->unsigned();
-            $table->integer('id_user_modification')->unsigned();
+            $table->integer('search_id')->unsigned();
+            $table->integer('user_creation_id')->unsigned();
+            $table->integer('user_modification_id')->unsigned();
             $table->dateTime('date')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
         });
 
         Schema::table('incidents', function (Blueprint $table) {
-            $table->foreign('id_search')->references('id')->on('searches')->onDelete('cascade');
-            $table->foreign('id_user_creation')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_user_modification')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
+            $table->foreign('user_creation_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_modification_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
