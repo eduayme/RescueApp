@@ -6,7 +6,7 @@
 
         <!-- Add Incident - OPEN -->
         <button type="submit" class="btn btn-outline-primary margin-left align-right btn-sm"
-                <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+        <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
             <span class="octicon octicon-plus"></span>
             {{ __('actions.add') + ' ' + __('actions.incidents') }}
         </button>
@@ -18,14 +18,14 @@
 
     @else
         <div class="text-center">
-            <img src="/img/add_incident.png" width="300">
+            <img src="/img/add_incident.png" width="400">
 
             <h4 class="card-title margin-bottom text-secondary">
                 {{ __('main.no_incident') }}
             </h4>
 
-            <button type="submit" class="btn btn-primary margin-left margin_top_bottom"
-                    <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+            <button type="submit" class="btn btn-primary margin_top_bottom"
+            <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                 <span class="octicon octicon-plus"></span>
                 {{ __('actions.add') . ' ' . __('main.incident') }}
             </button>

@@ -7,8 +7,8 @@
         <!-- Add action plan - OPEN -->
         <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post" class="margin-bottom">
             @csrf
-            <button type="submit" class="btn btn-outline-primary margin-left align-right btn-sm"
-                    <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+            <button type="submit" class="btn btn-outline-primary btn-sm"
+            <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                 <span class="octicon octicon-plus"></span>
                 {{ __('actions.add_version') }}
             </button>
@@ -58,8 +58,8 @@
 
             <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post">
                 @csrf
-                <button type="submit" class="btn btn-primary margin-left margin_top_bottom"
-                        <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+                <button type="submit" class="btn btn-primary margin_top_bottom"
+                <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                     <span class="octicon octicon-plus"></span>
                     {{ __('actions.add_version') }}
                 </button>
