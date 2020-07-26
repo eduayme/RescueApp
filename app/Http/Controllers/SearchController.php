@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Incident;
 use App\ActionPlan;
+use App\Incident;
 use App\LostPerson;
 use App\Search;
 use Auth;
