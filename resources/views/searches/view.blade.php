@@ -77,7 +77,7 @@
             <!-- Incidents content - OPEN -->
             <div class="tab-pane fade margin-top-sm" id="nav-incidents"
             role="tabpanel" aria-labelledby="nav-incidents-tab">
-                <p> incidents </p>
+                @include('searches.incidents.index')
             </div>
             <!-- Incidents content - CLOSE -->
 

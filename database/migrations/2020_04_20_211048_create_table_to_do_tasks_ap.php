@@ -14,7 +14,7 @@ class CreateTableToDoTasksAp extends Migration
     public function up()
     {
         Schema::create('to_do_tasks_ap', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('action_plan_id')->unsigned();
             $table->longText('description')->nullable();
             $table->string('state')->nullable();

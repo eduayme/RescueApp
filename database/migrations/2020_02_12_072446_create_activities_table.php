@@ -16,7 +16,7 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('description')->nullable();
             $table->string('method')->nullable();
             $table->string('route')->nullable();

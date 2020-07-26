@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Incident;
 use App\ActionPlan;
 use App\LostPerson;
 use App\Search;
@@ -165,8 +166,9 @@ class SearchController extends Controller
     {
         $search = Search::find($id);
         $action_plans = ActionPlan::where('search_id', $id)->get();
+        $incidents = Incident::where('search_id', $id)->get();
 
-        return view('searches.view', compact('search', 'action_plans'));
+        return view('searches.view', compact('search', 'action_plans', 'incidents'));
     }
 
     /**

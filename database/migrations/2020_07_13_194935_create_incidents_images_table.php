@@ -14,16 +14,18 @@ class CreateIncidentsImagesTable extends Migration
     public function up()
     {
         Schema::create('incidents_images', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->engine = 'InnoDB';
+
+            $table->increments('id');
             $table->integer('incident_id')->unsigned();
             $table->integer('user_updated_id')->unsigned();
-            $table->string('photo')->unsigned();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
 
         Schema::table('incidents_images', function (Blueprint $table) {
-            $table->foreign('id_incident')->references('id')->on('incidents')->onDelete('cascade');
-            $table->foreign('id_user_updated')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('incident_id')->references('id')->on('incidents')->onDelete('cascade');
+            $table->foreign('user_updated_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

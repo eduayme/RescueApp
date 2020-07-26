@@ -1,4 +1,3 @@
-<!-- Top buttons - OPEN -->
 <div class="row">
 
     <!-- Content - OPEN -->
