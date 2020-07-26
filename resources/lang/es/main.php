@@ -29,7 +29,7 @@ return [
     'description'                  => 'Descripción',
     'investigation'                => 'Investigación',
     'no_action'                    => 'Ningún plan de acción creado',
-    'no_incident'                  => "Ningún incidente registrado",
+    'no_incident'                  => 'Ningún incidente registrado',
     'finish'                       => 'Terminar',
     'lost'                         => 'Perdido',
     'found'                        => 'Encontrado',

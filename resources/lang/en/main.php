@@ -29,7 +29,7 @@ return [
     'description'                   => 'Description',
     'investigation'                 => 'Investigation',
     'no_action'                     => 'No action plans added',
-    'no_incident'                   => "No incident added",
+    'no_incident'                   => 'No incident added',
     'finish'                        => 'Finish',
     'lost'                          => 'Lost',
     'found'                         => 'Found',

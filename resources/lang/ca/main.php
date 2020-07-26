@@ -29,7 +29,7 @@ return [
     'description'                   => 'Descripció',
     'investigation'                 => 'Investigació',
     'no_action'                     => "Cap pla d'acció creat",
-    'no_incident'                   => "Cap incident registrat",
+    'no_incident'                   => 'Cap incident registrat',
     'finish'                        => 'Tancar',
     'lost'                          => 'Perdut',
     'found'                         => 'Trobat',
