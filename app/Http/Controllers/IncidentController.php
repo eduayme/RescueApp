@@ -23,11 +23,11 @@ class IncidentController extends Controller
     public function store(Request $request)
     {
         $incident = new LostPerson([
-            'search_id' => $request->get('id_search'),
-            'user_creation_id' => $request->get('user_creation_id'),
+            'search_id'            => $request->get('id_search'),
+            'user_creation_id'     => $request->get('user_creation_id'),
             'user_modification_id' => $request->get('user_modification_id'),
-            'date' => $request->get('date'),
-            'description' => $request->get('description'),
+            'date'                 => $request->get('date'),
+            'description'          => $request->get('description'),
         ]);
 
         $incident->save();
