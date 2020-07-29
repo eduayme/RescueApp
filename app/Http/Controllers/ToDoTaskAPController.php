@@ -27,7 +27,7 @@ class ToDoTaskAPController extends Controller
         $to_do_task->save();
 
         return redirect('searches/'.$ap->search_id.'/#nav-ap')
-        ->with('success', $to_do_task->getName(). ' ' .__('messages.updated'));
+        ->with('success', $to_do_task->getName().' '.__('messages.updated'));
     }
 
     /**
@@ -46,7 +46,7 @@ class ToDoTaskAPController extends Controller
             $to_do_task->delete();
 
             return back()
-            ->with('success', $to_do_task->getName(). ' ' .__('messages.deleted'));
+            ->with('success', $to_do_task->getName().' '.__('messages.deleted'));
         } else {
             return back()
             ->with('error', __('messages.not_allowed'));

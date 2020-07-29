@@ -18,7 +18,8 @@ class ToDoTaskAP extends Model
 
     public function getName()
     {
-        $name_translation = "to_do_tasks." . $this->name;
+        $name_translation = 'to_do_tasks.'.$this->name;
+
         return __($name_translation);
     }
 
