@@ -10,11 +10,17 @@ class ToDoTaskAP extends Model
     protected $fillable = [
         'id',
         'action_plan_id',
-        'description',
+        'name',
         'state',
     ];
 
     public $table = 'to_do_tasks_ap';
+
+    public function getName()
+    {
+        $name_translation = "to_do_tasks." . $this->name;
+        return __($name_translation);
+    }
 
     public function action_plan()
     {

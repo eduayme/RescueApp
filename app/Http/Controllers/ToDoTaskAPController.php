@@ -22,12 +22,12 @@ class ToDoTaskAPController extends Controller
         $ap = ActionPlan::find($to_do_task->action_plan_id);
 
         $to_do_task->state = $request->has('state') ? $request->get('state') : $to_do_task->state;
-        $to_do_task->description = $request->has('description') ? $request->get('description') : $to_do_task->description;
+        $to_do_task->name = $request->has('name') ? $request->get('name') : $to_do_task->name;
 
         $to_do_task->save();
 
         return redirect('searches/'.$ap->search_id.'/#nav-ap')
-        ->with('success', $to_do_task->description.__('messages.updated'));
+        ->with('success', $to_do_task->getName(). ' ' .__('messages.updated'));
     }
 
     /**
@@ -46,7 +46,7 @@ class ToDoTaskAPController extends Controller
             $to_do_task->delete();
 
             return back()
-            ->with('success', $to_do_task->description.__('messages.deleted'));
+            ->with('success', $to_do_task->getName(). ' ' .__('messages.deleted'));
         } else {
             return back()
             ->with('error', __('messages.not_allowed'));

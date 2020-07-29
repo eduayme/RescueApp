@@ -58,7 +58,7 @@
                                             echo "<div class='row'>";
                                     @endphp
                                         <div class="col-md-6 margin-top-sm-sm margin-bottom-sm-sm">
-                                            <p> {{ $task->description }} </p>
+                                            <p> edu {{ $task->description }} </p>
                                         </div>
                                         <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm">
                                             <select id="state" class="form-control" name="state">
@@ -88,7 +88,7 @@
     </div>
     <!-- Modal - CLOSE -->
 
-    <!-- Delete search button- OPEN -->
+    <!-- Delete search button - OPEN -->
     <span data-toggle="modal" href="#deleteModalV{{$ap->version}}"
     <?php if (Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
         <button class="btn btn-outline-danger margin-left margin_top_bottom btn-sm">
@@ -167,7 +167,7 @@
                     @foreach( $ap->to_do_tasks as $task )
                         <div class='row to_do_task'>
                             <div class="col-10">
-                                <p> {{ $task->description }} </p>
+                                <p> {{ $task->getName() }} </p>
                             </div>
                             <div class="col-2">
                                 @if( $task->state == "to_do" )
