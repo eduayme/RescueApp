@@ -61,7 +61,7 @@
                                             <p> {{ $task->getName() }} </p>
                                         </div>
                                         <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm">
-                                            <select id="state" class="form-control" name="state" onchange="this.form.submit()">
+                                            <select id="state" class="form-control task-select" name="state" onchange="this.form.submit()">
                                                 <option value="to_do" {{ ($task->state == 'to_do') ? 'selected' : '' }}>
                                                     {{ __('activity.to_do') }}
                                                 </option>
@@ -195,7 +195,22 @@
 <script>
 
     $(document).ready(function() {
-
+        // change to do tasks selectors style
+        var tasks = document.getElementsByClassName('task-select');
+        for( var i = 0; i < tasks.length; i++ ) {
+            if( tasks[i].value == "to_do" ) {
+                tasks[i].style.backgroundColor = '#FFE0E0';
+                tasks[i].style.color = '#6F2323';
+            }
+            else if( tasks[i].value == "in_progress" ) {
+                tasks[i].style.backgroundColor = '#F9EDC7';
+                tasks[i].style.color = '#794C35';
+            }
+            else if( tasks[i].value == "done" ) {
+                tasks[i].style.backgroundColor = '#D2F0CD';
+                tasks[i].style.color = '#153311';
+            }
+        }
     });
 
 </script>
