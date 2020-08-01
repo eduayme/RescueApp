@@ -1,5 +1,5 @@
 <!-- Top buttons - OPEN -->
-<div class="margin_top_bottom">
+<div class="margin-top-bottom">
 
     <!-- Align left - OPEN -->
     <div class="justify-content-start">

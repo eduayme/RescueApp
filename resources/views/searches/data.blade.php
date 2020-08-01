@@ -5,7 +5,7 @@
     <div class="col justify-content-start">
 
         <!-- Type service title - OPEN -->
-        <h3 class="margin_top_bottom">
+        <h3 class="margin-top-bottom">
             @if( $search->is_a_practice == 0 )
                 {{ __('main.search') }}
             @else
@@ -24,7 +24,7 @@
         <form action="{{ route('lost-people.create') }}" method="put" style="display: inline">
             @csrf
             <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
-            <button type="submit" class="btn btn-outline-primary margin-left margin_top_bottom btn-sm"
+            <button type="submit" class="btn btn-outline-primary margin-left margin-top-bottom btn-sm"
             <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                 <span class="octicon octicon-plus"></span>
                 {{ __('actions.add_lost_person') }}
@@ -34,7 +34,7 @@
 
         <!-- Edit search button - OPEN -->
         <a href="{{ URL::to('searches/' . $search->id . '/edit') }}"
-        role="button" class="btn btn-outline-secondary margin-left margin_top_bottom btn-sm"
+        role="button" class="btn btn-outline-secondary margin-left margin-top-bottom btn-sm"
         <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
             <span class="octicon octicon-pencil"></span>
             {{ __('actions.edit') }}
@@ -44,7 +44,7 @@
         <!-- Delete search button- OPEN -->
         <span data-toggle="modal" href="#deleteModal"
         <?php if (Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
-            <button class="btn btn-outline-danger margin-left margin_top_bottom btn-sm">
+            <button class="btn btn-outline-danger margin-left margin-top-bottom btn-sm">
                 <span class="octicon octicon-trashcan"></span>
                 {{ __('actions.delete') }}
             </button>
@@ -235,7 +235,7 @@
 <!-- Info search - CLOSE -->
 
 <!-- Description container - OPEN -->
-<div class="container container-fluid border border-secondary rounded margin_top_bottom margin-top box text-center">
+<div class="container container-fluid border border-secondary rounded margin-top-bottom margin-top box text-center">
     <div class="row">
 
         <!-- Description title - OPEN -->
@@ -324,7 +324,7 @@
 <!-- Description container - CLOSE -->
 
 <!-- Lost people container - OPEN -->
-<div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
+<div class="container border border-secondary rounded margin-top-bottom margin-top-sm box text-center">
     <div class="row">
 
         <!-- Description title - OPEN -->
@@ -386,7 +386,7 @@
 
 <!-- State container - OPEN -->
 @if( $search->physical_condition_lost_people )
-<div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
+<div class="container border border-secondary rounded margin-top-bottom margin-top-sm box text-center">
     <div class="row">
 
         <!-- Description title - OPEN -->
@@ -411,7 +411,7 @@
 $search->bring_water !== NULL || $search->bring_food !== NULL ||
 $search->bring_medication !== NULL || $search->bring_flashlight !== NULL ||
 $search->bring_cold_clothes !== NULL || $search->porta_impermeable !== NULL )
-    <div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
+    <div class="container border border-secondary rounded margin-top-bottom margin-top-sm box text-center">
         <div class="row">
 
             <!-- Description title - OPEN -->
@@ -533,7 +533,7 @@ $search->bring_cold_clothes !== NULL || $search->porta_impermeable !== NULL )
 
 <!-- Contact person container - OPEN -->
 @if( $search->name_persona_contacte || $search->phone_number_contact_person || $search->affinity_contact_person )
-    <div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
+    <div class="container border border-secondary rounded margin-top-bottom margin-top-sm box text-center">
         <div class="row">
 
             <!-- Description title - OPEN -->
@@ -592,7 +592,7 @@ $search->bring_cold_clothes !== NULL || $search->porta_impermeable !== NULL )
 <!-- Alertant person container - OPEN -->
 @if( $search->is_lost_person || $search->is_contact_person || $search->name_alertant ||
 $search->age_person_alerts || $search->phone_number_alertant || $search->address_person_alerts )
-    <div class="container border border-secondary rounded margin_top_bottom margin-top-sm box text-center">
+    <div class="container border border-secondary rounded margin-top-bottom margin-top-sm box text-center">
         <div class="row">
 
             <!-- Description title - OPEN -->

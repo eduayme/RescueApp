@@ -32,7 +32,7 @@
         </div>
 
         <!-- Users table - OPEN -->
-        <div class="table-responsive margin_top_bottom">
+        <div class="table-responsive margin-top-bottom">
             <table class="table dt-responsive nowrap table-hover table-striped"
             id="activity" style="width: 100%">
 

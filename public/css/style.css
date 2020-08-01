@@ -38,7 +38,7 @@ footer {
 .project-tab .nav-link {
     border: 1px solid transparent;
     color: #0062cc;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
 }
 .project-tab .nav-link:hover {
@@ -155,12 +155,12 @@ footer {
   padding-left: 15px;
 }
 
-.margin_top_bottom {
+.margin-top-bottom {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.margin_top_bottom_sm {
+.margin-top-bottom_sm {
   margin-top: 5px;
   margin-bottom: 5px;
 }

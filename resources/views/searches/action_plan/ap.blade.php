@@ -58,7 +58,7 @@
 
             <form action="{{ route('actionplan.create') }}/{{ $search->id }}" method="post">
                 @csrf
-                <button type="submit" class="btn btn-primary margin_top_bottom"
+                <button type="submit" class="btn btn-primary margin-top-bottom"
                 <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                     <span class="octicon octicon-plus"></span>
                     {{ __('actions.add_version') }}

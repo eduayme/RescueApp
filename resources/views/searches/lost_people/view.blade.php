@@ -18,7 +18,7 @@
     <div class="container margin-top padding-bottom">
 
         <!-- Top buttons - OPEN -->
-        <div class="row margin_top_bottom">
+        <div class="row margin-top-bottom">
 
             <!-- Align left - OPEN -->
             <div class="col justify-content-start">

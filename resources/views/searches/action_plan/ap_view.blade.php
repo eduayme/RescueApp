@@ -4,7 +4,7 @@
 
     <!-- Edit search button - OPEN -->
     <span data-toggle="modal" href="#editModalV{{$ap->version}}">
-        <button class="edit btn btn-outline-secondary margin-left margin_top_bottom btn-sm"
+        <button class="edit btn btn-outline-secondary margin-left margin-top-bottom btn-sm"
         <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
             <span class="octicon octicon-pencil"></span>
             {{ __('actions.edit') }}
@@ -31,7 +31,7 @@
                             <h3 class="text-left"> {{ __('main.description') }} </h3>
                             {{ Form::textarea('description', null, array('class' => 'form-control', 'rows' => 10)) }}
                             <!-- Submit button - OPEN -->
-                            <div class="text-center margin_top_bottom">
+                            <div class="text-center margin-top-bottom">
                                 {{ Form::submit( __('actions.save'), array('class' => 'btn btn-primary') ) }}
                             </div>
                             <!-- Submit button - OPEN -->
@@ -47,7 +47,7 @@
                                 $count = 1;
                             @endphp
                             @foreach( $ap->to_do_tasks as $task )
-                                {{ Form::model($task, array('route' => array('todotask.update', $task->id), 'method' => 'POST')) }}
+                                {{ Form::model($task, array('class' => 'task-form', 'route' => array('todotask.update', $task->id), 'method' => 'POST')) }}
                                     @php
                                         if( $count < $size )
                                         {
@@ -57,11 +57,11 @@
                                         else
                                             echo "<div class='row'>";
                                     @endphp
-                                        <div class="col-md-6 margin-top-sm-sm margin-bottom-sm-sm">
-                                            <p> edu {{ $task->description }} </p>
+                                        <div class="col-md-9 margin-top-sm-sm margin-bottom-sm-sm">
+                                            <p> {{ $task->getName() }} </p>
                                         </div>
                                         <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm">
-                                            <select id="state" class="form-control" name="state">
+                                            <select id="state" class="form-control" name="state" onchange="this.form.submit()">
                                                 <option value="to_do" {{ ($task->state == 'to_do') ? 'selected' : '' }}>
                                                     {{ __('activity.to_do') }}
                                                 </option>
@@ -72,9 +72,6 @@
                                                     {{ __('activity.done') }}
                                                 </option>
                                             </select>
-                                        </div>
-                                        <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm text-right">
-                                            {{ Form::submit( __('actions.save'), array('class' => 'btn btn-primary') ) }}
                                         </div>
                                     </div>
                                 {{ Form::close() }}
@@ -91,7 +88,7 @@
     <!-- Delete search button - OPEN -->
     <span data-toggle="modal" href="#deleteModalV{{$ap->version}}"
     <?php if (Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
-        <button class="btn btn-outline-danger margin-left margin_top_bottom btn-sm">
+        <button class="btn btn-outline-danger margin-left margin-top-bottom btn-sm">
             <span class="octicon octicon-trashcan"></span>
             {{ __('actions.delete') }}
         </button>
@@ -149,7 +146,7 @@
 <!-- Align right - CLOSE -->
 
 <!-- Action Plan content - OPEN -->
-<div class="container container-fluid border border-secondary rounded margin_top_bottom margin-top box text-center">
+<div class="container container-fluid border border-secondary rounded margin-top-bottom margin-top box text-center">
     <div class="row">
 
         <div class="col-md-6 margin-top-sm">
@@ -162,7 +159,7 @@
         <div class="col-md-6 margin-top-sm">
             <div class="invest version_{{$ap->version}}">
                 <h3 class="text-left"> {{ __('main.investigation') }} </h3>
-                <div class="margin_top_bottom text-left">
+                <div class="margin-top-bottom text-left">
 
                     @foreach( $ap->to_do_tasks as $task )
                         <div class='row to_do_task'>
@@ -193,3 +190,12 @@
     </div>
 </div>
 <!-- Action Plan content - CLOSE -->
+
+<!-- JS -->
+<script>
+
+    $(document).ready(function() {
+
+    });
+
+</script>
