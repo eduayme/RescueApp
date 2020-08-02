@@ -46,7 +46,7 @@ class RoleController extends Controller
             }
         }
         // return $data;
-        return view('users_manage.user_role', compact('data'));
+        return view('auth.users_manage.user_role', compact('data'));
     }
 
     public function storeAssignRole(Request $request, $id)

@@ -38,7 +38,7 @@ class UserController extends Controller
         if ($user->is_admin()) {
             $users = User::orderBy('id', 'desc')->get();
 
-            return view('users_manage.index', compact('users'));
+            return view('auth.users_manage.index', compact('users'));
         } else {
             return back()
             ->with('error', __('messages.not_allowed'));
