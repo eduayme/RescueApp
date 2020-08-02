@@ -61,7 +61,7 @@
                                             <p> {{ $task->getName() }} </p>
                                         </div>
                                         <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm">
-                                            <select id="state" class="form-control task-select" name="state" onchange="this.form.submit()">
+                                            <select id="state" class="form-control task-select" name="state" onchange="addStyleToEditSelect(); this.form.submit()">
                                                 <option value="to_do" {{ ($task->state == 'to_do') ? 'selected' : '' }}>
                                                     {{ __('activity.to_do') }}
                                                 </option>
@@ -194,8 +194,8 @@
 <!-- JS -->
 <script>
 
-    $(document).ready(function() {
-        // change to do tasks selectors style
+    // change to do tasks selectors style
+    function addStyleToEditSelect() {
         var tasks = document.getElementsByClassName('task-select');
         for( var i = 0; i < tasks.length; i++ ) {
             if( tasks[i].value == "to_do" ) {
@@ -211,6 +211,10 @@
                 tasks[i].style.color = '#153311';
             }
         }
+    }
+
+    $(document).ready(function() {
+        addStyleToEditSelect();
     });
 
 </script>
