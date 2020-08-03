@@ -23,8 +23,8 @@ class Search extends Model
         'date_last_modification',
         'date_finalization',
 
-        'id_user_creation',
-        'id_user_last_modification',
+        'user_creation_id',
+        'user_last_modification_id',
         'id_user_finalization',
 
         // person alerts
@@ -89,12 +89,12 @@ class Search extends Model
 
     public function user_creation()
     {
-        return $this->belongsTo('App\User', 'id_user_creation', 'id');
+        return $this->belongsTo('App\User', 'user_creation_id', 'id');
     }
 
     public function user_last_modification()
     {
-        return $this->belongsTo('App\User', 'id_user_last_modification', 'id');
+        return $this->belongsTo('App\User', 'user_last_modification_id', 'id');
     }
 
     public function user_finalization()

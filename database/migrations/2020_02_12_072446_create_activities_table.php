@@ -17,7 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('id');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('method')->nullable();
             $table->string('route')->nullable();
             $table->ipAddress('ip_address')->nullable();

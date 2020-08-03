@@ -533,11 +533,11 @@
             <!-- Date modifies HIDDEN - CLOSE -->
 
             <!-- Id user creates HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="id_user_creation" value={{ Auth::user()->id }}>
+            <input type="hidden" class="form-control" name="user_creation_id" value={{ Auth::user()->id }}>
             <!-- Id user creates HIDDEN - CLOSE -->
 
             <!-- Id user last modification HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="id_user_last_modification" value={{ Auth::user()->id }}>
+            <input type="hidden" class="form-control" name="user_last_modification_id" value={{ Auth::user()->id }}>
             <!-- Id user last modification HIDDEN - CLOSE -->
 
             <!-- Submit button - OPEN -->

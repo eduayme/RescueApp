@@ -370,3 +370,14 @@ input.invest {
         margin-bottom: 20px;
     }
 }
+
+.ellipsis {
+    margin: 0;
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -13,6 +13,7 @@ return [
     'begin_day'                                 => 'Día de inicio',
     'end_day'                                   => 'Día de finalización',
     'day'                                       => 'Día',
+    'images'                                    => 'Imágenes',
     'chose_option'                              => 'Elegir opción',
     'alertant'                                  => 'Alertando',
     'is_the_lost_person'                        => 'Es la persona desaparecida',

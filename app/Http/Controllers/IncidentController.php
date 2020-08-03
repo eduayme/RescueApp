@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Incident;
+use Auth;
 
 class IncidentController extends Controller
 {
@@ -14,6 +16,29 @@ class IncidentController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        if (Auth::check()) {
+            $currentUser = \Auth::user()->profile;
+
+            if ($currentUser != 'guest') {
+                return view('searches.incidents.create');
+            } else {
+                return redirect('/')
+                ->with('error', __('messages.not_allowed'));
+            }
+        } else {
+            return redirect()->action('HomeController@login');
+        }
+     }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -22,8 +47,8 @@ class IncidentController extends Controller
      */
     public function store(Request $request)
     {
-        $incident = new LostPerson([
-            'search_id'            => $request->get('id_search'),
+        $incident = new Incident([
+            'search_id'            => $request->get('search_id'),
             'user_creation_id'     => $request->get('user_creation_id'),
             'user_modification_id' => $request->get('user_modification_id'),
             'date'                 => $request->get('date'),
@@ -48,7 +73,7 @@ class IncidentController extends Controller
 
         $incident->save();
 
-        return redirect('searches/'.$incident->id_search)
+        return redirect('searches/'.$incident->search_id)
         ->with('success', __('main.incident').' '.__('messages.updated'));
     }
 

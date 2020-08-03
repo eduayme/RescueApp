@@ -28,8 +28,8 @@ class CreateSearchesTable extends Migration
             $table->dateTime('date_last_modification');
             $table->dateTime('date_finalization')->nullable();
 
-            $table->integer('id_user_creation')->unsigned();
-            $table->integer('id_user_last_modification')->unsigned();
+            $table->integer('user_creation_id')->unsigned();
+            $table->integer('user_last_modification_id')->unsigned();
             $table->integer('id_user_finalization')->unsigned()->nullable();
 
             // person alerts
@@ -43,13 +43,13 @@ class CreateSearchesTable extends Migration
             // incident
             $table->string('municipality_last_place_seen')->nullable();
             $table->dateTime('date_last_place_seen')->nullable();
-            $table->string('zone_incident')->nullable();
-            $table->string('potential_route')->nullable();
-            $table->string('description_incident')->nullable();
+            $table->longText('zone_incident')->nullable();
+            $table->longText('potential_route')->nullable();
+            $table->longText('description_incident')->nullable();
 
             // lost people
             $table->integer('number_lost_people')->nullable();
-            $table->string('physical_condition_lost_people')->nullable();
+            $table->longText('physical_condition_lost_people')->nullable();
 
             // equipment and experience
             $table->tinyInteger('knowledge_of_the_zone')->nullable();
@@ -71,8 +71,8 @@ class CreateSearchesTable extends Migration
         });
 
         Schema::table('searches', function (Blueprint $table) {
-            $table->foreign('id_user_creation')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_user_last_modification')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_creation_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_last_modification_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_user_finalization')->references('id')->on('users')->onDelete('cascade');
         });
     }

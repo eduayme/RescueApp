@@ -21,7 +21,7 @@ class CreateIncidentsTable extends Migration
             $table->integer('user_creation_id')->unsigned();
             $table->integer('user_modification_id')->unsigned();
             $table->dateTime('date')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
 

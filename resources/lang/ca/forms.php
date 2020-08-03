@@ -13,6 +13,7 @@ return [
     'begin_day'                                 => 'Data inici',
     'end_day'                                   => 'Data finalització',
     'day'                                       => 'Dia',
+    'images'                                    => 'Imatges',
     'chose_option'                              => 'Triar opció',
     'alertant'                                  => 'Alertant',
     'is_the_lost_person'                        => 'És la persona desapareguda',

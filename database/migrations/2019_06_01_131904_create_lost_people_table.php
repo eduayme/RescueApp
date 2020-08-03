@@ -23,9 +23,9 @@ class CreateLostPeopleTable extends Migration
             $table->string('phone_number')->nullable();
             $table->tinyInteger('whatsapp_or_gps')->nullable();
             $table->string('profile')->nullable();
-            $table->string('physical_appearance')->nullable();
-            $table->string('clothes')->nullable();
-            $table->string('other')->nullable();
+            $table->longText('physical_appearance')->nullable();
+            $table->longText('clothes')->nullable();
+            $table->longText('other')->nullable();
 
             // person status
             $table->string('physical_condition')->nullable();

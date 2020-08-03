@@ -27,8 +27,8 @@ class AddFinalizationSearch extends Migration
             $table->string('municipality_term_localization')->nullable();
             $table->integer('distance_from_last_place_seen_to_location')->nullable();
             $table->string('who_does_the_localization')->nullable();
-            $table->string('physical_condition_people_when_find')->nullable();
-            $table->string('reason_finalization')->nullable();
+            $table->longText('physical_condition_people_when_find')->nullable();
+            $table->longText('reason_finalization')->nullable();
 
             // catalonia firefighters system coordinates
             $table->string('coe_cut_localization')->nullable();

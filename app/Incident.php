@@ -18,6 +18,16 @@ class Incident extends Model
 
     public $table = 'incidents';
 
+    public function user_creation()
+    {
+        return $this->belongsTo('App\User', 'user_creation_id', 'id');
+    }
+
+    public function user_modification()
+    {
+        return $this->belongsTo('App\User', 'user_modification_id', 'id');
+    }
+
     public function images()
     {
         return $this->hasMany('App\IncidentsImages', 'incident_image_id', 'id');

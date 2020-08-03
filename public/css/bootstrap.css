@@ -2561,6 +2561,9 @@ fieldset:disabled a.btn {
     line-height: 1.5;
     border-radius: .2rem
 }
+.btn-margin {
+    margin: 5px 2px;
+}
 .btn-block {
     display: block;
     width: 100%

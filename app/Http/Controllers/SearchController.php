@@ -97,8 +97,8 @@ class SearchController extends Controller
             'date_last_modification'         => $request->get('date_last_modification'),
             'date_finalization'              => $request->get('date_finalization'),
 
-            'id_user_creation'               => $request->get('id_user_creation'),
-            'id_user_last_modification'      => $request->get('id_user_last_modification'),
+            'user_creation_id'               => $request->get('user_creation_id'),
+            'user_last_modification_id'      => $request->get('user_last_modification_id'),
             'id_user_finalization'           => $request->get('id_user_finalization'),
 
             // person alerts
@@ -248,8 +248,8 @@ class SearchController extends Controller
         $search->date_last_modification = $request->has('date_last_modification') ? $request->get('date_last_modification') : $search->date_last_modification;
         $search->date_finalization = $request->has('date_finalization') ? $request->get('date_finalization') : $search->date_finalization;
 
-        $search->id_user_creation = $request->has('id_user_creation') ? $request->get('id_user_creation') : $search->id_user_creation;
-        $search->id_user_last_modification = $request->has('id_user_last_modification') ? $request->get('id_user_last_modification') : $search->id_user_last_modification;
+        $search->user_creation_id = $request->has('user_creation_id') ? $request->get('user_creation_id') : $search->user_creation_id;
+        $search->user_last_modification_id = $request->has('user_last_modification_id') ? $request->get('user_last_modification_id') : $search->user_last_modification_id;
         $search->id_user_finalization = $request->has('id_user_finalization') ? $request->get('id_user_finalization') : $search->id_user_finalization;
 
         // person alerts
