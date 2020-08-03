@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Incident;
 use Auth;
+use Illuminate\Http\Request;
 
 class IncidentController extends Controller
 {
@@ -36,7 +36,7 @@ class IncidentController extends Controller
         } else {
             return redirect()->action('HomeController@login');
         }
-     }
+    }
 
     /**
      * Store a newly created resource in storage.
