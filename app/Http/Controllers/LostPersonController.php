@@ -22,7 +22,7 @@ class LostPersonController extends Controller
     {
         if (Auth::check()) {
             $current_user_profile = \Auth::user()->profile;
-            $search = Search::find($request->id_search);
+            $search = Search::find($request->search_id);
 
             if ($current_user_profile != 'guest') {
                 return view('searches.lost_people.create', compact('search'));
@@ -45,15 +45,19 @@ class LostPersonController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:2|max:50',
+            'name'  => 'required|string|min:2|max:50',
+            'photo' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
         ], [
             'name.required' => __('messages.required'),
             'name.min'      => __('messages.min'),
             'name.max'      => __('messages.max'),
+            'photo.image'   => __('messages.image'),
+            'photo.mimes'   => __('messages.mimes'),
+            'photo.max'     => __('messages.photo_max'),
         ]);
 
         $lost_person = new LostPerson([
-            'id_search'                     => $request->get('id_search'),
+            'search_id'                     => $request->get('search_id'),
             'name'                          => $request->get('name'),
             'name_respond'                  => $request->get('name_respond'),
             'age'                           => $request->get('age'),
@@ -87,7 +91,7 @@ class LostPersonController extends Controller
 
         $lost_person->save();
 
-        return redirect('searches/'.$lost_person->id_search)
+        return redirect('searches/'.$lost_person->search_id)
         ->with('success', $lost_person->name.__('messages.added'));
     }
 
@@ -101,7 +105,7 @@ class LostPersonController extends Controller
     public function show($id)
     {
         $lost_person = LostPerson::find($id);
-        $search = Search::find($lost_person->id_search);
+        $search = Search::find($lost_person->search_id);
 
         return view('searches.lost_people.view', compact('lost_person', 'search'));
     }
@@ -121,7 +125,7 @@ class LostPersonController extends Controller
         if ($current_user_profile != 'guest') {
             $lost_person->delete();
 
-            return redirect('searches/'.$lost_person->id_search)
+            return redirect('searches/'.$lost_person->search_id)
             ->with('success', $lost_person->name.__('messages.deleted'));
         } else {
             return redirect('lost-people/'.$lost_person->id)
@@ -189,7 +193,7 @@ class LostPersonController extends Controller
 
         // information of the lost person
         $lost_person->id = $request->get('id');
-        $lost_person->id_search = $request->get('id_search');
+        $lost_person->search_id = $request->get('search_id');
         $lost_person->found = $request->get('found');
         $lost_person->name = $request->get('name');
         $lost_person->name_respond = $request->get('name_respond');

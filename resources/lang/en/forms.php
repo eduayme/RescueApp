@@ -2,7 +2,7 @@
 
 return [
     'type_service'                              => 'Type of service',
-    'id_search'                                 => 'Search ID',
+    'search_id'                                 => 'Search ID',
     'status'                                    => 'Status',
     'begin_date'                                => 'Start date',
     'begin'                                     => 'Start',

@@ -2,7 +2,7 @@
 
 return [
     'type_service'                              => 'Tipo de servicio',
-    'id_search'                                 => 'ID de la búsqueda',
+    'search_id'                                 => 'ID de la búsqueda',
     'status'                                    => 'Estado',
     'begin_date'                                => 'Fecha de inicio',
     'begin'                                     => 'Inicio',

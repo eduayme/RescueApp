@@ -18,14 +18,12 @@ class CreateIncidentsImagesTable extends Migration
 
             $table->increments('id');
             $table->integer('incident_id')->unsigned();
-            $table->integer('user_updated_id')->unsigned();
             $table->string('photo')->nullable();
             $table->timestamps();
         });
 
         Schema::table('incidents_images', function (Blueprint $table) {
             $table->foreign('incident_id')->references('id')->on('incidents')->onDelete('cascade');
-            $table->foreign('user_updated_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

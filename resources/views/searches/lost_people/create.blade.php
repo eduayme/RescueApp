@@ -412,7 +412,7 @@
             <!-- Finded HIDDEN - CLOSE -->
 
             <!-- State HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="id_search" value="{{ $search->id }}">
+            <input type="hidden" class="form-control" name="search_id" value="{{ $search->id }}">
             <!-- State HIDDEN - CLOSE -->
 
             <!-- Submit button - OPEN -->

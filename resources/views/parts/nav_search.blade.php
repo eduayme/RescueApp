@@ -20,7 +20,7 @@
                     {{ __('forms.service')}}:
                     <b>
                         <a href="{{ URL::to('searches/' . $search->id) }}">
-                            {{ $search->id_search }}
+                            {{ $search->search_id }}
                         </a>
                     </b>
                 </span>

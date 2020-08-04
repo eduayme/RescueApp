@@ -43,10 +43,10 @@
         </td>
 
         <td class="align-middle">
-            @if ($incident->getImages == NULL)
-                --
+            @if (count($incident->images) > 0)
+                <p> {{$incident->images}} </p>
             @else
-                <p> Images </p>
+                --
             @endif
         </td>
 

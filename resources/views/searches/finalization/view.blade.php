@@ -14,7 +14,7 @@
             </h4>
 
             {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
-                {{ Form::hidden('id_search', $search->id_search, array('class' => 'form-control')) }}
+                {{ Form::hidden('search_id', $search->search_id, array('class' => 'form-control')) }}
                 {{ Form::submit( __('actions.reopen_practice'), array('class' => 'btn btn-primary margin-left', 'name' => 'openbutton') ) }}
             {{ Form::close() }}
 
@@ -30,7 +30,7 @@
             </h4>
 
             {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
-                {{ Form::hidden('id_search', $search->id_search, array('class' => 'form-control')) }}
+                {{ Form::hidden('search_id', $search->search_id, array('class' => 'form-control')) }}
                 {{ Form::submit( __('actions.reopen_search'),
                 array('class' => 'btn btn-primary margin-left', 'name' => 'openbutton') ) }}
             {{ Form::close() }}

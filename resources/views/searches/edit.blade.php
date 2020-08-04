@@ -1,6 +1,6 @@
 @extends('layouts.app_secondary')
 
-@section('title', __('actions.edit') . ' ' . $search->id_search)
+@section('title', __('actions.edit') . ' ' . $search->search_id)
 
 @section('content')
 
@@ -93,14 +93,14 @@
                 <!-- Search ID - OPEN  -->
                 <div class="form-group col-md-2">
 
-                    <label for="id_search"> {{ __('forms.id_search') }} </label>
-                    <input type="text" name="id_search" value="{{ $search->id_search }}"
-                    class="form-control {{ $errors->has('id_search') ? ' is-invalid' : '' }}" />
+                    <label for="search_id"> {{ __('forms.search_id') }} </label>
+                    <input type="text" name="search_id" value="{{ $search->search_id }}"
+                    class="form-control {{ $errors->has('search_id') ? ' is-invalid' : '' }}" />
 
                     <!-- Show errors input - OPEN -->
-                    @if( $errors->has('id_search') )
+                    @if( $errors->has('search_id') )
                       <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('id_search') }}</strong>
+                        <strong>{{ $errors->first('search_id') }}</strong>
                       </div>
                     @endif
                     <!-- Show errors input - CLOSE -->
@@ -567,7 +567,7 @@
     <!-- Form lost people - OPEn -->
     <form id="desaparegut" action="/desapareguts/create" method="put">
     @csrf
-        <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
+        <input type="hidden" class="form-control" name="search_id" value={{ $search->id }}>
     </form>
     <!-- Form lost people - CLOSE -->
 

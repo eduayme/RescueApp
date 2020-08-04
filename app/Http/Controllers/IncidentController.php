@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\IncidentImage;
 use App\Incident;
 use Auth;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class IncidentController extends Controller
             if ($currentUser != 'guest') {
                 return view('searches.incidents.create');
             } else {
-                return redirect('/')
+                return redirect('searches/'.$incident->search_id)
                 ->with('error', __('messages.not_allowed'));
             }
         } else {
@@ -47,6 +48,14 @@ class IncidentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
+        ], [
+            'photo.image'   => __('messages.image'),
+            'photo.mimes'   => __('messages.mimes'),
+            'photo.max'     => __('messages.photo_max'),
+        ]);
+
         $incident = new Incident([
             'search_id'            => $request->get('search_id'),
             'user_creation_id'     => $request->get('user_creation_id'),
@@ -54,10 +63,26 @@ class IncidentController extends Controller
             'date'                 => $request->get('date'),
             'description'          => $request->get('description'),
         ]);
-
         $incident->save();
 
-        return redirect('searches/'.$incident->id_search)
+        if( $request->hasfile('images') )
+        {
+            foreach( $request->file('images') as $image )
+            {
+                $filename = time().'.'.$image->getClientOriginalExtension();
+                $image->move(public_path('/uploads/incidents_photos/'.$filename));
+                $data[] = $filename;
+            }
+
+            $incident_image = new IncidentImage([
+                'photo'       => $filename,
+                'incident_id' => $incident->id,
+            ]);
+
+            $incident_image->save();
+        }
+
+        return redirect('searches/'.$incident->search_id.'#nav-incidents')
         ->with('success', __('main.incident').' '.__('messages.added'));
     }
 
@@ -73,7 +98,7 @@ class IncidentController extends Controller
 
         $incident->save();
 
-        return redirect('searches/'.$incident->search_id)
+        return redirect('searches/'.$incident->search_id.'#nav-incidents')
         ->with('success', __('main.incident').' '.__('messages.updated'));
     }
 

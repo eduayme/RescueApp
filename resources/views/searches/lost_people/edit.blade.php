@@ -341,7 +341,7 @@
             <!-- ID HIDDEN - CLOSE -->
 
             <!-- State HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="id_search" value="{{ $lost_person->id_search }}">
+            <input type="hidden" class="form-control" name="search_id" value="{{ $lost_person->search_id }}">
             <!-- State HIDDEN - CLOSE -->
 
             <!-- Submit button - OPEN -->

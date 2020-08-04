@@ -15,7 +15,7 @@ class CreateLostPeopleTable extends Migration
     {
         Schema::create('lost_people', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_search')->unsigned();
+            $table->integer('search_id')->unsigned();
             $table->tinyInteger('found')->nullable();
             $table->string('name')->nullable();
             $table->string('name_respond')->nullable();
@@ -42,7 +42,7 @@ class CreateLostPeopleTable extends Migration
         });
 
         Schema::table('lost_people', function (Blueprint $table) {
-            $table->foreign('id_search')->references('id')->on('searches')->onDelete('cascade');
+            $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
         });
     }
 

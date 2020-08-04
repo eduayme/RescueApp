@@ -10,7 +10,7 @@ class LostPerson extends Model
 
     protected $fillable = [
         'id',
-        'id_search',
+        'search_id',
         'found',
         'name',
         'name_respond',
@@ -36,6 +36,6 @@ class LostPerson extends Model
 
     public function search()
     {
-        return $this->belongsTo('App\Search', 'id_search', 'id_search');
+        return $this->belongsTo('App\Search', 'search_id', 'search_id');
     }
 }

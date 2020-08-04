@@ -1,7 +1,7 @@
 <!-- Table header - OPEN -->
 <thead>
     <tr>
-        <th scope="col"> {{ __('forms.id_search') }} </th>
+        <th scope="col"> {{ __('forms.search_id') }} </th>
         <th scope="col"> {{ __('forms.status') }} </th>
         <th scope="col"> {{ __('forms.begin') }} </th>
         <th scope="col"> {{ __('forms.end') }} </th>
@@ -20,7 +20,7 @@
 
         <td>
             <a href="{{ url('searches/' . $search->id) }}">
-                {{ $search->id_search }}
+                {{ $search->search_id }}
             </a>
         </td>
 

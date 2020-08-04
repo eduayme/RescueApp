@@ -78,17 +78,17 @@ class SearchController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_search' => 'required|string|min:2|max:50|unique:searches',
+            'search_id' => 'required|string|min:2|max:50|unique:searches',
         ], [
-            'id_search.required' => __('messages.required'),
-            'id_search.min'      => __('messages.min'),
-            'id_search.max'      => __('messages.max'),
-            'id_search.unique'   => __('messages.unique'),
+            'search_id.required' => __('messages.required'),
+            'search_id.min'      => __('messages.min'),
+            'search_id.max'      => __('messages.max'),
+            'search_id.unique'   => __('messages.unique'),
         ]);
 
         $search = new Search([
             'is_a_practice'                  => $request->get('is_a_practice'),
-            'id_search'                      => $request->get('id_search'),
+            'search_id'                      => $request->get('search_id'),
             'region'                         => $request->get('region'),
             'status'                         => $request->get('status'),
 
@@ -99,7 +99,7 @@ class SearchController extends Controller
 
             'user_creation_id'               => $request->get('user_creation_id'),
             'user_last_modification_id'      => $request->get('user_last_modification_id'),
-            'id_user_finalization'           => $request->get('id_user_finalization'),
+            'user_finalization_id'           => $request->get('user_finalization_id'),
 
             // person alerts
             'is_lost_person'                 => $request->get('is_lost_person'),
@@ -141,7 +141,7 @@ class SearchController extends Controller
         foreach ($request->input('lost_person_name') as $key => $value) {
             if ($value != '') {
                 $lost_person = new LostPerson([
-                    'id_search'    => $search->id,
+                    'search_id'    => $search->id,
                     'name'         => $value,
                     'name_respond' => $request->input('lost_person_name_respond')[$key],
                     'age'          => $request->input('lost_person_age')[$key],
@@ -152,7 +152,7 @@ class SearchController extends Controller
         }
 
         return redirect('searches/'.$search->id)
-        ->with('success', $search->id_search.__('messages.added'));
+        ->with('success', $search->search_id.__('messages.added'));
     }
 
     /**
@@ -188,7 +188,7 @@ class SearchController extends Controller
             $search->delete();
 
             return redirect('/')
-            ->with('success', $search->id_search.__('messages.deleted'));
+            ->with('success', $search->search_id.__('messages.deleted'));
         } else {
             return redirect('searches/'.$search->id)
             ->with('error', __('messages.not_allowed'));
@@ -229,17 +229,17 @@ class SearchController extends Controller
         $search = Search::find($id);
 
         $request->validate([
-            'id_search' => 'required|string|min:2|max:50|unique:searches,id_search,'.$id,
+            'search_id' => 'required|string|min:2|max:50|unique:searches,search_id,'.$id,
         ], [
-            'id_search.required' => __('messages.required'),
-            'id_search.min'      => __('messages.min'),
-            'id_search.max'      => __('messages.max'),
-            'id_search.unique'   => __('messages.unique'),
+            'search_id.required' => __('messages.required'),
+            'search_id.min'      => __('messages.min'),
+            'search_id.max'      => __('messages.max'),
+            'search_id.unique'   => __('messages.unique'),
         ]);
 
         // data from the search
         $search->is_a_practice = $request->has('is_a_practice') ? $request->get('is_a_practice') : $search->is_a_practice;
-        $search->id_search = $request->has('id_search') ? $request->get('id_search') : $search->id_search;
+        $search->search_id = $request->has('search_id') ? $request->get('search_id') : $search->search_id;
         $search->region = $request->has('region') ? $request->get('region') : $search->region;
         $search->status = $request->has('status') ? $request->get('status') : $search->status;
 
@@ -250,7 +250,7 @@ class SearchController extends Controller
 
         $search->user_creation_id = $request->has('user_creation_id') ? $request->get('user_creation_id') : $search->user_creation_id;
         $search->user_last_modification_id = $request->has('user_last_modification_id') ? $request->get('user_last_modification_id') : $search->user_last_modification_id;
-        $search->id_user_finalization = $request->has('id_user_finalization') ? $request->get('id_user_finalization') : $search->id_user_finalization;
+        $search->user_finalization_id = $request->has('user_finalization_id') ? $request->get('user_finalization_id') : $search->user_finalization_id;
 
         // person alerts
         $search->is_lost_person = $request->has('is_lost_person') ? $request->get('is_lost_person') : $search->is_lost_person;
@@ -365,14 +365,14 @@ class SearchController extends Controller
                 ->withErrors($validator)->withInput();
             }
 
-            $search->id_user_finalization = \Auth::user()->id;
+            $search->user_finalization_id = \Auth::user()->id;
             $search->date_finalization = date('Y-m-d H:i:s');
             $search->status = 1; // close
         }
 
         // If search close and we want to open it
         elseif ($request->has('openbutton')) {
-            $search->id_user_finalization = null;
+            $search->user_finalization_id = null;
             $search->date_finalization = null;
             $search->status = 0; // open
         }
@@ -380,7 +380,7 @@ class SearchController extends Controller
         $search->save();
 
         return redirect('searches/'.$search->id)
-        ->with('success', $search->id_search.__('messages.updated'));
+        ->with('success', $search->search_id.__('messages.updated'));
     }
 
     public function getVillagesSearchesList(Request $request)

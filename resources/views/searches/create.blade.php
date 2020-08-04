@@ -68,15 +68,15 @@
                 <!-- Search ID - OPEN  -->
                 <div class="form-group col-md-2">
 
-                    <label for="id_search"> {{ __('forms.id_search') }} </label>
+                    <label for="search_id"> {{ __('forms.search_id') }} </label>
 
-                    <input type="text" class="form-control {{ $errors->has('id_search') ? ' is-invalid' : '' }}"
-                    name="id_search" value="{{ old('id_search') }}"/>
+                    <input type="text" class="form-control {{ $errors->has('search_id') ? ' is-invalid' : '' }}"
+                    name="search_id" value="{{ old('search_id') }}"/>
 
                     <!-- Show errors input - OPEN -->
-                    @if( $errors->has('id_search') )
+                    @if( $errors->has('search_id') )
                     <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('id_search') }}</strong>
+                        <strong>{{ $errors->first('search_id') }}</strong>
                     </div>
                     @endif
                     <!-- Show errors input - CLOSE -->

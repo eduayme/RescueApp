@@ -411,7 +411,7 @@
     <!-- Form content - CLOSE -->
 
     <!-- ID HIDDEN - OPEN -->
-    {{ Form::hidden('id_search', $search->id_search, array('class' => 'form-control')) }}
+    {{ Form::hidden('search_id', $search->search_id, array('class' => 'form-control')) }}
     <!-- ID HIDDEN - CLOSE -->
 
     <!-- Is a practice HIDDEN - OPEN -->

@@ -23,7 +23,7 @@
         <!-- Add lost person - OPEN -->
         <form action="{{ route('lost-people.create') }}" method="put" style="display: inline">
             @csrf
-            <input type="hidden" class="form-control" name="id_search" value={{ $search->id }}>
+            <input type="hidden" class="form-control" name="search_id" value={{ $search->id }}>
             <button type="submit" class="btn btn-outline-primary margin-left margin-top-bottom btn-sm"
             <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                 <span class="octicon octicon-plus"></span>
@@ -114,10 +114,10 @@
 
         <!-- ID search - OPEN -->
         <p>
-            {{ __('forms.id_search') }}:
+            {{ __('forms.search_id') }}:
         </p>
         <h5 class="margin-top-sm-min">
-            <b> {{ $search->id_search }} </b>
+            <b> {{ $search->search_id }} </b>
         </h5>
         <!-- ID search - CLOSE -->
 

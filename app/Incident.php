@@ -30,6 +30,6 @@ class Incident extends Model
 
     public function images()
     {
-        return $this->hasMany('App\IncidentsImages', 'incident_image_id', 'id');
+        return $this->hasMany('App\IncidentImage', 'incident_id', 'id');
     }
 }

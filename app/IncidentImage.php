@@ -10,7 +10,6 @@ class IncidentImage extends Model
     protected $fillable = [
         'id',
         'incident_id',
-        'user_updated_id',
         'photo',
     ];
 

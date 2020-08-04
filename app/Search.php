@@ -14,7 +14,7 @@ class Search extends Model
     protected $fillable = [
         'id',
         'is_a_practice',
-        'id_search',
+        'search_id',
         'region',
         'status',
 
@@ -25,7 +25,7 @@ class Search extends Model
 
         'user_creation_id',
         'user_last_modification_id',
-        'id_user_finalization',
+        'user_finalization_id',
 
         // person alerts
         'is_lost_person',
@@ -99,12 +99,12 @@ class Search extends Model
 
     public function user_finalization()
     {
-        return $this->belongsTo('App\User', 'id_user_finalization', 'id');
+        return $this->belongsTo('App\User', 'user_finalization_id', 'id');
     }
 
     public function lost_people()
     {
-        return $this->hasMany('App\LostPerson', 'id_search', 'id');
+        return $this->hasMany('App\LostPerson', 'search_id', 'id');
     }
 
     public static function boot()

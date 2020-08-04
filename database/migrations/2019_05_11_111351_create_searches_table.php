@@ -19,7 +19,7 @@ class CreateSearchesTable extends Migration
 
             $table->increments('id');
             $table->tinyInteger('is_a_practice')->default(0);
-            $table->string('id_search')->unique();
+            $table->string('search_id')->unique();
             $table->string('region')->nullable();
             $table->integer('status')->default(0); // closed by default
 
@@ -30,7 +30,7 @@ class CreateSearchesTable extends Migration
 
             $table->integer('user_creation_id')->unsigned();
             $table->integer('user_last_modification_id')->unsigned();
-            $table->integer('id_user_finalization')->unsigned()->nullable();
+            $table->integer('user_finalization_id')->unsigned()->nullable();
 
             // person alerts
             $table->tinyInteger('is_lost_person')->nullable();
@@ -73,7 +73,7 @@ class CreateSearchesTable extends Migration
         Schema::table('searches', function (Blueprint $table) {
             $table->foreign('user_creation_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('user_last_modification_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_user_finalization')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_finalization_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

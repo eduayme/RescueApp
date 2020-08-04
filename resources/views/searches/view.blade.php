@@ -1,6 +1,6 @@
 @extends('layouts.app_secondary')
 
-@section('title', $search->id_search)
+@section('title', $search->search_id)
 
 @section('content')
 
