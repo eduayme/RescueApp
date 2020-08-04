@@ -153,7 +153,7 @@
                 @if( $search->date_localization )
                     @php
                         $date = new Date($search->date_localization);
-                        echo $date->format('Y M. d | H:i');
+                        echo $date->format('d M. Y | H:i');
                     @endphp
                 @else
                     --

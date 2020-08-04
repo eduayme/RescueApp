@@ -44,7 +44,7 @@
             @else
                 @php
                     $date = new Date($search->date_start);
-                    echo $date->format('Y M. d | H:i');
+                    echo $date->format('d M. Y | H:i');
                 @endphp
             @endif
         </td>
@@ -55,7 +55,7 @@
             @else
                 @php
                     $date = new Date($search->date_finalization);
-                    echo $date->format('Y M. d | H:i');
+                    echo $date->format('d M. Y | H:i');
                 @endphp
             @endif
         </td>
