@@ -26,7 +26,7 @@
             </div>
             <div class="col-sm text-right">
                 <!-- Add user button - OPEN -->
-                @include('buttons.add_permission')
+                @include('auth.permissions.buttons.add_permission')
                 <!-- Add user button - CLOSE -->
             </div>
         </div>
@@ -55,10 +55,10 @@
                 <td>{{ $permission->description }}</td>
                 <td>
                     <!-- Edit Permission button - OPEN -->
-                    @include('buttons.edit_permission')
+                    @include('auth.permission.buttons.edit_permission')
                     <!-- Edit Permission button - CLOSE -->
                     <!-- Edit Permission button - OPEN -->
-                    @include('buttons.delete_permission')
+                    @include('auth.permission.buttons.delete_permission')
                     <!-- Edit Permission button - CLOSE -->
                 </td>
               </tr>

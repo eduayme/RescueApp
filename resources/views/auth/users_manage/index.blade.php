@@ -26,7 +26,7 @@
             </div>
             <div class="col-sm text-right">
                 <!-- Add user button - OPEN -->
-                @include('buttons.add_user')
+                @include('auth.buttons.add_user')
                 <!-- Add user button - CLOSE -->
             </div>
         </div>
@@ -72,10 +72,10 @@
                         </td>
                         <td>
                             <!-- View user button - OPEN -->
-                            @include('buttons.view_user')
+                            @include('auth.buttons.view_user')
                             <!-- View user button - CLOSE -->
                             <!-- Edit user button - OPEN -->
-                            @include('buttons.edit_user')
+                            @include('auth.buttons.edit_user')
                             <!-- Edit user button - CLOSE -->
 
                             @role('admin')
@@ -87,7 +87,7 @@
                             </a>
                             @endrole
                             <!-- Delete user button - OPEN -->
-                            @include('buttons.delete_user')
+                            @include('auth.buttons.delete_user')
                             <!-- Delete user modal - CLOSE -->
                         </td>
                     </tr>

@@ -26,7 +26,7 @@
             </div>
             <div class="col-sm text-right">
                 <!-- Add user button - OPEN -->
-                @include('buttons.add_role')
+                @include('auth.roles.buttons.add_role')
                 <!-- Add user button - CLOSE -->
             </div>
         </div>
@@ -55,7 +55,7 @@
                 <td>{{ $role->description }}</td>
                 <td>
                     <!-- Edit Permission button - OPEN -->
-                    @include('buttons.view_role')
+                    @include('auth.roles.buttons.view_role')
                     <!-- Edit Permission button - CLOSE -->
                     <!-- Edit Permission button - OPEN -->
                     <a href="{{ route('roles.edit', $role->id) }}">
@@ -66,7 +66,7 @@
                     </a><!-- Edit Permission button - CLOSE -->
                     <!-- Edit Permission button - OPEN -->
                     @role('admin')
-                    @include('buttons.delete_role')
+                    @include('auth.roles.buttons.delete_role')
                     <!-- Edit Permission button - CLOSE -->
                     @endrole
                 </td>

@@ -26,7 +26,7 @@
             </div>
             <div class="col-sm text-right">
                 <!-- Add user button - OPEN -->
-                @include('buttons.add_user')
+                @include('auth.buttons.add_user')
                 <!-- Add user button - CLOSE -->
             </div>
         </div>

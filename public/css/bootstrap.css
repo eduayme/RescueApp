@@ -4645,7 +4645,7 @@ button.close {
     border-top-right-radius: .3rem
 }
 .modal-header .close {
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin: -1rem -1rem -1rem auto
 }
 .modal-title {
