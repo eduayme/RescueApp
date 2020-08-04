@@ -313,6 +313,7 @@ class SearchController extends Controller
 
         // If search open and we want to close it
         if ($request->has('closebutton')) {
+            /*
             $validator = Validator::make($request->all(), [
                 'work_groups_used'                          => 'required',
                 'derivation_emergency_service'              => 'required',
@@ -364,6 +365,7 @@ class SearchController extends Controller
                 return redirect('searches/'.$search->id.'#nav-closing')
                 ->withErrors($validator)->withInput();
             }
+            */
 
             $search->user_finalization_id = \Auth::user()->id;
             $search->date_finalization = date('Y-m-d H:i:s');
