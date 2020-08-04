@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\IncidentImage;
 use App\Incident;
+use App\IncidentImage;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -49,7 +49,7 @@ class IncidentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,svg|max:2048'
+            'photo' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
         ], [
             'photo.image'   => __('messages.image'),
             'photo.mimes'   => __('messages.mimes'),
@@ -65,10 +65,8 @@ class IncidentController extends Controller
         ]);
         $incident->save();
 
-        if( $request->hasfile('images') )
-        {
-            foreach( $request->file('images') as $image )
-            {
+        if ($request->hasfile('images')) {
+            foreach ($request->file('images') as $image) {
                 $filename = time().'.'.$image->getClientOriginalExtension();
                 $image->move(public_path('/uploads/incidents_photos/'.$filename));
                 $data[] = $filename;
