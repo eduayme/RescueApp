@@ -13,6 +13,7 @@ return [
     'begin_day'                                 => 'Start day',
     'end_day'                                   => 'End day',
     'day'                                       => 'Day',
+    'date_time'                                 => 'Date and time',
     'images'                                    => 'Images',
     'chose_option'                              => 'Choose option',
     'alertant'                                  => 'Alerting',

@@ -13,6 +13,7 @@ return [
     'begin_day'                                 => 'Data inici',
     'end_day'                                   => 'Data finalització',
     'day'                                       => 'Dia',
+    'date_time'                                 => 'Data i hora',
     'images'                                    => 'Imatges',
     'chose_option'                              => 'Triar opció',
     'alertant'                                  => 'Alertant',

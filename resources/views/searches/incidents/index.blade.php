@@ -6,7 +6,7 @@
 
         <div class="text-right">
             <!-- Add Incident - OPEN -->
-            <a href="{{ route('incidents.create', $search->id) }}" class="btn btn-outline-primary margin-left align-right btn-sm margin-top-bottom margin-right-sm" role="button"
+            <a href="{{ route('incidents.create', $search->id) }}" class="btn btn-outline-primary margin-left align-right btn-sm margin-bottom" role="button"
             <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
                 <span class="octicon octicon-plus"></span>
                 {{ __('actions.add') . ' ' . __('main.incident') }}
