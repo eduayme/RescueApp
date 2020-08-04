@@ -95,6 +95,8 @@
 
 <!-- JQuery 3.3.1 -->
 <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+<!-- Dropzone -->
+<script src="{{ asset('js/dropzone.min.js') }}"></script>
 
 <!-- JS -->
 <script type="text/javascript">
