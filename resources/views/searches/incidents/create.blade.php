@@ -16,7 +16,8 @@
     <!-- Top buttons - CLOSE -->
 
     <!-- Form - OPEN -->
-    <form method="post" action="{{ route('incidents.store') }}">
+    <form method="post" action="{{ route('incidents.store') }}" enctype="multipart/form-data">
+    {{ csrf_field() }}
 
         <!-- Stype service title - OPEN -->
         <h3 class="margin-top">
@@ -31,25 +32,45 @@
             <!-- Incident route - OPEN  -->
             <div class="form-group col-md-12">
                 <label for="description"> {{ __('forms.description') }} </label>
-                <textarea type="text" class="form-control" name="description" rows="2">{{ old('description') }}</textarea>
+                <textarea type="text" class="form-control {{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="2">{{ old('description') }}</textarea>
+
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('description') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('description') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
             <!-- Incident route - CLOSE  -->
 
             <!-- Datetime happens - OPEN -->
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-6">
                 <label for="date"> {{ __('forms.day') }} </label>
-                <input type="text" class="form-control" name="date" value="{{ old('date') }}"/>
+                <input type="text" class="form-control {{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ old('date') }}"/>
+
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('date') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('date') }}</strong>
+                </div>
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
             <!-- Datetime happens - CLOSE -->
 
             <!-- Images - OPEN -->
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-6">
                 <label for="date"> {{ __('forms.images') }} </label>
 
-                <div class="dropzone">
-                    <p> Dropzone </p>
+                <input type="file" class="form-control {{ $errors->has('images') ? ' is-invalid' : '' }}" name="images[]" multiple />
+                <!-- Show errors input - OPEN -->
+                @if( $errors->has('images') )
+                <div class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('images') }}</strong>
                 </div>
-
+                @endif
+                <!-- Show errors input - CLOSE -->
             </div>
             <!-- Images - CLOSE -->
 
@@ -95,8 +116,6 @@
 
 <!-- JQuery 3.3.1 -->
 <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
-<!-- Dropzone -->
-<script src="{{ asset('js/dropzone.min.js') }}"></script>
 
 <!-- JS -->
 <script type="text/javascript">
@@ -116,6 +135,7 @@
             autoApply: true,
             drops: 'down',
             currentDate: today,
+            maxDate: today,
             locale: {
                 format: 'YYYY-MM-DD HH:mm:ss',
                 firstDay: 1,
@@ -146,7 +166,6 @@
                 ],
             }
         });
-        $('input[name="date"').val( '' );
 
         $('input[name="date"]').on('cancel.daterangepicker', function(ev, picker) {
             $(this).val('');

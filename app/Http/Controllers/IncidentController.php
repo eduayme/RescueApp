@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Incident;
 use App\IncidentImage;
 use Auth;
+use Image;
+use File;
 use Illuminate\Http\Request;
 
 class IncidentController extends Controller
@@ -49,8 +51,12 @@ class IncidentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
+            'description' => 'required',
+            'date'        => 'required',
+            'photo'       => 'mimes:jpg,png,jpeg,gif,svg',
         ], [
+            'description.required' => __('messages.required'),
+            'date.required' => __('messages.required'),
             'photo.image'   => __('messages.image'),
             'photo.mimes'   => __('messages.mimes'),
             'photo.max'     => __('messages.photo_max'),
@@ -68,16 +74,16 @@ class IncidentController extends Controller
         if ($request->hasfile('images')) {
             foreach ($request->file('images') as $image) {
                 $filename = time().'.'.$image->getClientOriginalExtension();
-                $image->move(public_path('/uploads/incidents_photos/'.$filename));
-                $data[] = $filename;
+                $path = public_path('/uploads/search_'.$incident->search_id.'/incidents/incident_'.$incident->id.'/');
+                File::exists($path) or File::makeDirectory($path, 0777, true, true);
+                Image::make($image)->save($path.$filename);
+
+                $incident_image = new IncidentImage([
+                    'photo'       => $filename,
+                    'incident_id' => $incident->id,
+                ]);
+                $incident_image->save();
             }
-
-            $incident_image = new IncidentImage([
-                'photo'       => $filename,
-                'incident_id' => $incident->id,
-            ]);
-
-            $incident_image->save();
         }
 
         return redirect('searches/'.$incident->search_id.'#nav-incidents')

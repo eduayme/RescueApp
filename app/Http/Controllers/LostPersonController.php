@@ -83,8 +83,9 @@ class LostPersonController extends Controller
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
             $filename = time().'.'.$photo->getClientOriginalExtension();
-
-            Image::make($photo)->resize(300, 300)->save(public_path('/uploads/lost_people_photos/'.$filename));
+            $path = public_path('/uploads/lost_people_photos/');
+            File::exists($path) or File::makeDirectory($path, 0777, true, true);
+            Image::make($photo)->resize(300, 300)->save($path.$filename);
 
             $lost_person->photo = $filename;
         }

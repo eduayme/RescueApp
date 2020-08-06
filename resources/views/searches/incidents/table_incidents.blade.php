@@ -44,7 +44,7 @@
 
         <td class="align-middle">
             @if (count($incident->images) > 0)
-                <p> {{$incident->images}} </p>
+                <p> {{count($incident->images)}} </p>
             @else
                 --
             @endif
