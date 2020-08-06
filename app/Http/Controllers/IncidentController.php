@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Incident;
 use App\IncidentImage;
 use Auth;
-use Image;
 use File;
 use Illuminate\Http\Request;
+use Image;
 
 class IncidentController extends Controller
 {
@@ -56,10 +56,10 @@ class IncidentController extends Controller
             'photo'       => 'mimes:jpg,png,jpeg,gif,svg',
         ], [
             'description.required' => __('messages.required'),
-            'date.required' => __('messages.required'),
-            'photo.image'   => __('messages.image'),
-            'photo.mimes'   => __('messages.mimes'),
-            'photo.max'     => __('messages.photo_max'),
+            'date.required'        => __('messages.required'),
+            'photo.image'          => __('messages.image'),
+            'photo.mimes'          => __('messages.mimes'),
+            'photo.max'            => __('messages.photo_max'),
         ]);
 
         $incident = new Incident([
