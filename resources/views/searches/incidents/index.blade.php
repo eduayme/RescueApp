@@ -61,8 +61,8 @@
                 { "width": "15%" },
                 { "width": "15%" },
                 { "width": "40%" },
-                { "width": "15%" },
-                { "width": "15%" },
+                { "width": "20%" },
+                { "width": "10%" },
             ],
             "language": {
                 "decimal":        "",

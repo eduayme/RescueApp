@@ -381,3 +381,7 @@ input.invest {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.incident_image {
+    width: 100%;
+}
