@@ -72,8 +72,9 @@ class IncidentController extends Controller
         $incident->save();
 
         if ($request->hasfile('images')) {
+            $id = 1;
             foreach ($request->file('images') as $image) {
-                $filename = time().'.'.$image->getClientOriginalExtension();
+                $filename = 'Image_'.$id.'.'.$image->getClientOriginalExtension();
                 $path = public_path('/uploads/search_'.$incident->search_id.'/incidents/incident_'.$incident->id.'/');
                 File::exists($path) or File::makeDirectory($path, 0777, true, true);
                 Image::make($image)->save($path.$filename);
@@ -83,6 +84,7 @@ class IncidentController extends Controller
                     'incident_id' => $incident->id,
                 ]);
                 $incident_image->save();
+                $id++;
             }
         }
 
