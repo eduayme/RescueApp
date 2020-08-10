@@ -266,6 +266,7 @@
   padding: 12px;
   position: relative;
   width: auto;
+  text-align: center;
 }
 .fr-caption {
   width: auto;
@@ -288,13 +289,13 @@
 .fr-position-outside,
 .fr-position-inside {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 12px;
+  top: 0;
+  left: 0;
+  margin: 15px;
   width: auto;
-  padding: 2px 8px;
+  padding: 10px 20px;
   border-radius: 10px;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 20px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
   display: none;
@@ -1166,14 +1167,14 @@
 .fr-window-skin-fresco .fr-close-icon,
 .fr-window-skin-fresco .fr-thumbnails-side-button-icon,
 .fr-window-skin-fresco .fr-error-icon {
-  background-image: url("fresco/skins/fresco/sprite.svg");
+  background-image: url("fresco/sprite.svg");
 }
 /* fallback png sprite */
 .fr-window-skin-fresco.fr-no-svg .fr-side-button-icon,
 .fr-window-skin-fresco.fr-no-svg .fr-close-icon,
 .fr-window-skin-fresco.fr-no-svg .fr-thumbnails-side-button-icon,
 .fr-window-skin-fresco .fr-error-icon {
-  background-image: url("fresco/skins/fresco/sprite.png");
+  background-image: url("fresco/sprite.png");
 }
 
 .fr-window-skin-fresco .fr-error-icon {
@@ -1301,7 +1302,7 @@
 .fr-window-skin-fresco.fr-svg.fr-mobile-touch
   .fr-side-disabled
   .fr-side-button-icon {
-  opacity: 0.2;
+  opacity: 0;
 }
 
 /* hide for ui:inside/fullclick, only for the image type */
