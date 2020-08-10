@@ -1,5 +1,5 @@
 <!-- Own style -->
-<link href="{{ asset('css/lightgallery.css') }}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/css/lightgallery.css" />
 
 <!-- Table header - OPEN -->
 <thead>
@@ -47,16 +47,13 @@
 
         <td class="align-middle" style="width:20%">
             @if (count($incident->images) > 0)
-                <img src="/uploads/search_{{$incident->search_id}}/incidents/incident_{{$incident->id}}/{{$incident->images[0]->photo}}" class="incident_image cursor" onclick="openModal({{$incident->id}}); currentSlide(1)">
-
-                <div id="aniimated-thumbnials">
-                  <a href="img/img1.jpg">
-                    <img src="/uploads/search_{{$incident->search_id}}/incidents/incident_{{$incident->id}}/{{$incident->images[0]->photo}}" />
-                  </a>
-                  <a href="img/img2.jpg">
-                    <img src="/uploads/search_{{$incident->search_id}}/incidents/incident_{{$incident->id}}/{{$incident->images[0]->photo}}" />
-                  </a>
-                </div>
+                <?php foreach ($incident->images as $key => $image): ?>
+                    <a <?php if($key!=0) :?>style="display:none"<?php endif; ?>
+                    href="/uploads/search_{{$incident->search_id}}/incidents/incident_{{$incident->id}}/{{$image->photo}}" class="fresco"
+                    data-fresco-group="{{$incident->id}}">
+                        <img src="/uploads/search_{{$incident->search_id}}/incidents/incident_{{$incident->id}}/{{$image->photo}}" class="incident_image cursor">
+                    </a>
+                <?php endforeach; ?>
             @else
                 --
             @endif
@@ -91,20 +88,14 @@
 </tbody>
 <!-- Table content - CLOSE -->
 
-<!-- Lightgallery 1.7 -->
-<script src="{{ asset('js/lightgallery.js') }}"></script>
-<!-- Lightgallery plugin Thumbnail 1.2.1 -->
-<script src="{{ asset('js/lg-thumbnail.js') }}"></script>
-<!-- Lightgallery plugin Fullscreen 1.2.1 -->
-<script src="{{ asset('js/lg-fullscreen.js') }}"></script>
+<script src="{{ asset('js/fresco.min.js') }}"></script>
+<link href="{{ asset('css/fresco.css') }}" rel="stylesheet" type="text/css" />
 
 <!-- JS -->
 <script>
 
     $(document).ready(function() {
-        $('#aniimated-thumbnials').lightGallery({
-            thumbnail:true
-        });
+
     });
 
 </script>
