@@ -4578,10 +4578,10 @@ button.close {
 }
 .modal-dialog {
     position: relative;
-    min-width: 700px;
+    max-width: 700px;
     width: auto;
     margin: .5rem;
-    pointer-events: none
+    pointer-events: none;
 }
 .modal.fade .modal-dialog {
     transition: -webkit-transform .3s ease-out;
@@ -4680,7 +4680,6 @@ button.close {
 
 @media (min-width:576px) {
     .modal-dialog {
-        max-width: 500px;
         margin: 1.75rem auto
     }
     .modal-dialog-centered {

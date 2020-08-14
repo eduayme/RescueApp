@@ -60,12 +60,9 @@
         </td>
 
         <td class="align-middle" style="width:10%">
-            <a href="">
-                <button type="button" class="btn btn-sm btn-outline-dark btn-margin">
-                    <span class="octicon octicon-eye"></span>
-                    {{ __('actions.view') }}
-                </button>
-            </a>
+            <!-- View incident - OPEN -->
+            @include('searches.incidents.buttons.view_incident', ['item' => $incident])
+            <!-- View incident - CLOSE -->
 
             @if( Auth::user()->is_admin() or (Auth::user()->id == $incident->user_creation->id ) )
                 <a href="">
