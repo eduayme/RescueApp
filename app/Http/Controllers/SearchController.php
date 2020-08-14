@@ -93,8 +93,6 @@ class SearchController extends Controller
             'status'                         => $request->get('status'),
 
             'date_start'                     => $request->get('date_start'),
-            'date_creation'                  => $request->get('date_creation'),
-            'date_last_modification'         => $request->get('date_last_modification'),
             'date_finalization'              => $request->get('date_finalization'),
 
             'user_creation_id'               => $request->get('user_creation_id'),
@@ -244,8 +242,6 @@ class SearchController extends Controller
         $search->status = $request->has('status') ? $request->get('status') : $search->status;
 
         $search->date_start = $request->has('date_start') ? $request->get('date_start') : $search->date_start;
-        $search->date_creation = $request->has('date_creation') ? $request->get('date_creation') : $search->date_creation;
-        $search->date_last_modification = $request->has('date_last_modification') ? $request->get('date_last_modification') : $search->date_last_modification;
         $search->date_finalization = $request->has('date_finalization') ? $request->get('date_finalization') : $search->date_finalization;
 
         $search->user_creation_id = $request->has('user_creation_id') ? $request->get('user_creation_id') : $search->user_creation_id;

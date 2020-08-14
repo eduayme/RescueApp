@@ -24,8 +24,6 @@ class CreateSearchesTable extends Migration
             $table->integer('status')->default(0); // closed by default
 
             $table->dateTime('date_start')->nullable();
-            $table->dateTime('date_creation');
-            $table->dateTime('date_last_modification');
             $table->dateTime('date_finalization')->nullable();
 
             $table->integer('user_creation_id')->unsigned();

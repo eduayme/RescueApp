@@ -74,7 +74,7 @@
                             <!-- Creator incident - CLOSE -->
 
                             @if( Auth::user()->is_admin() )
-                                <!-- Creator incident - OPEN -->
+                                <!-- Modify incident - OPEN -->
                                 <div class="col-md-6 margin-top-bottom">
                                     <p>
                                         {{ __('forms.last_modification') }}:
@@ -95,10 +95,10 @@
                                         </h6>
                                     </div>
                                 </div>
-                                <!-- Creator incident - CLOSE -->
+                                <!-- Modify incident - CLOSE -->
                             @endif
 
-                            <div class="col-md-12 margin-top-bottom_sm">
+                            <div class="col-md-6 margin-top-bottom">
                                 <div>
                                     {{ __('forms.date_time') }}:
                                 </div>
@@ -113,7 +113,7 @@
                                     @endif
                                 </h5>
                             </div>
-                            <div class="col-md-12 margin-top-bottom_sm">
+                            <div class="col-md-12 margin-top-bottom">
                                 <div>
                                     {{ __('forms.description') }}:
                                 </div>
@@ -125,7 +125,7 @@
                                     @endif
                                 </h5>
                             </div>
-                            <div class="col-md-12 margin-top-bottom_sm">
+                            <div class="col-md-12 margin-top-bottom">
                                 @if (count($incident->images) > 0)
                                     <div class="row justify-content-md-center">
                                         <div class="col-md-12 margin-top-bottom_sm">

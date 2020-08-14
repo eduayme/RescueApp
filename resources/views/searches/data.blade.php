@@ -157,7 +157,7 @@
             <h6 style="display: inline">
                 <b>
                     @php
-                        $date = new Date($search->date_start);
+                        $date = new Date($search->created_at);
                         echo $date->format('d M. Y | H:i');
                     @endphp
                 </b>
@@ -202,7 +202,7 @@
             <h6 style="display: inline">
                 <b>
                     @php
-                        $date = new Date($search->date_last_modification);
+                        $date = new Date($search->modified_at);
                         echo $date->format('d M. Y | H:i');
                     @endphp
                 </b>

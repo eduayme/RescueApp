@@ -89,14 +89,6 @@
         <input type="hidden" class="form-control" name="user_modification_id" value={{ Auth::user()->id }}>
         <!-- Id user last modification HIDDEN - CLOSE -->
 
-        <!-- Date creates HIDDEN - OPEN -->
-        <input type="hidden" class="form-control" name="date_creation" value="<?php echo date("Y-m-d H:i:s"); ?>">
-        <!-- Date creates HIDDEN - CLOSE -->
-
-        <!-- Date modifies HIDDEN - OPEN -->
-        <input type="hidden" class="form-control" name="date_last_modification" value="<?php echo date("Y-m-d H:i:s"); ?>">
-        <!-- Date modifies HIDDEN - CLOSE -->
-
         <!-- Submit button - OPEN -->
         <div class="text-center margin-top">
             <button type="submit" class="btn btn-primary">

@@ -524,14 +524,6 @@
             <input type="hidden" class="form-control" name="status" value="0">
             <!-- State HIDDEN - CLOSE -->
 
-            <!-- Date creates HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="date_creation" value="<?php echo date("Y-m-d H:i:s"); ?>">
-            <!-- Date creates HIDDEN - CLOSE -->
-
-            <!-- Date modifies HIDDEN - OPEN -->
-            <input type="hidden" class="form-control" name="date_last_modification" value="<?php echo date("Y-m-d H:i:s"); ?>">
-            <!-- Date modifies HIDDEN - CLOSE -->
-
             <!-- Id user creates HIDDEN - OPEN -->
             <input type="hidden" class="form-control" name="user_creation_id" value={{ Auth::user()->id }}>
             <!-- Id user creates HIDDEN - CLOSE -->

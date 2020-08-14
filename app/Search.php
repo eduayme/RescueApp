@@ -19,8 +19,6 @@ class Search extends Model
         'status',
 
         'date_start',
-        'date_creation',
-        'date_last_modification',
         'date_finalization',
 
         'user_creation_id',
