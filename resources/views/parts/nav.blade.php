@@ -4,8 +4,8 @@
     <div class="container">
 
         <!-- Navbar logo - OPEN -->
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name') }}
+        <a class="navbar-logo" href="{{ url('/') }}">
+            <img src="/img/RescueApp-logo.png" height="35" alt="RescueApp">
         </a>
         <!-- Navbar logo - CLOSE -->
 
