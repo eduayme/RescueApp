@@ -89,7 +89,7 @@ class IncidentController extends Controller
         }
 
         return redirect('searches/'.$incident->search_id.'#nav-incidents')
-        ->with('success', __('main.incident').' '.__('messages.added'));
+        ->with('success', __('main.incident').' '.$incident->id.__('messages.added'));
     }
 
     public function update(Request $request, $id)
@@ -105,7 +105,7 @@ class IncidentController extends Controller
         $incident->save();
 
         return redirect('searches/'.$incident->search_id.'#nav-incidents')
-        ->with('success', __('main.incident').' '.__('messages.updated'));
+        ->with('success', __('main.incident').' '.$incident->id.__('messages.updated'));
     }
 
     /**
@@ -123,8 +123,8 @@ class IncidentController extends Controller
         if ($currentUser == 'admin') {
             $incident->delete();
 
-            return back()
-            ->with('success', $incident->id.__('messages.deleted'));
+            return redirect('searches/'.$incident->search_id.'#nav-incidents')
+            ->with('success', __('main.incident').' '.$incident->id.__('messages.deleted'));
         } else {
             return back()
             ->with('error', __('messages.not_allowed'));

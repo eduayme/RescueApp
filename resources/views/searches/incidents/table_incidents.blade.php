@@ -64,6 +64,7 @@
             @include('searches.incidents.buttons.view_incident', ['item' => $incident])
             <!-- View incident - CLOSE -->
 
+            <!-- If user admin or incident creator -->
             @if( Auth::user()->is_admin() or (Auth::user()->id == $incident->user_creation->id ) )
                 <a href="">
                     <button type="button" class="btn btn-sm btn-outline-dark btn-margin">
@@ -71,12 +72,10 @@
                         {{ __('actions.edit') }}
                     </button>
                 </a>
-                <a href="">
-                    <button type="button" class="btn btn-sm btn-outline-danger btn-margin">
-                        <span class="octicon octicon-trashcan"></span>
-                        {{ __('actions.delete') }}
-                    </button>
-                </a>
+
+                <!-- Delete incident - OPEN -->
+                @include('searches.incidents.buttons.delete_incident', ['item' => $incident])
+                <!-- Delete incident - OPEN -->
             @endif
         </td>
 
