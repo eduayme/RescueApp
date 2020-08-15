@@ -1337,7 +1337,7 @@ pre code {
     }
 }
 .table {
-    width: 100%;
+    width: 100% !important;
     margin-bottom: 1rem;
     background-color: transparent
 }
