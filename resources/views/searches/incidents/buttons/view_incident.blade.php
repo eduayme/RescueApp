@@ -27,24 +27,12 @@
                 <!-- Content - OPEN -->
                 <div class="container padding-bottom">
 
-                    <!-- Advanced info incident - OPEN -->
-                    @if( Auth::user()->is_admin() )
-                        <div class="container pad-sm">
-                            <div class="row justify-content-md-center">
-                                <div class="row margin-top-sm">
-                                    <div class="col-md-auto">
-                                        <div class="text-left">
-
-                                        </div>
-                                        <h5>
-
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                    <!-- Advanced info incident - CLOSE -->
+                    <!-- Incident ID - OPEN -->
+                    <h3 class="text-center">
+                        {{ __('main.incident') }} {{ $incident->id }}
+                    </h3>
+                    <hr>
+                    <!-- Incident ID - CLOSE -->
 
                     <!-- Basic info incident - OPEN -->
                     <div class="container">
