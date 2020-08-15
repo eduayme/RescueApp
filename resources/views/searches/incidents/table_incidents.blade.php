@@ -1,5 +1,5 @@
 <!-- Own style -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.2/css/lightgallery.css" />
+<link href="{{ asset('css/lightgallery.css') }}" rel="stylesheet" type="text/css" />
 
 <!-- Table - OPEN -->
 <table class="table dt-responsive table-hover text-center" id="incidents">
@@ -7,6 +7,7 @@
     <!-- Table header - OPEN -->
     <thead>
         <tr>
+            <th scope="col"> # </th>
             <th scope="col"> {{ __('forms.date_time') }} </th>
             <th scope="col"> {{ __('forms.creator') }} </th>
             <th scope="col"> {{ __('forms.description') }} </th>
@@ -20,6 +21,10 @@
     <tbody>
     @foreach ($incidents as $incident)
         <tr>
+
+            <td class="align-middle" style="width:5%">
+                {{ $incident->id }}
+            </td>
 
             <td class="align-middle" style="width:15%">
                 @if ($incident->date == NULL)
@@ -48,7 +53,7 @@
                 @endif
             </td>
 
-            <td class="align-middle" style="width:20%">
+            <td class="align-middle" style="width:15%">
                 @if (count($incident->images) > 0)
                     <?php foreach ($incident->images as $key => $image): ?>
                         <a <?php if($key!=0) :?>style="display:none"<?php endif; ?>
@@ -106,10 +111,11 @@
             "responsive": true,
             "order": [ 0, "desc" ],
             "columns": [
+                { "width": "5%" },
                 { "width": "15%" },
                 { "width": "15%" },
                 { "width": "40%" },
-                { "width": "20%" },
+                { "width": "15%" },
                 { "width": "10%" },
             ],
             "language": {
