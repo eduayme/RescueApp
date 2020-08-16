@@ -73,15 +73,8 @@
                 <!-- If exists searches - OPEN -->
                 @else
 
-                    <!-- Searches table - OPEN -->
-                    <table class="table dt-responsive nowrap table-hover text-center"
-                    id="searches" style="width: 100%">
-                        @include('searches.table_search', ['items' => $searches])
-                    </table>
-                    <!-- Searches table - CLOSE -->
-
                     <!-- Filters - OPEN -->
-                    <div class="row text-center margin-top">
+                    <div class="row text-center margin-top-bottom">
 
                         <!-- Status filter - OPEN -->
                         <div class="col-sm-2">
@@ -125,6 +118,13 @@
                     </div>
                     <!-- Filters - CLOSE -->
 
+                    <!-- Searches table - OPEN -->
+                    <table class="table dt-responsive nowrap table-hover text-center"
+                    id="searches" style="width: 100%">
+                        @include('searches.table_search', ['items' => $searches])
+                    </table>
+                    <!-- Searches table - CLOSE -->
+
                 @endif
                 <!-- If exists searches - CLOSE -->
 
@@ -157,14 +157,8 @@
                 <!-- If exists practices - OPEN -->
                 @else
 
-                    <!-- Practices table - OPEN -->
-                    <table class="table dt-responsive nowrap table-hover text-center" id="practices" style="width: 100%">
-                        @include('searches.table_search', ['items' => $practices])
-                    </table>
-                    <!-- Practices table - CLOSE -->
-
                     <!-- Filters - OPEN -->
-                    <div class="row text-center margin-top">
+                    <div class="row text-center margin-top-bottom">
 
                         <!-- Status filter - OPEN -->
                         <div class="col-sm-2">
@@ -207,6 +201,12 @@
 
                     </div>
                     <!-- Filters - CLOSE -->
+
+                    <!-- Practices table - OPEN -->
+                    <table class="table dt-responsive nowrap table-hover text-center" id="practices" style="width: 100%">
+                        @include('searches.table_search', ['items' => $practices])
+                    </table>
+                    <!-- Practices table - CLOSE -->
 
                 @endif
                 <!-- If exists practices - CLOSE -->
@@ -310,7 +310,7 @@
             autoApply: true,
             showDropdowns: true,
             opens: 'center',
-            drops: 'up',
+            drops: 'down',
             alwaysShowCalendars: true,
             ranges: {
                 "{{ __('daterangepicker.last_7_days') }}": [moment().subtract(6, 'days'), moment()],
