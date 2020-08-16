@@ -47,7 +47,11 @@
                 <!-- Closing tab - OPEN -->
                 <a class="nav-item nav-link" id="nav-closing-tab" data-toggle="tab"
                 href="#nav-closing" role="tab" aria-controls="nav-closing" aria-selected="false">
-                    {{ __('main.finish') }}
+                    @if( $search->status == "0")
+                        {{ __('main.finish') }}
+                    @else
+                        {{ __('actions.reopen') }}
+                    @endif
                 </a>
                 <!-- Closing tab - CLOSE -->
 

@@ -15,7 +15,7 @@
 
             {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
                 {{ Form::hidden('search_id', $search->search_id, array('class' => 'form-control')) }}
-                {{ Form::submit( __('actions.reopen_practice'), array('class' => 'btn btn-primary margin-left', 'name' => 'openbutton') ) }}
+                {{ Form::submit( __('actions.reopen'), array('class' => 'btn btn-primary margin-left', 'name' => 'openbutton') ) }}
             {{ Form::close() }}
 
         <!-- If practice - CLOSE -->
@@ -31,7 +31,7 @@
 
             {{ Form::model($search, array('route' => array('searches.update', $search->id), 'method' => 'PUT')) }}
                 {{ Form::hidden('search_id', $search->search_id, array('class' => 'form-control')) }}
-                {{ Form::submit( __('actions.reopen_search'),
+                {{ Form::submit( __('actions.reopen'),
                 array('class' => 'btn btn-primary margin-left', 'name' => 'openbutton') ) }}
             {{ Form::close() }}
 
