@@ -96,11 +96,9 @@ class IncidentController extends Controller
     {
         $incident = Incident::find($id);
 
-        $incident->search_id = $request->get('search_id');
-        $incident->user_creation_id = $request->get('user_creation_id');
-        $incident->user_modification_id = $request->get('user_modification_id');
-        $incident->date = $request->get('date');
-        $incident->description = $request->get('description');
+        $incident->user_modification_id = $request->get('user_modification_id') ? $request->get('user_modification_id') : $incident->user_modification_id;
+        $incident->date = $request->get('date') ? $request->get('date') : $incident->date;
+        $incident->description = $request->get('description') ? $request->get('description') : $incident->description;
 
         $incident->save();
 

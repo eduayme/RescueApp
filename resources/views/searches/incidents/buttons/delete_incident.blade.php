@@ -1,6 +1,6 @@
 <!-- Delete user button - OPEN -->
 <span data-toggle="modal" href="#deleteIncidentModal-{{ $incident->id }}">
-    <button type="button" class="btn btn-sm btn-outline-danger">
+    <button type="button" class="btn btn-sm btn-outline-danger btn-margin">
         <span class="octicon octicon-trashcan"></span>
         {{ __('actions.delete') }}
     </button>

@@ -74,13 +74,9 @@
 
                 <!-- If user admin or incident creator - OPEN -->
                 @if( Auth::user()->is_admin() or (Auth::user()->id == $incident->user_creation->id ) )
-                    <a href="">
-                        <button type="button" class="btn btn-sm btn-outline-dark btn-margin">
-                            <span class="octicon octicon-pencil"></span>
-                            {{ __('actions.edit') }}
-                        </button>
-                    </a>
-
+                    <!-- Edit incident - OPEN -->
+                    @include('searches.incidents.buttons.edit_incident', ['item' => $incident])
+                    <!-- Edit incident - OPEN -->
                     <!-- Delete incident - OPEN -->
                     @include('searches.incidents.buttons.delete_incident', ['item' => $incident])
                     <!-- Delete incident - OPEN -->

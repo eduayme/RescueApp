@@ -20,6 +20,10 @@ footer {
     text-align: center;
 }
 
+form {
+    margin: 0;
+}
+
 .tab-pane:not(.active) {
     display: none;
 }

@@ -4662,7 +4662,9 @@ button.close {
     align-items: center;
     justify-content: flex-end;
     padding: 1rem;
-    border-top: 1px solid #e9ecef
+    background-color: #f8f9fa;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
 }
 .modal-footer>:not(:first-child) {
     margin-left: .25rem

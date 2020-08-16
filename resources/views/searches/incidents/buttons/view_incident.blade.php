@@ -31,7 +31,6 @@
                     <h3 class="text-center">
                         {{ __('main.incident') }} {{ $incident->id }}
                     </h3>
-                    <hr>
                     <!-- Incident ID - CLOSE -->
 
                     <!-- Basic info incident - OPEN -->
