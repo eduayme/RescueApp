@@ -102,6 +102,29 @@ class IncidentController extends Controller
 
         $incident->save();
 
+        if ($request->hasfile('images_delete')) {
+            foreach ($request->file('images_delete') as $image) {
+                $image->delete();
+            }
+        }
+
+        if ($request->hasfile('images_new')) {
+            $id = $incident->images()->count()+1;
+            foreach ($request->file('images_new') as $image) {
+                $filename = 'Image_'.$id.'.'.$image->getClientOriginalExtension();
+                $path = public_path('/uploads/search_'.$incident->search_id.'/incidents/incident_'.$incident->id.'/');
+                File::exists($path) or File::makeDirectory($path, 0777, true, true);
+                Image::make($image)->save($path.$filename);
+
+                $incident_image = new IncidentImage([
+                    'photo'       => $filename,
+                    'incident_id' => $incident->id,
+                ]);
+                $incident_image->save();
+                $id++;
+            }
+        }
+
         return redirect('searches/'.$incident->search_id.'#nav-incidents')
         ->with('success', __('main.incident').' '.$incident->id.__('messages.updated'));
     }
