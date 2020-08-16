@@ -231,7 +231,7 @@ form {
   display: inline-block;
 }
 
-.img-container .overlay{
+.img-container .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -247,7 +247,22 @@ form {
   font-weight: bold;
 }
 
-.img-container:hover .overlay{
+.img-container .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: center;
+    background: rgb(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.img-container:hover .overlay,
+.img-container:hover .overlay-image {
   opacity: 1;
 }
 
@@ -257,13 +272,22 @@ form {
     margin-top: 15px !important;
 }
 
-.overlay span{
+.overlay span,
+.overlay-image button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   color: #fff;
   text-align: center;
+}
+
+.full-opacity {
+    opacity: 1;
+}
+
+.no-opacity {
+    opacity: 0;
 }
 
 .accordion-title {

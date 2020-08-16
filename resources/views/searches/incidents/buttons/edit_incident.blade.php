@@ -55,7 +55,7 @@
 
                             <!-- Images - OPEN -->
                             <div class="form-group col-md-12 no-margin">
-                                {{ Form::label('description', __('forms.images')) }}
+                                {{ Form::label('description', __('actions.add') . ' ' . __('forms.images')) }}
 
                                 <input type="file" class="form-control margin-bottom {{ $errors->has('images') ? ' is-invalid' : '' }}" name="images_new[]" multiple />
                                 <!-- Show errors input - OPEN -->
@@ -68,10 +68,21 @@
                             </div>
 
                             @if (count($incident->images) > 0)
+                                <div class="form-group col-md-12 no-margin" id="images">
+                                    {{ __('forms.images') }}
+                                </div>
+
                                 <?php foreach ($incident->images as $key => $image): ?>
-                                    <div class="col-md-4 margin-bottom">
-                                        <img src="/uploads/search_{{$incident->search_id}}/incidents/incident_{{$incident->id}}/{{$image->photo}}" class="incident_image">
-                                        <btn> delete </btn>
+                                    <div class="col-md-4 margin-bottom container-img">
+                                        <div class="img-container" id="div-image-{{$image->id}}">
+                                            <img src="/uploads/search_{{$incident->search_id}}/incidents/incident_{{$incident->id}}/{{$image->photo}}" class="incident_image" id="image-{{$image->id}}">
+                                            <div class="overlay-image" id="overlay-{{$image->id}}">
+                                                <button type="button" class="btn btn-sm btn-outline-danger btn-margin" onclick="addToDelete({{$image->id}})" id="add-image-{{$image->id}}">
+                                                    <span class="octicon octicon-trashcan"></span>
+                                                    {{ __('actions.delete') }}
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 <?php endforeach; ?>
                             @endif
@@ -105,6 +116,41 @@
 
 <!-- JS -->
 <script type="text/javascript">
+
+    // add image to delete
+    function addToDelete(id) {
+        var overlay_id_img = "overlay-" + id;
+        var overlay_div_image = document.getElementById(overlay_id_img);
+        overlay_div_image.style.opacity = 1;
+
+        var add_img_button_id = "add-image-" + id;
+        var add_img_button = document.getElementById(add_img_button_id);
+        add_img_button.remove();
+
+        overlay_div_image.innerHTML = '<button type="button" class="btn btn-sm btn-outline-danger btn-margin" onclick="cancelToDelete(' + id + ')" id="cancel-image-' + id + '"><span class="octicon octicon-x"></span> {{ __("actions.cancel") }}</button>';
+
+        var div_parent = document.getElementById("images");
+        div_parent.innerHTML += "<input id='input-image-" + id + "' type='text' value='" + id + "' name='images_delete[]' style='display: none' />";
+    }
+
+    // cancel image to delete
+    function cancelToDelete(id) {
+        var image_id = document.getElementById("input-image-" + id);
+        image_id.remove();
+
+        var overlay_id_img = "overlay-" + id;
+        var overlay_div_image = document.getElementById(overlay_id_img);
+        overlay_div_image.style.opacity = null;
+
+        var cancel_img_button_id = "cancel-image-" + id;
+        var cancel_img_button = document.getElementById(cancel_img_button_id);
+        cancel_img_button.remove();
+
+        overlay_div_image.innerHTML = '<button type="button" class="btn btn-sm btn-outline-danger btn-margin" onclick="addToDelete(' + id + ')" id="add-image-' + id + '"><span class="octicon octicon-trashcan"></span> {{ __("actions.delete") }}</button>';
+
+        var delete_image = document.getElementById("input-image-" + id);
+        delete_image.remove();
+    }
 
     $(document).ready(function() {
         // today date
@@ -158,6 +204,7 @@
         $('input[name="date"]').on('cancel.daterangepicker', function(ev, picker) {
           $(this).val('');
         });
+
     });
 
 </script>
