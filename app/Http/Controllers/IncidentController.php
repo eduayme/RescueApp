@@ -116,11 +116,10 @@ class IncidentController extends Controller
 
         if ($request->hasfile('images_new')) {
             $count = $incident->images()->count();
-            if( $count == 0 ) {
+            if ($count == 0) {
                 $id = 1;
-            }
-            else {
-                $id = IncidentImage::orderBy('id', 'desc')->where('incident_id', '=', $incident->id)->first()->id +1;
+            } else {
+                $id = IncidentImage::orderBy('id', 'desc')->where('incident_id', '=', $incident->id)->first()->id + 1;
             }
 
             foreach ($request->file('images_new') as $image) {
