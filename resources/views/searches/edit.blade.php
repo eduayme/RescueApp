@@ -28,27 +28,14 @@
             <div class="form-row">
                 @csrf
 
-                @if( $search->is_a_practice == 0 )
-                    <style>
-                        #es_prac {
-                            visibility: hidden;
-                        }
-                    </style>
-                @else
-                    <style>
-                        #es_rece {
-                            visibility: hidden;
-                        }
-                    </style>
-                @endif
-
                 <!-- Search type activity - OPEN -->
                 <div class="form-group funkyradio col-md-2" id="es_rece">
 
                     <!-- Search option - OPEN -->
                     <div class="funkyradio-primary">
-                        {{ Form::radio('is_a_practice', 0, true, array('class' => 'form-control','id'=>'is_search')) }}
-                        {{ Form::label('is_a_practice', __('main.search')) }}
+                        <input type="radio" name="is_a_practice" id="is_search" value="0"
+                        <?php if(!$search->is_a_practice) { ?> checked <?php } ?> />
+                        <label for="is_search"> {{ __('main.search') }} </label>
                     </div>
                     <!-- Search option - CLOSE -->
 
@@ -60,8 +47,9 @@
 
                     <!-- Practice option - OPEN -->
                     <div class="funkyradio-primary">
-                        {{ Form::radio('is_a_practice', 1, false, array('class' => 'form-control','id'=>'is_practice')) }}
-                        {{ Form::label('is_a_practice', __('main.practice')) }}
+                        <input type="radio" name="is_a_practice" id="is_practice" value="1"
+                        <?php if($search->is_a_practice) { ?> checked <?php } ?> />
+                        <label for="is_practice"> {{ __('main.practice') }} </label>
                     </div>
                     <!-- Practice option - CLOSE -->
 

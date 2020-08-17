@@ -33,7 +33,8 @@
 
                     <!-- Search option - OPEN -->
                     <div class="funkyradio-primary">
-                        <input type="radio" name="is_a_practice" id="is_search" value="0" checked/>
+                        <input type="radio" name="is_a_practice" id="is_search" value="0"
+                        <?php if(!Request::get('is_a_practice')) { ?> checked <?php } ?> />
                         <label for="is_search"> {{ __('main.search') }} </label>
                     </div>
                     <!-- Search option - CLOSE -->
@@ -46,7 +47,8 @@
 
                     <!-- Practice option - OPEN -->
                     <div class="funkyradio-primary">
-                        <input type="radio" name="is_a_practice" id="is_practice" value="1" />
+                        <input type="radio" name="is_a_practice" id="is_practice" value="1"
+                        <?php if(Request::get('is_a_practice')) { ?> checked <?php } ?> />
                         <label for="is_practice"> {{ __('main.practice') }} </label>
                     </div>
                     <!-- Practice option - CLOSE -->

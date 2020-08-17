@@ -145,7 +145,7 @@
                                 {{ __('messages.no_practices') }}
                             </h4>
 
-                            <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button"
+                            <a href="{{ route('searches.create', ['is_a_practice'=>true]) }}" class="btn btn-primary" role="button"
                             <?php if (Auth::user()->profile == 'guest') { ?> style="display: none" <?php } ?> >
                                 {{ __('actions.add') . ' ' . __('main.practice') }}
                             </a>
