@@ -100,12 +100,12 @@ class SearchController extends Controller
             'user_finalization_id'           => $request->get('user_finalization_id'),
 
             // person alerts
-            'is_lost_person'                 => $request->get('is_lost_person'),
-            'is_contact_person'              => $request->get('is_contact_person'),
-            'name_person_alerts'             => $request->get('name_person_alerts'),
+            'is_lost_person'                      => $request->get('is_lost_person'),
+            'is_contact_person'                   => $request->get('is_contact_person'),
+            'name_person_alerts'                  => $request->get('name_person_alerts'),
             'affinity_person_alerts'              => $request->get('affinity_person_alerts'),
-            'phone_number_person_alerts'     => $request->get('phone_number_person_alerts'),
-            'address_person_alerts'          => $request->get('address_person_alerts'),
+            'phone_number_person_alerts'          => $request->get('phone_number_person_alerts'),
+            'address_person_alerts'               => $request->get('address_person_alerts'),
 
             // incident
             'municipality_last_place_seen'   => $request->get('municipality_last_place_seen'),
