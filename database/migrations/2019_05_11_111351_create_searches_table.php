@@ -34,7 +34,7 @@ class CreateSearchesTable extends Migration
             $table->tinyInteger('is_lost_person')->nullable();
             $table->tinyInteger('is_contact_person')->nullable();
             $table->string('name_person_alerts')->nullable();
-            $table->string('age_person_alerts')->nullable();
+            $table->string('affinity_person_alerts')->nullable();
             $table->string('phone_number_person_alerts')->nullable();
             $table->string('address_person_alerts')->nullable();
 

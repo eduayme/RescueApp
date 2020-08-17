@@ -103,7 +103,7 @@ class SearchController extends Controller
             'is_lost_person'                 => $request->get('is_lost_person'),
             'is_contact_person'              => $request->get('is_contact_person'),
             'name_person_alerts'             => $request->get('name_person_alerts'),
-            'age_person_alerts'              => $request->get('age_person_alerts'),
+            'affinity_person_alerts'              => $request->get('affinity_person_alerts'),
             'phone_number_person_alerts'     => $request->get('phone_number_person_alerts'),
             'address_person_alerts'          => $request->get('address_person_alerts'),
 
@@ -252,7 +252,7 @@ class SearchController extends Controller
         $search->is_lost_person = $request->has('is_lost_person') ? $request->get('is_lost_person') : $search->is_lost_person;
         $search->is_contact_person = $request->has('is_contact_person') ? $request->get('is_contact_person') : $search->is_contact_person;
         $search->name_person_alerts = $request->has('name_person_alerts') ? $request->get('name_person_alerts') : $search->name_person_alerts;
-        $search->age_person_alerts = $request->has('age_person_alerts') ? $request->get('age_person_alerts') : $search->age_person_alerts;
+        $search->affinity_person_alerts = $request->has('affinity_person_alerts') ? $request->get('affinity_person_alerts') : $search->affinity_person_alerts;
         $search->phone_number_person_alerts = $request->has('phone_number_person_alerts') ? $request->get('phone_number_person_alerts') : $search->phone_number_person_alerts;
         $search->address_person_alerts = $request->has('address_person_alerts') ? $request->get('address_person_alerts') : $search->address_person_alerts;
 

@@ -29,7 +29,7 @@ class Search extends Model
         'is_lost_person',
         'is_contact_person',
         'name_person_alerts',
-        'age_person_alerts',
+        'affinity_person_alerts',
         'phone_number_person_alerts',
         'address_person_alerts',
 

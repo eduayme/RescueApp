@@ -170,19 +170,19 @@
                 </div>
                 <!-- Alertant name - CLOSE  -->
 
-                <!-- Alertant age - OPEN  -->
-                <div class="form-group col-md-2">
-                    <label for="age_person_alerts"> {{ __('forms.age') }} </label>
-                    <input type="number" class="form-control" name="age_person_alerts" value="{{ old('age_person_alerts') }}"/>
-                </div>
-                <!-- Alertant age - CLOSE  -->
-
                 <!-- Alertant phone - OPEN  -->
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label for="phone_number_person_alerts"> {{ __('forms.phone') }} </label>
                     <input type="text" class="form-control" name="phone_number_person_alerts" value="{{ old('phone_number_person_alerts') }}"/>
                 </div>
                 <!-- Alertant phone - CLOSE  -->
+
+                <!-- Alertant affinity - OPEN  -->
+                <div class="form-group col-md-3">
+                    <label for="affinity_person_alerts"> {{ __('forms.affinity') }} </label>
+                    <input type="text" class="form-control" name="affinity_person_alerts" value="{{ old('affinity_person_alerts') }}"/>
+                </div>
+                <!-- Alertant affinity - CLOSE  -->
 
                 <!-- Alertant address - OPEN  -->
                 <div class="form-group col-md-6">
@@ -641,31 +641,24 @@ $(document).ready(function() {
 
     // when select is_lost_person value changes
     document.getElementById('is_lost_person').addEventListener('change', function() {
-        console.log('Selected value in alertant is the lost person: ', this.value);
-
         // if the alertant is the lost person
         if( this.value === '1' ) {
-            console.log('The alertant is the lost person');
             alertant_is_lost_person();
 
-            // if changes name
-            $('input[name="name_person_alerts"], input[name="age_person_alerts"], input[name="phone_number_person_alerts"]').change(function() {
+            // if changes name, affinity or phone
+            $('input[name="name_person_alerts"], input[name="affinity_person_alerts"], input[name="phone_number_person_alerts"]').change(function() {
                 alertant_is_lost_person();
             });
         }
+        // if the alertant is NOT the lost person
         else if( this.value === '0' ) {
             alertant_name  = document.getElementsByName("name_person_alerts")[0].value;
             lost_pers_name = document.getElementsByName("lost_person_name[]")[0].value;
-            alertant_age  = document.getElementsByName("age_person_alerts")[0].value;
-            lost_pers_age = document.getElementsByName("lost_person_age[]")[0].value;
             alertant_phone_number  = document.getElementsByName("phone_number_person_alerts")[0].value;
             lost_pers_phone_number = document.getElementsByName("lost_person_phone_number[]")[0].value;
 
             if( alertant_name == lost_pers_name ) {
                 $('input[name="lost_person_name[]"]').first().val('');
-            }
-            if( alertant_age == lost_pers_age ) {
-                $('input[name="lost_person_age[]"]').first().val('');
             }
             if( alertant_phone_number == lost_pers_phone_number ) {
                 $('input[name="lost_person_phone_number[]"]').first().val('');
@@ -679,44 +672,40 @@ $(document).ready(function() {
         // name lost person
         alertant_name = document.getElementsByName("name_person_alerts")[0].value;
         $('input[name="lost_person_name[]"]').first().val(alertant_name);
-        console.log("Alertant name: " + alertant_name);
-
-        // age lost person
-        alertant_age = document.getElementsByName("age_person_alerts")[0].value;
-        $('input[name="lost_person_age[]"]').first().val(alertant_age);
-        console.log("Alertant age: " + alertant_age);
 
         // phone number lost person
         alertant_phone_number = document.getElementsByName("phone_number_person_alerts")[0].value;
         $('input[name="lost_person_phone_number[]"]').first().val(alertant_phone_number);
-        console.log("Alertant phone number: " + alertant_phone_number);
     }
 
     // when select is_contact_person value changes
     document.getElementById('is_contact_person').addEventListener('change', function() {
-        console.log('Selected value in alertant is the contact person: ', this.value);
-
         // if the alertant is the contact person
         if( this.value === '1' ) {
-            console.log('The alertant is the contact person');
             alertant_is_contact_person();
 
             // if changes name
-            $('input[name="name_person_alerts"], input[name="phone_number_person_alerts"]').change(function() {
+            $('input[name="name_person_alerts"], input[name="phone_number_person_alerts"], input[name="affinity_person_alerts"]').change(function() {
                 alertant_is_contact_person();
             });
         }
+        // if the alertant is NOT the contact person
         else if( this.value === '0' ) {
             alertant_name = document.getElementsByName("name_person_alerts")[0].value;
             contact_name  = document.getElementsByName("name_contact_person")[0].value;
             alertant_phone_number = document.getElementsByName("phone_number_person_alerts")[0].value;
             contact_phone_number  = document.getElementsByName("phone_number_contact_person")[0].value;
+            alertant_affinity = document.getElementsByName("affinity_person_alerts")[0].value;
+            contact_affinity  = document.getElementsByName("affinity_contact_person")[0].value;
 
             if( alertant_name == contact_name ) {
                 $('input[name="name_contact_person"]').val('');
             }
             if( alertant_phone_number == contact_phone_number ) {
                 $('input[name="phone_number_contact_person"]').val('');
+            }
+            if( alertant_affinity == contact_affinity ) {
+                $('input[name="affinity_contact_person"]').val('');
             }
         }
     });
@@ -730,6 +719,10 @@ $(document).ready(function() {
         // phone number contact person
         alertant_phone_number = document.getElementsByName("phone_number_person_alerts")[0].value;
         $('input[name="phone_number_contact_person"]').val(alertant_phone_number);
+
+        // affinity lost person
+        alertant_affinity = document.getElementsByName("affinity_person_alerts")[0].value;
+        $('input[name="affinity_contact_person"]').first().val(alertant_affinity);
     }
 
 });

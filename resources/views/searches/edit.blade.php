@@ -186,8 +186,8 @@
 
                 <!-- Alertant age - OPEN  -->
                 <div class="form-group col-md-2">
-                    {{ Form::label('age_person_alerts', __('forms.age')) }}
-                    {{ Form::number('age_person_alerts', null, array('class' => 'form-control')) }}
+                    {{ Form::label('affinity_person_alerts', __('forms.age')) }}
+                    {{ Form::number('affinity_person_alerts', null, array('class' => 'form-control')) }}
                 </div>
                 <!-- Alertant age - CLOSE  -->
 

@@ -591,7 +591,7 @@ $search->bring_cold_clothes !== NULL || $search->porta_impermeable !== NULL )
 
 <!-- Alertant person container - OPEN -->
 @if( $search->is_lost_person || $search->is_contact_person || $search->name_alertant ||
-$search->age_person_alerts || $search->phone_number_alertant || $search->address_person_alerts )
+$search->affinity_person_alerts || $search->phone_number_alertant || $search->address_person_alerts )
     <div class="container border border-secondary rounded margin-top-bottom margin-top-sm box text-center">
         <div class="row">
 
@@ -641,10 +641,10 @@ $search->age_person_alerts || $search->phone_number_alertant || $search->address
                     <!-- Is the contact person - CLOSE -->
 
                     <!-- Age - OPEN -->
-                    @if( $search->age_person_alerts )
+                    @if( $search->affinity_person_alerts )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.age') }}">
-                                {{ $search->age_person_alerts }}
+                                {{ $search->affinity_person_alerts }}
                             </p>
                         </div>
                     @endif
