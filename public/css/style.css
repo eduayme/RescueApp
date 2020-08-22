@@ -412,4 +412,5 @@ input.invest {
 
 .incident_image {
     width: 100%;
+    max-width: 100%;
 }
