@@ -8,7 +8,7 @@
     <thead>
         <tr>
             <th scope="col"> # </th>
-            <th scope="col"> {{ __('forms.date_time') }} </th>
+            <th scope="col"> {{ __('forms.date') }} </th>
             <th scope="col"> {{ __('forms.creator') }} </th>
             <th scope="col"> {{ __('forms.description') }} </th>
             <th scope="col"> {{ __('forms.images') }} </th>
