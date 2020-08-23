@@ -4,9 +4,8 @@
 <p align="center">
 <a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?branch=master" alt="StyleCI"></a>
 <a href="https://travis-ci.org/eduayme/RescueApp"><img src="https://travis-ci.org/eduayme/RescueApp.svg?branch=master" alt="Build Status"></a>
-<a href="https://github.com/eduayme/RescueApp/releases/tag/v1.1"><img src="https://img.shields.io/badge/version-v1.1-blue"></a>
+<a href="https://github.com/eduayme/RescueApp/releases/tag/v1.2"><img src="https://img.shields.io/badge/version-v1.2-blue"></a>
 <a href="https://github.com/eduayme/RescueApp/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License"></a>
-<a href="https://gitter.im/eduayme-RescueApp/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/eduayme-RescueApp/community.svg" alt="License"></a>
 </p>
 
 
