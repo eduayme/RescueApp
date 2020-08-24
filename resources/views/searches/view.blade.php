@@ -44,6 +44,13 @@
                 </a>
                 <!-- Incidents - CLOSE -->
 
+                <!-- Resources - OPEN -->
+                <a class="nav-item nav-link" id="nav-resources-tab" data-toggle="tab"
+                   href="#nav-resources" role="tab" aria-controls="nav-resources" aria-selected="true">
+                    {{ __('main.resources') }}
+                </a>
+                <!-- Resources - CLOSE -->
+
                 <!-- Closing tab - OPEN -->
                 <a class="nav-item nav-link" id="nav-closing-tab" data-toggle="tab"
                 href="#nav-closing" role="tab" aria-controls="nav-closing" aria-selected="false">
@@ -84,6 +91,13 @@
                 @include('searches.incidents.index')
             </div>
             <!-- Incidents content - CLOSE -->
+
+            <!-- Resources content - OPEN -->
+            <div class="tab-pane fade margin-top-sm" id="nav-resources"
+            role="tabpanel" aria-labelledby="nav-resources-tab">
+                @include('searches.resources.index')
+            </div>
+            <!-- Resources content - CLOSE -->
 
             <!-- Closing tab content - OPEN -->
             <div class="tab-pane fade margin-top-sm" id="nav-closing"
