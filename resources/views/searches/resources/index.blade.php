@@ -47,7 +47,7 @@
         <!-- Groups tab content - OPEN -->
         <div class="tab-pane fade margin-top-sm" id="nav-groups"
         role="tabpanel" aria-labelledby="nav-groups-tab">
-            {{ __('main.groups') }}
+            @include('searches.resources.groups.index')
         </div>
         <!-- Groups tab content - CLOSE -->
 
