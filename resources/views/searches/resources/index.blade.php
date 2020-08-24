@@ -40,7 +40,7 @@
         <!-- People involved tab content - OPEN -->
         <div class="tab-pane fade show active margin-top-sm" id="nav-people-involved"
         role="tabpanel" aria-labelledby="nav-people-involved-tab">
-            {{ __('main.people_involved') }}
+            @include('searches.resources.people.index')
         </div>
         <!-- People involved tab content - CLOSE -->
 
