@@ -51,6 +51,13 @@
                 </a>
                 <!-- Resources - CLOSE -->
 
+                <!-- Tasks - OPEN -->
+                <a class="nav-item nav-link" id="nav-tasks-tab" data-toggle="tab"
+                   href="#nav-tasks" role="tab" aria-controls="nav-tasks" aria-selected="true">
+                    {{ __('main.tasks') }}
+                </a>
+                <!-- Tasks - CLOSE -->
+
                 <!-- Closing tab - OPEN -->
                 <a class="nav-item nav-link" id="nav-closing-tab" data-toggle="tab"
                 href="#nav-closing" role="tab" aria-controls="nav-closing" aria-selected="false">
@@ -98,6 +105,13 @@
                 @include('searches.resources.index')
             </div>
             <!-- Resources content - CLOSE -->
+
+            <!-- Tasks content - OPEN -->
+            <div class="tab-pane fade margin-top-sm" id="nav-tasks"
+            role="tabpanel" aria-labelledby="nav-tasks-tab">
+                @include('searches.tasks.index')
+            </div>
+            <!-- Tasks content - CLOSE -->
 
             <!-- Closing tab content - OPEN -->
             <div class="tab-pane fade margin-top-sm" id="nav-closing"
