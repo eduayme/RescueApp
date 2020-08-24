@@ -54,7 +54,7 @@
         <!-- Leaders tab content - OPEN -->
         <div class="tab-pane fade margin-top-sm" id="nav-leaders"
         role="tabpanel" aria-labelledby="nav-leaders-tab">
-            {{ __('main.leaders') }}
+            @include('searches.resources.leaders.index')
         </div>
         <!-- Leaders tab content - CLOSE -->
 
