@@ -35,13 +35,29 @@ class ActionPlanController extends Controller
             'Bank_LT',
             'Ask_PT',
         ];
-        foreach ($tasks as $task) {
-            $to_do_task = new ToDoTaskAP([
-                'action_plan_id' => $action_plan->id,
-                'name'           => $task,
-                'state'          => 'to_do',
-            ]);
-            $to_do_task->save();
+
+        /* If exists previous Action Plan version */
+        if ($v > 0) {
+            $previous_ap = ActionPlan::where('search_id', $id)->where('version', $v)->first();
+            $previous_ap_tasks = ToDoTaskAP::where('action_plan_id', $previous_ap->id)->get();
+
+            foreach ($previous_ap_tasks as $task) {
+                $to_do_task = new ToDoTaskAP([
+                    'action_plan_id' => $action_plan->id,
+                    'name'           => $task->name,
+                    'state'          => $task->state,
+                ]);
+                $to_do_task->save();
+            }
+        } else {
+            foreach ($tasks as $task) {
+                $to_do_task = new ToDoTaskAP([
+                    'action_plan_id' => $action_plan->id,
+                    'name'           => $task,
+                    'state'          => 'to_do',
+                ]);
+                $to_do_task->save();
+            }
         }
 
         return redirect('searches/'.$id.'/#nav-ap')
