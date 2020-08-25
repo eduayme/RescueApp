@@ -151,9 +151,7 @@
 
         <div class="col-md-6 margin-top-sm">
             <h3 class="text-left"> {{ __('main.description') }} </h3>
-            <p class="description{{$ap->version}} description">
-                {{ $ap->description }}
-            </p>
+            <p class="description{{$ap->version}} description line-breaks"> {{ $ap->description }} </p>
         </div>
 
         <div class="col-md-6 margin-top-sm">

@@ -341,7 +341,7 @@
         <h5 class="margin-top-sm-min">
             <b>
                 @if( $search->physical_condition_people_when_find )
-                    {{ $search->physical_condition_people_when_find }}
+                    <p class="line-breaks"> {{ $search->physical_condition_people_when_find }} </p>
                 @else
                     --
                 @endif
@@ -358,7 +358,7 @@
         <h5 class="margin-top-sm-min">
             <b>
                 @if( $search->reason_finalization )
-                    {{ $search->reason_finalization }}
+                    <p class="line-breaks"> {{ $search->reason_finalization }} </p>
                 @else
                     --
                 @endif

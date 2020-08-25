@@ -47,9 +47,7 @@
                 @if ($incident->description == NULL)
                     --
                 @else
-                    <p class="ellipsis">
-                        {{ $incident->description }}
-                    </p>
+                    <p class="ellipsis line-breaks"> {{ $incident->description }} </p>
                 @endif
             </td>
 

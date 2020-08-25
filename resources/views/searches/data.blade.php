@@ -235,7 +235,7 @@
 <!-- Info search - CLOSE -->
 
 <!-- Description container - OPEN -->
-<div class="container container-fluid border border-secondary rounded margin-top-bottom margin-top box text-center">
+<div class="container border border-secondary rounded margin-top-bottom margin-top box text-center">
     <div class="row">
 
         <!-- Description title - OPEN -->
@@ -253,7 +253,7 @@
 
                     <!-- Incident - OPEN -->
                     @if( $search->description_incident )
-                        <p> {{ $search->description_incident }} </p>
+                        <p class="line-breaks"> {{ $search->description_incident }} </p>
                     @endif
                     <!-- Incident - CLOSE -->
 
@@ -276,10 +276,7 @@
 
                     <!-- Incident zone - OPEN -->
                     @if( $search->zone_incident )
-                        <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.incident_zone') }}">
-                            <span class="octicon octicon-stop"></span>
-                            {{ $search->zone_incident }}
-                        </p>
+                        <p class="line-breaks" data-toggle="tooltip" data-placement="top" title="{{ __('forms.incident_zone') }}"> <span class="octicon octicon-stop"></span> {{ $search->zone_incident }} </p>
                     @endif
                     <!-- Incident zone - CLOSE -->
 
@@ -305,10 +302,7 @@
 
                     <!-- Possible route - OPEN -->
                     @if( $search->potential_route )
-                        <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.possible_route') }}">
-                            <span class="octicon octicon-info"></span>
-                            {{ $search->potential_route }}
-                        </p>
+                        <p class="line-breaks" data-toggle="tooltip" data-placement="top" title="{{ __('forms.possible_route') }}"> <span class="octicon octicon-info"></span> {{ $search->potential_route }} </p>
                     @endif
                     <!-- Possible route - CLOSE -->
 
@@ -397,7 +391,7 @@
 
         <!-- Description content - OPEN -->
         <div class="col-md-9 abs-center pad margin-auto">
-            {{ $search->physical_condition_lost_people }}
+            <p class="line-breaks"> {{ $search->physical_condition_lost_people }} </p>
         </div>
         <!-- Description content - CLOSE -->
 
