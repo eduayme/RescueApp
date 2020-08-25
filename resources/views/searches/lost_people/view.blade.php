@@ -259,7 +259,7 @@
                 <h5 class="margin-top-sm-min">
                     <b>
                         @if( $lost_person->physical_appearance )
-                            {{ $lost_person->physical_appearance }}
+                            <p class="line-breaks"> {{ $lost_person->physical_appearance }} </p>
                         @else
                             --
                         @endif
@@ -276,7 +276,7 @@
                 <h5 class="margin-top-sm-min">
                     <b>
                         @if( $lost_person->clothes )
-                            {{ $lost_person->clothes }}
+                            <p class="line-breaks"> {{ $lost_person->clothes }} </p>
                         @else
                             --
                         @endif
@@ -361,7 +361,7 @@
                 <h5 class="margin-top-sm-min">
                     <b>
                         @if( $lost_person->other )
-                            {{ $lost_person->other }}
+                            <p class="line-breaks"> {{ $lost_person->other }} </p>
                         @else
                             --
                         @endif

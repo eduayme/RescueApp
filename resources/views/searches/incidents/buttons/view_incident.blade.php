@@ -108,7 +108,7 @@
                                     @if ($incident->description == NULL)
                                         --
                                     @else
-                                        {{ $incident->description }}
+                                        <p class="line-breaks"> {{ $incident->description }} </p>
                                     @endif
                                 </h5>
                             </div>

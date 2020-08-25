@@ -24,6 +24,10 @@ form {
     margin: 0;
 }
 
+.line-breaks {
+    white-space: pre-line;
+}
+
 .tab-pane:not(.active) {
     display: none;
 }
