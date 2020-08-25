@@ -37,7 +37,7 @@ class ActionPlanController extends Controller
         ];
 
         /* If exists previous Action Plan version */
-        if( $v > 0 ) {
+        if ($v > 0) {
             $previous_ap = ActionPlan::where('search_id', $id)->where('version', $v)->first();
             $previous_ap_tasks = ToDoTaskAP::where('action_plan_id', $previous_ap->id)->get();
 
@@ -49,8 +49,7 @@ class ActionPlanController extends Controller
                 ]);
                 $to_do_task->save();
             }
-        }
-        else {
+        } else {
             foreach ($tasks as $task) {
                 $to_do_task = new ToDoTaskAP([
                     'action_plan_id' => $action_plan->id,
