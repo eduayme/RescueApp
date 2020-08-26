@@ -601,38 +601,35 @@ $search->affinity_person_alerts || $search->phone_number_alertant || $search->ad
                 <div class="row">
 
                     <!-- Name - OPEN -->
-                    @if( $search->name_alertant )
+                    @if( $search->name_person_alerts )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.name') }}">
-                                {{ $search->name_alertant }}
+                                {{ $search->name_person_alerts }}
                             </p>
                         </div>
                     @endif
                     <!-- Name - CLOSE -->
 
-                    <!-- Is the lost person - OPEN -->
-                    @if( $search->is_lost_person !== NULL )
-                        <div class="col-md-3 margin-top-sm-sm">
-                            @if( $search->is_lost_person == 1 )
-                                <p> {{ __('forms.is_the_lost_person') }} </p>
-                            @else
-                                <p> {{ __('forms.not_is_the_lost_person') }} </p>
-                            @endif
+                    <!-- Phone number - OPEN -->
+                    @if( $search->phone_number_person_alerts )
+                        <div class="col-md-4 margin-top-sm-sm">
+                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.phone') }}">
+                                <span class="octicon octicon-device-mobile"></span>
+                                {{ $search->phone_number_person_alerts }}
+                            </p>
                         </div>
                     @endif
-                    <!-- Is the lost person - CLOSE -->
+                    <!-- Phone number - CLOSE -->
 
-                    <!-- Is the contact person - OPEN -->
-                    @if( $search->is_contact_person !== NULL )
-                        <div class="col-md-3 margin-top-sm-sm">
-                            @if( $search->is_contact_person == 1 )
-                                <p> {{ __('forms.is_the_contact_person') }} </p>
-                            @else
-                                <p> {{ __('forms.not_is_the_contact_person') }} </p>
-                            @endif
+                    <!-- Address - OPEN -->
+                    @if( $search->address_person_alerts )
+                        <div class="col-md-4 margin-top-sm-sm">
+                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.address') }}">
+                                {{ $search->address_person_alerts }}
+                            </p>
                         </div>
                     @endif
-                    <!-- Is the contact person - CLOSE -->
+                    <!-- Address - CLOSE -->
 
                     <!-- Age - OPEN -->
                     @if( $search->affinity_person_alerts )
@@ -644,26 +641,29 @@ $search->affinity_person_alerts || $search->phone_number_alertant || $search->ad
                     @endif
                     <!-- Age - CLOSE -->
 
-                    <!-- Phone number - OPEN -->
-                    @if( $search->phone_number_alertant )
+                    <!-- Is the lost person - OPEN -->
+                    @if( $search->is_lost_person !== NULL )
                         <div class="col-md-4 margin-top-sm-sm">
-                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.phone') }}">
-                                <span class="octicon octicon-device-mobile"></span>
-                                {{ $search->phone_number_alertant }}
-                            </p>
+                            @if( $search->is_lost_person == 1 )
+                                <p> {{ __('forms.is_the_lost_person') }} </p>
+                            @else
+                                <p> {{ __('forms.not_is_the_lost_person') }} </p>
+                            @endif
                         </div>
                     @endif
-                    <!-- Phone number - CLOSE -->
+                    <!-- Is the lost person - CLOSE -->
 
-                    <!-- Address - OPEN -->
-                    @if( $search->address )
+                    <!-- Is the contact person - OPEN -->
+                    @if( $search->is_contact_person !== NULL )
                         <div class="col-md-4 margin-top-sm-sm">
-                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.address') }}">
-                                {{ $search->address }}
-                            </p>
+                            @if( $search->is_contact_person == 1 )
+                                <p> {{ __('forms.is_the_contact_person') }} </p>
+                            @else
+                                <p> {{ __('forms.not_is_the_contact_person') }} </p>
+                            @endif
                         </div>
                     @endif
-                    <!-- Address - CLOSE -->
+                    <!-- Is the contact person - CLOSE -->
 
                 </div>
 
