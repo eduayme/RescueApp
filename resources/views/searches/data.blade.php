@@ -542,10 +542,10 @@ $search->bring_cold_clothes !== NULL || $search->porta_impermeable !== NULL )
                 <div class="row">
 
                     <!-- Name - OPEN -->
-                    @if( $search->name_persona_contacte )
+                    @if( $search->name_contact_person )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.name') }}">
-                                {{ $search->name_persona_contacte }}
+                                {{ $search->name_contact_person }}
                             </p>
                         </div>
                     @endif
