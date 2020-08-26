@@ -22,7 +22,7 @@
     @foreach ($incidents as $incident)
         <tr>
 
-            <td class="align-middle" style="width:5%">
+            <td class="align-middle">
                 {{ $incident->id }}
             </td>
 
@@ -37,13 +37,13 @@
                 @endif
             </td>
 
-            <td class="align-middle" style="width:15%">
+            <td class="align-middle">
                 <a href="{{ route('view_profile', $incident->user_creation->id) }}">
                     {{ $incident->user_creation->name }}
                 </a>
             </td>
 
-            <td class="align-middle" style="width:40%">
+            <td class="align-middle" style="width:30%">
                 @if ($incident->description == NULL)
                     --
                 @else
@@ -51,7 +51,7 @@
                 @endif
             </td>
 
-            <td class="align-middle" style="width:15%">
+            <td class="align-middle">
                 @if (count($incident->images) > 0)
                     <?php foreach ($incident->images as $key => $image): ?>
                         <a <?php if($key!=0) :?>style="display:none"<?php endif; ?>
@@ -65,7 +65,7 @@
                 @endif
             </td>
 
-            <td class="align-middle" style="width:10%">
+            <td class="align-middle" style="width:15%">
                 <!-- View incident - OPEN -->
                 @include('searches.incidents.buttons.view_incident', ['item' => $incident])
                 <!-- View incident - CLOSE -->
@@ -104,14 +104,6 @@
             "pagingType": "full_numbers",
             "responsive": true,
             "order": [ 0, "desc" ],
-            "columns": [
-                { "width": "5%" },
-                { "width": "15%" },
-                { "width": "15%" },
-                { "width": "40%" },
-                { "width": "15%" },
-                { "width": "10%" },
-            ],
             "language": {
                 "decimal":        "",
                 "emptyTable":     "{{ __('tables.emptyTable') }}",
