@@ -12,8 +12,8 @@
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.2" target="_blank">
-                    v1.2
+                <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.2.1" target="_blank">
+                    v1.2.1
                 </a>
             </li>
 
