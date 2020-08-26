@@ -235,7 +235,7 @@
 <!-- Info search - CLOSE -->
 
 <!-- Description container - OPEN -->
-<div class="container container-fluid border border-secondary rounded margin-top-bottom margin-top box text-center">
+<div class="container border border-secondary rounded margin-top-bottom margin-top box text-center">
     <div class="row">
 
         <!-- Description title - OPEN -->
@@ -253,7 +253,7 @@
 
                     <!-- Incident - OPEN -->
                     @if( $search->description_incident )
-                        <p> {{ $search->description_incident }} </p>
+                        <p class="line-breaks"> {{ $search->description_incident }} </p>
                     @endif
                     <!-- Incident - CLOSE -->
 
@@ -276,10 +276,7 @@
 
                     <!-- Incident zone - OPEN -->
                     @if( $search->zone_incident )
-                        <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.incident_zone') }}">
-                            <span class="octicon octicon-stop"></span>
-                            {{ $search->zone_incident }}
-                        </p>
+                        <p class="line-breaks" data-toggle="tooltip" data-placement="top" title="{{ __('forms.incident_zone') }}"> <span class="octicon octicon-stop"></span> {{ $search->zone_incident }} </p>
                     @endif
                     <!-- Incident zone - CLOSE -->
 
@@ -305,10 +302,7 @@
 
                     <!-- Possible route - OPEN -->
                     @if( $search->potential_route )
-                        <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.possible_route') }}">
-                            <span class="octicon octicon-info"></span>
-                            {{ $search->potential_route }}
-                        </p>
+                        <p class="line-breaks" data-toggle="tooltip" data-placement="top" title="{{ __('forms.possible_route') }}"> <span class="octicon octicon-info"></span> {{ $search->potential_route }} </p>
                     @endif
                     <!-- Possible route - CLOSE -->
 
@@ -397,7 +391,7 @@
 
         <!-- Description content - OPEN -->
         <div class="col-md-9 abs-center pad margin-auto">
-            {{ $search->physical_condition_lost_people }}
+            <p class="line-breaks"> {{ $search->physical_condition_lost_people }} </p>
         </div>
         <!-- Description content - CLOSE -->
 
@@ -548,10 +542,10 @@ $search->bring_cold_clothes !== NULL || $search->porta_impermeable !== NULL )
                 <div class="row">
 
                     <!-- Name - OPEN -->
-                    @if( $search->name_persona_contacte )
+                    @if( $search->name_contact_person )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.name') }}">
-                                {{ $search->name_persona_contacte }}
+                                {{ $search->name_contact_person }}
                             </p>
                         </div>
                     @endif
@@ -607,38 +601,35 @@ $search->affinity_person_alerts || $search->phone_number_alertant || $search->ad
                 <div class="row">
 
                     <!-- Name - OPEN -->
-                    @if( $search->name_alertant )
+                    @if( $search->name_person_alerts )
                         <div class="col-md-4 margin-top-sm-sm">
                             <p data-toggle="tooltip" data-placement="top" title="{{ __('register.name') }}">
-                                {{ $search->name_alertant }}
+                                {{ $search->name_person_alerts }}
                             </p>
                         </div>
                     @endif
                     <!-- Name - CLOSE -->
 
-                    <!-- Is the lost person - OPEN -->
-                    @if( $search->is_lost_person !== NULL )
-                        <div class="col-md-3 margin-top-sm-sm">
-                            @if( $search->is_lost_person == 1 )
-                                <p> {{ __('forms.is_the_lost_person') }} </p>
-                            @else
-                                <p> {{ __('forms.not_is_the_lost_person') }} </p>
-                            @endif
+                    <!-- Phone number - OPEN -->
+                    @if( $search->phone_number_person_alerts )
+                        <div class="col-md-4 margin-top-sm-sm">
+                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.phone') }}">
+                                <span class="octicon octicon-device-mobile"></span>
+                                {{ $search->phone_number_person_alerts }}
+                            </p>
                         </div>
                     @endif
-                    <!-- Is the lost person - CLOSE -->
+                    <!-- Phone number - CLOSE -->
 
-                    <!-- Is the contact person - OPEN -->
-                    @if( $search->is_contact_person !== NULL )
-                        <div class="col-md-3 margin-top-sm-sm">
-                            @if( $search->is_contact_person == 1 )
-                                <p> {{ __('forms.is_the_contact_person') }} </p>
-                            @else
-                                <p> {{ __('forms.not_is_the_contact_person') }} </p>
-                            @endif
+                    <!-- Address - OPEN -->
+                    @if( $search->address_person_alerts )
+                        <div class="col-md-4 margin-top-sm-sm">
+                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.address') }}">
+                                {{ $search->address_person_alerts }}
+                            </p>
                         </div>
                     @endif
-                    <!-- Is the contact person - CLOSE -->
+                    <!-- Address - CLOSE -->
 
                     <!-- Age - OPEN -->
                     @if( $search->affinity_person_alerts )
@@ -650,26 +641,29 @@ $search->affinity_person_alerts || $search->phone_number_alertant || $search->ad
                     @endif
                     <!-- Age - CLOSE -->
 
-                    <!-- Phone number - OPEN -->
-                    @if( $search->phone_number_alertant )
+                    <!-- Is the lost person - OPEN -->
+                    @if( $search->is_lost_person !== NULL )
                         <div class="col-md-4 margin-top-sm-sm">
-                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.phone') }}">
-                                <span class="octicon octicon-device-mobile"></span>
-                                {{ $search->phone_number_alertant }}
-                            </p>
+                            @if( $search->is_lost_person == 1 )
+                                <p> {{ __('forms.is_the_lost_person') }} </p>
+                            @else
+                                <p> {{ __('forms.not_is_the_lost_person') }} </p>
+                            @endif
                         </div>
                     @endif
-                    <!-- Phone number - CLOSE -->
+                    <!-- Is the lost person - CLOSE -->
 
-                    <!-- Address - OPEN -->
-                    @if( $search->address )
+                    <!-- Is the contact person - OPEN -->
+                    @if( $search->is_contact_person !== NULL )
                         <div class="col-md-4 margin-top-sm-sm">
-                            <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.address') }}">
-                                {{ $search->address }}
-                            </p>
+                            @if( $search->is_contact_person == 1 )
+                                <p> {{ __('forms.is_the_contact_person') }} </p>
+                            @else
+                                <p> {{ __('forms.not_is_the_contact_person') }} </p>
+                            @endif
                         </div>
                     @endif
-                    <!-- Address - CLOSE -->
+                    <!-- Is the contact person - CLOSE -->
 
                 </div>
 

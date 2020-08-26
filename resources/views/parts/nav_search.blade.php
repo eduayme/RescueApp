@@ -16,7 +16,7 @@
             <!-- Left Side Of Navbar - OPEN -->
             <ul class="navbar-nav mr-auto">
 
-                <span class="align-middle margin-right">
+                <span class="align-middle mr-md-4">
                     {{ __('forms.service')}}:
                     <b>
                         <a href="{{ URL::to('searches/' . $search->id) }}">
@@ -26,7 +26,7 @@
                 </span>
 
                 @if ($search->municipality_last_place_seen)
-                    <span class="align-middle margin-left margin-right">
+                    <span class="align-middle mx-md-4">
                         {{ __('forms.village')}}:
                         <b>
                             {{ $search->municipality_last_place_seen }}
@@ -35,7 +35,7 @@
                 @endif
 
                 @if ($search->date_start != NULL)
-                    <span class="align-middle margin-left margin-right">
+                    <span class="align-middle mx-md-4">
                         {{ __('forms.begin_day')}}:
                         <b>
                             @php
@@ -47,7 +47,7 @@
                 @endif
 
                 @if ($search->date_finalization == NULL && $search->date_start != NULL)
-                    <span class="align-middle margin-left margin-right">
+                    <span class="align-middle mx-md-4">
                         {{ __('forms.day') }}:
                         <b>
                             <?php

@@ -1,8 +1,8 @@
 <!-- View incident button - OPEN -->
 <span data-toggle="modal" href="#viewIncidentModal-{{ $incident->id }}">
-    <button type="button" class="btn btn-sm btn-outline-dark btn-margin">
+    <button type="button" class="btn btn-sm btn-outline-dark btn-margin"
+    data-toggle="tooltip" data-placement="top" title="{{ __('actions.view') }}">
         <span class="octicon octicon-eye"></span>
-        {{ __('actions.view') }}
     </button>
 </span>
 <!-- View incident button - CLOSE -->
@@ -108,7 +108,7 @@
                                     @if ($incident->description == NULL)
                                         --
                                     @else
-                                        {{ $incident->description }}
+                                        <p class="line-breaks"> {{ $incident->description }} </p>
                                     @endif
                                 </h5>
                             </div>
