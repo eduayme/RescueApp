@@ -46,7 +46,7 @@
                                 $size = sizeof($ap->to_do_tasks);
                                 $count = 1;
                             @endphp
-                            @foreach( $ap->to_do_tasks as $task )
+                            @foreach( $ap->to_do_tasks->sortBy('id') as $task )
                                 {{ Form::model($task, array('class' => 'task-form', 'route' => array('todotask.update', $task->id), 'method' => 'POST')) }}
                                     @php
                                         if( $count < $size )
@@ -159,7 +159,7 @@
                 <h3 class="text-left"> {{ __('main.investigation') }} </h3>
                 <div class="margin-top-bottom text-left">
 
-                    @foreach( $ap->to_do_tasks as $task )
+                    @foreach( $ap->to_do_tasks->sortBy('id') as $task )
                         <div class='row to_do_task'>
                             <div class="col-10">
                                 <p> {{ $task->getName() }} </p>
