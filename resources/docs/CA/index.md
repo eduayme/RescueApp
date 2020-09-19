@@ -1,0 +1,4 @@
+- ## Documentació
+    - [Descripció](/{{route}}/{{version}}/description)
+    - [Instal·lació](/{{route}}/{{version}}/installation)
+    - [Objectius](/{{route}}/{{version}}/objectives)

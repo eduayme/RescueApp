@@ -1,0 +1,164 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "eduayme",
+      "name": "Eduard Aymerich",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26260104?v=4",
+      "profile": "https://linkedin.com/in/eduayme",
+      "contributions": [
+        "code",
+        "ideas",
+        "maintenance",
+        "projectManagement",
+        "review",
+        "test"
+      ]
+    },
+    {
+      "login": "co00co",
+      "name": "co00co",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11724652?v=4",
+      "profile": "https://github.com/co00co",
+      "contributions": [
+        "ideas",
+        "doc",
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "EnricSalaPujolar",
+      "name": "EnricSalaPujolar",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56341832?v=4",
+      "profile": "https://github.com/EnricSalaPujolar",
+      "contributions": [
+        "ideas",
+        "doc",
+        "design"
+      ]
+    },
+    {
+      "login": "joelibaceta",
+      "name": "Joel Ibaceta",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/864790?v=4",
+      "profile": "https://joelibaceta.github.io",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "rferromoreno",
+      "name": "Ricardo Ferro Moreno",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5116187?v=4",
+      "profile": "https://github.com/rferromoreno",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "azhsetiawan",
+      "name": "Azh Setiawan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3045602?v=4",
+      "profile": "https://dribbble.com/azhsetiawan",
+      "contributions": [
+        "translation",
+        "code"
+      ]
+    },
+    {
+      "login": "kaywinnet",
+      "name": "Andrea",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26384252?v=4",
+      "profile": "https://github.com/kaywinnet",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "larryebaum",
+      "name": "Larry Eichenbaum",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6776768?v=4",
+      "profile": "https://github.com/larryebaum",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "dcbCIn",
+      "name": "Daniel Brandão",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/48742131?v=4",
+      "profile": "https://github.com/dcbCIn",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "MRamirezO",
+      "name": "Jesus Ramirez",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4284570?v=4",
+      "profile": "https://github.com/MRamirezO",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "alfathony",
+      "name": "Alfathony",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/14884603?v=4",
+      "profile": "http://alfathony.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Dhavalc2012",
+      "name": "Dhaval",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7031028?v=4",
+      "profile": "https://github.com/Dhavalc2012",
+      "contributions": [
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "edcapetti",
+      "name": "Ed Capetillo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6628306?v=4",
+      "profile": "https://github.com/edcapetti",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "eniabiola",
+      "name": "Awosanya Enitan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/46572982?v=4",
+      "profile": "http://eniabiola.github.io",
+      "contributions": [
+        "code",
+        "translation"
+      ]
+    },
+    {
+      "login": "aceofspades19",
+      "name": "Jordan Evans",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/141931?v=4",
+      "profile": "http://herpderp.ca",
+      "contributions": [
+        "translation",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 5,
+  "projectName": "RescueApp",
+  "projectOwner": "eduayme",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'required'        => 'This field is required.',
+    'min'             => 'This field must contain at least 2 characters.',
+    'min8'            => 'This field must contain at least 8 characters.',
+    'min8_max10'      => 'This field must contain between 8 and 10 characters.',
+    'max'             => 'This field must contain less than 50 characters.',
+    'max10'           => 'This field must contain less than 10 characters.',
+    'email'           => 'This field must contain an email address',
+    'confirmed'       => 'This field does not match the confirmation.',
+    'unique'          => 'This field must be unique in the data table.',
+    'numeric'         => 'This field must contain a valid numeric value.',
+    'updated'         => ' updated successfully.',
+    'added'           => ' added successfully.',
+    'deleted'         => ' deleted successfully.',
+    'not_allowed'     => 'You do not have permission to perform this action.',
+    'error_form'      => 'Error in the input of the form.',
+    'no_searches'     => 'No searches have been registered.',
+    'no_practices'    => 'No practices have been registered.',
+    'are_you_sure'    => 'Are you sure? This action cannot be undone.',
+    'num_unique'      => 'This number must be unique in the data table.',
+    'closed_search'   => 'This investigation is currently closed.',
+    'closed_practice' => 'This practice is currently closed.',
+];

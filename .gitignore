@@ -1,0 +1,14 @@
+/node_modules
+/public/hot
+/public/storage
+/public/uploads/avatars
+/public/uploads/lost_people_photos
+/storage/*.key
+/vendor
+.env
+.phpunit.result.cache
+.DS_Store
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log

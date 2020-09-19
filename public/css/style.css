@@ -1,0 +1,419 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+h1, h2, h3, h4, h5 {
+    vertical-align: middle;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+form {
+    margin: 0;
+}
+
+.line-breaks {
+    white-space: pre-line;
+}
+
+.tab-pane:not(.active) {
+    display: none;
+}
+
+.project-tab #tabs {
+    background: #F8FAFC;
+    color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: primary;
+    border: none;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    color: #0062cc;
+    font-size: 14px;
+    font-weight: 600;
+}
+.project-tab .nav-link:hover {
+    border: none;
+    border-bottom: 1px solid #0062cc;
+}
+.project-tab thead {
+    background: #f3f3f3;
+    color: #333;
+}
+.project-tab a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.funkyradio div {
+  clear: both;
+  overflow: hidden;
+}
+
+.funkyradio label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+  color: #ABABAB;
+}
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+  display: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label,
+.funkyradio input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before,
+.funkyradio input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 0;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked ~ label,
+.funkyradio input[type="checkbox"]:checked ~ label {
+  color: #337AB7;
+  font-weight: bold;
+  border-color: #337AB7;
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before,
+.funkyradio input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus ~ label:before,
+.funkyradio input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-default input[type="radio"]:checked ~ label:before,
+.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio-primary input[type="radio"]:checked ~ label:before,
+.funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.margin_right_left {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.margin-top-bottom {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.margin-top-bottom_sm {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.box {
+  transition: box-shadow .3s;
+  box-shadow: 0 0 11px rgba(33,33,33,.25);
+}
+.box:hover {
+  box-shadow: 0 0 15px rgba(33,33,33,.5);
+}
+
+.pad {
+  padding: 20px;
+}
+
+.pad-sm {
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.block {
+  display: block;
+}
+
+.margin-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.profile {
+  width: 150px;
+  height: 150px;
+  float: left;
+  border-radius: 50%;
+  margin: 0 50px;
+}
+
+.photo {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin-top: 15px;
+}
+
+.photo-sm {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 10px 20px;
+}
+
+.img-container{
+  position: relative;
+  display: inline-block;
+}
+
+.img-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  float: left;
+  border-radius: 50%;
+  margin: 0 50px;
+  background: rgb(0,0,0,0.7);
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.img-container .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: center;
+    background: rgb(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.img-container:hover .overlay,
+.img-container:hover .overlay-image {
+  opacity: 1;
+}
+
+.overlay-photo {
+    width: 300px !important;
+    height: 300px !important;
+    margin-top: 15px !important;
+}
+
+.overlay span,
+.overlay-image button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  text-align: center;
+}
+
+.full-opacity {
+    opacity: 1;
+}
+
+.no-opacity {
+    opacity: 0;
+}
+
+.accordion-title {
+    cursor: pointer;
+}
+.accordion-title:before {
+    content: '\002D';
+    color: #343A40;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.accordion-title.collapsed:before {
+    content: '\002B';
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0.3em 0 1em 0;
+    padding: 0;
+}
+
+.id-lost-person {
+    display: inline;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-pad {
+    padding: 0;
+}
+
+
+input.invest {
+    float: left;
+    width: 90%;
+}
+
+
+.form_invest button {
+    float: right;
+    border: solid 1px;
+}
+
+.embedform button {
+    float: right;
+    border: solid 1px;
+}
+
+.hidden {
+    display: none;
+}
+
+.description {
+    text-align: left;
+}
+
+.descform textarea {
+    float: left;
+    width: 100%;
+}
+
+.descform .btn {
+    margin-top: 20px;
+    background-color: darkred;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+}
+
+.invest p, .invest form {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.invest .task {
+    text-align: left;
+    border-bottom: 1px solid grey;
+}
+
+.invest p:last-of-type {
+    border-bottom: none;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.to_do_task:not(:last-child),
+.invest form .to_do_task {
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+@media (min-width:430px) {
+    .margin-left-30 {
+        margin-left: -30px;
+    }
+}
+
+@media (max-width:429px) {
+    .margin-left-30 {
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+}
+
+.ellipsis {
+    margin: 0;
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.incident_image {
+    width: 100%;
+}
