@@ -21,7 +21,10 @@ return [
     'to_do'                         => 'To do',
     'in_progress'                   => 'In progress',
     'done'                          => 'Done',
+<<<<<<< HEAD
     'every_status'                  => 'Every status',
     'all_groups'                    => 'All groups',
     'all_types'                     => 'All types',
+=======
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 ];

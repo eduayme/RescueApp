@@ -42,7 +42,10 @@ return [
     'people_involved'              => 'Actuante',
     'groups'                       => 'Grupos',
     'leaders'                      => 'Líderes',
+<<<<<<< HEAD
     'task'                         => 'Tarea',
+=======
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
     'tasks'                        => 'Tareas',
     'users'                        => 'Usuarios',
     'user'                         => 'Usuario',

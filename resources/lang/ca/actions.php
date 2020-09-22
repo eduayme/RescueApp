@@ -2,11 +2,17 @@
 
 return [
     'actions'           => 'Accions',
+<<<<<<< HEAD
     'attach'            => 'Adjuntar',
     'add'               => 'Afegir',
     'view'              => 'Veure',
     'edit'              => 'Editar',
     'create'            => 'Crear',
+=======
+    'add'               => 'Afegir',
+    'view'              => 'Veure',
+    'edit'              => 'Editar',
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
     'delete'            => 'Eliminar',
     'cancel'            => 'Cancelar',
     'save'              => 'Guardar',

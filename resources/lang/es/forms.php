@@ -89,6 +89,7 @@ return [
     'model_and_brand'                           => 'Modelo y marca',
     'color'                                     => 'Color',
     'license_plate'                             => 'Matrícula',
+<<<<<<< HEAD
     'edit_task'                                 => 'Editar tarea',
 
     'sector'                                    => 'Sector',
@@ -99,4 +100,6 @@ return [
     'gpx'                                       => 'GPX',
     'actions'                                   => 'Comportamiento',
     'tracking_device'                           => 'Dispositivo rastreador',
+=======
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 ];

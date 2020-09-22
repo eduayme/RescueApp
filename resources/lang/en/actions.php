@@ -2,9 +2,13 @@
 
 return [
     'actions'           => 'Actions',
+<<<<<<< HEAD
     'attach'            => 'Attach',
     'add'               => 'Add',
     'create'            => 'Create',
+=======
+    'add'               => 'Add',
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
     'view'              => 'View',
     'edit'              => 'Edit',
     'delete'            => 'Delete',

@@ -21,7 +21,10 @@ return [
     'to_do'                         => 'Pendiente',
     'in_progress'                   => 'En progreso',
     'done'                          => 'Finalizado',
+<<<<<<< HEAD
     'every_status'                  => 'Cada estado',
     'all_groups'                    => 'Todos los grupos',
     'all_types'                     => 'Todos los tipos',
+=======
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 ];

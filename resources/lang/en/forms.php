@@ -89,6 +89,7 @@ return [
     'model_and_brand'                           => 'Make and model',
     'color'                                     => 'Color',
     'license_plate'                             => 'License plate',
+<<<<<<< HEAD
     'sector'                                    => 'Sector',
     'task_group'                                => 'Group',
     'task_start'                                => 'Start',
@@ -98,4 +99,6 @@ return [
     'actions'                                   => 'Actions',
     'edit_task'                                 => 'Edit Task',
     'tracking_device'                           => 'Tracking device',
+=======
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 ];

@@ -24,7 +24,10 @@ return [
     'data'                          => 'Data',
     'ap'                            => 'Action Plan',
     'incident'                      => 'Incident',
+<<<<<<< HEAD
     'task'                          => 'Task',
+=======
+>>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
     'incidents'                     => 'Incidents',
     'version'                       => 'Version',
     'description'                   => 'Description',
