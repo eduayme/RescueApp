@@ -517,7 +517,6 @@ module.exports = function normalizeComponent (
 /* 2 */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 var g;
 
 // This works in non-strict mode
@@ -539,7 +538,6 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
-=======
 var g;
 
 // This works in non-strict mode
@@ -561,7 +559,6 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 
 
 /***/ }),
@@ -29266,13 +29263,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* mousetrap v1.5.3 craig.is/killing/mice */
 /* 77 */
 /***/ (function(module, exports) {
 
-<<<<<<< HEAD
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
 module.exports = __webpack_amd_options__;
-=======
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
 module.exports = __webpack_amd_options__;
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 

@@ -21,10 +21,7 @@ return [
     'to_do'                         => 'Pendent',
     'in_progress'                   => 'En procés',
     'done'                          => 'Finalitzat',
-<<<<<<< HEAD
     'every_status'                  => 'Cada estat',
     'all_groups'                    => 'Tots els grups',
     'all_types'                     => 'Tot tipus',
-=======
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 ];

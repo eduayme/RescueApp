@@ -1,6 +1,5 @@
 <!-- Content - OPEN -->
 <div class="container margin-top padding-bottom">
-<<<<<<< HEAD
 	@include('searches.tasks.task_table')
 
 	<div class="container padding-top">
@@ -61,8 +60,5 @@
 </div>
 <!-- Content - CLOSE -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-=======
-    <img src="/img/mockup_tasks.png" style="width: 100%" />
 </div>
 <!-- Content - CLOSE -->
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab

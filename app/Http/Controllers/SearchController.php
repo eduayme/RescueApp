@@ -6,10 +6,7 @@ use App\ActionPlan;
 use App\Incident;
 use App\LostPerson;
 use App\Search;
-<<<<<<< HEAD
 use App\Task;
-=======
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 use Auth;
 use Illuminate\Http\Request;
 use Validator;
@@ -169,16 +166,12 @@ class SearchController extends Controller
         $search = Search::find($id);
         $action_plans = ActionPlan::where('search_id', $id)->get();
         $incidents = Incident::where('search_id', $id)->get();
-<<<<<<< HEAD
         $tasks = Task::where('search_id', $id)->get();
         $taskGroups = $tasks->pluck('Group')->unique()->sort();
         $taskTypes = $tasks->pluck('Type')->unique();
         return view('searches.view', compact('search', 'action_plans', 'incidents', 
             'tasks', 'taskGroups','taskTypes'));
-=======
-
         return view('searches.view', compact('search', 'action_plans', 'incidents'));
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
     }
 
     /**

@@ -89,7 +89,6 @@ return [
     'model_and_brand'                           => 'Model i marca',
     'color'                                     => 'Color',
     'license_plate'                             => 'Matrícula',
-<<<<<<< HEAD
     'edit_task'                                 => 'Edita la tasca',
     'sector'                                    => 'Sector',
     'task_group'                                => 'Grup',
@@ -99,6 +98,4 @@ return [
     'gpx'                                       => 'GPX',
     'actions'                                   => 'Accions',
     'tracking_device'                           => 'Dispositiu de seguiment',
-=======
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
 ];

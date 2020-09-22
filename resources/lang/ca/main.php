@@ -43,10 +43,7 @@ return [
     'groups'                        => 'Grups',
     'leaders'                       => 'Líders',
     'tasks'                         => 'Tasques',
-<<<<<<< HEAD
     'task'                          => 'Tasca',
-=======
->>>>>>> e1c9fd64e1bd90dc31378590ed2cd33b4634c4ab
     'users'                         => 'Usuaris',
     'user'                          => 'Usuari',
     'created_at'                    => 'Creat',
