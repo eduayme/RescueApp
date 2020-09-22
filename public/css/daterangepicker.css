@@ -386,7 +386,7 @@
     float: right; }
   .daterangepicker .drp-calendar.left {
     clear: none !important; } }
-=======
+    
 .daterangepicker {
   position: absolute;
   color: inherit;
