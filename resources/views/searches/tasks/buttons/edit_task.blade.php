@@ -14,7 +14,8 @@
         <div class="modal-content">
 
             <!-- Form edit user - OPEN -->
-            <form action="{{ Route('editTask', $task->id) }}" method="POST">
+            <form action="{{ Route('editTask', $task->id) }}" method="POST"
+            enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
 
@@ -70,7 +71,9 @@
                             <label for="inputStart">
                                 {{ __('forms.task_start') }}
                             </label>
-                            <input type="datetime-local" name="Start" class="form-control">
+                            <input type="text" name="Start" class="datepicker form-control"
+                            value="{{ $task->Start }}" 
+                            >
                             @error('Start')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -80,7 +83,9 @@
                             <label for="inputEnd">
                                 {{ __('forms.task_end') }}
                             </label>
-                            <input type="datetime-local" name="End" class="form-control">
+                            <input type="text" name="End" class="datepicker form-control"
+                            value="{{ $task->End }}" 
+                            >
                             @error('End')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -116,17 +121,26 @@
 
                     <div class="row mt-3">
                         <div class="col text-left">
-                            <label for="inputDevice">
-                                {{ __('forms.tracking_device') }}
-                            </label>
-                            <input type="text" name="trackingDevice1" class="form-control">
-                            @error('trackingDevice1')
-                                <p class="alert alert-danger">{{ $message }}</p>
-                            @enderror
+                            <div>
+                                <label for="inputDevice">
+                                    {{ __('forms.tracking_device') }}
+                                </label>
+                                <input type="text" name="TrackingDevice1" class="form-control">
+                                @error('trackingDevice1')
+                                    <p class="alert alert-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">
+                                {{ __('actions.attach') }}</label>
+                                <input type="file" name="GpxFile" class="form-control-file"
+                                accept=".gpx">
+                            </div>
                         </div>
                         <div class="col text-left">
                             <label>-</label>
-                            <input type="text" name="trackingDevice2" class="form-control">
+                            <input type="text" name="TrackingDevice2" class="form-control">
                             @error('trackingDevice2')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -177,7 +191,7 @@
         var today = new Date();
 
         // begin date input
-        $('input[name="Start"]').daterangepicker({
+        $('.datepicker').daterangepicker({
           singleDatePicker: true,
           timePicker: true,
           timePicker24Hour: true,

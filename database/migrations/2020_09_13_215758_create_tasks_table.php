@@ -22,8 +22,10 @@ class CreateTasksTable extends Migration
             $table->dateTime('Start');
             $table->dateTime('End');
             $table->string('Type');
-            $table->longText('Description')->nullable();
+            $table->longText('Description');
             $table->integer('Gpx')->default(0);
+            $table->string('GpxFileName')->nullable();
+            $table->binary('GpxFile')->nullable();
             $table->timestamps();
         });
         Schema::table('tasks', function (Blueprint $table) {

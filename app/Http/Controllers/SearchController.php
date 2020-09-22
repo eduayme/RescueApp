@@ -167,7 +167,10 @@ class SearchController extends Controller
         $action_plans = ActionPlan::where('search_id', $id)->get();
         $incidents = Incident::where('search_id', $id)->get();
         $tasks = Task::where('search_id', $id)->get();
-        return view('searches.view', compact('search', 'action_plans', 'incidents', 'tasks'));
+        $taskGroups = $tasks->pluck('Group')->unique()->sort();
+        $taskTypes = $tasks->pluck('Type')->unique();
+        return view('searches.view', compact('search', 'action_plans', 'incidents', 
+            'tasks', 'taskGroups','taskTypes'));
     }
 
     /**

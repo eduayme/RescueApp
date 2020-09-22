@@ -41,30 +41,40 @@ class TaskController extends Controller
             'Start' => 'required|date',
             'End' => 'required|date|after:Start', 
             'Type' => 'required',
-            'Description' => 'required'
+            'Description' => 'required',
+            'TrackingDevice1' => 'nullable',
+            'TrackingDevice2' => 'nullable',
+            'GpxFile' => 'nullable|file|mimes:bin,dms,lrf,mar,gpx,xml',
     	],[
-            'Sector.required'        => 'Please provide a sector.',
-            'Status.required'          => 'Please select a state.',
-            'Group.required'          => 'Please select a group.',
-            'Start.required'         => 'Please provide a starting date for the task.',
-            'Start.date'             => 'Please provide a valid date',
-            'End.required'            => 'Please provide an ending date for the task.',
-            'End.date'                => 'Please provide a valid date',
-            'End.after:Start'         => 'Please select a date after the start date',
-            'Type.required'           => 'Please select a provide a type.',
-            'Description.required' => 'Please provide a description',
+            'Sector.required'           => 'Please provide a sector.',
+            'Status.required'           => 'Please select a state.',
+            'Group.required'            => 'Please select a group.',
+            'Start.required'            => 'Please provide a starting date for the task.',
+            'Start.date'                => 'Please provide a valid date',
+            'End.required'              => 'Please provide an ending date for the task.',
+            'End.date'                  => 'Please provide a valid date',
+            'End.after:Start'           => 'Please select a date after the start date',
+            'Type.required'             => 'Please select a provide a type.',
+            'Description.required'      => 'Please provide a description',
+            'GpxFile.mimes'             => 'Only GPX files can be uploaded.',
         ]);
 
-    	$task = new Task([
-            'search_id'            	=> $request->get('search_id'),
-            'Sector'     			=> $request->get('Sector'),
-            'Status' 				=> $request->get('Status'),
-            'Group'                 => $request->get('Group'),
-            'Start'          		=> $request->get('Start'),
-            'End'					=> $request->get('End'),
-            'Type'					=> $request->get('Type'),
-            'Description'			=> $request->get('Description')
-    	]);
+        $trackingDevice = $request->get('TrackingDevice1').' '.$request->get('TrackingDevice2');
+
+        $task = new Task([
+        'search_id'             => $request->get('search_id'),
+        'Sector'                => $request->get('Sector'),
+        'Status'                => $request->get('Status'),
+        'Group'                 => $request->get('Group'),
+        'Start'                 => $request->get('Start'),
+        'End'                   => $request->get('End'),
+        'Type'                  => $request->get('Type'),
+        'Description'           => $request->get('Description'),
+        'GpxFileName'           => $trackingDevice,
+        'GpxFile'               => $request['GpxFile'],
+        ]);
+
+        if($request->hasFile('GpxFile')) $task->Gpx = 1;
 
         $task->save();
 
@@ -74,7 +84,6 @@ class TaskController extends Controller
 
     public function update(Request $request,Task $id)
     {
-        $startDate = $request->input['Start'];
 
         $request->validate([
             'Sector' => 'required',
@@ -83,22 +92,38 @@ class TaskController extends Controller
             'Start' => 'required|date',
             'End' => 'required|date|after:Start', 
             'Type' => 'required',
-            'Description' => 'required'
+            'Description' => 'required',
+            'TrackingDevice1' => 'nullable',
+            'TrackingDevice2' => 'nullable',
+            'GpxFile' => 'nullable|file|mimes:bin,dms,lrf,mar,gpx,xml',
         ],[
-            'Sector.required'        => 'Please provide a sector.',
-            'Status.required'          => 'Please select a state.',
-            'Group.required'          => 'Please select a group.',
-            'Start.required'         => 'Please provide a starting date for the task.',
-            'Start.date'             => 'Please provide a valid date',
-            'End.required'            => 'Please provide an ending date for the task.',
-            'End.date'                => 'Please provide a valid date',
-            'End.after:Start'         => 'Please select a date after the start date',
-            'Type.required'           => 'Please select a provide a type.',
-            'Description.required' => 'Please provide a description',
+            'Sector.required'           => 'Please provide a sector.',
+            'Status.required'           => 'Please select a state.',
+            'Group.required'            => 'Please select a group.',
+            'Start.required'            => 'Please provide a starting date for the task.',
+            'Start.date'                => 'Please provide a valid date',
+            'End.required'              => 'Please provide an ending date for the task.',
+            'End.date'                  => 'Please provide a valid date',
+            'End.after:Start'           => 'Please select a date after the start date',
+            'Type.required'             => 'Please select a provide a type.',
+            'Description.required'      => 'Please provide a description',
+            'GpxFile.mimes'             => 'Only GPX files can be uploaded.',
         ]);
+
+        $trackingDevice = $request->get('TrackingDevice1').' '.$request->get('TrackingDevice2');
 
         $id->update($request->toArray());
 
+        if($request->hasFile('GpxFile'))
+        {
+            $id->update([
+                'GpxFileName'   => $trackingDevice,
+                'Gpx'           => 1,
+                'GpxFile'       => $request['GpxFile'],
+            ]);
+        
+        }
+        
         return redirect('searches/'.$id->search_id.'#nav-tasks')
         ->with('success', __('main.task').' '.'updated');
 

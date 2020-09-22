@@ -2,6 +2,7 @@
 
 return [
     'actions'           => 'Actions',
+    'attach'            => 'Attach',
     'add'               => 'Add',
     'create'            => 'Create',
     'view'              => 'View',
