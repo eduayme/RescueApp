@@ -16,13 +16,13 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('search_id')->unsigned();
-            $table->string('Sector');
-            $table->string('Status')->default("to_do");
-            $table->integer('Group');
-            $table->dateTime('Start');
-            $table->dateTime('End');
-            $table->string('Type');
-            $table->longText('Description');
+            $table->string('sector')->nullable();
+            $table->string('status')->default("to_do");
+            $table->string('group')->nullable();
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end')->nullable();
+            $table->string('type')->nullable();
+            $table->longText('description')->nullable();
             $table->integer('Gpx')->default(0);
             $table->string('GpxFileName')->nullable();
             $table->binary('GpxFile')->nullable();
