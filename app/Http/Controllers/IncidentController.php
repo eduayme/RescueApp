@@ -163,3 +163,4 @@ class IncidentController extends Controller
             ->with('error', __('messages.not_allowed'));
         }
     }
+}
