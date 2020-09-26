@@ -17,6 +17,6 @@ class Task extends Model
         'Description',
         'Gpx',
         'GpxFileName',
-        'GpxFile'
+        'GpxFile',
     ];
 }

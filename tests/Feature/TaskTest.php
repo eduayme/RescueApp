@@ -3,10 +3,8 @@
 namespace Tests\Feature;
 
 use Auth;
-use App\User;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class TaskCreationTest extends TestCase
 {
@@ -15,7 +13,6 @@ class TaskCreationTest extends TestCase
      *
      * @return void
      */
-
     use RefreshDatabase;
 
     public function test_user_can_create_task()
@@ -23,7 +20,7 @@ class TaskCreationTest extends TestCase
         $user = Auth::loginUsingId(2);
 
         $task = factory('App\Task')->create();
-        
+
         $response = $this->actingAs($user)->post('/task', $task->toArray());
 
         $response = $this->assertDatabaseHas('tasks', $task->toArray());
@@ -34,7 +31,7 @@ class TaskCreationTest extends TestCase
         $user = Auth::loginUsingId(1);
 
         $task = factory('App\Task')->create();
-        
+
         $response = $this->actingAs($user)->post('/task', $task->toArray());
 
         $reponse = $this->actingAs($user)->delete(route('deleteTask', $task->id));
@@ -47,11 +44,11 @@ class TaskCreationTest extends TestCase
         $user = Auth::loginUsingId(2);
 
         $task = factory('App\Task')->create();
-        
+
         $response = $this->actingAs($user)->post('/task', $task->toArray());
 
         $reponse = $this->actingAs($user)->delete(route('deleteTask', $task->id));
 
         $response = $this->assertDatabaseHas('tasks', $task->toArray());
-        }
+    }
 }

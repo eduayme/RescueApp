@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTasksTable extends Migration
 {
@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->integer('search_id')->unsigned();
             $table->string('sector')->nullable();
-            $table->string('status')->default("to_do");
+            $table->string('status')->default('to_do');
             $table->string('group')->nullable();
             $table->dateTime('start')->nullable();
             $table->dateTime('end')->nullable();
@@ -32,6 +32,7 @@ class CreateTasksTable extends Migration
             $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
         });
     }
+
     /**
      * Reverse the migrations.
      *
