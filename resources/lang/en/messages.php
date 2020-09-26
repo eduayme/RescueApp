@@ -11,6 +11,7 @@ return [
     'confirmed'       => 'This field does not match the confirmation.',
     'unique'          => 'This field must be unique in the data table.',
     'numeric'         => 'This field must contain a valid numeric value.',
+    'gpx_files'       => 'Only GPX files can be uploaded.',
     'updated'         => ' updated successfully.',
     'added'           => ' added successfully.',
     'deleted'         => ' deleted successfully.',

@@ -29,48 +29,28 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'search_id'       => 'required',
-            'Sector'          => 'required',
-            'Status'          => 'required', Rule::in(['to_do', 'in_progress', 'done']),
-            'Group'           => 'required',
-            'Start'           => 'required|date',
-            'End'             => 'required|date|after:Start',
-            'Type'            => 'required',
-            'Description'     => 'required',
-            'TrackingDevice1' => 'nullable',
-            'TrackingDevice2' => 'nullable',
-            'GpxFile'         => 'nullable|file|mimes:bin,dms,lrf,mar,gpx,xml',
+            'status'          => 'required', Rule::in(['to_do', 'in_progress', 'done']),
+            'gpxFile'         => 'file|mimes:bin,dms,lrf,mar,gpx,xml',
         ], [
-            'Sector.required'           => 'Please provide a sector.',
-            'Status.required'           => 'Please select a state.',
-            'Group.required'            => 'Please select a group.',
-            'Start.required'            => 'Please provide a starting date for the task.',
-            'Start.date'                => 'Please provide a valid date',
-            'End.required'              => 'Please provide an ending date for the task.',
-            'End.date'                  => 'Please provide a valid date',
-            'End.after:Start'           => 'Please select a date after the start date',
-            'Type.required'             => 'Please select a provide a type.',
-            'Description.required'      => 'Please provide a description',
-            'GpxFile.mimes'             => 'Only GPX files can be uploaded.',
+            'status.required' => __('messages.required'),
+            'gpxFile.mimes'   => __('messages.gpx_file'),
         ]);
-
-        $trackingDevice = $request->get('TrackingDevice1').' '.$request->get('TrackingDevice2');
 
         $task = new Task([
             'search_id'             => $request->get('search_id'),
-            'Sector'                => $request->get('Sector'),
-            'Status'                => $request->get('Status'),
-            'Group'                 => $request->get('Group'),
-            'Start'                 => $request->get('Start'),
-            'End'                   => $request->get('End'),
-            'Type'                  => $request->get('Type'),
-            'Description'           => $request->get('Description'),
-            'GpxFileName'           => $trackingDevice,
-            'GpxFile'               => $request['GpxFile'],
+            'sector'                => $request->get('sector'),
+            'status'                => $request->get('status'),
+            'group'                 => $request->get('group'),
+            'start'                 => $request->get('start'),
+            'end'                   => $request->get('end'),
+            'type'                  => $request->get('type'),
+            'description'           => $request->get('description'),
+            'gpxFileName'           => $request->get('gpxFileName'),
+            'gpxFile'               => $request['gpxFile'],
         ]);
 
-        if ($request->hasFile('GpxFile')) {
-            $task->Gpx = 1;
+        if ($request->hasFile('gpxFile')) {
+            $task->gpx = 1;
         }
 
         $task->save();
@@ -82,39 +62,20 @@ class TaskController extends Controller
     public function update(Request $request, Task $id)
     {
         $request->validate([
-            'Sector'          => 'required',
-            'Status'          => 'required', Rule::in(['to_do', 'in_progress', 'done']),
-            'Group'           => 'required',
-            'Start'           => 'required|date',
-            'End'             => 'required|date|after:Start',
-            'Type'            => 'required',
-            'Description'     => 'required',
-            'TrackingDevice1' => 'nullable',
-            'TrackingDevice2' => 'nullable',
-            'GpxFile'         => 'nullable|file|mimes:bin,dms,lrf,mar,gpx,xml',
+            'status'          => 'required', Rule::in(['to_do', 'in_progress', 'done']),
+            'gpxFile'         => 'file|mimes:bin,dms,lrf,mar,gpx,xml',
         ], [
-            'Sector.required'           => 'Please provide a sector.',
-            'Status.required'           => 'Please select a state.',
-            'Group.required'            => 'Please select a group.',
-            'Start.required'            => 'Please provide a starting date for the task.',
-            'Start.date'                => 'Please provide a valid date',
-            'End.required'              => 'Please provide an ending date for the task.',
-            'End.date'                  => 'Please provide a valid date',
-            'End.after:Start'           => 'Please select a date after the start date',
-            'Type.required'             => 'Please select a provide a type.',
-            'Description.required'      => 'Please provide a description',
-            'GpxFile.mimes'             => 'Only GPX files can be uploaded.',
+            'status.required' => __('messages.required'),
+            'gpxFile.mimes'   => __('messages.gpx_file'),
         ]);
-
-        $trackingDevice = $request->get('TrackingDevice1').' '.$request->get('TrackingDevice2');
 
         $id->update($request->toArray());
 
         if ($request->hasFile('GpxFile')) {
             $id->update([
-                'GpxFileName'   => $trackingDevice,
+                'GpxFileName'   => $request->get('gpxFileName'),
                 'Gpx'           => 1,
-                'GpxFile'       => $request['GpxFile'],
+                'GpxFile'       => $request['gpxFile'],
             ]);
         }
 
