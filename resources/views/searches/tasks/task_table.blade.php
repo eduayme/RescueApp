@@ -29,18 +29,18 @@
             </td>
 
             <td class="align-middle">
-                @if($task->status == "to_do")
-                    <div class="ml-3" value="To do" style="border-radius: 3px; width: 30px; height: 30px; background-color: #d9534f;">
-                            <div style="visibility: hidden;">To do</div>
-                    </div>
-                @elseif($task->status == "in_progress")
-                    <div class="ml-3" value="In progress" style="border-radius: 3px; width: 30px; height: 30px; background-color: #f0ad4e;">
-                            <div style="visibility: hidden;">In Progress</div>
-                    </div>
-                @else
-                    <div class="ml-3" value="Done" style="border-radius: 3px; width: 30px; height: 30px; background-color: #5cb85c;">
-                            <div style="visibility: hidden;">Done</div>
-                    </div>
+                @if( $task->status == "to_do" )
+                    <span class="badge badge-danger">
+                        {{ __('activity.to_do') }}
+                    </span>
+                @elseif( $task->status == "in_progress" )
+                    <span class="badge badge-warning">
+                        {{ __('activity.in_progress') }}
+                    </span>
+                @elseif( $task->status == "done" )
+                    <span class="badge badge-success">
+                        {{ __('activity.done') }}
+                    </span>
                 @endif
             </td>
 
@@ -83,11 +83,13 @@
 
             <td class="align-middle">
                 @if($task->gpx == 0)
-            	<div class="ml-2" style="border-radius: 3px; width: 30px; height: 30px; background-color: #d9534f;">
-                </div>
+                    <span class="badge badge-danger">
+                        {{ __('actions.no') }}
+                    </span>
                 @else
-                <div class="ml-2" style="border-radius: 3px; width: 30px; height: 30px; background-color: #5cb85c;">
-                </div>
+                    <span class="badge badge-success">
+                        {{ __('actions.yes') }}
+                    </span>
                 @endif
             </td>
 
