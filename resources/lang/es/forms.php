@@ -98,4 +98,5 @@ return [
     'gpx'                                       => 'GPX',
     'actions'                                   => 'Comportamiento',
     'tracking_device'                           => 'Dispositivo rastreador',
+    'file_name'                                 => 'Nombre del fichero',
 ];

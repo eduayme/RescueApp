@@ -118,7 +118,7 @@
             <!-- GPX File name - OPEN -->
             <div class="form-group col-md-4">
                 <label for="inputGpxFileName">
-                    {{ __('forms.tracking_device') }}
+                    {{ __('forms.file_name') }}
                 </label>
                 <input type="text" name="gpxFileName" class="form-control">
                 @error('gpxFileName')
@@ -129,8 +129,9 @@
 
             <!-- GPX File - OPEN -->
             <div class="form-group col-md-4">
-                <label for="exampleFormControlFile1">
-                {{ __('actions.attach') }}</label>
+                <label for="attachFile">
+                    {{ __('actions.attach'). ' ' . __('forms.gpx') }}
+                </label>
                 <input type="file" name="gpxFile" class="form-control-file"
                 accept=".gpx">
                 @error('gpxFile')

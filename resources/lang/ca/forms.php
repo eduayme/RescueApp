@@ -98,4 +98,5 @@ return [
     'gpx'                                       => 'GPX',
     'actions'                                   => 'Accions',
     'tracking_device'                           => 'Dispositiu de seguiment',
+    'file_name'                                 => 'Nom del fitxer',
 ];

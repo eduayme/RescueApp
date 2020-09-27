@@ -67,6 +67,3 @@
     @include('searches.tasks.task_table')
 </div>
 <!-- Content - CLOSE -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-</div>
-<!-- Content - CLOSE -->

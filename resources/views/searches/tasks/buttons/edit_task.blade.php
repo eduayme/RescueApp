@@ -6,9 +6,10 @@
     </button>
 </span>
 <!-- Edit user button - CLOSE -->
+
 <!-- Edit user modal - OPEN -->
 <div id="editTask-{{ $task->id }}" class="modal fade">
-    <div class="modal-dialog modal-confirm">
+    <div class="modal-dialog modal-lg modal-confirm">
 
         <!-- Modal content - OPEN -->
         <div class="modal-content">
@@ -37,8 +38,8 @@
                             <label for="inputSector">
                                 {{ __('forms.sector') }}
                             </label>
-                            <input type="text" name="Sector" class="form-control" value="{{ $task->Sector }}">
-                            @error('Sector')
+                            <input type="text" name="sector" class="form-control" value="{{ $task->sector }}">
+                            @error('sector')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -47,20 +48,8 @@
                             <label for="inputGroup">
                                 {{ __('forms.task_group') }}
                             </label>
-                            <select type="text" name="Group" class="form-control">
-                                <option disabled selected>Choose an active group</option>
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                            </select>
-                            @error('Group')
+                            <input type="text" name="group" class="form-control" id="group" value="{{ $task->group }}">
+                            @error('group')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -71,10 +60,10 @@
                             <label for="inputStart">
                                 {{ __('forms.task_start') }}
                             </label>
-                            <input type="text" name="Start" class="datepicker form-control"
-                            value="{{ $task->Start }}" 
+                            <input type="text" name="start" class="datepicker form-control"
+                            value="{{ $task->start }}"
                             >
-                            @error('Start')
+                            @error('start')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -83,10 +72,10 @@
                             <label for="inputEnd">
                                 {{ __('forms.task_end') }}
                             </label>
-                            <input type="text" name="End" class="datepicker form-control"
-                            value="{{ $task->End }}" 
+                            <input type="text" name="end" class="datepicker form-control"
+                            value="{{ $task->end }}"
                             >
-                            @error('End')
+                            @error('end')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -97,8 +86,8 @@
                             <label for="inputType">
                                 {{ __('forms.task_type') }}
                             </label>
-                            <input type="text" name="Type" class="form-control" value="{{ $task->Type }}">
-                            @error('Type')
+                            <input type="text" name="type" class="form-control" value="{{ $task->type }}">
+                            @error('type')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -107,13 +96,12 @@
                             <label for="inputState">
                                 {{ __('forms.status') }}
                             </label>
-                            <Select type="text" name="Status" class="form-control" value="
-                            {{$task->State}}"> 
-                                <option value="to_do">To do</option>
-                                <option value="in_progress">In progress</option>
-                                <option value="done">Done</option>
-                            </Select>
-                            @error('Status')
+                            <select type="text" name="status" class="form-control">
+                                <option value="to_do" {{ ($task->status == 'to_do') ? 'selected' : '' }}>{{ __('activity.to_do') }}</option>
+                                <option value="in_progress" {{ ($task->status == 'in_progress') ? 'selected' : '' }}>{{ __('activity.in_progress') }}</option>
+                                <option value="done" {{ ($task->status == 'done') ? 'selected' : '' }}>{{ __('activity.done') }}</option>
+                            </select>
+                            @error('status')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -121,43 +109,45 @@
 
                     <div class="row mt-3">
                         <div class="col text-left">
-                            <div>
-                                <label for="inputDevice">
-                                    {{ __('forms.tracking_device') }}
-                                </label>
-                                <input type="text" name="TrackingDevice1" class="form-control">
-                                @error('trackingDevice1')
-                                    <p class="alert alert-danger">{{ $message }}</p>
-                                @enderror
-                            </div>
-
+                            <label for="inputDevice">
+                                {{ __('forms.tracking_device') }}
+                            </label>
+                            <input type="text" name="trackingDevice" class="form-control">
+                            @error('trackingDevice')
+                                <p class="alert alert-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="col text-left">
+                            <label for="inputGpxFileName">
+                                {{ __('forms.file_name') }}
+                            </label>
+                            <input type="text" name="gpxFileName" class="form-control">
+                            @error('gpxFileName')
+                                <p class="alert alert-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="col text-left">
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">
-                                {{ __('actions.attach') }}</label>
-                                <input type="file" name="GpxFile" class="form-control-file"
+                                <label for="attachFile">
+                                    {{ __('actions.attach'). ' ' . __('forms.gpx') }}
+                                </label>
+                                <input type="file" name="gpxFile" class="form-control-file"
                                 accept=".gpx">
                             </div>
                         </div>
-                        <div class="col text-left">
-                            <label>-</label>
-                            <input type="text" name="TrackingDevice2" class="form-control">
-                            @error('trackingDevice2')
+                    </div>
+
+                    <div class="row mt-3 justify-content-center">
+                        <div class="form-group col-md-12 text-left">
+                            <label class="align-baseline" for="inputDescription">
+                                {{ __('forms.description') }}
+                            </label>
+                            <textarea name="sescription" class="form-control">{{ $task->sescription }}</textarea>
+                            @error('sescription')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
-
-                        <div class="row mt-3 justify-content-center">
-                            <div class="form-group col-md-12 text-left">
-                                <label class="align-baseline" for="inputDescription">
-                                    {{ __('forms.description') }}
-                                </label>
-                                <textarea name="Description" class="form-control">{{ $task->Description }}</textarea>
-                                @error('Description')
-                                    <p class="alert alert-danger">{{ $message }}</p>
-                                @enderror
-                            </div>
-                        </div>
                 </div>
                 <!-- Modal body - CLOSE -->
 
@@ -172,7 +162,7 @@
                 </div>
                 <!-- Modal footer - CLOSE -->
 
-            </form>        
+            </form>
             <!-- Form - CLOSE -->
 
         </div>

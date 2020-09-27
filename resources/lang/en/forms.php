@@ -98,4 +98,5 @@ return [
     'actions'                                   => 'Actions',
     'edit_task'                                 => 'Edit Task',
     'tracking_device'                           => 'Tracking device',
+    'file_name'                                 => 'File name',
 ];
