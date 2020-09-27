@@ -48,7 +48,7 @@
                             <label for="inputGroup">
                                 {{ __('forms.task_group') }}
                             </label>
-                            <input type="text" name="group" class="form-control" id="group" value="{{ $task->group }}">
+                            <input type="text" name="group" class="form-control" value="{{ $task->group }}">
                             @error('group')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -61,8 +61,7 @@
                                 {{ __('forms.task_start') }}
                             </label>
                             <input type="text" name="start" class="datepicker form-control"
-                            value="{{ $task->start }}"
-                            >
+                            value="{{ $task->start }}">
                             @error('start')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -73,8 +72,7 @@
                                 {{ __('forms.task_end') }}
                             </label>
                             <input type="text" name="end" class="datepicker form-control"
-                            value="{{ $task->end }}"
-                            >
+                            value="{{ $task->end }}">
                             @error('end')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -112,7 +110,7 @@
                             <label for="inputDevice">
                                 {{ __('forms.tracking_device') }}
                             </label>
-                            <input type="text" name="trackingDevice" class="form-control">
+                            <input type="text" name="trackingDevice" class="form-control" value="{{ $task->trackingDevice }}">
                             @error('trackingDevice')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -121,7 +119,7 @@
                             <label for="inputGpxFileName">
                                 {{ __('forms.file_name') }}
                             </label>
-                            <input type="text" name="gpxFileName" class="form-control">
+                            <input type="text" name="gpxFileName" class="form-control" value="{{ $task->gpxFileName }}">
                             @error('gpxFileName')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
@@ -142,8 +140,8 @@
                             <label class="align-baseline" for="inputDescription">
                                 {{ __('forms.description') }}
                             </label>
-                            <textarea name="sescription" class="form-control">{{ $task->sescription }}</textarea>
-                            @error('sescription')
+                            <textarea name="description" class="form-control">{{ $task->description }}</textarea>
+                            @error('description')
                                 <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
                         </div>
@@ -221,12 +219,23 @@
           }
         });
 
-        $('input[name="Start"]').on('apply.daterangepicker', function(ev, picker) {
+        $('input[name="start"], input[name="end"]').on('apply.daterangepicker', function(ev, picker) {
           $(this).val(picker.startDate.format('YYYY-MM-DD HH:mm:ss'));
         });
 
-        $('input[name="Start"]').on('cancel.daterangepicker', function(ev, picker) {
+        $('input[name="start"], input[name="end"]').on('cancel.daterangepicker', function(ev, picker) {
           $(this).val('');
+        });
+
+        $('input[name="start"]').on('apply.daterangepicker', function(ev, picker) {
+            var min = $('input[name="start"]').data('daterangepicker').startDate;
+            var end_curr_date = $('input[name="end"]').data('daterangepicker').startDate;
+
+            if( min > end_curr_date ) {
+                $('input[name="end"]').data('daterangepicker').startDate = min;
+            }
+
+            $('input[name="end"]').data('daterangepicker').minDate = min;
         });
 
     });

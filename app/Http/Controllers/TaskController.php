@@ -85,7 +85,7 @@ class TaskController extends Controller
         }
 
         return redirect('searches/'.$id->search_id.'#nav-tasks')
-        ->with('success', __('main.task').' '.'updated');
+        ->with('success', __('main.task').' '.$id->id.__('messages.updated'));
     }
 
     public function destroy(Task $id)

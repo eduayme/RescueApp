@@ -22,11 +22,11 @@
 		    <div class="modal-body">
 		        <div class="container padding-bottom">
                     <h5>
-                        @if ($task->Description == NULL)
+                        @if ($task->description == NULL)
                             --
                         @else
-                            <p class="line-breaks"> 
-                            	{{ $task->Description }}
+                            <p class="line-breaks">
+                            	{{ $task->description }}
                            	</p>
                         @endif
                     </h5>

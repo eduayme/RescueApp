@@ -61,7 +61,7 @@
                                             <p> {{ $task->getName() }} </p>
                                         </div>
                                         <div class="col-md-3 margin-top-sm-sm margin-bottom-sm-sm">
-                                            <select id="state" class="form-control task-select" name="state" onchange="addStyleToEditSelect(); this.form.submit()">
+                                            <select class="form-control task-select" name="state" onchange="addStyleToEditSelect(); this.form.submit()">
                                                 <option value="to_do" {{ ($task->state == 'to_do') ? 'selected' : '' }}>
                                                     {{ __('activity.to_do') }}
                                                 </option>
