@@ -8,15 +8,16 @@ class Task extends Model
 {
     protected $fillable = [
         'search_id',
-        'Sector',
-        'Status',
-        'Group',
-        'Start',
-        'End',
-        'Type',
-        'Description',
-        'Gpx',
-        'GpxFileName',
-        'GpxFile',
+        'sector',
+        'status',
+        'group',
+        'start',
+        'end',
+        'type',
+        'description',
+        'trackingDevice',
+        'gpx',
+        'gpxFileName',
+        'gpxFile',
     ];
 }

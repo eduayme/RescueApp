@@ -29,9 +29,11 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'sector'          => 'required',
             'status'          => 'required', Rule::in(['to_do', 'in_progress', 'done']),
             'gpxFile'         => 'file|mimes:bin,dms,lrf,mar,gpx,xml',
         ], [
+            'sector.required' => __('messages.required'),
             'status.required' => __('messages.required'),
             'gpxFile.mimes'   => __('messages.gpx_file'),
         ]);
@@ -45,6 +47,7 @@ class TaskController extends Controller
             'end'                   => $request->get('end'),
             'type'                  => $request->get('type'),
             'description'           => $request->get('description'),
+            'trackingDevice'        => $request->get('trackingDevice'),
             'gpxFileName'           => $request->get('gpxFileName'),
             'gpxFile'               => $request['gpxFile'],
         ]);
@@ -62,9 +65,11 @@ class TaskController extends Controller
     public function update(Request $request, Task $id)
     {
         $request->validate([
+            'sector'          => 'required',
             'status'          => 'required', Rule::in(['to_do', 'in_progress', 'done']),
             'gpxFile'         => 'file|mimes:bin,dms,lrf,mar,gpx,xml',
         ], [
+            'sector.required' => __('messages.required'),
             'status.required' => __('messages.required'),
             'gpxFile.mimes'   => __('messages.gpx_file'),
         ]);

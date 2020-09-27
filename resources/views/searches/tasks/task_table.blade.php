@@ -25,15 +25,15 @@
         <tr>
 
             <td class="align-middle">
-                {{ $task->Sector }}
+                {{ $task->sector }}
             </td>
 
             <td class="align-middle">
-                @if($task->Status == "to_do")
+                @if($task->status == "to_do")
                     <div class="ml-3" value="To do" style="border-radius: 3px; width: 30px; height: 30px; background-color: #d9534f;">
                             <div style="visibility: hidden;">To do</div>
                     </div>
-                @elseif($task->Status == "in_progress")
+                @elseif($task->status == "in_progress")
                     <div class="ml-3" value="In progress" style="border-radius: 3px; width: 30px; height: 30px; background-color: #f0ad4e;">
                             <div style="visibility: hidden;">In Progress</div>
                     </div>
@@ -45,35 +45,35 @@
             </td>
 
             <td class="align-middle">
-            	<div> Group 
-                    {{ $task->Group }}
-                </div>
+                @if ($task->group != NULL)
+            	{{ $task->group }}
+                @endif
             </td>
 
             <td class="align-middle">
-                @if ($task->Start == NULL)
+                @if ($task->start == NULL)
                     --
                 @else
                     @php
-                        $date = new Date($task->Date);
-                        echo $date->format('H:i');
+                        $date = new Date($task->start);
+                        echo $date->format('d M. Y | H:i');
                     @endphp
                 @endif
             </td>
 
             <td class="align-middle">
-                @if ($task->End == NULL)
+                @if ($task->end == NULL)
                     --
                 @else
                     @php
-                        $date = new Date($task->End);
-                        echo $date->format('H:i');
+                        $date = new Date($task->end);
+                        echo $date->format('d M. Y | H:i');
                     @endphp
                 @endif
             </td>
 
             <td class="align-middle">
-            	{{ $task->Type }}
+            	{{ $task->type }}
             </td>
 
             <td class="align-middle">
@@ -82,7 +82,7 @@
             </td>
 
             <td class="align-middle">
-                @if($task->Gpx == 0)
+                @if($task->gpx == 0)
             	<div class="ml-2" style="border-radius: 3px; width: 30px; height: 30px; background-color: #d9534f;">
                 </div>
                 @else
@@ -149,9 +149,9 @@
 
         // initialize tables
         var task_table = $('#tasks').removeAttr('width').DataTable();
-    
+
         $('#typeFilter').on('change', function(){
-            task_table.columns(5).search(this.value).draw();   
+            task_table.columns(5).search(this.value).draw();
         });
 
         $('#groupFilter').on('change', function(){
@@ -169,4 +169,3 @@
         });
     });
 </script>
-
