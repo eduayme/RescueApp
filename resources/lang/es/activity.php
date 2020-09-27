@@ -22,6 +22,4 @@ return [
     'in_progress'                   => 'En progreso',
     'done'                          => 'Finalizado',
     'every_status'                  => 'Cada estado',
-    'all_groups'                    => 'Todos los grupos',
-    'all_types'                     => 'Todos los tipos',
 ];

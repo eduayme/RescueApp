@@ -21,7 +21,4 @@ return [
     'to_do'                         => 'To do',
     'in_progress'                   => 'In progress',
     'done'                          => 'Done',
-    'every_status'                  => 'Every status',
-    'all_groups'                    => 'All groups',
-    'all_types'                     => 'All types',
 ];
