@@ -24,6 +24,7 @@ return [
     'data'                          => 'Data',
     'ap'                            => 'Action Plan',
     'incident'                      => 'Incident',
+    'task'                          => 'Task',
     'incidents'                     => 'Incidents',
     'version'                       => 'Version',
     'description'                   => 'Description',

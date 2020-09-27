@@ -1,19 +1,18 @@
 <!-- Delete user button - OPEN -->
-<span data-toggle="modal" href="#deleteModal-{{ $user->id }}"
-<?php if ($user->id == Auth::user()->id) { ?> style="visibility: hidden" <?php } ?> >
-    <button type="button" class="btn btn-sm btn-outline-danger"
+<span data-toggle="modal" href="#deleteTaskModal-{{ $task->id }}">
+    <button type="button" class="btn btn-sm btn-outline-danger btn-margin"
     data-toggle="tooltip" data-placement="top" title="{{ __('actions.delete') }}">
         <span class="octicon octicon-trashcan"></span>
     </button>
 </span>
 <!-- Delete user button - CLOSE -->
 <!-- Delete user modal - OPEN -->
-<form action="{{ route('users.destroy', $user->id) }}" method="post" style="display: inline">
+<form action="{{ route('deleteTask', $task->id) }}" method="post">
     @csrf
     @method('DELETE')
 
     <!-- Modal - OPEN -->
-    <div id="deleteModal-{{ $user->id }}" class="modal fade">
+    <div id="deleteTaskModal-{{ $task->id }}" class="modal fade">
         <div class="modal-dialog modal-confirm">
 
             <!-- Modal content - OPEN -->

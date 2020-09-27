@@ -1,8 +1,8 @@
 <!-- View user button - OPEN -->
 <span data-toggle="modal" href="#viewModal-{{ $user->id }}">
-    <button type="button" class="btn btn-sm btn-outline-dark">
+    <button type="button" class="btn btn-sm btn-outline-dark"
+    data-toggle="tooltip" data-placement="top" title="{{ __('actions.view') }}">
         <span class="octicon octicon-eye"></span>
-        {{ __('actions.view') }}
     </button>
 </span>
 <!-- View user button - CLOSE -->

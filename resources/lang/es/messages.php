@@ -12,6 +12,7 @@ return [
     'unique'          => 'Este campo debe ser único en la tabla de datos.',
     'numeric'         => 'Este campo debe ser un número válido.',
     'updated'         => ' se ha actualizado correctamente.',
+    'gpx_file'        => 'Solo se pueden subir ficheros GPX.',
     'added'           => ' se ha añadido correctamente.',
     'deleted'         => ' se ha eliminado correctamente.',
     'not_allowed'     => 'No tienes permisos para hacer esta acción.',
