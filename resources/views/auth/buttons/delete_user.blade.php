@@ -1,9 +1,9 @@
 <!-- Delete user button - OPEN -->
 <span data-toggle="modal" href="#deleteModal-{{ $user->id }}"
 <?php if ($user->id == Auth::user()->id) { ?> style="visibility: hidden" <?php } ?> >
-    <button type="button" class="btn btn-sm btn-outline-danger">
+    <button type="button" class="btn btn-sm btn-outline-danger"
+    data-toggle="tooltip" data-placement="top" title="{{ __('actions.delete') }}">
         <span class="octicon octicon-trashcan"></span>
-        {{ __('actions.delete') }}
     </button>
 </span>
 <!-- Delete user button - CLOSE -->
