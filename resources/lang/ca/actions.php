@@ -2,6 +2,11 @@
 
 return [
     'actions'           => 'Accions',
+    'attach'            => 'Adjuntar',
+    'add'               => 'Afegir',
+    'view'              => 'Veure',
+    'edit'              => 'Editar',
+    'create'            => 'Crear',
     'add'               => 'Afegir',
     'view'              => 'Veure',
     'edit'              => 'Editar',
@@ -18,8 +23,10 @@ return [
     'closing'           => 'Tancament',
     'no'                => 'No',
     'yes'               => 'Si',
-    'filter_by_status'  => 'Filtrar per estat',
-    'filter_by_dates'   => 'Filtrar per dates',
-    'filter_by_region'  => 'Filtrar per regió',
-    'filter_by_village' => 'Filtrar per municipi',
+    'filter_by_status'  => 'Filtrar estat',
+    'filter_by_dates'   => 'Filtrar dates',
+    'filter_by_region'  => 'Filtrar regió',
+    'filter_by_village' => 'Filtrar municipi',
+    'filter_by_groups'  => 'Filtrar grups',
+    'filter_by_types'   => 'Filtrar tipus',
 ];

@@ -6,6 +6,7 @@ use App\ActionPlan;
 use App\Incident;
 use App\LostPerson;
 use App\Search;
+use App\Task;
 use Auth;
 use Illuminate\Http\Request;
 use Validator;
@@ -100,12 +101,12 @@ class SearchController extends Controller
             'user_finalization_id'           => $request->get('user_finalization_id'),
 
             // person alerts
-            'is_lost_person'                      => $request->get('is_lost_person'),
-            'is_contact_person'                   => $request->get('is_contact_person'),
-            'name_person_alerts'                  => $request->get('name_person_alerts'),
-            'affinity_person_alerts'              => $request->get('affinity_person_alerts'),
-            'phone_number_person_alerts'          => $request->get('phone_number_person_alerts'),
-            'address_person_alerts'               => $request->get('address_person_alerts'),
+            'is_lost_person'                 => $request->get('is_lost_person'),
+            'is_contact_person'              => $request->get('is_contact_person'),
+            'name_person_alerts'             => $request->get('name_person_alerts'),
+            'affinity_person_alerts'         => $request->get('affinity_person_alerts'),
+            'phone_number_person_alerts'     => $request->get('phone_number_person_alerts'),
+            'address_person_alerts'          => $request->get('address_person_alerts'),
 
             // incident
             'municipality_last_place_seen'   => $request->get('municipality_last_place_seen'),
@@ -165,6 +166,18 @@ class SearchController extends Controller
         $search = Search::find($id);
         $action_plans = ActionPlan::where('search_id', $id)->get();
         $incidents = Incident::where('search_id', $id)->get();
+        $tasks = Task::where('search_id', $id)->get();
+        $taskGroups = $tasks->pluck('group')->filter()->unique()->sort();
+        $taskTypes = $tasks->pluck('type')->filter()->unique();
+
+        return view('searches.view', compact(
+            'search',
+            'action_plans',
+            'incidents',
+            'tasks',
+            'taskGroups',
+            'taskTypes'
+        ));
 
         return view('searches.view', compact('search', 'action_plans', 'incidents'));
     }

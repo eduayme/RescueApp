@@ -11,6 +11,7 @@ return [
     'confirmed'       => 'Aquest camp no coincideix amb la confirmació.',
     'unique'          => 'Aquest camp ha de ser únic a la taula de dades.',
     'numeric'         => 'Aquest camp ha de ser un número vàlid.',
+    'gpx_file'        => 'Només es poden pujar fitxers GPX.',
     'updated'         => " s'ha actualitzat correctament.",
     'added'           => " s'ha afegit correctament.",
     'deleted'         => " s'ha eliminat correctament.",

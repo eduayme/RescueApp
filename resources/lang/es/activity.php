@@ -21,4 +21,5 @@ return [
     'to_do'                         => 'Pendiente',
     'in_progress'                   => 'En progreso',
     'done'                          => 'Finalizado',
+    'every_status'                  => 'Cada estado',
 ];

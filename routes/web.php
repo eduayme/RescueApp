@@ -16,6 +16,19 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('searches', 'SearchController');
 
+    // Task Route
+
+    Route::get('task/create/{search_id}', 'TaskController@create')->name('createTask');
+
+    Route::post('task/post', 'TaskController@store')->name('storeTask');
+
+    Route::post('task', 'TaskController@store')->name('postTask');
+
+    Route::delete('task/{id}', 'TaskController@destroy')->name('deleteTask');
+
+    Route::patch('task/{id}', 'TaskController@update')->name('editTask');
+    //
+
     Route::get('/', ['uses' => 'SearchController@index', 'as' => 'index']);
 
     Route::get('/searches', ['uses' => 'SearchController@index', 'as' => 'searches']);
