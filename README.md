@@ -49,6 +49,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://eniabiola.github.io"><img src="https://avatars2.githubusercontent.com/u/46572982?v=4" width="100px;" alt=""/><br /><sub><b>Awosanya Enitan</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=eniabiola" title="Code">💻</a> <a href="#translation-eniabiola" title="Translation">🌍</a></td>
     <td align="center"><a href="http://herpderp.ca"><img src="https://avatars2.githubusercontent.com/u/141931?v=4" width="100px;" alt=""/><br /><sub><b>Jordan Evans</b></sub></a><br /><a href="#translation-aceofspades19" title="Translation">🌍</a> <a href="https://github.com/eduayme/RescueApp/commits?author=aceofspades19" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/AleksandarMitevski"><img src="https://avatars3.githubusercontent.com/u/59975218?v=4" width="100px;" alt=""/><br /><sub><b>AleksandarMitevski</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=AleksandarMitevski" title="Code">💻</a> <a href="#translation-AleksandarMitevski" title="Translation">🌍</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
