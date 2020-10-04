@@ -94,3 +94,9 @@ Route::get('locale-en', function () {
 
     return back();
 });
+
+Route::get('locale-de', function () {
+    session(['locale' => 'de']);
+
+    return back();
+});

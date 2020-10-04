@@ -15,6 +15,7 @@ return [
     'catalan'                       => 'Catalan',
     'spanish'                       => 'Spanish',
     'english'                       => 'English',
+    'german'                        => 'German',
     'version'                       => 'Version',
     'free'                          => 'Free',
     'open_source'                   => 'Open Source',
