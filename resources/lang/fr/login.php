@@ -5,5 +5,5 @@ return [
     'email'    => 'Email',
     'password' => 'Mot de passe',
     'remember' => 'Souviens-toi de moi',
-    'forgot'   => 'j ai oublié mon mot de passe',
+    'forgot'   => 'J ai oublié mon mot de passe',
 ];
