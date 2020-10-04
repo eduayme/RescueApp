@@ -5,7 +5,7 @@ return [
     'roles'          => 'Rôles',
     'permission'     => 'Autorisation',
     'role'           => 'Rôle',
-    'list'           => 'liste',
+    'list'           => 'Liste',
     'display_name'   => 'Afficher un nom',
     'name'           => 'Nom',
     'assign'         => 'Attribuer',
