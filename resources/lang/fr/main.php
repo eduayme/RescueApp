@@ -55,7 +55,7 @@ return [
     'information_collected_detail'  => 'Notre site web peut collecter des informations personnelles.',
     'information_purpose'           => 'Objet des informations recueillies',
     'information_purpose_detail'    => 'Notre site web utilise les informations recueillies avec votre consentement explicite pour gérer une base de données destinée à l\'enregistrement d\'informations liées à des recherches ou d\'autres informations pertinentes connexes.',
-    'information_control'           => 'Control de l\'information',
+    'information_control'           => 'Contrôle de l\'information',
     'information_control_detail'    => 'Les informations personnelles collectées ne seront pas vendues, transférées ou distribuées sans le consentement de l\'utilisateur, à moins qu\'un juge ne le demande sur ordonnance du tribunal.',
     'security_measures'             => 'Mesures de sécurité',
     'security_measures_detail'      => 'Notre site web maintient les niveaux de sécurité de protection de vos données conformément au "Royal Decree 1720/2007", du 21 décembre, qui approuve le "Regulation for the implementation of Organic Law 15/1999", du 13 décembre, de protection des données à caractère personnel et met à votre disposition tous les moyens techniques pour éviter la perte, le mauvais usage, l\'altération, l\'utilisation non autorisée et le vol des données que vous fournissez, sans préjudice d\'informer que les mesures de sécurité sur Internet ne sont pas inexpugnables.',

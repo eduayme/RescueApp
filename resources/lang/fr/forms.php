@@ -18,7 +18,7 @@ return [
     'chose_option'                              => 'Choisir une option',
     'alertant'                                  => 'Alerte',
     'is_the_lost_person'                        => 'Est la personne recherchée',
-    'not_is_the_lost_person'                    => 'N\'est pas la personne recherchée,
+    'not_is_the_lost_person'                    => 'N\'est pas la personne recherchée',
     'is_the_contact_person'                     => 'Est la personne à contacter',
     'not_is_the_contact_person'                 => 'N\'est pas la personne à contacter',
     'age'                                       => 'Âge',
