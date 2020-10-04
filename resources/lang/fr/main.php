@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'home'                          => 'Accueil',
@@ -8,9 +8,9 @@ return [
     'searches'                      => 'Recherches',
     'practices'                     => 'Les pratiques',
     'lost_person'                   => 'Personne perdue',
-    'login'                         => 'S identifier',
+    'login'                         => 'S'identifier',
     'logout'                        => 'Se déconnecter',
-    'register'                      => 'S inscrire',
+    'register'                      => 'S'inscrire',
     'language'                      => 'Langue',
     'catalan'                       => 'Catalan',
     'spanish'                       => 'Espagnol',

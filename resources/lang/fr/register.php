@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 
 return [
-    'register'              => 'S inscrire',
+    'register'              => 'S'inscrire',
     'name'                  => 'Nom',
-    'id'                    => 'Carte d identité',
+    'id'                    => 'Carte d'identité',
     'age'                   => 'Âge',
     'profile'               => 'Profil',
     'chose_profile'         => 'Choisissez votre profil',

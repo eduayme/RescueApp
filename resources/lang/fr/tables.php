@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'emptyTable'     => 'Il n y a pas de données disponibles dans le tableau',
