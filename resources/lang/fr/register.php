@@ -3,7 +3,7 @@
 return [
     'register'              => 'S inscrire',
     'name'                  => 'Nom',
-    'id'                    => 'carte d identité',
+    'id'                    => 'Carte d identité',
     'age'                   => 'Âge',
     'profile'               => 'Profil',
     'chose_profile'         => 'Choisissez votre profil',
