@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'emptyTable'     => 'Il n'y a pas de données disponibles dans le tableau',
+    'emptyTable'     => 'Il n y a pas de données disponibles dans le tableau',
     'info'           => 'Affichage du total des entrées',
     'infoEmpty'      => 'Aucune entrée à afficher',
     'infoFiltered'   => '(filtré à partir du total des entrées_MAX_)',
