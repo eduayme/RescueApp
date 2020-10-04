@@ -6,6 +6,7 @@ return [
     'mental_or_psychological_illness' => 'Enfermedad mental o psicológica',
     'autolithic_behaviors'            => 'Conductas autolíticas',
     'hiker'                           => 'Excursionista o senderista',
+    'collector'                       => 'Recolector',
     'mushroom_finder'                 => 'Buscador de setas',
     'none_of_the_above'               => 'Ninguna de las anteriores',
 ];
