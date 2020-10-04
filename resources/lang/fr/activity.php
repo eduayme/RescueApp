@@ -2,7 +2,7 @@
 
 return [
     'login'                         => 'Connecté',
-    'registration'                  => 'enregistrement',
+    'registration'                  => 'Enregistrement',
     'view_home'                     => 'Affichage de la maison',
     'view_searches'                 => 'Affichage des recherches',
     'view_lost_people_details'      => 'Affichage des détails des personnes perdues',
@@ -12,7 +12,7 @@ return [
     'clear_logs'                    => 'Effacer les journaux',
     'time'                          => 'Temps',
     'description'                   => 'La description',
-    'user'                          => 'l utilisateur',
+    'user'                          => 'Utilisateur',
     'method'                        => 'Méthode',
     'route'                         => 'Route',
     'ip_address'                    => 'Adresse IP',
@@ -20,5 +20,5 @@ return [
     'os'                            => 'OS',
     'to_do'                         => 'Faire',
     'in_progress'                   => 'En cours',
-    'done'                          => 'terminé',
+    'done'                          => 'Terminé',
 ];
