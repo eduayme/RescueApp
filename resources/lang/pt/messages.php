@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'required'        => 'Este campo é obrigatório.',
+    'min'             => 'Este campo deve conter pelo menos 2 personagens.',
+    'min8'            => 'Este campo deve conter pelo menos 8 Personagens.',
+    'min8_max10'      => 'Este campo deve conter entre 8 e 10 personagens.',
+    'max'             => 'Este campo deve conter menos de 50 personagens.',
+    'max10'           => 'Este campo deve conter menos de 10 personagens.',
+    'email'           => 'Este campo deve conter um endereço de e-mail ',
+    'confirmed'       => 'Este campo não corresponde à confirmação. ',
+    'unique'          => 'Este campo deve ser único nos dados mesa.',
+    'numeric'         => 'Este campo deve conter um valor numérico válido.',
+    'gpx_files'       => 'Apenas arquivos GPX podem ser carregados.',
+    'updated'         => ' Atualizado com sucesso.',
+    'added'           => ' adicionado com sucesso.',
+    'deleted'         => ' Apagado com sucesso.',
+    'not_allowed'     => 'Você não tem permissão para realizar esta ação.',
+    'error_form'      => 'Erro na entrada do formulário.',
+    'no_searches'     => 'Nenhuma pesquisa foi registrada.',
+    'no_practices'    => 'Nenhuma prática foi registrada.',
+    'are_you_sure'    => 'Você tem certeza? Essa ação não pode ser desfeita.',
+    'num_unique'      => 'Este número deve ser único na tabela de dados. ',
+    'closed_search'   => 'Esta investigação está atualmente encerrada.',
+    'closed_practice' => 'Esta prática está atualmente encerrada.',
+];
