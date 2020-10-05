@@ -81,8 +81,8 @@ return [
     */
 
     'locale'  => 'ca',
-    'locales' => ['ca', 'es', 'en', 'de', 'pt'],
-
+    'locales' => ['ca', 'es', 'en', 'fr' 'de', 'pt'],
+  
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale

@@ -9,7 +9,6 @@ use Session;
 class Locale
 {
     protected $supported_languages = ['ca', 'es', 'en', 'fr', 'de', 'pt'];
-
     /**
      * Handle an incoming request.
      *
