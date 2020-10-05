@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'required'        => 'Ce champ est nécessaire.',
+    'min'             => 'Ce champ doit contenir au moins 2 caractères.',
+    'min8'            => 'Ce champ doit contenir au moins 8 caractères.',
+    'min8_max10'      => 'Ce champ doit contenir entre 8 et 10 caractères.',
+    'max'             => 'Ce champ doit contenir moins de 50 caractères.',
+    'max10'           => 'Ce champ doit contenir moins de 10 caractères.',
+    'email'           => 'Ce champ doit contenir une adresse mail valide.',
+    'confirmed'       => 'Ce champ ne correspond pas au champ précédent.',
+    'unique'          => 'Ce champ doit être unique.',
+    'numeric'         => 'Ce champ doit contenir une valeur numérique valide.',
+    'gpx_files'       => 'Seuls les fichiers GPX peuvent être chargés.',
+    'updated'         => ' chargé avec succès.',
+    'added'           => ' ajouté avec succès.',
+    'deleted'         => ' supprimé avec succès.',
+    'not_allowed'     => 'Vous n\'avez pas la permission de réaliser cette action.',
+    'error_form'      => 'Erreur dans le champ de recherche.',
+    'no_searches'     => 'Aucune recherche n\'a été enregistrée.',
+    'no_practices'    => 'Aucune pratique n\'a été enregistrée.',
+    'are_you_sure'    => 'Êtes-vous sûr ? Cette action est irréversible.',
+    'num_unique'      => 'Ce nombre doit être unique dans la table de données.',
+    'closed_search'   => 'Cette enquête est actuellement fermée.',
+    'closed_practice' => 'Cette pratique est actuellement fermée.',
+];
