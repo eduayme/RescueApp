@@ -77,26 +77,34 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/permissions', 'PermissionController');
 });
 
+/* Languages */
 Route::get('locale-ca', function () {
     session(['locale' => 'ca']);
 
     return back();
 });
-
 Route::get('locale-es', function () {
     session(['locale' => 'es']);
 
     return back();
 });
-
 Route::get('locale-en', function () {
     session(['locale' => 'en']);
 
     return back();
 });
+Route::get('locale-fr', function () {
+    session(['locale' => 'fr']);
 
+    return back();
+});
+Route::get('locale-de', function () {
+    session(['locale' => 'de']);
+  
+    return back();
+});
 Route::get('locale-pt', function () {
     session(['locale' => 'pt']);
-
+  
     return back();
 });

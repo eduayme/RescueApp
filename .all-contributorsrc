@@ -163,6 +163,24 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "besnardf",
+      "name": "Florent Besnard",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22943342?v=4",
+      "profile": "https://fbesnard.com",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "BerniWittmann",
+      "name": "Bernhard Wittmann",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/17594215?v=4",
+      "profile": "http://bernhardwittmann.com",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,

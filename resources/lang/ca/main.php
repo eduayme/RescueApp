@@ -15,6 +15,8 @@ return [
     'catalan'                       => 'Català',
     'spanish'                       => 'Castellà',
     'english'                       => 'Anglès',
+    'french'                        => 'Francès',
+    'german'                        => 'Alemán',
     'portuguese'                    => 'Portuguès',
     'version'                       => 'Versió',
     'free'                          => 'Gratis && Codi Obert',
