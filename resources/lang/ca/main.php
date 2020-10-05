@@ -17,6 +17,7 @@ return [
     'english'                       => 'Anglès',
     'french'                        => 'Francès',
     'german'                        => 'Alemán',
+    'portuguese'                    => 'Portuguès',
     'version'                       => 'Versió',
     'free'                          => 'Gratis && Codi Obert',
     'open_source'                   => 'Open Source',

@@ -120,6 +120,7 @@
                             <a class="dropdown-item" href="/locale-en"> {{ __('main.english') }} </a>
                             <a class="dropdown-item" href="/locale-fr"> {{ __('main.french') }} </a>
                             <a class="dropdown-item" href="/locale-de"> {{ __('main.german') }} </a>
+                            <a class="dropdown-item" href="/locale-pt"> {{ __('main.portuguese') }} </a>
                         </div>
                     </li>
                     <!-- Language - CLOSE -->
