@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'failed' => 'Erreur lors de la tentative d\'authentification',
+    'login'    => 'Connexion',
+    'logout'   => 'Déconnexion',
+    'register' => 'Inscription',
+    'failed'   => 'Erreur lors de la tentative d\'authentification',
 ];

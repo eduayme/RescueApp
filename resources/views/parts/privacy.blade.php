@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('main.privacy_policy'))
+@section('title', __('footer.privacy_policy'))
 
 @section('content')
 
@@ -16,24 +16,24 @@
         <!-- Go back button - CLOSE -->
 
         <h1 class="margin-top">
-            {{ __('main.privacy_policy') }}
+            {{ __('footer.privacy_policy') }}
         </h1>
-        <p class="margin-top-sm text-justify">{{ __('main.privacy_policy_detail') }}</p>
+        <p class="margin-top-sm text-justify">{{ __('privacy.privacy_policy_detail') }}</p>
 
         <h3 class="margin-top">
-            {{ __('main.information_collected') }}
+            {{ __('privacy.information_collected') }}
         </h3>
-        <p class="text-justify">{{ __('main.information_collected_detail') }}</p>
+        <p class="text-justify">{{ __('privacy.information_collected_detail') }}</p>
 
         <h3 class="margin-top">
-            {{ __('main.information_purpose') }}
+            {{ __('privacy.information_purpose') }}
         </h3>
-        <p class="text-justify">{{ __('main.information_purpose_detail') }}</p>
+        <p class="text-justify">{{ __('privacy.information_purpose_detail') }}</p>
 
         <h3 class="margin-top">
-            {{ __('main.information_control') }}
+            {{ __('privacy.information_control') }}
         </h3>
-        <p class="text-justify">{{ __('main.information_control_detail') }}</p>
+        <p class="text-justify">{{ __('privacy.information_control_detail') }}</p>
 
     </div>
     <!-- Content - CLOSE -->
