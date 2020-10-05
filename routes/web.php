@@ -100,11 +100,11 @@ Route::get('locale-fr', function () {
 });
 Route::get('locale-de', function () {
     session(['locale' => 'de']);
-  
+
     return back();
 });
 Route::get('locale-pt', function () {
     session(['locale' => 'pt']);
-  
+
     return back();
 });
