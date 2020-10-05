@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'failed' => 'Error en intentar iniciar sessió',
+    'login'    => 'Iniciar sessió',
+    'logout'   => 'Tancar sessió',
+    'register' => 'Registrar-se',
+    'failed'   => 'Error en intentar iniciar sessió',
 ];
