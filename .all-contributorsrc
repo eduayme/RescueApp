@@ -172,6 +172,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "BerniWittmann",
+      "name": "Bernhard Wittmann",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/17594215?v=4",
+      "profile": "http://bernhardwittmann.com",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,
