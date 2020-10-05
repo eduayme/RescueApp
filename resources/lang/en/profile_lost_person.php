@@ -6,7 +6,7 @@ return [
     'mental_or_psychological_illness' => 'Mental or psychological illness',
     'autolithic_behaviors'            => 'Autolithic behaviors',
     'hiker'                           => 'Hiker',
-    'collector'                       => 'Collector'
+    'collector'                       => 'Collector',
     'mushroom_finder'                 => 'Mushroom finder',
     'none_of_the_above'               => 'None of the above',
 ];
