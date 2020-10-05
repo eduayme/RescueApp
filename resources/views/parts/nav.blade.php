@@ -51,6 +51,7 @@
                         <a class="dropdown-item" href="/locale-ca"> {{ __('main.catalan') }} </a>
                         <a class="dropdown-item" href="/locale-es"> {{ __('main.spanish') }} </a>
                         <a class="dropdown-item" href="/locale-en"> {{ __('main.english') }} </a>
+                        <a class="dropdown-item" href="/locale-fr"> {{ __('main.french') }} </a>
                         <a class="dropdown-item" href="/locale-de"> {{ __('main.german') }} </a>
                     </div>
                 </li>
