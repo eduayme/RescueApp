@@ -15,6 +15,7 @@ return [
     'catalan'                       => 'Katalanisch',
     'spanish'                       => 'Spanisch',
     'english'                       => 'Englisch',
+    'french'                        => 'Französisch',
     'german'                        => 'Deutsch',
     'version'                       => 'Version',
     'free'                          => 'Kostenlos',
