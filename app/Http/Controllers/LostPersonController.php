@@ -103,6 +103,7 @@ class LostPersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         $lost_person = LostPerson::find($id);
@@ -118,6 +119,7 @@ class LostPersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $lost_person = LostPerson::find($id);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ActionPlan;
 use App\Incident;
+use App\InvolvedPerson;
 use App\LostPerson;
 use App\Search;
 use App\Task;
@@ -169,6 +170,7 @@ class SearchController extends Controller
         $tasks = Task::where('search_id', $id)->get();
         $taskGroups = $tasks->pluck('group')->filter()->unique()->sort();
         $taskTypes = $tasks->pluck('type')->filter()->unique();
+        $involved = InvolvedPerson::where('search_id', $id)->get();
 
         return view('searches.view', compact(
             'search',
@@ -176,7 +178,8 @@ class SearchController extends Controller
             'incidents',
             'tasks',
             'taskGroups',
-            'taskTypes'
+            'taskTypes',
+            'involved'
         ));
 
         return view('searches.view', compact('search', 'action_plans', 'incidents'));

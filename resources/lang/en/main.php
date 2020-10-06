@@ -63,4 +63,9 @@ return [
     'terms_modifications_detail'    => 'Due to the nature of this web portal, we reserve the possibility of making modifications and updates on the information contained, as well as the configuration, design and availability of the portal itself at any time and without the need for prior notice.',
     'terms_jurisdiction'            => 'Applicable law and jurisdiction',
     'terms_jurisdiction_detail'     => 'For the resolution of all disputes or issues related to this website or the activities it has developed, Spanish legislation will be applicable, to which the parties are expressly submitted, being competent for the resolution of all Disputes derived or related to its use of the Courts and Tribunals of Girona.',
+    'involved_name'                 => 'Name / Team',
+    'involved_total_people'         => 'N°',
+    'involved_vehicle'              => 'Vehicle',
+    'involved_phone'                => 'Phone',
+    'involved_people'               => 'People',
 ];

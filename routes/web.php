@@ -58,6 +58,8 @@ Route::group(['middleware' => 'auth'], function () {
         return view('parts.service');
     });
 
+    Route::get('involved-person/{id}', 'InvolvedPersonController@show')->name('show_involved_person');
+
     Route::prefix('manage')->group(function () {
         Route::resource('users', 'UserController');
         Route::get('/users', 'UserController@index')->name('users');
@@ -75,6 +77,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/permissions/addpermission/{user_id}', 'PermissionController@storeAssignPermission')->name('store_user_permission');
     Route::resource('/roles', 'RoleController');
     Route::resource('/permissions', 'PermissionController');
+
+    Route::prefix('resoruces')->group(function() {
+        Route::get('/involved/{search}', 'InvolvedPersonController@create')->name('create_involved_people');
+        Route::post('/involed', 'InvolvedPersonController@store')->name('store_involved_people');
+        Route::put('/involved/{id}', 'InvolvedPersonController@update')->name('update_involved_people');
+        Route::delete('/involved/{id}', 'InvolvedPersonController@destroy')->name('destroy_involved_people');
+    });
 });
 
 Route::get('locale-ca', function () {

@@ -105,6 +105,11 @@ class Search extends Model
         return $this->hasMany('App\LostPerson', 'search_id', 'id');
     }
 
+    public function involved_people()
+    {
+        return $this->hasMany('App\InvolvedPerson', 'search_id', 'id');
+    }
+
     public static function boot()
     {
         parent::boot();
