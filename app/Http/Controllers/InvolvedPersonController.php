@@ -13,7 +13,7 @@ class InvolvedPersonController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,8 +23,8 @@ class InvolvedPersonController extends Controller
             'name' => 'required|string|min:2|max:50',
         ], [
             'name.required' => __('messages.required'),
-            'name.min' => __('messages.min'),
-            'name.max' => __('messages.max'),
+            'name.min'      => __('messages.min'),
+            'name.max'      => __('messages.max'),
         ]);
 
         $involved_person = new InvolvedPerson([
@@ -33,7 +33,7 @@ class InvolvedPersonController extends Controller
             'total_people'  => $request->get('total_people'),
             'vehicle'       => $request->get('vehicle'),
             'phone_number'  => $request->get('phone'),
-            'people'        => $request->get('people')
+            'people'        => $request->get('people'),
         ]);
 
         $involved_person->user_creation_id = \Auth::user()->id;
@@ -49,8 +49,8 @@ class InvolvedPersonController extends Controller
     /**
      * Updates a resoruce.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int                       $id
+     * @param \Illuminate\Http\Request  $request
+     * @param int                       $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -72,7 +72,7 @@ class InvolvedPersonController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int  $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -87,7 +87,7 @@ class InvolvedPersonController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int  $id
      *
      * @return \Illuminate\Http\Response
      */
