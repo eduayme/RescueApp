@@ -163,6 +163,42 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "besnardf",
+      "name": "Florent Besnard",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22943342?v=4",
+      "profile": "https://fbesnard.com",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "BerniWittmann",
+      "name": "Bernhard Wittmann",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/17594215?v=4",
+      "profile": "http://bernhardwittmann.com",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "m4tr1k",
+      "name": "Francisco Fernandes",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12871065?v=4",
+      "profile": "https://github.com/m4tr1k",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "M4yankChoudhary",
+      "name": "Mayank Choudhary",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/42598915?v=4",
+      "profile": "https://github.com/M4yankChoudhary",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,

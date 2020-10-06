@@ -24,7 +24,7 @@
                     <!-- Data tab -OPEN -->
                     <a class="nav-item nav-link @if ($loop->first) active @endif" id="nav-{{$actionp->version}}-tab" data-toggle="tab"
                        href="#nav-{{$actionp->version}}" role="tab" aria-controls="nav-{{$actionp->version}}" aria-selected="true">
-                        {{ __('main.version') }} {{ $actionp->version }}
+                        {{ __('footer.version') }} {{ $actionp->version }}
                     </a>
                     <!-- Data tab - CLOSE -->
                 @endforeach

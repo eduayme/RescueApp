@@ -51,6 +51,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/AleksandarMitevski"><img src="https://avatars3.githubusercontent.com/u/59975218?v=4" width="100px;" alt=""/><br /><sub><b>AleksandarMitevski</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=AleksandarMitevski" title="Code">💻</a> <a href="#translation-AleksandarMitevski" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://fbesnard.com"><img src="https://avatars0.githubusercontent.com/u/22943342?v=4" width="100px;" alt=""/><br /><sub><b>Florent Besnard</b></sub></a><br /><a href="#translation-besnardf" title="Translation">🌍</a></td>
+    <td align="center"><a href="http://bernhardwittmann.com"><img src="https://avatars1.githubusercontent.com/u/17594215?v=4" width="100px;" alt=""/><br /><sub><b>Bernhard Wittmann</b></sub></a><br /><a href="#translation-BerniWittmann" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/m4tr1k"><img src="https://avatars0.githubusercontent.com/u/12871065?v=4" width="100px;" alt=""/><br /><sub><b>Francisco Fernandes</b></sub></a><br /><a href="#translation-m4tr1k" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/M4yankChoudhary"><img src="https://avatars2.githubusercontent.com/u/42598915?v=4" width="100px;" alt=""/><br /><sub><b>Mayank Choudhary</b></sub></a><br /><a href="#translation-M4yankChoudhary" title="Translation">🌍</a></td>
   </tr>
 </table>
 

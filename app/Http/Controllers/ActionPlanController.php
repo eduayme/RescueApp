@@ -61,7 +61,7 @@ class ActionPlanController extends Controller
         }
 
         return redirect('searches/'.$id.'/#nav-ap')
-        ->with('success', __('main.version').' '.$action_plan->version.__('messages.added'));
+        ->with('success', __('footer.version').' '.$action_plan->version.__('messages.added'));
     }
 
     /**
@@ -98,7 +98,7 @@ class ActionPlanController extends Controller
         $ap->save();
 
         return redirect('searches/'.$ap->search_id.'/#nav-ap')
-            ->with('success', __('main.version').' '.$ap->version.__('messages.updated'));
+            ->with('success', __('footer.version').' '.$ap->version.__('messages.updated'));
     }
 
     /**
@@ -118,7 +118,7 @@ class ActionPlanController extends Controller
             $ap->delete();
 
             return redirect('searches/'.$ap->search_id.'/#nav-ap')
-                ->with('success', __('main.version').' '.$ap->version.__('messages.deleted'));
+                ->with('success', __('footer.version').' '.$ap->version.__('messages.deleted'));
         } else {
             return redirect('searches/'.$search->id)
                 ->with('error', __('messages.not_allowed'));
