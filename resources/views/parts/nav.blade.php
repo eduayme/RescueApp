@@ -48,9 +48,12 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/locale-ca"> {{ __('main.catalan') }} </a>
-                        <a class="dropdown-item" href="/locale-es"> {{ __('main.spanish') }} </a>
-                        <a class="dropdown-item" href="/locale-en"> {{ __('main.english') }} </a>
+                        <a class="dropdown-item" href="/locale-ca"> {{ __('languages.catalan') }} </a>
+                        <a class="dropdown-item" href="/locale-es"> {{ __('languages.spanish') }} </a>
+                        <a class="dropdown-item" href="/locale-en"> {{ __('languages.english') }} </a>
+                        <a class="dropdown-item" href="/locale-fr"> {{ __('languages.french') }} </a>
+                        <a class="dropdown-item" href="/locale-de"> {{ __('languages.german') }} </a>
+                        <a class="dropdown-item" href="/locale-pt"> {{ __('languages.portuguese') }} </a>
                     </div>
                 </li>
                 <!-- Language - CLOSE -->
@@ -62,7 +65,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">
                         <span class="octicon octicon-sign-in"></span>
-                        {{ __('main.login') }}
+                        {{ __('auth.login') }}
                     </a>
                 </li>
                 <!-- Login button - CLOSE -->
@@ -72,7 +75,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">
                             <span class="octicon octicon-person"></span>
-                            {{ __('main.register') }}
+                            {{ __('auth.register') }}
                         </a>
                     </li>
                 @endif
@@ -144,7 +147,7 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <span class="octicon octicon-sign-out"></span>
-                            {{ __('main.logout') }}
+                            {{ __('auth.logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

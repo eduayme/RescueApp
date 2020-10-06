@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('main.terms_of_service'))
+@section('title', __('footer.terms_of_service'))
 
 @section('content')
 
@@ -16,23 +16,23 @@
         <!-- Go back button - CLOSE -->
 
         <h1 class="margin-top margin-bottom">
-            {{ __('main.terms_of_service') }}
+            {{ __('footer.terms_of_service') }}
         </h1>
 
         <h3 class="margin-top-sm">
-            {{ __('main.security_measures') }}
+            {{ __('terms.security_measures') }}
         </h3>
-        <p class="text-justify">{{ __('main.security_measures_detail') }}</p>
+        <p class="text-justify">{{ __('terms.security_measures_detail') }}</p>
 
         <h3 class="margin-top">
-            {{ __('main.terms_modifications') }}
+            {{ __('terms.terms_modifications') }}
         </h3>
-        <p class="text-justify">{{ __('main.terms_modifications_detail') }}</p>
+        <p class="text-justify">{{ __('terms.terms_modifications_detail') }}</p>
 
         <h3 class="margin-top">
-            {{ __('main.terms_jurisdiction') }}
+            {{ __('terms.terms_jurisdiction') }}
         </h3>
-        <p class="text-justify">{{ __('main.terms_jurisdiction_detail') }}</p>
+        <p class="text-justify">{{ __('terms.terms_jurisdiction_detail') }}</p>
 
     </div>
     <!-- Content - CLOSE -->

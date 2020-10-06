@@ -12,8 +12,8 @@
             <li class="list-inline-item"> | </li>
 
             <li class="list-inline-item">
-                <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.2.2" target="_blank">
-                    v1.2.2
+                <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.2.3" target="_blank">
+                    v1.2.3
                 </a>
             </li>
 
@@ -22,7 +22,7 @@
             <li class="list-inline-item">
                 <a href="https://github.com/eduayme/RescueApp" target="_blank">
                     <span class="octicon octicon-mark-github"></span>
-                    {{ __('main.open_source') }}
+                    {{ __('footer.open_source') }}
                 </a>
             </li>
 
@@ -30,7 +30,7 @@
 
             <li class="list-inline-item">
                 <a href="/docs" id="docs">
-                    {{ __('main.documentation') }}
+                    {{ __('footer.documentation') }}
                 </a>
             </li>
 
@@ -38,7 +38,7 @@
 
             <li class="list-inline-item">
                 <a href="{{ URL::to('privacy') }}">
-                    {{ __('main.privacy_policy') }}
+                    {{ __('footer.privacy_policy') }}
                 </a>
             </li>
 
@@ -46,7 +46,7 @@
 
             <li class="list-inline-item">
                 <a href="{{ URL::to('service') }}">
-                    {{ __('main.terms_of_service') }}
+                    {{ __('footer.terms_of_service') }}
                 </a>
             </li>
 
