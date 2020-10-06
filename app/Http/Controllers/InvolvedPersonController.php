@@ -10,32 +10,30 @@ use Illuminate\Support\Facades\Session;
 
 class InvolvedPersonController extends Controller
 {
-
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
      */
-
     public function store(Request $request)
     {
         $request->validate([
-            'name'  => 'required|string|min:2|max:50',
+            'name' => 'required|string|min:2|max:50',
         ], [
             'name.required' => __('messages.required'),
-            'name.min'      => __('messages.min'),
-            'name.max'      => __('messages.max'),
+            'name.min' => __('messages.min'),
+            'name.max' => __('messages.max'),
         ]);
 
         $involved_person = new InvolvedPerson([
-            'search_id' => $request->get('search_id'),
-            'name' => $request->get('name'),
-            'total_people' => $request->get('total_people'),
-            'vehicle' => $request->get('vehicle'),
-            'phone_number' => $request->get('phone'),
-            'people' => $request->get('people')
+            'search_id'     => $request->get('search_id'),
+            'name'          => $request->get('name'),
+            'total_people'  => $request->get('total_people'),
+            'vehicle'       => $request->get('vehicle'),
+            'phone_number'  => $request->get('phone'),
+            'people'        => $request->get('people')
         ]);
 
         $involved_person->user_creation_id = \Auth::user()->id;
@@ -52,12 +50,10 @@ class InvolvedPersonController extends Controller
      * Updates a resoruce.
      *
      * @param  \Illuminate\Http\Request  $request
-     *
-     * @param  int  $id
+     * @param  int                       $id
      *
      * @return \Illuminate\Http\Response
      */
-
     public function update(Request $request, $id)
     {
         $involved = InvolvedPerson::find($id);
@@ -80,7 +76,6 @@ class InvolvedPersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function show($id)
     {
         $involved_person = InvolvedPerson::find($id);
@@ -96,7 +91,6 @@ class InvolvedPersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function destroy($id)
     {
         $involved_person = InvolvedPerson::find($id);

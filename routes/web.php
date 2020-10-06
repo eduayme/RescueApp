@@ -78,7 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/roles', 'RoleController');
     Route::resource('/permissions', 'PermissionController');
 
-    Route::prefix('resoruces')->group(function() {
+    Route::prefix('resoruces')->group(function () {
         Route::get('/involved/{search}', 'InvolvedPersonController@create')->name('create_involved_people');
         Route::post('/involed', 'InvolvedPersonController@store')->name('store_involved_people');
         Route::put('/involved/{id}', 'InvolvedPersonController@update')->name('update_involved_people');

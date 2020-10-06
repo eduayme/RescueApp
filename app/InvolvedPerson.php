@@ -14,7 +14,7 @@ class InvolvedPerson extends Model
         'total_people',
         'vehicle',
         'phone_number',
-        'people'
+        'people',
     ];
 
     public function search()
