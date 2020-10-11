@@ -23,4 +23,5 @@ return [
     'num_unique'      => 'This number must be unique in the data table.',
     'closed_search'   => 'This investigation is currently closed.',
     'closed_practice' => 'This practice is currently closed.',
+    'no_groups'       => 'No groups have been registered',
 ];

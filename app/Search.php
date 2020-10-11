@@ -113,4 +113,9 @@ class Search extends Model
             $search->lost_people()->delete();
         });
     }
+
+    public function groups()
+    {
+        return $this->hasMany('App\Group', 'search_id', 'id');
+    }
 }
