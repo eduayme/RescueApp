@@ -31,7 +31,7 @@ class IncidentController extends Controller
             $currentUser = \Auth::user()->profile;
 
             if ($currentUser != 'guest') {
-                return view('searches.incidents.create',['search_id' => $request->get('search_id')]);
+                return view('searches.incidents.create', ['search_id' => $request->get('search_id')]);
             } else {
                 return redirect('searches/'.$incident->search_id)
                 ->with('error', __('messages.not_allowed'));
