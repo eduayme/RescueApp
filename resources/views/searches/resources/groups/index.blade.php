@@ -1,5 +1,5 @@
 {{ Form::hidden('group_count', $search->groups->count()) }}
-<!-- If NO nogroup - OPEN --> 
+<!-- If NO group - OPEN --> 
     <div id="no_group"class="card text-center">
         <div class="card-body">
 
@@ -17,67 +17,65 @@
     </div>
 <!-- If NO group - CLOSE -->
 
-<!-- If exists searches - OPEN -->
-    <!-- Content - OPEN -->
-    <div id="with_group" class="container margin-top padding-bottom">
-        <div id="success_message_container" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none">
-            <div class="container text-center">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <span id="add_success" style="display:none">{{ __('group.group_add_success') }}</span>
-                <span id="edit_success" style="display:none">{{ __('group.group_edit_success') }}</span>
-                <span id="delete_success" style="display:none">{{ __('group.group_delete_success') }}</span>
-            </div>
+<!-- Content - OPEN -->
+<div id="with_group" class="container margin-top padding-bottom">
+    <div id="success_message_container" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none">
+        <div class="container text-center">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <span id="add_success" style="display:none">{{ __('group.group_add_success') }}</span>
+            <span id="edit_success" style="display:none">{{ __('group.group_edit_success') }}</span>
+            <span id="delete_success" style="display:none">{{ __('group.group_delete_success') }}</span>
         </div>
-        <div class="row text-center margin-top-bottom">
-            <div class="col-sm-2">
-                <select class="form-control" id="status-groups-filter">
-                    <option value=""> {{ __('actions.filter_by_status') }} </option>
-                    <option value="{{ __('group.status_active_value') }}"> {{ __('group.status_active') }} </option>
-                    <option value="{{ __('group.status_closed_value') }}"> {{ __('group.status_closed') }} </option>
-                </select>
-            </div>
-            <div class="col-sm-10 text-right">
-                <!-- Add group button - OPEN -->
-                @if (Auth::user()->profile != 'guest')
-                <span data-toggle="modal" href="#addGroupModal">
-                    <button type="button" class="btn btn-sm btn-outline-primary">
-                        <span class="octicon octicon-plus"></span>
-                        {{ __('actions.add') . ' ' . __('group.group') }}
-                    </button>
-                </span>
-                @endif
-                <!-- Add group button - CLOSE -->       
-            </div>
-        </div>   
-        
-        <div class="row text-center margin-top-bottom">
-            <div class="col-sm-12">
-                <table class="table dt-responsive nowrap table-hover text-center" id="groups" style="width: 100%">        
-                    <thead>
-                        <tr>
-                            <th scope="col"> {{ __('group.id') }} </th>
-                            <th scope="col"> {{ __('group.status') }} </th>
-                            <th scope="col"> {{ __('group.vehicle') }} </th>
-                            <th scope="col"> {{ __('group.broadcast') }} </th>
-                            <th scope="col"> {{ __('group.gps') }} </th>
-                            <th scope="col"> {{ __('group.people_involved') }} </th>
-                            <th scope="col"> {{ __('forms.actions') }} </th>        
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>        
-                </table>
-            </div>    
-        </div>    
     </div>
-    <!-- Content - CLOSE -->
-    @include('searches.resources.groups.add_group',['search_id' => $search->id])
-    @include('searches.resources.groups.edit_group')
-    @include('searches.resources.groups.delete_group')
+    <div class="row text-center margin-top-bottom">
+        <div class="col-sm-2">
+            <select class="form-control" id="status-groups-filter">
+                <option value=""> {{ __('actions.filter_by_status') }} </option>
+                <option value="{{ __('group.status_active_value') }}"> {{ __('group.status_active') }} </option>
+                <option value="{{ __('group.status_closed_value') }}"> {{ __('group.status_closed') }} </option>
+            </select>
+        </div>
+        <div class="col-sm-10 text-right">
+            <!-- Add group button - OPEN -->
+            @if (Auth::user()->profile != 'guest')
+            <span data-toggle="modal" href="#addGroupModal">
+                <button type="button" class="btn btn-sm btn-outline-primary">
+                    <span class="octicon octicon-plus"></span>
+                    {{ __('actions.add') . ' ' . __('group.group') }}
+                </button>
+            </span>
+            @endif            
+            <!-- Add group button - CLOSE -->       
+        </div>
+    </div>   
+    
+    <div class="row text-center margin-top-bottom">
+        <div class="col-sm-12">
+            <table class="table dt-responsive nowrap table-hover text-center" id="groups" style="width: 100%">        
+                <thead>
+                    <tr>
+                        <th scope="col"> {{ __('group.id') }} </th>
+                        <th scope="col"> {{ __('group.status') }} </th>
+                        <th scope="col"> {{ __('group.vehicle') }} </th>
+                        <th scope="col"> {{ __('group.broadcast') }} </th>
+                        <th scope="col"> {{ __('group.gps') }} </th>
+                        <th scope="col"> {{ __('group.people_involved') }} </th>
+                        <th scope="col"> {{ __('forms.actions') }} </th>        
+                    </tr>
+                </thead>
+                <tbody>
+                @include('searches.resources.groups.edit_group')
+                @include('searches.resources.groups.delete_group')        
+                </tbody>                
+            </table>
+        </div>    
+    </div>    
+</div>
+<!-- Content - CLOSE -->
 
-
-
-
+<!-- Add group modal - OPEN -->
+@include('searches.resources.groups.add_group',['search_id' => $search->id])
+<!-- Add group modal - CLOSE -->
 
 <!-- JS -->
 <script>
@@ -138,8 +136,6 @@
                                                             
                                 return edit_button + delete_button;
                             },"targets": 6},
-                            {id:"blahblah","targets":0}
-                            
                         ],
             "scrollX": true,            
             "pagingType": "full_numbers",

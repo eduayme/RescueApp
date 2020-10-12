@@ -27,5 +27,5 @@ return [
     'filter_by_village' => 'Filter village',
     'filter_by_groups'  => 'Filter groups',
     'filter_by_types'   => 'Filter types',
-    'add_group'         => 'Add Group',
+    'add_group'         => 'Add group',
 ];

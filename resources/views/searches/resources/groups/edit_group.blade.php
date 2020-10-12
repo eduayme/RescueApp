@@ -1,12 +1,12 @@
 
-<!-- Add group modal - OPEN -->
+<!-- Edit group modal - OPEN -->
 <div id="editGroupModal" class="modal fade">
     <div class="modal-dialog modal-confirm">
 
         <!-- Modal content - OPEN -->
         <div class="modal-content">
 
-            <!-- Form register - OPEN -->
+            <!-- Form edit group - OPEN -->
             <form method="POST">
                 @csrf
                 {{ Form::hidden('editGroupRoute', route('groups.update',['group' => 'group_id'])) }}       
@@ -77,18 +77,18 @@
                     <a class="btn btn-light" data-dismiss="modal">
                         {{ __('actions.cancel') }}
                     </a>
-                    <!-- Register button - OPEN -->
+                    <!-- Edit button - OPEN -->
                     <button type="button" class="btn btn-primary" id="btn_edit_group">
                         {{ __('actions.edit') }}
                     </button>
-                    <!-- Register button - CLOSE -->
+                    <!-- Edit button - CLOSE -->
                 </div>
                 <!-- Modal footer - CLOSE -->            
             </form>
-            <!-- Form register - CLOSE -->
+            <!-- Form edit group - CLOSE -->
         </div>
         <!-- Modal content - CLOSE -->     
     </div>
     <!-- Modal dialog - CLOSE -->   
 </div>
-<!-- Add group modal - CLOSE -->
+<!-- Edit group modal - CLOSE -->

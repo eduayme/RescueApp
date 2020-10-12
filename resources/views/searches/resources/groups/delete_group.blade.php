@@ -1,4 +1,4 @@
-<!-- Delete user modal - OPEN -->
+<!-- Delete group modal - OPEN -->
 <form action="" method="post">
     @csrf
     
@@ -50,4 +50,4 @@
     <!-- Modal - CLOSE -->
 
 </form>
-<!-- Delete user modal - CLOSE -->
+<!-- Delete group modal - CLOSE -->

@@ -1,6 +1,3 @@
-<!-- Add group button - OPEN -->
-
-<!-- Add group button - CLOSE -->
 <!-- Add group modal - OPEN -->
 <div id="addGroupModal" class="modal fade">
     <div class="modal-dialog modal-confirm">
