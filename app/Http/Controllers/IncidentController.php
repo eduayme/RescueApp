@@ -25,13 +25,13 @@ class IncidentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         if (Auth::check()) {
             $currentUser = \Auth::user()->profile;
 
             if ($currentUser != 'guest') {
-                return view('searches.incidents.create');
+                return view('searches.incidents.create',['search_id' => $request->get('search_id')]);
             } else {
                 return redirect('searches/'.$incident->search_id)
                 ->with('error', __('messages.not_allowed'));
