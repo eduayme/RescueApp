@@ -8,4 +8,5 @@ return [
     'french'     => 'Francés',
     'german'     => 'Alemán',
     'portuguese' => 'Portugués',
+    'italian'    => 'Italiano',
 ];
