@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Incident extends Model
 {
-    protected $guarded = [];
+    public $table = 'incidents';
+
+    protected $primaryKey = 'id';
     protected $fillable = [
-        'id',
         'search_id',
         'user_creation_id',
         'user_modification_id',
         'date',
         'description',
     ];
-
-    public $table = 'incidents';
 
     public function user_creation()
     {
