@@ -199,6 +199,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "jovynode",
+      "name": "bahalakajan",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/11630055?v=4",
+      "profile": "https://github.com/jovynode",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,

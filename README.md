@@ -56,6 +56,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/m4tr1k"><img src="https://avatars0.githubusercontent.com/u/12871065?v=4" width="100px;" alt=""/><br /><sub><b>Francisco Fernandes</b></sub></a><br /><a href="#translation-m4tr1k" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/M4yankChoudhary"><img src="https://avatars2.githubusercontent.com/u/42598915?v=4" width="100px;" alt=""/><br /><sub><b>Mayank Choudhary</b></sub></a><br /><a href="#translation-M4yankChoudhary" title="Translation">🌍</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/jovynode"><img src="https://avatars2.githubusercontent.com/u/11630055?v=4" width="100px;" alt=""/><br /><sub><b>bahalakajan</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=jovynode" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
