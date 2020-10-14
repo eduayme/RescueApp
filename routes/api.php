@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('groups')->group(function () {
+    Route::get('', 'GroupController@index')->name('groups.index');
+    Route::post('', 'GroupController@store')->name('groups.store');
+    Route::post('{group}', 'GroupController@update')->name('groups.update');
+    Route::delete('{group}', 'GroupController@destroy')->name('groups.destroy');
+});
+
+
