@@ -78,7 +78,7 @@
         <!-- Type activity, code and region - OPEN -->
 
         <!-- Id search HIDDEN - OPEN -->
-        <input type="hidden" class="form-control" name="search_id" value={{ 1 }}>
+        <input type="hidden" class="form-control" name="search_id" value={{ $search_id }}>
         <!-- Id search HIDDEN - CLOSE -->
 
         <!-- Id user creates HIDDEN - OPEN -->
