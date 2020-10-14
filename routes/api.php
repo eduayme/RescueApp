@@ -23,5 +23,3 @@ Route::prefix('groups')->group(function () {
     Route::post('{group}', 'GroupController@update')->name('groups.update');
     Route::delete('{group}', 'GroupController@destroy')->name('groups.destroy');
 });
-
-
