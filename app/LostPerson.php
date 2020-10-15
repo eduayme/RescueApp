@@ -8,6 +8,7 @@ class LostPerson extends Model
 {
     public $table = 'lost_people';
 
+    protected $primaryKey = 'id';
     protected $fillable = [
         'id',
         'search_id',

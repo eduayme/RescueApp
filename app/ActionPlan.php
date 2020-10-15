@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class ActionPlan extends Model
 {
-    protected $guarded = [];
+    public $table = 'action_plans';
+
+    protected $primaryKey = 'id';
     protected $fillable = [
         'id',
         'version',
         'description',
         'search_id',
     ];
-
-    public $table = 'action_plans';
 
     public function search()
     {

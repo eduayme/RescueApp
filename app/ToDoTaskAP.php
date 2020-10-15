@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class ToDoTaskAP extends Model
 {
-    protected $guarded = [];
+    public $table = 'to_do_tasks_ap';
+
+    protected $primaryKey = 'id';
     protected $fillable = [
-        'id',
         'action_plan_id',
         'name',
         'state',
     ];
-
-    public $table = 'to_do_tasks_ap';
 
     public function getName()
     {

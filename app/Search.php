@@ -11,8 +11,9 @@ class Search extends Model
 
     public $table = 'searches';
 
+    protected $primaryKey = 'id';
+    public $incrementing = false;
     protected $fillable = [
-        'id',
         'is_a_practice',
         'search_id',
         'region',
@@ -112,5 +113,10 @@ class Search extends Model
         static::deleting(function ($search) { // before delete() method call this
             $search->lost_people()->delete();
         });
+    }
+
+    public function groups()
+    {
+        return $this->hasMany('App\Group', 'search_id', 'id');
     }
 }

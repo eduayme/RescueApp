@@ -108,3 +108,8 @@ Route::get('locale-pt', function () {
 
     return back();
 });
+Route::get('locale-it', function () {
+    session(['locale' => 'it']);
+
+    return back();
+});

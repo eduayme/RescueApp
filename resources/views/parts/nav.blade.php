@@ -54,6 +54,7 @@
                         <a class="dropdown-item" href="/locale-fr"> {{ __('languages.french') }} </a>
                         <a class="dropdown-item" href="/locale-de"> {{ __('languages.german') }} </a>
                         <a class="dropdown-item" href="/locale-pt"> {{ __('languages.portuguese') }} </a>
+                        <a class="dropdown-item" href="/locale-it"> {{ __('languages.italian') }} </a>
                     </div>
                 </li>
                 <!-- Language - CLOSE -->
