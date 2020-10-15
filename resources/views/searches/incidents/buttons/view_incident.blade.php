@@ -115,7 +115,7 @@
                             <div class="col-md-12 margin-top-bottom">
                                 @if (count($incident->images) > 0)
                                     <div class="row justify-content-md-center">
-                                        <div class="col-md-12 margin-top-bottom_sm">
+                                        <div class="col-md-12 margin-top-bottom-sm">
                                             {{ __('forms.images') }}:
                                         </div>
 

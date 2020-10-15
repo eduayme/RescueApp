@@ -158,17 +158,12 @@ form {
   min-height: 100px;
 }
 
-.margin_right_left {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 .margin-top-bottom {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.margin-top-bottom_sm {
+.margin-top-bottom-sm {
   margin-top: 5px;
   margin-bottom: 5px;
 }
