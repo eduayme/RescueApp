@@ -15,7 +15,7 @@ class GroupController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'search_id'         => ['required', 'numeric', 'exists:searches,id'],
-            'status'            => ['numeric', Rule::in([0, 1])],
+            'is_active'         => ['numeric', Rule::in([0, 1])],
             'vehicle'           => ['string', 'max:50'],
             'broadcast'         => ['string', 'max:50'],
             'gps'               => ['string', 'max:50'],
@@ -29,7 +29,7 @@ class GroupController extends Controller
 
         $group = Group::create([
             'search_id'         => $request->get('search_id'),
-            'status'            => $request->get('status'),
+            'is_active'         => $request->get('is_active'),
             'vehicle'           => $request->get('vehicle'),
             'broadcast'         => $request->get('broadcast'),
             'gps'               => $request->get('gps'),
@@ -39,7 +39,7 @@ class GroupController extends Controller
         $group->save();
 
         return back()
-        ->with('success', __('main.group').' '.$group->id.__('messages.added'));
+        ->with('success', __('group.group').' '.$group->id.__('messages.added'));
     }
 
     // Get Groups by Search Id
@@ -54,7 +54,7 @@ class GroupController extends Controller
     public function update(Group $group, Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'status'            => ['numeric', Rule::in([0, 1])],
+            'is_active'         => ['numeric', Rule::in([0, 1])],
             'vehicle'           => ['string', 'max:50'],
             'broadcast'         => ['string', 'max:50'],
             'gps'               => ['string', 'max:50'],
@@ -66,7 +66,7 @@ class GroupController extends Controller
             'people_involved.max'          => __('messages.max'),
         ]);
 
-        $group->status = $request->has('status') ? $request->get('status') : $user->status;
+        $group->is_active = $request->has('is_active') ? $request->get('is_active') : $user->is_active;
         $group->vehicle = $request->has('vehicle') ? $request->get('vehicle') : $user->vehicle;
         $group->broadcast = $request->has('broadcast') ? $request->get('broadcast') : $user->broadcast;
         $group->gps = $request->has('gps') ? $request->get('gps') : $user->gps;
@@ -75,7 +75,7 @@ class GroupController extends Controller
         $group->save();
 
         return back()
-        ->with('success', __('main.group').' '.$group->id.__('messages.updated'));
+        ->with('success', __('group.group').' '.$group->id.__('messages.updated'));
     }
 
     // Delete a Group by Group Id
@@ -88,7 +88,7 @@ class GroupController extends Controller
             $group->delete();
 
             return back()
-            ->with('success', __('main.group').' '.$group->id.__('messages.deleted'));
+            ->with('success', __('group.group').' '.$group->id.__('messages.deleted'));
         } else {
             return back()
             ->with('error', __('messages.not_allowed'));

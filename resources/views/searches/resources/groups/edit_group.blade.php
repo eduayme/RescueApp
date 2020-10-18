@@ -1,4 +1,3 @@
-
 <!-- Edit group modal - OPEN -->
 <div id="editGroupModal" class="modal fade">
     <div class="modal-dialog modal-confirm">
@@ -11,6 +10,7 @@
                 @csrf
                 {{ Form::hidden('editGroupRoute', route('groups.update',['group' => 'group_id'])) }}
                 {{ Form::hidden('group_id', null) }}
+
                 <!-- Modal header - OPEN -->
                 <div class="modal-header">
                     <h5 class="modal-title font-weight-bold ml-3">
@@ -31,8 +31,8 @@
                                     {{ __('group.status') }}:
                                 </div>
                                 <select name="edit_status" class="form-control" name="profile" required>
-                                    <option value="1"> {{ __('group.status_active') }} </option>
-                                    <option value="0"> {{ __('group.status_closed') }} </option>
+                                    <option value="1"> {{ __('group.is_active') }} </option>
+                                    <option value="0"> {{ __('group.is_closed') }} </option>
                                 </select>
                             </div>
                             <div class="col-6">
@@ -64,14 +64,10 @@
                                 {{ Form::textarea('edit_people_involved', null, array('class' => 'form-control','rows'=> 3, 'resize' => 'none')) }}
                             </div>
                         </div>
-                    </div>   <!-- col-12 - CLOSE -->
-                </div> <!-- Modal body - CLOSE -->
-                <div id="edit_error_message_container" class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none">
-                    <div class="container text-center">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <p id="edit_error_message">Error goes here !</p>
                     </div>
                 </div>
+                <!-- Modal body - CLOSE -->
+
                 <!-- Modal footer - OPEN -->
                 <div class="modal-footer">
                     <a class="btn btn-light" data-dismiss="modal">
@@ -79,11 +75,12 @@
                     </a>
                     <!-- Edit button - OPEN -->
                     <button type="button" class="btn btn-primary" id="btn_edit_group">
-                        {{ __('actions.edit') }}
+                        {{ __('actions.save') }}
                     </button>
                     <!-- Edit button - CLOSE -->
                 </div>
                 <!-- Modal footer - CLOSE -->
+
             </form>
             <!-- Form edit group - CLOSE -->
         </div>

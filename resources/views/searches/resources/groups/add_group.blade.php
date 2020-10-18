@@ -4,10 +4,10 @@
 
         <!-- Modal content - OPEN -->
         <div class="modal-content">
-            <!-- Form register - OPEN -->
-            <form id="addGroupForm" method="POST">
+
+            <!-- Form add group - OPEN -->
+            <form method="post" action="{{ route('groups.store') }}">
             @csrf
-                {{ Form::hidden('addGroupRoute', route('groups.store')) }}
                 {{ Form::hidden('search_id', $search_id) }}
 
                 <!-- Modal header - OPEN -->
@@ -30,8 +30,8 @@
                                     {{ __('group.status') }}:
                                 </div>
                                 <select id="status" name="status" class="form-control" name="profile" required>
-                                    <option value="1"> {{ __('group.status_active') }} </option>
-                                    <option value="0"> {{ __('group.status_closed') }} </option>
+                                    <option value="1"> {{ __('group.is_active') }} </option>
+                                    <option value="0"> {{ __('group.is_closed') }} </option>
                                 </select>
                             </div>
                             <div class="col-6">
@@ -79,8 +79,9 @@
                     <!-- Register button - CLOSE -->
                 </div>
                 <!-- Modal footer - CLOSE -->
+
             </form>
-            <!-- Form register - CLOSE -->
+            <!-- Form add group - CLOSE -->
         </div>
         <!-- Modal content - CLOSE -->
     </div>
@@ -89,4 +90,13 @@
 <!-- Add group modal - CLOSE -->
 
 <!-- JS -->
-<script src="{{ asset('js/functions/groups.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        // Groups Tab toggle display
+        $('#nav-resources-tab').unbind("click").on('click', function() {
+            $("#nav-groups-tab").trigger("click");
+        });
+
+        $("#nav-groups-tab").trigger("click");
+    });
+</script>

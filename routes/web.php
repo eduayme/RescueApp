@@ -14,24 +14,16 @@
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('searches', 'SearchController');
-
-    // Task Route
-
-    Route::get('task/create/{search_id}', 'TaskController@create')->name('createTask');
-
-    Route::post('task/post', 'TaskController@store')->name('storeTask');
-
-    Route::post('task', 'TaskController@store')->name('postTask');
-
-    Route::delete('task/{id}', 'TaskController@destroy')->name('deleteTask');
-
-    Route::patch('task/{id}', 'TaskController@update')->name('editTask');
-    //
-
     Route::get('/', ['uses' => 'SearchController@index', 'as' => 'index']);
 
     Route::get('/searches', ['uses' => 'SearchController@index', 'as' => 'searches']);
+    Route::resource('searches', 'SearchController');
+
+    Route::get('task/create/{search_id}', 'TaskController@create')->name('createTask');
+    Route::post('task/post', 'TaskController@store')->name('storeTask');
+    Route::post('task', 'TaskController@store')->name('postTask');
+    Route::delete('task/{id}', 'TaskController@destroy')->name('deleteTask');
+    Route::patch('task/{id}', 'TaskController@update')->name('editTask');
 
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::post('/profile', 'UserController@update_user');
@@ -48,6 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('todotaskap', 'ToDoTaskAPController');
     Route::post('/todotaskap/{id}', 'ToDoTaskAPController@update')->name('todotask.update');
+
+    Route::resource('groups', 'GroupController');
 
     Route::resource('incidents', 'IncidentController');
 
@@ -69,7 +63,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/users/{id}', 'UserController@show')->name('view_profile');
 
-    //Permissions and roles
+    // Permissions and roles
     Route::get('/roles/{user_id}/addrole', 'RoleController@showAssignRole')->name('show_user_role');
     Route::post('/roles/addrole/{user_id}', 'RoleController@storeAssignRole')->name('store_user_role');
     Route::post('/permissions/addpermission/{user_id}', 'PermissionController@storeAssignPermission')->name('store_user_permission');
