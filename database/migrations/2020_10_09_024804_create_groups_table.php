@@ -16,7 +16,7 @@ class CreateGroupsTable extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('search_id')->unsigned();
-            $table->integer('status')->default('0'); // 0 - Active, 1 - Closed
+            $table->integer('is_active')->default('1');
             $table->string('vehicle')->nullable();
             $table->string('broadcast')->nullable();
             $table->string('gps')->nullable();

@@ -58,7 +58,7 @@
                             <img src="/img/add_search.png" width="300">
 
                             <h4 class="card-title margin-bottom text-secondary">
-                                {{ __('messages.no_practices') }}
+                                {{ __('messages.no_searches') }}
                             </h4>
 
                             <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button"

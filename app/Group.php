@@ -8,8 +8,14 @@ class Group extends Model
 {
     protected $table = 'groups';
     protected $primaryKey = 'id';
-    protected $fillable = ['search_id', 'status', 'vehicle', 'broadcast', 'gps', 'people_involved'];
-    public $timestamps = true;
+    protected $fillable = [
+        'search_id',
+        'is_active',
+        'vehicle',
+        'broadcast',
+        'gps',
+        'people_involved'
+    ];
 
     public function search()
     {

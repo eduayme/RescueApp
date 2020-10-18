@@ -1,9 +1,9 @@
 {{ Form::hidden('group_count', $search->groups->count()) }}
-<!-- If NO group - OPEN --> 
+<!-- If NO group - OPEN -->
     <div id="no_group"class="card text-center">
         <div class="card-body">
 
-            <img src="/img/add_search.png" width="300">
+            <img src="/img/add_group.png" width="300">
 
             <h4 class="card-title margin-bottom text-secondary">
                 {{ __('messages.no_groups') }}
@@ -12,7 +12,7 @@
             <a href="#addGroupModal" class="btn btn-primary" role="button" data-toggle="modal"
                 <?php if (Auth::user()->profile == 'guest') { ?> style="display:none" <?php } ?> >
                 {{ __('actions.add') . ' ' . __('group.group') }}
-            </a>            
+            </a>
         </div>
     </div>
 <!-- If NO group - CLOSE -->
@@ -28,14 +28,14 @@
         </div>
     </div>
     <div class="row text-center margin-top-bottom">
-        <div class="col-sm-2">
+        <div class="col-sm-3">
             <select class="form-control" id="status-groups-filter">
                 <option value=""> {{ __('actions.filter_by_status') }} </option>
                 <option value="{{ __('group.status_active_value') }}"> {{ __('group.status_active') }} </option>
                 <option value="{{ __('group.status_closed_value') }}"> {{ __('group.status_closed') }} </option>
             </select>
         </div>
-        <div class="col-sm-10 text-right">
+        <div class="col-sm-9 text-right">
             <!-- Add group button - OPEN -->
             @if (Auth::user()->profile != 'guest')
             <span data-toggle="modal" href="#addGroupModal">
@@ -44,14 +44,14 @@
                     {{ __('actions.add') . ' ' . __('group.group') }}
                 </button>
             </span>
-            @endif            
-            <!-- Add group button - CLOSE -->       
+            @endif
+            <!-- Add group button - CLOSE -->
         </div>
-    </div>   
-    
+    </div>
+
     <div class="row text-center margin-top-bottom">
         <div class="col-sm-12">
-            <table class="table dt-responsive nowrap table-hover text-center" id="groups" style="width: 100%">        
+            <table class="table dt-responsive nowrap table-hover text-center" id="groups" style="width: 100%">
                 <thead>
                     <tr>
                         <th scope="col"> {{ __('group.id') }} </th>
@@ -60,16 +60,16 @@
                         <th scope="col"> {{ __('group.broadcast') }} </th>
                         <th scope="col"> {{ __('group.gps') }} </th>
                         <th scope="col"> {{ __('group.people_involved') }} </th>
-                        <th scope="col"> {{ __('forms.actions') }} </th>        
+                        <th scope="col"> {{ __('forms.actions') }} </th>
                     </tr>
                 </thead>
                 <tbody>
                 @include('searches.resources.groups.edit_group')
-                @include('searches.resources.groups.delete_group')        
-                </tbody>                
+                @include('searches.resources.groups.delete_group')
+                </tbody>
             </table>
-        </div>    
-    </div>    
+        </div>
+    </div>
 </div>
 <!-- Content - CLOSE -->
 
@@ -86,7 +86,7 @@
         groupsTable = $( "#groups" ).DataTable({
             "processing": true,
             "serverside": true,
-            "ajax": "{!! route('groups.index',['search_id' => $search->id]) !!}",            
+            "ajax": "{!! route('groups.index',['search_id' => $search->id]) !!}",
             "createdRow": function ( row, data, index ) {
                 $(row).attr('id','group-' + data.id);
                 $(row).attr('data-group',   data.id + ',' +
@@ -96,7 +96,7 @@
                                             data.gps + ',' +
                                             data.people_involved + ',' +
                                             data.vehicle);
-            },            
+            },
             "columns": [
                     { "data": "id" },
                     { "data": "status" },
@@ -107,7 +107,7 @@
                     { "data": "vehicle" },
             ],
             "columnDefs":[
-                            {"render": function (data, type, row) {                                
+                            {"render": function (data, type, row) {
                                 if (data == {{ __('group.status_active_value') }}){
                                     return '<span class="badge badge-success">{{ __('group.status_active') }}</span>';
                                 }
@@ -116,12 +116,12 @@
                                 }
                             },"targets": 1},
                             {"orderable": false,
-                             "render": function (data, type, row) {                                
+                             "render": function (data, type, row) {
                                 var edit_button = `@if (Auth::user()->profile != 'guest')
-                                                    <span data-toggle="modal" href="#editGroupModal">    
+                                                    <span data-toggle="modal" href="#editGroupModal">
                                                         <button onclick = "setEditValues(`+ row.id +`);" type="button" class="btn btn-sm btn-outline-dark btn-margin"
                                                         data-toggle="tooltip" data-placement="left" title="{{ __('actions.edit') }}">
-                                                            <span class="octicon octicon-pencil"></span>                                                        
+                                                            <span class="octicon octicon-pencil"></span>
                                                         </button>
                                                     </span>
                                                     @endif`;
@@ -133,13 +133,13 @@
                                                         </button>
                                                     </span>
                                                     @endif`;
-                                                            
+
                                 return edit_button + delete_button;
                             },"targets": 6},
                         ],
-            "scrollX": true,            
+            "scrollX": true,
             "pagingType": "full_numbers",
-            "responsive": true,            
+            "responsive": true,
             "order": [ [ 0, "asc" ]],
             "lengthMenu": [ 5, 10, 15],
             "language": {
@@ -169,7 +169,7 @@
         });
     });
 
-    
+
 
     // resize tables after tab
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -178,5 +178,5 @@
                 .columns.adjust();
         });
 
-    
+
 </script>

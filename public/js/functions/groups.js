@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Groups Tab toggle display    
+    // Groups Tab toggle display
     $('#nav-resources-tab').unbind("click").on('click', function() {
         $("#nav-groups-tab").trigger("click");
     });
@@ -17,8 +17,7 @@ $(document).ready(function() {
 
     // Group status filter
     $('#status-groups-filter').on('change', function() {
-        groupsTable.columns(1).search(this.value).draw();
-        groupsTable.columns.adjust();
+        groupsTable.columns(1).search( this.value ).draw();
     });
 
     // Click Event handler for Add Group Button

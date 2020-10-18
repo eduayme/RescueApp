@@ -15,27 +15,17 @@ class GroupController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'search_id'         => ['required', 'numeric', 'exists:searches,id'],
-            'status'            => ['required', 'numeric', Rule::in([0, 1])],
-            'vehicle'           => ['required', 'string', 'max:50'],
-            'broadcast'         => ['required', 'string', 'max:50'],
-            'gps'               => ['required', 'string', 'max:50'],
-            'people_involved'   => ['required', 'string', 'max:255'],
+            'status'            => ['numeric', Rule::in([0, 1])],
+            'vehicle'           => ['string', 'max:50'],
+            'broadcast'         => ['string', 'max:50'],
+            'gps'               => ['string', 'max:50'],
+            'people_involved'   => ['string', 'max:255'],
         ], [
-            'vehicle.required'             => __('messages.required'),
             'vehicle.max'                  => __('messages.max'),
-            'broadcast.required'           => __('messages.required'),
             'broadcast.max'                => __('messages.max'),
-            'gps.required'                 => __('messages.required'),
             'gps.max'                      => __('messages.max'),
-            'people_involved.required'     => __('messages.required'),
             'people_involved.max'          => __('messages.max'),
         ]);
-
-        if ($validator->fails()) {
-            Log::error('errors->'.json_encode($validator->messages()));
-
-            return response()->json($validator->messages(), 422);
-        }
 
         $group = Group::create([
             'search_id'         => $request->get('search_id'),
@@ -48,7 +38,8 @@ class GroupController extends Controller
 
         $group->save();
 
-        return response('Success', 200);
+        return back()
+        ->with('success', __('main.group').' '.$group->id.__('messages.added'));
     }
 
     // Get Groups by Search Id
@@ -63,27 +54,17 @@ class GroupController extends Controller
     public function update(Group $group, Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'status'            => ['required', 'numeric', Rule::in([0, 1])],
-            'vehicle'           => ['required', 'string', 'max:50'],
-            'broadcast'         => ['required', 'string', 'max:50'],
-            'gps'               => ['required', 'string', 'max:50'],
-            'people_involved'   => ['required', 'string', 'max:255'],
+            'status'            => ['numeric', Rule::in([0, 1])],
+            'vehicle'           => ['string', 'max:50'],
+            'broadcast'         => ['string', 'max:50'],
+            'gps'               => ['string', 'max:50'],
+            'people_involved'   => ['string', 'max:255'],
         ], [
-            'vehicle.required'             => __('messages.required'),
             'vehicle.max'                  => __('messages.max'),
-            'broadcast.required'           => __('messages.required'),
             'broadcast.max'                => __('messages.max'),
-            'gps.required'                 => __('messages.required'),
             'gps.max'                      => __('messages.max'),
-            'people_involved.required'     => __('messages.required'),
             'people_involved.max'          => __('messages.max'),
         ]);
-
-        if ($validator->fails()) {
-            Log::error('errors->'.json_encode($validator->messages()));
-
-            return response()->json($validator->messages(), 422);
-        }
 
         $group->status = $request->has('status') ? $request->get('status') : $user->status;
         $group->vehicle = $request->has('vehicle') ? $request->get('vehicle') : $user->vehicle;
@@ -93,22 +74,24 @@ class GroupController extends Controller
 
         $group->save();
 
-        return response('Success', 200);
+        return back()
+        ->with('success', __('main.group').' '.$group->id.__('messages.updated'));
     }
 
     // Delete a Group by Group Id
     public function destroy($id)
     {
         $group = Group::find($id);
+        $currentUser = \Auth::user()->profile;
 
-        if ($group) {
-            if ($group->delete()) {
-                return response('Success', 200);
-            } else {
-                return response()->json(['message'=> __('group.unable_to_delete')], 422);
-            }
+        if ($currentUser == 'admin') {
+            $group->delete();
+
+            return back()
+            ->with('success', __('main.group').' '.$group->id.__('messages.deleted'));
         } else {
-            return response()->json(['message'=> __('group.group_not_found')], 422);
+            return back()
+            ->with('error', __('messages.not_allowed'));
         }
     }
 }

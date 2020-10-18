@@ -9,13 +9,13 @@
             <!-- Form edit group - OPEN -->
             <form method="POST">
                 @csrf
-                {{ Form::hidden('editGroupRoute', route('groups.update',['group' => 'group_id'])) }}       
+                {{ Form::hidden('editGroupRoute', route('groups.update',['group' => 'group_id'])) }}
                 {{ Form::hidden('group_id', null) }}
                 <!-- Modal header - OPEN -->
                 <div class="modal-header">
                     <h5 class="modal-title font-weight-bold ml-3">
                     {{ __('actions.edit') . ' ' . __('group.group') }}
-                    </h5>                    
+                    </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         &times;
                     </button>
@@ -30,11 +30,11 @@
                                 <div class="text-left">
                                     {{ __('group.status') }}:
                                 </div>
-                                <select name="edit_status" class="form-control" name="profile" required>                                
-                                    <option value="{{ __('group.status_active_value') }}"> {{ __('group.status_active') }} </option>
-                                    <option value="{{ __('group.status_closed_value') }}"> {{ __('group.status_closed') }} </option>                          
+                                <select name="edit_status" class="form-control" name="profile" required>
+                                    <option value="1"> {{ __('group.status_active') }} </option>
+                                    <option value="0"> {{ __('group.status_closed') }} </option>
                                 </select>
-                            </div>                            
+                            </div>
                             <div class="col-6">
                                 <div class="text-left">
                                     {{ __('group.vehicle') }}:
@@ -55,16 +55,16 @@
                                 </div>
                                 {{ Form::text('edit_gps', null, array('class' => 'form-control')) }}
                             </div>
-                        </div>                
+                        </div>
                         <div class="row margin-top-sm">
                             <div class="col-12">
                                 <div class="text-left">
                                     {{ __('group.people_involved') }}:
                                 </div>
                                 {{ Form::textarea('edit_people_involved', null, array('class' => 'form-control','rows'=> 3, 'resize' => 'none')) }}
-                            </div>                        
-                        </div>  
-                    </div>   <!-- col-12 - CLOSE -->              
+                            </div>
+                        </div>
+                    </div>   <!-- col-12 - CLOSE -->
                 </div> <!-- Modal body - CLOSE -->
                 <div id="edit_error_message_container" class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none">
                     <div class="container text-center">
@@ -83,12 +83,12 @@
                     </button>
                     <!-- Edit button - CLOSE -->
                 </div>
-                <!-- Modal footer - CLOSE -->            
+                <!-- Modal footer - CLOSE -->
             </form>
             <!-- Form edit group - CLOSE -->
         </div>
-        <!-- Modal content - CLOSE -->     
+        <!-- Modal content - CLOSE -->
     </div>
-    <!-- Modal dialog - CLOSE -->   
+    <!-- Modal dialog - CLOSE -->
 </div>
 <!-- Edit group modal - CLOSE -->
