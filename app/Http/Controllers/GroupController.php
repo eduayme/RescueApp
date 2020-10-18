@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Group;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Log;
 use Validator;
 
 class GroupController extends Controller
