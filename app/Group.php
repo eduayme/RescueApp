@@ -14,7 +14,7 @@ class Group extends Model
         'vehicle',
         'broadcast',
         'gps',
-        'people_involved'
+        'people_involved',
     ];
 
     public function search()
