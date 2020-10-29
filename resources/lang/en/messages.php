@@ -24,4 +24,5 @@ return [
     'closed_search'   => 'This investigation is currently closed.',
     'closed_practice' => 'This practice is currently closed.',
     'no_groups'       => 'No groups have been registered.',
+    'no_leaders'      => 'No leaders have been registered.',
 ];

@@ -23,3 +23,10 @@ Route::prefix('groups')->group(function () {
     Route::post('{group}', 'GroupController@update')->name('groups.update');
     Route::delete('{group}', 'GroupController@destroy')->name('groups.destroy');
 });
+
+Route::prefix('leaders')->group(function () {
+    Route::get('', 'LeaderController@index')->name('leaders.index');
+    Route::post('', 'LeaderController@store')->name('leaders.store');
+    Route::post('{leader}', 'LeaderController@update')->name('leaders.update');
+    Route::delete('{leader}', 'LeaderController@destroy')->name('leaders.destroy');
+});

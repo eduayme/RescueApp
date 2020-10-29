@@ -119,4 +119,9 @@ class Search extends Model
     {
         return $this->hasMany('App\Group', 'search_id', 'id');
     }
+
+    public function leaders()
+    {
+        return $this->hasMany('App\Leader', 'search_id', 'id');
+    }
 }
