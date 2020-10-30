@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Leader;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use Log;
 use Validator;
 
@@ -14,16 +13,16 @@ class LeaderController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'search_id'             => ['required', 'numeric', 'exists:searches,id'],            
+            'search_id'             => ['required', 'numeric', 'exists:searches,id'],
             'leaderCode'            => ['required', 'string', 'max:255'],
             'name'                  => ['required', 'string', 'max:255'],
-            'phone'                 => ['sometimes', 'string', 'max:50'],            
+            'phone'                 => ['sometimes', 'string', 'max:50'],
         ], [
             'name.required'         => __('messages.required'),
             'name.max'              => __('messages.max'),
             'leaderCode.required'   => __('messages.required'),
-            'leaderCode.max'        => __('messages.max'),                
-            'phone.max'             => __('messages.max'),            
+            'leaderCode.max'        => __('messages.max'),
+            'phone.max'             => __('messages.max'),
         ]);
 
         if ($validator->fails()) {
@@ -38,7 +37,7 @@ class LeaderController extends Controller
             'name'              => $request->get('name'),
             'phone'             => $request->get('phone'),
             'start'             => $request->get('start'),
-            'end'               => $request->get('end')
+            'end'               => $request->get('end'),
         ]);
 
         $leader->save();

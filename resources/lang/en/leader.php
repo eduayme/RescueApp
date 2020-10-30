@@ -6,7 +6,7 @@ return [
     'name'                        => 'Name',
     'phone'                       => 'Phone',
     'start'                       => 'Start',
-    'end'                         => 'End',    
+    'end'                         => 'End',
     'lengthMenu'                  => 'Show _MENU_ leaders',
     'leader_add_success'          => 'Leader was successfully added !',
     'leader_edit_success'         => 'Leader was successfully edited !',
