@@ -92,7 +92,7 @@ return [
     'edit_task'                                 => 'Editar tarea',
     'sector'                                    => 'Sector',
     'task_group'                                => 'Grupo',
-    'task_start'                                => 'Comienzo',
+    'task_start'                                => 'Inicio',
     'task_end'                                  => 'Final',
     'task_type'                                 => 'Tipo',
     'gpx'                                       => 'GPX',

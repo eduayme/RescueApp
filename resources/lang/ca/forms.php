@@ -92,7 +92,7 @@ return [
     'edit_task'                                 => 'Edita la tasca',
     'sector'                                    => 'Sector',
     'task_group'                                => 'Grup',
-    'task_start'                                => 'Començar',
+    'task_start'                                => 'Inici',
     'task_end'                                  => 'Final',
     'task_type'                                 => 'Tipus',
     'gpx'                                       => 'GPX',

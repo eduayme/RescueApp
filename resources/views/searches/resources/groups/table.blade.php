@@ -36,8 +36,8 @@
             <td> {{ $group->gps }} </td>
             <td> {{ $group->people_involved }} </td>
             <td>
-                @include('searches.resources.groups.edit_group', ['group_id' => $group->id])
-                @include('searches.resources.groups.delete_group', ['group_id' => $group->id])
+                @include('searches.resources.groups.buttons.edit_group', ['group_id' => $group->id])
+                @include('searches.resources.groups.buttons.delete_group', ['group_id' => $group->id])
             </td>
 
         </tr>
