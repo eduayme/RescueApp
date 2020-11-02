@@ -56,16 +56,16 @@ class LeaderController extends Controller
     // Update Leader by Leader Id
     public function update(Leader $leader, Request $request)
     {
-        $validator = Validator::make($request->all(), [            
+        $validator = Validator::make($request->all(), [
             'leaderCode'            => ['required', 'string', 'max:255'],
             'name'                  => ['required', 'string', 'max:255'],
-            'phone'                 => ['sometimes', 'string', 'max:50'],   
+            'phone'                 => ['sometimes', 'string', 'max:50'],
         ], [
             'name.required'         => __('messages.required'),
             'name.max'              => __('messages.max'),
             'leaderCode.required'   => __('messages.required'),
-            'leaderCode.max'        => __('messages.max'),                
-            'phone.max'             => __('messages.max'),    
+            'leaderCode.max'        => __('messages.max'),
+            'phone.max'             => __('messages.max'),
         ]);
 
         if ($validator->fails()) {
