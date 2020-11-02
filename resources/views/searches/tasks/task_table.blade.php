@@ -77,8 +77,11 @@
             </td>
 
             <td class="align-middle">
-                <!-- Show Desctiption - OPEN -->
-                @include('searches.tasks.buttons.show_description')
+                @if ($task->description == NULL)
+                    --
+                @else
+                    @include('searches.tasks.buttons.show_description')
+                @endif
             </td>
 
             <td class="align-middle">
