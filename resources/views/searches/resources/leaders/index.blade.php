@@ -1,6 +1,6 @@
 {{ Form::hidden('leader_count', $search->leaders->count()) }}
 <!-- If NO leader - OPEN -->
-<div id="no_leader"class="card text-center">
+<div id="no_leader" class="card text-center">
     <div class="card-body">
 
         <img src="/img/add_search.png" width="300">
@@ -23,12 +23,12 @@
         <div class="col-sm-12 text-right">
             <!-- Add leader button - OPEN -->
             @if (Auth::user()->profile != 'guest')
-            <span data-toggle="modal" href="#addLeaderModal">
-                <button type="button" class="btn btn-sm btn-outline-primary">
-                    <span class="octicon octicon-plus"></span>
-                    {{ __('actions.add') . ' ' . __('leader.leader') }}
-                </button>
-            </span>
+                <span data-toggle="modal" href="#addLeaderModal">
+                    <button type="button" class="btn btn-sm btn-outline-primary">
+                        <span class="octicon octicon-plus"></span>
+                        {{ __('actions.add') . ' ' . __('leader.leader') }}
+                    </button>
+                </span>
             @endif
             <!-- Add leader button - CLOSE -->
         </div>
