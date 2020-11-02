@@ -23,4 +23,6 @@ return [
     'num_unique'      => 'Ce nombre doit être unique dans la table de données.',
     'closed_search'   => 'Cette enquête est actuellement fermée.',
     'closed_practice' => 'Cette pratique est actuellement fermée.',
+    'no_groups'       => 'No groups have been registered.',
+    'no_leaders'      => 'No leaders have been registered.',
 ];
