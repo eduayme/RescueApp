@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Leader;
 use Illuminate\Http\Request;
-use Log;
 use Validator;
 
 class LeaderController extends Controller
