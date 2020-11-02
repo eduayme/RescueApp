@@ -9,26 +9,30 @@ use Validator;
 
 class LeaderController extends Controller
 {
-    // Create new leader
+    public function index()
+    {
+        $leaders = Leader::where('search_id', $request->get('search_id'))->get();
+
+        return view('leaders.index', compact('leaders'));
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'search_id'             => ['required', 'numeric', 'exists:searches,id'],
             'leaderCode'            => ['required', 'string', 'max:255'],
-            'name'                  => ['required', 'string', 'max:255'],
-            'phone'                 => ['sometimes', 'string', 'max:50'],
+            'name'                  => ['string', 'max:255'],
+            'phone'                 => ['string', 'max:50'],
         ], [
-            'name.required'         => __('messages.required'),
-            'name.max'              => __('messages.max'),
             'leaderCode.required'   => __('messages.required'),
             'leaderCode.max'        => __('messages.max'),
+            'name.max'              => __('messages.max'),
             'phone.max'             => __('messages.max'),
         ]);
 
         if ($validator->fails()) {
-            Log::error('errors->'.json_encode($validator->messages()));
-
-            return response()->json($validator->messages(), 422);
+            return back()->withInput()->withErrors($validator)
+            ->with('error', __('messages.error_form'));
         }
 
         $leader = Leader::create([
@@ -39,21 +43,12 @@ class LeaderController extends Controller
             'start'             => $request->get('start'),
             'end'               => $request->get('end'),
         ]);
-
         $leader->save();
 
-        return response('Success', 200);
+        return back()
+        ->with('success', __('leader.leader').' '.$leader->id.__('messages.added'));
     }
 
-    // Get Leaders by Search Id
-    public function index(Request $request)
-    {
-        $data['data'] = Leader::where('search_id', $request->get('search_id'))->get();
-
-        return $data;
-    }
-
-    // Update Leader by Leader Id
     public function update(Leader $leader, Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -69,9 +64,8 @@ class LeaderController extends Controller
         ]);
 
         if ($validator->fails()) {
-            Log::error('errors->'.json_encode($validator->messages()));
-
-            return response()->json($validator->messages(), 422);
+            return back()->withInput()->withErrors($validator)
+            ->with('error', __('messages.error_form'));
         }
 
         $leader->leader_code = $request->has('leaderCode') ? $request->get('leaderCode') : $user->leader_code;
@@ -82,22 +76,23 @@ class LeaderController extends Controller
 
         $leader->save();
 
-        return response('Success', 200);
+        return back()
+        ->with('success', __('leader.leader').' '.$leader->id.__('messages.updated'));
     }
 
-    // Delete a Leader by Leader Id
     public function destroy($id)
     {
         $leader = Leader::find($id);
+        $currentUser = \Auth::user()->profile;
 
-        if ($leader) {
-            if ($leader->delete()) {
-                return response('Success', 200);
-            } else {
-                return response()->json(['message'=> __('leader.unable_to_delete')], 422);
-            }
+        if ($currentUser == 'admin' && $leader) {
+            $leader->delete();
+
+            return back()
+            ->with('success', __('leader.leader').' '.$leader->id.__('messages.deleted'));
         } else {
-            return response()->json(['message'=> __('leader.leader_not_found')], 422);
+            return back()
+            ->with('error', __('messages.not_allowed'));
         }
     }
 }

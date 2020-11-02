@@ -9,7 +9,13 @@ use Validator;
 
 class GroupController extends Controller
 {
-    // Create new group
+    public function index(Request $request)
+    {
+        $groups = Group::where('search_id', $request->get('search_id'))->get();
+
+        return view('groups.index', compact('groups'));
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -26,6 +32,11 @@ class GroupController extends Controller
             'people_involved.max'          => __('messages.max'),
         ]);
 
+        if ($validator->fails()) {
+            return back()->withInput()->withErrors($validator)
+            ->with('error', __('messages.error_form'));
+        }
+
         $group = Group::create([
             'search_id'         => $request->get('search_id'),
             'is_active'         => $request->get('is_active'),
@@ -41,15 +52,6 @@ class GroupController extends Controller
         ->with('success', __('group.group').' '.$group->id.__('messages.added'));
     }
 
-    // Get Groups by Search Id
-    public function index(Request $request)
-    {
-        $data['data'] = Group::where('search_id', $request->get('search_id'))->get();
-
-        return $data;
-    }
-
-    // Update Group by Group Id
     public function update(Group $group, Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -65,6 +67,11 @@ class GroupController extends Controller
             'people_involved.max'          => __('messages.max'),
         ]);
 
+        if ($validator->fails()) {
+            return back()->withInput()->withErrors($validator)
+            ->with('error', __('messages.error_form'));
+        }
+
         $group->is_active = $request->has('is_active') ? $request->get('is_active') : $user->is_active;
         $group->vehicle = $request->has('vehicle') ? $request->get('vehicle') : $user->vehicle;
         $group->broadcast = $request->has('broadcast') ? $request->get('broadcast') : $user->broadcast;
@@ -77,13 +84,12 @@ class GroupController extends Controller
         ->with('success', __('group.group').' '.$group->id.__('messages.updated'));
     }
 
-    // Delete a Group by Group Id
     public function destroy($id)
     {
         $group = Group::find($id);
         $currentUser = \Auth::user()->profile;
 
-        if ($currentUser == 'admin') {
+        if ($currentUser == 'admin' && $group) {
             $group->delete();
 
             return back()
