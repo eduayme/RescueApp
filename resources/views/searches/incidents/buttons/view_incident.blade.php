@@ -1,7 +1,7 @@
 <!-- View incident button - OPEN -->
 <span data-toggle="modal" href="#viewIncidentModal-{{ $incident->id }}">
     <button type="button" class="btn btn-sm btn-outline-dark btn-margin"
-    data-toggle="tooltip" data-placement="top" title="{{ __('actions.view') }}">
+    data-toggle="tooltip" data-placement="left" title="{{ __('actions.view') }}">
         <span class="octicon octicon-eye"></span>
     </button>
 </span>
