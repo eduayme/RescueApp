@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Group;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Validator;
-use Auth;
 
 class GroupController extends Controller
 {
