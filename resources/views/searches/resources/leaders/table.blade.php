@@ -40,8 +40,8 @@
                 @endif
             </td>
             <td>
-                @include('searches.resources.leaders.buttons.edit_leader', ['leader_id' => $leader->id])
-                @include('searches.resources.leaders.buttons.delete_leader', ['leader_id' => $leader->id])
+                @include('searches.resources.leaders.buttons.edit_leader', ['leader' => $leader])
+                @include('searches.resources.leaders.buttons.delete_leader', ['leader' => $leader])
             </td>
 
         </tr>

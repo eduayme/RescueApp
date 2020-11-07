@@ -1,21 +1,28 @@
-
-<!-- Edit leader modal - OPEN -->
-<div id="editLeaderModal" class="modal fade">
+<!-- Edit user button - OPEN -->
+<span data-toggle="modal" href="#editLeaderModal-{{ $leader->id }}">
+    <button type="button" class="btn btn-sm btn-outline-dark btn-margin"
+    data-toggle="tooltip" data-placement="left" title="{{ __('actions.edit') }}">
+        <span class="octicon octicon-pencil"></span>
+    </button>
+</span>
+<!-- Edit user button - CLOSE -->
+<!-- Edit user modal - OPEN -->
+<div id="editLeaderModal-{{ $leader->id }}" class="modal fade">
     <div class="modal-dialog modal-confirm">
 
         <!-- Modal content - OPEN -->
         <div class="modal-content">
 
             <!-- Form edit leader - OPEN -->
-            <form method="POST">
+            {{ Form::model($leader, array('route' => array('leaders.update', $leader->id))) }}
                 @csrf
-                {{ Form::hidden('editLeaderRoute', route('leaders.update',['leader' => 'leader_id'])) }}       
-                {{ Form::hidden('leader_id', null) }}
+                @method('PUT')
+
                 <!-- Modal header - OPEN -->
                 <div class="modal-header">
                     <h5 class="modal-title font-weight-bold ml-3">
                     {{ __('actions.edit') . ' ' . __('leader.leader') }}
-                    </h5>                    
+                    </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         &times;
                     </button>
@@ -27,41 +34,36 @@
                 <div class="col-12">
                         <div class="row margin-top-sm">
                             <div class="col-6">
-                                <div class="text-left">
-                                    {{ __('leader.id') }}:
-                                </div>
-                                {{ Form::text('edit_leaderCode', null, array('class' => 'form-control')) }}
+                                {{ Form::label('leader_code', __('leader.id')) }}
+                                <input type="text" name="leader_code" value="{{ $leader->leader_code }}"
+                                class="form-control {{ $errors->has('leader_code') ? ' is-invalid' : '' }}">
                             </div>
                             <div class="col-6">
-                                <div class="text-left">
-                                    {{ __('leader.phone') }}:
-                                </div>
-                                {{ Form::text('edit_phone', null, array('class' => 'form-control')) }}
+                                {{ Form::label('phone', __('leader.phone')) }}
+                                <input type="text" name="phone" value="{{ $leader->phone }}"
+                                class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}">
                             </div>
                         </div>
                         <div class="row margin-top-sm">
                             <div class="col-12">
-                                <div class="text-left">
-                                    {{ __('leader.name') }}:
-                                </div>
-                                {{ Form::text('edit_name', null, array('class' => 'form-control')) }}
+                                {{ Form::label('name', __('leader.name')) }}
+                                <input type="text" name="name" value="{{ $leader->name }}"
+                                class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}">
                             </div>
                         </div>
                         <div class="row margin-top-sm">
                             <div class="col-6">
-                                <div class="text-left">
-                                    {{ __('leader.start') }}:
-                                </div>
-                                {{ Form::text('edit_start', null, array('class' => 'form-control')) }}
+                                {{ Form::label('start', __('leader.start')) }}
+                                <input type="text" name="start" value="{{ $leader->start }}"
+                                class="form-control {{ $errors->has('start') ? ' is-invalid' : '' }}">
                             </div>
                             <div class="col-6">
-                                <div class="text-left">
-                                    {{ __('leader.end') }}:
-                                </div>
-                                {{ Form::text('edit_end', null, array('class' => 'form-control')) }}
+                                {{ Form::label('end', __('leader.end')) }}
+                                <input type="text" name="end" value="{{ $leader->end }}"
+                                class="form-control {{ $errors->has('end') ? ' is-invalid' : '' }}">
                             </div>
-                        </div>                                         
-                    </div>   <!-- col-12 - CLOSE -->                 
+                        </div>
+                    </div>   <!-- col-12 - CLOSE -->
                 </div> <!-- Modal body - CLOSE -->
                 <div id="edit_error_message_container" class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none">
                     <div class="container text-center">
@@ -75,17 +77,15 @@
                         {{ __('actions.cancel') }}
                     </a>
                     <!-- Edit button - OPEN -->
-                    <button type="button" class="btn btn-primary" id="btn_edit_leader">
-                        {{ __('actions.save') }}
-                    </button>
+                    {{ Form::submit( __('actions.save'), array('class' => 'btn btn-primary') ) }}
                     <!-- Edit button - CLOSE -->
                 </div>
-                <!-- Modal footer - CLOSE -->            
-            </form>
+                <!-- Modal footer - CLOSE -->
+            {{ Form::close() }}
             <!-- Form edit leader - CLOSE -->
         </div>
-        <!-- Modal content - CLOSE -->     
+        <!-- Modal content - CLOSE -->
     </div>
-    <!-- Modal dialog - CLOSE -->   
+    <!-- Modal dialog - CLOSE -->
 </div>
 <!-- Edit leader modal - CLOSE -->

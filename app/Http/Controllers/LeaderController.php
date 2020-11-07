@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Leader;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
 
 class LeaderController extends Controller
 {
@@ -12,7 +13,23 @@ class LeaderController extends Controller
     {
         $leaders = Leader::where('search_id', $request->get('search_id'))->get();
 
-        return view('leaders.index', compact('leaders'));
+        return view('searches.resources.leaders.index', compact('leaders'));
+    }
+
+    public function create(Request $request)
+    {
+        if (Auth::check()) {
+            $currentUser = \Auth::user()->profile;
+
+            if ($currentUser != 'guest') {
+                return view('searches.resources.leaders.create', ['search_id' => $request->get('search_id')]);
+            } else {
+                return back()
+                ->with('error', __('messages.not_allowed'));
+            }
+        } else {
+            return redirect()->action('HomeController@login');
+        }
     }
 
     public function store(Request $request)
@@ -29,11 +46,6 @@ class LeaderController extends Controller
             'phone.max'             => __('messages.max'),
         ]);
 
-        if ($validator->fails()) {
-            return back()->withInput()->withErrors($validator)
-            ->with('error', __('messages.error_form'));
-        }
-
         $leader = Leader::create([
             'search_id'         => $request->get('search_id'),
             'leader_code'       => $request->get('leaderCode'),
@@ -44,7 +56,7 @@ class LeaderController extends Controller
         ]);
         $leader->save();
 
-        return back()
+        return redirect('searches/'.$leader->search_id.'#nav-resources')
         ->with('success', __('leader.leader').' '.$leader->id.__('messages.added'));
     }
 
@@ -62,20 +74,15 @@ class LeaderController extends Controller
             'phone.max'             => __('messages.max'),
         ]);
 
-        if ($validator->fails()) {
-            return back()->withInput()->withErrors($validator)
-            ->with('error', __('messages.error_form'));
-        }
-
-        $leader->leader_code = $request->has('leaderCode') ? $request->get('leaderCode') : $user->leader_code;
-        $leader->phone = $request->has('phone') ? $request->get('phone') : $user->phone;
-        $leader->name = $request->has('name') ? $request->get('name') : $user->name;
-        $leader->start = $request->has('start') ? $request->get('start') : $user->start;
-        $leader->end = $request->has('end') ? $request->get('end') : $user->end;
+        $leader->leader_code = $request->has('leaderCode') ? $request->get('leaderCode') : $leader->leader_code;
+        $leader->phone = $request->has('phone') ? $request->get('phone') : $leader->phone;
+        $leader->name = $request->has('name') ? $request->get('name') : $leader->name;
+        $leader->start = $request->has('start') ? $request->get('start') : $leader->start;
+        $leader->end = $request->has('end') ? $request->get('end') : $leader->end;
 
         $leader->save();
 
-        return back()
+        return redirect('searches/'.$leader->search_id.'#nav-resources')
         ->with('success', __('leader.leader').' '.$leader->id.__('messages.updated'));
     }
 
@@ -87,7 +94,7 @@ class LeaderController extends Controller
         if ($currentUser == 'admin' && $leader) {
             $leader->delete();
 
-            return back()
+            return redirect('searches/'.$leader->search_id.'#nav-resources')
             ->with('success', __('leader.leader').' '.$leader->id.__('messages.deleted'));
         } else {
             return back()

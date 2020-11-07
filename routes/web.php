@@ -41,9 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('todotaskap', 'ToDoTaskAPController');
     Route::post('/todotaskap/{id}', 'ToDoTaskAPController@update')->name('todotask.update');
 
-    Route::resource('groups', 'GroupController');
-
     Route::resource('incidents', 'IncidentController');
+
+    Route::resource('groups', 'GroupController');
+    Route::resource('leaders', 'LeaderController');
 
     Route::get('/privacy', function () {
         return view('parts.privacy');

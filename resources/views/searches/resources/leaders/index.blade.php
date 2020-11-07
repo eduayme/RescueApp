@@ -1,34 +1,15 @@
-{{ Form::hidden('leader_count', $search->leaders->count()) }}
-<!-- If NO leader - OPEN -->
-<div id="no_leader" class="card text-center">
-    <div class="card-body">
-
-        <img src="/img/add_search.png" width="300">
-
-        <h4 class="card-title margin-bottom text-secondary">
-            {{ __('messages.no_leaders') }}
-        </h4>
-
-        <a href="#addLeaderModal" class="btn btn-primary" role="button" data-toggle="modal"
-        <?php if (Auth::user()->profile == 'guest') { ?> style="display:none" <?php } ?> >
-            {{ __('actions.add') . ' ' . __('leader.leader') }}
-        </a>
-    </div>
-</div>
-<!-- If NO leader - CLOSE -->
-
+@if ($search->leaders->count())
 <!-- Content - OPEN -->
-<div id="with_leader" class="container margin-top padding-bottom">
+<div class="container margin-top padding-bottom">
     <div class="row text-center margin-top-bottom">
         <div class="col-sm-12 text-right">
             <!-- Add leader button - OPEN -->
             @if (Auth::user()->profile != 'guest')
-                <span data-toggle="modal" href="#addLeaderModal">
-                    <button type="button" class="btn btn-sm btn-outline-primary">
-                        <span class="octicon octicon-plus"></span>
-                        {{ __('actions.add') . ' ' . __('leader.leader') }}
-                    </button>
-                </span>
+                <a href="{{ route('leaders.create', ['search_id' => $search->id]) }}" class="btn btn-outline-primary margin-left align-right btn-sm margin-bottom" role="button"
+                <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+                    <span class="octicon octicon-plus"></span>
+                    {{ __('actions.add') . ' ' . __('leader.leader') }}
+                </a>
             @endif
             <!-- Add leader button - CLOSE -->
         </div>
@@ -43,10 +24,26 @@
     </div>
 </div>
 <!-- Content - CLOSE -->
+@else
+<!-- If NO leader - OPEN -->
+<div class="card text-center">
+    <div class="card-body">
 
-<!-- Add leader modal - OPEN -->
-@include('searches.resources.leaders.add_leader',['search_id' => $search->id])
-<!-- Add leader modal - CLOSE -->
+        <img src="/img/add_search.png" width="300">
+
+        <h4 class="card-title margin-bottom text-secondary">
+            {{ __('messages.no_leaders') }}
+        </h4>
+
+        <a href="{{ route('leaders.create', ['search_id' => $search->id]) }}" class="btn btn-primary margin-top-bottom" role="button"
+        <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+            <span class="octicon octicon-plus"></span>
+            {{ __('actions.add') . ' ' . __('leader.leader') }}
+        </a>
+    </div>
+</div>
+<!-- If NO leader - CLOSE -->
+@endif
 
 <!-- JS -->
 <script>
@@ -87,12 +84,11 @@
 
         // date inputs
         var today = new Date();
-        $('input[name="start"],input[name="edit_start"],input[name="edit_end"]').daterangepicker({
+        $('input[name="start"],input[name="end"]').daterangepicker({
             singleDatePicker: true,
             timePicker: true,
             timePicker24Hour: true,
             timePickerIncrement: 5,
-            startDate: moment().startOf('hour'),
             autoUpdateInput: true,
             autoApply: true,
             drops: 'down',
@@ -128,9 +124,7 @@
             }
         });
 
-        $('input[name="start"],input[name="edit_start"],input[name="edit_end"]').val('');
-
-        $('input[name="start"],input[name="edit_start"],input[name="edit_end"]').on('cancel.daterangepicker', function(ev, picker) {
+        $('input[name="start"],input[name="end"]').on('cancel.daterangepicker', function(ev, picker) {
             $(this).val('');
         });
     });
