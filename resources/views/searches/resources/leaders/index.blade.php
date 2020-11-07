@@ -4,13 +4,11 @@
     <div class="row text-center margin-top-bottom">
         <div class="col-sm-12 text-right">
             <!-- Add leader button - OPEN -->
-            @if (Auth::user()->profile != 'guest')
-                <a href="{{ route('leaders.create', ['search_id' => $search->id]) }}" class="btn btn-outline-primary margin-left align-right btn-sm margin-bottom" role="button"
-                <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
-                    <span class="octicon octicon-plus"></span>
-                    {{ __('actions.add') . ' ' . __('leader.leader') }}
-                </a>
-            @endif
+            <a href="{{ route('leaders.create', ['search_id' => $search->id]) }}" class="btn btn-outline-primary margin-left align-right btn-sm margin-bottom" role="button"
+            <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+                <span class="octicon octicon-plus"></span>
+                {{ __('actions.add') . ' ' . __('leader.leader') }}
+            </a>
             <!-- Add leader button - CLOSE -->
         </div>
     </div>
@@ -54,7 +52,7 @@
             "scrollX": true,
             "pagingType": "full_numbers",
             "responsive": true,
-            "order": [ [ 0, "asc" ]],
+            "order": [ [ 0, "desc" ]],
             "lengthMenu": [ 5, 10, 15],
             "language": {
                 "decimal":        "",

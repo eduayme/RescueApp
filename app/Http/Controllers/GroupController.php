@@ -6,6 +6,7 @@ use App\Group;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Validator;
+use Auth;
 
 class GroupController extends Controller
 {
@@ -14,6 +15,22 @@ class GroupController extends Controller
         $groups = Group::where('search_id', $request->get('search_id'))->get();
 
         return view('groups.index', compact('groups'));
+    }
+
+    public function create(Request $request)
+    {
+        if (Auth::check()) {
+            $currentUser = \Auth::user()->profile;
+
+            if ($currentUser != 'guest') {
+                return view('searches.resources.groups.create', ['search_id' => $request->get('search_id')]);
+            } else {
+                return back()
+                ->with('error', __('messages.not_allowed'));
+            }
+        } else {
+            return redirect()->action('HomeController@login');
+        }
     }
 
     public function store(Request $request)
@@ -32,11 +49,6 @@ class GroupController extends Controller
             'people_involved.max'          => __('messages.max'),
         ]);
 
-        if ($validator->fails()) {
-            return back()->withInput()->withErrors($validator)
-            ->with('error', __('messages.error_form'));
-        }
-
         $group = Group::create([
             'search_id'         => $request->get('search_id'),
             'is_active'         => $request->get('is_active'),
@@ -48,7 +60,7 @@ class GroupController extends Controller
 
         $group->save();
 
-        return back()
+        return redirect('searches/'.$group->search_id.'#nav-resources')
         ->with('success', __('group.group').' '.$group->id.__('messages.added'));
     }
 
@@ -67,20 +79,15 @@ class GroupController extends Controller
             'people_involved.max'          => __('messages.max'),
         ]);
 
-        if ($validator->fails()) {
-            return back()->withInput()->withErrors($validator)
-            ->with('error', __('messages.error_form'));
-        }
-
-        $group->is_active = $request->has('is_active') ? $request->get('is_active') : $user->is_active;
-        $group->vehicle = $request->has('vehicle') ? $request->get('vehicle') : $user->vehicle;
-        $group->broadcast = $request->has('broadcast') ? $request->get('broadcast') : $user->broadcast;
-        $group->gps = $request->has('gps') ? $request->get('gps') : $user->gps;
-        $group->people_involved = $request->has('people_involved') ? $request->get('people_involved') : $user->people_involved;
+        $group->is_active = $request->has('is_active') ? $request->get('is_active') : $group->is_active;
+        $group->vehicle = $request->has('vehicle') ? $request->get('vehicle') : $group->vehicle;
+        $group->broadcast = $request->has('broadcast') ? $request->get('broadcast') : $group->broadcast;
+        $group->gps = $request->has('gps') ? $request->get('gps') : $group->gps;
+        $group->people_involved = $request->has('people_involved') ? $request->get('people_involved') : $group->people_involved;
 
         $group->save();
 
-        return back()
+        return redirect('searches/'.$group->search_id.'#nav-resources')
         ->with('success', __('group.group').' '.$group->id.__('messages.updated'));
     }
 
@@ -92,7 +99,7 @@ class GroupController extends Controller
         if ($currentUser == 'admin' && $group) {
             $group->delete();
 
-            return back()
+            return redirect('searches/'.$group->search_id.'#nav-resources')
             ->with('success', __('group.group').' '.$group->id.__('messages.deleted'));
         } else {
             return back()

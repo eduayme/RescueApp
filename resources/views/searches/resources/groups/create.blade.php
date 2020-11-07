@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('actions.add') . ' ' . __('leader.leader'))
+@section('title', __('actions.add') . ' ' . __('group.group'))
 
 @section('content')
 
@@ -16,77 +16,99 @@
     <!-- Top buttons - CLOSE -->
 
     <!-- Form - OPEN -->
-    <form method="post" action="{{ route('leaders.store') }}">
+    <form method="post" action="{{ route('groups.store') }}">
     {{ csrf_field() }}
 
         <!-- Stype service title - OPEN -->
         <h3 class="margin-top">
-            {{ __('actions.add') . ' ' . __('leader.leader') }}
+            {{ __('actions.add') . ' ' . __('group.group') }}
         </h3>
         <!-- Stype service title - CLOSE -->
 
-        <!-- Type activity, code and region - OPEN -->
+        <!-- Group - OPEN -->
         <div class="form-row">
             @csrf
 
-            <!-- Leader code - OPEN  -->
+            <!-- Status - OPEN  -->
             <div class="form-group col-md-6">
-                <label for="leaderCode"> {{ __('leader.id') }} </label>
-                {{ Form::text('leaderCode', null, array('class' => 'form-control', 'required' => 'required')) }}
-                <!-- Show errors input - OPEN -->
-                @if( $errors->has('leaderCode') )
-                    <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('leaderCode') }}</strong>
-                    </div>
-                @endif
-                <!-- Show errors input - CLOSE -->
+                <label for="status"> {{ __('group.status') }} </label>
+                <select id="status" class="form-control" name="status">
+                    <option value="0" @if (old('status') == "0") {{ 'selected' }} @endif>
+                        {{ __('group.is_active') }}
+                    </option>
+                    <option value="1" @if (old('status') == "1") {{ 'selected' }} @endif>
+                        {{ __('group.is_closed') }}
+                    </option>
+                </select>
             </div>
-            <!-- Leader code - CLOSE  -->
+            <!-- Status - CLOSE  -->
 
-            <!-- Phone - OPEN -->
+            <!-- Vehicle - OPEN -->
             <div class="form-group col-md-6">
-                <label for="phone"> {{ __('leader.phone') }} </label>
-                {{ Form::text('phone', null, array('class' => 'form-control')) }}
-                <!-- Show errors input - OPEN -->
-                @if( $errors->has('phone') )
-                    <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('phone') }}</strong>
-                    </div>
-                @endif
-                <!-- Show errors input - CLOSE -->
-            </div>
-            <!-- Phone - CLOSE -->
+                <label for="vehicle"> {{ __('group.vehicle') }} </label>
+                {{ Form::text('vehicle', null, array('class' => 'form-control')) }}
 
-            <!-- Leader name - OPEN  -->
-            <div class="form-group col-md-6">
-                <label for="name"> {{ __('leader.name') }} </label>
-                {{ Form::text('name', null, array('class' => 'form-control')) }}
                 <!-- Show errors input - OPEN -->
-                @if( $errors->has('name') )
+                @if( $errors->has('vehicle') )
                     <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('name') }}</strong>
+                        <strong>{{ $errors->first('vehicle') }}</strong>
                     </div>
                 @endif
                 <!-- Show errors input - CLOSE -->
             </div>
-            <!-- Leader name - CLOSE  -->
+            <!-- Vehicle - CLOSE -->
 
-            <!-- Leader code - OPEN  -->
+            <!-- Broadcast - OPEN  -->
             <div class="form-group col-md-6">
-                <label for="start"> {{ __('leader.start') }} </label>
-                {{ Form::text('start', null, array('class' => 'form-control')) }}
+
+                <!-- Broadcast - OPEN  -->
+                <div class="form-group col-md-12 p-0">
+                    <label for="broadcast"> {{ __('group.broadcast') }} </label>
+                    {{ Form::text('broadcast', null, array('class' => 'form-control')) }}
+
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('broadcast') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('broadcast') }}</strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+                </div>
+                <!-- Broadcast - CLOSE  -->
+
+                <!-- GPS - OPEN  -->
+                <div class="form-group col-md-12 p-0">
+                    <label for="gps"> {{ __('group.gps') }} </label>
+                    {{ Form::text('gps', null, array('class' => 'form-control')) }}
+                    <!-- Show errors input - OPEN -->
+                    @if( $errors->has('gps') )
+                        <div class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('gps') }}</strong>
+                        </div>
+                    @endif
+                    <!-- Show errors input - CLOSE -->
+                </div>
+                <!-- GPS - CLOSE  -->
+
+            </div>
+            <!-- Broadcast - CLOSE  -->
+
+            <!-- People involved - OPEN  -->
+            <div class="form-group col-md-6">
+                <label for="people_involved"> {{ __('group.people_involved') }} </label>
+                {{ Form::textarea('people_involved', null, array('class' => 'form-control','rows'=> 5, 'resize' => 'none')) }}
                 <!-- Show errors input - OPEN -->
-                @if( $errors->has('start') )
+                @if( $errors->has('people_involved') )
                     <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('start') }}</strong>
+                        <strong>{{ $errors->first('people_involved') }}</strong>
                     </div>
                 @endif
                 <!-- Show errors input - CLOSE -->
             </div>
-            <!-- Leader code - CLOSE  -->
+            <!-- People involved - CLOSE  -->
 
         </div>
-        <!-- Type activity, code and region - OPEN -->
+        <!-- Group - CLOSE -->
 
         <!-- Id search HIDDEN - OPEN -->
         {{ Form::hidden('search_id', $search_id) }}
@@ -96,7 +118,7 @@
         <div class="text-center margin-top">
             <button type="submit" class="btn btn-primary">
                 <span class="octicon octicon-plus"></span>
-                {{ __('actions.add') . ' ' . __('leader.leader') }}
+                {{ __('actions.add') . ' ' . __('group.group') }}
             </button>
         </div>
         <!-- Submit button - OPEN -->

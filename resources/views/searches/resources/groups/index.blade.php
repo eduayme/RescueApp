@@ -1,48 +1,22 @@
-<!-- Alerts - OPEN -->
-@include('parts.alerts')
-<!-- Alerts - CLOSE -->
-
-<!-- If NO group - OPEN -->
-@if (count($search->groups) == 0)
-    <div class="card text-center">
-        <div class="card-body">
-
-            <img src="/img/add_group.png" width="300">
-
-            <h4 class="card-title margin-bottom text-secondary">
-                {{ __('messages.no_groups') }}
-            </h4>
-
-            <a href="#addGroupModal" class="btn btn-primary" role="button" data-toggle="modal"
-                <?php if (Auth::user()->profile == 'guest') { ?> style="display:none" <?php } ?> >
-                {{ __('actions.add') . ' ' . __('group.group') }}
-            </a>
-        </div>
-    </div>
-<!-- If NO group - CLOSE -->
-
 <!-- If exists groups - OPEN -->
-@else
+@if ($search->groups->count())
     <div class="container margin-top padding-bottom">
         <div class="row text-center margin-top-bottom">
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <select class="form-control" id="status-groups-filter">
                     <option value=""> {{ __('actions.filter_by_status') }} </option>
                     <option value="{{ __('group.is_active') }}"> {{ __('group.is_active') }} </option>
                     <option value="{{ __('group.is_closed') }}"> {{ __('group.is_closed') }} </option>
                 </select>
             </div>
-            <div class="col-sm-9 text-right">
-                <!-- Add group button - OPEN -->
-                @if (Auth::user()->profile != 'guest')
-                    <span data-toggle="modal" href="#addGroupModal">
-                        <button type="button" class="btn btn-sm btn-outline-primary">
-                            <span class="octicon octicon-plus"></span>
-                            {{ __('actions.add') . ' ' . __('group.group') }}
-                        </button>
-                    </span>
-                @endif
-                <!-- Add group button - CLOSE -->
+            <div class="col-md-9 text-right">
+                <!-- Add leader button - OPEN -->
+                <a href="{{ route('groups.create', ['search_id' => $search->id]) }}" class="btn btn-outline-primary margin-left align-right btn-sm margin-bottom" role="button"
+                <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+                    <span class="octicon octicon-plus"></span>
+                    {{ __('actions.add') . ' ' . __('group.group') }}
+                </a>
+                <!-- Add leader button - CLOSE -->
             </div>
         </div>
 
@@ -54,13 +28,28 @@
             </div>
         </div>
     </div>
-
-@endif
 <!-- If exists groups - OPEN -->
 
-<!-- Add group modal - OPEN -->
-@include('searches.resources.groups.add_group',['search_id' => $search->id])
-<!-- Add group modal - CLOSE -->
+<!-- If NO group - OPEN -->
+@else
+    <div class="card text-center">
+        <div class="card-body">
+
+            <img src="/img/add_group.png" width="300">
+
+            <h4 class="card-title margin-bottom text-secondary">
+                {{ __('messages.no_groups') }}
+            </h4>
+
+            <a href="{{ route('groups.create', ['search_id' => $search->id]) }}" class="btn btn-primary margin-left align-right btn-sm margin-bottom" role="button"
+            <?php if ($search->status == 1 || Auth::user()->profile == 'guest'){ ?> style="display: none" <?php } ?> >
+                <span class="octicon octicon-plus"></span>
+                {{ __('actions.add') . ' ' . __('group.group') }}
+            </a>
+        </div>
+    </div>
+<!-- If NO group - CLOSE -->
+@endif
 
 <!-- JS -->
 <script>
