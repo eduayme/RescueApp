@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Leader;
+use Auth;
 use Illuminate\Http\Request;
 use Validator;
-use Auth;
 
 class LeaderController extends Controller
 {
