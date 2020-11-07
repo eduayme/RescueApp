@@ -31,12 +31,12 @@
 
             <!-- Status - OPEN  -->
             <div class="form-group col-md-6">
-                <label for="status"> {{ __('group.status') }} </label>
-                <select id="status" class="form-control" name="status">
-                    <option value="0" @if (old('status') == "0") {{ 'selected' }} @endif>
+                <label for="is_active"> {{ __('group.status') }} </label>
+                <select id="is_active" class="form-control" name="is_active">
+                    <option value="1" @if (old('is_active') == "0") {{ 'selected' }} @endif>
                         {{ __('group.is_active') }}
                     </option>
-                    <option value="1" @if (old('status') == "1") {{ 'selected' }} @endif>
+                    <option value="0" @if (old('is_active') == "1") {{ 'selected' }} @endif>
                         {{ __('group.is_closed') }}
                     </option>
                 </select>

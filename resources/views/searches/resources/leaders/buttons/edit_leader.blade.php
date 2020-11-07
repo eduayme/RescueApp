@@ -63,14 +63,11 @@
                                 class="form-control {{ $errors->has('end') ? ' is-invalid' : '' }}">
                             </div>
                         </div>
-                    </div>   <!-- col-12 - CLOSE -->
-                </div> <!-- Modal body - CLOSE -->
-                <div id="edit_error_message_container" class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none">
-                    <div class="container text-center">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <p id="edit_error_message">Error goes here !</p>
                     </div>
+                    <!-- col-12 - CLOSE -->
                 </div>
+                <!-- Modal body - CLOSE -->
+
                 <!-- Modal footer - OPEN -->
                 <div class="modal-footer">
                     <a class="btn btn-light" data-dismiss="modal">
@@ -81,6 +78,7 @@
                     <!-- Edit button - CLOSE -->
                 </div>
                 <!-- Modal footer - CLOSE -->
+
             {{ Form::close() }}
             <!-- Form edit leader - CLOSE -->
         </div>
