@@ -1,5 +1,5 @@
 <!-- Content - OPEN -->
-<div class="container margin-top padding-bottom">
+<div class="container mb-5 mt-3 my-md-3">
 
     <!-- Tabs nav - OPEN -->
     <nav class="project-tab">

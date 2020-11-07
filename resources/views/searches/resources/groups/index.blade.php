@@ -1,6 +1,6 @@
 <!-- If exists groups - OPEN -->
 @if ($search->groups->count())
-    <div class="container margin-top padding-bottom">
+    <div class="container mb-5 mt-3 my-md-3">
         <div class="row text-center margin-top-bottom">
             <div class="col-md-3">
                 <select class="form-control" id="status-groups-filter">

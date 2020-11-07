@@ -9,7 +9,7 @@
 <!-- Alerts - CLOSE -->
 
 <!-- Content - OPEN -->
-<div class="container margin-top padding-bottom">
+<div class="container mb-5 mt-3 my-md-3">
 
     <!-- Top buttons - OPEN -->
     @include('buttons.go_back')

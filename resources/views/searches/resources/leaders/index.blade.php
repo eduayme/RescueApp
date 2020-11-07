@@ -1,6 +1,6 @@
 @if ($search->leaders->count())
 <!-- Content - OPEN -->
-<div class="container margin-top padding-bottom">
+<div class="container mb-5 mt-3 my-md-3">
     <div class="row text-center margin-top-bottom">
         <div class="col-sm-12 text-right">
             <!-- Add leader button - OPEN -->
