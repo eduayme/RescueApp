@@ -96,4 +96,10 @@
         .columns.adjust();
     });
 
+    // filter status is_active
+    $('#status-groups-filter').on('change', function () {
+        console.log("|"+this.value+"|");
+        groupsTable.columns(1).search( this.value ).draw();
+    } );
+
 </script>

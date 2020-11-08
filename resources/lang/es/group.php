@@ -9,7 +9,7 @@ return [
     'gps'                            => 'GPS',
     'people_involved'                => 'Personas involucradas',
     'is_active'                      => 'Activo',
-    'is_closed'                      => 'Inactivo',
+    'is_closed'                      => 'Pasivo',
     'lengthMenu'                     => 'Mostrar _MENU_ grupos',
     'group_add_success'              => ' añadido correctamente.',
     'group_edit_success'             => ' editado correctamente.',
