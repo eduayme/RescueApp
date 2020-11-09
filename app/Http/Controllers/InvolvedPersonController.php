@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\InvolvedPerson;
-use App\Search;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Session;
 use Auth;
+use Illuminate\Http\Request;
 
 class InvolvedPersonController extends Controller
 {
