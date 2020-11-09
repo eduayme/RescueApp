@@ -92,11 +92,11 @@ return [
     'edit_task'                                 => 'Editar tarea',
     'sector'                                    => 'Sector',
     'task_group'                                => 'Grupo',
-    'task_start'                                => 'Comienzo',
+    'task_start'                                => 'Inicio',
     'task_end'                                  => 'Final',
     'task_type'                                 => 'Tipo',
     'gpx'                                       => 'GPX',
-    'actions'                                   => 'Comportamiento',
+    'actions'                                   => 'Acciones',
     'tracking_device'                           => 'Dispositivo rastreador',
     'file_name'                                 => 'Nombre del fichero',
 ];

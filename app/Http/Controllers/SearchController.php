@@ -178,8 +178,6 @@ class SearchController extends Controller
             'taskGroups',
             'taskTypes'
         ));
-
-        return view('searches.view', compact('search', 'action_plans', 'incidents'));
     }
 
     /**

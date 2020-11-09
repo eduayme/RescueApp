@@ -105,7 +105,7 @@ class PermissionController extends Controller
 
             if ($validator->fails()) {
                 return back()->withInput()->withErrors($validator)
-            ->with('error', __('messages.error_form'));
+                ->with('error', __('messages.error_form'));
             }
 
             $permission = new Permission();

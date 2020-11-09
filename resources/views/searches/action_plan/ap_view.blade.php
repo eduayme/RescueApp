@@ -146,7 +146,7 @@
 <!-- Align right - CLOSE -->
 
 <!-- Action Plan content - OPEN -->
-<div class="container container-fluid border border-secondary rounded margin-top-bottom margin-top box text-center">
+<div class="container container-fluid my-2 text-center">
     <div class="row">
 
         <div class="col-md-6 margin-top-sm">

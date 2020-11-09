@@ -1,5 +1,5 @@
 <!-- Top buttons - OPEN -->
-<div class="margin-top-bottom">
+<div class="mt-2 mt-md-4 mb-4 mb-md-5">
 
     <!-- Align left - OPEN -->
     <div class="justify-content-start">

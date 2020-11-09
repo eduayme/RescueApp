@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class IncidentImage extends Model
 {
-    protected $guarded = [];
+    public $table = 'incidents_images';
+
+    protected $primaryKey = 'id';
     protected $fillable = [
-        'id',
         'incident_id',
         'photo',
     ];
-
-    public $table = 'incidents_images';
 }

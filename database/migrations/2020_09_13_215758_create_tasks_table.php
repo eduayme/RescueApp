@@ -29,6 +29,7 @@ class CreateTasksTable extends Migration
             $table->string('gpxFileName')->nullable();
             $table->timestamps();
         });
+
         Schema::table('tasks', function (Blueprint $table) {
             $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
         });

@@ -15,7 +15,7 @@
     <!-- Language for dates - CLOSE -->
 
     <!-- Content - OPEN -->
-    <div class="container margin-top padding-bottom">
+    <div class="container mb-5 mt-3 my-md-3">
 
         <!-- Tabs nav - OPEN -->
         <nav class="project-tab">
@@ -58,7 +58,7 @@
                             <img src="/img/add_search.png" width="300">
 
                             <h4 class="card-title margin-bottom text-secondary">
-                                {{ __('messages.no_practices') }}
+                                {{ __('messages.no_searches') }}
                             </h4>
 
                             <a href="{{ route('searches.create') }}" class="btn btn-primary" role="button"

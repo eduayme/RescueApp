@@ -25,7 +25,7 @@
             <div class="modal-body">
 
                 <!-- Content - OPEN -->
-                <div class="container margin-top padding-bottom">
+                <div class="container mb-5 mt-3 my-md-3">
 
                     <!-- Profile user avatar - OPEN -->
                     <div class="container pad-sm">

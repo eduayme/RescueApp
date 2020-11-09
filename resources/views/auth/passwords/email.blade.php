@@ -7,7 +7,7 @@
     <!-- Alerts - CLOSE -->
 
     <!-- Content -->
-    <div class="container margin-top padding-bottom">
+    <div class="container mb-5 mt-3 my-md-3">
         <div class="row justify-content-center margin-bottom-lg">
             <div class="col-md-6">
 
