@@ -23,6 +23,7 @@ return [
     'num_unique'      => 'Diese Nummer muss einzigartig in der Datenbank sein.',
     'closed_search'   => 'Diese Untersuchung ist derzeit geschlossen.',
     'closed_practice' => 'Diese Übung ist derzeit geschlossen.',
-    'no_groups'       => 'No groups have been registered.',
-    'no_leaders'      => 'No leaders have been registered.',
+    'no_involved_people' => 'No involved person has been registered.',
+    'no_groups'       => 'No group has been registered.',
+    'no_leaders'      => 'No leader has been registered.',
 ];

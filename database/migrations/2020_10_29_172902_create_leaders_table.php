@@ -23,6 +23,10 @@ class CreateLeadersTable extends Migration
             $table->dateTime('end')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('leaders', function (Blueprint $table) {
+            $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
+        });
     }
 
     /**

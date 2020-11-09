@@ -23,6 +23,7 @@ return [
     'num_unique'      => 'Este número tem de ser único na tabela de informações',
     'closed_search'   => 'Esta investigação está fechada de momento',
     'closed_practice' => 'Este treino está fechado de momento',
-    'no_groups'       => 'No groups have been registered.',
-    'no_leaders'      => 'No leaders have been registered.',
+    'no_involved_people' => 'No involved person has been registered.',
+    'no_groups'       => 'No group has been registered.',
+    'no_leaders'      => 'No leader has been registered.',
 ];

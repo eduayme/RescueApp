@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('incidents', 'IncidentController');
 
+    Route::resource('involved_people', 'InvolvedPersonController');
     Route::resource('groups', 'GroupController');
     Route::resource('leaders', 'LeaderController');
 

@@ -115,6 +115,11 @@ class Search extends Model
         });
     }
 
+    public function involved_people()
+    {
+        return $this->hasMany('App\InvolvedPerson', 'search_id', 'id');
+    }
+
     public function groups()
     {
         return $this->hasMany('App\Group', 'search_id', 'id');

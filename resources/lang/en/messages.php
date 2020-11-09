@@ -23,6 +23,7 @@ return [
     'num_unique'      => 'This number must be unique in the data table.',
     'closed_search'   => 'This investigation is currently closed.',
     'closed_practice' => 'This practice is currently closed.',
-    'no_groups'       => 'No groups have been registered.',
-    'no_leaders'      => 'No leaders have been registered.',
+    'no_involved_people' => 'No involved person has been registered.',
+    'no_groups'       => 'No group has been registered.',
+    'no_leaders'      => 'No leader has been registered.',
 ];

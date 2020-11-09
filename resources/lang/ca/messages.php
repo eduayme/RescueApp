@@ -23,6 +23,7 @@ return [
     'num_unique'      => "El número d'actuació ha de ser únic a la taula de dades.",
     'closed_search'   => 'Aquesta recerca està actualment tancada.',
     'closed_practice' => 'Aquesta pràctica està actualment tancada.',
+    'no_involved_people' => 'Cap persona involucrada ha estat registrada.',
     'no_groups'       => 'Cap grup ha estat registrat.',
     'no_leaders'      => 'Cap líder ha estat registrat.',
 ];

@@ -23,6 +23,10 @@ class CreateGroupsTable extends Migration
             $table->string('people_involved')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('groups', function (Blueprint $table) {
+            $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
+        });
     }
 
     /**

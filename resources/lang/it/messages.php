@@ -23,6 +23,7 @@ return [
     'num_unique'      => 'Questo numero deve essere unico.',
     'closed_search'   => 'Questa investigazione è al momento chiusa.',
     'closed_practice' => 'Questa pratica è al momento chiusa.',
-    'no_groups'       => 'No groups have been registered.',
-    'no_leaders'      => 'No leaders have been registered.',
+    'no_involved_people' => 'No involved person has been registered.',
+    'no_groups'       => 'No group has been registered.',
+    'no_leaders'      => 'No leader has been registered.',
 ];
