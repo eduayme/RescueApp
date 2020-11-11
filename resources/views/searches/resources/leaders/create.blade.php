@@ -32,11 +32,11 @@
             <!-- Leader code - OPEN  -->
             <div class="form-group col-md-6">
                 <label for="leaderCode"> {{ __('leader.id') }} </label>
-                {{ Form::text('leaderCode', null, array('class' => 'form-control', 'required' => 'required')) }}
+                {{ Form::text('leader_code', null, array('class' => 'form-control', 'required' => 'required')) }}
                 <!-- Show errors input - OPEN -->
-                @if( $errors->has('leaderCode') )
+                @if( $errors->has('leader_code') )
                     <div class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('leaderCode') }}</strong>
+                        <strong>{{ $errors->first('leader_code') }}</strong>
                     </div>
                 @endif
                 <!-- Show errors input - CLOSE -->

@@ -48,7 +48,7 @@ class LeaderController extends Controller
 
         $leader = Leader::create([
             'search_id'         => $request->get('search_id'),
-            'leader_code'       => $request->get('leaderCode'),
+            'leader_code'       => $request->get('leader_code'),
             'name'              => $request->get('name'),
             'phone'             => $request->get('phone'),
             'start'             => $request->get('start'),
@@ -63,18 +63,18 @@ class LeaderController extends Controller
     public function update(Leader $leader, Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'leaderCode'            => ['required', 'string', 'max:255'],
-            'name'                  => ['required', 'string', 'max:255'],
-            'phone'                 => ['sometimes', 'string', 'max:50'],
+            'leader_code'            => ['required', 'string', 'max:255'],
+            'name'                   => ['required', 'string', 'max:255'],
+            'phone'                  => ['sometimes', 'string', 'max:50'],
         ], [
-            'name.required'         => __('messages.required'),
-            'name.max'              => __('messages.max'),
-            'leaderCode.required'   => __('messages.required'),
-            'leaderCode.max'        => __('messages.max'),
-            'phone.max'             => __('messages.max'),
+            'name.required'          => __('messages.required'),
+            'name.max'               => __('messages.max'),
+            'leader_code.required'   => __('messages.required'),
+            'leader_code.max'        => __('messages.max'),
+            'phone.max'              => __('messages.max'),
         ]);
 
-        $leader->leader_code = $request->has('leaderCode') ? $request->get('leaderCode') : $leader->leader_code;
+        $leader->leader_code = $request->has('leader_code') ? $request->get('leader_code') : $leader->leader_code;
         $leader->phone = $request->has('phone') ? $request->get('phone') : $leader->phone;
         $leader->name = $request->has('name') ? $request->get('name') : $leader->name;
         $leader->start = $request->has('start') ? $request->get('start') : $leader->start;

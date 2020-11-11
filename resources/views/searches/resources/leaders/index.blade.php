@@ -15,7 +15,7 @@
 
     <div class="row text-center margin-top-bottom">
         <div class="col-sm-12">
-            <table class="table dt-responsive nowrap table-hover text-center" id="leaders"style="width: 100%">
+            <table class="table dt-responsive nowrap table-hover text-center" id="leaders" style="width: 100%">
                 @include('searches.resources.leaders.table', ['items' => $search->leaders])
             </table>
         </div>

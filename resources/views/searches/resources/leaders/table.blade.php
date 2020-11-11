@@ -16,7 +16,7 @@
     @foreach ($items as $leader)
         <tr>
 
-            <td> {{ $leader->id }} </td>
+            <td> {{ $leader->leader_code }} </td>
             <td> {{ $leader->name }} </td>
             <td> {{ $leader->phone }} </td>
             <td>
