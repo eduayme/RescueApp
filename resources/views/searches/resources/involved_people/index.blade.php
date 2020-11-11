@@ -49,7 +49,7 @@
 
     $(document).ready(function() {
         // Leaders Data Table
-        leadersTable = $( "#leaders" ).DataTable({
+        leadersTable = $( "#involved_people" ).DataTable({
             "scrollX": true,
             "pagingType": "full_numbers",
             "responsive": true,
