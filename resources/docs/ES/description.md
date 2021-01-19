@@ -36,4 +36,4 @@ Para búsquedas más complejas, las herramientas cartográficas y de registro de
 
 <a name="percentage"></a>
 ## [¿Qué porcentaje del projecto está finalizado?](/{{route}}/{{version}}/description#percentage)
- Aproximadamente, en la versión [v1.0] (https://github.com/eduayme/RescueApp/releases/tag/v1.0), el 25% del proyecto ya está terminado y actualmente en fase de prueba.
+ Aproximadamente, en la versión [v1.0](https://github.com/eduayme/RescueApp/releases/tag/v1.0), el 25% del proyecto ya está terminado y actualmente en fase de prueba.
