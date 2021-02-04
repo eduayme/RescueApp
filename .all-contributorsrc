@@ -208,6 +208,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jonadoe",
+      "name": "Jonathan Doelfs",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11443300?v=4",
+      "profile": "http://www.sodatech.com/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
