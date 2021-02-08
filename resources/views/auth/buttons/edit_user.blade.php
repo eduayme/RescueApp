@@ -1,7 +1,6 @@
 <!-- Edit user button - OPEN -->
 <span data-toggle="modal" href="#editModal-{{ $user->id }}">
-    <button type="button" class="btn btn-sm btn-outline-dark"
-    data-toggle="tooltip" data-placement="top" title="{{ __('actions.edit') }}">
+    <button type="button" class="btn btn-sm btn-outline-dark">
         <span class="octicon octicon-pencil"></span>
     </button>
 </span>

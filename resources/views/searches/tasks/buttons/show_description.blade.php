@@ -1,7 +1,6 @@
 <!-- show desctiption button - OPEN -->
 <span data-toggle="modal" href="#viewDescriptionModal-{{ $task->id }}">
-    <button type="button" class="btn btn-sm btn-outline-secondary btn-margin"
-    data-toggle="tooltip" data-placement="left" title="{{ __('actions.view') }}">
+    <button type="button" class="btn btn-sm btn-outline-secondary btn-margin">
          <span class="octicon octicon-plus"></span>
  		<!-- <span data-icon="octicon bi-plus-square"></span> -->
  <span class="iconify" data-icon="plus-box-outline"></span>

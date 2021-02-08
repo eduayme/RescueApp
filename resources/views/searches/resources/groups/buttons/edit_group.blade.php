@@ -1,7 +1,6 @@
 <!-- Edit user button - OPEN -->
 <span data-toggle="modal" href="#editGroupModal-{{ $group->id }}">
-    <button type="button" class="btn btn-sm btn-outline-dark btn-margin"
-    data-toggle="tooltip" data-placement="left" title="{{ __('actions.edit') }}">
+    <button type="button" class="btn btn-sm btn-outline-dark btn-margin">
         <span class="octicon octicon-pencil"></span>
     </button>
 </span>
