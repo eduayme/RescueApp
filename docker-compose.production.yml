@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  rescueapp:
+    build:
+      context: .
+    image: rescueapp
+    restart: unless-stopped
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    env_file:
+      - ".env"
+
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    volumes:
+      - rescueapp-db-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: "${DB_DATABASE}"
+      MYSQL_USER: "${DB_USERNAME}"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+
+volumes:
+  rescueapp-db-data:
+
