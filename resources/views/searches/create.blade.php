@@ -264,7 +264,7 @@
             <!-- Lost people count - OPEN -->
             <div class="collapse" id="collapseLostPeopleCount">
 
-                <div class="form-row">
+                <div class="form-row mb-4">
                     <!-- Count input - OPEN  -->
                     <div class="form-group col-md-4">
                         <label for="number_lost_people"> {{ __('forms.n_lost_people') }} </label>
@@ -291,24 +291,142 @@
                             <label for="lost_person_name"> {{ __('register.name') }} </label>
                             <input type="text" class="form-control" name="lost_person_name[]" value=""/>
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-4">
                             <label for="lost_person_name_respond"> {{ __('forms.name_respond') }} </label>
                             <input type="text" class="form-control" name="lost_person_name_respond[]" value=""/>
                         </div>
-                        <div class="form-group col-md-1">
+                        <div class="form-group col-md-4">
                             <label for="lost_person_age"> {{ __('forms.age') }} </label>
                             <input type="number" class="form-control" name="lost_person_age[]" value=""/>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label for="lost_person_phone_number"> {{ __('forms.phone') }} </label>
                             <input type="text" class="form-control" name="lost_person_phone_number[]" value=""/>
                         </div>
+                        <!-- Has whatsapp or gps - OPEN  -->
+                        <div class="form-group col-md-4">
+                            <label for="whatsapp_or_gps"> {{ __('forms.whatsapp_or_gps') }} </label>
+                            <select class="form-control" name="whatsapp_or_gps[]">
+                                <option value="">
+                                    {{ __('forms.chose_option') }}
+                                </option>
+                                <option value="0" @if (old('whatsapp_or_gps') == "0") {{ 'selected' }} @endif>
+                                    {{ __('actions.no') }}
+                                </option>
+                                <option value="1" @if (old('whatsapp_or_gps') == "1") {{ 'selected' }} @endif>
+                                    {{ __('actions.yes') }}
+                                </option>
+                            </select>
+                        </div>
+                        <!-- Has whatsapp or gps - CLOSE  -->
+                        <!-- Profile - OPEN  -->
+                        <div class="form-group col-md-4">
+                            <label for="profile"> {{ __('register.profile') }} </label>
+                            <select class="form-control" name="profile[]">
+                                <option value="">
+                                    {{ __('forms.chose_option') }}
+                                </option>
+                                <option value="development_disorder">
+                                    {{ __('profile_lost_person.development_disorder') }}
+                                </option>
+                                <option value="alzheimer_or_other_dementias">
+                                    {{ __('profile_lost_person.alzheimer_or_other_dementias') }}
+                                </option>
+                                <option value="mental_or_psychological_illness">
+                                    {{ __('profile_lost_person.mental_or_psychological_illness') }}
+                                </option>
+                                <option value="autolithic_behaviors">
+                                    {{ __('profile_lost_person.autolithic_behaviors') }}
+                                </option>
+                                <option value="hiker">
+                                    {{ __('profile_lost_person.hiker') }}
+                                </option>
+                                <option value="collector">
+                                    {{ __('profile_lost_person.collector') }}
+                                </option>
+                                <option value="mushroom_finder">
+                                    {{ __('profile_lost_person.mushroom_finder') }}
+                                </option>
+                                <option value="none_of_the_above">
+                                    {{ __('profile_lost_person.none_of_the_above') }}
+                                </option>
+                            </select>
+                        </div>
+                        <!-- Profile - CLOSE  -->
+                        <!-- Aspect description - OPEN  -->
+                        <div class="form-group col-md-6">
+                            <label for="physical_appearance"> {{ __('forms.aspect_description') }} </label>
+                            <textarea type="text" class="form-control" name="physical_appearance[]" rows="2">{{ old('physical_appearance') }}</textarea>
+                        </div>
+                        <!--  Aspect description - CLOSE  -->
+                        <!-- Clothes - OPEN  -->
+                        <div class="form-group col-md-6">
+                            <label for="clothes"> {{ __('forms.clothes') }} </label>
+                            <textarea type="text" class="form-control" name="clothes[]" rows="2">{{ old('clothes') }}</textarea>
+                        </div>
+                        <!-- Clothes - CLOSE  -->
+                        <!-- Phisic form - OPEN  -->
+                        <div class="form-group col-md-6">
+                            <label for="physical_condition"> {{ __('forms.phisic_form') }} </label>
+                            <textarea type="text" class="form-control" name="physical_condition[]" rows="2">{{ old('physical_condition') }}</textarea>
+                        </div>
+                        <!-- Phisic form - CLOSE  -->
+                        <!-- Diseases or injuries - OPEN  -->
+                        <div class="form-group col-md-6">
+                            <label for="diseases_or_injuries"> {{ __('forms.diseases_or_injuries') }} </label>
+                            <textarea type="text" class="form-control" name="diseases_or_injuries[]" rows="2">{{ old('diseases_or_injuries') }}</textarea>
+                        </div>
+                        <!-- Diseases or injuries - CLOSE  -->
+                        <!-- Medication - OPEN  -->
+                        <div class="form-group col-md-6">
+                            <label for="medication"> {{ __('forms.medication') }} </label>
+                            <textarea type="text" class="form-control" name="medication[]" rows="2">{{ old('medication') }}</textarea>
+                        </div>
+                        <!-- Medication - CLOSE  -->
+                        <!-- Limitations or discapacities - OPEN  -->
+                        <div class="form-group col-md-6">
+                            <label for="discapacities_or_limitations"> {{ __('forms.limitations_or_discapacities') }} </label>
+                            <textarea type="text" class="form-control" name="discapacities_or_limitations[]" rows="2">{{ old('discapacities_or_limitations') }}</textarea>
+                        </div>
+                        <!-- Limitations or discapacities - CLOSE  -->
+                        <!-- Others - OPEN  -->
+                        <div class="form-group col-md-12">
+                            <label for="other"> {{ __('forms.other') }} </label>
+                            <textarea type="text" class="form-control" name="other[]" rows="2">{{ old('other') }}</textarea>
+                        </div>
+                        <!-- Others - CLOSE  -->
+                        <!-- Vehicle title - OPEN -->
+                        <div class="form-group col-md-12">
+                            <h5 class="margin-top-sm">
+                                {{ __('forms.vehicle') }}
+                            </h5>
+                        </div>
+                        <!-- Vehicle title - CLOSE -->
+                        <!-- Vehicle model and brand - OPEN  -->
+                        <div class="form-group col-md-6">
+                            <label for="model_vehicle"> {{ __('forms.model_and_brand') }} </label>
+                            <input type="text" class="form-control {{ $errors->has('model_vehicle') ? ' is-invalid' : '' }}" name="model_vehicle[]" value="{{ old('model_vehicle') }}"/>
+                        </div>
+                        <!-- Vehicle model and brand - CLOSE  -->
+                        <!-- Vehicle color - OPEN  -->
+                        <div class="form-group col-md-3">
+                            <label for="color_vehicle"> {{ __('forms.color') }} </label>
+                            <input type="text" class="form-control {{ $errors->has('color_vehicle') ? ' is-invalid' : '' }}" name="color_vehicle[]" value="{{ old('color_vehicle') }}"/>
+                        </div>
+                        <!-- Vehicle color - CLOSE  -->
+                        <!-- Vehicle license plate - OPEN  -->
+                        <div class="form-group col-md-3">
+                            <label for="car_plate_number"> {{ __('forms.license_plate') }} </label>
+                            <input type="text" class="form-control {{ $errors->has('car_plate_number') ? ' is-invalid' : '' }}" name="car_plate_number[]" value="{{ old('car_plate_number') }}"/>
+                        </div>
+                        <!-- Vehicle license plate - CLOSE  -->
+                        <!-- Add another person - OPEN -->
                         <div class="form-group col-md-1">
                             <a href="javascript:void(0);" class="add-button btn btn-outline-dark btn-lg margin-top">
                                 <span class="octicon octicon-plus"></span>
                             </a>
                         </div>
-
+                        <!-- Add another person - CLOSE -->
                     </div>
 
                 </div>
@@ -622,7 +740,7 @@ $(document).ready(function() {
             // increment field counter
             x++;
             // add a new html lost person input
-            var fieldHTML = '<div class="wrapper"><h4> {{ __("main.lost_person") }} <div class="id-lost-person">' + x + ' </div> </h4><div class="form-row"><div class="form-group col-md-4"><label for="lost_person_name"> {{ __("register.name") }} </label><input type="text" class="form-control" name="lost_person_name[]" value=""/></div><div class="form-group col-md-2"><label for="lost_person_name_respond"> {{ __("forms.name_respond") }} </label><input type="text" class="form-control" name="lost_person_name_respond[]" value=""/></div><div class="form-group col-md-1"><label for="lost_person_age"> {{ __("forms.age") }} </label><input type="number" class="form-control" name="lost_person_age[]" value=""/></div><div class="form-group col-md-3"><label for="lost_person_phone_number"> {{ __("forms.phone") }} </label><input type="text" class="form-control" name="lost_person_phone_number[]" value=""/></div><div class="form-group col-md-1"><a href="javascript:void(0);" class="add-button btn btn-outline-dark btn-lg margin-top"><span class="octicon octicon-plus"></span></a></div><div class="form-group col-md-1"><a href="javascript:void(0);" class="remove-button btn btn-outline-danger btn-lg margin-top"><span class="octicon octicon-trashcan"></span></a></div></div></div>';
+            var fieldHTML = '<div class="wrapper"><h4> {{ __("main.lost_person") }} <div class="id-lost-person">' + x + ' </div> </h4><div class="form-row"><div class="form-group col-md-4"><label for="lost_person_name"> {{ __("register.name") }} </label><input type="text" class="form-control" name="lost_person_name[]" value=""/></div><div class="form-group col-md-4"><label for="lost_person_name_respond"> {{ __("forms.name_respond") }} </label><input type="text" class="form-control" name="lost_person_name_respond[]" value=""/></div><div class="form-group col-md-4"><label for="lost_person_age"> {{ __("forms.age") }} </label><input type="number" class="form-control" name="lost_person_age[]" value=""/></div><div class="form-group col-md-4"><label for="lost_person_phone_number"> {{ __("forms.phone") }} </label><input type="text" class="form-control" name="lost_person_phone_number[]" value=""/></div><div class="form-group col-md-4"><label for="whatsapp_or_gps"> {{ __("forms.whatsapp_or_gps") }} </label><select class="form-control" name="whatsapp_or_gps[]"><option value=""> {{ __('forms.chose_option') }} </option> <option value="0" @if (old('whatsapp_or_gps') == "0") {{ 'selected' }} @endif> {{ __('actions.no') }} </option><option value="1" @if (old('whatsapp_or_gps') == "1") {{ 'selected' }} @endif>{{ __('actions.yes') }}</option></select></div><div class="form-group col-md-4"><label for="profile"> {{ __('register.profile') }} </label><select class="form-control" name="profile[]"><option value=""> {{ __('forms.chose_option') }} </option><option value="development_disorder"> {{ __('profile_lost_person.development_disorder') }} </option> <option value="alzheimer_or_other_dementias"> {{ __('profile_lost_person.alzheimer_or_other_dementias') }}</option><option value="mental_or_psychological_illness">{{ __('profile_lost_person.mental_or_psychological_illness') }} </option> <option value="autolithic_behaviors"> {{ __('profile_lost_person.autolithic_behaviors') }} </option> <option value="hiker"> {{ __('profile_lost_person.hiker') }} </option> <option value="collector"> {{ __('profile_lost_person.collector') }} </option> <option value="mushroom_finder"> {{ __('profile_lost_person.mushroom_finder') }} </option> <option value="none_of_the_above"> {{ __('profile_lost_person.none_of_the_above') }} </option> </select> </div> <div class="form-group col-md-6"> <label for="physical_appearance"> {{ __('forms.aspect_description') }} </label> <textarea type="text" class="form-control" name="physical_appearance[]" rows="2">{{ old('physical_appearance') }}</textarea> </div> <div class="form-group col-md-6"> <label for="clothes"> {{ __('forms.clothes') }} </label> <textarea type="text" class="form-control" name="clothes[]" rows="2">{{ old('clothes') }}</textarea> </div> <div class="form-group col-md-6"> <label for="physical_condition"> {{ __('forms.phisic_form') }} </label> <textarea type="text" class="form-control" name="physical_condition[]" rows="2">{{ old('physical_condition') }}</textarea> </div> <div class="form-group col-md-6"> <label for="diseases_or_injuries"> {{ __('forms.diseases_or_injuries') }} </label> <textarea type="text" class="form-control" name="diseases_or_injuries[]" rows="2">{{ old('diseases_or_injuries') }}</textarea> </div> <div class="form-group col-md-6"> <label for="medication"> {{ __('forms.medication') }} </label> <textarea type="text" class="form-control" name="medication[]" rows="2">{{ old('medication') }}</textarea> </div> <div class="form-group col-md-6"> <label for="discapacities_or_limitations"> {{ __('forms.limitations_or_discapacities') }} </label> <textarea type="text" class="form-control" name="discapacities_or_limitations[]" rows="2">{{ old('discapacities_or_limitations') }}</textarea> </div> <div class="form-group col-md-12"> <label for="other"> {{ __('forms.other') }} </label> <textarea type="text" class="form-control" name="other[]" rows="2">{{ old('other') }}</textarea> </div> <div class="form-group col-md-12"> <h5 class="margin-top-sm"> {{ __('forms.vehicle') }} </h5> </div> <div class="form-group col-md-6"> <label for="model_vehicle"> {{ __('forms.model_and_brand') }} </label> <input type="text" class="form-control {{ $errors->has('model_vehicle') ? ' is-invalid' : '' }}" name="model_vehicle[]" value="{{ old('model_vehicle') }}"/> </div> <div class="form-group col-md-3"> <label for="color_vehicle"> {{ __('forms.color') }} </label> <input type="text" class="form-control {{ $errors->has('color_vehicle') ? ' is-invalid' : '' }}" name="color_vehicle[]" value="{{ old('color_vehicle') }}"/> </div> <div class="form-group col-md-3"> <label for="car_plate_number"> {{ __('forms.license_plate') }} </label> <input type="text" class="form-control {{ $errors->has('car_plate_number') ? ' is-invalid' : '' }}" name="car_plate_number[]" value="{{ old('car_plate_number') }}"/></div></div><div class="form-group col-md-3"><a href="javascript:void(0);" class="remove-button btn btn-outline-danger btn-lg"><span class="octicon octicon-trashcan"></span></a></div><div class="form-group col-md-3"><a href="javascript:void(0);" class="add-button btn btn-outline-dark btn-lg"><span class="octicon octicon-plus"></span></a></div></div></div>';
             // add the html in the wrapper div
             $(wrapper).append(fieldHTML);
             // assign the counter

@@ -12,7 +12,6 @@ class Search extends Model
     public $table = 'searches';
 
     protected $primaryKey = 'id';
-    public $incrementing = false;
     protected $fillable = [
         'is_a_practice',
         'search_id',

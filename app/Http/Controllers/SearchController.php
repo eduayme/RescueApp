@@ -140,11 +140,23 @@ class SearchController extends Controller
         foreach ($request->input('lost_person_name') as $key => $value) {
             if ($value != '') {
                 $lost_person = new LostPerson([
-                    'search_id'    => $search->id,
-                    'name'         => $value,
-                    'name_respond' => $request->input('lost_person_name_respond')[$key],
-                    'age'          => $request->input('lost_person_age')[$key],
-                    'phone_number' => $request->input('lost_person_phone_number')[$key],
+                    'search_id'       => $search->id,
+                    'name'            => $value,
+                    'name_respond'    => $request->input('lost_person_name_respond')[$key],
+                    'age'             => $request->input('lost_person_age')[$key],
+                    'phone_number'    => $request->input('lost_person_phone_number')[$key],
+                    'whatsapp_or_gps' => $request->input('whatsapp_or_gps')[$key],
+                    'profile'         => $request->input('profile')[$key],
+                    'physical_appearance' => $request->input('physical_appearance')[$key],
+                    'clothes' => $request->input('clothes')[$key],
+                    'physical_condition' => $request->input('physical_condition')[$key],
+                    'diseases_or_injuries' => $request->input('diseases_or_injuries')[$key],
+                    'medication' => $request->input('medication')[$key],
+                    'discapacities_or_limitations' => $request->input('discapacities_or_limitations')[$key],
+                    'other' => $request->input('other')[$key],
+                    'model_vehicle' => $request->input('model_vehicle')[$key],
+                    'color_vehicle' => $request->input('color_vehicle')[$key],
+                    'car_plate_number' => $request->input('car_plate_number')[$key],
                 ]);
                 $lost_person->save();
             }
