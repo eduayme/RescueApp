@@ -5,7 +5,7 @@
 
         <!-- Navbar logo - OPEN -->
         <a class="navbar-logo" href="{{ url('/') }}">
-            <img src="/img/RescueApp-logo.png" height="35" alt="RescueApp">
+            <img src="/img/RescueApp-logo-horizontal.png" height="35" alt="RescueApp">
         </a>
         <!-- Navbar logo - CLOSE -->
 

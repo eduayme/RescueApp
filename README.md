@@ -1,5 +1,5 @@
 <p align="center">
-<img src="public/img/RescueApp-logo-vertical.png" alt="RescueApp">
+<img src="public/img/RescueApp-logo-horizontal.png" alt="RescueApp">
 </p>
 <p align="center">
 <a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?branch=master" alt="StyleCI"></a>

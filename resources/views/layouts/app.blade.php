@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Favicon - OPEN -->
-        <link rel="shortcut icon" href="{{{ asset('img/RescueApp-logo-form.png') }}}" />
+        <link rel="shortcut icon" href="{{{ asset('img/RescueApp-logo.png') }}}" />
         <!-- Favicon - CLOSE -->
 
         <!-- CSRF Token - OPEN -->
