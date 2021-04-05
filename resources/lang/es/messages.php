@@ -2,6 +2,8 @@
 
 return [
     'required'           => 'Este campo es obligatorio.',
+    'mimes'              => 'El formato de la imagen no es correcto.',
+    'photo_max'          => 'La imagen no puede superar los 2 MB.',
     'min'                => 'Este campo debe tener al menos 2 caracteres.',
     'min8'               => 'Este campo debe tener al menos 8 caracteres.',
     'min8_max10'         => 'Este campo debe tener entre 8 y 10 caracteres.',

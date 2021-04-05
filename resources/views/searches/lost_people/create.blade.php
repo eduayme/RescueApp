@@ -51,6 +51,14 @@
                         class="form-control" style="display: none"/>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                        <!-- Show errors input - OPEN -->
+                        @if ($errors->has('photo'))
+                            <div class="alert alert-danger" role="alert">
+                                    <strong>{{ $errors->first('photo') }}</strong>
+                            </div>
+                        @endif
+                        <!-- Show errors input - CLOSE -->
+
                     </div>
                     <!-- User photo - CLOSE -->
                 </div>
