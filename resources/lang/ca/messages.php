@@ -2,6 +2,8 @@
 
 return [
     'required'           => 'Aquest camp és obligatori.',
+    'mimes'              => 'El format de la imatge no és correcte.',
+    'photo_max'          => 'La imatge no pot superar els 2 MB.',
     'min'                => 'Aquest camp ha de tenir com a mínim 2 caràcters.',
     'min8'               => 'Aquest camp ha de tenir com a mínim 8 caràcters.',
     'min8_max10'         => 'Aquest camp ha de tenir entre 8 i 10 caràcters.',

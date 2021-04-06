@@ -2,6 +2,8 @@
 
 return [
     'required'           => 'This field is required.',
+    'mimes'              => 'The image format is not correct.',
+    'photo_max'          => 'Image size must be less than 2 MB.',
     'min'                => 'This field must contain at least 2 characters.',
     'min8'               => 'This field must contain at least 8 characters.',
     'min8_max10'         => 'This field must contain between 8 and 10 characters.',

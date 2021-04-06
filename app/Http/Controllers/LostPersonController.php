@@ -46,14 +46,13 @@ class LostPersonController extends Controller
     {
         $request->validate([
             'name'  => 'required|string|min:2|max:50',
-            'photo' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
+            'photo' => 'mimes:jpeg,png,jpg,svg|max:2048',
         ], [
-            'name.required' => __('messages.required'),
-            'name.min'      => __('messages.min'),
-            'name.max'      => __('messages.max'),
-            'photo.image'   => __('messages.image'),
-            'photo.mimes'   => __('messages.mimes'),
-            'photo.max'     => __('messages.photo_max'),
+            'name.required'  => __('messages.required'),
+            'name.min'       => __('messages.min'),
+            'name.max'       => __('messages.max'),
+            'photo.mimes'    => __('messages.mimes'),
+            'photo.uploaded' => __('messages.photo_max'),
         ]);
 
         $lost_person = new LostPerson([
@@ -167,11 +166,14 @@ class LostPersonController extends Controller
         $lost_person = LostPerson::find($id);
 
         $request->validate([
-            'name' => 'required|string|min:2|max:50',
+            'name'  => 'required|string|min:2|max:50',
+            'photo' => 'mimes:jpeg,png,jpg,svg|max:2048',
         ], [
-            'name.required' => __('messages.required'),
-            'name.min'      => __('messages.min'),
-            'name.max'      => __('messages.max'),
+            'name.required'  => __('messages.required'),
+            'name.min'       => __('messages.min'),
+            'name.max'       => __('messages.max'),
+            'photo.mimes'    => __('messages.mimes'),
+            'photo.uploaded' => __('messages.photo_max'),
         ]);
 
         if ($request->hasFile('photo')) {
