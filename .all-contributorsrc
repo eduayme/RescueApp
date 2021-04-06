@@ -217,6 +217,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "siddux",
+      "name": "siddux",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7074956?v=4",
+      "profile": "https://github.com/siddux",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 5,
