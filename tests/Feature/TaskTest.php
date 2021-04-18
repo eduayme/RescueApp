@@ -3,8 +3,8 @@
 namespace Tests\Feature;
 
 use Auth;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class TaskCreationTest extends TestCase
 {
@@ -18,7 +18,7 @@ class TaskCreationTest extends TestCase
     public function test_user_can_create_task()
     {
         $user = Auth::loginUsingId(2);
-        
+
         factory('App\Search')->create();
         $task = factory('App\Task')->create();
 
