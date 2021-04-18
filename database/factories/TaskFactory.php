@@ -3,11 +3,12 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Task;
+use App\Search;
 use Faker\Generator as Faker;
 
 $factory->define(Task::class, function (Faker $faker) {
     return [
-        'search_id'   => 1,
+        'search_id'   => Search::pluck('id')->random(),
         'Sector'      => $faker->word,
         'Status'      => 'to_do',
         'Group'       => $faker->randomDigit,
