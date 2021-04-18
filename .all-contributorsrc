@@ -227,6 +227,15 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "yogendra-revanna",
+      "name": "Yogendra Revanna",
+      "avatar_url": "https://avatars.githubusercontent.com/u/71602500?v=4",
+      "profile": "https://github.com/yogendra-revanna",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 5,
