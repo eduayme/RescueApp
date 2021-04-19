@@ -108,7 +108,7 @@
                         <option value="01 - Centre" {{ ($search->region == '01 - Centre') ? 'selected' : '' }}>
                           01 - Centre
                         </option>
-                        <option value="02 - Girona" {{ ($search->regin == '02 - Girona') ? 'selected' : '' }}>
+                        <option value="02 - Girona" {{ ($search->region == '02 - Girona') ? 'selected' : '' }}>
                           02 - Girona
                         </option>
                         <option value="03 - Lleida" {{ ($search->region == '03 - Lleida') ? 'selected' : '' }}>
