@@ -6,6 +6,7 @@
 <a href="https://travis-ci.org/eduayme/RescueApp"><img src="https://travis-ci.org/eduayme/RescueApp.svg?branch=master" alt="Build Status"></a>
 <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.3.2"><img src="https://img.shields.io/badge/version-v1.3.2-blue"></a>
 <a href="https://github.com/eduayme/RescueApp/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Feduayme%2FRescueApp?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Feduayme%2FRescueApp.svg?type=shield"/></a>
 </p>
 
 
@@ -20,6 +21,9 @@ You can find all the documentation [in the wiki](https://github.com/eduayme/Resc
 ## License
 The RescueApp is an open-source software licensed under the [GPL v3 license](https://opensource.org/licenses/GPL-3.0).
 
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Feduayme%2FRescueApp.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Feduayme%2FRescueApp?ref=badge_large)
 
 ## Contributors
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
