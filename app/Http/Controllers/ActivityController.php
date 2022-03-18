@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Activity;
-use App\User;
 use Gate;
 
 class ActivityController extends Controller
