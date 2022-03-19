@@ -29,12 +29,12 @@ class StoreRequest extends FormRequest
             'images'                => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
             'user_creation_id'      => 'integer|required',
             'user_modification_id'  => 'integer|required',
-            'search_id'             => 'required|integer'
+            'search_id'             => 'required|integer',
         ];
     }
 
     /**
-     * Validation messages
+     * Validation messages.
      * 
      * @return array
      */

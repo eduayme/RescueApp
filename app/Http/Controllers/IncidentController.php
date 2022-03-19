@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Incident\StoreRequest;
 use App\Http\Requests\Incident\UpdateRequest;
+use App\Http\Traits\ImageUploadTrait;
 use App\Incident;
 use App\IncidentImage;
-use App\Http\Traits\ImageUploadTrait;
 use File;
 use Illuminate\Http\Request;
 
@@ -112,7 +112,6 @@ class IncidentController extends Controller
 
             return redirect('searches/'.$incident->search_id.'#nav-incidents')
             ->with('success', __('main.incident').' '.$incident->id.__('messages.deleted'));
-            
         } 
 
         return back()->with('error', __('messages.not_allowed'));

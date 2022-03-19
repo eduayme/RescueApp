@@ -34,6 +34,7 @@ class GroupController extends Controller
             'gps'               => $request->gps,
             'people_involved'   => $request->people_involved,
         ]);
+
         return redirect('searches/'.$group->search_id.'#nav-resources')
             ->with('success', __('group.group').' '.$group->id.__('messages.added'));
     }
@@ -60,6 +61,7 @@ class GroupController extends Controller
             return redirect('searches/'.$group->search_id.'#nav-resources')
             ->with('success', __('group.group').' '.$group->id.__('messages.deleted'));
         }
+
         return back()->with('error', __('messages.not_allowed'));
     }
 }

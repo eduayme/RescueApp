@@ -27,12 +27,13 @@ class UpdateRequest extends FormRequest
             'description'           => 'required',
             'date'                  => 'required|date',
             'user_modification_id'  => 'integer|sometimes',
-            'images_delete'         => 'mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'images_delete'         => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 
     /**
-     * Validation messages
+     * Validation messages.
+     * 
      * @return array
      */
     public function messages()
