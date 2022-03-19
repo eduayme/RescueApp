@@ -35,7 +35,6 @@ class StoreRequest extends FormRequest
 
     /**
      * Validation messages.
-     * 
      * @return array
      */
     public function messages()

@@ -33,8 +33,6 @@ class UpdateRequest extends FormRequest
 
     /**
      * Validation messages.
-     * 
-     * 
      * @return array
      */
     public function messages()

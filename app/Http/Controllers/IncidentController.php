@@ -112,7 +112,6 @@ class IncidentController extends Controller
 
             return redirect('searches/'.$incident->search_id.'#nav-incidents')
             ->with('success', __('main.incident').' '.$incident->id.__('messages.deleted'));
-            
         } 
 
         return back()->with('error', __('messages.not_allowed'));
