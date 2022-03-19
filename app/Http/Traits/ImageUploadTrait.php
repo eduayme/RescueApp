@@ -24,6 +24,5 @@ trait ImageUploadTrait
                 ]
             );
         }
-    }
-    
+    }   
 }
