@@ -17,6 +17,7 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.0",
         "santigarcor/laratrust": "^6.3",
+        "symfony/mime": "5.0.0",
         "tio/laravel": "^1.6"
     },
     "require-dev": {
