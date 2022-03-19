@@ -24,17 +24,18 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => 'required',
-            'date'        => 'required',
-            'images'       => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'user_creation_id' => 'integer|required',
-            'user_modification_id' => 'integer|required',
-            'search_id' => 'required|integer'
+            'description'           => 'required',
+            'date'                  => 'required',
+            'images'                => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'user_creation_id'      => 'integer|required',
+            'user_modification_id'  => 'integer|required',
+            'search_id'             => 'required|integer'
         ];
     }
 
     /**
      * Validation messages
+     * 
      * @return array
      */
     public function messages()

@@ -24,10 +24,10 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => 'required',
-            'date'        => 'required|date',
-            'user_modification_id' => 'integer|sometimes',
-            'images_delete' => 'mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'description'           => 'required',
+            'date'                  => 'required|date',
+            'user_modification_id'  => 'integer|sometimes',
+            'images_delete'         => 'mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 
@@ -38,9 +38,9 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'description.required' => __('messages.required'),
-            'date.required'        => __('messages.required'),
-            'images_delete.mimes'          => __('messages.mimes'),
+            'description.required'          => __('messages.required'),
+            'date.required'                 => __('messages.required'),
+            'images_delete.mimes'           => __('messages.mimes'),
             'images_delete.size'            => __('messages.photo_max'),
         ];
     }

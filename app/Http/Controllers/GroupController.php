@@ -20,6 +20,7 @@ class GroupController extends Controller
         if (auth()->user()->profile != 'guest') {
             return view('searches.resources.groups.create', ['search_id' => $request->get('search_id')]);
         }
+        
         return back()->with('error', __('messages.not_allowed')); 
     }
 
@@ -34,7 +35,7 @@ class GroupController extends Controller
             'people_involved'   => $request->people_involved,
         ]);
         return redirect('searches/'.$group->search_id.'#nav-resources')
-        ->with('success', __('group.group').' '.$group->id.__('messages.added'));
+            ->with('success', __('group.group').' '.$group->id.__('messages.added'));
     }
 
     public function update(Group $group, StoreUpdateRequest $request)

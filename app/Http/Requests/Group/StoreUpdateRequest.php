@@ -32,10 +32,12 @@ class StoreUpdateRequest extends FormRequest
             'people_involved'   => ['string', 'max:255'],
         ];
 
+
         if($this->request == 'POST') {
             $searchId = ['search_id' => ['required', 'numeric', 'exists:searches,id']];
             array_merge($toBeValidated, $searchId);
         }
+        
         return $toBeValidated;
     }
 

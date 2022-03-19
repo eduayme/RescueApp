@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Incident\StoreRequest;
-use App\Http\Requests\Incident\StoreUpdateRequest;
 use App\Http\Requests\Incident\UpdateRequest;
 use App\Incident;
 use App\IncidentImage;
+use App\Http\Traits\ImageUploadTrait;
 use File;
 use Illuminate\Http\Request;
-use App\Http\Traits\ImageUploadTrait;
 
 class IncidentController extends Controller
 {
     use ImageUploadTrait;
+
     public function index()
     {
         $incidents = Incident::all();
@@ -33,6 +33,7 @@ class IncidentController extends Controller
         if (auth()->user()->profile != 'guest') {
             return view('searches.incidents.create', ['search_id' => $request->search_id]);
         }
+
         return redirect('searches/'.$request->search_id)->with('error', __('messages.not_allowed'));
     }
 
@@ -111,7 +112,9 @@ class IncidentController extends Controller
 
             return redirect('searches/'.$incident->search_id.'#nav-incidents')
             ->with('success', __('main.incident').' '.$incident->id.__('messages.deleted'));
+            
         } 
+
         return back()->with('error', __('messages.not_allowed'));
     }
 }
