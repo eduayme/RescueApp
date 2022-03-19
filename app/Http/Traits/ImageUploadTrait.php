@@ -20,8 +20,8 @@ trait ImageUploadTrait
 
             IncidentImage::create(
                 [
-                'photo'       => $filename,
-                'incident_id' => $incident->id,
+                    'photo'       => $filename,
+                    'incident_id' => $incident->id,
                 ]
             );
         }
