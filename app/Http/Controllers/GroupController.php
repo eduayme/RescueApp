@@ -20,8 +20,8 @@ class GroupController extends Controller
         if (auth()->user()->profile != 'guest') {
             return view('searches.resources.groups.create', ['search_id' => $request->get('search_id')]);
         }
-        
-        return back()->with('error', __('messages.not_allowed')); 
+
+        return back()->with('error', __('messages.not_allowed'));
     }
 
     public function store(StoreUpdateRequest $request)

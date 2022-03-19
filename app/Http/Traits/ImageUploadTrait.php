@@ -7,9 +7,9 @@ use App\IncidentImage;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
-
 trait ImageUploadTrait 
 {
+
     public function serialIncidentUpload($file, $path, Incident $incident) 
     {
         $random_id = rand(100, 13600);
@@ -27,4 +27,3 @@ trait ImageUploadTrait
         }
     }
 }
-?>
