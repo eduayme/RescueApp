@@ -14,9 +14,6 @@ class CreateSearchesTable extends Migration
     public function up()
     {
         Schema::create('searches', function (Blueprint $table) {
-            // Engine DB
-            $table->engine = 'InnoDB';
-
             $table->increments('id');
             $table->tinyInteger('is_a_practice')->default(0);
             $table->string('search_id')->unique();
