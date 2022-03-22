@@ -5,6 +5,9 @@
 /public/uploads/lost_people_photos
 /storage/*.key
 /vendor
+/public/uploads/
+composer.json
+composer.lock
 .env
 .phpunit.result.cache
 .DS_Store
