@@ -61,6 +61,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.sodatech.com/"><img src="https://avatars.githubusercontent.com/u/11443300?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonathan Doelfs</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=jonadoe" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/siddux"><img src="https://avatars.githubusercontent.com/u/7074956?v=4?s=100" width="100px;" alt=""/><br /><sub><b>siddux</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=siddux" title="Code">💻</a> <a href="#translation-siddux" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/yogendra-revanna"><img src="https://avatars.githubusercontent.com/u/71602500?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yogendra Revanna</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=yogendra-revanna" title="Code">💻</a></td>
+    <td align="center"><a href="http://axiapro.com.ng"><img src="https://avatars.githubusercontent.com/u/20925998?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Soneye Abimbola</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=bhimbho" title="Code">💻</a></td>
   </tr>
 </table>
 
