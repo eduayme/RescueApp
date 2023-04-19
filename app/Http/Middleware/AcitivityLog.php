@@ -20,7 +20,6 @@ class AcitivityLog
         $response = $next($request);
 
         if (auth()->user()) {
-
             //   Change description according to and from route.
             $description = '';
 
@@ -41,7 +40,7 @@ class AcitivityLog
             }
 
             // From the method of GET or POST determine if the data has been posted.
-            if ((request()->method() == 'POST' || request()->method() == 'PUT') && (preg_match('/searches/', request()->path()))) {
+            if ((request()->method() == 'POST' || request()->method() == 'PUT') && preg_match('/searches/', request()->path())) {
                 $description = 'saved_new_info_about_search';
             }
 
