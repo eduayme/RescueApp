@@ -10,7 +10,11 @@
 
 
 ## About RescueApp
-RescueApp is a web application designed to help emergency services in registering and documenting tasks to rescue lost people. It started as a pioneer project for the Catalonia firefighters developed as a final year project in my Bachelor's Degree in Computer Engineering.
+RescueApp is a web-based application that has been designed with the specific purpose of aiding emergency services in their rescue efforts for lost individuals. This app allows the users, such as firefighters or other first responders, to register and document the necessary tasks involved in a rescue mission, thereby streamlining the process and improving the chances of a successful rescue.
+
+The development of RescueApp was undertaken as a final year project for my Bachelor's Degree in Computer Engineering. As a pioneering project, it was implemented in collaboration with the Catalonia firefighters, who provided valuable feedback and insights into the specific needs and requirements of emergency services.
+
+Overall, RescueApp serves as an innovative and practical solution to the challenges faced by rescue services in their efforts to locate and rescue lost individuals. By providing a reliable and efficient tool for task registration and documentation, it helps to improve the effectiveness of rescue missions and, ultimately, to save lives.
 
 
 ## Documentation
