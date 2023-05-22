@@ -2,8 +2,8 @@
 <img src="public/img/RescueApp-logo-horizontal.png" alt="RescueApp">
 </p>
 <p align="center">
-<a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/7548986/shield?branch=master&style=flat&branch=6.x" alt="StyleCI"></a>
-<a href="https://travis-ci.org/eduayme/RescueApp"><img src="https://travis-ci.org/eduayme/RescueApp.svg?branch=master" alt="Build Status"></a>
+<a href="https://github.styleci.io/repos/184948124"><img src="https://github.styleci.io/repos/184948124/shield?style=flat" alt="StyleCI"></a>
+<a href="https://travis-ci.org/eduayme/RescueApp"><img src="https://api.travis-ci.com/eduayme/RescueApp.svg?branch=master" alt="Build Status"></a>
 <a href="https://github.com/eduayme/RescueApp/releases/tag/v1.3.2"><img src="https://img.shields.io/badge/version-v1.3.2-blue"></a>
 <a href="https://github.com/eduayme/RescueApp/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License"></a>
 </p>
