@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Activity;
-use App\User;
 use Gate;
 
 class ActivityController extends Controller
@@ -32,7 +31,6 @@ class ActivityController extends Controller
      */
     public function deleteAll()
     {
-
         /* Allow user to delete all activity logs of users if user is admin */
         if (Gate::allows('admin-only', auth()->user())) {
             Activity::query()->delete();

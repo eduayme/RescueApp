@@ -10,22 +10,23 @@
 
 <a name="about"></a>
 ## [About](/{{route}}/{{version}}/description#about)
-RescueApp will allow you to organise, coordinate and document a search. It incorporates tools for analysis and support for decision making, allowing several people with different rights to work in the same search simultaneously based on their profile. At the same time it allows you to have multiple active searches and work in several of them simultaneously in different places on the territory.
+RescueApp will enable you organise, coordinate and document a search. It incorporates tools for analysis and support for decision making, allowing several people with different rights to work in the same search simultaneously based on their profile. At the same time, it lets you have multiple active searches and work in several of them simultaneously, at different locations in a territory.
 
-The application incorporates GIS tools as much of the information to process is geospatial and when viewing many of the data it does about cartography.
+The application incorporates Geographic Information System(GIS) tools as much of the information to process is geospatial and when viewing many of the data it does about cartography.
 
+RescueApp helps in the following ways:
 - **Organise**: The application allows you to have all tools in the same web platform so that the work methodology is greatly simplified. Being able to work simultaneously from different places allows the information to be shared at the moment among all the players. Being a web browser only requires a browser to access it and in this way allows it to be more accessible from any device with a data connection.
 
-- **Coordinate**: It allows you to control all the resources destined for the service and keep track of them live from the cartographic tools. You have the tools to plan tasks to execute, monitor and once you have finished registering them.
+- **Coordinate**: RescueApp also allows you to control all the resources destined for the service and keep track of them live from the cartographic tools. You have the tools to plan tasks to execute and monitor once you have finished registering them.
 
-- **Document**: All the information entry will be stored in the database. From here you can check any previous service. You can generate reports on paper of the data, the tasks carried out and the generated maps.
+- **Document**: All the information entry will be stored in the database. From here you can check any previous service. You can generate on paper, reports of the data, the tasks carried out and the generated maps.
 
-- **Analysis**: From the person's description data a dynamic Vulnerability Table will be generated in a way that allows a more proportionate response to each specific situation. A second analysis tool is the generation of Behavior Patterns from the profiles of the disappeared ones so that they are updated as you go by incorporating all the new services.
+- **Analysis**: From the person's description data, a dynamic Vulnerability Table will be generated in a way that enables a more proportionate response to each specific situation. Another tool for analysis is the generation of Behavior Patterns from the profiles of the missing persons so that they are updated as you go by incorporating all the new services.
 
 
 <a name="for"></a>
 ## [Who is it for?](/{{route}}/{{version}}/description#for)
-It is mainly aimed at emergency services or who is responsible for coordinating and organising a search for missing persons.
+RescueApp is mainly aimed at emergency services and to assist those who are responsible for coordinating and organising searches for missing persons.
 
 
 <a name="useful"></a>

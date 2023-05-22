@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Group;
-use Auth;
+use App\Http\Requests\Group\StoreUpdateRequest;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Validator;
 
 class GroupController extends Controller
 {
@@ -19,91 +17,51 @@ class GroupController extends Controller
 
     public function create(Request $request)
     {
-        if (Auth::check()) {
-            $currentUser = \Auth::user()->profile;
-
-            if ($currentUser != 'guest') {
-                return view('searches.resources.groups.create', ['search_id' => $request->get('search_id')]);
-            } else {
-                return back()
-                ->with('error', __('messages.not_allowed'));
-            }
-        } else {
-            return redirect()->action('HomeController@login');
+        if (auth()->user()->profile != 'guest') {
+            return view('searches.resources.groups.create', ['search_id' => $request->get('search_id')]);
         }
+
+        return back()->with('error', __('messages.not_allowed'));
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'search_id'         => ['required', 'numeric', 'exists:searches,id'],
-            'is_active'         => ['numeric', Rule::in([0, 1])],
-            'vehicle'           => ['string', 'max:50'],
-            'broadcast'         => ['string', 'max:50'],
-            'gps'               => ['string', 'max:50'],
-            'people_involved'   => ['string', 'max:255'],
-        ], [
-            'vehicle.max'                  => __('messages.max'),
-            'broadcast.max'                => __('messages.max'),
-            'gps.max'                      => __('messages.max'),
-            'people_involved.max'          => __('messages.max'),
-        ]);
-
         $group = Group::create([
-            'search_id'         => $request->get('search_id'),
-            'is_active'         => $request->get('is_active'),
-            'vehicle'           => $request->get('vehicle'),
-            'broadcast'         => $request->get('broadcast'),
-            'gps'               => $request->get('gps'),
-            'people_involved'   => $request->get('people_involved'),
+            'search_id'         => $request->search_id,
+            'is_active'         => $request->is_active,
+            'vehicle'           => $request->vehicle,
+            'broadcast'         => $request->broadcast,
+            'gps'               => $request->gps,
+            'people_involved'   => $request->people_involved,
         ]);
-
-        $group->save();
 
         return redirect('searches/'.$group->search_id.'#nav-resources')
-        ->with('success', __('group.group').' '.$group->id.__('messages.added'));
+            ->with('success', __('group.group').' '.$group->id.__('messages.added'));
     }
 
-    public function update(Group $group, Request $request)
+    public function update(Group $group, StoreUpdateRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'is_active'         => ['numeric', Rule::in([0, 1])],
-            'vehicle'           => ['string', 'max:50'],
-            'broadcast'         => ['string', 'max:50'],
-            'gps'               => ['string', 'max:50'],
-            'people_involved'   => ['string', 'max:255'],
-        ], [
-            'vehicle.max'                  => __('messages.max'),
-            'broadcast.max'                => __('messages.max'),
-            'gps.max'                      => __('messages.max'),
-            'people_involved.max'          => __('messages.max'),
-        ]);
+        $group->is_active = $request->is_active;
+        $group->vehicle = $request->vehicle;
+        $group->broadcast = $request->broadcast;
+        $group->gps = $request->gps;
+        $group->people_involved = $request->people_involved;
 
-        $group->is_active = $request->has('is_active') ? $request->get('is_active') : $group->is_active;
-        $group->vehicle = $request->has('vehicle') ? $request->get('vehicle') : $group->vehicle;
-        $group->broadcast = $request->has('broadcast') ? $request->get('broadcast') : $group->broadcast;
-        $group->gps = $request->has('gps') ? $request->get('gps') : $group->gps;
-        $group->people_involved = $request->has('people_involved') ? $request->get('people_involved') : $group->people_involved;
-
-        $group->save();
+        $group->update();
 
         return redirect('searches/'.$group->search_id.'#nav-resources')
         ->with('success', __('group.group').' '.$group->id.__('messages.updated'));
     }
 
-    public function destroy($id)
+    public function destroy(Group $group)
     {
-        $group = Group::find($id);
-        $currentUser = \Auth::user()->profile;
-
-        if ($currentUser == 'admin' && $group) {
+        if (auth()->user()->profile == 'admin') {
             $group->delete();
 
             return redirect('searches/'.$group->search_id.'#nav-resources')
             ->with('success', __('group.group').' '.$group->id.__('messages.deleted'));
-        } else {
-            return back()
-            ->with('error', __('messages.not_allowed'));
         }
+
+        return back()->with('error', __('messages.not_allowed'));
     }
 }

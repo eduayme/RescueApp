@@ -236,6 +236,33 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "bhimbho",
+      "name": "Soneye Abimbola",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20925998?v=4",
+      "profile": "http://axiapro.com.ng",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "OguzieVictor",
+      "name": "Victor Oguzie",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75391544?v=4",
+      "profile": "https://github.com/OguzieVictor",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "HarshMakadiya",
+      "name": "Harsh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70363509?v=4",
+      "profile": "https://github.com/HarshMakadiya",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 5,
@@ -243,5 +270,6 @@
   "projectOwner": "eduayme",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
