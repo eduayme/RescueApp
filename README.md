@@ -71,6 +71,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="20%"><a href="https://github.com/OguzieVictor"><img src="https://avatars.githubusercontent.com/u/75391544?v=4?s=100" width="100px;" alt="Victor Oguzie"/><br /><sub><b>Victor Oguzie</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=OguzieVictor" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="20%"><a href="https://github.com/HarshMakadiya"><img src="https://avatars.githubusercontent.com/u/70363509?v=4?s=100" width="100px;" alt="Harsh"/><br /><sub><b>Harsh</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=HarshMakadiya" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="20%"><a href="https://react-portfolio-freak-wolf.netlify.app/"><img src="https://avatars.githubusercontent.com/u/100259763?v=4?s=100" width="100px;" alt="Rohit Singh"/><br /><sub><b>Rohit Singh</b></sub></a><br /><a href="https://github.com/eduayme/RescueApp/commits?author=FreakWolf" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
