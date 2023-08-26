@@ -263,6 +263,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "FreakWolf",
+      "name": "Rohit Singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100259763?v=4",
+      "profile": "https://react-portfolio-freak-wolf.netlify.app/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 5,
@@ -271,5 +280,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
