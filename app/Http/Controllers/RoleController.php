@@ -45,6 +45,7 @@ class RoleController extends Controller
                 $data['user_permissions'] = $userPermissions;
             }
         }
+
         // return $data;
         return view('auth.users_manage.user_role', compact('data'));
     }
