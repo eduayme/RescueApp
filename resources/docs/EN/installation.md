@@ -1,17 +1,16 @@
 # Installation
 
-- [Install dependencies](/{{route}}/{{version}}/installation#install)
-- [Setup the project](/{{route}}/{{version}}/installation#setup-project)
-- [Setup the database](/{{route}}/{{version}}/installation#setup-database)
-- [Setup EMAIL configuration](/{{route}}/{{version}}/installation#setup-email)
-- [Run the app](/{{route}}/{{version}}/installation#run-app)
-- [Configuration for the server](/{{route}}/{{version}}/installation#conf-server)
+- [Install dependencies](#install-dependencies)
+- [Setup the project](#setup-the-project)
+- [Setup the database](#setup-the-database)
+- [Setup EMAIL configuration](#setup-email-configuration)
+- [Run the app](#run-the-app)
+- [Configuration for the server](#configuration-for-the-server)
 
 ---
 
 
-<a name="install"></a>
-## [Install dependencies](/{{route}}/{{version}}/installation#install)
+## Install dependencies
 
 1) [Install Composer 1.8](https://getcomposer.org/download)
 
@@ -20,8 +19,7 @@
 3) [Install Laravel 5.8](https://laravel.com/docs/5.8/installation)
 
 
-<a name="setup-project"></a>
-## [Setup the project](/{{route}}/{{version}}/installation#setup-project)
+## Setup the project
 
 4) Clone this repository
 ```php
@@ -42,8 +40,7 @@
 <br/>
 
 
-<a name="setup-database"></a>
-## [Setup the database](/{{route}}/{{version}}/installation#setup-database)
+## Setup the database
 
 ### Option 1) MySQL
 
@@ -89,8 +86,7 @@ DB_PASSWORD   = postgresql_password
 <br/>
 
 
-<a name="setup-email"></a>
-## [Setup EMAIL configuration](/{{route}}/{{version}}/installation#setup-email)
+## Setup EMAIL configuration
 
 ### Option 1) Gmail via SMTP
 
@@ -112,8 +108,7 @@ MAIL_ENCRYPTION  = tls
 <br/>
 
 
-<a name="run-app"></a>
-## [Run the app](/{{route}}/{{version}}/installation#run-app)
+## Run the app
 
 14) Open a terminal inside the project folder and migrate the database
 ```php
@@ -132,18 +127,17 @@ MAIL_ENCRYPTION  = tls
 17) RescueApp is running! :)
 
 
-<a name="conf-server"></a>
-## [Configuration for the server](/{{route}}/{{version}}/installation#conf-server)
+## Configuration for the server
 
 Installation example on subdomain RescueApp.mysite.com
 
-### Option 1) Apache2
+### Option 1) Apache 2
 
 18) [Download Apache2](https://help.ubuntu.com/lts/serverguide/httpd.html#Installation)
 
 19) Configure the DNS "A" records for your subdomain as required by your provider
 
-20) Configure /etc/apache2/sites-enabled/RescueApp.conf adapting the code to your needs: ServeName, DocumentRoot, ssl parameters(we used Letsencrypt), etc.. Example:
+20) Configure /etc/apache2/sites-enabled/RescueApp.conf adapting the code to your needs: ServerName, DocumentRoot, ssl parameters(we used Letsencrypt), etc.. Example:
 ```php
 <VirtualHost *:80>
         ServerName RescueApp.mysite.com
