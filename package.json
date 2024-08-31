@@ -22,7 +22,7 @@
     "sass-loader": "^7.1.0",
     "vue": "^2.5.17",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^5.91.0",
+    "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   }
 }
