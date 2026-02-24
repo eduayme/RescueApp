@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\InvolvedPerson;
+use App\Models\InvolvedPerson;
 use Auth;
 use Illuminate\Http\Request;
 

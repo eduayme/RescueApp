@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\ActionPlan;
-use App\ToDoTaskAP;
+use App\Models\ActionPlan;
+use App\Models\ToDoTaskAP;
 use Illuminate\Http\Request;
 
 class ToDoTaskAPController extends Controller

@@ -1,14 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laratrust\Traits\LaratrustUserTrait;
+use Laratrust\Traits\HasRolesAndPermissions;
 
 class User extends Authenticatable
 {
-    use LaratrustUserTrait;
+    use HasFactory;
+    use HasRolesAndPermissions;
     use Notifiable;
 
     /**

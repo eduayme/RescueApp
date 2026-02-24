@@ -62,8 +62,8 @@
                                         </div>
                                         <h5>
                                             @php
-                                                $date = new Date($permission->created_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($permission->created_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </h5>
                                     </div>
@@ -73,8 +73,8 @@
                                         </div>
                                         <h5>
                                             @php
-                                                $date = new Date($permission->updated_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($permission->updated_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </h5>
                                     </div>

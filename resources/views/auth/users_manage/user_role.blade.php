@@ -10,7 +10,7 @@
 
     <!-- Language for dates - OPEN -->
     @php
-        \Date::setLocale(Session::get('locale'));
+        \Carbon\Carbon::setLocale(Session::get('locale'));
     @endphp
     <!-- Language for dates - CLOSE -->
 
@@ -97,8 +97,8 @@
                                                 </div>
                                                 <h5>
                                                     @php
-                                                        $date = new Date($data['user']->created_at);
-                                                        echo $date->format('d M. Y | H:i');
+                                                        $date = \Carbon\Carbon::parse($data['user']->created_at);
+                                                        echo $date->translatedFormat('d M. Y | H:i');
                                                     @endphp
                                                 </h5>
                                             </div>
@@ -108,8 +108,8 @@
                                                 </div>
                                                 <h5>
                                                     @php
-                                                        $date = new Date($data['user']->updated_at);
-                                                        echo $date->format('d M. Y | H:i');
+                                                        $date = \Carbon\Carbon::parse($data['user']->updated_at);
+                                                        echo $date->translatedFormat('d M. Y | H:i');
                                                     @endphp
                                                 </h5>
                                             </div>
@@ -123,8 +123,8 @@
                                                 </div>
                                                 <h5>
                                                     @php
-                                                        $date = new Date($data['user']->last_login_at);
-                                                        echo $date->format('d M. Y | H:i');
+                                                        $date = \Carbon\Carbon::parse($data['user']->last_login_at);
+                                                        echo $date->translatedFormat('d M. Y | H:i');
                                                     @endphp
                                                 </h5>
                                             </div>

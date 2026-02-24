@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Task;
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 

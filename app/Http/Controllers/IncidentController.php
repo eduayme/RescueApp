@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Incident\StoreRequest;
 use App\Http\Requests\Incident\UpdateRequest;
 use App\Http\Traits\ImageUploadTrait;
-use App\Incident;
-use App\IncidentImage;
+use App\Models\Incident;
+use App\Models\IncidentImage;
 use File;
 use Illuminate\Http\Request;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +19,6 @@ class Group extends Model
 
     public function search()
     {
-        return $this->belongsTo('App\Search', 'search_id');
+        return $this->belongsTo('App\Models\Search', 'search_id');
     }
 }

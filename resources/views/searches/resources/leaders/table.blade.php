@@ -24,8 +24,8 @@
                     --
                 @else
                     @php
-                        $date = new Date($leader->start);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($leader->start);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 @endif
             </td>
@@ -34,8 +34,8 @@
                     --
                 @else
                     @php
-                        $date = new Date($leader->end);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($leader->end);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 @endif
             </td>

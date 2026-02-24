@@ -50,8 +50,8 @@
                                     <h6 style="display: inline">
                                         <b>
                                             @php
-                                                $date = new Date($incident->created_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($incident->created_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </b>
                                     </h6>
@@ -74,8 +74,8 @@
                                         <h6 style="display: inline">
                                             <b>
                                                 @php
-                                                    $date = new Date($incident->updated_at);
-                                                    echo $date->format('d M. Y | H:i');
+                                                    $date = \Carbon\Carbon::parse($incident->updated_at);
+                                                    echo $date->translatedFormat('d M. Y | H:i');
                                                 @endphp
                                             </b>
                                         </h6>
@@ -93,8 +93,8 @@
                                         --
                                     @else
                                         @php
-                                            $date = new Date($incident->date);
-                                            echo $date->format('d M. Y | H:i');
+                                            $date = \Carbon\Carbon::parse($incident->date);
+                                            echo $date->translatedFormat('d M. Y | H:i');
                                         @endphp
                                     @endif
                                 </h5>

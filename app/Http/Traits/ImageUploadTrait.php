@@ -2,8 +2,8 @@
 
 namespace App\Http\Traits;
 
-use App\Incident;
-use App\IncidentImage;
+use App\Models\Incident;
+use App\Models\IncidentImage;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 

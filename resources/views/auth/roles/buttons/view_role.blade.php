@@ -75,8 +75,8 @@
                                         </div>
                                         <h5>
                                             @php
-                                                $date = new Date($role->created_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($role->created_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </h5>
                                     </div>
@@ -86,8 +86,8 @@
                                         </div>
                                         <h5>
                                             @php
-                                                $date = new Date($role->updated_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($role->updated_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </h5>
                                     </div>

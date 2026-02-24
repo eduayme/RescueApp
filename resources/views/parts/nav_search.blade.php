@@ -39,8 +39,8 @@
                         {{ __('forms.begin_day')}}:
                         <b>
                             @php
-                                $date = new Date($search->date_start);
-                                echo $date->format('d M. Y');
+                                $date = \Carbon\Carbon::parse($search->date_start);
+                                echo $date->translatedFormat('d M. Y');
                             @endphp
                         </b>
                     </span>
@@ -65,8 +65,8 @@
                         {{ __('forms.end_day')}}:
                         <b>
                             @php
-                                $date = new Date($search->date_finalization);
-                                echo $date->format('d M. Y');
+                                $date = \Carbon\Carbon::parse($search->date_finalization);
+                                echo $date->translatedFormat('d M. Y');
                             @endphp
                         </b>
                     </span>

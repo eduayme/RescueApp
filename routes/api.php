@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\LeaderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,15 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::prefix('groups')->group(function () {
-    Route::get('', 'GroupController@index')->name('groups.index');
-    Route::post('', 'GroupController@store')->name('groups.store');
-    Route::post('{group}', 'GroupController@update')->name('groups.update');
-    Route::delete('{group}', 'GroupController@destroy')->name('groups.destroy');
+    Route::get('', [GroupController::class, 'index'])->name('groups.index');
+    Route::post('', [GroupController::class, 'store'])->name('groups.store');
+    Route::post('{group}', [GroupController::class, 'update'])->name('groups.update');
+    Route::delete('{group}', [GroupController::class, 'destroy'])->name('groups.destroy');
 });
 
 Route::prefix('leaders')->group(function () {
-    Route::get('', 'LeaderController@index')->name('leaders.index');
-    Route::post('', 'LeaderController@store')->name('leaders.store');
-    Route::post('{leader}', 'LeaderController@update')->name('leaders.update');
-    Route::delete('{leader}', 'LeaderController@destroy')->name('leaders.destroy');
+    Route::get('', [LeaderController::class, 'index'])->name('leaders.index');
+    Route::post('', [LeaderController::class, 'store'])->name('leaders.store');
+    Route::post('{leader}', [LeaderController::class, 'update'])->name('leaders.update');
+    Route::delete('{leader}', [LeaderController::class, 'destroy'])->name('leaders.destroy');
 });

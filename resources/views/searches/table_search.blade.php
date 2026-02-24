@@ -43,8 +43,8 @@
                 --
             @else
                 @php
-                    $date = new Date($search->date_start);
-                    echo $date->format('d M. Y | H:i');
+                    $date = \Carbon\Carbon::parse($search->date_start);
+                    echo $date->translatedFormat('d M. Y | H:i');
                 @endphp
             @endif
         </td>
@@ -54,8 +54,8 @@
                 --
             @else
                 @php
-                    $date = new Date($search->date_finalization);
-                    echo $date->format('d M. Y | H:i');
+                    $date = \Carbon\Carbon::parse($search->date_finalization);
+                    echo $date->translatedFormat('d M. Y | H:i');
                 @endphp
             @endif
         </td>
@@ -79,7 +79,7 @@
         <td>
             @if ($search->date_start != NULL)
                 @php
-                    $date = new Date($search->date_start);
+                    $date = \Carbon\Carbon::parse($search->date_start);
                     echo $date;
                 @endphp
             @endif
@@ -88,7 +88,7 @@
         <td>
             @if ($search->date_finalization != NULL)
                 @php
-                    $date = new Date($search->date_finalization);
+                    $date = \Carbon\Carbon::parse($search->date_finalization);
                     echo $date;
                 @endphp
             @endif

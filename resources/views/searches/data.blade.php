@@ -157,8 +157,8 @@
             <h6 style="display: inline">
                 <b>
                     @php
-                        $date = new Date($search->created_at);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($search->created_at);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 </b>
             </h6>
@@ -175,8 +175,8 @@
                     --
                 @else
                     @php
-                        $date = new Date($search->date_start);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($search->date_start);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 @endif
             </b>
@@ -202,8 +202,8 @@
             <h6 style="display: inline">
                 <b>
                     @php
-                        $date = new Date($search->modified_at);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($search->modified_at);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 </b>
             </h6>
@@ -220,8 +220,8 @@
                     --
                 @else
                     @php
-                        $date = new Date($search->date_finalization);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($search->date_finalization);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 @endif
             </b>
@@ -289,8 +289,8 @@
                         <p data-toggle="tooltip" data-placement="top" title="{{ __('forms.date_last_place_seen') }}">
                             <span class="octicon octicon-clock"></span>
                             @php
-                                $date = new Date($search->date_last_place_seen);
-                                echo $date->format('d M. Y | H:i');
+                                $date = \Carbon\Carbon::parse($search->date_last_place_seen);
+                                echo $date->translatedFormat('d M. Y | H:i');
                             @endphp
                         </p>
                     @endif

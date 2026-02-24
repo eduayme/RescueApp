@@ -1,20 +1,36 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Search;
-use App\Task;
-use Faker\Generator as Faker;
+use App\Models\Search;
+use App\Models\Task;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Task::class, function (Faker $faker) {
-    return [
-        'search_id'   => Search::pluck('id')->random(),
-        'Sector'      => $faker->word,
-        'Status'      => 'to_do',
-        'Group'       => $faker->randomDigit,
-        'Start'       => $faker->dateTime,
-        'End'         => $faker->dateTimeThisYear,
-        'Type'        => $faker->word,
-        'Description' => $faker->text($maxNbChars = 200),
-    ];
-});
+class TaskFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Task::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'search_id'   => Search::pluck('id')->random(),
+            'sector'      => $this->faker->word,
+            'status'      => 'to_do',
+            'group'       => $this->faker->randomDigit,
+            'start'       => $this->faker->dateTime,
+            'end'         => $this->faker->dateTimeThisYear,
+            'type'        => $this->faker->word,
+            'description' => $this->faker->text(200),
+        ];
+    }
+}

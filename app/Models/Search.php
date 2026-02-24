@@ -1,12 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Search extends Model
 {
+    use HasFactory;
     use SoftDeletes;
 
     public $table = 'searches';
@@ -87,22 +89,22 @@ class Search extends Model
 
     public function user_creation()
     {
-        return $this->belongsTo('App\User', 'user_creation_id', 'id');
+        return $this->belongsTo('App\Models\User', 'user_creation_id', 'id');
     }
 
     public function user_last_modification()
     {
-        return $this->belongsTo('App\User', 'user_last_modification_id', 'id');
+        return $this->belongsTo('App\Models\User', 'user_last_modification_id', 'id');
     }
 
     public function user_finalization()
     {
-        return $this->belongsTo('App\User', 'user_finalization_id', 'id');
+        return $this->belongsTo('App\Models\User', 'user_finalization_id', 'id');
     }
 
     public function lost_people()
     {
-        return $this->hasMany('App\LostPerson', 'search_id', 'id');
+        return $this->hasMany('App\Models\LostPerson', 'search_id', 'id');
     }
 
     public static function boot()
@@ -116,16 +118,16 @@ class Search extends Model
 
     public function involved_people()
     {
-        return $this->hasMany('App\InvolvedPerson', 'search_id', 'id');
+        return $this->hasMany('App\Models\InvolvedPerson', 'search_id', 'id');
     }
 
     public function groups()
     {
-        return $this->hasMany('App\Group', 'search_id', 'id');
+        return $this->hasMany('App\Models\Group', 'search_id', 'id');
     }
 
     public function leaders()
     {
-        return $this->hasMany('App\Leader', 'search_id', 'id');
+        return $this->hasMany('App\Models\Leader', 'search_id', 'id');
     }
 }

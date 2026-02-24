@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Activity;
+use App\Models\Activity;
 use Closure;
 
 class AcitivityLog

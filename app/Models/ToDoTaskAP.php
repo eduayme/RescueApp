@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,6 +24,6 @@ class ToDoTaskAP extends Model
 
     public function action_plan()
     {
-        return $this->belongsTo('App\ActionPlan', 'action_plan_id', 'id');
+        return $this->belongsTo('App\Models\ActionPlan', 'action_plan_id', 'id');
     }
 }

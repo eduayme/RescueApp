@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Group;
+use App\Models\Group;
 use App\Http\Requests\Group\StoreUpdateRequest;
 use Illuminate\Http\Request;
 
