@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Group;
 use App\Http\Requests\Group\StoreUpdateRequest;
+use App\Models\Group;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller

@@ -28,8 +28,8 @@ class Task extends Model
     ];
 
     protected $casts = [
-        'start' => 'datetime:Y-m-d H:i:s',
-        'end' => 'datetime:Y-m-d H:i:s',
+        'start'      => 'datetime:Y-m-d H:i:s',
+        'end'        => 'datetime:Y-m-d H:i:s',
         'created_at' => 'datetime:Y-m-d H:i:s',
         'updated_at' => 'datetime:Y-m-d H:i:s',
     ];

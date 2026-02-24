@@ -2,11 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Models\Search;
+use App\Models\Task;
 use Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use App\Models\Search;
-use App\Models\Task;
 
 class TaskTest extends TestCase
 {
