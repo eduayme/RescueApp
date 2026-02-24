@@ -86,8 +86,8 @@
                                         </div>
                                         <h5>
                                             @php
-                                                $date = new Date($user->created_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($user->created_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </h5>
                                     </div>
@@ -97,8 +97,8 @@
                                         </div>
                                         <h5>
                                             @php
-                                                $date = new Date($user->updated_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($user->updated_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </h5>
                                     </div>
@@ -112,8 +112,8 @@
                                         </div>
                                         <h5>
                                             @php
-                                                $date = new Date($user->last_login_at);
-                                                echo $date->format('d M. Y | H:i');
+                                                $date = \Carbon\Carbon::parse($user->last_login_at);
+                                                echo $date->translatedFormat('d M. Y | H:i');
                                             @endphp
                                         </h5>
                                     </div>

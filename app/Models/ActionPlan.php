@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,12 +18,12 @@ class ActionPlan extends Model
 
     public function search()
     {
-        return $this->belongsTo('App\Search', 'search_id');
+        return $this->belongsTo('App\Models\Search', 'search_id');
     }
 
     public function to_do_tasks()
     {
-        return $this->hasMany('App\ToDoTaskAP', 'action_plan_id', 'id');
+        return $this->hasMany('App\Models\ToDoTaskAP', 'action_plan_id', 'id');
     }
 
     public static function boot()

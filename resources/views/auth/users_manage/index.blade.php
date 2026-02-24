@@ -10,7 +10,7 @@
 
     <!-- Language for dates - OPEN -->
     @php
-        \Date::setLocale(Session::get('locale'));
+        \Carbon\Carbon::setLocale(Session::get('locale'));
     @endphp
     <!-- Language for dates - CLOSE -->
 
@@ -66,8 +66,8 @@
                         </td>
                         <td>
                             @php
-                                $date = new Date($user->last_login_at);
-                                echo $date->format('d M. Y | H:i');
+                                $date = \Carbon\Carbon::parse($user->last_login_at);
+                                echo $date->translatedFormat('d M. Y | H:i');
                             @endphp
                         </td>
                         <td>

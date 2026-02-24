@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\ActionPlan;
-use App\Incident;
-use App\LostPerson;
-use App\Search;
-use App\Task;
+use App\Models\ActionPlan;
+use App\Models\Incident;
+use App\Models\LostPerson;
+use App\Models\Search;
+use App\Models\Task;
 use Auth;
 use Illuminate\Http\Request;
 use Validator;

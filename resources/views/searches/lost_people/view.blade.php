@@ -10,7 +10,7 @@
 
     <!-- Language for dates - OPEN -->
     @php
-        \Date::setLocale(Session::get('locale'));
+        \Carbon\Carbon::setLocale(Session::get('locale'));
     @endphp
     <!-- Language for dates - CLOSE -->
 

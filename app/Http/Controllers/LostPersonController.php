@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\LostPerson;
-use App\Search;
+use App\Models\LostPerson;
+use App\Models\Search;
 use Auth;
 use File;
 use Illuminate\Http\Request;

@@ -55,8 +55,8 @@
                     --
                 @else
                     @php
-                        $date = new Date($task->start);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($task->start);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 @endif
             </td>
@@ -66,8 +66,8 @@
                     --
                 @else
                     @php
-                        $date = new Date($task->end);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($task->end);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 @endif
             </td>

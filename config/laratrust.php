@@ -120,12 +120,12 @@ return [
         /**
          * Role model.
          */
-        'role' => 'App\Role',
+        'role' => 'App\Models\Role',
 
         /**
          * Permission model.
          */
-        'permission' => 'App\Permission',
+        'permission' => 'App\Models\Permission',
 
         /**
          * Team model.

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
@@ -31,7 +31,7 @@ class LoginTest extends TestCase
      */
     public function test_user_cannot_view_a_login_form_when_authenticated()
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $response = $this->actingAs($user)->get('/login');
 
@@ -45,7 +45,7 @@ class LoginTest extends TestCase
      */
     public function test_user_can_login_with_valid_credentials()
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'password' => Hash::make($password = '1234'),
         ]);
 
@@ -65,7 +65,7 @@ class LoginTest extends TestCase
      */
     public function test_user_can_not_login_with_invalid_credentials()
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'password' => Hash::make($password = 'i-love-laravel'),
         ]);
 
@@ -85,7 +85,7 @@ class LoginTest extends TestCase
      */
     public function test_user_can_logout()
     {
-        $user = factory(User::class)->create();
+        $user = User::factory()->create();
 
         $response = $this->actingAs($user)->post('/logout');
 

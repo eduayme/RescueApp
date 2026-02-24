@@ -1,6 +1,6 @@
 <!-- Language for dates - OPEN -->
 @php
-\Date::setLocale(Session::get('locale'));
+\Carbon\Carbon::setLocale(Session::get('locale'));
 @endphp
 <!-- Language for dates - CLOSE -->
 
@@ -152,8 +152,8 @@
             <b>
                 @if( $search->date_localization )
                     @php
-                        $date = new Date($search->date_localization);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($search->date_localization);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 @else
                     --

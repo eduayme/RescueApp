@@ -2,11 +2,13 @@
 
 namespace Tests\Feature;
 
+use App\Models\Search;
+use App\Models\Task;
 use Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class TaskCreationTest extends TestCase
+class TaskTest extends TestCase
 {
     /**
      * A basic feature test example.
@@ -19,39 +21,51 @@ class TaskCreationTest extends TestCase
     {
         $user = Auth::loginUsingId(2);
 
-        factory('App\Search')->create();
-        $task = factory('App\Task')->create();
+        Search::factory()->create();
+        $task = Task::factory()->create();
 
         $response = $this->actingAs($user)->post('/task', $task->toArray());
 
-        $response = $this->assertDatabaseHas('tasks', $task->toArray());
+        $attributes = $task->toArray();
+        unset($attributes['created_at']);
+        unset($attributes['updated_at']);
+
+        $response = $this->assertDatabaseHas('tasks', $attributes);
     }
 
     public function test_admin_can_delete_task()
     {
         $user = Auth::loginUsingId(1);
 
-        factory('App\Search')->create();
-        $task = factory('App\Task')->create();
+        Search::factory()->create();
+        $task = Task::factory()->create();
 
         $response = $this->actingAs($user)->post('/task', $task->toArray());
 
         $reponse = $this->actingAs($user)->delete(route('deleteTask', $task->id));
 
-        $response = $this->assertDatabaseMissing('tasks', $task->toArray());
+        $attributes = $task->toArray();
+        unset($attributes['created_at']);
+        unset($attributes['updated_at']);
+
+        $response = $this->assertDatabaseMissing('tasks', $attributes);
     }
 
     public function test_user_cannot_delete_task()
     {
         $user = Auth::loginUsingId(2);
 
-        factory('App\Search')->create();
-        $task = factory('App\Task')->create();
+        Search::factory()->create();
+        $task = Task::factory()->create();
 
         $response = $this->actingAs($user)->post('/task', $task->toArray());
 
         $reponse = $this->actingAs($user)->delete(route('deleteTask', $task->id));
 
-        $response = $this->assertDatabaseHas('tasks', $task->toArray());
+        $attributes = $task->toArray();
+        unset($attributes['created_at']);
+        unset($attributes['updated_at']);
+
+        $response = $this->assertDatabaseHas('tasks', $attributes);
     }
 }

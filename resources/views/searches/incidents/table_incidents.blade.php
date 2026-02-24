@@ -31,8 +31,8 @@
                     --
                 @else
                     @php
-                        $date = new Date($incident->date);
-                        echo $date->format('M. d | H:i');
+                        $date = \Carbon\Carbon::parse($incident->date);
+                        echo $date->translatedFormat('M. d | H:i');
                     @endphp
                 @endif
             </td>

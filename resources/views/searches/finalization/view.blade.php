@@ -54,8 +54,8 @@
             <h5 style="display: inline">
                 <b>
                     @php
-                        $date = new Date($search->date_finalization);
-                        echo $date->format('d M. Y | H:i');
+                        $date = \Carbon\Carbon::parse($search->date_finalization);
+                        echo $date->translatedFormat('d M. Y | H:i');
                     @endphp
                 </b>
             </h5>

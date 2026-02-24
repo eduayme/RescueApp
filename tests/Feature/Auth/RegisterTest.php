@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Auth;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -31,7 +31,7 @@ class RegisterTest extends TestCase
      */
     public function test_register_a_valid_user()
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $response = $this->post('register', [
             'name'                   => $user->name,
@@ -53,7 +53,7 @@ class RegisterTest extends TestCase
      */
     public function test_register_an_invalid_user()
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $response = $this->post('/register', [
             'email'                 => $user->email,

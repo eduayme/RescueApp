@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Activity;
-use App\User;
+use App\Models\Activity;
+use App\Models\User;
 use Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
