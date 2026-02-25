@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use BinaryTorch\LaRecipe\Contracts\MarkdownParser;
 use App\Services\CustomMarkdownParser;
+use BinaryTorch\LaRecipe\Contracts\MarkdownParser;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
